@@ -291,9 +291,9 @@ const Navbar = () => {
         </div>
 
         {/* Right Section - Desktop (unchanged) */}
-        <div className="hidden md:flex w-[70%] h-full flex-col">
+        <div className="hidden md:flex  w-[70%] h-full flex-col ">
           {/* Top Bar */}
-          <div className="flex justify-end w-full h-[45%] text-xs text-gray-700 bg-white">
+          <div className="flex justify-end w-full h-[45%] text-xs text-gray-700">
             <div className="flex gap-8">
               <div className="flex items-center gap-2 font-bold">
                 <a

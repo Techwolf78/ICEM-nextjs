@@ -40,46 +40,73 @@ const CollegeUnplugged = () => {
   const [selectedVideo, setSelectedVideo] = useState(videos[0]);
 
   return (
-    <div className="bg-white py-10 sm:py-16">
+    <div className="bg-white py-12 sm:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <h2 className="text-xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 text-center sm:text-left">
+        {/* Heading */}
+        <h2 className="text-xl sm:text-3xl font-bold text-gray-900 mb-8 text-center sm:text-left">
           Indira College Unplugged
         </h2>
 
-        {/* ✅ Responsive Flex Container */}
-        <div className="flex flex-col-reverse lg:flex-row items-center lg:items-start justify-between gap-8 sm:gap-10">
+        {/* ✅ Combined Layout */}
+        <div className="flex flex-col lg:flex-row gap-10 transition-all duration-700 ease-in-out">
           {/* LEFT — Video List */}
-          <div className="w-full lg:w-1/2 space-y-4 sm:space-y-6">
-            {videos.map((video, index) => (
-              <div
-                key={index}
-                onClick={() => setSelectedVideo(video)}
-                className={`flex items-center gap-3 sm:gap-4 p-2 sm:p-3 rounded-lg cursor-pointer transition ${
-                  selectedVideo.title === video.title
-                    ? "bg-blue-50 border-l-4 border-blue-500"
-                    : "bg-gray-50 hover:bg-gray-100"
-                }`}
-              >
-                <div className="relative w-24 h-16 sm:w-32 sm:h-20 flex-shrink-0">
-                  <Image
-                    src={video.thumbnail}
-                    alt={video.title}
-                    fill
-                    sizes="(max-width: 640px) 96px, 128px"
-                    className="object-cover rounded-md"
-                  />
+          <div className="w-full lg:w-[45%] space-y-4 transition-all duration-700 ease-in-out">
+            {videos.map((video, index) => {
+              const isActive = selectedVideo.title === video.title;
+
+              return (
+                <div
+                  key={index}
+                  onClick={() => setSelectedVideo(video)}
+                  className={`group relative flex items-center gap-4 cursor-pointer overflow-hidden rounded-xl border transition-all duration-500 ease-in-out ${
+                    isActive
+                      ? "bg-gradient-to-r from-blue-50 to-white border-blue-400 shadow-md"
+                      : "bg-gray-50 hover:bg-gray-100 border-gray-200"
+                  }`}
+                >
+                  {/* Thumbnail */}
+                  <div
+                    className={`relative flex-shrink-0 overflow-hidden rounded-md transition-all duration-500 ease-in-out ${
+                      isActive
+                        ? "w-32 h-20 sm:w-40 sm:h-24"
+                        : "w-28 h-18 sm:w-32 sm:h-20"
+                    }`}
+                  >
+                    <Image
+                      src={video.thumbnail}
+                      alt={video.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+
+                  {/* Title */}
+                  <div className="pr-3 sm:pr-4 flex-1">
+                    <h3
+                      className={`font-medium text-gray-800 leading-snug transition-all duration-500 ${
+                        isActive
+                          ? "text-base sm:text-lg text-blue-800"
+                          : "text-sm sm:text-base line-clamp-2"
+                      }`}
+                    >
+                      {video.title}
+                    </h3>
+                  </div>
+
+                  {/* Blue highlight bar (left edge) */}
+                  {isActive && (
+                    <div className="absolute left-0 top-0 h-full w-1.5 bg-blue-500 transition-all duration-500"></div>
+                  )}
                 </div>
-                <h3 className="text-xs sm:text-sm md:text-base font-medium text-gray-800 leading-snug line-clamp-2">
-                  {video.title}
-                </h3>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* RIGHT — Main Video Player */}
-          <div className="w-full lg:w-1/2 flex justify-center items-center">
-            <div className="w-full h-48 sm:h-64 md:h-80 lg:h-[360px] bg-black rounded-lg overflow-hidden shadow-lg">
+          <div className="relative w-full lg:w-[55%] flex justify-center items-center transition-all duration-700 ease-in-out">
+            <div className="w-full h-56 sm:h-72 md:h-80 lg:h-[400px] bg-black rounded-xl overflow-hidden shadow-xl transition-all duration-700 ease-in-out">
               <iframe
+                key={selectedVideo.url}
                 width="100%"
                 height="100%"
                 src={toEmbedUrl(selectedVideo.url)}
@@ -87,6 +114,7 @@ const CollegeUnplugged = () => {
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
+                className="transition-all duration-700 ease-in-out"
               ></iframe>
             </div>
           </div>

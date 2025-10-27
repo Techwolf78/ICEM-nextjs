@@ -4,7 +4,7 @@ import Image from "next/image";
 import axios from "axios";
 import toast from "react-hot-toast";
 
-const API_URL = "https://cms-backend-icem.onrender.com/api/banners/type/homepage"; // ✅ Homepage banners only
+const API_URL = "https://cms-backend-icem.onrender.com/api/banners/type/homepage";
 
 const HeroSlider = () => {
   const [desktopImages, setDesktopImages] = useState([]);
@@ -14,7 +14,6 @@ const HeroSlider = () => {
   const [loading, setLoading] = useState(true);
   const sliderRef = useRef(null);
 
-  // ✅ Fetch homepage banners
   useEffect(() => {
     const fetchImages = async () => {
       try {
@@ -22,7 +21,6 @@ const HeroSlider = () => {
         if (res.data && res.data.length > 0) {
           const desktopUrls = res.data.map((b) => b.desktopImageUrl).filter(Boolean);
           const mobileUrls = res.data.map((b) => b.mobileImageUrl).filter(Boolean);
-
           setDesktopImages(desktopUrls);
           setMobileImages(mobileUrls);
         } else {
@@ -52,17 +50,16 @@ const HeroSlider = () => {
           "/banners/mobile3.jpg",
         ]);
       } finally {
-        setLoading(false); // ✅ Hide loader after fetch
+        setLoading(false);
       }
     };
 
     fetchImages();
   }, []);
 
-  // ✅ Auto slide
   useEffect(() => {
     if (!desktopImages.length && !mobileImages.length) return;
-    const interval = setInterval(() => handleNext(), 4000);
+    const interval = setInterval(() => handleNext(), 3000);
     return () => clearInterval(interval);
   }, [currentIndex, desktopImages, mobileImages]);
 
@@ -90,10 +87,31 @@ const HeroSlider = () => {
 
   return (
     <div className="relative w-full overflow-hidden">
+      {/* ✅ SPOTLIGHT Ribbon + Ticker */}
+      <div className="w-full bg-white border-b border-gray-200 flex items-center overflow-hidden relative">
+        {/* Blue Ribbon with Right Side Cut (< shape) */}
+        <div className="relative flex items-center justify-center bg-[#00b2e5] text-white font-semibold text-sm sm:text-base px-8 py-2 clip-ribbon-left">
+          SPOTLIGHT
+        </div>
+
+        {/* Scrolling Notice Text */}
+        <div className="flex-1 overflow-hidden whitespace-nowrap">
+          <div className="inline-block animate-marquee text-[#0061a8] font-semibold text-sm sm:text-base py-2">
+            🔹 Public Advisory Notice &nbsp;&nbsp;&nbsp;&nbsp;
+            🔹 All 4 PG Programs Computer Engineering &nbsp;&nbsp;&nbsp;&nbsp;
+            🔹 Admission Open for Academic Year 2025-26 &nbsp;&nbsp;&nbsp;&nbsp;
+            🔹 Placement Record 2025 Announced &nbsp;&nbsp;&nbsp;&nbsp;
+          </div>
+        </div>
+
+        {/* Right Fade Gradient */}
+        <div className="absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
+      </div>
+
       {/* ✅ Loader */}
       {loading && (
         <div className="absolute inset-0 flex items-center justify-center bg-black/60 z-10">
-          <div className="w-12 h-12 border-4 border-cyan-300 border-t-transparent rounded-full animate-spin"></div>
+          <div className="w-12 h-12 border-4 border-gray-400 border-t-transparent rounded-full animate-spin"></div>
         </div>
       )}
 
@@ -125,18 +143,22 @@ const HeroSlider = () => {
               ))}
             </div>
 
-            {/* ✅ Dots only on desktop */}
-            <div className="absolute bottom-5 right-5 flex gap-2 items-center">
+            {/* ✅ Dots */}
+            <div className="absolute bottom-6 right-6 flex gap-2 items-center">
               {desktopImages.map((_, i) => (
-                <button
+                <div
                   key={i}
-                  onClick={() => handleDotClick(i)}
-                  className={`h-1.5 w-6 rounded-full transition-all duration-300 focus:outline-none ${
+                  className={`relative h-2 rounded-full overflow-hidden transition-all duration-300 cursor-pointer ${
                     currentIndex % desktopImages.length === i
-                      ? "bg-cyan-400 w-8"
-                      : "bg-gray-400 hover:bg-gray-500"
+                      ? "w-8 bg-gray-300"
+                      : "w-2 bg-gray-500/60"
                   }`}
-                ></button>
+                  onClick={() => handleDotClick(i)}
+                >
+                  {currentIndex % desktopImages.length === i && (
+                    <span className="absolute top-0 left-0 h-full w-0 bg-primary animate-progressFill"></span>
+                  )}
+                </div>
               ))}
             </div>
           </>
@@ -149,33 +171,31 @@ const HeroSlider = () => {
         )}
       </div>
 
-      {/* ✅ Mobile Slider (no dots) */}
+      {/* ✅ Mobile Slider */}
       <div className={`block md:hidden ${loading ? "opacity-0" : "opacity-100"}`}>
         {mobileImages.length > 0 ? (
-          <>
-            <div
-              ref={sliderRef}
-              className={`flex ${
-                isTransitioning ? "transition-transform duration-700 ease-in-out" : ""
-              }`}
-              style={{
-                transform: `translateX(-${currentIndex * 100}%)`,
-              }}
-            >
-              {[...mobileImages, mobileImages[0]].map((img, i) => (
-                <Image
-                  key={i}
-                  src={img}
-                  alt={`Mobile Slide ${i + 1}`}
-                  className="w-full object-cover flex-shrink-0"
-                  height={400}
-                  width={700}
-                  quality={100}
-                  unoptimized={true}
-                />
-              ))}
-            </div>
-          </>
+          <div
+            ref={sliderRef}
+            className={`flex ${
+              isTransitioning ? "transition-transform duration-700 ease-in-out" : ""
+            }`}
+            style={{
+              transform: `translateX(-${currentIndex * 100}%)`,
+            }}
+          >
+            {[...mobileImages, mobileImages[0]].map((img, i) => (
+              <Image
+                key={i}
+                src={img}
+                alt={`Mobile Slide ${i + 1}`}
+                className="w-full object-cover flex-shrink-0"
+                height={400}
+                width={700}
+                quality={100}
+                unoptimized={true}
+              />
+            ))}
+          </div>
         ) : (
           !loading && (
             <div className="flex items-center justify-center h-[300px] text-gray-400">
@@ -184,6 +204,42 @@ const HeroSlider = () => {
           )
         )}
       </div>
+
+      {/* ✅ Custom Styles */}
+      <style jsx>{`
+        @keyframes progressFill {
+          from {
+            width: 0%;
+            opacity: 0.8;
+          }
+          to {
+            width: 100%;
+            opacity: 1;
+          }
+        }
+        .animate-progressFill {
+          animation: progressFill 3s linear forwards;
+        }
+
+        @keyframes marquee {
+          0% {
+            transform: translateX(100%);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+        .animate-marquee {
+          display: inline-block;
+          white-space: nowrap;
+          animation: marquee 25s linear infinite;
+        }
+
+        /* ✅ Ribbon shape: right side cut inward (<) */
+        .clip-ribbon-left {
+          clip-path: polygon(0 0, 100% 0, 95% 50%, 100% 100%, 0 100%);
+        }
+      `}</style>
     </div>
   );
 };

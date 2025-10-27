@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import Image from "next/image";
 
@@ -25,10 +24,10 @@ const ExploreSection = () => {
         />
       </div>
 
-      {/* ✅ Centered Content with max-width constraint */}
+      {/* ✅ Main Layout */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 items-center relative z-10">
         {/* Left Section */}
-        <div className="bg-white/90 p-3 sm:p-4 rounded-md shadow-sm">
+        <div className="p-3 sm:p-4">
           <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 leading-snug">
             Explore Your Potential with
           </h2>
@@ -47,7 +46,7 @@ const ExploreSection = () => {
         </div>
 
         {/* Right Section */}
-        <div className="grid grid-cols-2 gap-4 sm:gap-6 mt-6 lg:mt-0">
+        <div className="grid grid-cols-2 gap-4 sm:gap-6 mt-10 lg:mt-14"> {/* ✅ pushed logos slightly down */}
           {cards.map((card, index) => (
             <div
               key={index}

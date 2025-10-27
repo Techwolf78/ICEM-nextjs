@@ -10,7 +10,7 @@ const FixedActionBar = () => {
   return (
     <>
       {/* ===== DESKTOP VERSION (unchanged) ===== */}
-      <div className="hidden md:flex fixed bottom-6 left-6 z-[99999] items-center">
+      <div className="hidden md:flex fixed bottom-6 left-0 z-[99999] items-center">
         <div
           className="relative flex items-center group"
           onMouseEnter={() => setIsOpen(true)}

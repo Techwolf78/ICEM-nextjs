@@ -40,7 +40,7 @@ const ExploreSection = () => {
   ];
 
   return (
-    <div className="relative bg-gray-50 mt-2 h-auto lg:h-[55vh] px-4 sm:px-6 py-0 overflow-hidden">
+    <div className="relative bg-gray-50 mt-2 h-auto lg:h-[60vh] px-4 sm:px-6 py-0 overflow-hidden">
       {/* ✅ Desktop Layout */}
       <div className="hidden lg:flex flex-col mx-auto max-w-7xl justify-center w-full h-full">
         {/* 🔹 Top Section */}

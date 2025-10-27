@@ -1,82 +1,138 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const EventsSection = () => {
+export default function EventsSection() {
   const events = [
     {
-      date: "10th – 11th October, 2025",
-      title: "8th World Engineering Conference on Contemporary Technologies",
+      img: "/events/ArshGoyal.JPG",
+      title: "Guest Lecture by Arsh Goyal",
+      description:
+        "An inspiring session with Arsh Goyal, sharing real-world tech insights and industry experience.",
     },
     {
-      date: "10th – 11th November, 2025",
-      title: "Indira College Doctoral Consortium",
+      img: "/events/BParak.jpg",
+      title: "Bharat Parakrama",
+      description:
+        "A celebration of patriotism and valor with vibrant cultural performances and student participation.",
     },
     {
-      date: "28th – 29th November, 2025",
-      title: "1st International Conference on Cyber Security & Data Protection",
+      img: "/events/EngineeringInduction.jpg",
+      title: "Engineering Induction Program",
+      description:
+        "Welcoming the new engineering batch with orientation, team-building, and innovation showcases.",
     },
     {
-      date: "12th – 13th December, 2025",
-      title:
-        "International Conference on Applied Data Science and Smart Systems",
+      img: "/events/gusto.jpg",
+      title: "Gusto – Annual Tech Fest",
+      description:
+        "A thrilling fest of technology, creativity, and innovation featuring workshops and competitions.",
+    },
+    {
+      img: "/events/IGIIRP.JPG",
+      title: "Indira Global Industrial Research Program",
+      description:
+        "Encouraging collaboration between academia and industry for impactful research and innovation.",
+    },
+    {
+      img: "/events/MBAInduction.jpg",
+      title: "MBA Induction Program",
+      description:
+        "The beginning of the management journey with insights from corporate leaders and alumni.",
+    },
+    {
+      img: "/events/Navratri.JPG",
+      title: "Navratri Celebration",
+      description:
+        "A grand cultural evening filled with Garba, music, and colorful traditional festivities.",
+    },
+    {
+      img: "/events/SportsComplex.JPG",
+      title: "ICEM Sports Complex",
+      description:
+        "A flagship event connecting visionaries, innovators, and learners from diverse industries.",
     },
   ];
 
   return (
-    <div className="bg-gray-50 py-10 sm:py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        {/* ✅ Section Heading */}
-        <div className="flex justify-center sm:justify-between items-center mb-6 sm:mb-8">
-          <h2 className="text-xl sm:text-3xl font-bold text-gray-900 text-center sm:text-left">
-            Academic Conferences & Events
-          </h2>
-          {/* ❌ Removed "See All" button completely */}
-        </div>
+    <section className="w-full bg-gray-50 py-16 overflow-hidden">
+      {/* ✅ Header */}
+      <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-10">
+        Academic Conferences & Campus Events
+      </h2>
 
-        {/* ✅ Events Grid — 2 per row on mobile, 4 on large screens */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
-          {events.map((event, index) => (
+      {/* ✅ Full-width marquee scroll */}
+      <div className="relative w-full overflow-hidden group">
+        <div className="flex animate-marquee space-x-6 px-6 group-hover:pause">
+          {[...events, ...events].map((event, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition"
+              className="flex-shrink-0 w-[280px] sm:w-[320px] md:w-[360px] bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-500 border border-gray-100"
             >
-              <div className="h-28 sm:h-36 md:h-40 bg-gray-200 flex items-center justify-center text-gray-400 text-xs sm:text-sm">
-                [ Event Image ]
+              <div className="relative w-full h-44 sm:h-52 md:h-56 lg:h-64 rounded-t-xl overflow-hidden">
+                <Image
+                  src={event.img}
+                  alt={event.title}
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <div className="p-3 sm:p-4">
-                <p className="text-primary font-semibold text-[10px] sm:text-sm mb-1 sm:mb-2">
-                  {event.date}
-                </p>
-                <h4 className="text-gray-900 font-medium text-xs sm:text-base leading-snug">
+              <div className="p-4">
+                <h3 className="font-semibold text-gray-800 text-base mb-1">
                   {event.title}
-                </h4>
+                </h3>
+                <p className="text-gray-600 text-sm line-clamp-3">
+                  {event.description}
+                </p>
               </div>
             </div>
           ))}
         </div>
 
-        {/* ✅ CTA Section */}
-        <div className="bg-primary rounded-xl text-center text-white py-10 sm:py-14 px-4 sm:px-6">
-          <h2 className="text-lg sm:text-3xl font-bold mb-3 sm:mb-4">
-            Shape Your Future with Us
-          </h2>
-          <p className="text-white/80 max-w-3xl mx-auto text-xs sm:text-lg mb-6 sm:mb-8 leading-relaxed">
-            Discover limitless opportunities at Indira College, where
-            innovation, learning, and industry connect. Take the first step
-            towards your dreams. Explore our programs and get in touch to begin
-            your journey with us.
-          </p>
-          <Link href="/#contact-form">
-            <button className="bg-white text-secondary font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-gray-100 transition flex items-center gap-2 mx-auto text-xs sm:text-base">
-              Get in touch <span className="text-sm sm:text-xl">↗</span>
-            </button>
-          </Link>
-        </div>
+        {/* ✅ Gradient fade edges for smooth scroll */}
+        <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-gray-50 to-transparent pointer-events-none" />
+        <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-gray-50 to-transparent pointer-events-none" />
       </div>
-    </div>
-  );
-};
 
-export default EventsSection;
+      {/* ✅ CTA Section (restored from old version) */}
+      <div className="bg-primary rounded-xl text-center text-white py-10 sm:py-14 px-4 sm:px-6 mt-16">
+        <h2 className="text-lg sm:text-3xl font-bold mb-3 sm:mb-4">
+          Shape Your Future with Us
+        </h2>
+        <p className="text-white/80 max-w-3xl mx-auto text-xs sm:text-lg mb-6 sm:mb-8 leading-relaxed">
+          Discover limitless opportunities at Indira College, where innovation,
+          learning, and industry connect. Take the first step towards your
+          dreams. Explore our programs and get in touch to begin your journey
+          with us.
+        </p>
+        <Link href="/#contact-form">
+          <button className="bg-white text-secondary font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-gray-100 transition flex items-center gap-2 mx-auto text-xs sm:text-base">
+            Get in touch <span className="text-sm sm:text-xl">↗</span>
+          </button>
+        </Link>
+      </div>
+
+      {/* 🔹 Animation Keyframes */}
+      <style jsx>{`
+        @keyframes marquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        .animate-marquee {
+          display: flex;
+          width: max-content;
+          animation: marquee 40s linear infinite;
+        }
+        .group-hover\\:pause {
+          animation-play-state: paused;
+        }
+      `}</style>
+    </section>
+  );
+}

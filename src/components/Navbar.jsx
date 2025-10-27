@@ -5,6 +5,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { HiMenuAlt2, HiX } from "react-icons/hi";
 import { TbExternalLink } from "react-icons/tb";
+import { 
+  FiChevronDown, 
+  FiChevronUp, 
+  FiHome, 
+  FiInfo, 
+  FiUsers, 
+  FiBook, 
+  FiBriefcase, 
+  FiAward,
+  FiStar,
+  FiMapPin
+} from "react-icons/fi";
 
 const Navbar = () => {
   const [isHelplineOpen, setIsHelplineOpen] = useState(false);
@@ -35,25 +47,17 @@ const Navbar = () => {
   const dropdownContent = {
     aboutUs: {
       title: "Our Navigation",
+      icon: <FiInfo className="w-4 h-4" />,
       sections: [
         {
           items: [
             {
-              label: "Indira College of Engineering and Management (ICEM)",
+              label: "Overview",
               link: "/about/overview",
             },
-            {
-              label: "Shree Chanakya Education Society",
-              link: "/about/chanakya-edu",
-            },
-
-            {
-              label: "Chairpersons Profile & Chief Mentor IGL",
-              link: "/about/cfcm",
-            },
+            
             { label: "Facilities", link: "/about/facilities" },
             { label: "Governance", link: "/about/governance" },
-
             { label: "Accreditation", link: "about/accreditation" },
           ],
         },
@@ -62,6 +66,7 @@ const Navbar = () => {
 
     campusLife: {
       title: "Campus Life",
+      icon: <FiUsers className="w-4 h-4" />,
       sections: [
         {
           title: "Student Services",
@@ -105,6 +110,7 @@ const Navbar = () => {
 
     programs: {
       title: "Programs & Admission",
+      icon: <FiBook className="w-4 h-4" />,
       sections: [
         {
           title: "Undergraduate Programs",
@@ -151,6 +157,7 @@ const Navbar = () => {
 
     placement: {
       title: "Placement",
+      icon: <FiBriefcase className="w-4 h-4" />,
       sections: [
         {
           items: [
@@ -165,6 +172,7 @@ const Navbar = () => {
 
     accreditation: {
       title: "Accreditation",
+      icon: <FiAward className="w-4 h-4" />,
       sections: [
         {
           title: "NAAC",
@@ -202,29 +210,29 @@ const Navbar = () => {
   };
 
   const renderDropdownContent = (content) => (
-    <div className="max-w-8xl px-8 py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+    <div className="max-w-8xl px-8 py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 animate-in fade-in-0 zoom-in-95 duration-300">
       {content.sections.map((section, index) => (
         <div key={index}>
-          <h3 className="text-lg font-semibold text-secondary mb-4">
+          <h3 className="text-lg font-semibold text-secondary mb-4 flex items-center gap-2">
             {section.title || content.title}
           </h3>
           <ul className="space-y-4 text-gray-800 text-sm">
             {section.items.map((item, itemIndex) => (
               <li
                 key={itemIndex}
-                className="flex justify-between items-center border-b border-gray-300 pb-2"
+                className="flex justify-between items-center border-b border-gray-300 pb-2 group"
               >
                 {item.link ? (
                   <Link
                     href={item.link}
-                    className="font-semibold flex justify-between items-center w-full text-gray-800 hover:text-primary transition-colors"
+                    className="font-semibold flex justify-between items-center w-full text-gray-800 hover:text-primary transition-all duration-200 group-hover:translate-x-1"
                     onClick={() => setActiveDropdown(null)}
                   >
                     <span>{item.label || item}</span>
-                    <TbExternalLink className="font-semibold text-gray-900" />
+                    <TbExternalLink className="font-semibold text-gray-900 transition-transform duration-200 group-hover:scale-110" />
                   </Link>
                 ) : (
-                  <div className="font-semibold flex justify-between items-center w-full">
+                  <div className="font-semibold flex justify-between items-center w-full text-gray-600">
                     <span>{item.label || item}</span>
                     <TbExternalLink className="text-gray-400 opacity-50" />
                   </div>
@@ -238,25 +246,26 @@ const Navbar = () => {
   );
 
   const renderMobileDropdown = (content, dropdownName) => (
-    <div className="bg-gray-50 rounded-lg mt-2 overflow-hidden">
+    <div className="bg-gray-50 rounded-lg mt-2 overflow-hidden animate-in fade-in-0 slide-in-from-top-2 duration-300">
       {content.sections.map((section, index) => (
         <div key={index} className="border-t border-gray-200 first:border-t-0">
           {section.title && (
-            <h4 className="font-semibold text-secondary px-4 py-2 bg-gray-100">
+            <h4 className="font-semibold text-secondary px-4 py-2 bg-gray-100 flex items-center gap-2">
               {section.title}
             </h4>
           )}
           <ul className="space-y-1">
             {section.items.map((item, itemIndex) => (
-              <li key={itemIndex}>
+              <li key={itemIndex} className="animate-in fade-in-0 slide-in-from-left-2 duration-300" 
+                  style={{ animationDelay: `${itemIndex * 50}ms` }}>
                 {item.link ? (
                   <Link
                     href={item.link}
-                    className="flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                    className="flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-all duration-200 hover:translate-x-1"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <span>{item.label || item}</span>
-                    <TbExternalLink className="text-gray-500 text-xs" />
+                    <TbExternalLink className="text-gray-500 text-xs transition-transform duration-200 hover:scale-110" />
                   </Link>
                 ) : (
                   <div className="flex items-center justify-between px-4 py-2 text-sm text-gray-500">
@@ -277,21 +286,21 @@ const Navbar = () => {
       {/* ===== NAVBAR ===== */}
       <nav className="w-full h-[12vh] flex bg-white shadow-sm font-sans relative sticky top-0 z-50">
         {/* Left: Logo - 80% width on mobile */}
-        <div className="w-full md:w-[30%] h-full flex items-center justify-start  md:pl-0 md:justify-center">
+        <div className="w-full md:w-[30%] h-full flex items-center justify-start md:pl-0 md:justify-center">
           <Link href="/">
             <Image
               src="/Logo.png"
               alt="Logo"
-              height={240} // increased intrinsic height
-              width={240} // increased intrinsic width
-              className="h-40  w-[80%] md:h-24 md:w-full cursor-pointer object-contain"
+              height={240}
+              width={240}
+              className="h-40 w-[80%] md:h-24 md:w-full cursor-pointer object-contain transition-transform duration-300 hover:scale-105"
               priority
             />
           </Link>
         </div>
 
-        {/* Right Section - Desktop (unchanged) */}
-        <div className="hidden md:flex  w-[70%] h-full flex-col ">
+        {/* Right Section - Desktop */}
+        <div className="hidden md:flex w-[70%] h-full flex-col">
           {/* Top Bar */}
           <div className="flex justify-end w-full h-[45%] text-xs text-gray-700">
             <div className="flex gap-8">
@@ -300,8 +309,9 @@ const Navbar = () => {
                   href="https://rapid.grayquest.com/iudp-master"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-primary"
+                  className="hover:text-primary transition-colors duration-200 flex items-center gap-1"
                 >
+                  <FiHome className="w-3 h-3" />
                   Pay Fee
                 </a>
                 <span className="text-gray-400">|</span>
@@ -309,8 +319,9 @@ const Navbar = () => {
                   href="https://indira.edupluscampus.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-primary"
+                  className="hover:text-primary transition-colors duration-200 flex items-center gap-1"
                 >
+                  <FiBriefcase className="w-3 h-3" />
                   ERP Login Staff
                 </a>
                 <span className="text-gray-400">|</span>
@@ -318,8 +329,9 @@ const Navbar = () => {
                   href="https://myindira.edupluscampus.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-primary"
+                  className="hover:text-primary transition-colors duration-200 flex items-center gap-1"
                 >
+                  <FiUsers className="w-3 h-3" />
                   ERP Login Student
                 </a>
                 <span className="text-gray-400">|</span>
@@ -327,8 +339,9 @@ const Navbar = () => {
                   href="https://indiraicem.ac.in/ICEM-360-degree-virtual-tour/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-primary"
+                  className="hover:text-primary transition-colors duration-200 flex items-center gap-1"
                 >
+                  <FiMapPin className="w-3 h-3" />
                   360<sup>0</sup> Tour
                 </a>
                 <span className="text-gray-400">|</span>
@@ -336,12 +349,14 @@ const Navbar = () => {
                   href="https://lc-icem-sumedh.vercel.app"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-primary"
+                  className="hover:text-primary transition-colors duration-200 flex items-center gap-1"
                 >
+                  <FiAward className="w-3 h-3" />
                   Leaving Certificate
                 </a>
                 <span className="text-gray-400">|</span>
-                <Link href="/contact" className="hover:text-primary">
+                <Link href="/contact" className="hover:text-primary transition-colors duration-200 flex items-center gap-1">
+                  <FiInfo className="w-3 h-3" />
                   Contact Us
                 </Link>
               </div>
@@ -350,7 +365,7 @@ const Navbar = () => {
               <div className="flex">
                 <button
                   onClick={toggleModal}
-                  className="bg-gradient-to-r from-[#278da4] to-[#003c84] text-white px-8 py-1 text-xs hover:from-[#278da4]/90 hover:to-[#003c84]/90 font-bold border-r border-white transition-all duration-300"
+                  className="bg-gradient-to-r from-[#278da4] to-[#003c84] text-white px-8 py-1 text-xs hover:from-[#278da4]/90 hover:to-[#003c84]/90 font-bold border-r border-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
                 >
                   Enquire Now
                 </button>
@@ -361,47 +376,56 @@ const Navbar = () => {
           {/* Bottom Nav Links */}
           <div className="flex justify-end items-center h-[55%] text-black px-6 text-sm font-semibold whitespace-nowrap gap-10">
             <div
-              className="flex items-center gap-1  cursor-pointer hover:text-primary"
+              className="flex items-center gap-1 cursor-pointer hover:text-primary transition-all duration-200 group"
               onMouseEnter={() => handleMouseEnter("aboutUs")}
               onMouseLeave={handleMouseLeave}
             >
+              <FiInfo className="w-4 h-4 transition-transform duration-200 group-hover:scale-110" />
               <span>About Us</span>
+              <FiChevronDown className={`w-3 h-3 transition-transform duration-300 ${activeDropdown === "aboutUs" ? "rotate-180" : ""}`} />
             </div>
             <div
-              className="flex items-center gap-1  cursor-pointer hover:text-primary"
+              className="flex items-center gap-1 cursor-pointer hover:text-primary transition-all duration-200 group"
               onMouseEnter={() => handleMouseEnter("campusLife")}
               onMouseLeave={handleMouseLeave}
             >
+              <FiUsers className="w-4 h-4 transition-transform duration-200 group-hover:scale-110" />
               <span>Campus Life</span>
+              <FiChevronDown className={`w-3 h-3 transition-transform duration-300 ${activeDropdown === "campusLife" ? "rotate-180" : ""}`} />
             </div>
             <div
-              className="flex items-center gap-1 cursor-pointer hover:text-primary"
+              className="flex items-center gap-1 cursor-pointer hover:text-primary transition-all duration-200 group"
               onMouseEnter={() => handleMouseEnter("programs")}
               onMouseLeave={handleMouseLeave}
             >
+              <FiBook className="w-4 h-4 transition-transform duration-200 group-hover:scale-110" />
               <span>Programs & Admission</span>
+              <FiChevronDown className={`w-3 h-3 transition-transform duration-300 ${activeDropdown === "programs" ? "rotate-180" : ""}`} />
             </div>
-            <Link href="/placement" className="hover:text-primary">
+            <Link href="/placement" className="hover:text-primary transition-colors duration-200 flex items-center gap-1 group">
+              <FiBriefcase className="w-4 h-4 transition-transform duration-200 group-hover:scale-110" />
               Placement
             </Link>
-            <Link href="/about/examination" className="hover:text-primary">
+            <Link href="/about/examination" className="hover:text-primary transition-colors duration-200 flex items-center gap-1 group">
+              <FiAward className="w-4 h-4 transition-transform duration-200 group-hover:scale-110" />
               Examination
             </Link>
-
-            <Link href="/alumni" className="hover:text-primary">
+            <Link href="/alumni" className="hover:text-primary transition-colors duration-200 flex items-center gap-1 group">
+              <FiStar className="w-4 h-4 transition-transform duration-200 group-hover:scale-110" />
               Alumni
             </Link>
-            <Link href="/research" className="hover:text-primary">
+            <Link href="/research" className="hover:text-primary transition-colors duration-200 flex items-center gap-1 group">
+              <FiBook className="w-4 h-4 transition-transform duration-200 group-hover:scale-110" />
               Research
             </Link>
           </div>
         </div>
 
-        {/* Mobile Menu Button - 20% width on mobile */}
+        {/* Mobile Menu Button */}
         <div className="md:hidden w-[20%] flex items-center justify-center pr-4">
           <button
             onClick={toggleMobileMenu}
-            className="text-gray-700 hover:text-primary transition-colors"
+            className="text-gray-700 hover:text-primary transition-all duration-300 hover:scale-110"
           >
             <HiMenuAlt2 size={28} />
           </button>
@@ -412,7 +436,7 @@ const Navbar = () => {
           <div
             onMouseEnter={() => handleMouseEnter(activeDropdown)}
             onMouseLeave={handleMouseLeave}
-            className="absolute top-full left-0 w-full backdrop-blur-md bg-white/60 shadow-xl border-t border-gray-200 z-50 hidden md:block"
+            className="absolute top-full left-0 w-full backdrop-blur-md bg-white/60 shadow-xl border-t border-gray-200 z-50 hidden md:block animate-in fade-in-0 slide-in-from-top-2 duration-300"
           >
             {renderDropdownContent(dropdownContent[activeDropdown])}
           </div>
@@ -424,23 +448,26 @@ const Navbar = () => {
         <>
           {/* Overlay */}
           <div
-            className="md:hidden fixed inset-0 bg-transparent bg-opacity-50 z-40"
+            className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-40 animate-in fade-in-0 duration-300"
             onClick={toggleMobileMenu}
           />
 
           {/* Mobile Menu Panel */}
           <div
-            className={`md:hidden fixed bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-2xl z-50 transform transition-transform duration-500 ease-[cubic-bezier(0.25,0.8,0.25,1)] ${
+            className={`md:hidden fixed bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-2xl z-50 transform transition-all duration-500 ease-[cubic-bezier(0.25,0.8,0.25,1)] ${
               isMobileMenuOpen ? "translate-y-0" : "translate-y-full"
             }`}
             style={{ maxHeight: "85vh" }}
           >
             {/* Header with Close Button */}
             <div className="flex justify-between items-center p-4 border-b border-gray-200">
-              <h2 className="text-base font-semibold text-gray-900">Menu</h2>
+              <h2 className="text-base font-semibold text-gray-900 flex items-center gap-2">
+                <FiHome className="w-4 h-4" />
+                Menu
+              </h2>
               <button
                 onClick={toggleMobileMenu}
-                className="text-gray-500 hover:text-gray-700 transition-colors"
+                className="text-gray-500 hover:text-gray-700 transition-all duration-300 hover:scale-110"
               >
                 <HiX size={22} />
               </button>
@@ -456,76 +483,41 @@ const Navbar = () => {
                 <div className="border-b border-gray-200">
                   <button
                     onClick={() => toggleMobileDropdown("quickLinks")}
-                    className="w-full flex justify-between items-center py-3 text-left font-medium text-gray-900 text-sm hover:text-primary transition-colors"
+                    className="w-full flex justify-between items-center py-3 text-left font-medium text-gray-900 text-sm hover:text-primary transition-all duration-200"
                   >
-                    <span>Quick Links</span>
-                    <span className="text-lg">
-                      {mobileDropdown === "quickLinks" ? "−" : "+"}
+                    <span className="flex items-center gap-2">
+                      <FiHome className="w-4 h-4" />
+                      Quick Links
+                    </span>
+                    <span className="text-lg transition-transform duration-300">
+                      {mobileDropdown === "quickLinks" ? <FiChevronUp className="w-4 h-4" /> : <FiChevronDown className="w-4 h-4" />}
                     </span>
                   </button>
 
                   {mobileDropdown === "quickLinks" && (
-                    <div className="bg-gray-50 rounded-lg mt-1 overflow-hidden">
+                    <div className="bg-gray-50 rounded-lg mt-1 overflow-hidden animate-in fade-in-0 slide-in-from-top-2 duration-300">
                       <ul className="space-y-1 text-xs font-medium text-gray-700">
-                        <li>
-                          <a
-                            href="https://rapid.grayquest.com/iudp-master"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block px-4 py-2 hover:bg-gray-100 transition-colors"
-                          >
-                            Pay Fee
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="https://indira.edupluscampus.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block px-4 py-2 hover:bg-gray-100 transition-colors"
-                          >
-                            ERP Staff
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="https://myindira.edupluscampus.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block px-4 py-2 hover:bg-gray-100 transition-colors"
-                          >
-                            ERP Student
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="https://indiraicem.ac.in/ICEM-360-degree-virtual-tour/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block px-4 py-2 hover:bg-gray-100 transition-colors"
-                          >
-                            360° Tour
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="https://lc-icem-sumedh.vercel.app"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block px-4 py-2 hover:bg-gray-100 transition-colors"
-                          >
-                            Leaving Certificate
-                          </a>
-                        </li>
-                        <li>
-                          <Link
-                            href="/contact"
-                            className="block px-4 py-2 hover:bg-gray-100 transition-colors"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
-                            Contact Us
-                          </Link>
-                        </li>
+                        {[
+                          { label: "Pay Fee", href: "https://rapid.grayquest.com/iudp-master", icon: <FiHome className="w-3 h-3" /> },
+                          { label: "ERP Staff", href: "https://indira.edupluscampus.com/", icon: <FiBriefcase className="w-3 h-3" /> },
+                          { label: "ERP Student", href: "https://myindira.edupluscampus.com/", icon: <FiUsers className="w-3 h-3" /> },
+                          { label: "360° Tour", href: "https://indiraicem.ac.in/ICEM-360-degree-virtual-tour/", icon: <FiMapPin className="w-3 h-3" /> },
+                          { label: "Leaving Certificate", href: "https://lc-icem-sumedh.vercel.app", icon: <FiAward className="w-3 h-3" /> },
+                          { label: "Contact Us", href: "/contact", icon: <FiInfo className="w-3 h-3" /> },
+                        ].map((item, index) => (
+                          <li key={index} className="animate-in fade-in-0 slide-in-from-left-2 duration-300" 
+                              style={{ animationDelay: `${index * 50}ms` }}>
+                            <a
+                              href={item.href}
+                              target={item.href.startsWith("http") ? "_blank" : "_self"}
+                              rel={item.href.startsWith("http") ? "noopener noreferrer" : ""}
+                              className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 transition-all duration-200 hover:translate-x-1"
+                            >
+                              {item.icon}
+                              {item.label}
+                            </a>
+                          </li>
+                        ))}
                       </ul>
                     </div>
                   )}
@@ -535,11 +527,14 @@ const Navbar = () => {
                 <div className="border-b border-gray-200">
                   <button
                     onClick={() => toggleMobileDropdown("aboutUs")}
-                    className="w-full flex justify-between items-center py-3 text-left font-medium text-gray-900 text-sm hover:text-primary transition-colors"
+                    className="w-full flex justify-between items-center py-3 text-left font-medium text-gray-900 text-sm hover:text-primary transition-all duration-200"
                   >
-                    <span>About Us</span>
-                    <span className="text-lg">
-                      {mobileDropdown === "aboutUs" ? "−" : "+"}
+                    <span className="flex items-center gap-2">
+                      <FiInfo className="w-4 h-4" />
+                      About Us
+                    </span>
+                    <span className="text-lg transition-transform duration-300">
+                      {mobileDropdown === "aboutUs" ? <FiChevronUp className="w-4 h-4" /> : <FiChevronDown className="w-4 h-4" />}
                     </span>
                   </button>
                   {mobileDropdown === "aboutUs" &&
@@ -550,11 +545,14 @@ const Navbar = () => {
                 <div className="border-b border-gray-200">
                   <button
                     onClick={() => toggleMobileDropdown("campusLife")}
-                    className="w-full flex justify-between items-center py-3 text-left font-medium text-gray-900 text-sm hover:text-primary transition-colors"
+                    className="w-full flex justify-between items-center py-3 text-left font-medium text-gray-900 text-sm hover:text-primary transition-all duration-200"
                   >
-                    <span>Campus Life</span>
-                    <span className="text-lg">
-                      {mobileDropdown === "campusLife" ? "−" : "+"}
+                    <span className="flex items-center gap-2">
+                      <FiUsers className="w-4 h-4" />
+                      Campus Life
+                    </span>
+                    <span className="text-lg transition-transform duration-300">
+                      {mobileDropdown === "campusLife" ? <FiChevronUp className="w-4 h-4" /> : <FiChevronDown className="w-4 h-4" />}
                     </span>
                   </button>
                   {mobileDropdown === "campusLife" &&
@@ -568,11 +566,14 @@ const Navbar = () => {
                 <div className="border-b border-gray-200">
                   <button
                     onClick={() => toggleMobileDropdown("programs")}
-                    className="w-full flex justify-between items-center py-3 text-left font-medium text-gray-900 text-sm hover:text-primary transition-colors"
+                    className="w-full flex justify-between items-center py-3 text-left font-medium text-gray-900 text-sm hover:text-primary transition-all duration-200"
                   >
-                    <span>Programs & Admission</span>
-                    <span className="text-lg">
-                      {mobileDropdown === "programs" ? "−" : "+"}
+                    <span className="flex items-center gap-2">
+                      <FiBook className="w-4 h-4" />
+                      Programs & Admission
+                    </span>
+                    <span className="text-lg transition-transform duration-300">
+                      {mobileDropdown === "programs" ? <FiChevronUp className="w-4 h-4" /> : <FiChevronDown className="w-4 h-4" />}
                     </span>
                   </button>
                   {mobileDropdown === "programs" &&
@@ -580,41 +581,23 @@ const Navbar = () => {
                 </div>
 
                 {/* 🔹 Single Links */}
-                <div className="border-b border-gray-200">
-                  <Link
-                    href="/placement"
-                    className="block py-3 text-sm font-medium text-gray-900 hover:text-primary transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Placement
-                  </Link>
-                </div>
-
-                <div className="border-b border-gray-200">
-                  <div className="block py-3 text-sm font-medium text-gray-900">
-                    Career Development
+                {[
+                  { label: "Placement", href: "/placement", icon: <FiBriefcase className="w-4 h-4" /> },
+                  { label: "Examination", href: "/about/examination", icon: <FiAward className="w-4 h-4" /> },
+                  { label: "Alumni", href: "/alumni", icon: <FiStar className="w-4 h-4" /> },
+                  { label: "Research", href: "/research", icon: <FiBook className="w-4 h-4" /> },
+                ].map((item, index) => (
+                  <div key={index} className="border-b border-gray-200">
+                    <Link
+                      href={item.href}
+                      className="flex items-center gap-2 py-3 text-sm font-medium text-gray-900 hover:text-primary transition-all duration-200 hover:translate-x-1"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {item.icon}
+                      {item.label}
+                    </Link>
                   </div>
-                </div>
-
-                <div className="border-b border-gray-200">
-                  <Link
-                    href="/alumni"
-                    className="block py-3 text-sm font-medium text-gray-900 hover:text-primary transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Alumni
-                  </Link>
-                </div>
-
-                <div className="border-b border-gray-200">
-                  <Link
-                    href="/research"
-                    className="block py-3 text-sm font-medium text-gray-900 hover:text-primary transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Research
-                  </Link>
-                </div>
+                ))}
               </div>
 
               {/* 🔹 Compact Enquire Now Button */}
@@ -624,7 +607,7 @@ const Navbar = () => {
                     toggleModal();
                     setIsMobileMenuOpen(false);
                   }}
-                  className="w-full bg-primary text-white py-2 text-sm font-semibold rounded-md hover:bg-primary/90 transition-colors"
+                  className="w-full bg-gradient-to-r from-[#278da4] to-[#003c84] text-white py-2 text-sm font-semibold rounded-md hover:from-[#278da4]/90 hover:to-[#003c84]/90 transition-all duration-300 hover:scale-105 hover:shadow-lg"
                 >
                   Enquire Now
                 </button>
@@ -636,23 +619,29 @@ const Navbar = () => {
 
       {/* ===== Helpline Drawer ===== */}
       <div
-        className={`fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transform transition-transform duration-300 ease-in-out z-50 ${
+        className={`fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transform transition-all duration-500 ease-in-out z-50 ${
           isHelplineOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="bg-primary text-white p-4 flex justify-between items-center">
-          <h3 className="text-lg font-bold">Admissions Helpline</h3>
-          <button onClick={toggleHelpline}>
+          <h3 className="text-lg font-bold flex items-center gap-2">
+            <FiInfo className="w-5 h-5" />
+            Admissions Helpline
+          </h3>
+          <button 
+            onClick={toggleHelpline}
+            className="hover:scale-110 transition-transform duration-300"
+          >
             <HiX size={24} />
           </button>
         </div>
 
         <div className="p-6 text-gray-800 space-y-6 overflow-y-auto h-full">
-          <div>
+          <div className="animate-in fade-in-0 slide-in-from-right-2 duration-500">
             <p className="text-sm text-gray-600">
               For more information give a miss call on
             </p>
-            <div className="bg-blue-50 p-4 rounded-lg">
+            <div className="bg-blue-50 p-4 rounded-lg mt-2 transition-all duration-300 hover:shadow-md">
               <p className="text-2xl font-bold text-primary text-center">
                 1800 267 1999
               </p>
@@ -663,25 +652,25 @@ const Navbar = () => {
 
       {isHelplineOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40"
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 animate-in fade-in-0 duration-300"
           onClick={toggleHelpline}
         />
       )}
 
       {/* ===== APPLY NOW MODAL ===== */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex justify-center items-center z-[60]">
-          <div className="bg-white w-[90%] md:w-[680px] p-6 rounded-lg shadow-lg relative max-h-[90vh] overflow-y-auto">
+        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex justify-center items-center z-[60] animate-in fade-in-0 duration-300">
+          <div className="bg-white w-[90%] md:w-[680px] p-6 rounded-lg shadow-lg relative max-h-[90vh] overflow-y-auto animate-in fade-in-0 zoom-in-95 duration-500">
             {/* Close Button */}
             <button
               onClick={toggleModal}
               aria-label="Close"
-              className="absolute top-3 right-3 text-gray-600 hover:text-red-600 text-2xl"
+              className="absolute top-3 right-3 text-gray-600 hover:text-red-600 text-2xl transition-all duration-300 hover:scale-110"
             >
               ×
             </button>
 
-            <h2 className="text-2xl font-bold text-center mb-6 text-blue-900">
+            <h2 className="text-2xl font-bold text-center mb-6 text-blue-900 animate-in fade-in-0 slide-in-from-top-2 duration-500">
               Apply Now
             </h2>
 
@@ -690,17 +679,17 @@ const Navbar = () => {
               <input
                 type="text"
                 placeholder="Enter Name *"
-                className="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E85C0D]"
+                className="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105"
               />
               <input
                 type="email"
                 placeholder="Enter Email Address *"
-                className="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E85C0D]"
+                className="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105"
               />
 
               {/* Mobile */}
               <div className="flex gap-2">
-                <select className="w-24 border border-gray-300 rounded-md px-2 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D]">
+                <select className="w-24 border border-gray-300 rounded-md px-2 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105">
                   <option value="" selected className="text-gray-400">
                     +91
                   </option>
@@ -711,13 +700,13 @@ const Navbar = () => {
                 <input
                   type="tel"
                   placeholder="Enter Mobile Number *"
-                  className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E85C0D]"
+                  className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105"
                 />
               </div>
 
               {/* State & City */}
               <div className="flex gap-2">
-                <select className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D]">
+                <select className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105">
                   <option value="" disabled selected className="text-gray-400">
                     Select State *
                   </option>
@@ -728,7 +717,7 @@ const Navbar = () => {
                     Karnataka
                   </option>
                 </select>
-                <select className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D]">
+                <select className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105">
                   <option value="" disabled selected className="text-gray-400">
                     Select City *
                   </option>
@@ -743,7 +732,7 @@ const Navbar = () => {
 
               {/* Discipline & Course */}
               <div className="flex gap-2">
-                <select className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D]">
+                <select className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105">
                   <option value="" disabled selected className="text-gray-400">
                     Select Discipline Applying For *
                   </option>
@@ -754,7 +743,7 @@ const Navbar = () => {
                     Management
                   </option>
                 </select>
-                <select className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D]">
+                <select className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105">
                   <option value="" disabled selected className="text-gray-400">
                     Select Course *
                   </option>
@@ -774,7 +763,7 @@ const Navbar = () => {
               </div>
 
               {/* Program */}
-              <select className="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D]">
+              <select className="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105">
                 <option value="" disabled selected className="text-gray-400">
                   Select Program *
                 </option>
@@ -790,24 +779,24 @@ const Navbar = () => {
               <input
                 type="text"
                 placeholder="Enter CET Score"
-                className="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E85C0D]"
+                className="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105"
               />
 
               {/* Captcha */}
               <div className="flex gap-3 items-center">
-                <div className="bg-gray-100 border border-gray-300 rounded-md w-1/2 flex items-center justify-center py-2 text-gray-700 font-bold select-none">
+                <div className="bg-gray-100 border border-gray-300 rounded-md w-1/2 flex items-center justify-center py-2 text-gray-700 font-bold select-none transition-all duration-300 hover:shadow-md">
                   8fcb09
                 </div>
                 <input
                   type="text"
                   placeholder="Enter Captcha"
-                  className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E85C0D]"
+                  className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105"
                 />
               </div>
 
               {/* Checkbox */}
               <div className="flex items-center gap-2 mt-2">
-                <input type="checkbox" id="agreeModal" />
+                <input type="checkbox" id="agreeModal" className="transition-all duration-300 hover:scale-110" />
                 <label htmlFor="agreeModal" className="text-sm text-gray-700">
                   I agree to receive information regarding my submitted enquiry*
                 </label>
@@ -816,7 +805,7 @@ const Navbar = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-[#E85C0D] hover:bg-[#d14f08] text-white font-semibold py-2 rounded-md transition"
+                className="w-full bg-[#E85C0D] hover:bg-[#d14f08] text-white font-semibold py-2 rounded-md transition-all duration-300 hover:scale-105 hover:shadow-lg"
               >
                 SUBMIT
               </button>

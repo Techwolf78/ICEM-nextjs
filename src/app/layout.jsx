@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import FixedActionBar from "@/components/FixedActionBar";
 import Loader from "@/components/Loader";
 
+
 export default function RootLayout({ children }) {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -18,6 +19,8 @@ export default function RootLayout({ children }) {
 
     return () => clearTimeout(timer);
   }, []);
+
+ 
 
   return (
     <html lang="en">

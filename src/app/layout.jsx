@@ -31,6 +31,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="flex flex-col min-h-screen bg-white">
         <Loader isLoading={isLoading} />
+        
         <Navbar />
         <FixedActionBar />
         <main className="flex-grow">{children}</main>

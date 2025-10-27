@@ -275,7 +275,7 @@ const Navbar = () => {
   return (
     <>
       {/* ===== NAVBAR ===== */}
-      <nav className="w-full h-[12vh] flex bg-white shadow-sm font-sans relative">
+      <nav className="w-full h-[12vh] flex bg-white shadow-sm font-sans relative sticky top-0 z-50">
         {/* Left: Logo - 80% width on mobile */}
         <div className="w-full md:w-[30%] h-full flex items-center justify-start  md:pl-0 md:justify-center">
           <Link href="/">

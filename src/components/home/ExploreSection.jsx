@@ -1,8 +1,37 @@
 "use client";
-import React from "react";
+
+import React, { useRef, useEffect } from "react";
 import Image from "next/image";
 
 const ExploreSection = () => {
+  const videoRef = useRef(null);
+
+  // ✅ Ensure video auto-plays after hydration
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      const playVideo = () => {
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            // Browser blocked autoplay → retry when user interacts
+            const resumePlay = () => {
+              video.play().catch(() => {});
+              document.removeEventListener("scroll", resumePlay);
+              document.removeEventListener("click", resumePlay);
+            };
+            document.addEventListener("scroll", resumePlay);
+            document.addEventListener("click", resumePlay);
+          });
+        }
+      };
+
+      // Try once video is ready to play
+      video.addEventListener("canplaythrough", playVideo, { once: true });
+      playVideo();
+    }
+  }, []);
+
   const cards = [
     { title: "NAAC", img: null },
     { title: "NIRF", img: null },
@@ -11,11 +40,11 @@ const ExploreSection = () => {
   ];
 
   return (
-    <div className="relative bg-gray-50 mt-2   h-auto lg:h-[55vh] px-4 sm:px-6 py-0 overflow-hidden">
+    <div className="relative bg-gray-50 mt-2 h-auto lg:h-[55vh] px-4 sm:px-6 py-0 overflow-hidden">
       {/* ✅ Desktop Layout */}
-      <div className="hidden lg:flex flex-col mx-auto max-w-7xl justify-center  w-full h-full">
+      <div className="hidden lg:flex flex-col mx-auto max-w-7xl justify-center w-full h-full">
         {/* 🔹 Top Section */}
-        <div className="w-full h-[20%] flex items-center justify-between  px-6">
+        <div className="w-full h-[20%] flex items-center justify-between px-6">
           {/* Left: Heading */}
           <div className="w-[50%] flex flex-col justify-center">
             <h2 className="text-2xl font-bold text-gray-900 leading-tight">
@@ -30,11 +59,13 @@ const ExploreSection = () => {
           <div className="w-[50%] flex items-center justify-center">
             <div className="w-[90%] h-[12vh] max-h-[90px] animate-slideMirror pointer-events-none opacity-90">
               <video
+                ref={videoRef}
                 src="/chanakya.webm"
                 autoPlay
                 loop
                 muted
                 playsInline
+                preload="auto"
                 className="h-full w-full object-contain"
               />
             </div>
@@ -42,7 +73,7 @@ const ExploreSection = () => {
         </div>
 
         {/* 🔹 Bottom Section */}
-        <div className="w-full h-[50%] flex items-stretch justify-between  px-6">
+        <div className="w-full h-[50%] flex items-stretch justify-between px-6">
           {/* Left: Paragraph */}
           <div className="w-[50%] h-full flex items-center pr-8">
             <p className="text-gray-700 text-[1.12rem] leading-relaxed text-justify">
@@ -84,16 +115,18 @@ const ExploreSection = () => {
         </div>
       </div>
 
-      {/* ✅ Mobile / Tablet Layout (unchanged) */}
+      {/* ✅ Mobile / Tablet Layout */}
       <div className="lg:hidden grid grid-cols-1 gap-8 sm:gap-10 items-center relative z-10">
         {/* Floating Chanakya GIF */}
         <div className="hidden sm:block absolute top-2 right-4 sm:right-20 h-[10vh] sm:h-[12vh] w-[60vw] sm:w-[40vw] animate-slideMirror pointer-events-none opacity-90">
           <video
+            ref={videoRef}
             src="/chanakya.webm"
             autoPlay
             loop
             muted
             playsInline
+            preload="auto"
             className="h-full w-full object-contain"
           />
         </div>

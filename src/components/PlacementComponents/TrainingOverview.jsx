@@ -75,22 +75,22 @@ export default function TrainingOverview() {
   }, [isVisible]);
 
   return (
-    <section ref={sectionRef} className="py-10 bg-white">
-      <div className="max-w-7xl mx-auto px-6 text-center">
+    <section ref={sectionRef} className="py-8 sm:py-10 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
         {/* Section Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-5">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary mb-4 sm:mb-5">
           Training Overview
         </h2>
 
         {/* Section Description */}
-        <p className="text-md text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
+        <p className="text-sm sm:text-md text-gray-700 max-w-3xl mx-auto mb-8 sm:mb-10 lg:mb-12 leading-relaxed">
           Structured training across core and domain-specific areas,
           meticulously designed to equip students with the skills, knowledge,
           and industry readiness required for professional success.
         </p>
 
         {/* Grid Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           {trainingData.map((item, index) => (
             <div
               key={index}
@@ -98,17 +98,17 @@ export default function TrainingOverview() {
                 index % 2 === 0
                   ? "bg-primary text-white"
                   : "bg-white text-gray-900 border border-gray-200"
-              } flex flex-col items-center justify-center py-10 px-6 rounded-md shadow-md`}
+              } flex flex-col items-center justify-center py-6 sm:py-8 lg:py-10 px-4 sm:px-6 rounded-md shadow-md`}
             >
               {/* Top Number */}
-              <h3 className="text-5xl font-extrabold mb-2">{counts[index]}+</h3>
-              <p className="text-base font-medium text-center">
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-2">{counts[index]}+</h3>
+              <p className="text-xs sm:text-sm lg:text-base font-medium text-center">
                 {item.labelTop}
               </p>
 
               {/* Divider */}
               <div
-                className={`w-2/3 my-4 ${
+                className={`w-2/3 my-3 sm:my-4 ${
                   index % 2 === 0
                     ? "border-t border-white/60"
                     : "border-t border-gray-400"
@@ -116,8 +116,8 @@ export default function TrainingOverview() {
               ></div>
 
               {/* Bottom Number */}
-              <h3 className="text-5xl font-extrabold mb-2">{counts[index]}+</h3>
-              <p className="text-base font-medium text-center">
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-2">{counts[index]}+</h3>
+              <p className="text-xs sm:text-sm lg:text-base font-medium text-center">
                 {item.labelBottom}
               </p>
             </div>

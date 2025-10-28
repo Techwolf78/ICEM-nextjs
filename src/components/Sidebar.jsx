@@ -13,7 +13,8 @@ export default function Sidebar() {
     course: "",
     program: "",
     cetScore: "",
-    captcha: ""
+    captcha: "",
+    countryCode: "+91"
   });
 
   // ✅ About Us Links
@@ -59,9 +60,6 @@ export default function Sidebar() {
     { label: "M-Tech in Computer Science", link: "/programs/mtech-comp" },
   ];
 
-  // ✅ Placement Links
-
-
   // ✅ Accreditation Links
   const accreditationLinks = [
     { label: "NAAC - SSR Reports", link: "/accreditation/naac-ssr" },
@@ -92,7 +90,7 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="w-full h-full bg-primary text-white p-6 rounded-xl shadow-lg flex flex-col overflow-y-auto">
+    <div className="w-full h-full bg-primary text-white p-6 rounded-xl shadow-lg flex flex-col">
       {/* ===== Navigation Links ===== */}
       <div className="space-y-6 mb-8">
         {/* About Us */}
@@ -110,7 +108,7 @@ export default function Sidebar() {
         {/* Campus Life */}
         <div>
           <h4 className="font-semibold text-white/90 mb-3 border-l-4 border-accent pl-2">Campus Life</h4>
-          <div className="space-y-2 max-h-48 overflow-y-auto pr-1">
+          <div className="space-y-2">
             {campusLifeLinks.map((link, i) => (
               <Link key={i} href={link.link} className="block text-sm text-white/80 hover:text-white hover:bg-white/10 p-2 rounded transition-all duration-200 hover:translate-x-1">
                 • {link.label}
@@ -122,7 +120,7 @@ export default function Sidebar() {
         {/* Programs */}
         <div>
           <h4 className="font-semibold text-white/90 mb-3 border-l-4 border-accent pl-2">Programs & Admission</h4>
-          <div className="space-y-2 max-h-48 overflow-y-auto pr-1">
+          <div className="space-y-2">
             {programLinks.map((link, i) => (
               <Link key={i} href={link.link} className="block text-sm text-white/80 hover:text-white hover:bg-white/10 p-2 rounded transition-all duration-200 hover:translate-x-1">
                 • {link.label}
@@ -131,13 +129,10 @@ export default function Sidebar() {
           </div>
         </div>
 
-        {/* Placement */}
-
-
         {/* Accreditation */}
         <div>
           <h4 className="font-semibold text-white/90 mb-3 border-l-4 border-accent pl-2">Accreditation</h4>
-          <div className="space-y-2 max-h-48 overflow-y-auto pr-1">
+          <div className="space-y-2">
             {accreditationLinks.map((link, i) => (
               <Link key={i} href={link.link} className="block text-sm text-white/80 hover:text-white hover:bg-white/10 p-2 rounded transition-all duration-200 hover:translate-x-1">
                 • {link.label}
@@ -185,7 +180,7 @@ export default function Sidebar() {
             <input
               type="tel"
               name="phone"
-              placeholder="Enter Mobile Number *"
+              placeholder="Mobile Number *"
               className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 text-sm"
               value={formData.phone}
               onChange={handleInputChange}
@@ -194,54 +189,59 @@ export default function Sidebar() {
           </div>
 
           {/* State & City */}
-          <div className="flex gap-2">
+          <div className="grid grid-cols-2 gap-2">
             <select 
               name="state"
-              className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 text-sm"
+              className="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 text-sm"
               value={formData.state}
               onChange={handleInputChange}
               required
             >
-              <option value="" disabled selected>Select State *</option>
+              <option value="" disabled>State *</option>
               <option value="Maharashtra">Maharashtra</option>
               <option value="Karnataka">Karnataka</option>
             </select>
             <select 
               name="city"
-              className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 text-sm"
+              className="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 text-sm"
               value={formData.city}
               onChange={handleInputChange}
               required
             >
-              <option value="" disabled selected>Select City *</option>
+              <option value="" disabled>City *</option>
               <option value="Pune">Pune</option>
               <option value="Mumbai">Mumbai</option>
             </select>
           </div>
 
           {/* Discipline & Course */}
-          <div className="flex gap-2">
+          <div className="space-y-2">
             <select 
               name="discipline"
-              className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 text-sm"
+              className="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 text-sm"
               value={formData.discipline}
               onChange={handleInputChange}
               required
             >
-              <option value="" disabled selected>Select Discipline *</option>
+              <option value="" disabled>Select Discipline *</option>
               <option value="Engineering">Engineering</option>
               <option value="Management">Management</option>
             </select>
             <select 
               name="course"
-              className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 text-sm"
+              className="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 text-sm"
               value={formData.course}
               onChange={handleInputChange}
               required
             >
-              <option value="" disabled selected>Select Course *</option>
+              <option value="" disabled>Select Course *</option>
               <option value="Computer Engineering">Computer Engineering</option>
               <option value="Mechanical Engineering">Mechanical Engineering</option>
+              <option value="Artificial Intelligence and Data Science">AI & Data Science</option>
+              <option value="Electronics and Telecommunication">ENTC</option>
+              <option value="Information Technology">IT</option>
+              <option value="MBA">MBA</option>
+              <option value="MCA">MCA</option>
             </select>
           </div>
 
@@ -253,9 +253,13 @@ export default function Sidebar() {
             onChange={handleInputChange}
             required
           >
-            <option value="" disabled selected>Select Program *</option>
+            <option value="" disabled>Select Program *</option>
             <option value="B.Tech">B.Tech</option>
             <option value="M.Tech">M.Tech</option>
+            <option value="MBA">MBA</option>
+            <option value="MCA">MCA</option>
+            <option value="Integrated MBA">Integrated MBA</option>
+            <option value="Integrated MCA">Integrated MCA</option>
           </select>
 
           {/* CET Score */}

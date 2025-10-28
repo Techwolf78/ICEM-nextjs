@@ -372,7 +372,7 @@ export default function AIDS() {
                 <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
                   <div className="w-full h-48 relative">
                     <Image
-                      src="/Programs/AIDSET.jpeg"
+                      src="/Programs/AIDS/AIDSET.jpeg"
                       alt="Interdisciplinary Expertise"
                       fill
                       className="object-cover"
@@ -398,7 +398,7 @@ export default function AIDS() {
                 <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
                   <div className="w-full h-48 relative">
                     <Image
-                      src="/Programs/AIDSL.jpeg"
+                      src="/Programs/AIDS/AIDSL.jpeg"
                       alt="Cutting-Edge Laboratories"
                       fill
                       className="object-cover"
@@ -423,7 +423,7 @@ export default function AIDS() {
                 <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
                   <div className="w-full h-48 relative">
                     <Image
-                      src="/Programs/AIDSIT.jpeg"
+                      src="/Programs/AIDS/AIDSIT.jpeg"
                       alt="Industry-Relevant Skills"
                       fill
                       className="object-cover object-top-right"

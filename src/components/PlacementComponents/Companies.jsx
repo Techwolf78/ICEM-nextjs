@@ -1,87 +1,66 @@
 "use client";
+
+import React from "react";
 import Image from "next/image";
 
-export default function Companies() {
-  const logos = [
-    "/logos/logo1.png",
-    "/logos/logo2.png",
-    "/logos/logo3.png",
-    "/logos/logo4.png",
-    "/logos/logo5.png",
-    "/logos/logo6.png",
-    "/logos/logo7.png",
-    "/logos/logo8.png",
-    "/logos/logo9.png",
-    "/logos/logo10.png",
-    "/logos/logo11.png",
-    "/logos/logo12.png",
-    "/logos/logo42.png",
-    "/logos/logo14.png",
-    "/logos/logo41.png",
-    "/logos/logo16.png",
-    "/logos/logo17.png",
-    "/logos/logo18.png",
-    "/logos/logo19.png",
-    "/logos/logo20.png",
-    "/logos/logo21.png",
-    "/logos/logo22.png",
-    "/logos/logo23.png",
-    "/logos/logo24.png",
-    "/logos/logo25.png",
-    "/logos/logo26.png",
-    "/logos/logo27.png",
-    "/logos/logo28.png",
-    "/logos/logo29.png",
-    "/logos/logo30.png",
-    "/logos/logo31.png",
-    "/logos/logo32.png",
-    "/logos/logo33.png",
-    "/logos/logo34.png",
-    "/logos/logo35.png",
-    "/logos/logo36.png",
-    "/logos/logo37.png",
-    "/logos/logo38.png",
-    "/logos/logo39.png",
-    "/logos/logo40.png",
-    "/logos/logo43.png",
-    "/logos/logo44.png",
-  ];
+const Companies = () => {
+  // ✅ Load all 44 logos, excluding 13 & 15
+  const allLogos = Array.from(
+    { length: 44 },
+    (_, i) => `/logos/logo${i + 1}.png`
+  ).filter((_, index) => ![35, 37].includes(index + 1));
+
+  // ✅ Remove logos 18 & 25 (they are behind the circle)
+  const mainLogos = allLogos.filter((_, index) => ![17, 24].includes(index));
+
+  // ✅ Add logos 18 & 25 to the end (last row)
+  const reorderedLogos = [...mainLogos, allLogos[17], allLogos[24]];
 
   return (
-    <>
-      <section className="py-5 bg-white">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          {/* Heading */}
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-4 uppercase">
-            Your Career, Connected to the Best
-          </h2>
-          <p className="text-gray-700 max-w-4xl mx-auto mb-12 leading-relaxed">
-            The consistent quality and industry-readiness of ICEM graduates have
-            made our campus a preferred recruitment destination for top-tier
-            companies across the globe. These partnerships are a testament to
-            our shared commitment to nurturing future-ready professionals
-          </p>
+    <div className="bg-gray-50 py-12 sm:py-16 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+        {/* ✅ Section Heading */}
+        <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-4 sm:mb-6 uppercase">
+          Your Career, Connected to the Best
+        </h2>
 
-          {/* ✅ Recruiter Logos Grid (replaces placeholders) */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-x-4 gap-y-3 place-items-center">
-            {logos.map((logo, index) => (
-              <div
-                key={index}
-                className="relative flex items-center justify-center w-28 h-16 bg-gray-50 border border-gray-200 rounded-md shadow-sm hover:shadow-md transition-all duration-300"
-              >
-                <Image
-                  src={logo}
+        {/* ✅ Description */}
+        <p className="text-gray-700 text-xs sm:text-sm max-w-5xl mx-auto leading-relaxed mb-10 sm:mb-12 px-2">
+          The consistent quality and industry-readiness of ICEM graduates have made our campus a preferred recruitment destination for top-tier companies across the globe. These partnerships are a testament to our shared commitment to nurturing future-ready professionals
+        </p>
+
+        {/* ✅ Recruiter Logos Grid */}
+        <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-x-2 sm:gap-x-3 gap-y-5 sm:gap-y-7 place-items-center relative">
+          {reorderedLogos.map((logo, index) => (
+            <div
+              key={index}
+              className={`flex items-center justify-center w-20 sm:w-24 md:w-28 h-14 sm:h-16 bg-white rounded-md shadow-sm hover:shadow-md transition-all duration-300 ${
+                // 🟢 Logos 18 & 25 visible on mobile, hidden only on sm+
+                [17, 24].includes(index) ? "sm:invisible" : ""
+              }`}
+            >
+              <Image
+                src={logo}
                 alt={`Recruiter Logo ${index + 1}`}
-                fill
-                className="object-contain p-2 hover:scale-105 transition-transform duration-300"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                priority={index < 7} // load first row faster
-                />
-              </div>
-            ))}
+                width={100}
+                height={60}
+                className="object-contain max-w-[75%] max-h-[50px] sm:max-w-[80%] sm:max-h-[60px] hover:grayscale-0 transition duration-300"
+                loading={index < 7 ? "eager" : "lazy"}
+                priority={index < 7}
+              />
+            </div>
+          ))}
+
+          {/* ✅ Center Circle Badge (hidden on mobile) */}
+          <div className="hidden sm:block absolute top-[49%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+            <div className="w-28 h-28 md:w-40 md:h-40 rounded-full bg-[linear-gradient(145deg,_#278da4_0%,_#003c84_90%)] text-white flex flex-col items-center justify-center shadow-xl border-[4px] border-[#D4AF37]">
+              <p className="text-lg md:text-2xl font-bold">350+</p>
+              <p className="text-xs md:text-base font-medium">Corporates</p>
+            </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </div>
   );
-}
+};
+export default Companies;

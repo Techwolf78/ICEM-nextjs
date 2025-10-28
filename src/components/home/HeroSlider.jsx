@@ -59,7 +59,7 @@ const HeroSlider = () => {
 
   useEffect(() => {
     if (!desktopImages.length && !mobileImages.length) return;
-    const interval = setInterval(() => handleNext(), 3000);
+    const interval = setInterval(() => handleNext(), 5000);
     return () => clearInterval(interval);
   }, [currentIndex, desktopImages, mobileImages]);
 
@@ -90,13 +90,13 @@ const HeroSlider = () => {
       {/* ✅ SPOTLIGHT Ribbon + Seamless Marquee (TOP) */}
       <div className="w-full bg-white border-b border-gray-200 flex items-center overflow-hidden relative">
         {/* Blue Ribbon with Right Side Cut (< shape) */}
-        <div className="relative flex items-center justify-center bg-blue-100 text-white font-semibold text-sm sm:text-base px-8 py-2 clip-ribbon-left z-10">
+        <div className="relative flex items-center justify-center bg-blue-100 text-white font-semibold text-sm  px-8 py-2 clip-ribbon-left z-10">
           SPOTLIGHT
         </div>
 
         {/* Seamless Marquee Text */}
         <div className="flex-1 overflow-hidden whitespace-nowrap relative bg-white">
-          <div className="flex animate-seamlessMarquee text-secondary font-semibold text-sm sm:text-base py-2">
+          <div className="flex animate-seamlessMarquee text-secondary font-semibold text-sm  py-2">
             <span className="mr-12">🔹 Public Advisory Notice</span>
             <span className="mr-12">🔹 All 4 PG Programs Computer Engineering</span>
             <span className="mr-12">🔹 Admission Open for Academic Year 2025-26</span>
@@ -145,6 +145,7 @@ const HeroSlider = () => {
                   quality={100}
                   unoptimized={true}
                   priority
+                  optimization={false}
                 />
               ))}
             </div>
@@ -154,7 +155,7 @@ const HeroSlider = () => {
               {desktopImages.map((_, i) => (
                 <div
                   key={i}
-                  className={`relative h-2 rounded-full overflow-hidden transition-all duration-300 cursor-pointer ${
+                  className={`relative h-2 rounded-full overflow-hidden transition-all duration-500 cursor-pointer ${
                     currentIndex % desktopImages.length === i
                       ? "w-8 bg-gray-300"
                       : "w-2 bg-gray-500/60"

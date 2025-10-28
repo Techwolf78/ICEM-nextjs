@@ -1,6 +1,67 @@
 @import "tailwindcss";
 
 
+@keyframes particles {
+  0% { transform: translateY(0px) }
+  50% { transform: translateY(-6px) }
+  100% { transform: translateY(0px) }
+}
+
+@keyframes reflect-slide {
+  0% { transform: translateX(-200%) }
+  100% { transform: translateX(200%) }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.animate-pulse-slow {
+  animation: particles 6s ease-in-out infinite;
+}
+
+.animate-reflect {
+  animation: reflect-slide 3.5s ease-in-out infinite;
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: particles 5s ease-in-out infinite;
+}
+.animate-float-medium {
+  animation: particles 4s ease-in-out infinite;
+}
+.animate-float-slow {
+  animation: particles 7s ease-in-out infinite;
+}
+
+.glass-card {
+  background: rgba(15,15,15,0.5);
+  padding: 12px 22px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(0,255,255,0.08);
+}
+
+.glass-btn {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(6px);
+  color: white;
+}
+
 
 
 /* =======================

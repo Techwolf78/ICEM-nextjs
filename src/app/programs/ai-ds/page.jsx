@@ -97,7 +97,7 @@ export default function AIDS() {
           <div className="flex-1">
             <div className="w-full h-[300px] relative rounded-lg overflow-hidden">
               <Image
-                src="/Programs/AIDSIMGPH.jpeg"
+                src="/Programs/AIDS/AIDSIMGPH.jpeg"
                 alt="Artificial Intelligence Program"
                 fill
                 className="object-cover"
@@ -478,7 +478,7 @@ export default function AIDS() {
               <div className="flex-1">
                 <div className="w-full h-[300px] relative rounded-lg overflow-hidden">
                   <Image
-                    src="/Programs/CO.jpg"
+                    src="/Programs/AIDS/CO.jpg"
                     alt="Career Opportunities in AI and Future Technologies"
                     fill
                     className="object-cover"

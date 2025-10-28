@@ -288,6 +288,7 @@ const Navbar = () => {
               width={240}
               className="h-40 w-[80%] md:h-24 md:w-full cursor-pointer object-contain transition-transform duration-300 "
               priority
+              optimization={false}
             />
           </Link>
         </div>

@@ -75,7 +75,7 @@ export default function Upskilling() {
     <>
       {/* Upskilling for the Future Section (Balanced Compact Layout) */}
       <section className="py-8 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* Title */}
           <h2 className="text-2xl md:text-3xl font-bold text-center text-secondary mb-8">
             Upskilling for the Future
@@ -141,37 +141,38 @@ export default function Upskilling() {
 
       {/* Engineering - Technical Section */}
       <section className="py-10 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-10 uppercase">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary mb-8 sm:mb-10 uppercase">
             Engineering - Technical
           </h2>
 
           {/* Columns (Mechanical / Civil / ENTC) */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-3">
             {sections.map((section, idx) => (
               <div key={idx} className="text-center">
-                <h3 className="text-lg font-bold text-secondary mb-5 uppercase tracking-wide">
+                <h3 className="text-base sm:text-lg font-bold text-secondary mb-4 sm:mb-5 uppercase tracking-wide">
                   {section.title}
                 </h3>
 
                 {/* Logos Grid (Same style as Companies section) */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 justify-items-center">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 justify-items-center">
                   {section.items.map((item, index) => (
                     <div
                       key={index}
-                      className="relative h-20 w-20 bg-white border border-gray-200 flex items-center justify-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all rounded-md overflow-hidden group"
+                      className="relative h-16 sm:h-18 md:h-20 w-16 sm:w-18 md:w-20 bg-white border border-gray-200 flex items-center justify-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all rounded-md overflow-hidden group"
                     >
                       {/* Logo */}
                       <Image
                         src={item.image}
                         alt={item.name}
-                        className="h-13 w-13 object-contain transition-transform duration-300 group-hover:scale-110 p-2"
+                        className="h-10 sm:h-12 w-10 sm:w-12 object-contain transition-transform duration-300 group-hover:scale-110 p-1 sm:p-2"
                         fill
+                        sizes="(max-width: 640px) 64px, (max-width: 768px) 72px, 80px"
                       />
 
                       {/* Hover Text Overlay */}
                       <div className="absolute inset-0 bg-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p className="text-[10px] text-secondary font-semibold text-center px-2 leading-tight">
+                        <p className="text-[10px] sm:text-[11px] text-secondary font-semibold text-center px-1 leading-tight">
                           {item.name}
                         </p>
                       </div>

@@ -57,56 +57,57 @@ export default function Testimonials() {
     autoplaySpeed: 4500,
     arrows: false,
     pauseOnHover: true,
+    adaptiveHeight: true,
   };
 
-    return (
-    <section className="py-16 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row gap-12 items-start">
+  return (
+    <section className="py-12 sm:py-16 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
           
           {/* Left Side - Heading Section */}
-          <div className="lg:w-2/5 text-left">
-            <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-4">
+          <div className="lg:w-2/5 text-center lg:text-left">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary mb-4">
               Trusted by the Best in the Business
             </h2>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
               Our strongest endorsements come from our recruitment partners. Discover why leading companies consistently choose ICEM graduates to drive their success.
             </p>
           </div>
 
           {/* Right Side - Testimonials Carousel */}
-          <div className="lg:w-3/5">
+          <div className="lg:w-3/5 w-full">
             <Slider {...settings}>
               {testimonials.map((item, index) => (
-                <div key={index}>
-                  <div className="flex flex-col items-center border border-gray-200 rounded-xl p-6">
+                <div key={index} className="px-2">
+                  <div className="flex flex-col items-center border border-gray-200 rounded-xl p-4 sm:p-6">
                     {/* Quote Box */}
-                    <div className="bg-secondary/5  p-8 relative max-w-2xl mx-auto mb-8">
-                      <FaQuoteLeft className="text-primary text-xl absolute -top-2 left-4 opacity-90" />
-                      <p className="italic text-gray-700 text-sm md:text-base leading-relaxed px-2">
+                    <div className="bg-secondary/5 p-4 sm:p-6 md:p-8 relative w-full mx-auto mb-4 sm:mb-6 md:mb-8">
+                      <FaQuoteLeft className="text-primary text-lg sm:text-xl absolute -top-2 left-2 sm:left-4 opacity-90" />
+                      <p className="italic text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed px-1 sm:px-2">
                         {item.quote}
                       </p>
-                      <FaQuoteRight className="text-primary text-xl absolute -bottom-2 right-4 opacity-90" />
+                      <FaQuoteRight className="text-primary text-lg sm:text-xl absolute -bottom-2 right-2 sm:right-4 opacity-90" />
                     </div>
 
-                    {/* Name, Position and Logo in same line */}
-                    <div className="flex justify-between items-center w-full max-w-2xl px-4">
-                      {/* Name and Position on Left */}
-                      <div className="text-left">
-                        <h3 className="text-lg font-bold text-secondary mb-1">
+                    {/* Name, Position and Logo */}
+                    <div className="flex flex-col sm:flex-row justify-between items-center w-full max-w-2xl px-2 sm:px-4 gap-3 sm:gap-0">
+                      {/* Name and Position */}
+                      <div className="text-center sm:text-left flex-1">
+                        <h3 className="text-base sm:text-lg font-bold text-secondary mb-1">
                           {item.name}
                         </h3>
-                        <p className="text-sm text-gray-600">{item.position}</p>
+                        <p className="text-xs sm:text-sm text-gray-600 leading-tight">{item.position}</p>
                       </div>
 
-                      {/* Logo on Right */}
-                      <div className="w-32 h-16 relative bg-white p-2 rounded-lg shadow-md border border-gray-100">
+                      {/* Logo */}
+                      <div className="w-20 sm:w-24 md:w-28 h-10 sm:h-12 md:h-14 relative bg-white p-1 sm:p-2 rounded-lg shadow-md border border-gray-100">
                         <Image
                           src={item.image}
                           alt={item.name}
                           fill
                           className="object-contain"
-                          sizes="(max-width: 768px) 128px, 128px"
+                          sizes="(max-width: 640px) 80px, (max-width: 768px) 96px, 112px"
                         />
                       </div>
                     </div>
@@ -117,14 +118,25 @@ export default function Testimonials() {
 
             {/* Custom dot styling */}
             <style jsx>{`
+              :global(.slick-dots) {
+                bottom: -40px !important;
+              }
               :global(.slick-dots li button:before) {
                 color: #3b82f6 !important;
                 opacity: 0.4;
-                font-size: 10px;
+                font-size: 8px !important;
               }
               :global(.slick-dots li.slick-active button:before) {
                 opacity: 1;
                 color: #3b82f6 !important;
+              }
+              @media (min-width: 640px) {
+                :global(.slick-dots) {
+                  bottom: -45px !important;
+                }
+                :global(.slick-dots li button:before) {
+                  font-size: 10px !important;
+                }
               }
             `}</style>
           </div>

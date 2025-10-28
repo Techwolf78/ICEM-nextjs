@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef } from "react";
-import FAQSection from "@/components/FAQSection";
+import FAQSection from "../../../components/FAQSections/FAQSectionAIDS";
+import RecruiterSection from "../../../components/home/RecruiterSection";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -228,6 +229,9 @@ export default function AIDS() {
               {/* RIGHT FORM SECTION */}
               <div className="flex-1 bg-gray-50 p-4 sm:p-8 rounded-lg shadow-md max-h-[750px] overflow-y-auto w-full">
                 <form className="space-y-4 modal-form">
+                  <div className="flex justify-center items-center">
+                    <h2 className="text-xl text-primary">Enquire Now</h2>
+                  </div>
                   {/* Name */}
                   <input
                     type="text"
@@ -487,54 +491,7 @@ export default function AIDS() {
           </div>
 
           {/* ===== CAMPUS RECRUITMENT SECTION ===== */}
-          <div className="bg-[#f7f7f7] text-black py-16 relative overflow-hidden">
-            <div className="max-w-7xl mx-auto px-6 text-center">
-              {/* ✅ Section Heading */}
-              <h2 className="text-3xl font-bold text-secondary mb-4">
-                Campus Recruitment
-              </h2>
-
-              {/* ✅ Description */}
-              <p className="text-gray-700 max-w-4xl mx-auto mb-10 leading-relaxed">
-                The program prepares students to excel in diverse fields,
-                including AI research labs, Blockchain start-ups, Cyber Security
-                firms, and Cloud Computing giants. Some of our top recruiters
-                are:
-              </p>
-
-              {/* ✅ Recruiter Logos Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-x-3 gap-y-7 place-items-center relative">
-                {reorderedLogos.map((logo, index) => (
-                  <div
-                    key={index}
-                    className={`flex items-center justify-center w-28 h-16 bg-white rounded-md shadow-sm hover:shadow-md transition-all duration-300 ${
-                      [17, 24].includes(index) ? "invisible" : ""
-                    }`}
-                  >
-                    <Image
-                      src={logo}
-                      alt={`Recruiter Logo ${index + 1}`}
-                      width={100}
-                      height={60}
-                      className="object-contain max-w-[80%] max-h-[60px] hover:grayscale-0 transition duration-300"
-                      loading={index < 7 ? "eager" : "lazy"}
-                      priority={index < 7}
-                    />
-                  </div>
-                ))}
-
-                {/* ✅ Center Circular Badge */}
-                <div className="absolute top-[49%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
-                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-[linear-gradient(145deg,_#278da4_0%,_#003c84_90%)] text-white flex flex-col items-center justify-center shadow-xl border-[4px] border-[#D4AF37]">
-                    <p className="text-xl md:text-2xl font-bold">350+</p>
-                    <p className="text-sm md:text-base font-medium">
-                      Corporates
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+         <RecruiterSection />
 
           {/* ===== NEXT STEPS SECTION ===== */}
           <div className="w-full bg-[#f7f7f7] py-16 flex justify-center px-6">

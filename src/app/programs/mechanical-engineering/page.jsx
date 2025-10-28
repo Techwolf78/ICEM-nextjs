@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import FAQSection from "@/components/FAQSection";
+import RecruiterSection from "../../../components/home/RecruiterSection";
 import Image from "next/image";
 
 const CompBrochure = "/BEComp.pdf"
@@ -384,32 +385,7 @@ export default function Mech() {
       </div>
 
       {/* ===== CAMPUS RECRUITMENT SECTION ===== */}
-      <div className="w-full bg-[#f7f7f7] text-black py-16">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-secondary mb-4">
-            Campus Recruitment
-          </h2>
-          <p className="text-gray-700 max-w-4xl mx-auto mb-10 leading-relaxed">
-            The program prepares students to excel in diverse fields, including
-            AI research labs, Blockchain start-ups, Cyber Security firms, and
-            Cloud Computing giants. Some of our top recruiters are:
-          </p>
-
-          {/* LOGO GRID */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
-            {Array(18)
-              .fill("")
-              .map((_, index) => (
-                <div
-                  key={index}
-                  className="h-20 bg-white shadow-md rounded-md flex items-center justify-center text-gray-500"
-                >
-                  [ Logo {index + 1} ]
-                </div>
-              ))}
-          </div>
-        </div>
-      </div>
+      <RecruiterSection />
 
       {/* ===== NEXT STEPS SECTION ===== */}
       <div className="w-full bg-[#f7f7f7] py-16 flex justify-center px-6">

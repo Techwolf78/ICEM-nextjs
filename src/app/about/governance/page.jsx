@@ -1,33 +1,11 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import Sidebar from "@/components/Sidebar";
 
 export default function Governance() {
   const [activeFAQ, setActiveFAQ] = useState(null);
   const CompBrochure = "/pdfs/BEComp.pdf";
-
-  const rightLinks = [
-    "Overview",
-    "Shree Chanakya Education Society",
-    "Indira Group of Institute",
-    "Chairpersons Profile & Chief Mentor IGL",
-    "Sports",
-    "Library",
-    "Hostel",
-    "Transport",
-    "Canteen",
-    "Gym",
-    "Primary Health Centre",
-    "Governance",
-  ];
-
-  const quickLinks = [
-    "Eligibility & Fees",
-    "Download Certificate Formats",
-    "Admission Helpline",
-    "Availability of Forms",
-    "Apply Online",
-  ];
 
   return (
     <div className="w-full bg-white text-gray-800">
@@ -48,9 +26,9 @@ export default function Governance() {
       </div>
 
       {/* ===== Main Section ===== */}
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 py-16 px-6">
+      <div className="w-full flex flex-col md:flex-row py-6">
         {/* LEFT SECTION */}
-        <div className="md:w-2/3 bg-white p-6 rounded-xl shadow-md">
+        <div className="md:w-full bg-white p-6 rounded-xl shadow-md">
           <h2 className="text-2xl font-semibold text-secondary mb-6">
             Institutional Governance and Leadership
           </h2>
@@ -176,58 +154,7 @@ export default function Governance() {
         </div>
 
         {/* ===== RIGHT SIDEBAR ===== */}
-        <div className="md:w-1/3 bg-primary text-white p-6 rounded-xl shadow-md flex flex-col gap-8">
-          {/* Navigation Links */}
-          <div>
-            <h3 className="text-lg font-semibold border-b border-white/30 pb-2 mb-4">
-              Related Pages
-            </h3>
-            <ul className="space-y-3 text-sm">
-              {rightLinks.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href="#"
-                    className="hover:text-black transition-colors duration-200"
-                  >
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold border-b border-white/30 pb-2 mb-4">
-              Quick Links
-            </h3>
-            <ul className="space-y-3 text-sm">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href="#"
-                    className="hover:text-primary transition-colors duration-200"
-                  >
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Box */}
-          <div className="bg-primary/20 border border-primary/30 rounded-lg p-4 text-sm">
-            <h4 className="font-semibold text-primary mb-2">Need Help?</h4>
-            <p className="text-white/80 leading-relaxed">
-              For admissions or academic queries, contact our support team for
-              quick assistance.
-            </p>
-            <p className="mt-3 text-primary font-medium">
-              ✉ admissions@indiraicem.ac.in
-            </p>
-            <p className="text-primary font-medium">📞 +91 98765 43210</p>
-          </div>
-        </div>
+  
       </div>
     </div>
   );

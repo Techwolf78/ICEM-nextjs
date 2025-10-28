@@ -40,11 +40,11 @@ const ExploreSection = () => {
   ];
 
   return (
-    <div className="relative bg-gray-50 mt-2 h-auto lg:h-[60vh] px-4 sm:px-6 py-0 overflow-hidden">
+    <div className="relative bg-gray-50 mt-2 h-auto lg:h-[60vh] px-4 sm:px-6 py-0 overflow-hidden ">
       {/* ✅ Desktop Layout */}
       <div className="hidden lg:flex flex-col mx-auto max-w-7xl justify-center w-full h-full">
         {/* 🔹 Top Section */}
-        <div className="w-full h-[20%] flex items-center justify-between px-6">
+        <div className="w-full h-[20%] flex items-center justify-between px-6 mb-2">
           {/* Left: Heading */}
           <div className="w-[50%] flex flex-col justify-center">
             <h2 className="text-2xl font-bold text-gray-900 leading-tight">
@@ -88,7 +88,7 @@ const ExploreSection = () => {
           </div>
 
           {/* Right: Logos */}
-          <div className="w-[50%] h-full flex items-center">
+          <div className="w-[50%] h-full flex">
             <div className="grid grid-cols-2 gap-6 w-full">
               {cards.map((card, index) => (
                 <div

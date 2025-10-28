@@ -97,7 +97,7 @@ export default function EventsSection() {
       </div>
 
       {/* ✅ CTA Section (restored from old version) */}
-      <div className="bg-blue-300 rounded-xl text-center text-white py-10 sm:py-14 px-4 sm:px-6 mt-16">
+      <div className="bg-primary rounded-xl text-center text-white py-10 sm:py-14 px-4 sm:px-6 mt-16">
         <h2 className="text-lg sm:text-3xl font-bold mb-3 sm:mb-4">
           Shape Your Future with Us
         </h2>

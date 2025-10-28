@@ -9,7 +9,7 @@ const EnergyInnovation = () => {
       title: "Get Industry-ready",
       description:
         "We ensure every graduate is industry-ready through cutting-edge curriculum, innovation labs, and strong industry collaborations that keep students aligned with the latest technologies and trends.",
-      img: "/ir.jpg",
+      img: "/ir.JPG",
     },
     {
       title: "Research from Day One",
@@ -21,7 +21,7 @@ const EnergyInnovation = () => {
       title: "Corporate Partnerships & Recruitment",
       description:
         "We have established strong, lasting relationships with a diverse portfolio of national and multinational corporations. Benefit from exclusive recruitment drives, on-campus placements, and direct access to sought-after employers actively seeking ICEM talent.",
-      img: "/coorporateR.jpg",
+      img: "/coorporateR.JPG",
     },
   ];
 

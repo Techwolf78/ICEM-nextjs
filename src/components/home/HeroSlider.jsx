@@ -87,25 +87,31 @@ const HeroSlider = () => {
 
   return (
     <div className="relative w-full overflow-hidden">
-      {/* ✅ SPOTLIGHT Ribbon + Ticker */}
+      {/* ✅ SPOTLIGHT Ribbon + Seamless Marquee (TOP) */}
       <div className="w-full bg-white border-b border-gray-200 flex items-center overflow-hidden relative">
         {/* Blue Ribbon with Right Side Cut (< shape) */}
-        <div className="relative flex items-center justify-center bg-[#00b2e5] text-white font-semibold text-sm sm:text-base px-8 py-2 clip-ribbon-left">
+        <div className="relative flex items-center justify-center bg-blue-100 text-white font-semibold text-sm sm:text-base px-8 py-2 clip-ribbon-left z-10">
           SPOTLIGHT
         </div>
 
-        {/* Scrolling Notice Text */}
-        <div className="flex-1 overflow-hidden whitespace-nowrap">
-          <div className="inline-block animate-marquee text-[#0061a8] font-semibold text-sm sm:text-base py-2">
-            🔹 Public Advisory Notice &nbsp;&nbsp;&nbsp;&nbsp;
-            🔹 All 4 PG Programs Computer Engineering &nbsp;&nbsp;&nbsp;&nbsp;
-            🔹 Admission Open for Academic Year 2025-26 &nbsp;&nbsp;&nbsp;&nbsp;
-            🔹 Placement Record 2025 Announced &nbsp;&nbsp;&nbsp;&nbsp;
+        {/* Seamless Marquee Text */}
+        <div className="flex-1 overflow-hidden whitespace-nowrap relative bg-white">
+          <div className="flex animate-seamlessMarquee text-secondary font-semibold text-sm sm:text-base py-2">
+            <span className="mr-12">🔹 Public Advisory Notice</span>
+            <span className="mr-12">🔹 All 4 PG Programs Computer Engineering</span>
+            <span className="mr-12">🔹 Admission Open for Academic Year 2025-26</span>
+            <span className="mr-12">🔹 Placement Record 2025 Announced</span>
+
+            {/* Duplicate for seamless looping */}
+            <span className="mr-12">🔹 Public Advisory Notice</span>
+            <span className="mr-12">🔹 All 4 PG Programs Computer Engineering</span>
+            <span className="mr-12">🔹 Admission Open for Academic Year 2025-26</span>
+            <span className="mr-12">🔹 Placement Record 2025 Announced</span>
           </div>
         </div>
 
         {/* Right Fade Gradient */}
-        <div className="absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
+        <div className="absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-primary to-transparent pointer-events-none"></div>
       </div>
 
       {/* ✅ Loader */}
@@ -207,6 +213,7 @@ const HeroSlider = () => {
 
       {/* ✅ Custom Styles */}
       <style jsx>{`
+        /* Dot progress animation */
         @keyframes progressFill {
           from {
             width: 0%;
@@ -221,23 +228,40 @@ const HeroSlider = () => {
           animation: progressFill 3s linear forwards;
         }
 
-        @keyframes marquee {
+        /* Seamless Marquee Loop */
+        @keyframes seamlessMarquee {
           0% {
-            transform: translateX(100%);
+            transform: translateX(0%);
           }
           100% {
-            transform: translateX(-100%);
+            transform: translateX(-50%);
           }
         }
-        .animate-marquee {
-          display: inline-block;
+        .animate-seamlessMarquee {
+          display: inline-flex;
           white-space: nowrap;
-          animation: marquee 25s linear infinite;
+          animation: seamlessMarquee 25s linear infinite;
+          will-change: transform;
         }
 
-        /* ✅ Ribbon shape: right side cut inward (<) */
+        /* Blue Ribbon (fixed white edge fix) */
         .clip-ribbon-left {
-          clip-path: polygon(0 0, 100% 0, 95% 50%, 100% 100%, 0 100%);
+          position: relative;
+          background: linear-gradient(90deg, #00b2e5 0%, #0099cc 100%);
+          clip-path: polygon(0 0, 100% 0, 96% 50%, 100% 100%, 0 100%);
+          isolation: isolate;
+        }
+
+        .clip-ribbon-left::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: -3px;
+          width: 6px;
+          height: 100%;
+          background: linear-gradient(90deg, #00b2e5 0%, #0099cc 100%);
+          z-index: 11;
+          pointer-events: none;
         }
       `}</style>
     </div>

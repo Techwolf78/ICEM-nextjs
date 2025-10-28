@@ -2,6 +2,7 @@
 
 
 
+
 /* =======================
    Global Variables
 ======================= */
@@ -100,7 +101,6 @@ body {
 /* Hover effects */
 .hover\:text-primary:hover {
   color: rgb(var(--color-primary)) !important;
-  text-decoration: underline;
   text-underline-offset: 4px;
 }
 

@@ -10,7 +10,7 @@ const DiscoverPaths = () => {
     { name: "Computer Engineering", img: "/Comp.jpg", link: "/programs/computer-engineering" },
     { name: "Mechanical Engineering", img: "/Mech.jpg", link: "/programs/mechanical-engineering" },
     { name: "Artificial Intelligence and Data Science", img: "/AIDS.jpg", link: "/programs/ai-ds" },
-    { name: "Electronics and Telecommunication", img: "/ENTC.jpg", link: "/programs/entc" },
+    { name: "Electronics and Telecommunication", img: "/newENTC.jpg", link: "/programs/entc" },
     { name: "Information Technology", img: "/IT1.jpg", link: "/programs/it" },
     { name: "MBA", img: "/IBBAMBA1.jpg", link: "/programs/mba" },
     { name: "MCA", img: "/IBCAMCA.jpg", link: "/programs/mca" },

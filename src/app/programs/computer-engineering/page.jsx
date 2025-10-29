@@ -142,8 +142,7 @@ export default function Computer() {
                   🕓 Course Duration
                 </h4>
                 <p className="text-gray-700">
-                  The program spans 4 years, providing comprehensive education
-                  in computer science and emerging technologies.
+                  A rigorous 4-year programme structured to build deep expertise in software develop ment, computer architecture, and system design. 
                 </p>
               </div>
 
@@ -152,8 +151,7 @@ export default function Computer() {
                   💼 Internship Opportunity
                 </h4>
                 <p className="text-gray-700">
-                  Students undertake a 6-month to 1-year internship with global
-                  tech leaders to gain real-world experience.
+                  Mandatory industry internships with leading tech firms provide hands-on experience in real-world software and hardware projects.
                 </p>
               </div>
 

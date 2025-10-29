@@ -148,7 +148,7 @@ const HeroSlider = () => {
                   quality={100}
                   unoptimized={true}
                   priority
-                  optimization={false}
+                  // optimization={false}
                 />
               ))}
             </div>

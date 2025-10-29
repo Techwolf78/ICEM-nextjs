@@ -90,23 +90,23 @@ const HeroSlider = () => {
       {/* ✅ SPOTLIGHT Ribbon + Seamless Marquee (TOP) */}
       <div className="w-full bg-white border-b border-gray-200 flex items-center overflow-hidden relative">
   {/* Gradient Ribbon with Right Side Cut (< shape) */}
-  <div className="relative flex items-center justify-center font-semibold text-sm px-8 py-2 clip-ribbon-left z-10 bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-300 text-white drop-shadow-[0_0_10px_rgba(0,200,255,0.5)]">
+  <div className="relative flex items-center justify-center font-semibold text-sm px-8 py-2 clip-ribbon-left z-10 bg-secondary text-white">
     SPOTLIGHT
   </div>
 
   {/* Seamless Marquee Text */}
   <div className="flex-1 overflow-hidden whitespace-nowrap relative bg-white">
-    <div className="flex animate-seamlessMarquee font-semibold text-sm py-2 bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent animate-gradient-x drop-shadow-[0_0_10px_rgba(0,200,255,0.5)]">
-      <span className="mr-12">🔹 Public Advisory Notice</span>
-      <span className="mr-12">🔹 All 4 PG Programs Computer Engineering</span>
-      <span className="mr-12">🔹 Admission Open for Academic Year 2025-26</span>
-      <span className="mr-12">🔹 Placement Record 2025 Announced</span>
+    <div className="flex animate-seamlessMarquee font-semibold text-sm py-2 bg-white text-secondary">
+      <span className="mr-12"> Public Advisory Notice</span>
+      <span className="mr-12"> All 4 PG Programs Computer Engineering</span>
+      <span className="mr-12"> Admission Open for Academic Year 2025-26</span>
+      <span className="mr-12"> Placement Record 2025 Announced</span>
 
       {/* Duplicate for seamless looping */}
-      <span className="mr-12">🔹 Public Advisory Notice</span>
-      <span className="mr-12">🔹 All 4 PG Programs Computer Engineering</span>
-      <span className="mr-12">🔹 Admission Open for Academic Year 2025-26</span>
-      <span className="mr-12">🔹 Placement Record 2025 Announced</span>
+      <span className="mr-12"> Public Advisory Notice</span>
+      <span className="mr-12"> All 4 PG Programs Computer Engineering</span>
+      <span className="mr-12"> Admission Open for Academic Year 2025-26</span>
+      <span className="mr-12"> Placement Record 2025 Announced</span>
     </div>
   </div>
 
@@ -166,7 +166,7 @@ const HeroSlider = () => {
                   onClick={() => handleDotClick(i)}
                 >
                   {currentIndex % desktopImages.length === i && (
-                    <span className="absolute top-0 left-0 h-full w-0 bg-primary animate-progressFill"></span>
+                    <span className="absolute top-0 left-0 h-full w-0 bg-secondary animate-progressFill"></span>
                   )}
                 </div>
               ))}
@@ -251,7 +251,7 @@ const HeroSlider = () => {
         /* Blue Ribbon (fixed white edge fix) */
         .clip-ribbon-left {
           position: relative;
-          background: linear-gradient(90deg, #00b2e5 0%, #0099cc 100%);
+          
           clip-path: polygon(0 0, 100% 0, 96% 50%, 100% 100%, 0 100%);
           isolation: isolate;
         }
@@ -263,7 +263,7 @@ const HeroSlider = () => {
           right: -3px;
           width: 6px;
           height: 100%;
-          background: linear-gradient(90deg, #00b2e5 0%, #0099cc 100%);
+         
           z-index: 11;
           pointer-events: none;
         }

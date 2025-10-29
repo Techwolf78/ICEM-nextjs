@@ -124,7 +124,7 @@ const Footer = () => {
       </div>
 
       {/* ===== Bottom Bar ===== */}
-      <div className="bg-primary text-white text-center py-2 sm:py-3 text-xs sm:text-sm">
+      <div className="bg-secondary text-white text-center py-2 sm:py-3 text-xs sm:text-sm">
         © 2024. Indira College of Engineering and Management.
       </div>
     </footer>

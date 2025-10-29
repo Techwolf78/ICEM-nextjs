@@ -9,8 +9,8 @@ const DiscoverPaths = () => {
   const courses = [
     { name: "Computer Engineering", img: "/Comp.jpg", link: "/programs/computer-engineering" },
     { name: "Mechanical Engineering", img: "/Mech.jpg", link: "/programs/mechanical-engineering" },
-    { name: "Artificial Intelligence and Data Science", img: "/AIDS1.jpg", link: "/programs/entc" },
-    { name: "Electronics and Telecommunication", img: "/Entc.jpg", link: "/programs/ai-ds" },
+    { name: "Artificial Intelligence and Data Science", img: "/AIDS.jpg", link: "/programs/ai-ds" },
+    { name: "Electronics and Telecommunication", img: "/ENTC.jpg", link: "/programs/entc" },
     { name: "Information Technology", img: "/IT1.jpg", link: "/programs/it" },
     { name: "MBA", img: "/IBBAMBA1.jpg", link: "/programs/mba" },
     { name: "MCA", img: "/IBCAMCA.jpg", link: "/programs/mca" },
@@ -55,9 +55,9 @@ const DiscoverPaths = () => {
               </div>
 
               {/* Course Name - Always single line */}
-              <div className="absolute bottom-4 left-4 right-4">
-                <div className="bg-white/95 backdrop-blur-sm rounded-lg px-4 py-3 shadow-sm border border-white/20">
-                  <h3 className="flex justify-center text-sm font-semibold text-gray-900 truncate text-center sm:text-left">
+              <div className="absolute bottom-0 left-0 right-0">
+                <div className="bg-secondary text-white backdrop-blur-sm rounded-b-lg px-4 py-3 shadow-sm border border-white/20">
+                  <h3 className="flex justify-center text-sm font-semibold text-white truncate text-center sm:text-left">
                     {course.name}
                   </h3>
                 </div>

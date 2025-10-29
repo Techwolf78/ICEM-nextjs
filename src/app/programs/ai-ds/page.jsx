@@ -57,75 +57,65 @@ export default function AIDS() {
   return (
     <div className="w-full bg-white text-white">
       {/* ===== HERO SECTION ===== */}
-<div className="relative w-full overflow-hidden h-[60vh] md:h-[75vh] flex items-center">
-  {/* Background Image */}
-  <div className="absolute inset-0">
-    <Image
-      src="/Programs/AIDS/AIDSIMGPH.jpeg"
-      alt="Artificial Intelligence Program"
-      fill
-      className="object-cover object-center scale-105  opacity-90"
-      priority
-    />
-  </div>
+      <div className="relative w-full overflow-hidden h-[60vh] md:h-[75vh] flex items-center">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/Programs/AIDS/AIDSIMGPH.jpeg"
+            alt="Artificial Intelligence Program"
+            fill
+            className="object-cover object-center scale-105  opacity-90"
+            priority
+          />
+        </div>
 
-  {/* Dark Gradient Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent " />
+        {/* Dark Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent " />
 
-  {/* Animated Particle Field */}
-  <div className="absolute inset-0 pointer-events-none animate-pulse-slow opacity-40 bg-[radial-gradient(circle_at_20%_20%,rgba(0,199,255,0.3),transparent_25%),radial-gradient(circle_at_80%_80%,rgba(0,138,255,0.3),transparent_30%)]" />
+        {/* Content Wrapper */}
+        {/* Content Wrapper */}
+        <div className="relative max-w-[1500px] px-6 md:px-12 lg:px-20">
+          <div className="max-w-3xl text-white">
+            <h2 className="text-4xl md:text-5xl font-bold leading-snug">
+              4-Year B.Tech AIDS Program <br />
+              with specialisation in <br />
+              <span className="bg-gradient-to-br from-cyan-400  to-sky-400 bg-clip-text text-transparent font-extrabold ">
+                Artificial Intelligence & Future Technologies
+              </span>
+            </h2>
 
-  {/* Reflection Swipe */}
-  <div className="absolute top-0 left-0 w-[40%] h-full bg-gradient-to-r from-white/5 to-transparent translate-x-[-200%] animate-reflect" />
+            <p className="mt-4 text-white/80 leading-relaxed max-w-2xl">
+              The Department of Artificial Intelligence and Data Science at ICEM
+              aim to be one of the leading programs to provide value-added
+              quality education in Computer Science and Engineering with
+              specialization in Artificial Intelligence and Data Science.
+            </p>
 
-  {/* Content Wrapper */}
-  {/* Content Wrapper */}
-<div className="relative max-w-[1500px] px-6 md:px-12 lg:px-20">
-  <div className="max-w-3xl text-white">
-    <h2 className="text-4xl md:text-5xl font-bold leading-snug">
-      4-Year B.Tech AIDS Program <br />
-      with specialisation in <br />
-      <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent font-extrabold animate-gradient-x drop-shadow-[0_0_10px_rgba(0,200,255,0.5)]">
-        Artificial Intelligence & Future Technologies
-      </span>
-    </h2>
+            {/* Floating Stat Cards */}
 
-    <p className="mt-4 text-white/80 leading-relaxed max-w-2xl">
-      The Department of Artificial Intelligence and Data Science at ICEM aim
-      to be one of the leading programs to provide value-added quality
-      education in Computer Science and Engineering with specialization in
-      Artificial Intelligence and Data Science.
-    </p>
+            {/* Buttons */}
+            <div className="flex gap-4 mt-6">
+              <button
+                onClick={toggleModal}
+                className="bg-secondary text-white px-8 py-3 rounded-lg font-semibold 
+              "
+              >
+                Enquire Now
+              </button>
 
-    {/* Floating Stat Cards */}
+              <button
+                onClick={handleBrochureDownload}
+                className="bg-secondary text-white px-8 py-3 rounded-lg"
+              >
+                Download Brochure
+              </button>
+            </div>
+          </div>
+        </div>
 
-
-    {/* Buttons */}
-    <div className="flex gap-4 mt-6">
-      <button
-        onClick={toggleModal}
-        className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:scale-[1.03] text-white px-8 py-3 rounded-lg font-semibold shadow-lg shadow-cyan-400/20 transition"
-      >
-        Enquire Now
-      </button>
-
-      <button
-        onClick={handleBrochureDownload}
-        className="glass-btn hover:bg-white hover:text-black px-8 py-3 rounded-lg font-semibold transition"
-      >
-        Download Brochure
-      </button>
-    </div>
-  </div>
-</div>
-
-
-  {/* Bottom Fade Mask */}
-  <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-black/60 to-transparent" />
-</div>
-
-
-
+        {/* Bottom Fade Mask */}
+        <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-black/60 to-transparent" />
+      </div>
 
       {/* ===== ENHANCED TAB NAVIGATION WITH SLIDING INDICATOR ===== */}
       <div className="my-4 relative bg-white border-b border-gray-200">
@@ -352,7 +342,7 @@ export default function AIDS() {
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-2 rounded-md mt-3 transition-colors"
+                    className="w-full bg-secondary text-white    font-semibold py-2 rounded-md mt-3 transition-colors"
                   >
                     SUBMIT
                   </button>
@@ -509,11 +499,11 @@ export default function AIDS() {
           </div>
 
           {/* ===== CAMPUS RECRUITMENT SECTION ===== */}
-         <RecruiterSection />
+          <RecruiterSection />
 
           {/* ===== NEXT STEPS SECTION ===== */}
-          <div className="w-full bg-[#f7f7f7] py-16 flex justify-center px-6">
-            <div className="bg-primary rounded-2xl max-w-5xl w-full text-center text-white py-12 px-6">
+          <div className="w-full bg-[#f7f7f7] py-16 flex justify-center">
+            <div className="bg-secondary  w-full text-center text-white py-12 ">
               <h2 className="text-3xl font-semibold mb-4">The Next Steps</h2>
               <p className="text-white/80 max-w-3xl mx-auto mb-8 leading-relaxed">
                 The steps you take today shape your future. At Indira College,
@@ -525,7 +515,7 @@ export default function AIDS() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button
                   onClick={handleBrochureDownload}
-                  className="bg-secondary hover:bg-white hover:text-black text-white px-8 py-3 rounded-md font-semibold transition-colors"
+                  className="bg-white hover:bg-white hover:text-black text-secondary px-8 py-3 rounded-md font-semibold transition-colors"
                 >
                   Download Brochure
                 </button>
@@ -650,7 +640,7 @@ export default function AIDS() {
 
               <button
                 type="submit"
-                className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-2 rounded-md transition-colors"
+                className="w-full bg-secondary hover:bg-primary/90 text-white font-semibold py-2 rounded-md transition-colors"
               >
                 SUBMIT
               </button>

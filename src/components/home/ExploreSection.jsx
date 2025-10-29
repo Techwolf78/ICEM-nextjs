@@ -48,7 +48,7 @@ const ExploreSection = () => {
             <h2 className="text-3xl font-bold text-gray-900 leading-tight">
               Explore Your Potential with
             </h2>
-            <h2 className="text-3xl font-extrabold leading-tight bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-extrabold leading-tight text-secondary">
               INDIRA COLLEGE OF ENGINEERING & MANAGEMENT
             </h2>
           </div>

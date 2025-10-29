@@ -59,10 +59,9 @@ export default function EventsSection() {
   return (
     <section className="w-full bg-gray-50 py-16 overflow-hidden">
       {/* ✅ Header */}
-      <h2 className="text-2xl sm:text-3xl font-extrabold text-center mb-10 bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent animate-gradient-x drop-shadow-[0_0_10px_rgba(0,200,255,0.5)]">
-  Academic Conferences & Campus Events
-</h2>
-
+      <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-10">
+        Academic Conferences & Campus Events
+      </h2>
 
       {/* ✅ Full-width marquee scroll */}
       <div className="relative w-full overflow-hidden group">
@@ -98,24 +97,22 @@ export default function EventsSection() {
       </div>
 
       {/* ✅ CTA Section (restored from old version) */}
-      {/* ✅ CTA Section (Gradient Background) */}
-<div className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-300 rounded-xl text-center text-white py-10 sm:py-14 px-4 sm:px-6 mt-16 shadow-[0_0_25px_rgba(0,200,255,0.3)]">
-  <h2 className="text-lg sm:text-3xl font-bold mb-3 sm:mb-4">
-    Shape Your Future with Us
-  </h2>
-  <p className="text-white/90 max-w-3xl mx-auto text-xs sm:text-lg mb-6 sm:mb-8 leading-relaxed">
-    Discover limitless opportunities at Indira College, where innovation,
-    learning, and industry connect. Take the first step towards your
-    dreams. Explore our programs and get in touch to begin your journey
-    with us.
-  </p>
-  <Link href="/#contact-form">
-    <button className="bg-white text-blue-600 font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-gray-100 transition flex items-center gap-2 mx-auto text-xs sm:text-base shadow-md">
-      Get in touch <span className="text-sm sm:text-xl">↗</span>
-    </button>
-  </Link>
-</div>
-
+      <div className="bg-secondary  text-center text-white py-10 sm:py-14 px-4 sm:px-6 mt-16">
+        <h2 className="text-lg sm:text-3xl font-bold mb-3 sm:mb-4">
+          Shape Your Future with Us
+        </h2>
+        <p className="text-white/80 max-w-3xl mx-auto text-xs sm:text-lg mb-6 sm:mb-8 leading-relaxed">
+          Discover limitless opportunities at Indira College, where innovation,
+          learning, and industry connect. Take the first step towards your
+          dreams. Explore our programs and get in touch to begin your journey
+          with us.
+        </p>
+        <Link href="/#contact-form">
+          <button className="bg-white text-secondary font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-gray-100 transition flex items-center gap-2 mx-auto text-xs sm:text-base">
+            Get in touch <span className="text-sm sm:text-xl">↗</span>
+          </button>
+        </Link>
+      </div>
 
       {/* 🔹 Animation Keyframes */}
       <style jsx>{`

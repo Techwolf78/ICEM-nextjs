@@ -26,7 +26,7 @@ const EnergyInnovation = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-300 text-white py-12 sm:py-16 md:py-20">
+    <div className="bg-secondary text-white py-12 sm:py-16 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
         {/* ✅ Heading */}
         <h2 className="text-lg sm:text-2xl md:text-4xl font-bold mb-8 sm:mb-10 md:mb-14 leading-snug drop-shadow-[0_0_10px_rgba(0,0,0,0.25)]">
@@ -67,7 +67,7 @@ const EnergyInnovation = () => {
 
                 {/* ✅ Centered "Know more" Button */}
                 <div className="flex justify-center">
-                  <button className="bg-white text-blue-600 font-semibold hover:bg-gradient-to-r hover:from-cyan-400 hover:to-blue-500 hover:text-white transition-all duration-300 rounded-full px-5 py-2 text-sm sm:text-base shadow-md">
+                  <button className="bg-white text-black font-semibold transition-all duration-300 rounded-full px-5 py-2 text-sm sm:text-base shadow-md">
                     Know more
                   </button>
                 </div>

@@ -19,10 +19,9 @@ const RecruitersSection = () => {
     <div className="bg-gray-50 py-12 sm:py-16 relative overflow-hidden">
       <div className="max-w-7xl mx-auto  text-center">
         {/* ✅ Section Heading */}
-       <h2 className="text-2xl sm:text-3xl font-extrabold mb-4 sm:mb-6 leading-tight bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent animate-gradient-x drop-shadow-[0_0_10px_rgba(0,200,255,0.5)]">
-  INDIRA DEGREE OPENS DOORS. WIDE.
-</h2>
-
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
+          INDIRA DEGREE OPENS DOORS. WIDE.
+        </h2>
 
         {/* ✅ Description */}
         <p className="text-gray-700 text-xs sm:text-sm max-w-5xl mx-auto leading-relaxed mb-10 sm:mb-12 px-2">

@@ -85,7 +85,7 @@ const ApplyForm = () => {
 
         <button
           type="submit"
-          className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-2 rounded-md transition"
+          className="w-full bg-secondary  text-white px-8 py-3 rounded-lg font-semibold"
         >
           SUBMIT
         </button>

@@ -89,30 +89,33 @@ const HeroSlider = () => {
     <div className="relative w-full overflow-hidden">
       {/* ✅ SPOTLIGHT Ribbon + Seamless Marquee (TOP) */}
       <div className="w-full bg-white border-b border-gray-200 flex items-center overflow-hidden relative">
-        {/* Blue Ribbon with Right Side Cut (< shape) */}
-        <div className="relative flex items-center justify-center bg-blue-100 text-white font-semibold text-sm  px-8 py-2 clip-ribbon-left z-10">
-          SPOTLIGHT
-        </div>
+  {/* Gradient Ribbon with Right Side Cut (< shape) */}
+  <div className="relative flex items-center justify-center font-semibold text-sm px-8 py-2 clip-ribbon-left z-10 bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-300 text-white drop-shadow-[0_0_10px_rgba(0,200,255,0.5)]">
+    SPOTLIGHT
+  </div>
 
-        {/* Seamless Marquee Text */}
-        <div className="flex-1 overflow-hidden whitespace-nowrap relative bg-white">
-          <div className="flex animate-seamlessMarquee text-secondary font-semibold text-sm  py-2">
-            <span className="mr-12">🔹 Public Advisory Notice</span>
-            <span className="mr-12">🔹 All 4 PG Programs Computer Engineering</span>
-            <span className="mr-12">🔹 Admission Open for Academic Year 2025-26</span>
-            <span className="mr-12">🔹 Placement Record 2025 Announced</span>
+  {/* Seamless Marquee Text */}
+  <div className="flex-1 overflow-hidden whitespace-nowrap relative bg-white">
+    <div className="flex animate-seamlessMarquee font-semibold text-sm py-2 bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent animate-gradient-x drop-shadow-[0_0_10px_rgba(0,200,255,0.5)]">
+      <span className="mr-12">🔹 Public Advisory Notice</span>
+      <span className="mr-12">🔹 All 4 PG Programs Computer Engineering</span>
+      <span className="mr-12">🔹 Admission Open for Academic Year 2025-26</span>
+      <span className="mr-12">🔹 Placement Record 2025 Announced</span>
 
-            {/* Duplicate for seamless looping */}
-            <span className="mr-12">🔹 Public Advisory Notice</span>
-            <span className="mr-12">🔹 All 4 PG Programs Computer Engineering</span>
-            <span className="mr-12">🔹 Admission Open for Academic Year 2025-26</span>
-            <span className="mr-12">🔹 Placement Record 2025 Announced</span>
-          </div>
-        </div>
+      {/* Duplicate for seamless looping */}
+      <span className="mr-12">🔹 Public Advisory Notice</span>
+      <span className="mr-12">🔹 All 4 PG Programs Computer Engineering</span>
+      <span className="mr-12">🔹 Admission Open for Academic Year 2025-26</span>
+      <span className="mr-12">🔹 Placement Record 2025 Announced</span>
+    </div>
+  </div>
 
-        {/* Right Fade Gradient */}
-        <div className="absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-primary to-transparent pointer-events-none"></div>
-      </div>
+  {/* Right Fade Gradient */}
+  <div className="absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-primary to-transparent pointer-events-none"></div>
+</div>
+
+
+
 
       {/* ✅ Loader */}
       {loading && (

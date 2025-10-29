@@ -296,8 +296,8 @@ const Navbar = () => {
         {/* Right Section - Desktop */}
         <div className="hidden md:flex w-[70%] h-full flex-col">
           {/* Top Bar */}
-          <div className="flex justify-end w-full h-[45%] text-xs text-gray-700">
-            <div className="flex gap-8">
+          <div className="flex justify-end pr-2  w-full h-[45%] text-xs text-gray-700">
+            <div className="flex gap-4">
               <div className="flex items-center gap-2 font-bold">
                 <a
                   href="https://rapid.grayquest.com/iudp-master"
@@ -353,7 +353,7 @@ const Navbar = () => {
               <div className="flex">
                 <button
                   onClick={toggleModal}
-                  className="bg-gradient-to-r from-[#278da4] to-[#003c84] text-white px-8 py-1 text-xs hover:from-[#278da4]/90 hover:to-[#003c84]/90 font-bold border-r border-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                  className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:scale-[1.03] text-white px-8 py-3 rounded-lg font-semibold shadow-lg shadow-cyan-400/20 transition"
                 >
                   Enquire Now
                 </button>

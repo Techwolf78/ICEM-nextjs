@@ -6,7 +6,7 @@ import RecruitersSection from "@/components/home/RecruiterSection";
 import EnergyInnovation from "@/components/home/EnergyInnovation";
 import CampusBeat from "@/components/home/CampusBeat";
 import CollegeUnplugged from "@/components/home/CollegeUnplugged";
-import NewsSection from "@/components/home/NewsSection";
+// import NewsSection from "@/components/home/NewsSection";
 import EventsSection from "@/components/home/EventSection";
 import InstagramMosaic from "@/components/home/InstagramMosaic"; // <-- Import here
 
@@ -23,7 +23,7 @@ export default function HomePage() {
       <EnergyInnovation />
       <CampusBeat />
       <CollegeUnplugged />
-      <NewsSection />
+  
       <EventsSection />
       <InstagramMosaic />
     </div>

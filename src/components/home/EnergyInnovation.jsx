@@ -26,12 +26,12 @@ const EnergyInnovation = () => {
   ];
 
   return (
-    <div className="bg-primary text-white py-12 sm:py-16 md:py-20">
+    <div className="bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-300 text-white py-12 sm:py-16 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
         {/* ✅ Heading */}
-        <h2 className="text-lg sm:text-2xl md:text-4xl font-bold mb-8 sm:mb-10 md:mb-14 leading-snug">
+        <h2 className="text-lg sm:text-2xl md:text-4xl font-bold mb-8 sm:mb-10 md:mb-14 leading-snug drop-shadow-[0_0_10px_rgba(0,0,0,0.25)]">
           At Indira College of Engineering & Management, you will discover an{" "}
-          <span className="block sm:inline">
+          <span className="block sm:inline font-extrabold text-white">
             Energy that runs through Everything and Everyone.
           </span>
         </h2>
@@ -57,18 +57,18 @@ const EnergyInnovation = () => {
               {/* Text Section */}
               <div className="flex flex-col justify-between flex-grow px-5 py-6 sm:px-6">
                 <div>
-                  <h3 className="text-base sm:text-lg flex justify-center  font-semibold mb-2 ">
+                  <h3 className="text-base sm:text-lg flex justify-center font-semibold mb-2 text-white">
                     {card.title}
                   </h3>
-                  <p className="text-white/85 text-sm sm:text-base leading-relaxed text-justify mb-6">
+                  <p className="text-white/90 text-sm sm:text-base leading-relaxed text-justify mb-6">
                     {card.description}
                   </p>
                 </div>
 
                 {/* ✅ Centered "Know more" Button */}
                 <div className="flex justify-center">
-                  <button className="text-white font-semibold  hover:bg-white/80 hover:text-[#278da4] transition-all duration-300 rounded-full px-5 py-2 text-sm sm:text-base ">
-                    Know more 
+                  <button className="bg-white text-blue-600 font-semibold hover:bg-gradient-to-r hover:from-cyan-400 hover:to-blue-500 hover:text-white transition-all duration-300 rounded-full px-5 py-2 text-sm sm:text-base shadow-md">
+                    Know more
                   </button>
                 </div>
               </div>

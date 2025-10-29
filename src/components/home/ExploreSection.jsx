@@ -14,7 +14,6 @@ const ExploreSection = () => {
         const playPromise = video.play();
         if (playPromise !== undefined) {
           playPromise.catch(() => {
-            // Browser blocked autoplay → retry when user interacts
             const resumePlay = () => {
               video.play().catch(() => {});
               document.removeEventListener("scroll", resumePlay);
@@ -26,38 +25,37 @@ const ExploreSection = () => {
         }
       };
 
-      // Try once video is ready to play
       video.addEventListener("canplaythrough", playVideo, { once: true });
       playVideo();
     }
   }, []);
 
+  // ✅ Updated logos
   const cards = [
-    { title: "NAAC", img: null },
-    { title: "NIRF", img: null },
-    { title: "QS Ranking", img: null },
-    { title: "World Ranking", img: null },
+    { title: "Savitribai Phule Pune University", img: "/SPPU.webp" },
+    { title: "NAAC Accredited", img: "/NAAC.webp" },
+    { title: "AICTE Approved", img: "/AICTE.webp" },
   ];
 
   return (
-    <div className="relative bg-gray-50 mt-2 h-auto lg:h-[60vh] px-4 sm:px-6 py-0 overflow-hidden ">
+    <div className="relative bg-gray-50 mt-2 h-auto lg:h-[60vh] px-4 sm:px-6 py-0 overflow-hidden">
       {/* ✅ Desktop Layout */}
-      <div className="hidden lg:flex flex-col mx-auto max-w-7xl justify-center w-full h-full">
+      <div className="hidden lg:flex flex-col mx-auto max-w-7xl justify-center w-full h-full ">
         {/* 🔹 Top Section */}
-        <div className="w-full h-[20%] flex items-center justify-between px-6 mb-2">
+        <div className="w-full h-[30%] flex items-center justify-between px-6">
           {/* Left: Heading */}
           <div className="w-[50%] flex flex-col justify-center">
-            <h2 className="text-2xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-3xl font-bold text-gray-900 leading-tight">
               Explore Your Potential with
             </h2>
-            <h2 className="text-2xl font-bold text-secondary leading-tight">
+            <h2 className="text-3xl font-extrabold leading-tight bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent">
               INDIRA COLLEGE OF ENGINEERING & MANAGEMENT
             </h2>
           </div>
 
           {/* Right: Chanakya Animation */}
           <div className="w-[50%] flex items-center justify-center">
-            <div className="w-[90%] h-[12vh] max-h-[90px] animate-slideMirror pointer-events-none opacity-90">
+            <div className="w-[90%] h-[15vh]  animate-slideMirror pointer-events-none opacity-90">
               <video
                 ref={videoRef}
                 src="/chanakya.webm"
@@ -73,7 +71,7 @@ const ExploreSection = () => {
         </div>
 
         {/* 🔹 Bottom Section */}
-        <div className="w-full h-[50%] flex items-stretch justify-between px-6">
+        <div className="w-full h-[50%] flex items-stretch justify-between px-6 ">
           {/* Left: Paragraph */}
           <div className="w-[50%] h-full flex items-center pr-8">
             <p className="text-gray-700 text-[1.12rem] leading-relaxed text-justify">
@@ -89,25 +87,20 @@ const ExploreSection = () => {
 
           {/* Right: Logos */}
           <div className="w-[50%] h-full flex">
-            <div className="grid grid-cols-2 gap-6 w-full">
+            <div className="grid grid-cols-3 gap-6 w-full place-items-center">
               {cards.map((card, index) => (
                 <div
                   key={index}
-                  className="rounded-lg flex items-center justify-center h-24 bg-white shadow-sm hover:shadow-md transition-shadow duration-200"
+                  className="rounded-lg flex flex-col items-center justify-center h-24 transition-transform duration-300 hover:scale-105"
                 >
-                  {card.img ? (
-                    <Image
-                      src={card.img}
-                      alt={card.title}
-                      width={200}
-                      height={80}
-                      className="object-contain rounded-md"
-                    />
-                  ) : (
-                    <span className="text-gray-400 text-sm text-center px-2">
-                      [ {card.title} Image Here ]
-                    </span>
-                  )}
+                  <Image
+                    src={card.img}
+                    alt={card.title}
+                    width={160}
+                    height={80}
+                    className="object-contain"
+                  />
+                  
                 </div>
               ))}
             </div>
@@ -136,7 +129,7 @@ const ExploreSection = () => {
           <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 leading-snug">
             Explore Your Potential with
           </h2>
-          <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-secondary mb-3 sm:mb-4 leading-snug">
+          <h2 className="text-lg sm:text-xl md:text-2xl font-extrabold mb-3 sm:mb-4 leading-snug bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent">
             INDIRA COLLEGE OF ENGINEERING & MANAGEMENT
           </h2>
           <p className="text-gray-700 text-sm sm:text-base leading-relaxed text-justify">
@@ -151,25 +144,22 @@ const ExploreSection = () => {
         </div>
 
         {/* Logos */}
-        <div className="grid grid-cols-2 gap-4 sm:gap-6 mt-6">
+        <div className="grid grid-cols-3 gap-4 sm:gap-6 mt-6 place-items-center">
           {cards.map((card, index) => (
             <div
               key={index}
-              className="rounded-lg flex items-center justify-center h-24 sm:h-28 bg-white shadow-sm hover:shadow-md transition-shadow duration-200"
+              className="rounded-lg flex flex-col items-center justify-center h-20 sm:h-24 transition-transform duration-200 hover:scale-105"
             >
-              {card.img ? (
-                <Image
-                  src={card.img}
-                  alt={card.title}
-                  width={200}
-                  height={80}
-                  className="object-contain rounded-md"
-                />
-              ) : (
-                <span className="text-gray-400 text-xs sm:text-sm text-center px-2">
-                  [ {card.title} Image Here ]
-                </span>
-              )}
+              <Image
+                src={card.img}
+                alt={card.title}
+                width={140}
+                height={80}
+                className="object-contain"
+              />
+              <p className="text-xs sm:text-sm font-semibold text-blue-700 mt-1 text-center">
+                {card.title}
+              </p>
             </div>
           ))}
         </div>

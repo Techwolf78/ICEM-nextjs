@@ -24,7 +24,10 @@ const ProgramList = () => {
     <div className="lg:col-span-2 bg-white rounded-lg p-4 sm:p-8 shadow-sm border border-gray-200">
       {/* ✅ Heading */}
       <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
-        ACADEMIC <span className="text-secondary">YEAR 2026</span>
+        ACADEMIC <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent animate-gradient-x drop-shadow-[0_0_10px_rgba(0,200,255,0.5)]">
+  YEAR 2026
+</span>
+
       </h2>
 
       {/* ✅ Program Links */}

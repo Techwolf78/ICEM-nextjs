@@ -99,9 +99,7 @@ const PlacementCarousel = () => {
           <>
             <div
               ref={sliderRef}
-              className={`flex ${
-                isTransitioning ? "transition-transform duration-700 ease-in-out" : ""
-              }`}
+              className={`flex z-0 ${isTransitioning ? "transition-transform duration-700 ease-in-out" : ""}`}
               style={{
                 transform: `translateX(-${currentIndex * 100}%)`,
               }}
@@ -122,17 +120,19 @@ const PlacementCarousel = () => {
             </div>
 
             {/* ✅ Dots (desktop only) */}
-            <div className="absolute bottom-5 right-5 flex gap-2 items-center">
+            <div className="absolute bottom-5 right-5 flex gap-2 items-center z-20">
               {desktopImages.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => handleDotClick(i)}
-                  className={`h-1.5 w-6 rounded-full transition-all duration-300 focus:outline-none ${
+                  // ensure the buttons can receive clicks even if other elements overlap
+                  className={`h-1.5 rounded-full transition-all duration-300 focus:outline-none pointer-events-auto ${
                     currentIndex % desktopImages.length === i
                       ? "bg-cyan-400 w-8"
-                      : "bg-gray-400 hover:bg-gray-500"
+                      : "w-6 bg-gray-400 hover:bg-gray-500"
                   }`}
-                ></button>
+                  aria-label={`Go to slide ${i + 1}`}
+                />
               ))}
             </div>
           </>
@@ -151,9 +151,7 @@ const PlacementCarousel = () => {
           <>
             <div
               ref={sliderRef}
-              className={`flex ${
-                isTransitioning ? "transition-transform duration-700 ease-in-out" : ""
-              }`}
+              className={`flex z-0 ${isTransitioning ? "transition-transform duration-700 ease-in-out" : ""}`}
               style={{
                 transform: `translateX(-${currentIndex * 100}%)`,
               }}

@@ -6,7 +6,6 @@ import Sidebar from "@/components/Sidebar";
 import StudentWelfare from "@/components/CampusLife/StudentWelfare";
 import IcemStudentCouncil from "@/components/CampusLife/IcemStudentCouncil";
 import InductionProgramme from "@/components/CampusLife/InductionProgramme";
-import NationalServiceScheme from "@/components/CampusLife/NationalServiceScheme";
 
 export default function StudentWelfarePage() {
   return (
@@ -22,7 +21,7 @@ export default function StudentWelfarePage() {
         />
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white drop-shadow-lg text-center px-4">
-            Student Development Cell 
+            Student Development Cell
           </h1>
         </div>
       </div>
@@ -35,27 +34,25 @@ export default function StudentWelfarePage() {
             <section id="student-welfare">
               <StudentWelfare />
             </section>
-            <section id="iic">
+
+            <section id="iic" className="scroll-mt-[110px] scroll-smooth">
               <IIC />
             </section>
-            <section id="induction">
-              <InductionProgramme />
-            </section>
-            <section id="student-council">
+
+            <section
+              id="student-council"
+              className="scroll-mt-[110px] scroll-smooth"
+            >
               <IcemStudentCouncil />
-            </section>
-            <section id="nss">
-              <NationalServiceScheme />
             </section>
           </div>
 
           {/* Sidebar - Made Sticky */}
           <div className="lg:w-1/3">
-           
-              <Sidebar />
-            </div>
+            <Sidebar />
           </div>
         </div>
+      </div>
     </div>
   );
 }

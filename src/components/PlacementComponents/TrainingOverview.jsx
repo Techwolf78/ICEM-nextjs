@@ -4,6 +4,10 @@ import { useState, useEffect, useRef } from "react";
 
 const trainingData = [
   {
+    count: 1000,
+    singleLabel: "Training Hours", // ✅ single-line box
+  },
+  {
     count: 200,
     labelTop: "Hours of Aptitude Training",
     labelBottom: "Hours of Soft Skills Training",
@@ -30,7 +34,7 @@ export default function TrainingOverview() {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
-  // Detect when section comes into view
+  // ✅ Detect when section is visible
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -42,20 +46,17 @@ export default function TrainingOverview() {
       { threshold: 0.3 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
-  // Animate the numbers
+  // ✅ Animate counts
   useEffect(() => {
     if (isVisible) {
       trainingData.forEach((item, index) => {
         let start = 0;
         const end = item.count;
-        const duration = 2000; // animation duration (2 seconds)
+        const duration = 2000;
         const increment = end / (duration / 30);
 
         const interval = setInterval(() => {
@@ -89,39 +90,57 @@ export default function TrainingOverview() {
           and industry readiness required for professional success.
         </p>
 
-        {/* Grid Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-          {trainingData.map((item, index) => (
-            <div
-              key={index}
-              className={`${
-                index % 2 === 0
-                  ? "bg-primary text-white"
-                  : "bg-white text-gray-900 border border-gray-200"
-              } flex flex-col items-center justify-center py-6 sm:py-8 lg:py-10 px-4 sm:px-6 rounded-md shadow-md`}
-            >
-              {/* Top Number */}
-              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-2">{counts[index]}+</h3>
-              <p className="text-xs sm:text-sm lg:text-base font-medium text-center">
-                {item.labelTop}
-              </p>
+        {/* ✅ Grid Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4">
+          {trainingData.map((item, index) => {
+            const isSingle = !!item.singleLabel;
 
-              {/* Divider */}
+            return (
               <div
-                className={`w-2/3 my-3 sm:my-4 ${
+                key={index}
+                className={`${
                   index % 2 === 0
-                    ? "border-t border-white/60"
-                    : "border-t border-gray-400"
-                }`}
-              ></div>
-
-              {/* Bottom Number */}
-              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-2">{counts[index]}+</h3>
-              <p className="text-xs sm:text-sm lg:text-base font-medium text-center">
-                {item.labelBottom}
-              </p>
-            </div>
-          ))}
+                    ? "bg-primary text-white"
+                    : "bg-white text-gray-900 border border-gray-200"
+                } flex flex-col items-center justify-center py-6 sm:py-8 lg:py-10 px-4 sm:px-6 rounded-md shadow-md`}
+              >
+                {/* ✅ Single-line card */}
+                {isSingle ? (
+                  <>
+                    <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-2">
+                      {counts[index]}+
+                    </h3>
+                    <p className="text-xs sm:text-sm lg:text-base font-medium text-center">
+                      {item.singleLabel}
+                    </p>
+                  </>
+                ) : (
+                  /* ✅ Two-line card */
+                  <>
+                    <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-2">
+                      {counts[index]}+
+                    </h3>
+                    <p className="text-xs sm:text-sm lg:text-base font-medium text-center">
+                      {item.labelTop}
+                    </p>
+                    <div
+                      className={`w-2/3 my-3 sm:my-4 ${
+                        index % 2 === 0
+                          ? "border-t border-white/60"
+                          : "border-t border-gray-400"
+                      }`}
+                    ></div>
+                    <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-2">
+                      {counts[index]}+
+                    </h3>
+                    <p className="text-xs sm:text-sm lg:text-base font-medium text-center">
+                      {item.labelBottom}
+                    </p>
+                  </>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

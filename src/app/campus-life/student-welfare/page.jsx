@@ -13,7 +13,7 @@ export default function StudentWelfarePage() {
       {/* Banner */}
       <div className="w-full h-[40vh] sm:h-[50vh] lg:h-[60vh] relative">
         <Image
-          src="/ICEM_Banner.jpg"
+          src="/BannerOverviewPage.jpg"
           alt="Student Development Cell"
           fill
           style={{ objectFit: "cover" }}

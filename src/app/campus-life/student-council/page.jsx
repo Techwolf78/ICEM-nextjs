@@ -7,7 +7,7 @@ function IcemStudentCouncil() {
   const [openIndex, setOpenIndex] = useState(null);
 
   // Assets from public folder
-  const bannerImg = "/ICEM_Banner.jpg";
+  const bannerImg = "/BannerOverviewPage.jpg";
   const beComp = "/BEComp.pdf";
 
   const rightLinks = [

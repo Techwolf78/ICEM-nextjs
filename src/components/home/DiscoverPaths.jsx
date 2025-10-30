@@ -7,15 +7,39 @@ import Link from "next/link";
 const DiscoverPaths = () => {
   // ✅ Course data
   const courses = [
-    { name: "Computer Engineering", img: "/Comp.jpg", link: "/programs/computer-engineering" },
-    { name: "Mechanical Engineering", img: "/Mech.jpg", link: "/programs/mechanical-engineering" },
-    { name: "Artificial Intelligence and Data Science", img: "/AIDS.jpg", link: "/programs/ai-ds" },
-    { name: "Electronics and Telecommunication", img: "/newENTC.jpg", link: "/programs/entc" },
+    {
+      name: "Computer Engineering",
+      img: "/Comp.jpg",
+      link: "/programs/computer-engineering",
+    },
+    {
+      name: "Mechanical Engineering",
+      img: "/Mech.jpg",
+      link: "/programs/mechanical-engineering",
+    },
+    {
+      name: "Artificial Intelligence and Data Science",
+      img: "/AIDS.jpg",
+      link: "/programs/ai-ds",
+    },
+    {
+      name: "Electronics and Telecommunication",
+      img: "/newENTC.jpg",
+      link: "/programs/entc",
+    },
     { name: "Information Technology", img: "/IT1.jpg", link: "/programs/it" },
     { name: "MBA", img: "/IBBAMBA1.jpg", link: "/programs/mba" },
     { name: "MCA", img: "/IBCAMCA.jpg", link: "/programs/mca" },
-    { name: "M-Tech in Mechanical Engineering", img: "/ICEM_Banner.jpg", link: "/programs/mtech-mech" },
-    { name: "M-Tech in Computer Science", img: "/ICEM_Banner.jpg", link: "/programs/mtech-comp" },
+    {
+      name: "M-Tech in Mechanical Engineering",
+      img: "/BannerOverviewPage.jpg",
+      link: "/programs/mtech-mech",
+    },
+    {
+      name: "M-Tech in Computer Science",
+      img: "/BannerOverviewPage.jpg",
+      link: "/programs/mtech-comp",
+    },
   ];
 
   return (
@@ -27,7 +51,8 @@ const DiscoverPaths = () => {
             Discover Your Path to Success
           </h2>
           <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto">
-            Explore our comprehensive programs designed to shape your future career
+            Explore our comprehensive programs designed to shape your future
+            career
           </p>
         </div>
 
@@ -49,7 +74,7 @@ const DiscoverPaths = () => {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   loading="lazy"
                 />
-                
+
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
@@ -65,16 +90,23 @@ const DiscoverPaths = () => {
 
               {/* Hover Indicator */}
               <div className="absolute top-4 right-4 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <svg className="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                <svg
+                  className="w-4 h-4 text-gray-700"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
                 </svg>
               </div>
             </Link>
           ))}
         </div>
-
-  
-
       </div>
     </div>
   );

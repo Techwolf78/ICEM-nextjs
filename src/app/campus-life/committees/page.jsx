@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from "react";
 import Image from "next/image";
 import Sidebar from "@/components/Sidebar";
@@ -496,7 +496,7 @@ const Statutory = () => {
       {/* Banner */}
       <div className="w-full h-[60vh] relative">
         <Image
-          src="/ICEM_Banner.jpg"
+          src="/BannerOverviewPage.jpg"
           alt="Statutory Committee"
           fill
           className="object-cover"
@@ -545,13 +545,13 @@ const Statutory = () => {
             ))}
           </div>
           <section id="grievance" className="scroll-mt-[110px] scroll-smooth">
-                        <GrievanceRedressal />
-                      </section>
+            <GrievanceRedressal />
+          </section>
         </div>
 
         {/* Right Sidebar */}
         <div className="lg:w-1/3 bg-primary text-white p-6 rounded-xl shadow-md flex flex-col justify-between">
-        <Sidebar/>
+          <Sidebar />
         </div>
       </div>
     </div>

@@ -85,9 +85,6 @@ export default function Overview() {
           height={600}
           width={1700}
         />
-        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-          
-        </div>
       </div>
 
       {/* Content Section */}

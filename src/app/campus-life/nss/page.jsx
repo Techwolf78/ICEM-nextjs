@@ -4,11 +4,10 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Sidebar from "@/components/Sidebar";
 
-
 function NationalServiceScheme() {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const bannerImg = "/ICEM_Banner.jpg"; // put in public folder
+  const bannerImg = "/BannerOverviewPage.jpg"; // put in public folder
   const beComp = "/BEComp.pdf"; // put in public folder
 
   const rightLinks = [
@@ -145,7 +144,7 @@ function NationalServiceScheme() {
 
         {/* Right Section */}
         <div className="lg:w-1/3 bg-primary text-white p-6 rounded-xl shadow-md flex flex-col justify-between">
-         <Sidebar />
+          <Sidebar />
         </div>
       </div>
     </div>

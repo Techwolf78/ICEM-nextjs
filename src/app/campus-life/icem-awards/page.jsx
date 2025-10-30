@@ -8,7 +8,7 @@ const IcemAwards = () => {
   const router = useRouter();
 
   // Images are in /public folder
-  const bannerImg = "/ICEM_Banner.jpg";
+  const bannerImg = "/BannerOverviewPage.jpg";
   const placeholderImg = "/award-placeholder.jpg";
 
   const awards = [

@@ -79,23 +79,21 @@ export default function Overview() {
       {/* Hero Banner */}
       <div className="w-full h-[60vh] relative">
         <Image
-          src="/ICEM_Banner.jpg"
+          src="/BannerOverviewPage.jpg"
           alt="ICEM Campus"
           className="w-full h-full object-cover"
           height={600}
           width={1700}
         />
         <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
-            Indira College of Engineering and Management (ICEM)
-          </h1>
+          
         </div>
       </div>
 
       {/* Content Section */}
-      <div className="w-full flex flex-col md:flex-row p-6">
+      <div className="w-full flex flex-col md:flex-row">
         {/* Left Section */}
-        <div className="md:w-2/3 space-y-12">
+        <div className="md:w-3/4 space-y-12">
           {/* Main About Content */}
           <div className="bg-white p-6 rounded-xl shadow-md">
             <h2 className="text-2xl font-semibold text-secondary mb-6">
@@ -435,7 +433,7 @@ export default function Overview() {
         </div>
 
         {/* Right Section - Sidebar */}
-        <div className="md:w-1/3">
+        <div className="md:w-1/4">
           <Sidebar />
         </div>
       </div>

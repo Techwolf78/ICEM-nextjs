@@ -10,9 +10,7 @@ import CollegeUnplugged from "@/components/home/CollegeUnplugged";
 import EventsSection from "@/components/home/EventSection";
 import InstagramMosaic from "@/components/home/InstagramMosaic"; // <-- Import here
 
-
 export default function HomePage() {
-  
   return (
     <div className="bg-white text-gray-900">
       <HeroSlider />
@@ -20,10 +18,11 @@ export default function HomePage() {
       <DiscoverPaths />
       <AcademicYearSection />
       <RecruitersSection />
-      <EnergyInnovation />
+
       <CampusBeat />
+      <EnergyInnovation />
       <CollegeUnplugged />
-  
+
       <EventsSection />
       <InstagramMosaic />
     </div>

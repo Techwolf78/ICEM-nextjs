@@ -18,8 +18,8 @@ export default function Computer() {
   // Brochure Download
   const handleBrochureDownload = () => {
     const link = document.createElement("a");
-    link.href = "/brochures/BEComp.pdf";
-    link.download = "ICEM_Computer_Engineering_Brochure.pdf";
+    link.href = "//brochures/ICEMAdmissionBrochure2025.pdf";
+    link.download = "ICEM-Brochure.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

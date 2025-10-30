@@ -3,6 +3,7 @@ import React, { useState, useRef } from "react";
 import FAQSection from "@/components/FAQSection";
 import Link from "next/link";
 import Image from "next/image";
+import RecruitersSection from "@/components/home/RecruiterSection";
 
 export default function Computer() {
   const [activeFAQ, setActiveFAQ] = useState(null);
@@ -18,8 +19,8 @@ export default function Computer() {
   // Brochure Download
   const handleBrochureDownload = () => {
     const link = document.createElement("a");
-    link.href = "/brochures/BEComp.pdf";
-    link.download = "ICEM_Computer_Engineering_Brochure.pdf";
+    link.href = "/brochures/ICEMAdmissionBrochure2025.pdf";
+    link.download = "ICEM-Brochure.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -160,8 +161,7 @@ export default function Computer() {
                   🏫 Campus Recruitment
                 </h4>
                 <p className="text-gray-700">
-                  Placement opportunities with top tech companies, including
-                  Fortune 500 corporations.
+                  Exceptional placement record with top-tier IT product companies, MNCs, and R&D labs seeking core engineering talent.
                 </p>
               </div>
 
@@ -174,8 +174,7 @@ export default function Computer() {
                   onClick={scrollToFAQ}
                   className="text-gray-700 cursor-pointer hover:text-blue-600 hover:underline transition-colors"
                 >
-                  Click here to read more about eligibility for our CSE Program
-                  with Specialisation in AI & Future Tech.
+                  Click here to read more about the eligibility criteria for our B.E. in Computer Engineering.
                 </p>
               </div>
             </div>
@@ -187,16 +186,11 @@ export default function Computer() {
               {/* LEFT TEXT SECTION */}
               <div className="flex-1 bg-white p-4 sm:p-6 rounded-lg shadow-sm">
                 <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-4 leading-snug">
-                  B.E. CSE with Artificial Intelligence <br /> & Future
-                  Technologies
+                 B.E. in Computer Engineering
                 </h2>
 
                 <p className="text-gray-700 mb-6 leading-relaxed text-sm sm:text-base">
-                  The program prepares graduates to drive innovation in
-                  industries like AI, Cloud Computing, Cyber Security, and
-                  Blockchain. It combines academic rigor with practical
-                  experience, ensuring students gain real-world skills and
-                  exposure to emerging technologies.
+                  This programme provides a deep and rigorous foundation in the principles of computing, from algorithmic thinking and software development to computer architecture and network systems. It combines academic depth with extensive practical exposure, ensuring graduates are industry-ready and capable of driving technological innovation.
                 </p>
 
                 <h3 className="font-semibold text-lg sm:text-xl text-secondary mb-3">
@@ -204,11 +198,11 @@ export default function Computer() {
                 </h3>
 
                 <ul className="space-y-2 text-gray-800 text-sm sm:text-base">
-                  <li>➜ Computer Science and Programming Foundations</li>
-                  <li>➜ Data Structures and Advanced Algorithms</li>
-                  <li>➜ Artificial Intelligence and Machine Learning</li>
-                  <li>➜ Blockchain and Cybersecurity</li>
-                  <li>➜ Cloud Computing and Emerging Tech Labs</li>
+                  <li>Programming Fundamentals & Object-Oriented Design </li>
+                  <li>Data Structures, Algorithms, and Complexity Analysis </li>
+                  <li>Computer Architecture and Organization </li>
+                  <li>Database Management Systems and Software Engineering </li>
+                  <li>Operating Systems, Computer Networks, and Cybersecurity </li>
                 </ul>
               </div>
 
@@ -330,16 +324,10 @@ export default function Computer() {
           <div className="w-full bg-[#f7f7f7] py-16 text-black">
             <div className="max-w-7xl mx-auto px-6 text-center">
               <h2 className="text-3xl font-bold text-secondary mb-4">
-                Program Highlights
+                Programme Highlights
               </h2>
               <p className="text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
-                Our B.E. in Computer Science with Artificial Intelligence &
-                Future Technologies offers a unique blend of cutting-edge
-                knowledge and practical experience. With a focus on innovation,
-                industry-aligned projects, and hands-on labs, the program equips
-                students to lead in emerging technologies, while our strong
-                industry connections ensure enhanced career opportunities and
-                real-world exposure.
+                Our B.E. in Computer Engineering is designed to create versatile and proficient engineers. The curriculum emphasizes strong theoretical foundations, hands-on project-based learning, and the development of problem-solving skills critical for success in the core software and hardware industries.
               </p>
 
               {/* HIGHLIGHT CARDS */}
@@ -358,14 +346,10 @@ export default function Computer() {
                   </div>
                   <div className="p-6 text-left">
                     <h3 className="font-semibold text-lg text-secondary mb-2">
-                      Interdisciplinary Expertise
+                      Strong Foundational Core
                     </h3>
                     <p className="text-gray-700 text-sm leading-relaxed">
-                      The Computer Science program with a specialisation in AI &
-                      Future Technologies provides a multidisciplinary
-                      foundation in AI, Blockchain, Cloud Computing, and Cyber
-                      Security, preparing students to tackle complex challenges
-                      in a fast-paced industry.
+                      The program builds a formidable understanding of core computer science concepts, including algorithms, data structures, and systems programming, forming the bedrock for all advanced specializations and innovation.
                     </p>
                   </div>
                 </div>
@@ -384,13 +368,10 @@ export default function Computer() {
                   </div>
                   <div className="p-6 text-left">
                     <h3 className="font-semibold text-lg text-secondary mb-2">
-                      Cutting-Edge Laboratories
+                      Labs & Practical Exposure
                     </h3>
                     <p className="text-gray-700 text-sm leading-relaxed">
-                      Hands-on experience in high-tech environments using
-                      industry-standard tools. Students engage in real-world
-                      projects bridging theory and practice, building critical
-                      skills for modern tech careers.
+                      Students gain hands-on experience in state-of-the-art labs equipped with modern tools for software development, networking, and hardware interfacing, ensuring seamless translation of theory into practice. 
                     </p>
                   </div>
                 </div>
@@ -409,12 +390,10 @@ export default function Computer() {
                   </div>
                   <div className="p-6 text-left">
                     <h3 className="font-semibold text-lg text-secondary mb-2">
-                      Industry-Relevant Skills
+                       Industry Alignment
                     </h3>
                     <p className="text-gray-700 text-sm leading-relaxed">
-                      This program equips students to master technologies like
-                      AI, Cloud Computing, and Blockchain, fostering innovation
-                      and ensuring readiness for the future tech industry.
+                      The curriculum is continuously updated to include current trends, preparing graduates with the skills demanded by top employers in software development, system design, and IT services.
                     </p>
                   </div>
                 </div>
@@ -431,22 +410,18 @@ export default function Computer() {
                   Career Opportunities
                 </h2>
                 <p className="text-gray-700 mb-6 leading-relaxed">
-                  The field of AI and future technologies offers diverse career
-                  opportunities across various sectors. Professionals can shape
-                  innovations in industries like healthcare, finance, and tech,
-                  with roles focusing on data, security, and emerging
-                  technologies.
+                   A degree in Computer Engineering opens doors to a vast spectrum of roles in the global tech industry. Graduates are equipped to design, develop, and manage the complex software and hardware systems that power modern enterprises and consumer technologies.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-gray-800">
-                  <p>➜ Artificial Intelligence Engineer</p>
-                  <p>➜ Data Scientist</p>
-                  <p>➜ Blockchain Developer</p>
-                  <p>➜ Cyber Security Analyst</p>
-                  <p>➜ Cloud Solutions Architect</p>
-                  <p>➜ Machine Learning Specialist</p>
-                  <p>➜ AI Researcher</p>
-                  <p>➜ Robotics Engineer</p>
+                  <p>Software Development Engineer </p>
+                  <p>Systems Architect </p>
+                  <p>DevOps Engineer </p>
+                  <p>Database Administrator </p>
+                  <p>Network Engineer </p>
+                  <p>Full-Stack Developer </p>
+                  <p>Embedded Systems Engineer </p>
+                  <p>IT Project Manager </p>
                 </div>
               </div>
 
@@ -467,35 +442,7 @@ export default function Computer() {
           </div>
 
           {/* ===== CAMPUS RECRUITMENT SECTION ===== */}
-          <div className="w-full bg-[#f7f7f7] text-black py-16">
-            <div className="max-w-7xl mx-auto px-6 text-center">
-              <h2 className="text-3xl font-bold text-secondary mb-4">
-                Campus Recruitment
-              </h2>
-              <p className="text-gray-700 max-w-4xl mx-auto mb-10 leading-relaxed">
-                The program prepares students to excel in diverse fields,
-                including AI research labs, Blockchain start-ups, Cyber Security
-                firms, and Cloud Computing giants. Some of our top recruiters
-                are:
-              </p>
-
-              {/* LOGO GRID */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
-                {Array(18)
-                  .fill("")
-                  .map((_, index) => (
-                    <div
-                      key={index}
-                      className="h-20 bg-white shadow-md rounded-md flex items-center justify-center text-gray-500"
-                    >
-                      <div className="w-16 h-8 bg-gray-200 rounded flex items-center justify-center text-xs">
-                        Logo {index + 1}
-                      </div>
-                    </div>
-                  ))}
-              </div>
-            </div>
-          </div>
+          <RecruitersSection />
 
           {/* ===== NEXT STEPS SECTION ===== */}
           <div className="w-full bg-[#f7f7f7] py-16 flex justify-center px-6">

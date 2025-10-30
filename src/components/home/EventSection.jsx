@@ -64,7 +64,7 @@ export default function EventsSection() {
       </h2>
 
       {/* ✅ Full-width marquee scroll */}
-      <div className="relative w-full overflow-hidden group">
+      <div className="relative w-full overflow-visible group">
         <div className="flex animate-marquee space-x-6 px-6 group-hover:pause">
           {[...events, ...events].map((event, index) => (
             <div

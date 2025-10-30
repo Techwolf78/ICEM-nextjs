@@ -90,7 +90,7 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="w-full h-full bg-primary text-white p-6 rounded-xl shadow-lg flex flex-col">
+    <div className="w-full h-full bg-secondary text-white p-6  shadow-lg flex flex-col">
       {/* ===== Navigation Links ===== */}
       <div className="space-y-6 mb-8">
         {/* About Us */}

@@ -9,7 +9,7 @@ const DiscoverSection = () => {
       title: "Get Industry-ready",
       description:
         "We ensure every graduate is industry-ready through cutting-edge curriculum, innovation labs, and strong industry collaborations that keep students aligned with the latest technologies and trends.",
-      image: "/ir.jpg",
+      image: "/industry.JPG",
     },
     {
       title: "Research from Day One",
@@ -21,7 +21,7 @@ const DiscoverSection = () => {
       title: "Corporate Partnerships & Recruitment",
       description:
         "We have established strong, lasting relationships with a diverse portfolio of national and multinational corporations. Benefit from recruitment drives, on-campus placements, and access to employers seeking ICEM talent.",
-      image: "/coorporateR.jpg",
+      image: "/CorporateRelations.JPG",
     },
   ];
 

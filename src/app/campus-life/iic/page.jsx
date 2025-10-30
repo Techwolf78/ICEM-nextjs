@@ -5,7 +5,7 @@ import Image from "next/image";
 
 function IIC() {
   // Images and PDFs from public folder
-  const bannerImg = "/ICEM_Banner.jpg";
+  const bannerImg = "/BannerOverviewPage.jpg";
   const establishmentCert = "/Establisment_Certificate.pdf";
   const iicRatingCert = "/IIC_Rating_Certificate_2023-24.pdf";
 

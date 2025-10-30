@@ -2,7 +2,6 @@
 import { useState } from "react";
 import Image from "next/image";
 
-
 export default function Accreditation() {
   const [openAccordions, setOpenAccordions] = useState({
     naac: null,
@@ -149,23 +148,77 @@ export default function Accreditation() {
       {/* Banner */}
       <div className="w-full h-[60vh] relative">
         <Image
-          src="/ICEM_Banner.jpg"
+          src="/BannerOverviewPage.jpg"
           alt="Accreditation Banner"
           className="w-full h-full object-cover"
           width={1700}
           height={600}
         />
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
-            Accreditation
-          </h1>
+      </div>
+      {/* === Approvals Section === */}
+      <div className="w-full bg-white text-gray-800 px-6 py-12">
+        <h2 className="text-2xl font-semibold text-secondary mb-4">
+          ACCREDITATION AND APPROVALS
+        </h2>
+        <p className="text-gray-700 mb-8 leading-relaxed">
+          Indira College of Engineering and Management, Pune is affiliated to
+          Savitribai Phule Pune University (SPPU), Pune, and is accredited by
+          the National Assessment and Accreditation Council (NAAC) with a ‘B+’
+          Grade. The institute is approved by the Government of Maharashtra and
+          recognized by the University Grants Commission (UGC). Indira College
+          is committed to delivering quality education in engineering and
+          management, fostering academic excellence and holistic student
+          development.
+        </p>
+
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="flex flex-col items-center justify-center p-4 transition-transform duration-300 hover:scale-105">
+            <Image
+              src="/NAAC.webp"
+              alt="NAAC"
+              width={200}
+              height={200}
+              className="mb-2"
+            />
+            <p className="font-semibold text-center">NAAC Accredited</p>
+          </div>
+           <div className="flex flex-col items-center justify-center p-4 transition-transform duration-300 hover:scale-105">
+            <Image
+              src="/AICTE.webp"
+              alt="UGC"
+              width={200}
+              height={200}
+              className="mb-2"
+            />
+            <p className="font-semibold text-center">Approved by AICTE</p>
+          </div>
+           <div className="flex flex-col items-center justify-center p-2 transition-transform duration-300 hover:scale-105">
+            <Image
+              src="/SPPU.webp"
+              alt="SPPU"
+              width={200}
+              height={200}
+              className="mb-2"
+            />
+            <p className="font-semibold text-center">Affiliated to SPPU Pune</p>
+          </div>
+           <div className="flex flex-col items-center justify-center p-4 transition-transform duration-300 hover:scale-105">
+            <Image
+              src="/coming-soon.webp"
+              alt="Coming Soon"
+              width={200}
+              height={200}
+              className="mb-2"
+            />
+            <p className="font-semibold text-center">Coming Soon</p>
+          </div>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 py-16 px-6">
+      <div className="w-full mx-auto py-2 px-2">
         {/* Left Section */}
-        <div className="md:w-full bg-white p-6 rounded-xl shadow-md space-y-12">
+        <div className="md:w-full bg-white p-3 rounded-xl shadow-md space-y-12">
           {/* === NAAC Section === */}
           {Object.keys(sections).map((key) => (
             <div key={key}>

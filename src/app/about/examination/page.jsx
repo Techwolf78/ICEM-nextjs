@@ -34,7 +34,7 @@ export default function Examination() {
       {/* ===== Hero Banner ===== */}
       <div className="w-full h-[60vh] relative">
         <Image
-          src="/ICEM_Banner.jpg"
+          src="/BannerOverviewPage.jpg"
           alt="Examination at ICEM"
           className="w-full h-full object-cover"
           width={1700}

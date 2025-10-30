@@ -1,6 +1,12 @@
 "use client";
 import Image from "next/image";
-import { FaFacebookF, FaLinkedinIn, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaLinkedinIn,
+  FaInstagram,
+  FaTwitter,
+  FaYoutube,
+} from "react-icons/fa";
 
 export default function IGOI() {
   const rightLinks = [
@@ -27,9 +33,14 @@ export default function IGOI() {
   ];
 
   const institutes = [
-  
-    { name: "Indira Global Business School (IGBS)", url: "www.indiraigbs.edu.in" },
-    { name: "Indira College of Engineering & Management (ICEM)", url: "www.indiraicem.ac.in" },
+    {
+      name: "Indira Global Business School (IGBS)",
+      url: "www.indiraigbs.edu.in",
+    },
+    {
+      name: "Indira College of Engineering & Management (ICEM)",
+      url: "www.indiraicem.ac.in",
+    },
   ];
 
   return (
@@ -37,7 +48,7 @@ export default function IGOI() {
       {/* Hero Banner */}
       <div className="w-full h-[60vh] relative">
         <Image
-          src="/ICEM_Banner.jpg"
+          src="/BannerOverviewPage.jpg"
           alt="Indira Group Banner"
           width={1700}
           height={600}
@@ -60,51 +71,65 @@ export default function IGOI() {
 
           <p className="text-gray-700 leading-relaxed mb-4">
             Established in 1994 under the visionary guidance of{" "}
-            <strong>Dr. Tarita Shankar</strong>, the <strong>Indira Group of Institutes (IGI)</strong> in Pune has
-            emerged as a premier educational institution dedicated to shaping future-ready professionals. Founded by
-            the <strong>Shree Chanakya Education Society (SCES)</strong>, IGI was envisioned as a platform to nurture
-            talent, foster innovation, and empower students with the knowledge and skills necessary to succeed in a
-            rapidly evolving world.
+            <strong>Dr. Tarita Shankar</strong>, the{" "}
+            <strong>Indira Group of Institutes (IGI)</strong> in Pune has
+            emerged as a premier educational institution dedicated to shaping
+            future-ready professionals. Founded by the{" "}
+            <strong>Shree Chanakya Education Society (SCES)</strong>, IGI was
+            envisioned as a platform to nurture talent, foster innovation, and
+            empower students with the knowledge and skills necessary to succeed
+            in a rapidly evolving world.
           </p>
 
           <p className="text-gray-700 leading-relaxed mb-4">
-            With a strong legacy spanning over three decades, IGI has consistently pursued academic excellence while
-            promoting holistic development. The group has expanded its footprint to include{" "}
-            <strong>12 distinguished institutes</strong> offering a wide array of programs across Management,
-            Engineering, Information Technology, Pharmacy, Commerce, Science, and Mass Communication. This
-            multi-disciplinary approach enables IGI to provide a seamless educational journey from{" "}
-            <strong>Kindergarten to Doctorate</strong>, preparing students to excel at every stage of their academic
-            and professional careers.
+            With a strong legacy spanning over three decades, IGI has
+            consistently pursued academic excellence while promoting holistic
+            development. The group has expanded its footprint to include{" "}
+            <strong>12 distinguished institutes</strong> offering a wide array
+            of programs across Management, Engineering, Information Technology,
+            Pharmacy, Commerce, Science, and Mass Communication. This
+            multi-disciplinary approach enables IGI to provide a seamless
+            educational journey from <strong>Kindergarten to Doctorate</strong>,
+            preparing students to excel at every stage of their academic and
+            professional careers.
           </p>
 
           <p className="text-gray-700 leading-relaxed mb-4">
             At the heart of IGI’s philosophy is a commitment to{" "}
-            <strong>student empowerment and holistic development</strong>. The institutes focus not only on delivering
-            high-quality education but also on cultivating critical thinking, leadership, and entrepreneurial skills.
-            Students are encouraged to engage in practical learning experiences, research initiatives, industry
-            collaborations, and community service, fostering an environment that promotes innovation, ethical values,
-            and social responsibility.
+            <strong>student empowerment and holistic development</strong>. The
+            institutes focus not only on delivering high-quality education but
+            also on cultivating critical thinking, leadership, and
+            entrepreneurial skills. Students are encouraged to engage in
+            practical learning experiences, research initiatives, industry
+            collaborations, and community service, fostering an environment that
+            promotes innovation, ethical values, and social responsibility.
           </p>
 
           <p className="text-gray-700 leading-relaxed mb-4">
-            IGI takes pride in its <strong>state-of-the-art infrastructure</strong>, experienced faculty, and a
-            supportive learning environment that encourages curiosity, creativity, and confidence. The campus culture
-            is designed to inspire students to explore their potential, embrace challenges, and emerge as competent,
-            confident, and socially conscious professionals.
+            IGI takes pride in its{" "}
+            <strong>state-of-the-art infrastructure</strong>, experienced
+            faculty, and a supportive learning environment that encourages
+            curiosity, creativity, and confidence. The campus culture is
+            designed to inspire students to explore their potential, embrace
+            challenges, and emerge as competent, confident, and socially
+            conscious professionals.
           </p>
 
           <p className="text-gray-700 leading-relaxed mb-4">
-            Over the years, IGI has built a strong <strong>network of alumni</strong> who have made significant
-            contributions across industries, demonstrating the institute’s commitment to nurturing talent and
-            leadership. By combining academic rigor with experiential learning and industry exposure, IGI equips its
-            students to thrive in diverse professional landscapes, adapt to emerging trends, and lead with vision and
-            integrity.
+            Over the years, IGI has built a strong{" "}
+            <strong>network of alumni</strong> who have made significant
+            contributions across industries, demonstrating the institute’s
+            commitment to nurturing talent and leadership. By combining academic
+            rigor with experiential learning and industry exposure, IGI equips
+            its students to thrive in diverse professional landscapes, adapt to
+            emerging trends, and lead with vision and integrity.
           </p>
 
           <p className="text-gray-700 leading-relaxed font-medium">
-            As a beacon of educational excellence in Pune, the Indira Group of Institutes continues to innovate,
-            inspire, and lead — preparing a generation of professionals who are ready to make a meaningful impact in
-            the world.
+            As a beacon of educational excellence in Pune, the Indira Group of
+            Institutes continues to innovate, inspire, and lead — preparing a
+            generation of professionals who are ready to make a meaningful
+            impact in the world.
           </p>
         </div>
 
@@ -123,7 +148,9 @@ export default function IGOI() {
 
           {/* Contact Form */}
           <div className="bg-secondary/90 p-6 rounded-lg mb-8">
-            <h3 className="text-center text-lg font-bold mb-4">GET IN TOUCH WITH US</h3>
+            <h3 className="text-center text-lg font-bold mb-4">
+              GET IN TOUCH WITH US
+            </h3>
             <form className="space-y-3">
               <input
                 type="text"
@@ -155,7 +182,8 @@ export default function IGOI() {
                 className="w-full p-2 text-black rounded focus:outline-none focus:ring-2 focus:ring-primary"
               />
               <p className="text-xs text-white/70">
-                By providing your contact details, you agree to receive updates from Indira College through WhatsApp.
+                By providing your contact details, you agree to receive updates
+                from Indira College through WhatsApp.
               </p>
               <button
                 type="submit"
@@ -202,7 +230,9 @@ export default function IGOI() {
                 [ Image Placeholder ]
               </div>
               <div className="p-4 text-center">
-                <h4 className="font-semibold text-gray-800 text-base">{inst.name}</h4>
+                <h4 className="font-semibold text-gray-800 text-base">
+                  {inst.name}
+                </h4>
                 <p className="text-sm text-gray-500 mt-1">{inst.url}</p>
                 <button className="mt-3 px-4 py-2 bg-secondary text-white text-sm font-medium rounded hover:bg-secondary/90 transition">
                   Read More

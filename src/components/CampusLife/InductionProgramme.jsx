@@ -7,7 +7,7 @@ export default function InductionProgramme() {
   const [openIndex, setOpenIndex] = useState(null);
 
   // Assets from public folder
-  const bannerImg = "/ICEM_Banner.jpg";
+  const bannerImg = "/BannerOverviewPage.jpg";
   const beComp = "/BEComp.pdf";
 
   const rightLinks = [
@@ -49,7 +49,6 @@ export default function InductionProgramme() {
   return (
     <>
       {/* Hero Banner */}
-     
 
       {/* Main Content */}
       <div className="bg-white p-4 sm:p-6 rounded-xl shadow-md">
@@ -59,10 +58,10 @@ export default function InductionProgramme() {
 
         <p className="text-gray-700 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">
           The term <b>induction</b> is generally used to describe the process
-          whereby new incumbents adjust to or acclimatize to their new roles
-          and environment. In other words, it is a well-planned event to
-          educate new entrants about the institution's environment and connect
-          them with the people in it.
+          whereby new incumbents adjust to or acclimatize to their new roles and
+          environment. In other words, it is a well-planned event to educate new
+          entrants about the institution's environment and connect them with the
+          people in it.
         </p>
 
         <h3 className="text-lg sm:text-xl font-semibold text-secondary mb-2 sm:mb-3">
@@ -71,10 +70,10 @@ export default function InductionProgramme() {
 
         <p className="text-gray-700 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">
           The purpose of the <b>Student Induction Programme</b> is to help new
-          students adjust and feel comfortable in the new environment,
-          inculcate in them the ethos and culture of the institution, help
-          them build bonds with other students and faculty members, and expose
-          them to a sense of larger purpose and self-exploration.
+          students adjust and feel comfortable in the new environment, inculcate
+          in them the ethos and culture of the institution, help them build
+          bonds with other students and faculty members, and expose them to a
+          sense of larger purpose and self-exploration.
         </p>
 
         <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 sm:p-6 mt-4 sm:mt-6 mb-6 sm:mb-10">
@@ -85,9 +84,7 @@ export default function InductionProgramme() {
             <li>Orientation about the institution and its departments.</li>
             <li>Interactive sessions with faculty and student mentors.</li>
             <li>Workshops on personality development and ethics.</li>
-            <li>
-              Introduction to academic rules, facilities, and resources.
-            </li>
+            <li>Introduction to academic rules, facilities, and resources.</li>
             <li>Team-building and cultural integration activities.</li>
           </ul>
         </div>

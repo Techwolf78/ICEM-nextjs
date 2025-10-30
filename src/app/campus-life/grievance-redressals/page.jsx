@@ -30,7 +30,7 @@ function Grievance() {
       <div className="w-full h-[60vh] relative">
         {/* Use Image component or normal img */}
         <Image
-          src="/ICEM_Banner.jpg" // placed in public folder
+          src="/BannerOverviewPage.jpg" // placed in public folder
           alt="ICEM Campus"
           fill
           className="object-cover"

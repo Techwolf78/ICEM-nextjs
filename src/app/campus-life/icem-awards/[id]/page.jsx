@@ -10,7 +10,7 @@ const AwardDetails = () => {
   const id = params.id; // Now from dynamic route: /awards/1
 
   // Images are now in /public folder
-  const bannerImg = "/ICEM_Banner.jpg";
+  const bannerImg = "/BannerOverviewPage.jpg";
   const placeholderImg = "/award-placeholder.jpg";
 
   const awards = {

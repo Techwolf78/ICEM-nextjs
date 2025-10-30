@@ -12,7 +12,7 @@ export default function Governance() {
       {/* ===== Hero Banner ===== */}
       <div className="w-full h-[60vh] relative">
         <Image
-          src="/ICEM_Banner.jpg"
+          src="/BannerOverviewPage.jpg"
           alt="Governance at ICEM"
           className="w-full h-full object-cover"
           height={600}
@@ -154,7 +154,6 @@ export default function Governance() {
         </div>
 
         {/* ===== RIGHT SIDEBAR ===== */}
-  
       </div>
     </div>
   );

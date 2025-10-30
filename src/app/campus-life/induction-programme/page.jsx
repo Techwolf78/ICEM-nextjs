@@ -8,7 +8,7 @@ function InductionProgramme() {
   const [openIndex, setOpenIndex] = useState(null);
 
   // Assets from public folder
-  const bannerImg = "/ICEM_Banner.jpg";
+  const bannerImg = "/BannerOverviewPage.jpg";
   const beComp = "/BEComp.pdf";
 
   const rightLinks = [
@@ -153,7 +153,7 @@ function InductionProgramme() {
 
         {/* Right Sidebar */}
         <div className="lg:w-1/3 bg-primary text-white p-6 rounded-xl shadow-md flex flex-col justify-between">
-          <Sidebar/>
+          <Sidebar />
         </div>
       </div>
     </div>

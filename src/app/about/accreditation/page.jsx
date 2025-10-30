@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import { GrDownload } from "react-icons/gr";
 
 export default function Accreditation() {
   const [openAccordions, setOpenAccordions] = useState({
@@ -17,6 +18,41 @@ export default function Accreditation() {
     }));
   };
 
+  const handleDownload = async (pdfUrl, pdfName) => {
+    try {
+      // Fetch the PDF file
+      const response = await fetch(pdfUrl);
+      if (!response.ok) {
+        throw new Error("PDF file not found");
+      }
+
+      // Convert response to blob
+      const blob = await response.blob();
+
+      // Create blob URL
+      const blobUrl = window.URL.createObjectURL(blob);
+
+      // Create temporary link and trigger download
+      const link = document.createElement("a");
+      link.href = blobUrl;
+      link.download = pdfName;
+      document.body.appendChild(link);
+      link.click();
+
+      // Clean up
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(blobUrl);
+    } catch (error) {
+      console.error("Error downloading PDF:", error);
+      alert("Error downloading PDF. Please try again later.");
+    }
+  };
+
+  // Function to view PDF in new tab
+  const handleViewPDF = (pdfUrl) => {
+    window.open(pdfUrl, "_blank");
+  };
+
   const sections = {
     naac: {
       title: "NAAC",
@@ -25,21 +61,155 @@ export default function Accreditation() {
           heading: "SSR Reports Year Wise",
           content:
             "This section will contain year-wise SSR reports and related documentation for accreditation purposes.",
+          pdfs: [
+            {
+              name: "SSR Report 2023",
+              url: "/pdfs/accreditation/ICEM-SSR_NAAC-Final-25-March.pdf",
+            },
+          ],
         },
         {
           heading: "Criteria Wise Details",
           content:
             "Detailed information and supporting evidence for each NAAC accreditation criteria will be presented here.",
+          pdfs: [
+            {
+              name: "Criteria 1 - Action Taken Report",
+              url: "/pdfs/accreditation/1.4.1-Action-taken-report.pdf",
+            },
+            {
+              name: "Criteria 1 - Feedback Report",
+              url: "/pdfs/accreditation/1.4.2-Feedback-report.pdf",
+            },
+          ],
         },
         {
           heading: "AQAR Reports",
           content:
             "Annual Quality Assurance Reports (AQAR) submitted to NAAC for assessment of institutional performance.",
+          pdfs: [
+            { name: "AQAR 2018-19", url: "/pdfs/accreditation/AQAR 18-19.pdf" },
+            { name: "AQAR 2019-20", url: "/pdfs/accreditation/AQAR 19-20.pdf" },
+            { name: "AQAR 2020-21", url: "/pdfs/accreditation/AQAR 20-21.pdf" },
+          ],
+        },
+        {
+          heading: "Academic Calendar",
+          content:
+            "Official academic calendars outlining important academic dates and schedules for each semester.",
+          pdfs: [
+            {
+              name: "Academic Calendar 2021-22 Sem I",
+              url: "/pdfs/accreditation/calendar 2021-22 Sem I.pdf",
+            },
+            {
+              name: "Academic Calendar 2021-22 Sem II",
+              url: "/pdfs/accreditation/calendar 2021-22 Sem II.pdf",
+            },
+            {
+              name: "Academic Calendar 2020-21 Sem I",
+              url: "/pdfs/accreditation/calendar 20-21 Sem I.pdf",
+            },
+            {
+              name: "Academic Calendar 2020-21 Sem II",
+              url: "/pdfs/accreditation/calendar 20-21 Sem II.pdf",
+            },
+            {
+              name: "Academic Calendar 2019-20 Sem I",
+              url: "/pdfs/accreditation/calendar 2019-20 Sem I.pdf",
+            },
+            {
+              name: "Academic Calendar 2019-20 Sem II",
+              url: "/pdfs/accreditation/calendar 2019-20 Sem II.pdf",
+            },
+            {
+              name: "Academic Calendar 2018-19 Sem I",
+              url: "/pdfs/accreditation/calendar 2018-19 Sem I.pdf",
+            },
+            {
+              name: "Academic Calendar 2018-19 Sem II",
+              url: "/pdfs/accreditation/calendar 2018-19 Sem II.pdf",
+            },
+            {
+              name: "Academic Calendar 2017-18 Sem II",
+              url: "/pdfs/accreditation/calendar 2017-18 Sem II.pdf",
+            },
+          ],
+        },
+        {
+          heading: "PO's and CO's",
+          content:
+            "Self Study Report (SSR) documents and departmental PEO-PSO-PO details submitted for accreditation and institutional assessment.",
+          pdfs: [
+            {
+              name: "Basic Engineering Vision and Mission_FE",
+              url: "/pdfs/accreditation/Basic Engineering Vision and Mission_FE.pdf",
+            },
+            {
+              name: "Civil Engineering Department PEO-PSO-PO",
+              url: "/pdfs/accreditation/Civil Engineering Department PEO-PSO-PO.pdf",
+            },
+            {
+              name: "CO_all_19-20",
+              url: "/pdfs/accreditation/CO_all_19-20.pdf",
+            },
+            {
+              name: "Institute Mission, Vision",
+              url: "/pdfs/accreditation/Institute Mission, Vision.pdf",
+            },
+            {
+              name: "MBA Department -PEO-PSO-PO",
+              url: "/pdfs/accreditation/MBA Department -PEO-PSO-PO.pdf",
+            },
+            {
+              name: "Mechanical Engineering Department -PEO-PSO-PO",
+              url: "/pdfs/accreditation/Mechanical Engineering Department -PEO-PSO-PO.pdf",
+            },
+          ],
+        },
+        {
+          heading: "Code of Conduct Handbook",
+          content:
+            "Handbook outlining the code of conduct for students and staff.",
+          pdfs: [
+            {
+              name: "Code of Conduct Handbook",
+              url: "/pdfs/accreditation/Code of Conduct Handbook.pdf",
+            },
+          ],
         },
         {
           heading: "NAAC Certificate",
           content:
             "Official NAAC accreditation certificate and other recognition documents.",
+          pdfs: [
+            {
+              name: "NAAC Certificate",
+              url: "/pdfs/accreditaion/NAAC-Cerificate-of-Accreditation-2024.pdf",
+            },
+          ],
+        },
+        {
+          heading: "Procedures and Policies",
+          content:
+            "Official NAAC accreditation certificate and other recognition documents.",
+          pdfs: [
+            {
+              name: "Procedures and Policies",
+              url: "/pdfs/accreditation/4.4.2 merged.pdf",
+            },
+          ],
+        },
+        {
+          heading: "Media Center",
+          content:
+            "Official NAAC accreditation certificate and other recognition documents.",
+          pdfs: [
+            {
+              name: "NAAC Certificate",
+              url: "/pdfs/accreditation/4.4.2 merged.pdf",
+            },
+          ],
         },
       ],
     },
@@ -51,16 +221,45 @@ export default function Accreditation() {
           heading: "IQAC Committee",
           content:
             "List of IQAC committee members with their designations and institutional roles.",
-        },
+          pdfs: [
+            {
+              name: "IQAC Committee 2023-24",
+              url: "/pdfs/iqac-committee-2024.pdf",
+            },
+            {
+              name: "IQAC Roles & Responsibilities",
+              url: "/pdfs/iqac-roles.pdf",
+            },
+          ],
+        }, //in IQAC add the table instead of pdfs
         {
           heading: "IQAC Notices, MOM's & Actions",
           content:
             "Meeting minutes, notices, and action reports from IQAC sessions.",
+          pdfs: [
+            {
+              name: "Internal Quality Assurance Cell Meeting - 28th March 2023",
+              url: "/pdfs/accreditation/28th March 2023.pdf",
+            },
+            {
+              name: "	Internal Quality Assurance Cell Meeting - 24th Dec 2022",
+              url: "/pdfs/accreditation/24th Dec 2022.pdf",
+            },
+            {
+              name: "Internal Quality Assurance Cell Meeting - 11th June 2022",
+              url: "/pdfs/accreditation/11th June 2022.pdf",
+            },
+          ],
         },
         {
           heading: "IQAC Formats",
           content:
             "Standard formats used for IQAC documentation and quality assurance processes.",
+          pdfs: [
+            { name: "Quality Assurance Format", url: "/pdfs/qa-format.pdf" },
+            { name: "Feedback Forms", url: "/pdfs/feedback-forms.pdf" },
+            { name: "Monitoring Formats", url: "/pdfs/monitoring-formats.pdf" },
+          ],
         },
       ],
     },
@@ -72,76 +271,109 @@ export default function Accreditation() {
           heading: "Best Practices",
           content:
             "Documentation of best practices adopted by the institution for continual improvement.",
+          pdfs: [
+            {
+              name: "Best Practices 2023",
+              url: "/pdfs/accreditation/Best-Practices.pdf",
+            },
+            {
+              name: "Liaison with Industry",
+              url: "/pdfs/accreditation/Liaison with Industry.pdf",
+            },
+            {
+              name: "Scholar Club",
+              url: "/pdfs/accreditation/Scholar Club.pdf",
+            },
+          ],
         },
         {
           heading: "Distinctive Practice",
           content:
             "Unique institutional practices contributing to holistic student and faculty development.",
+          pdfs: [
+            {
+              name: "Distinctive Practices Report",
+              url: "/pdfs/accreditation/Distinctiveness.pdf",
+            },
+            {
+              name: "Talent Management Cell",
+              url: "/pdfs/accreditation/Talent Management Cell.pdf",
+            },
+          ],
         },
         {
           heading: "SPPU Annual Report",
           content:
             "Savitribai Phule Pune University annual report and related institutional contributions.",
+          pdfs: [
+            {
+              name: "Annual Report 2023-24",
+              url: "/pdfs/accreditation/Annual Report 2023-24.pdf",
+            },
+            {
+              name: "Annual Report 2022-23",
+              url: "/pdfs/accreditation/AnnualReport_2022-23.pdf",
+            },
+            {
+              name: "Annual Report 2021-22",
+              url: "/pdfs/accreditation/AnnualReport_2021-2022_CEGP013110.pdf",
+            },
+          ],
         },
         {
           heading: "Code of Conduct",
           content:
             "Institutional code of conduct for staff and students ensuring ethical governance.",
+          pdfs: [
+            {
+              name: "Staff Code of Conduct",
+              url: "/pdfs/accreditation/Code of  Conduct 2021-22",
+            },
+          ],
         },
         {
           heading: "NIRF",
           content:
             "National Institutional Ranking Framework (NIRF) data and submissions.",
+          pdfs: [
+            { name: "NIRF Data 2023", url: "/pdfs/nirf-2023.pdf" },
+            {
+              name: "NIRF Submission Report",
+              url: "/pdfs/nirf-submission.pdf",
+            },
+          ],
         },
         {
           heading: "Financial Statements",
           content:
             "Audited financial reports and institutional expenditure details.",
+          pdfs: [
+            { name: "Audit Report 2022-23", url: "/pdfs/audit-2023.pdf" },
+            {
+              name: "Financial Statement 2023",
+              url: "/pdfs/financial-2023.pdf",
+            },
+          ],
         },
         {
           heading: "Soft Skills and Aptitude Reports",
           content:
             "Reports highlighting student soft skill training, aptitude assessments, and placement readiness initiatives.",
+          pdfs: [
+            {
+              name: "Soft Skills Report 2023",
+              url: "/pdfs/soft-skills-2023.pdf",
+            },
+            {
+              name: "Aptitude Test Results",
+              url: "/pdfs/aptitude-results.pdf",
+            },
+            { name: "Placement Training", url: "/pdfs/placement-training.pdf" },
+          ],
         },
       ],
     },
   };
-
-  const bottomAccordions = [
-    {
-      title: "Academic Calendar",
-      content: "PDFs and content related to academic calendar year-wise.",
-    },
-    {
-      title: "PO's and CO's",
-      content:
-        "Program Outcomes (POs) and Course Outcomes (COs) documents for all departments.",
-    },
-    {
-      title: "Code Of Conduct",
-      content: "Rules, regulations, and ethical guidelines followed at ICEM.",
-    },
-    {
-      title: "Best Practices @ ICEM",
-      content:
-        "Innovative and effective institutional practices improving student and staff engagement.",
-    },
-    {
-      title: "Distinctive feature of ICEM",
-      content:
-        "Unique institutional features and recognitions that distinguish ICEM from other colleges.",
-    },
-    {
-      title: "Procedures and Policies",
-      content:
-        "Official policy documents and procedural guidelines for staff/students.",
-    },
-    {
-      title: "Media Center",
-      content:
-        "Photos, videos, and press releases related to college achievements and events.",
-    },
-  ];
 
   return (
     <div className="w-full bg-white text-gray-800">
@@ -182,7 +414,7 @@ export default function Accreditation() {
             />
             <p className="font-semibold text-center">NAAC Accredited</p>
           </div>
-           <div className="flex flex-col items-center justify-center p-4 transition-transform duration-300 hover:scale-105">
+          <div className="flex flex-col items-center justify-center p-4 transition-transform duration-300 hover:scale-105">
             <Image
               src="/AICTE.webp"
               alt="UGC"
@@ -192,7 +424,7 @@ export default function Accreditation() {
             />
             <p className="font-semibold text-center">Approved by AICTE</p>
           </div>
-           <div className="flex flex-col items-center justify-center p-2 transition-transform duration-300 hover:scale-105">
+          <div className="flex flex-col items-center justify-center p-2 transition-transform duration-300 hover:scale-105">
             <Image
               src="/SPPU.webp"
               alt="SPPU"
@@ -202,7 +434,7 @@ export default function Accreditation() {
             />
             <p className="font-semibold text-center">Affiliated to SPPU Pune</p>
           </div>
-           <div className="flex flex-col items-center justify-center p-4 transition-transform duration-300 hover:scale-105">
+          <div className="flex flex-col items-center justify-center p-4 transition-transform duration-300 hover:scale-105">
             <Image
               src="/coming-soon.webp"
               alt="Coming Soon"
@@ -241,7 +473,47 @@ export default function Accreditation() {
                   </button>
                   {openAccordions[key] === index && (
                     <div className="p-4 bg-white border-t border-gray-200 text-gray-700">
-                      {item.content}
+                      <p className="mb-4">{item.content}</p>
+                      {/* PDF Section */}
+                      {item.pdfs && item.pdfs.length > 0 && (
+                        <div className="mt-4">
+                          <h4 className="font-semibold text-gray-800 mb-3">
+                            Available Documents:
+                          </h4>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                            {item.pdfs.map((pdf, pdfIndex) => (
+                              <div
+                                key={pdfIndex}
+                                className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200"
+                              >
+                                <span className="text-sm font-medium text-gray-700">
+                                  {pdf.name}
+                                </span>
+                                <div className="flex gap-2">
+                                  <button
+                                    onClick={() => handleViewPDF(pdf.url)}
+                                    className="px-3 py-1"
+                                  >
+                                    <img
+                                      src="/new-tab.png"
+                                      alt="View PDF"
+                                      className="w-5 h-5"
+                                    />
+                                  </button>
+                                  <button
+                                    onClick={() =>
+                                      handleDownload(pdf.url, pdf.name)
+                                    }
+                                    className="px-3 py-1"
+                                  >
+                                    <GrDownload />
+                                  </button>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>

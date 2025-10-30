@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import BannerSlider from "./BannerSlider";
+
 
 export default function Sports() {
   const [activeSection, setActiveSection] = useState("Sports");
@@ -356,26 +358,11 @@ export default function Sports() {
 
  return (
     <div className="w-full bg-white text-gray-800">
+       <BannerSlider />
       <div className="max-w-7xl mx-auto py-16 px-6 space-y-12">
         {/* Banner Image */}
-        <div className="relative w-full h-64 md:h-80 rounded-2xl overflow-hidden shadow-xl">
-          <div className="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-90"></div>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center text-white">
-              <h1 className="text-4xl md:text-6xl font-bold mb-4">
-                Campus Facilities
-              </h1>
-              <p className="text-xl md:text-2xl opacity-90 max-w-2xl mx-auto">
-                Discover World-Class Amenities at ICEM
-              </p>
-            </div>
-          </div>
+       
 
-          {/* Decorative Elements */}
-          <div className="absolute top-0 left-0 w-32 h-32 bg-white/10 rounded-full -translate-x-16 -translate-y-16"></div>
-          <div className="absolute bottom-0 right-0 w-40 h-40 bg-white/10 rounded-full translate-x-20 translate-y-20"></div>
-          <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-white/10 rounded-full"></div>
-        </div>
 
         {/* Navigation Tabs */}
         <div className="flex flex-wrap gap-2 justify-center mb-8">

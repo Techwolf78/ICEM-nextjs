@@ -5,15 +5,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { HiMenuAlt2, HiX } from "react-icons/hi";
 import { TbExternalLink } from "react-icons/tb";
-import { 
-  FiChevronDown, 
-  FiChevronUp, 
-  FiHome, 
-  FiBriefcase, 
-  FiUsers, 
+import {
+  FiChevronDown,
+  FiChevronUp,
+  FiHome,
+  FiBriefcase,
+  FiUsers,
   FiMapPin,
   FiAward,
-  FiInfo
+  FiInfo,
 } from "react-icons/fi";
 
 const Navbar = () => {
@@ -52,7 +52,7 @@ const Navbar = () => {
               label: "Overview",
               link: "/about/overview",
             },
-            
+
             { label: "Facilities", link: "/about/facilities" },
             { label: "Governance", link: "/about/governance" },
             { label: "Accreditation", link: "/about/accreditation" },
@@ -71,22 +71,22 @@ const Navbar = () => {
               label: "Student Welfare",
               link: "/campus-life/student-welfare",
             },
-             { label: "IIC", link: "/campus-life/student-welfare#iic" },
+            { label: "IIC", link: "/campus-life/student-welfare#iic" },
             {
               label: "Induction Programme",
-              link: "/campus-life/student-welfare#induction",
+              link: "/campus-life/induction-programme",
             },
             {
               label: "Student Council",
               link: "/campus-life/student-welfare#student-council",
             },
-            { label: "National Service Scheme", link: "/campus-life/student-welfare#nss" },
+            { label: "National Service Scheme", link: "/campus-life/nss" },
             { label: "ICEM Awards", link: "/campus-life/icem-awards" },
             { label: "Academics", link: "/campus-life/academics" },
             { label: "Committies", link: "/campus-life/committees" },
             {
               label: "Grievance Redressals",
-              link: "/campus-life/grievance-redressals",
+              link: "/campus-life/committees#grievance",
             },
           ],
         },
@@ -249,8 +249,11 @@ const Navbar = () => {
           )}
           <ul className="space-y-1">
             {section.items.map((item, itemIndex) => (
-              <li key={itemIndex} className="animate-in fade-in-0 slide-in-from-left-2 duration-300" 
-                  style={{ animationDelay: `${itemIndex * 50}ms` }}>
+              <li
+                key={itemIndex}
+                className="animate-in fade-in-0 slide-in-from-left-2 duration-300"
+                style={{ animationDelay: `${itemIndex * 50}ms` }}
+              >
                 {item.link ? (
                   <Link
                     href={item.link}
@@ -288,7 +291,7 @@ const Navbar = () => {
               width={240}
               className="h-40 w-[80%] md:h-24 md:w-full cursor-pointer object-contain transition-transform duration-300 "
               priority
-              unoptimized={true} 
+              unoptimized={true}
             />
           </Link>
         </div>
@@ -344,7 +347,10 @@ const Navbar = () => {
                   Leaving Certificate
                 </a>
                 <span className="text-gray-400">|</span>
-                <Link href="/contact" className="hover:text-secondary transition-colors duration-200">
+                <Link
+                  href="/contact"
+                  className="hover:text-secondary transition-colors duration-200"
+                >
                   Contact Us
                 </Link>
               </div>
@@ -369,7 +375,11 @@ const Navbar = () => {
               onMouseLeave={handleMouseLeave}
             >
               <span>About Us</span>
-              <FiChevronDown className={`w-3 h-3 transition-transform duration-300 ${activeDropdown === "aboutUs" ? "rotate-180" : ""}`} />
+              <FiChevronDown
+                className={`w-3 h-3 transition-transform duration-300 ${
+                  activeDropdown === "aboutUs" ? "rotate-180" : ""
+                }`}
+              />
             </div>
             <div
               className="flex items-center gap-1 cursor-pointer hover:text-secondary transition-all duration-200 group"
@@ -377,7 +387,11 @@ const Navbar = () => {
               onMouseLeave={handleMouseLeave}
             >
               <span>Campus Life</span>
-              <FiChevronDown className={`w-3 h-3 transition-transform duration-300 ${activeDropdown === "campusLife" ? "rotate-180" : ""}`} />
+              <FiChevronDown
+                className={`w-3 h-3 transition-transform duration-300 ${
+                  activeDropdown === "campusLife" ? "rotate-180" : ""
+                }`}
+              />
             </div>
             <div
               className="flex items-center gap-1 cursor-pointer hover:text-secondary transition-all duration-200 group"
@@ -385,18 +399,34 @@ const Navbar = () => {
               onMouseLeave={handleMouseLeave}
             >
               <span>Programs & Admission</span>
-              <FiChevronDown className={`w-3 h-3 transition-transform duration-300 ${activeDropdown === "programs" ? "rotate-180" : ""}`} />
+              <FiChevronDown
+                className={`w-3 h-3 transition-transform duration-300 ${
+                  activeDropdown === "programs" ? "rotate-180" : ""
+                }`}
+              />
             </div>
-            <Link href="/placement" className="hover:text-secondary transition-colors duration-200 group">
+            <Link
+              href="/placement"
+              className="hover:text-secondary transition-colors duration-200 group"
+            >
               Placement
             </Link>
-            <Link href="/about/examination" className="hover:text-secondary transition-colors duration-200 group">
+            <Link
+              href="/about/examination"
+              className="hover:text-secondary transition-colors duration-200 group"
+            >
               Examination
             </Link>
-            <Link href="/alumni" className="hover:text-secondary transition-colors duration-200 group">
+            <Link
+              href="/alumni"
+              className="hover:text-secondary transition-colors duration-200 group"
+            >
               Alumni
             </Link>
-            <Link href="/research" className="hover:text-secondary transition-colors duration-200 group">
+            <Link
+              href="/research"
+              className="hover:text-secondary transition-colors duration-200 group"
+            >
               Research
             </Link>
           </div>
@@ -442,9 +472,7 @@ const Navbar = () => {
           >
             {/* Header with Close Button */}
             <div className="flex justify-between items-center p-4 border-b border-gray-200">
-              <h2 className="text-base font-semibold text-gray-900">
-                Menu
-              </h2>
+              <h2 className="text-base font-semibold text-gray-900">Menu</h2>
               <button
                 onClick={toggleMobileMenu}
                 className="text-gray-500 hover:text-gray-700 transition-all duration-300 hover:scale-110"
@@ -467,7 +495,11 @@ const Navbar = () => {
                   >
                     <span>Quick Links</span>
                     <span className="text-lg transition-transform duration-300">
-                      {mobileDropdown === "quickLinks" ? <FiChevronUp className="w-4 h-4" /> : <FiChevronDown className="w-4 h-4" />}
+                      {mobileDropdown === "quickLinks" ? (
+                        <FiChevronUp className="w-4 h-4" />
+                      ) : (
+                        <FiChevronDown className="w-4 h-4" />
+                      )}
                     </span>
                   </button>
 
@@ -475,19 +507,45 @@ const Navbar = () => {
                     <div className="bg-gray-50 rounded-lg mt-1 overflow-hidden animate-in fade-in-0 slide-in-from-top-2 duration-300">
                       <ul className="space-y-1 text-xs font-medium text-gray-700">
                         {[
-                          { label: "Pay Fee", href: "https://rapid.grayquest.com/iudp-master" },
-                          { label: "ERP Staff", href: "https://indira.edupluscampus.com/" },
-                          { label: "ERP Student", href: "https://myindira.edupluscampus.com/" },
-                          { label: "360° Tour", href: "https://indiraicem.ac.in/ICEM-360-degree-virtual-tour/" },
-                          { label: "Leaving Certificate", href: "https://lc-icem-sumedh.vercel.app" },
+                          {
+                            label: "Pay Fee",
+                            href: "https://rapid.grayquest.com/iudp-master",
+                          },
+                          {
+                            label: "ERP Staff",
+                            href: "https://indira.edupluscampus.com/",
+                          },
+                          {
+                            label: "ERP Student",
+                            href: "https://myindira.edupluscampus.com/",
+                          },
+                          {
+                            label: "360° Tour",
+                            href: "https://indiraicem.ac.in/ICEM-360-degree-virtual-tour/",
+                          },
+                          {
+                            label: "Leaving Certificate",
+                            href: "https://lc-icem-sumedh.vercel.app",
+                          },
                           { label: "Contact Us", href: "/contact" },
                         ].map((item, index) => (
-                          <li key={index} className="animate-in fade-in-0 slide-in-from-left-2 duration-300" 
-                              style={{ animationDelay: `${index * 50}ms` }}>
+                          <li
+                            key={index}
+                            className="animate-in fade-in-0 slide-in-from-left-2 duration-300"
+                            style={{ animationDelay: `${index * 50}ms` }}
+                          >
                             <a
                               href={item.href}
-                              target={item.href.startsWith("http") ? "_blank" : "_self"}
-                              rel={item.href.startsWith("http") ? "noopener noreferrer" : ""}
+                              target={
+                                item.href.startsWith("http")
+                                  ? "_blank"
+                                  : "_self"
+                              }
+                              rel={
+                                item.href.startsWith("http")
+                                  ? "noopener noreferrer"
+                                  : ""
+                              }
                               className="flex items-center justify-between px-4 py-2 hover:bg-gray-100 transition-all duration-200 hover:translate-x-1"
                             >
                               {item.label}
@@ -508,7 +566,11 @@ const Navbar = () => {
                   >
                     <span>About Us</span>
                     <span className="text-lg transition-transform duration-300">
-                      {mobileDropdown === "aboutUs" ? <FiChevronUp className="w-4 h-4" /> : <FiChevronDown className="w-4 h-4" />}
+                      {mobileDropdown === "aboutUs" ? (
+                        <FiChevronUp className="w-4 h-4" />
+                      ) : (
+                        <FiChevronDown className="w-4 h-4" />
+                      )}
                     </span>
                   </button>
                   {mobileDropdown === "aboutUs" &&
@@ -523,7 +585,11 @@ const Navbar = () => {
                   >
                     <span>Campus Life</span>
                     <span className="text-lg transition-transform duration-300">
-                      {mobileDropdown === "campusLife" ? <FiChevronUp className="w-4 h-4" /> : <FiChevronDown className="w-4 h-4" />}
+                      {mobileDropdown === "campusLife" ? (
+                        <FiChevronUp className="w-4 h-4" />
+                      ) : (
+                        <FiChevronDown className="w-4 h-4" />
+                      )}
                     </span>
                   </button>
                   {mobileDropdown === "campusLife" &&
@@ -541,7 +607,11 @@ const Navbar = () => {
                   >
                     <span>Programs & Admission</span>
                     <span className="text-lg transition-transform duration-300">
-                      {mobileDropdown === "programs" ? <FiChevronUp className="w-4 h-4" /> : <FiChevronDown className="w-4 h-4" />}
+                      {mobileDropdown === "programs" ? (
+                        <FiChevronUp className="w-4 h-4" />
+                      ) : (
+                        <FiChevronDown className="w-4 h-4" />
+                      )}
                     </span>
                   </button>
                   {mobileDropdown === "programs" &&
@@ -592,10 +662,8 @@ const Navbar = () => {
         }`}
       >
         <div className="bg-primary text-white p-4 flex justify-between items-center">
-          <h3 className="text-lg font-bold">
-            Admissions Helpline
-          </h3>
-          <button 
+          <h3 className="text-lg font-bold">Admissions Helpline</h3>
+          <button
             onClick={toggleHelpline}
             className="hover:scale-110 transition-transform duration-300"
           >
@@ -763,7 +831,11 @@ const Navbar = () => {
 
               {/* Checkbox */}
               <div className="flex items-center gap-2 mt-2">
-                <input type="checkbox" id="agreeModal" className="transition-all duration-300 hover:scale-110" />
+                <input
+                  type="checkbox"
+                  id="agreeModal"
+                  className="transition-all duration-300 hover:scale-110"
+                />
                 <label htmlFor="agreeModal" className="text-sm text-gray-700">
                   I agree to receive information regarding my submitted enquiry*
                 </label>

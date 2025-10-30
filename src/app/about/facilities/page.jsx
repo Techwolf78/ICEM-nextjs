@@ -359,7 +359,7 @@ export default function Sports() {
  return (
     <div className="w-full bg-white text-gray-800">
        <BannerSlider />
-      <div className="max-w-7xl mx-auto py-16 px-6 space-y-12">
+      <div className="max-w-7xl mx-auto py-6 px-6 space-y-12">
         {/* Banner Image */}
        
 

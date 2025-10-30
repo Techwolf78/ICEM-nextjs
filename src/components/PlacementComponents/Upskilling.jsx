@@ -6,7 +6,7 @@ export default function Upskilling() {
     {
       title: "Mechanical",
       items: [
-        { image: "/autocad.png", name: "AUTODESK AutoCAD" },
+        { image: "/autocad.png", name: "AUTODESK AutoCAD", showName: true },
         { image: "/ptc-creo.png", name: "Creo" },
         { image: "/catia.png", name: "CATIA" },
         { image: "/solidworks.png", name: "SolidWorks" },
@@ -22,7 +22,7 @@ export default function Upskilling() {
         { image: "/bim360.png", name: "Autodesk BIM 360" },
         { image: "/staad.png", name: "STAAD.Pro" },
         { image: "/3max.png", name: "3DS Max" },
-        { image: "/autocad.png", name: "AutoCAD" },
+        { image: "/autocad.png", name: "AutoCAD", showName: true },
       ],
     },
     {
@@ -31,7 +31,7 @@ export default function Upskilling() {
         { image: "/scada.png", name: "PLC SCADA" },
         { image: "/vehicle.png", name: "Electric Vehicle" },
         { image: "/trans.png", name: "Transformers & Circuits" },
-        { image: "/battery.png", name: "Battery Management System" },
+        { image: "/battery.png", name: "Battery Management" },
         { image: "/moble.png", name: "App/Web Development" },
         { image: "/iot.png", name: "Internet of Things (IoT)" },
       ],
@@ -73,31 +73,25 @@ export default function Upskilling() {
 
   return (
     <>
-      {/* Upskilling for the Future Section (Balanced Compact Layout) */}
+      {/* Upskilling for the Future Section */}
       <section className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          {/* Title */}
           <h2 className="text-2xl md:text-3xl font-bold text-center text-secondary mb-8">
             Upskilling for the Future
           </h2>
 
-          {/* Skillverse Card */}
+          {/* Interpersonal Skills */}
           <div className="flex flex-col md:flex-row bg-white border border-gray-200 shadow-sm mb-6 overflow-hidden rounded-lg">
-            {/* Left Column: Title */}
             <div className="bg-gray-50 md:w-[35%] flex items-center justify-center text-secondary font-semibold text-lg p-6 border-r border-gray-200">
               (Image here)
             </div>
 
-            {/* Right Column: Points */}
             <div className="p-6 md:w-[65%]">
               <h3 className="text-lg font-semibold text-secondary mb-2">
                 Interpersonal Skills
               </h3>
               <ul className="list-disc pl-5 space-y-2 text-gray-700 text-sm leading-relaxed">
-                <li>
-                  Effective Communication Skills & Importance of Verbal and
-                  Non-Verbal Communication
-                </li>
+                <li>Effective Communication Skills & Importance of Verbal and Non-Verbal Communication</li>
                 <li>Questioning Skills to Clarify Doubts and Assumptions</li>
                 <li>Improving Listening Skills</li>
                 <li>Mock GD & Mock PI</li>
@@ -111,13 +105,12 @@ export default function Upskilling() {
             </div>
           </div>
 
+          {/* Aptitude */}
           <div className="flex flex-col md:flex-row bg-white border border-gray-200 shadow-sm overflow-hidden rounded-lg">
-            {/* Left Column: Title */}
             <div className="bg-gray-50 md:w-[35%] flex items-center justify-center text-secondary font-semibold text-lg p-6 border-r border-gray-200">
               (Image here)
             </div>
 
-            {/* Right Column: Points */}
             <div className="p-6 md:w-[65%]">
               <h3 className="text-lg font-semibold text-secondary mb-2">
                 Aptitude
@@ -146,33 +139,37 @@ export default function Upskilling() {
             Engineering - Technical
           </h2>
 
-          {/* Columns (Mechanical / Civil / ENTC) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-3">
+          {/* Columns (Mechanical / Civil / ENTC etc.) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-3">
             {sections.map((section, idx) => (
-              <div key={idx} className="text-center">
+              <div 
+                key={idx} 
+                className="text-center  border border-gray-200 rounded-lg shadow-sm p-4 sm:p-5 hover:shadow-md transition-shadow"
+              >
                 <h3 className="text-base sm:text-lg font-bold text-secondary mb-4 sm:mb-5 uppercase tracking-wide">
                   {section.title}
                 </h3>
 
-                {/* Logos Grid (Same style as Companies section) */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 justify-items-center">
                   {section.items.map((item, index) => (
                     <div
                       key={index}
-                      className="relative h-16 sm:h-18 md:h-20 w-16 sm:w-18 md:w-20 bg-white border border-gray-200 flex items-center justify-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all rounded-md overflow-hidden group"
+                      className="relative h-18 sm:h-20 md:h-24 w-18 sm:w-20 md:w-24 bg-white border border-gray-200 flex flex-col items-center justify-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all rounded-md overflow-hidden group"
                     >
-                      {/* Logo */}
-                      <Image
-                        src={item.image}
-                        alt={item.name}
-                        className="h-10 sm:h-12 w-10 sm:w-12 object-contain transition-transform duration-300 group-hover:scale-110 p-1 sm:p-2"
-                        fill
-                        sizes="(max-width: 640px) 64px, (max-width: 768px) 72px, 80px"
-                      />
+                      {/* Icon */}
+                      <div className="flex-1 flex items-center justify-center w-full p-1.5">
+                        <Image
+                          src={item.image}
+                          alt={item.name}
+                          width={40}
+                          height={40}
+                          className="object-contain transition-transform duration-300 group-hover:scale-110 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
+                        />
+                      </div>
 
-                      {/* Hover Text Overlay */}
-                      <div className="absolute inset-0 bg-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p className="text-[10px] sm:text-[11px] text-secondary font-semibold text-center px-1 leading-tight">
+                      {/* Name inside same box */}
+                      <div className="w-full bg-white border-t border-gray-100">
+                        <p className="text-[9px] sm:text-[10px] md:text-[11px] text-secondary font-semibold text-center leading-tight px-1 py-1.5">
                           {item.name}
                         </p>
                       </div>

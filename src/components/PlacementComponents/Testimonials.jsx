@@ -62,7 +62,7 @@ export default function Testimonials() {
 
   return (
     <section className="py-12 sm:py-16 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
           
           {/* Left Side - Heading Section */}
@@ -79,8 +79,8 @@ export default function Testimonials() {
           <div className="lg:w-3/5 w-full">
             <Slider {...settings}>
               {testimonials.map((item, index) => (
-                <div key={index} className="px-2">
-                  <div className="flex flex-col items-center border border-gray-200 rounded-xl p-4 sm:p-6">
+                <div key={index} className="px-1">
+                  <div className="flex flex-col items-center border border-gray-200 rounded-xl p-2 sm:p-6 h-[300px] ">
                     {/* Quote Box */}
                     <div className="bg-secondary/5 p-4 sm:p-6 md:p-8 relative w-full mx-auto mb-4 sm:mb-6 md:mb-8">
                       <FaQuoteLeft className="text-primary text-lg sm:text-xl absolute -top-2 left-2 sm:left-4 opacity-90" />

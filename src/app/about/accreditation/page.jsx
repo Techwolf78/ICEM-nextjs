@@ -59,8 +59,7 @@ export default function Accreditation() {
       accordions: [
         {
           heading: "SSR Reports Year Wise",
-          content:
-            "This section will contain year-wise SSR reports and related documentation for accreditation purposes.",
+
           pdfs: [
             {
               name: "SSR Report 2023",
@@ -70,8 +69,7 @@ export default function Accreditation() {
         },
         {
           heading: "Criteria Wise Details",
-          content:
-            "Detailed information and supporting evidence for each NAAC accreditation criteria will be presented here.",
+
           pdfs: [
             {
               name: "Criteria 1 - Action Taken Report",
@@ -85,8 +83,7 @@ export default function Accreditation() {
         },
         {
           heading: "AQAR Reports",
-          content:
-            "Annual Quality Assurance Reports (AQAR) submitted to NAAC for assessment of institutional performance.",
+
           pdfs: [
             { name: "AQAR 2018-19", url: "/pdfs/accreditation/AQAR 18-19.pdf" },
             { name: "AQAR 2019-20", url: "/pdfs/accreditation/AQAR 19-20.pdf" },
@@ -95,8 +92,7 @@ export default function Accreditation() {
         },
         {
           heading: "Academic Calendar",
-          content:
-            "Official academic calendars outlining important academic dates and schedules for each semester.",
+
           pdfs: [
             {
               name: "Academic Calendar 2021-22 Sem I",
@@ -138,8 +134,7 @@ export default function Accreditation() {
         },
         {
           heading: "PO's and CO's",
-          content:
-            "Self Study Report (SSR) documents and departmental PEO-PSO-PO details submitted for accreditation and institutional assessment.",
+
           pdfs: [
             {
               name: "Basic Engineering Vision and Mission_FE",
@@ -169,8 +164,7 @@ export default function Accreditation() {
         },
         {
           heading: "Code of Conduct Handbook",
-          content:
-            "Handbook outlining the code of conduct for students and staff.",
+
           pdfs: [
             {
               name: "Code of Conduct Handbook",
@@ -180,8 +174,7 @@ export default function Accreditation() {
         },
         {
           heading: "NAAC Certificate",
-          content:
-            "Official NAAC accreditation certificate and other recognition documents.",
+
           pdfs: [
             {
               name: "NAAC Certificate",
@@ -191,8 +184,7 @@ export default function Accreditation() {
         },
         {
           heading: "Procedures and Policies",
-          content:
-            "Official NAAC accreditation certificate and other recognition documents.",
+
           pdfs: [
             {
               name: "Procedures and Policies",
@@ -202,8 +194,7 @@ export default function Accreditation() {
         },
         {
           heading: "Media Center",
-          content:
-            "Official NAAC accreditation certificate and other recognition documents.",
+
           pdfs: [
             {
               name: "NAAC Certificate",
@@ -219,8 +210,7 @@ export default function Accreditation() {
       accordions: [
         {
           heading: "IQAC Committee",
-          content:
-            "List of IQAC committee members with their designations and institutional roles.",
+
           pdfs: [
             {
               name: "IQAC Committee 2023-24",
@@ -234,8 +224,7 @@ export default function Accreditation() {
         }, //in IQAC add the table instead of pdfs
         {
           heading: "IQAC Notices, MOM's & Actions",
-          content:
-            "Meeting minutes, notices, and action reports from IQAC sessions.",
+
           pdfs: [
             {
               name: "Internal Quality Assurance Cell Meeting - 28th March 2023",
@@ -253,8 +242,7 @@ export default function Accreditation() {
         },
         {
           heading: "IQAC Formats",
-          content:
-            "Standard formats used for IQAC documentation and quality assurance processes.",
+
           pdfs: [
             { name: "Quality Assurance Format", url: "/pdfs/qa-format.pdf" },
             { name: "Feedback Forms", url: "/pdfs/feedback-forms.pdf" },
@@ -269,8 +257,7 @@ export default function Accreditation() {
       accordions: [
         {
           heading: "Best Practices",
-          content:
-            "Documentation of best practices adopted by the institution for continual improvement.",
+
           pdfs: [
             {
               name: "Best Practices 2023",
@@ -288,8 +275,7 @@ export default function Accreditation() {
         },
         {
           heading: "Distinctive Practice",
-          content:
-            "Unique institutional practices contributing to holistic student and faculty development.",
+
           pdfs: [
             {
               name: "Distinctive Practices Report",
@@ -303,8 +289,7 @@ export default function Accreditation() {
         },
         {
           heading: "SPPU Annual Report",
-          content:
-            "Savitribai Phule Pune University annual report and related institutional contributions.",
+
           pdfs: [
             {
               name: "Annual Report 2023-24",
@@ -322,8 +307,7 @@ export default function Accreditation() {
         },
         {
           heading: "Code of Conduct",
-          content:
-            "Institutional code of conduct for staff and students ensuring ethical governance.",
+
           pdfs: [
             {
               name: "Staff Code of Conduct",
@@ -333,8 +317,7 @@ export default function Accreditation() {
         },
         {
           heading: "NIRF",
-          content:
-            "National Institutional Ranking Framework (NIRF) data and submissions.",
+
           pdfs: [
             { name: "NIRF Data 2023", url: "/pdfs/nirf-2023.pdf" },
             {
@@ -345,8 +328,7 @@ export default function Accreditation() {
         },
         {
           heading: "Financial Statements",
-          content:
-            "Audited financial reports and institutional expenditure details.",
+
           pdfs: [
             { name: "Audit Report 2022-23", url: "/pdfs/audit-2023.pdf" },
             {
@@ -357,8 +339,7 @@ export default function Accreditation() {
         },
         {
           heading: "Soft Skills and Aptitude Reports",
-          content:
-            "Reports highlighting student soft skill training, aptitude assessments, and placement readiness initiatives.",
+
           pdfs: [
             {
               name: "Soft Skills Report 2023",

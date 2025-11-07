@@ -3,6 +3,7 @@ import React, { useState, useRef } from "react";
 import FAQSection from "@/components/FAQSection";
 import Link from "next/link";
 import Image from "next/image";
+import RecruitersSection from "@/components/home/RecruiterSection";
 
 export default function Computer() {
   const [activeFAQ, setActiveFAQ] = useState(null);
@@ -45,57 +46,61 @@ export default function Computer() {
   return (
     <div className="w-full bg-white text-white">
       {/* ===== HERO SECTION ===== */}
-      <div className="w-full bg-primary py-20">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 px-6">
-          {/* LEFT TEXT SECTION */}
-          <div className="flex-1">
-            <h2 className="text-3xl md:text-4xl font-bold leading-snug">
-              2-Year M. Tech Program <br />
-              with specialisation in <br />
-              <span className="text-secondary">
-                Artificial Intelligence & Future Technologies
-              </span>
-            </h2>
-
-            <p className="mt-4 text-white/80 leading-relaxed">
-              This innovative program blends foundational computer science
-              knowledge with cutting-edge skills in Artificial Intelligence,
-              Blockchain, Cloud Computing, and Cyber Security, helping prepare
-              students for high-impact careers in the tech industry.
-            </p>
-
-            {/* Buttons */}
-            <div className="flex gap-4 mt-6">
-              <button
-                onClick={toggleModal}
-                className="bg-secondary hover:bg-white hover:text-black text-white px-6 py-2 rounded-md transition-colors"
-              >
-                Enquire Now
-              </button>
-              <button
-                onClick={handleBrochureDownload}
-                className="border border-white hover:bg-white hover:text-black px-6 py-2 rounded-md transition-colors"
-              >
-                Download Brochure
-              </button>
-            </div>
-          </div>
-
-          {/* RIGHT IMAGE SECTION */}
-          <div className="flex-1">
-            <div className="w-full h-[300px] relative rounded-lg overflow-hidden">
-              <Image
-                src="/images/computer-hero.jpg"
-                alt="Computer Engineering Program"
-                fill
-                className="object-cover"
-                placeholder="blur"
-                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+      <div className="relative w-full overflow-hidden h-[60vh] md:h-[75vh] flex items-center">
+                   {/* Background Image */}
+                   <div className="absolute inset-0">
+                     <Image
+                       src="/Programs/AIDS/AIDSIMGPH.jpeg"
+                       alt="Artificial Intelligence Program"
+                       fill
+                       className="object-cover object-center scale-105  opacity-90"
+                       priority
+                     />
+                   </div>
+           
+                   {/* Dark Gradient Overlay */}
+                   <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent " />
+           
+                   {/* Content Wrapper */}
+                   {/* Content Wrapper */}
+                   <div className="relative max-w-[1500px] px-6 md:px-12 lg:px-20">
+                     <div className="max-w-3xl text-white">
+                       <h2 className="text-4xl md:text-5xl font-bold leading-snug">
+                         2-Year M.Tech in Computer Science <br></br>
+                         <span className="bg-gradient-to-br from-cyan-400  to-sky-400 bg-clip-text text-transparent font-extrabold ">
+                           Mastering Cutting-Edge Computing Technologies and Theory
+                         </span>
+                       </h2>
+           
+                       <p className="mt-4 text-white/80 leading-relaxed max-w-2xl">
+                         This advanced programme offers a deep dive into specialized areas of computer science, blending rigorous theoretical coursework with research. It prepares graduates for leadership roles in technology innovation, specialized software development, and academia.
+                       </p>
+           
+                       {/* Floating Stat Cards */}
+           
+                       {/* Buttons */}
+                       <div className="flex gap-4 mt-6">
+                         <button
+                           onClick={toggleModal}
+                           className="bg-secondary text-white px-8 py-3 rounded-lg font-semibold 
+                         "
+                         >
+                           Enquire Now
+                         </button>
+           
+                         <button
+                           onClick={handleBrochureDownload}
+                           className="bg-secondary text-white px-8 py-3 rounded-lg"
+                         >
+                           Download Brochure
+                         </button>
+                       </div>
+                     </div>
+                   </div>
+           
+                   {/* Bottom Fade Mask */}
+                   <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-black/60 to-transparent" />
+                 </div> 
 
       {/* ===== ENHANCED TAB NAVIGATION WITH SLIDING INDICATOR ===== */}
       <div className="my-4 relative bg-white border-b border-gray-200">
@@ -142,8 +147,7 @@ export default function Computer() {
                   🕓 Course Duration
                 </h4>
                 <p className="text-gray-700">
-                  The program spans 4 years, providing comprehensive education
-                  in computer science and emerging technologies.
+                  An intensive 2-year programme comprising advanced coursework and a research-based thesis.
                 </p>
               </div>
 
@@ -152,8 +156,7 @@ export default function Computer() {
                   💼 Internship Opportunity
                 </h4>
                 <p className="text-gray-700">
-                  Students undertake a 6-month to 1-year internship with global
-                  tech leaders to gain real-world experience.
+                  Research internships and projects with top IT R&D labs, tech giants, and innovative startups.
                 </p>
               </div>
 
@@ -162,8 +165,7 @@ export default function Computer() {
                   🏫 Campus Recruitment
                 </h4>
                 <p className="text-gray-700">
-                  Placement opportunities with top tech companies, including
-                  Fortune 500 corporations.
+                  Placement in specialized roles with top product-based companies, R&D centers, and global IT firms.
                 </p>
               </div>
 
@@ -176,8 +178,7 @@ export default function Computer() {
                   onClick={scrollToFAQ}
                   className="text-gray-700 cursor-pointer hover:text-blue-600 hover:underline transition-colors"
                 >
-                  Click here to read more about eligibility for our M. Tech
-                  Program with Specialisation in AI & Future Tech.
+                  Click here to read more about the eligibility criteria for our M.Tech in Computer Science.
                 </p>
               </div>
             </div>
@@ -189,16 +190,11 @@ export default function Computer() {
               {/* LEFT TEXT SECTION */}
               <div className="flex-1 bg-white p-4 sm:p-6 rounded-lg shadow-sm">
                 <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-4 leading-snug">
-                  B.E. M. Tech with Artificial Intelligence <br /> & Future
-                  Technologies
+                  M.Tech in Computer Science
                 </h2>
 
                 <p className="text-gray-700 mb-6 leading-relaxed text-sm sm:text-base">
-                  The program prepares graduates to drive innovation in
-                  industries like AI, Cloud Computing, Cyber Security, and
-                  Blockchain. It combines academic rigor with practical
-                  experience, ensuring students gain real-world skills and
-                  exposure to emerging technologies.
+                  This programme enables students to deepen their expertise in advanced algorithms, distributed systems, artificial intelligence, and cybersecurity. It is research-oriented, designed to create technology leaders capable of solving complex computational problems and driving future innovations.
                 </p>
 
                 <h3 className="font-semibold text-lg sm:text-xl text-secondary mb-3">
@@ -206,11 +202,11 @@ export default function Computer() {
                 </h3>
 
                 <ul className="space-y-2 text-gray-800 text-sm sm:text-base">
-                  <li>➜ Computer Science and Programming Foundations</li>
-                  <li>➜ Data Structures and Advanced Algorithms</li>
-                  <li>➜ Artificial Intelligence and Machine Learning</li>
-                  <li>➜ Blockchain and Cybersecurity</li>
-                  <li>➜ Cloud Computing and Emerging Tech Labs</li>
+                  <li>Design and Analysis of Algorithms </li>
+                  <li>Machine Learning & Deep Learning </li>
+                  <li>Advanced Computer Architecture & Distributed Systems </li>
+                  <li>Network & Information Security </li>
+                  <li>Electives in AI, Data Science, Cloud Computing & Research Dissertation </li>
                 </ul>
               </div>
 
@@ -335,13 +331,7 @@ export default function Computer() {
                 Program Highlights
               </h2>
               <p className="text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
-                Our B.E. in Computer Science with Artificial Intelligence &
-                Future Technologies offers a unique blend of cutting-edge
-                knowledge and practical experience. With a focus on innovation,
-                industry-aligned projects, and hands-on labs, the program equips
-                students to lead in emerging technologies, while our strong
-                industry connections ensure enhanced career opportunities and
-                real-world exposure.
+                Our M.Tech in Computer Science is designed for those who wish to master the theoretical foundations and emerging technologies that define the future of computing.
               </p>
 
               {/* HIGHLIGHT CARDS */}
@@ -360,14 +350,10 @@ export default function Computer() {
                   </div>
                   <div className="p-6 text-left">
                     <h3 className="font-semibold text-lg text-secondary mb-2">
-                      Interdisciplinary Expertise
+                      Advanced Specializations
                     </h3>
                     <p className="text-gray-700 text-sm leading-relaxed">
-                      The Computer Science program with a specialisation in AI &
-                      Future Technologies provides a multidisciplinary
-                      foundation in AI, Blockchain, Cloud Computing, and Cyber
-                      Security, preparing students to tackle complex challenges
-                      in a fast-paced industry.
+                      <span className="font-bold">Deep-Dive Learning : </span>Pursue focused study in high-demand areas such as Artificial Intelligence, Data Science, and Cybersecurity to become a subject matter expert.
                     </p>
                   </div>
                 </div>
@@ -386,13 +372,10 @@ export default function Computer() {
                   </div>
                   <div className="p-6 text-left">
                     <h3 className="font-semibold text-lg text-secondary mb-2">
-                      Cutting-Edge Laboratories
+                      Research & Development Focus
                     </h3>
                     <p className="text-gray-700 text-sm leading-relaxed">
-                      Hands-on experience in high-tech environments using
-                      industry-standard tools. Students engage in real-world
-                      projects bridging theory and practice, building critical
-                      skills for modern tech careers.
+                      <span className="font-bold">Innovation-Centric Curriculum : </span>Engage in a significant research thesis, often leading to publications in reputed journals and conferences, under the guidance of experienced faculty.
                     </p>
                   </div>
                 </div>
@@ -411,12 +394,10 @@ export default function Computer() {
                   </div>
                   <div className="p-6 text-left">
                     <h3 className="font-semibold text-lg text-secondary mb-2">
-                      Industry-Relevant Skills
+                      High-Performance Computing Labs
                     </h3>
                     <p className="text-gray-700 text-sm leading-relaxed">
-                      This program equips students to master technologies like
-                      AI, Cloud Computing, and Blockchain, fostering innovation
-                      and ensuring readiness for the future tech industry.
+                      <span className="font-bold">State-of-the-Art Infrastructure : </span>Utilize advanced computing labs equipped for big data analytics, cloud computing, and AI research to experiment and build sophisticated systems. 
                     </p>
                   </div>
                 </div>
@@ -433,22 +414,18 @@ export default function Computer() {
                   Career Opportunities
                 </h2>
                 <p className="text-gray-700 mb-6 leading-relaxed">
-                  The field of AI and future technologies offers diverse career
-                  opportunities across various sectors. Professionals can shape
-                  innovations in industries like healthcare, finance, and tech,
-                  with roles focusing on data, security, and emerging
-                  technologies.
+                  An M.Tech in Computer Science opens doors to prestigious roles in core technology research, advanced development, and strategic IT leadership.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-gray-800">
-                  <p>➜ Artificial Intelligence Engineer</p>
-                  <p>➜ Data Scientist</p>
-                  <p>➜ Blockchain Developer</p>
-                  <p>➜ Cyber Security Analyst</p>
-                  <p>➜ Cloud Solutions Architect</p>
-                  <p>➜ Machine Learning Specialist</p>
-                  <p>➜ AI Researcher</p>
-                  <p>➜ Robotics Engineer</p>
+                  <p>Research Scientist </p>
+                  <p>Machine Learning Engineer </p>
+                  <p>Data Architect </p>
+                  <p>Big Data Analyst </p>
+                  <p>Cloud Architect </p>
+                  <p>Cybersecurity Specialist </p>
+                  <p>Software Development Lead </p>
+                  <p>Algorithm Specialist</p>
                 </div>
               </div>
 
@@ -469,35 +446,7 @@ export default function Computer() {
           </div>
 
           {/* ===== CAMPUS RECRUITMENT SECTION ===== */}
-          <div className="w-full bg-[#f7f7f7] text-black py-16">
-            <div className="max-w-7xl mx-auto px-6 text-center">
-              <h2 className="text-3xl font-bold text-secondary mb-4">
-                Campus Recruitment
-              </h2>
-              <p className="text-gray-700 max-w-4xl mx-auto mb-10 leading-relaxed">
-                The program prepares students to excel in diverse fields,
-                including AI research labs, Blockchain start-ups, Cyber Security
-                firms, and Cloud Computing giants. Some of our top recruiters
-                are:
-              </p>
-
-              {/* LOGO GRID */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
-                {Array(18)
-                  .fill("")
-                  .map((_, index) => (
-                    <div
-                      key={index}
-                      className="h-20 bg-white shadow-md rounded-md flex items-center justify-center text-gray-500"
-                    >
-                      <div className="w-16 h-8 bg-gray-200 rounded flex items-center justify-center text-xs">
-                        Logo {index + 1}
-                      </div>
-                    </div>
-                  ))}
-              </div>
-            </div>
-          </div>
+          <RecruitersSection />
 
           {/* ===== NEXT STEPS SECTION ===== */}
           <div className="w-full bg-[#f7f7f7] py-16 flex justify-center px-6">

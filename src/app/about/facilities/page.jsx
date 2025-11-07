@@ -361,9 +361,7 @@ export default function Sports() {
        <BannerSlider />
       <div className="max-w-7xl mx-auto py-6 px-6 space-y-12">
         {/* Banner Image */}
-       
-
-
+      
         {/* Navigation Tabs */}
         <div className="flex flex-wrap gap-2 justify-center mb-8">
           {Object.keys(facilities).map((facility) => (

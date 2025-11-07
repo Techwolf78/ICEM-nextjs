@@ -46,57 +46,64 @@ export default function Computer() {
   return (
     <div className="w-full bg-white text-white">
       {/* ===== HERO SECTION ===== */}
-      <div className="w-full bg-primary py-20">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 px-6">
-          {/* LEFT TEXT SECTION */}
-          <div className="flex-1">
-            <h2 className="text-3xl md:text-4xl font-bold leading-snug">
-              4-Year B.E. CSE Program <br />
-              with specialisation in <br />
-              <span className="text-secondary">
-                Artificial Intelligence & Future Technologies
-              </span>
-            </h2>
+     <div className="relative w-full overflow-hidden h-[60vh] md:h-[75vh] flex items-center">
+             {/* Background Image */}
+             <div className="absolute inset-0">
+               <Image
+                 src="/Programs/AIDS/AIDSIMGPH.jpeg"
+                 alt="Artificial Intelligence Program"
+                 fill
+                 className="object-cover object-center scale-105  opacity-90"
+                 priority
+               />
+             </div>
+     
+             {/* Dark Gradient Overlay */}
+             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent " />
+     
+             {/* Content Wrapper */}
+             {/* Content Wrapper */}
+             <div className="relative max-w-[1500px] px-6 md:px-12 lg:px-20">
+               <div className="max-w-3xl text-white">
+  <h2 className="text-4xl md:text-5xl font-bold leading-snug">
+    4-Year B.Tech Computer Engineering Program <br />
+    with specialisation in <br />
+    <span className="bg-gradient-to-br from-cyan-400 to-sky-400 bg-clip-text text-transparent font-extrabold">
+      Advanced Computing & Emerging Technologies
+    </span>
+  </h2>
 
-            <p className="mt-4 text-white/80 leading-relaxed">
-              This innovative program blends foundational computer science
-              knowledge with cutting-edge skills in Artificial Intelligence,
-              Blockchain, Cloud Computing, and Cyber Security, helping prepare
-              students for high-impact careers in the tech industry.
-            </p>
+  <p className="mt-4 text-white/80 leading-relaxed max-w-2xl">
+    The Department of Computer Engineering at ICEM aims to provide 
+    a comprehensive foundation in software, hardware, and system design 
+    while integrating modern innovations in cloud computing, artificial 
+    intelligence, cybersecurity, and data analytics. The program prepares 
+    students for dynamic careers in technology and innovation-driven industries.
+  </p>
 
-            {/* Buttons */}
-            <div className="flex gap-4 mt-6">
-              <button
-                onClick={toggleModal}
-                className="bg-secondary hover:bg-white hover:text-black text-white px-6 py-2 rounded-md transition-colors"
-              >
-                Enquire Now
-              </button>
-              <button
-                onClick={handleBrochureDownload}
-                className="border border-white hover:bg-white hover:text-black px-6 py-2 rounded-md transition-colors"
-              >
-                Download Brochure
-              </button>
-            </div>
-          </div>
+  {/* Buttons */}
+  <div className="flex gap-4 mt-6">
+    <button
+      onClick={toggleModal}
+      className="bg-secondary text-white px-8 py-3 rounded-lg font-semibold"
+    >
+      Enquire Now
+    </button>
 
-          {/* RIGHT IMAGE SECTION */}
-          <div className="flex-1">
-            <div className="w-full h-[300px] relative rounded-lg overflow-hidden">
-              <Image
-                src="/images/computer-hero.jpg"
-                alt="Computer Engineering Program"
-                fill
-                className="object-cover"
-                placeholder="blur"
-                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+    <button
+      onClick={handleBrochureDownload}
+      className="bg-secondary text-white px-8 py-3 rounded-lg"
+    >
+      Download Brochure
+    </button>
+  </div>
+</div>
+
+             </div>
+     
+             {/* Bottom Fade Mask */}
+             <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-black/60 to-transparent" />
+           </div> 
 
       {/* ===== ENHANCED TAB NAVIGATION WITH SLIDING INDICATOR ===== */}
       <div className="my-4 relative bg-white border-b border-gray-200">

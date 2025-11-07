@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
 import React, { useState } from "react";
 import FAQSection from "@/components/FAQSection";
 import RecruiterSection from "../../../components/home/RecruiterSection";
 import Image from "next/image";
 
-const CompBrochure = "/BEComp.pdf"
+const CompBrochure = "/BEComp.pdf";
 
 export default function Mech() {
   const [activeFAQ, setActiveFAQ] = useState(null);
@@ -38,105 +38,85 @@ export default function Mech() {
     "Fee",
   ];
 
-    const events = [
-    {
-      img: "/events/ArshGoyal.JPG",
-      title: "Guest Lecture by Arsh Goyal",
-      description:
-        "An inspiring session with Arsh Goyal, sharing real-world tech insights and industry experience.",
-    },
-    {
-      img: "/events/BParak.jpg",
-      title: "Bharat Parakrama",
-      description:
-        "A celebration of patriotism and valor with vibrant cultural performances and student participation.",
-    },
-    {
-      img: "/events/EngineeringInduction.jpg",
-      title: "Engineering Induction Program",
-      description:
-        "Welcoming the new engineering batch with orientation, team-building, and innovation showcases.",
-    },
-    {
-      img: "/events/gusto.jpg",
-      title: "Gusto – Annual Tech Fest",
-      description:
-        "A thrilling fest of technology, creativity, and innovation featuring workshops and competitions.",
-    },
-    {
-      img: "/events/IGIIRP.JPG",
-      title: "Indira Global Industrial Research Program",
-      description:
-        "Encouraging collaboration between academia and industry for impactful research and innovation.",
-    },
-    {
-      img: "/events/MBAInduction.jpg",
-      title: "MBA Induction Program",
-      description:
-        "The beginning of the management journey with insights from corporate leaders and alumni.",
-    },
-    {
-      img: "/events/Navratri.JPG",
-      title: "Navratri Celebration",
-      description:
-        "A grand cultural evening filled with Garba, music, and colorful traditional festivities.",
-    },
-    {
-      img: "/events/SportsComplex.JPG",
-      title: "ICEM Sports Complex",
-      description:
-        "A flagship event connecting visionaries, innovators, and learners from diverse industries.",
-    },
+  const mechImages = [
+    "/Programs/Mech/DSC02662.JPG",
+    "/Programs/Mech/DSC02667.JPG",
+    "/Programs/Mech/DSC02671.JPG",
+    "/Programs/Mech/DSC02675.JPG",
+    "/Programs/Mech/DSC02676.JPG",
+    "/Programs/Mech/DSC02678.JPG",
+    "/Programs/Mech/DSC02680.JPG",
+    "/Programs/Mech/DSC02683.JPG",
+    "/Programs/Mech/DSC02684.JPG",
+    "/Programs/Mech/DSC02686.JPG",
+    "/Programs/Mech/DSC02687.JPG",
+    "/Programs/Mech/DSC02688.JPG",
+    "/Programs/Mech/DSC02689.JPG",
+    "/Programs/Mech/DSC02690.JPG",
+    "/Programs/Mech/DSC02691.JPG",
   ];
-
 
   return (
     <div className="w-full text-white">
       {/* ===== TOP DARK SECTION ===== */}
-      <div className="w-full bg-primary py-20">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 px-6">
-          {/* LEFT TEXT SECTION */}
-          <div className="flex-1">
-            <h2 className="text-3xl md:text-4xl font-bold leading-snug">
-              4-Year B.E. Mechanical Program <br />
-              with specialisation in <br />
-              <span className="text-secondary">
-                Machines & Future Technologies
-              </span>
-            </h2>
+     <div className="relative w-full overflow-hidden h-[60vh] md:h-[75vh] flex items-center">
+                  {/* Background Image */}
+                  <div className="absolute inset-0">
+                    <Image
+                      src="/Programs/AIDS/AIDSIMGPH.jpeg"
+                      alt="Artificial Intelligence Program"
+                      fill
+                      className="object-cover object-center scale-105  opacity-90"
+                      priority
+                    />
+                  </div>
+          
+                  {/* Dark Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent " />
+          
+                  {/* Content Wrapper */}
+                  {/* Content Wrapper */}
+                  <div className="relative max-w-[1500px] px-6 md:px-12 lg:px-20">
+                    <div className="max-w-3xl text-white">
+  <h2 className="text-4xl md:text-5xl font-bold leading-snug">
+    4-Year B.Tech Mechanical Engineering Program <br />
+    with specialisation in <br />
+    <span className="bg-gradient-to-br from-cyan-400 to-sky-400 bg-clip-text text-transparent font-extrabold">
+      Advanced Manufacturing & Smart Technologies
+    </span>
+  </h2>
 
-            <p className="mt-4 text-white/80 leading-relaxed">
-              This innovative program blends foundational computer science
-              knowledge with cutting-edge skills in Artificial Intelligence,
-              Blockchain, Cloud Computing, and Cyber Security, helping prepare
-              students for high-impact careers in the tech industry.
-            </p>
+  <p className="mt-4 text-white/80 leading-relaxed max-w-2xl">
+    The Department of Mechanical Engineering at ICEM focuses on building strong
+    fundamentals in design, thermodynamics, materials, and manufacturing processes.
+    The program integrates modern advancements such as automation, robotics,
+    mechatronics, and smart manufacturing to prepare students for next-generation
+    engineering challenges in industries and research.
+  </p>
 
-            {/* Buttons */}
-            <div className="flex gap-4 mt-6">
-              <button
-                onClick={toggleModal}
-                className="bg-secondary hover:bg-white hover:text-black text-white px-6 py-2 rounded-md transition-colors"
-              >
-                Enquire Now
-              </button>
-              <button
-                onClick={handleBrochureDownload}
-                className="border border-white hover:bg-white hover:text-black px-6 py-2 rounded-md transition-colors"
-              >
-                Download Brochure
-              </button>
-            </div>
-          </div>
+  {/* Buttons */}
+  <div className="flex gap-4 mt-6">
+    <button
+      onClick={toggleModal}
+      className="bg-secondary text-white px-8 py-3 rounded-lg font-semibold"
+    >
+      Enquire Now
+    </button>
 
-          {/* RIGHT IMAGE SECTION (Placeholder) */}
-          <div className="flex-1">
-            <div className="w-full h-[300px] bg-secondary/80 rounded-lg flex items-center justify-center">
-              <p className="text-white/60">[ Image Placeholder ]</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <button
+      onClick={handleBrochureDownload}
+      className="bg-secondary text-white px-8 py-3 rounded-lg"
+    >
+      Download Brochure
+    </button>
+  </div>
+</div>
+
+                  </div>
+          
+                  {/* Bottom Fade Mask */}
+                  <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-black/60 to-transparent" />
+                </div> 
 
       {/* ===== WHITE INFO SECTION ===== */}
       <div className="w-full bg-[#f8f8f8] text-black py-12">
@@ -146,8 +126,8 @@ export default function Mech() {
               🕓 Course Duration
             </h4>
             <p className="text-gray-700">
-              The program spans 4 years, providing comprehensive education in
-              computer science and emerging technologies.
+              A comprehensive 4-year curriculum blending core mechanical
+              engineering with modern specializations.
             </p>
           </div>
 
@@ -156,8 +136,8 @@ export default function Mech() {
               💼 Internship Opportunity
             </h4>
             <p className="text-gray-700">
-              Students undertake a 6-month to 1-year internship with global tech
-              leaders to gain real-world experience.
+              Students undertake a 6 to 8-month internship with leading
+              manufacturing, automotive, and engineering corporations.
             </p>
           </div>
 
@@ -166,8 +146,8 @@ export default function Mech() {
               🏫 Campus Recruitment
             </h4>
             <p className="text-gray-700">
-              Placement opportunities with top tech companies, including Fortune
-              500 corporations.
+              Strong placement record with top-tier recruiters from the
+              automotive, aerospace, energy, and industrial automation sectors.
             </p>
           </div>
 
@@ -176,8 +156,8 @@ export default function Mech() {
               🎓 Eligibility
             </h4>
             <p className="text-gray-700">
-              Click here to read more about eligibility for our CSE Program with
-              Specialisation in AI & Future Tech.
+              Click here to read more about the eligibility criteria for our
+              B.E. in Mechanical Engineering.
             </p>
           </div>
         </div>
@@ -189,15 +169,16 @@ export default function Mech() {
           {/* LEFT TEXT SECTION */}
           <div className="flex-1 bg-white p-4 sm:p-6 rounded-lg shadow-sm">
             <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-4 leading-snug">
-              B.E. CSE with Artificial Intelligence <br /> & Future Technologies
+              B.E. in Mechanical Engineering
             </h2>
 
             <p className="text-gray-700 mb-6 leading-relaxed text-sm sm:text-base">
-              The program prepares graduates to drive innovation in industries
-              like AI, Cloud Computing, Cyber Security, and Blockchain. It
-              combines academic rigor with practical experience, ensuring
-              students gain real-world skills and exposure to emerging
-              technologies.
+              This programme equips students with a deep understanding of
+              mechanics, design, thermal sciences, and materials, combined with
+              practical expertise in Computer-Aided Engineering (CAE) and
+              intelligent systems. The curriculum is designed to foster
+              analytical thinking and innovation, ensuring graduates are ready
+              to contribute to core engineering and R&D roles.
             </p>
 
             <h3 className="font-semibold text-lg sm:text-xl text-secondary mb-3">
@@ -205,11 +186,11 @@ export default function Mech() {
             </h3>
 
             <ul className="space-y-2 text-gray-800 text-sm sm:text-base">
-              <li>➜ Computer Science and Programming Foundations</li>
-              <li>➜ Data Structures and Advanced Algorithms</li>
-              <li>➜ Artificial Intelligence and Machine Learning</li>
-              <li>➜ Blockchain and Cybersecurity</li>
-              <li>➜ Cloud Computing and Emerging Tech Labs</li>
+              <li>Engineering Mechanics, Materials Science, and CAD </li>
+              <li>Thermodynamics, Fluid Mechanics, and Heat Transfer </li>
+              <li>Manufacturing Processes and Automation </li>
+              <li>Machine Design, Dynamics, and Control Systems </li>
+              <li>Mechatronics, Robotics, and Smart Manufacturing </li>
             </ul>
           </div>
 
@@ -330,15 +311,14 @@ export default function Mech() {
       <div className="w-full bg-[#f7f7f7] py-16 text-black">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-secondary mb-4">
-            Program Highlights
+            Programme Highlights
           </h2>
           <p className="text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
-            Our B.E. in Computer Science with Artificial Intelligence & Future
-            Technologies offers a unique blend of cutting-edge knowledge and
-            practical experience. With a focus on innovation, industry-aligned
-            projects, and hands-on labs, the program equips students to lead in
-            emerging technologies, while our strong industry connections ensure
-            enhanced career opportunities and real-world exposure.
+            Our B.E. in Mechanical Engineering combines rigorous theoretical
+            instruction with extensive hands-on learning. The programme is
+            structured to develop proficient engineers capable of designing,
+            analysing, and managing complex mechanical systems for a sustainable
+            and automated future.
           </p>
 
           {/* HIGHLIGHT CARDS */}
@@ -350,14 +330,15 @@ export default function Mech() {
               </div>
               <div className="p-6 text-left">
                 <h3 className="font-semibold text-lg text-secondary mb-2">
-                  Interdisciplinary Expertise
+                  Core & Specialized Knowledge
                 </h3>
                 <p className="text-gray-700 text-sm leading-relaxed">
-                  The Computer Science program with a specialisation in AI &
-                  Future Technologies provides a multidisciplinary foundation in
-                  AI, Blockchain, Cloud Computing, and Cyber Security, preparing
-                  students to tackle complex challenges in a fast-paced
-                  industry.
+                  <span className="font-bold">
+                    Strong Engineering Foundation :{" "}
+                  </span>
+                  The curriculum builds expertise in core domains like machine
+                  design, thermodynamics, and fluid dynamics, while introducing
+                  advanced topics in robotics and additive manufacturing.
                 </p>
               </div>
             </div>
@@ -369,13 +350,15 @@ export default function Mech() {
               </div>
               <div className="p-6 text-left">
                 <h3 className="font-semibold text-lg text-secondary mb-2">
-                  Cutting-Edge Laboratories
+                  Labs & Practical Exposure
                 </h3>
                 <p className="text-gray-700 text-sm leading-relaxed">
-                  Hands-on experience in high-tech environments using
-                  industry-standard tools. Students engage in real-world
-                  projects bridging theory and practice, building critical
-                  skills for modern tech careers.
+                  <span className="font-bold">
+                    Advanced Engineering Laboratories :{" "}
+                  </span>
+                  Gain hands-on experience in our CAD/CAM, Automation, Fluid
+                  Mechanics, and Materials Testing labs, equipped with
+                  industry-standard software and machinery.
                 </p>
               </div>
             </div>
@@ -387,12 +370,15 @@ export default function Mech() {
               </div>
               <div className="p-6 text-left">
                 <h3 className="font-semibold text-lg text-secondary mb-2">
-                  Industry-Relevant Skills
+                  Industry Alignment
                 </h3>
                 <p className="text-gray-700 text-sm leading-relaxed">
-                  This program equips students to master technologies like AI,
-                  Cloud Computing, and Blockchain, fostering innovation and
-                  ensuring readiness for the future tech industry.
+                  <span className="font-bold">
+                    Industry-Ready Competence :{" "}
+                  </span>{" "}
+                  Through industry projects and internships, students develop
+                  the practical skills and problem-solving abilities highly
+                  valued by leading engineering firms.
                 </p>
               </div>
             </div>
@@ -400,68 +386,55 @@ export default function Mech() {
         </div>
       </div>
 
-      <section className="w-full bg-gray-50 py-16 overflow-hidden">
-      {/* ✅ Header */}
-      <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-10">
-        Laboratories
-      </h2>
+      {/* <section className="w-full bg-gray-50 py-16 overflow-hidden">
+        
+        <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-10">
+          Laboratories
+        </h2>
 
-      {/* ✅ Full-width marquee scroll */}
-      <div className="relative w-full overflow-visible group">
-        <div className="flex animate-marquee space-x-6 px-6 group-hover:pause">
-          {[...events, ...events].map((event, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 w-[280px] sm:w-[320px] md:w-[360px] bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-500 border border-gray-100"
-            >
-              <div className="relative w-full h-44 sm:h-52 md:h-56 lg:h-64 rounded-t-xl overflow-hidden">
-                <Image
-                  src={event.img}
-                  alt={event.title}
-                  fill
-                  className="object-cover"
-                />
+        <div className="relative w-full overflow-visible group">
+          <div className="flex animate-marquee space-x-6 px-6 group-hover:pause">
+            {[...mechImages, ...mechImages].map((img, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 w-[260px] sm:w-[300px] md:w-[340px] rounded-xl shadow-md hover:shadow-lg transition-all duration-500 border border-gray-100 overflow-hidden"
+              >
+                <div className="relative w-full h-48 sm:h-56 md:h-60 lg:h-72">
+                  <Image
+                    src={img}
+                    alt={`Mech Lab ${index + 1}`}
+                    fill
+                    className="object-cover"
+                    unoptimized
+                  />
+                </div>
               </div>
-              <div className="p-4">
-                <h3 className="font-semibold text-gray-800 text-base mb-1">
-                  {event.title}
-                </h3>
-                <p className="text-gray-600 text-sm line-clamp-3">
-                  {event.description}
-                </p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-gray-50 to-transparent pointer-events-none" />
+          <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-gray-50 to-transparent pointer-events-none" />
         </div>
 
-        {/* ✅ Gradient fade edges for smooth scroll */}
-        <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-gray-50 to-transparent pointer-events-none" />
-        <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-gray-50 to-transparent pointer-events-none" />
-      </div>
-
-      {/* ✅ CTA Section (restored from old version) */}
-    
-
-      {/* 🔹 Animation Keyframes */}
-      <style jsx>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0);
+        <style jsx>{`
+          @keyframes marquee {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
           }
-          100% {
-            transform: translateX(-50%);
+          .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 40s linear infinite;
           }
-        }
-        .animate-marquee {
-          display: flex;
-          width: max-content;
-          animation: marquee 40s linear infinite;
-        }
-        .group-hover\\:pause {
-          animation-play-state: paused;
-        }
-      `}</style>
-    </section>
+          .group-hover\\:pause {
+            animation-play-state: paused;
+          }
+        `}</style>
+      </section> */}
 
       {/* ===== CAREER OPPORTUNITIES SECTION ===== */}
       <div className="w-full bg-white text-black py-16">
@@ -472,21 +445,21 @@ export default function Mech() {
               Career Opportunities
             </h2>
             <p className="text-gray-700 mb-6 leading-relaxed">
-              The field of AI and future technologies offers diverse career
-              opportunities across various sectors. Professionals can shape
-              innovations in industries like healthcare, finance, and tech, with
-              roles focusing on data, security, and emerging technologies.
+              Mechanical Engineering graduates have a wide scope in sectors like
+              automotive, aerospace, energy, and robotics. They are equipped to
+              take on roles that involve the design, development, testing, and
+              management of mechanical systems and processes.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-gray-800">
-              <p>➜ Artificial Intelligence Engineer</p>
-              <p>➜ Data Scientist</p>
-              <p>➜ Blockchain Developer</p>
-              <p>➜ Cyber Security Analyst</p>
-              <p>➜ Cloud Solutions Architect</p>
-              <p>➜ Machine Learning Specialist</p>
-              <p>➜ AI Researcher</p>
-              <p>➜ Robotics Engineer</p>
+              <p>Design Engineer </p>
+              <p>Production Engineer </p>
+              <p>R&D Engineer </p>
+              <p>Quality Control Engineer </p>
+              <p>Thermal Engineer </p>
+              <p>Project Engineer </p>
+              <p>Automotive Engineer </p>
+              <p>Robotics Engineer </p>
             </div>
           </div>
 
@@ -505,11 +478,13 @@ export default function Mech() {
       {/* ===== NEXT STEPS SECTION ===== */}
       <div className="w-full bg-[#f7f7f7] py-16 flex justify-center px-6">
         <div className="bg-primary rounded-2xl max-w-5xl w-full text-center text-white py-12 px-6">
-          <h2 className="text-3xl font-semibold mb-4">The Next Steps</h2>
+          <h2 className="text-3xl font-semibold mb-4">Connect with us</h2>
           <p className="text-white/80 max-w-3xl mx-auto mb-8 leading-relaxed">
-            The steps you take today shape your future. At Indira College, we
-            empower bright minds with strong fundamentals, a global perspective,
-            and leadership skills to make a meaningful change in the world.
+            The decision to pursue Mechanical Engineering is the first step
+            towards building a career that shapes the physical world. At Indira
+            College, we provide the foundational knowledge, specialized skills,
+            and industry exposure to launch a successful career as a leader in
+            engineering and innovation.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

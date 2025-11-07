@@ -8,6 +8,8 @@ export default function BannerSlider() {
     "/Facilities/FacilitiesSports.jpg",
     "/Facilities/FacilitiesSports.jpg",
     "/Facilities/FacilitiesSports.jpg",
+    
+    
   ];
 
   const mobileImages = [
@@ -60,7 +62,7 @@ export default function BannerSlider() {
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {[...desktopImages, desktopImages[0]].map((img, i) => (
-            <div key={i} className="relative flex-shrink-0 w-full ">
+            <div key={i} className="relative flex-shrink-0  w-full ">
               <Image
                 src={img}
                 alt={`Desktop Slide ${i + 1}`}

@@ -358,11 +358,10 @@ export default function Sports() {
 
  return (
     <div className="w-full bg-white text-gray-800">
-       <BannerSlider />
+       <BannerSlider activeSection={activeSection}/>
       <div className="max-w-7xl mx-auto py-6 px-6 space-y-12">
         {/* Banner Image */}
        
-
 
         {/* Navigation Tabs */}
         <div className="flex flex-wrap gap-2 justify-center mb-8">

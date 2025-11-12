@@ -228,85 +228,83 @@ export default function ENTC() {
 
 
           {/* ===== PROGRAM HIGHLIGHTS SECTION ===== */}
-          <div className="w-full bg-[#f7f7f7] py-16 text-black">
-            <div className="max-w-7xl mx-auto px-6 text-center">
-              <h2 className="text-3xl font-bold text-secondary mb-4">
-                Program Highlights
-              </h2>
-              <p className="text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
-                Our B.E. in Electronics & Telecommunication Engineering blends theoretical rigor with extensive hands-on laboratory work. The program is structured to develop engineers capable of designing, analyzing, and managing the electronic and communication systems that are vital to modern infrastructure.
-              </p>
+      <div className="w-full bg-[#f7f7f7] py-16 text-black">
+  <div className="max-w-7xl mx-auto px-6 text-center">
+    <h2 className="text-3xl font-bold text-secondary mb-4">
+      Program Highlights
+    </h2>
+    <p className="text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
+      Our B.E. in Electronics & Telecommunication Engineering blends theoretical rigor with extensive hands-on laboratory work. The program is structured to develop engineers capable of designing, analyzing, and managing the electronic and communication systems that are vital to modern infrastructure.
+    </p>
 
-              {/* HIGHLIGHT CARDS */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {/* Card 1 */}
-                <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
-                  <div className="w-full h-48 relative">
-                    <Image
-                      src="/images/interdisciplinary-expertise.jpg"
-                      alt="Interdisciplinary Expertise"
-                      fill
-                      className="object-cover"
-                      placeholder="blur"
-                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                    />
-                  </div>
-                  <div className="p-6 text-left">
-                    <h3 className="font-semibold text-lg text-secondary mb-2">
-                      Core & Specialized Knowledge
-                    </h3>
-                    <p className="text-gray-700 text-sm leading-relaxed">
-                      <span className="font-bold">Strong Electronics Foundation : </span>The curriculum builds a formidable understanding of core concepts in circuit design, signal processing, and communication engineering, forming the bedrock for innovation in telecommunications.
-                    </p>
-                  </div>
-                </div>
+    {/* HIGHLIGHT CARDS */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* Card 1 */}
+      <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
+        <div className="w-full h-48 relative">
+          <Image
+            src="/Programs/ENTC/Entc1.jpg"
+            alt="Core & Specialized Knowledge"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="p-6 text-left">
+          <h3 className="font-semibold text-lg text-secondary mb-2">
+            Core & Specialized Knowledge
+          </h3>
+          <p className="text-gray-700 text-sm leading-relaxed">
+            <span className="font-bold">Strong Electronics Foundation : </span>
+            The curriculum builds a formidable understanding of core concepts in circuit design, signal processing, and communication engineering, forming the bedrock for innovation in telecommunications.
+          </p>
+        </div>
+      </div>
 
-                {/* Card 2 */}
-                <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
-                  <div className="w-full h-48 relative">
-                    <Image
-                      src="/images/cutting-edge-labs.jpg"
-                      alt="Cutting-Edge Laboratories"
-                      fill
-                      className="object-cover"
-                      placeholder="blur"
-                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                    />
-                  </div>
-                  <div className="p-6 text-left">
-                    <h3 className="font-semibold text-lg text-secondary mb-2">
-                      Labs & Practical Exposure
-                    </h3>
-                    <p className="text-gray-700 text-sm leading-relaxed">
-                      <span className="font-bold">Advanced Electronics & Communication Laboratories :  </span>Gain hands-on experience in our VLSI, DSP, Microwave, and Embedded Systems labs, equipped with industry-standard software and hardware for prototyping and testing.
-                    </p>
-                  </div>
-                </div>
+      {/* Card 2 */}
+      <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
+        <div className="w-full h-48 relative">
+          <Image
+            src="/Programs/ENTC/Entc2.jpg"
+            alt="Labs & Practical Exposure"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="p-6 text-left">
+          <h3 className="font-semibold text-lg text-secondary mb-2">
+            Labs & Practical Exposure
+          </h3>
+          <p className="text-gray-700 text-sm leading-relaxed">
+            <span className="font-bold">Advanced Electronics & Communication Laboratories : </span>
+            Gain hands-on experience in our VLSI, DSP, Microwave, and Embedded Systems labs, equipped with industry-standard software and hardware for prototyping and testing.
+          </p>
+        </div>
+      </div>
 
-                {/* Card 3 */}
-                <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
-                  <div className="w-full h-48 relative">
-                    <Image
-                      src="/images/industry-skills.jpg"
-                      alt="Industry-Relevant Skills"
-                      fill
-                      className="object-cover"
-                      placeholder="blur"
-                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                    />
-                  </div>
-                  <div className="p-6 text-left">
-                    <h3 className="font-semibold text-lg text-secondary mb-2">
-                      Industry Alignment
-                    </h3>
-                    <p className="text-gray-700 text-sm leading-relaxed">
-                      <span className="font-bold">Industry-Ready Competence : </span>Through industry projects and internships, students develop practical skills in system design and problem-solving, making them highly valuable to leading electronics and telecom firms.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      {/* Card 3 */}
+      <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
+        <div className="w-full h-48 relative">
+          <Image
+            src="/Programs/ENTC/Entc3.jpg"
+            alt="Industry Alignment"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="p-6 text-left">
+          <h3 className="font-semibold text-lg text-secondary mb-2">
+            Industry Alignment
+          </h3>
+          <p className="text-gray-700 text-sm leading-relaxed">
+            <span className="font-bold">Industry-Ready Competence : </span>
+            Through industry projects and internships, students develop practical skills in system design and problem-solving, making them highly valuable to leading electronics and telecom firms.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
           {/* ===== CAREER OPPORTUNITIES SECTION ===== */}
           <div className="w-full bg-white text-black py-16">

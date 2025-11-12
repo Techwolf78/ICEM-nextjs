@@ -242,148 +242,148 @@ export default function Computer() {
           </div>
 
           {/* ===== PROGRAM HIGHLIGHTS SECTION ===== */}
-          <div className="w-full bg-[#f7f7f7] py-16 text-black">
-            <div className="max-w-7xl mx-auto px-6 text-center">
-              <h2 className="text-3xl font-bold text-secondary mb-4">
-                Programme Highlights
-              </h2>
-              <p className="text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
-                Our B.E. in Computer Engineering is designed to create versatile
-                and proficient engineers. The curriculum emphasizes strong
-                theoretical foundations, hands-on project-based learning, and
-                the development of problem-solving skills critical for success
-                in the core software and hardware industries.
-              </p>
+      <div className="w-full bg-[#f7f7f7] py-16 text-black">
+  <div className="max-w-7xl mx-auto px-6 text-center">
+    <h2 className="text-3xl font-bold text-secondary mb-4">
+      Programme Highlights
+    </h2>
+    <p className="text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
+      Our B.E. in Computer Engineering is designed to create versatile
+      and proficient engineers. The curriculum emphasizes strong
+      theoretical foundations, hands-on project-based learning, and
+      the development of problem-solving skills critical for success
+      in the core software and hardware industries.
+    </p>
 
-              {/* HIGHLIGHT CARDS */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {/* Card 1 */}
-                <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
-                  <div className="w-full h-48 relative">
-                    <Image
-                      src="/images/interdisciplinary-expertise.jpg"
-                      alt="Interdisciplinary Expertise"
-                      fill
-                      className="object-cover"
-                      placeholder="blur"
-                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                    />
-                  </div>
-                  <div className="p-6 text-left">
-                    <h3 className="font-semibold text-lg text-secondary mb-2">
-                      Strong Foundational Core
-                    </h3>
-                    <p className="text-gray-700 text-sm leading-relaxed">
-                      The program builds a formidable understanding of core
-                      computer science concepts, including algorithms, data
-                      structures, and systems programming, forming the bedrock
-                      for all advanced specializations and innovation.
-                    </p>
-                  </div>
-                </div>
+    {/* HIGHLIGHT CARDS */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* Card 1 */}
+      <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
+        <div className="w-full h-48 relative">
+          <Image
+            src="/Programs/IT/IT1.jpg"
+            alt="Strong Foundational Core"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="p-6 text-left">
+          <h3 className="font-semibold text-lg text-secondary mb-2">
+            Strong Foundational Core
+          </h3>
+          <p className="text-gray-700 text-sm leading-relaxed">
+            The program builds a formidable understanding of core
+            computer science concepts, including algorithms, data
+            structures, and systems programming, forming the bedrock
+            for all advanced specializations and innovation.
+          </p>
+        </div>
+      </div>
 
-                {/* Card 2 */}
-                <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
-                  <div className="w-full h-48 relative">
-                    <Image
-                      src="/images/cutting-edge-labs.jpg"
-                      alt="Cutting-Edge Laboratories"
-                      fill
-                      className="object-cover"
-                      placeholder="blur"
-                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                    />
-                  </div>
-                  <div className="p-6 text-left">
-                    <h3 className="font-semibold text-lg text-secondary mb-2">
-                      Labs & Practical Exposure
-                    </h3>
-                    <p className="text-gray-700 text-sm leading-relaxed">
-                      Students gain hands-on experience in state-of-the-art labs
-                      equipped with modern tools for software development,
-                      networking, and hardware interfacing, ensuring seamless
-                      translation of theory into practice.
-                    </p>
-                  </div>
-                </div>
+      {/* Card 2 */}
+      <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
+        <div className="w-full h-48 relative">
+          <Image
+            src="/Programs/IT/IT2.jpg"
+            alt="Labs & Practical Exposure"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="p-6 text-left">
+          <h3 className="font-semibold text-lg text-secondary mb-2">
+            Labs & Practical Exposure
+          </h3>
+          <p className="text-gray-700 text-sm leading-relaxed">
+            Students gain hands-on experience in state-of-the-art labs
+            equipped with modern tools for software development,
+            networking, and hardware interfacing, ensuring seamless
+            translation of theory into practice.
+          </p>
+        </div>
+      </div>
 
-                {/* Card 3 */}
-                <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
-                  <div className="w-full h-48 relative">
-                    <Image
-                      src="/images/industry-skills.jpg"
-                      alt="Industry-Relevant Skills"
-                      fill
-                      className="object-cover"
-                      placeholder="blur"
-                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                    />
-                  </div>
-                  <div className="p-6 text-left">
-                    <h3 className="font-semibold text-lg text-secondary mb-2">
-                      Industry Alignment
-                    </h3>
-                    <p className="text-gray-700 text-sm leading-relaxed">
-                      The curriculum is continuously updated to include current
-                      trends, preparing graduates with the skills demanded by
-                      top employers in software development, system design, and
-                      IT services.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      {/* Card 3 */}
+      <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
+        <div className="w-full h-48 relative">
+          <Image
+            src="/Programs/IT/IT3.jpg"
+            alt="Industry-Relevant Skills"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="p-6 text-left">
+          <h3 className="font-semibold text-lg text-secondary mb-2">
+            Industry Alignment
+          </h3>
+          <p className="text-gray-700 text-sm leading-relaxed">
+            The curriculum is continuously updated to include current
+            trends, preparing graduates with the skills demanded by
+            top employers in software development, system design, and
+            IT services.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
           {/* ===== CAREER OPPORTUNITIES SECTION ===== */}
-          <div className="w-full bg-white text-black py-16">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 px-6">
-              {/* LEFT TEXT SECTION */}
-              <div className="flex-1">
-                <h2 className="text-3xl font-bold text-secondary mb-4">
-                  Career Opportunities
-                </h2>
-                <p className="text-gray-700 mb-6 leading-relaxed">
-                  A degree in Computer Engineering opens doors to a vast
-                  spectrum of roles in the global tech industry. Graduates are
-                  equipped to design, develop, and manage the complex software
-                  and hardware systems that power modern enterprises and
-                  consumer technologies.
-                </p>
+       {/* ===== CAREER OPPORTUNITIES SECTION ===== */}
+<div className="w-full bg-white text-black py-16">
+  <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 px-6">
+    
+    {/* LEFT TEXT SECTION */}
+    <div className="flex-1">
+      <h2 className="text-3xl font-bold text-secondary mb-6">
+        Career Opportunities
+      </h2>
+      <p className="text-gray-700 mb-8 leading-relaxed">
+        A degree in Computer Engineering opens doors to a vast
+        spectrum of roles in the global tech industry. Graduates are
+        equipped to design, develop, and manage the complex software
+        and hardware systems that power modern enterprises and
+        consumer technologies.
+      </p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-gray-800">
-                  <p>Software Development Engineer </p>
-                  <p>Systems Architect </p>
-                  <p>DevOps Engineer </p>
-                  <p>Database Administrator </p>
-                  <p>Network Engineer </p>
-                  <p>Full-Stack Developer </p>
-                  <p>Embedded Systems Engineer </p>
-                  <p>IT Project Manager </p>
-                </div>
-              </div>
+      {/* Bullet List */}
+      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-3 text-gray-800 text-base leading-relaxed list-disc list-inside">
+        <li>Software Development Engineer</li>
+        <li>Systems Architect</li>
+        <li>DevOps Engineer</li>
+        <li>Database Administrator</li>
+        <li>Network Engineer</li>
+        <li>Full-Stack Developer</li>
+        <li>Embedded Systems Engineer</li>
+        <li>IT Project Manager</li>
+      </ul>
+    </div>
 
-              {/* RIGHT IMAGE SECTION */}
-              <div className="flex-1">
-                <div className="w-full h-[300px] relative rounded-lg overflow-hidden">
-                  <Image
-                    src="/images/career-opportunities.jpg"
-                    alt="Career Opportunities in AI and Future Technologies"
-                    fill
-                    className="object-cover"
-                    placeholder="blur"
-                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+    {/* RIGHT IMAGE SECTION */}
+    <div className="flex-1 flex justify-center">
+      <div className="w-full h-[320px] relative rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all">
+        <Image
+          src="/Programs/ENTC/Entc3.jpg"
+          alt="Career Opportunities in Computer Engineering"
+          fill
+          className="object-cover object-center"
+        />
+      </div>
+    </div>
+
+  </div>
+</div>
 
           {/* ===== CAMPUS RECRUITMENT SECTION ===== */}
           <RecruitersSection />
 
           {/* ===== NEXT STEPS SECTION ===== */}
           <CTASection />
+          <div className="h-[10vh] bg-white"></div>
+
+    
 
         </>
       ) : (

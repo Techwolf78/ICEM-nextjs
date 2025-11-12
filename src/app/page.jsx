@@ -9,6 +9,7 @@ import CollegeUnplugged from "@/components/home/CollegeUnplugged";
 // import NewsSection from "@/components/home/NewsSection";
 import EventsSection from "@/components/home/EventSection";
 import InstagramMosaic from "@/components/home/InstagramMosaic"; // <-- Import here
+import CTASection from "@/components/home/CTASection";
 
 export default function HomePage() {
   return (
@@ -24,6 +25,7 @@ export default function HomePage() {
       <CollegeUnplugged />
 
       <EventsSection />
+      <CTASection />
       <InstagramMosaic />
     </div>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { HiMenuAlt2, HiX } from "react-icons/hi";
@@ -20,23 +20,46 @@ const Navbar = () => {
   const [isHelplineOpen, setIsHelplineOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
-  const [dropdownTimeout, setDropdownTimeout] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState(null);
+
+  // ✅ Refs to manage hover timers and outside clicks (no flicker)
+  const dropdownTimeoutRef = useRef(null);
+  const navbarRef = useRef(null);
 
   const toggleHelpline = () => setIsHelplineOpen(!isHelplineOpen);
   const toggleModal = () => setIsModalOpen(!isModalOpen);
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
+  // === Hover Handlers (fixed flicker) ===
   const handleMouseEnter = (dropdownName) => {
-    if (dropdownTimeout) clearTimeout(dropdownTimeout);
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+      dropdownTimeoutRef.current = null;
+    }
     setActiveDropdown(dropdownName);
   };
 
   const handleMouseLeave = () => {
-    const timeout = setTimeout(() => setActiveDropdown(null), 150);
-    setDropdownTimeout(timeout);
+    if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 180);
   };
+
+  // === Close dropdown if click outside ===
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+        setActiveDropdown(null);
+      }
+    };
+    document.addEventListener("pointerdown", handleClickOutside);
+    return () => {
+      document.removeEventListener("pointerdown", handleClickOutside);
+      if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
+    };
+  }, []);
 
   const toggleMobileDropdown = (dropdownName) => {
     setMobileDropdown(mobileDropdown === dropdownName ? null : dropdownName);
@@ -203,7 +226,7 @@ const Navbar = () => {
   };
 
   const renderDropdownContent = (content) => (
-    <div className="max-w-8xl px-8 py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 animate-in fade-in-0 zoom-in-95 duration-300">
+    <div className="max-w-8xl px-8 py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 animate-in fade-in-0 zoom-in-95 duration-300 ">
       {content.sections.map((section, index) => (
         <div key={index}>
           <h3 className="text-lg font-semibold text-secondary mb-4">
@@ -280,7 +303,10 @@ const Navbar = () => {
   return (
     <>
       {/* ===== NAVBAR ===== */}
-      <nav className="w-full h-[12vh] flex bg-white shadow-sm font-sans relative sticky top-0 z-50">
+      <nav
+        ref={navbarRef}
+        className="w-full h-[12vh] flex bg-white shadow-sm font-sans relative sticky top-0 z-50"
+      >
         {/* Left: Logo - 80% width on mobile */}
         <div className="w-full md:w-[30%] h-full flex items-center justify-start md:pl-0 md:justify-center">
           <Link href="/">
@@ -368,11 +394,11 @@ const Navbar = () => {
           </div>
 
           {/* Bottom Nav Links */}
-          <div className="flex justify-end items-center h-[55%] text-black px-6 text-md font-semibold whitespace-nowrap gap-10">
+          <div className="flex  justify-end items-center gap-1 h-[55%] text-black px-6 text-md font-semibold whitespace-nowrap ">
             <div
-              className="flex items-center gap-1 cursor-pointer hover:text-secondary transition-all duration-200 group"
-              onMouseEnter={() => handleMouseEnter("aboutUs")}
-              onMouseLeave={handleMouseLeave}
+              className="flex  h-full  items-center gap-1 cursor-pointer hover:text-secondary transition-all duration-200 group"
+              onPointerEnter={() => handleMouseEnter("aboutUs")}
+              onPointerLeave={handleMouseLeave}
             >
               <span>About Us</span>
               <FiChevronDown
@@ -382,9 +408,9 @@ const Navbar = () => {
               />
             </div>
             <div
-              className="flex items-center gap-1 cursor-pointer hover:text-secondary transition-all duration-200 group"
-              onMouseEnter={() => handleMouseEnter("campusLife")}
-              onMouseLeave={handleMouseLeave}
+              className="flex items-center gap-1  px-5  cursor-pointer hover:text-secondary transition-all duration-200 group"
+              onPointerEnter={() => handleMouseEnter("campusLife")}
+              onPointerLeave={handleMouseLeave}
             >
               <span>Campus Life</span>
               <FiChevronDown
@@ -394,9 +420,9 @@ const Navbar = () => {
               />
             </div>
             <div
-              className="flex items-center gap-1 cursor-pointer hover:text-secondary transition-all duration-200 group"
-              onMouseEnter={() => handleMouseEnter("programs")}
-              onMouseLeave={handleMouseLeave}
+              className="flex items-center gap-1  px-5  cursor-pointer hover:text-secondary transition-all duration-200 group"
+              onPointerEnter={() => handleMouseEnter("programs")}
+              onPointerLeave={handleMouseLeave}
             >
               <span>Programs & Admission</span>
               <FiChevronDown
@@ -407,25 +433,25 @@ const Navbar = () => {
             </div>
             <Link
               href="/placement"
-              className="hover:text-secondary transition-colors duration-200 group"
+              className="hover:text-secondary  px-5  transition-colors duration-200 group"
             >
               Placement
             </Link>
             <Link
               href="/about/examination"
-              className="hover:text-secondary transition-colors duration-200 group"
+              className="hover:text-secondary  px-5  transition-colors duration-200 group"
             >
               Examination
             </Link>
             <Link
               href="/alumni"
-              className="hover:text-secondary transition-colors duration-200 group"
+              className="hover:text-secondary  px-5  transition-colors duration-200 group"
             >
               Alumni
             </Link>
             <Link
               href="/research"
-              className="hover:text-secondary transition-colors duration-200 group"
+              className="hover:text-secondary  px-5  transition-colors duration-200 group"
             >
               Research
             </Link>
@@ -445,8 +471,8 @@ const Navbar = () => {
         {/* Dropdown Menu - Desktop */}
         {activeDropdown && (
           <div
-            onMouseEnter={() => handleMouseEnter(activeDropdown)}
-            onMouseLeave={handleMouseLeave}
+            onPointerEnter={() => handleMouseEnter(activeDropdown)}
+            onPointerLeave={handleMouseLeave}
             className="absolute top-full left-0 w-full backdrop-blur-md bg-white/60 shadow-xl border-t border-gray-200 z-50 hidden md:block animate-in fade-in-0 slide-in-from-top-2 duration-300"
           >
             {renderDropdownContent(dropdownContent[activeDropdown])}

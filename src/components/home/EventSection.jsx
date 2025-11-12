@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
 export default function EventsSection() {
@@ -94,24 +93,6 @@ export default function EventsSection() {
         {/* ✅ Gradient fade edges for smooth scroll */}
         <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-gray-50 to-transparent pointer-events-none" />
         <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-gray-50 to-transparent pointer-events-none" />
-      </div>
-
-      {/* ✅ CTA Section (restored from old version) */}
-      <div className="bg-secondary  text-center text-white py-10 sm:py-14 px-4 sm:px-6 mt-16">
-        <h2 className="text-lg sm:text-3xl font-bold mb-3 sm:mb-4">
-          Shape Your Future with Us
-        </h2>
-        <p className="text-white/80 max-w-3xl mx-auto text-xs sm:text-lg mb-6 sm:mb-8 leading-relaxed">
-          Discover limitless opportunities at Indira College, where innovation,
-          learning, and industry connect. Take the first step towards your
-          dreams. Explore our programs and get in touch to begin your journey
-          with us.
-        </p>
-        <Link href="/#contact-form">
-          <button className="bg-white text-secondary font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-gray-100 transition flex items-center gap-2 mx-auto text-xs sm:text-base">
-            Get in touch <span className="text-sm sm:text-xl">↗</span>
-          </button>
-        </Link>
       </div>
 
       {/* 🔹 Animation Keyframes */}

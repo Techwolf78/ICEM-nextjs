@@ -1,11 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import IIC from "@/components/CampusLife/IIC";
 import Sidebar from "@/components/Sidebar";
 import StudentWelfare from "@/components/CampusLife/StudentWelfare";
 import IcemStudentCouncil from "@/components/CampusLife/IcemStudentCouncil";
-import InductionProgramme from "@/components/CampusLife/InductionProgramme";
 
 export default function StudentWelfarePage() {
   return (
@@ -19,18 +17,13 @@ export default function StudentWelfarePage() {
           style={{ objectFit: "cover" }}
           priority
         />
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white drop-shadow-lg text-center px-4">
-            Student Development Cell
-          </h1>
-        </div>
       </div>
 
       {/* Page Layout */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <div className="flex flex-col lg:flex-row gap-8">
+      <div className="max-w-full mx-auto">
+        <div className="flex flex-col lg:flex-row gap-4">
           {/* Main Content */}
-          <div className="lg:w-2/3 space-y-8 sm:space-y-12 lg:space-y-16">
+          <div className="lg:w-3/4 space-y-6 px-2 py-3 m-3">
             <section id="student-welfare">
               <StudentWelfare />
             </section>
@@ -48,7 +41,7 @@ export default function StudentWelfarePage() {
           </div>
 
           {/* Sidebar - Made Sticky */}
-          <div className="lg:w-1/3">
+          <div className="lg:w-1/4 ">
             <Sidebar />
           </div>
         </div>

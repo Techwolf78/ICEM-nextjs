@@ -4,6 +4,8 @@ import FAQSection from "@/components/FAQSection";
 import Link from "next/link";
 import Image from "next/image";
 import RecruitersSection from "@/components/home/RecruiterSection";
+import CTASection from "@/components/home/CTASection";
+import ApplyForm from "@/components/home/ApplyForm";
 
 export default function ENTC() {
   const [activeFAQ, setActiveFAQ] = useState(null);
@@ -50,7 +52,7 @@ export default function ENTC() {
                    {/* Background Image */}
                    <div className="absolute inset-0">
                      <Image
-                       src="/Programs/AIDS/AIDSIMGPH.jpeg"
+                       src="/Programs/Entc1.jpg"
                        alt="Artificial Intelligence Program"
                        fill
                        className="object-cover object-center scale-105  opacity-90"
@@ -59,11 +61,11 @@ export default function ENTC() {
                    </div>
            
                    {/* Dark Gradient Overlay */}
-                   <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent " />
+                   <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10" />
            
                    {/* Content Wrapper */}
                    {/* Content Wrapper */}
-                   <div className="relative max-w-[1500px] px-6 md:px-12 lg:px-20">
+                   <div className="relative max-w-[1500px] px-6 md:px-12 lg:px-20 z-20">
                      <div className="max-w-3xl text-white">
                        <h2 className="text-4xl md:text-5xl font-bold leading-snug">
                          4-Year B.E. Programme in Electronics & Telecommunication Engineering  <br />
@@ -187,143 +189,43 @@ export default function ENTC() {
 
           {/* ===== PROGRAM STRUCTURE + APPLY FORM SECTION ===== */}
           <div className="w-full bg-white text-black py-16">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 px-4 sm:px-6 items-start">
-              {/* LEFT TEXT SECTION */}
-              <div className="flex-1 bg-white p-4 sm:p-6 rounded-lg shadow-sm">
-                <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-4 leading-snug">
-                  B.E. in Electronics & Telecommunication Engineering
-                </h2>
+  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 px-4 sm:px-6 items-stretch">
 
-                <p className="text-gray-700 mb-6 leading-relaxed text-sm sm:text-base">
-                  This programme equips students with a deep understanding of electronic circuits, communication theory, and electromagnetic waves, combined with practical expertise in designing and implementing telecommunication systems. The curriculum is designed to foster innovation in areas like wireless technology, embedded systems, and network infrastructure, ensuring graduates are industry-ready.
-                </p>
+    {/* LEFT TEXT SECTION */}
+    <div className="bg-white p-6 rounded-lg shadow-sm flex flex-col justify-between border border-gray-100">
+      <div>
+        <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-4 leading-snug">
+          B.E. in Electronics & Telecommunication Engineering
+        </h2>
 
-                <h3 className="font-semibold text-lg sm:text-xl text-secondary mb-3">
-                  Program Structure
-                </h3>
+        <p className="text-gray-700 mb-6 leading-relaxed text-sm sm:text-base">
+          This programme equips students with a deep understanding of electronic circuits, communication theory, 
+          and electromagnetic waves, combined with practical expertise in designing and implementing telecommunication systems. 
+          The curriculum is designed to foster innovation in areas like wireless technology, embedded systems, and network infrastructure, 
+          ensuring graduates are industry-ready.
+        </p>
 
-                <ul className="space-y-2 text-gray-800 text-sm sm:text-base">
-                  <li>Electronic Circuits & Devices</li>
-                  <li>Digital Signal Processing & Microcontrollers </li>
-                  <li>Analog & Digital Communication Systems </li>
-                  <li>VLSI Design & Embedded Systems </li>
-                  <li>Wireless & Mobile Communication, Internet of Things (IoT) </li>
-                </ul>
-              </div>
+        <h3 className="font-semibold text-lg sm:text-xl text-secondary mb-3">
+          Program Structure
+        </h3>
 
-              {/* RIGHT FORM SECTION */}
-              <div className="flex-1 bg-gray-50 p-4 sm:p-8 rounded-lg shadow-md max-h-[750px] overflow-y-auto w-full">
-                <form className="space-y-4 modal-form">
-                  {/* Name */}
-                  <input
-                    type="text"
-                    placeholder="Enter Name *"
-                    className="w-full border border-gray-300 rounded-md px-3 sm:px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
+        <ul className="list-disc list-inside space-y-2 text-gray-800 text-sm sm:text-base">
+          <li>Electronic Circuits & Devices</li>
+          <li>Digital Signal Processing & Microcontrollers</li>
+          <li>Analog & Digital Communication Systems</li>
+          <li>VLSI Design & Embedded Systems</li>
+          <li>Wireless & Mobile Communication, Internet of Things (IoT)</li>
+        </ul>
+      </div>
+    </div>
 
-                  {/* Email */}
-                  <input
-                    type="email"
-                    placeholder="Enter Email Address *"
-                    className="w-full border border-gray-300 rounded-md px-3 sm:px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
+    {/* RIGHT FORM SECTION */}
+    <div className="flex flex-col justify-between">
+      <ApplyForm />
+    </div>
+  </div>
+</div>
 
-                  {/* Mobile Number */}
-                  <div className="flex flex-col sm:flex-row border border-gray-300 rounded-md overflow-hidden">
-                    <select className="bg-gray-100 border-b sm:border-b-0 sm:border-r border-gray-300 px-3 py-2 text-gray-700 outline-none">
-                      <option>+91</option>
-                    </select>
-                    <input
-                      type="tel"
-                      placeholder="Enter Mobile Number *"
-                      className="flex-1 px-3 sm:px-4 py-2 outline-none focus:ring-2 focus:ring-primary"
-                    />
-                  </div>
-
-                  {/* State & City */}
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <select className="flex-1 border border-gray-300 rounded-md px-3 sm:px-4 py-2 text-gray-700 outline-none focus:ring-2 focus:ring-primary">
-                      <option>Select State *</option>
-                      <option>Maharashtra</option>
-                      <option>Gujarat</option>
-                      <option>Karnataka</option>
-                    </select>
-
-                    <select className="flex-1 border border-gray-300 rounded-md px-3 sm:px-4 py-2 text-gray-700 outline-none focus:ring-2 focus:ring-primary">
-                      <option>Select City *</option>
-                      <option>Pune</option>
-                      <option>Mumbai</option>
-                      <option>Nashik</option>
-                    </select>
-                  </div>
-
-                  {/* Discipline & Course */}
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <select className="flex-1 border border-gray-300 rounded-md px-3 sm:px-4 py-2 text-gray-700 outline-none focus:ring-2 focus:ring-primary">
-                      <option>Select Discipline Applying For *</option>
-                      <option>Engineering</option>
-                      <option>Management</option>
-                      <option>Computer Applications</option>
-                    </select>
-
-                    <select className="flex-1 border border-gray-300 rounded-md px-3 sm:px-4 py-2 text-gray-700 outline-none focus:ring-2 focus:ring-primary">
-                      <option>Select Course *</option>
-                      <option>B.E.</option>
-                      <option>MBA</option>
-                      <option>MCA</option>
-                    </select>
-                  </div>
-
-                  {/* Program */}
-                  <select className="w-full border border-gray-300 rounded-md px-3 sm:px-4 py-2 text-gray-700 outline-none focus:ring-2 focus:ring-primary">
-                    <option>Select Program *</option>
-                    <option>Computer Engineering</option>
-                    <option>Mechanical Engineering</option>
-                    <option>AI & Data Science</option>
-                    <option>IT</option>
-                  </select>
-
-                  {/* CET Score */}
-                  <input
-                    type="text"
-                    placeholder="Enter CET Score"
-                    className="w-full border border-gray-300 rounded-md px-3 sm:px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
-
-                  {/* Captcha Section */}
-                  <div className="flex flex-col sm:flex-row gap-3 items-stretch">
-                    <div className="bg-white border border-gray-300 rounded-md flex-1 sm:w-1/2 flex items-center justify-center py-2">
-                      <span className="text-lg font-bold text-gray-700 select-none">
-                        8fcb09
-                      </span>
-                    </div>
-                    <input
-                      type="text"
-                      placeholder="Enter Captcha"
-                      className="flex-1 border border-gray-300 rounded-md px-3 sm:px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-                    />
-                  </div>
-
-                  {/* Checkbox */}
-                  <div className="flex items-start gap-2 mt-2">
-                    <input type="checkbox" className="mt-1" />
-                    <p className="text-xs text-gray-700 leading-snug">
-                      I agree to receive information regarding my submitted
-                      enquiry*
-                    </p>
-                  </div>
-
-                  {/* Submit Button */}
-                  <button
-                    type="submit"
-                    className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-2 rounded-md mt-3 transition-colors"
-                  >
-                    SUBMIT
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
 
           {/* ===== PROGRAM HIGHLIGHTS SECTION ===== */}
           <div className="w-full bg-[#f7f7f7] py-16 text-black">
@@ -450,32 +352,7 @@ export default function ENTC() {
           <RecruitersSection />
 
           {/* ===== NEXT STEPS SECTION ===== */}
-          <div className="w-full bg-[#f7f7f7] py-16 flex justify-center px-6">
-            <div className="bg-primary rounded-2xl max-w-5xl w-full text-center text-white py-12 px-6">
-              <h2 className="text-3xl font-semibold mb-4">The Next Steps</h2>
-              <p className="text-white/80 max-w-3xl mx-auto mb-8 leading-relaxed">
-                The steps you take today shape your future. At Indira College,
-                we empower bright minds with strong fundamentals, a global
-                perspective, and leadership skills to make a meaningful change
-                in the world.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button
-                  onClick={handleBrochureDownload}
-                  className="bg-secondary hover:bg-white hover:text-black text-white px-8 py-3 rounded-md font-semibold transition-colors"
-                >
-                  Download Brochure
-                </button>
-                <button
-                  onClick={toggleModal}
-                  className="bg-white hover:bg-white hover:text-black text-secondary px-8 py-3 rounded-md font-semibold transition-colors"
-                >
-                  Enquire Now
-                </button>
-              </div>
-            </div>
-          </div>
+          <CTASection />
 
           {/* ===== FREQUENTLY ASKED QUESTIONS SECTION ===== */}
           <div ref={faqRef}>

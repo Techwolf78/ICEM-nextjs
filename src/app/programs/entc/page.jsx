@@ -49,61 +49,65 @@ export default function ENTC() {
     <div className="w-full bg-white text-white">
       {/* ===== HERO SECTION ===== */}
       <div className="relative w-full overflow-hidden h-[60vh] md:h-[75vh] flex items-center">
-                   {/* Background Image */}
-                   <div className="absolute inset-0">
-                     <Image
-                       src="/Programs/Entc1.jpg"
-                       alt="Artificial Intelligence Program"
-                       fill
-                       className="object-cover object-center scale-105  opacity-90"
-                       priority
-                     />
-                   </div>
-           
-                   {/* Dark Gradient Overlay */}
-                   <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10" />
-           
-                   {/* Content Wrapper */}
-                   {/* Content Wrapper */}
-                   <div className="relative max-w-[1500px] px-6 md:px-12 lg:px-20 z-20">
-                     <div className="max-w-3xl text-white">
-                       <h2 className="text-4xl md:text-5xl font-bold leading-snug">
-                         4-Year B.E. Programme in Electronics & Telecommunication Engineering  <br />
-                         <span className="bg-gradient-to-br from-cyan-400  to-sky-400 bg-clip-text text-transparent font-extrabold ">
-                           Engineering the Connected World of Tomorrow
-                         </span>
-                       </h2>
-           
-                       <p className="mt-4 text-white/80 leading-relaxed max-w-2xl">
-                         This programme provides a comprehensive foundation in analog and digital electronics, communication systems, and signal processing, integrated with modern knowledge in VLSI, embedded systems, and IoT. It prepares students to design and innovate at the forefront of connectivity and smart technology.
-                       </p>
-           
-                       {/* Floating Stat Cards */}
-           
-                       {/* Buttons */}
-                       <div className="flex gap-4 mt-6">
-                         <button
-                           onClick={toggleModal}
-                           className="bg-secondary text-white px-8 py-3 rounded-lg font-semibold 
-                         "
-                         >
-                           Enquire Now
-                         </button>
-           
-                         <button
-                           onClick={handleBrochureDownload}
-                           className="bg-secondary text-white px-8 py-3 rounded-lg"
-                         >
-                           Download Brochure
-                         </button>
-                       </div>
-                     </div>
-                   </div>
-           
-                   {/* Bottom Fade Mask */}
-                   <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-black/60 to-transparent" />
-                 </div> 
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/Programs/Entc1.jpg"
+            alt="Artificial Intelligence Program"
+            fill
+            className="object-cover object-center scale-105  opacity-90"
+            priority
+          />
+        </div>
 
+        {/* Dark Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10" />
+
+        {/* Content Wrapper */}
+        {/* Content Wrapper */}
+        <div className="relative max-w-[1500px] px-6 md:px-12 lg:px-20 z-20">
+          <div className="max-w-3xl text-white">
+            <h2 className="text-4xl md:text-5xl font-bold leading-snug">
+              4-Year B.E. Programme in Electronics & Telecommunication
+              Engineering <br />
+              <span className="bg-gradient-to-br from-cyan-400  to-sky-400 bg-clip-text text-transparent font-extrabold ">
+                Engineering the Connected World of Tomorrow
+              </span>
+            </h2>
+
+            <p className="mt-4 text-white/80 leading-relaxed max-w-2xl">
+              This programme provides a comprehensive foundation in analog and
+              digital electronics, communication systems, and signal processing,
+              integrated with modern knowledge in VLSI, embedded systems, and
+              IoT. It prepares students to design and innovate at the forefront
+              of connectivity and smart technology.
+            </p>
+
+            {/* Floating Stat Cards */}
+
+            {/* Buttons */}
+            <div className="flex gap-4 mt-6">
+              <button
+                onClick={toggleModal}
+                className="bg-secondary text-white px-8 py-3 rounded-lg font-semibold 
+                         "
+              >
+                Enquire Now
+              </button>
+
+              <button
+                onClick={handleBrochureDownload}
+                className="bg-secondary text-white px-8 py-3 rounded-lg"
+              >
+                Download Brochure
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Fade Mask */}
+        <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-black/60 to-transparent" />
+      </div>
 
       {/* ===== ENHANCED TAB NAVIGATION WITH SLIDING INDICATOR ===== */}
       <div className="my-4 relative bg-white border-b border-gray-200">
@@ -150,7 +154,9 @@ export default function ENTC() {
                   🕓 Course Duration
                 </h4>
                 <p className="text-gray-700">
-                  A rigorous 4-year curriculum structured to build expertise from fundamental electronics to advanced telecommunication systems.
+                  A rigorous 4-year curriculum structured to build expertise
+                  from fundamental electronics to advanced telecommunication
+                  systems.
                 </p>
               </div>
 
@@ -159,7 +165,9 @@ export default function ENTC() {
                   💼 Internship Opportunity
                 </h4>
                 <p className="text-gray-700">
-                  Students undertake a 6-month internship with leading companies in telecommunications, consumer electronics, and embedded systems.
+                  Students undertake a 6-month internship with leading companies
+                  in telecommunications, consumer electronics, and embedded
+                  systems.
                 </p>
               </div>
 
@@ -168,7 +176,8 @@ export default function ENTC() {
                   🏫 Campus Recruitment
                 </h4>
                 <p className="text-gray-700">
-                  Strong placement record with top recruiters from the telecom, IT hardware, semiconductor, and networking industries.
+                  Strong placement record with top recruiters from the telecom,
+                  IT hardware, semiconductor, and networking industries.
                 </p>
               </div>
 
@@ -181,7 +190,8 @@ export default function ENTC() {
                   onClick={scrollToFAQ}
                   className="text-gray-700 cursor-pointer hover:text-blue-600 hover:underline transition-colors"
                 >
-                  Click here to read more about the eligibility criteria for our B.E. in Electronics & Telecommunication Engineering.
+                  Click here to read more about the eligibility criteria for our
+                  B.E. in Electronics & Telecommunication Engineering.
                 </p>
               </div>
             </div>
@@ -189,122 +199,142 @@ export default function ENTC() {
 
           {/* ===== PROGRAM STRUCTURE + APPLY FORM SECTION ===== */}
           <div className="w-full bg-white text-black py-16">
-  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 px-4 sm:px-6 items-stretch">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 px-4 sm:px-6 items-stretch">
+              {/* LEFT TEXT SECTION */}
+              <div className="bg-white p-6 rounded-lg shadow-sm flex flex-col justify-between border border-gray-100">
+                <div>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-4 leading-snug">
+                    B.E. in Electronics & Telecommunication Engineering
+                  </h2>
 
-    {/* LEFT TEXT SECTION */}
-    <div className="bg-white p-6 rounded-lg shadow-sm flex flex-col justify-between border border-gray-100">
-      <div>
-        <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-4 leading-snug">
-          B.E. in Electronics & Telecommunication Engineering
-        </h2>
+                  <p className="text-gray-700 mb-6 leading-relaxed text-sm sm:text-base">
+                    This programme equips students with a deep understanding of
+                    electronic circuits, communication theory, and
+                    electromagnetic waves, combined with practical expertise in
+                    designing and implementing telecommunication systems. The
+                    curriculum is designed to foster innovation in areas like
+                    wireless technology, embedded systems, and network
+                    infrastructure, ensuring graduates are industry-ready.
+                  </p>
 
-        <p className="text-gray-700 mb-6 leading-relaxed text-sm sm:text-base">
-          This programme equips students with a deep understanding of electronic circuits, communication theory, 
-          and electromagnetic waves, combined with practical expertise in designing and implementing telecommunication systems. 
-          The curriculum is designed to foster innovation in areas like wireless technology, embedded systems, and network infrastructure, 
-          ensuring graduates are industry-ready.
-        </p>
+                  <h3 className="font-semibold text-lg sm:text-xl text-secondary mb-3">
+                    Program Structure
+                  </h3>
 
-        <h3 className="font-semibold text-lg sm:text-xl text-secondary mb-3">
-          Program Structure
-        </h3>
+                  <ul className="list-disc list-inside space-y-2 text-gray-800 text-sm sm:text-base">
+                    <li>Electronic Circuits & Devices</li>
+                    <li>Digital Signal Processing & Microcontrollers</li>
+                    <li>Analog & Digital Communication Systems</li>
+                    <li>VLSI Design & Embedded Systems</li>
+                    <li>
+                      Wireless & Mobile Communication, Internet of Things (IoT)
+                    </li>
+                  </ul>
+                </div>
+              </div>
 
-        <ul className="list-disc list-inside space-y-2 text-gray-800 text-sm sm:text-base">
-          <li>Electronic Circuits & Devices</li>
-          <li>Digital Signal Processing & Microcontrollers</li>
-          <li>Analog & Digital Communication Systems</li>
-          <li>VLSI Design & Embedded Systems</li>
-          <li>Wireless & Mobile Communication, Internet of Things (IoT)</li>
-        </ul>
-      </div>
-    </div>
-
-    {/* RIGHT FORM SECTION */}
-    <div className="flex flex-col justify-between">
-      <ApplyForm />
-    </div>
-  </div>
-</div>
-
+              {/* RIGHT FORM SECTION */}
+              <div className="flex flex-col justify-between">
+                <ApplyForm />
+              </div>
+            </div>
+          </div>
 
           {/* ===== PROGRAM HIGHLIGHTS SECTION ===== */}
-      <div className="w-full bg-[#f7f7f7] py-16 text-black">
-  <div className="max-w-7xl mx-auto px-6 text-center">
-    <h2 className="text-3xl font-bold text-secondary mb-4">
-      Program Highlights
-    </h2>
-    <p className="text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
-      Our B.E. in Electronics & Telecommunication Engineering blends theoretical rigor with extensive hands-on laboratory work. The program is structured to develop engineers capable of designing, analyzing, and managing the electronic and communication systems that are vital to modern infrastructure.
-    </p>
+          <div className="w-full bg-[#f7f7f7] py-16 text-black">
+            <div className="max-w-7xl mx-auto px-6 text-center">
+              <h2 className="text-3xl font-bold text-secondary mb-4">
+                Program Highlights
+              </h2>
+              <p className="text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
+                Our B.E. in Electronics & Telecommunication Engineering blends
+                theoretical rigor with extensive hands-on laboratory work. The
+                program is structured to develop engineers capable of designing,
+                analyzing, and managing the electronic and communication systems
+                that are vital to modern infrastructure.
+              </p>
 
-    {/* HIGHLIGHT CARDS */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {/* Card 1 */}
-      <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
-        <div className="w-full h-48 relative">
-          <Image
-            src="/Programs/ENTC/Entc1.jpg"
-            alt="Core & Specialized Knowledge"
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="p-6 text-left">
-          <h3 className="font-semibold text-lg text-secondary mb-2">
-            Core & Specialized Knowledge
-          </h3>
-          <p className="text-gray-700 text-sm leading-relaxed">
-            <span className="font-bold">Strong Electronics Foundation : </span>
-            The curriculum builds a formidable understanding of core concepts in circuit design, signal processing, and communication engineering, forming the bedrock for innovation in telecommunications.
-          </p>
-        </div>
-      </div>
+              {/* HIGHLIGHT CARDS */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {/* Card 1 */}
+                <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
+                  <div className="w-full h-48 relative">
+                    <Image
+                      src="/Programs/ENTC/Entc1.jpg"
+                      alt="Core & Specialized Knowledge"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6 text-left">
+                    <h3 className="font-semibold text-lg text-secondary mb-2">
+                      Core & Specialized Knowledge
+                    </h3>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      <span className="font-bold">
+                        Strong Electronics Foundation :{" "}
+                      </span>
+                      The curriculum builds a formidable understanding of core
+                      concepts in circuit design, signal processing, and
+                      communication engineering, forming the bedrock for
+                      innovation in telecommunications.
+                    </p>
+                  </div>
+                </div>
 
-      {/* Card 2 */}
-      <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
-        <div className="w-full h-48 relative">
-          <Image
-            src="/Programs/ENTC/Entc2.jpg"
-            alt="Labs & Practical Exposure"
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="p-6 text-left">
-          <h3 className="font-semibold text-lg text-secondary mb-2">
-            Labs & Practical Exposure
-          </h3>
-          <p className="text-gray-700 text-sm leading-relaxed">
-            <span className="font-bold">Advanced Electronics & Communication Laboratories : </span>
-            Gain hands-on experience in our VLSI, DSP, Microwave, and Embedded Systems labs, equipped with industry-standard software and hardware for prototyping and testing.
-          </p>
-        </div>
-      </div>
+                {/* Card 2 */}
+                <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
+                  <div className="w-full h-48 relative">
+                    <Image
+                      src="/Programs/ENTC/Entc2.jpg"
+                      alt="Labs & Practical Exposure"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6 text-left">
+                    <h3 className="font-semibold text-lg text-secondary mb-2">
+                      Labs & Practical Exposure
+                    </h3>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      <span className="font-bold">
+                        Advanced Electronics & Communication Laboratories :{" "}
+                      </span>
+                      Gain hands-on experience in our VLSI, DSP, Microwave, and
+                      Embedded Systems labs, equipped with industry-standard
+                      software and hardware for prototyping and testing.
+                    </p>
+                  </div>
+                </div>
 
-      {/* Card 3 */}
-      <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
-        <div className="w-full h-48 relative">
-          <Image
-            src="/Programs/ENTC/Entc3.jpg"
-            alt="Industry Alignment"
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="p-6 text-left">
-          <h3 className="font-semibold text-lg text-secondary mb-2">
-            Industry Alignment
-          </h3>
-          <p className="text-gray-700 text-sm leading-relaxed">
-            <span className="font-bold">Industry-Ready Competence : </span>
-            Through industry projects and internships, students develop practical skills in system design and problem-solving, making them highly valuable to leading electronics and telecom firms.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
+                {/* Card 3 */}
+                <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
+                  <div className="w-full h-48 relative">
+                    <Image
+                      src="/Programs/ENTC/Entc3.jpg"
+                      alt="Industry Alignment"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6 text-left">
+                    <h3 className="font-semibold text-lg text-secondary mb-2">
+                      Industry Alignment
+                    </h3>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      <span className="font-bold">
+                        Industry-Ready Competence :{" "}
+                      </span>
+                      Through industry projects and internships, students
+                      develop practical skills in system design and
+                      problem-solving, making them highly valuable to leading
+                      electronics and telecom firms.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* ===== CAREER OPPORTUNITIES SECTION ===== */}
           <div className="w-full bg-white text-black py-16">
@@ -315,7 +345,11 @@ export default function ENTC() {
                   Career Opportunities
                 </h2>
                 <p className="text-gray-700 mb-6 leading-relaxed">
-                   Electronics & Telecommunication Engineering graduates are essential to sectors like telecommunications, broadcasting, networking, and consumer electronics. They are equipped for roles involving the design, development, and maintenance of electronic devices and communication systems.
+                  Electronics & Telecommunication Engineering graduates are
+                  essential to sectors like telecommunications, broadcasting,
+                  networking, and consumer electronics. They are equipped for
+                  roles involving the design, development, and maintenance of
+                  electronic devices and communication systems.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-gray-800">

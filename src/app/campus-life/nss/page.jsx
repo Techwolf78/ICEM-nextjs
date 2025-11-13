@@ -3,33 +3,13 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Sidebar from "@/components/Sidebar";
+import { activities } from "@/static/campuslife/nss";
 
 function NationalServiceScheme() {
   const [openIndex, setOpenIndex] = useState(null);
 
   const bannerImg = "/BannerOverviewPage.jpg"; // put in public folder
   const beComp = "/BEComp.pdf"; // put in public folder
-
-  const rightLinks = [
-    "Student Welfare",
-    "Induction Programme",
-    "Student Council",
-    "National Service Scheme (NSS)",
-    "ICEM Awards",
-    "Academic Cell",
-    "Academic Calendar",
-    "Statutory Committee",
-    "Non-Statutory Committee",
-    "Grievance Redressal",
-  ];
-
-  const quickLinks = [
-    "Eligibility & Fees",
-    "Download Certificate Formats",
-    "Admission Helpline",
-    "Availability of Forms",
-    "Apply Online",
-  ];
 
   const reports = [
     "NSS Activity Report 2022-23",
@@ -40,6 +20,8 @@ function NationalServiceScheme() {
     "NSS Activity Report 2017-18",
   ];
 
+  // Sample NSS activities to display (image placeholders used)
+  
   const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
@@ -137,6 +119,31 @@ function NationalServiceScheme() {
                     </a>
                   </div>
                 )}
+              </div>
+            ))}
+          </div>
+
+          {/* NSS Activities Section */}
+          <h3 className="text-xl font-semibold text-secondary mt-8 mb-4">
+            NSS Activities
+          </h3>
+
+          <div className="grid gap-4 md:grid-cols-2">
+            {activities.map((act, idx) => (
+              <div
+                key={idx}
+                className="flex gap-4 items-start bg-white border border-gray-200 rounded-lg p-4"
+              >
+                <div className="w-36 h-24 bg-gray-200 rounded-md flex items-center justify-center text-gray-600 text-sm">
+                  Image placeholder
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg font-semibold text-gray-800">
+                    {act.title}
+                  </h4>
+                  <p className="text-sm text-gray-500">{act.date}</p>
+                  <p className="text-gray-700 mt-2">{act.desc}</p>
+                </div>
               </div>
             ))}
           </div>

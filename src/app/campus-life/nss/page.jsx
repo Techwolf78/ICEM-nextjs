@@ -45,7 +45,7 @@ function NationalServiceScheme() {
   };
 
   return (
-    <div className="w-full bg-white text-gray-800">
+    <div className="max w-full bg-white text-gray-800">
       {/* Hero Banner */}
       <div className="relative w-full h-[60vh]">
         <Image
@@ -63,9 +63,9 @@ function NationalServiceScheme() {
       </div>
 
       {/* Content Section */}
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 py-16 px-6">
+      <div className="max-w-full mx-auto flex flex-col md:flex-row gap-10 py-16 px-6">
         {/* Left Section */}
-        <div className="md:w-2/3 bg-white p-6 rounded-xl shadow-md">
+        <div className="md:w-3/4 bg-white p-6 rounded-xl shadow-md">
           <h2 className="text-2xl font-semibold text-secondary mb-6">
             About National Service Scheme (NSS)
           </h2>
@@ -143,7 +143,7 @@ function NationalServiceScheme() {
         </div>
 
         {/* Right Section */}
-        <div className="lg:w-1/3 bg-primary text-white p-6 rounded-xl shadow-md flex flex-col justify-between">
+        <div className="lg:w-1/4 shadow-md flex flex-col justify-between">
           <Sidebar />
         </div>
       </div>

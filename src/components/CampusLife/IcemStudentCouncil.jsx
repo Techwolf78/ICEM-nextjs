@@ -1,97 +1,135 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
+import { councilReports } from "../../static/campuslife/student_council";
 
 export default function IcemStudentCouncil() {
   const [openIndex, setOpenIndex] = useState(null);
-  const beComp = "/BEComp.pdf";
 
-  const councilReports = [
-    "Student Council A.Y. 2024-25",
-    "Student Council A.Y. 2023-24",
-    "Student Council A.Y. 2022-23",
-    "Student Council A.Y. 2019-20",
-    "Student Council A.Y. 2018-19",
-    "Student Council A.Y. 2017-18",
-  ];
-
-  const toggleAccordion = (index) => {
+  const toggleAccordion = (index) =>
     setOpenIndex(openIndex === index ? null : index);
-  };
 
   return (
-    <>
-      {/* Main Content Section */}
-      
-        {/* Left Section */}
-        <div className=" bg-white p-6 rounded-xl shadow-md">
-          <h2 className="text-2xl font-semibold text-secondary mb-6">
-            ICEM Student Council
-          </h2>
+    <div className="bg-white p-6 rounded-xl shadow-md">
+  <h2 className="text-2xl font-semibold text-secondary mb-4">
+    The ICEM Student Council
+  </h2>
+  
+  <h3 className="text-xl font-semibold text-secondary mb-4">
+    Governance and Student Leadership
+  </h3>
 
-          <p className="text-gray-700 leading-relaxed mb-4">
-            The purpose of the <b>Students Council (SC)</b> is to provide
-            programs, activities, and services which serve the co-curricular,
-            cultural, social, recreational, and educational interests of
-            students at the University and Colleges. The SC seeks to contribute
-            to the development of students’ leadership skills and experience,
-            program planning and development, volunteering, and fiscal
-            management.
-          </p>
+  <p className="text-gray-700 leading-relaxed mb-4">
+    Indira College of Engineering and Management has formally established its Student Council in full compliance with the Maharashtra Public Universities Act, 2016 (Section 99). This statutory body serves as the official representative voice of our student community, operating within a structured framework designed to enhance both academic experience and corporate life while explicitly maintaining a non-political stance.
+  </p>
 
-          <p className="text-gray-700 leading-relaxed mb-4">
-            The Students’ Council is established under the{" "}
-            <b>Maharashtra Public Universities Act, 1994 section 40 (B)</b> and
-            under the new{" "}
-            <b>Maharashtra Public University Act 2016, Section 99</b>.
-          </p>
+  <h4 className="text-lg font-semibold text-secondary mb-3">
+    Constitutional Framework:
+  </h4>
+  <p className="text-gray-700 leading-relaxed mb-4">
+    The Student Council operates under the legal provisions of the Maharashtra Public Universities Act, which mandates the formation of student governance bodies to promote student welfare and coordinate extracurricular activities. This legislative foundation ensures proper governance structures while authorizing the Council to manage student activity fees and programming in accordance with university guidelines.
+  </p>
 
-          <p className="text-gray-700 leading-relaxed mb-10">
-            <b>Indira College of Engineering and Management (ICEM)</b> has
-            formed its Student Council under the guidance of the above-mentioned
-            Act. The following are the council members.
-          </p>
+  <h4 className="text-lg font-semibold text-secondary mb-3">
+    Institutional Mission & Vision:
+  </h4>
+  <p className="text-gray-700 leading-relaxed mb-4">
+    The ICEM Student Council functions as the primary representative body for our student community, with a clear mission to cultivate leadership capabilities and promote ethical values among students. Through collaborative partnerships with faculty, administration, and alumni, the Council works to foster an environment of responsible leadership and constructive dialogue.
+  </p>
 
-          <h3 className="text-xl font-semibold text-secondary mb-4">
-            Student Council Reports
-          </h3>
+  <h4 className="text-lg font-semibold text-secondary mb-3">
+    Organizational Structure:
+  </h4>
+  <p className="text-gray-700 leading-relaxed mb-4">
+    The Council's executive committee comprises:<br />
+    • Administrative and faculty advisors providing institutional guidance<br />
+    • Elected student office bearers representing diverse academic disciplines<br />
+    • Class representatives ensuring comprehensive student representation
+  </p>
 
-          <div className="space-y-2">
-            {councilReports.map((report, index) => (
-              <div
-                key={index}
-                className="border border-gray-300 rounded overflow-hidden"
-              >
-                <button
-                  onClick={() => toggleAccordion(index)}
-                  className="w-full flex justify-between items-center px-4 py-3 bg-gray-50 hover:bg-gray-100 transition-colors"
-                >
-                  <span className="font-medium text-gray-800">{report}</span>
-                  <span className="text-xl font-bold">
-                    {openIndex === index ? "−" : "+"}
-                  </span>
-                </button>
+  <h4 className="text-lg font-semibold text-secondary mb-3">
+    Strategic Objectives:
+  </h4>
+  <ul className="text-gray-700 leading-relaxed mb-6 list-disc list-inside space-y-2">
+    <li>Develop and implement programs addressing co-curricular, cultural, and social interests</li>
+    <li>Enhance leadership capabilities through structured planning and volunteer opportunities</li>
+    <li>Promote ethical leadership and character development across the student community</li>
+    <li>Facilitate cross-campus collaboration and idea exchange</li>
+    <li>Manage student activity resources with fiscal responsibility</li>
+  </ul>
 
-                {openIndex === index && (
-                  <div className="p-4 bg-white border-t border-gray-300">
-                    <p className="text-gray-700 mb-2">
-                      Click below to view the {report} PDF.
-                    </p>
-                    <a
-                      href={beComp}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary font-semibold hover:underline"
+  <p className="text-gray-700 leading-relaxed mb-6">
+    The ICEM Student Council represents our institutional commitment to developing well-rounded professionals equipped with both technical expertise and essential leadership qualities, preparing them for success in their future careers and communities.
+  </p>
+
+  <h3 className="text-xl font-semibold text-secondary mb-4">
+    Student Council Reports
+  </h3>
+
+  <div className="space-y-2">
+    {councilReports.map((report, index) => (
+      <div
+        key={index}
+        className="border border-gray-300 rounded overflow-hidden"
+      >
+        <button
+          onClick={() => toggleAccordion(index)}
+          className="w-full flex justify-between items-center px-4 py-3 bg-gray-50 hover:bg-gray-100 transition-colors"
+        >
+          <span className="font-medium text-gray-800">{report.year}</span>
+          <span className="text-xl font-bold">
+            {openIndex === index ? "−" : "+"}
+          </span>
+        </button>
+
+        {openIndex === index && (
+          <div className="p-4 bg-white border-t border-gray-300 overflow-x-auto">
+            {report.members.length > 0 ? (
+              <table className="w-full border border-gray-300 text-left text-gray-800 text-xs sm:text-sm">
+                <thead className="bg-gray-100">
+                  <tr>
+                    <th className="border border-gray-300 p-2 text-center">
+                      Sr. No.
+                    </th>
+                    <th className="border border-gray-300 p-2">
+                      Name
+                    </th>
+                    <th className="border border-gray-300 p-2">
+                      Designation
+                    </th>
+                    <th className="border border-gray-300 p-2">
+                      Mobile No.
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {report.members.map(([sr, name, role, mobile]) => (
+                    <tr
+                      key={sr}
+                      className="odd:bg-white even:bg-gray-50 hover:bg-blue-50 transition-colors"
                     >
-                      View Report
-                    </a>
-                  </div>
-                )}
-              </div>
-            ))}
+                      <td className="border border-gray-300 p-2 text-center">
+                        {sr}
+                      </td>
+                      <td className="border border-gray-300 p-2">{name}</td>
+                      <td className="border border-gray-300 p-2">{role}</td>
+                      <td className="border border-gray-300 p-2">
+                        {mobile}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            ) : (
+              <p className="text-gray-700 text-sm">
+                Data for this academic year will be updated soon.
+              </p>
+            )}
           </div>
-        </div>
-    </>
+        )}
+      </div>
+    ))}
+  </div>
+</div>
   );
 }

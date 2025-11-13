@@ -226,85 +226,83 @@ export default function Computer() {
 
 
           {/* ===== PROGRAM HIGHLIGHTS SECTION ===== */}
-          <div className="w-full bg-[#f7f7f7] py-16 text-black">
-            <div className="max-w-7xl mx-auto px-6 text-center">
-              <h2 className="text-3xl font-bold text-secondary mb-4">
-                Program Highlights
-              </h2>
-              <p className="text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
-                Our B.E. in Information Technology blends core computing principles with specialized training in enterprise-grade technologies. The programme is designed to create IT professionals who can bridge the gap between business needs and technological implementation.
-              </p>
+      <div className="w-full bg-[#f7f7f7] py-16 text-black">
+  <div className="max-w-7xl mx-auto px-6 text-center">
+    <h2 className="text-3xl font-bold text-secondary mb-4">
+      Program Highlights
+    </h2>
+    <p className="text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
+      Our B.E. in Information Technology blends core computing principles with specialized training in enterprise-grade technologies. The programme is designed to create IT professionals who can bridge the gap between business needs and technological implementation.
+    </p>
 
-              {/* HIGHLIGHT CARDS */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {/* Card 1 */}
-                <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
-                  <div className="w-full h-48 relative">
-                    <Image
-                      src="/images/interdisciplinary-expertise.jpg"
-                      alt="Interdisciplinary Expertise"
-                      fill
-                      className="object-cover"
-                      placeholder="blur"
-                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                    />
-                  </div>
-                  <div className="p-6 text-left">
-                    <h3 className="font-semibold text-lg text-secondary mb-2">
-                      Core & Specialized Knowledge
-                    </h3>
-                    <p className="text-gray-700 text-sm leading-relaxed">
-                      <span className="font-bold">Enterprise Technology Focus : </span>The curriculum builds expertise in software development, network architecture, and database systems, forming the foundation for implementing and managing large-scale IT solutions.
-                    </p>
-                  </div>
-                </div>
+    {/* HIGHLIGHT CARDS */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* Card 1 */}
+      <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
+        <div className="w-full h-48 relative">
+          <Image
+            src="/Programs/IT/IT1.jpg"
+            alt="Core & Specialized Knowledge"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="p-6 text-left">
+          <h3 className="font-semibold text-lg text-secondary mb-2">
+            Core & Specialized Knowledge
+          </h3>
+          <p className="text-gray-700 text-sm leading-relaxed">
+            <span className="font-bold">Enterprise Technology Focus : </span>
+            The curriculum builds expertise in software development, network architecture, and database systems, forming the foundation for implementing and managing large-scale IT solutions.
+          </p>
+        </div>
+      </div>
 
-                {/* Card 2 */}
-                <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
-                  <div className="w-full h-48 relative">
-                    <Image
-                      src="/images/cutting-edge-labs.jpg"
-                      alt="Cutting-Edge Laboratories"
-                      fill
-                      className="object-cover"
-                      placeholder="blur"
-                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                    />
-                  </div>
-                  <div className="p-6 text-left">
-                    <h3 className="font-semibold text-lg text-secondary mb-2">
-                      Labs & Practical Exposure
-                    </h3>
-                    <p className="text-gray-700 text-sm leading-relaxed">
-                      :  <span className="font-bold">Advanced IT Infrastructure Labs : </span>Gain hands-on experience in our networking, cybersecurity, and cloud computing labs, equipped with industry-standard tools for system administration, development, and security auditing.
-                    </p>
-                  </div>
-                </div>
+      {/* Card 2 */}
+      <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
+        <div className="w-full h-48 relative">
+          <Image
+            src="/Programs/IT/IT2.jpg"
+            alt="Labs & Practical Exposure"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="p-6 text-left">
+          <h3 className="font-semibold text-lg text-secondary mb-2">
+            Labs & Practical Exposure
+          </h3>
+          <p className="text-gray-700 text-sm leading-relaxed">
+            <span className="font-bold">Advanced IT Infrastructure Labs : </span>
+            Gain hands-on experience in our networking, cybersecurity, and cloud computing labs, equipped with industry-standard tools for system administration, development, and security auditing.
+          </p>
+        </div>
+      </div>
 
-                {/* Card 3 */}
-                <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
-                  <div className="w-full h-48 relative">
-                    <Image
-                      src="/images/industry-skills.jpg"
-                      alt="Industry-Relevant Skills"
-                      fill
-                      className="object-cover"
-                      placeholder="blur"
-                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                    />
-                  </div>
-                  <div className="p-6 text-left">
-                    <h3 className="font-semibold text-lg text-secondary mb-2">
-                      Industry Alignment
-                    </h3>
-                    <p className="text-gray-700 text-sm leading-relaxed">
-                      <span className="font-bold">Industry-Ready Competence : </span>Through live projects and internships, students develop practical skills in system integration, software development life cycles, and IT service management, making them assets to any technology-driven organization.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      {/* Card 3 */}
+      <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
+        <div className="w-full h-48 relative">
+          <Image
+            src="/Programs/IT/IT3.jpg"
+            alt="Industry-Relevant Skills"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="p-6 text-left">
+          <h3 className="font-semibold text-lg text-secondary mb-2">
+            Industry Alignment
+          </h3>
+          <p className="text-gray-700 text-sm leading-relaxed">
+            <span className="font-bold">Industry-Ready Competence : </span>
+            Through live projects and internships, students develop practical skills in system integration, software development life cycles, and IT service management, making them assets to any technology-driven organization.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
           {/* ===== CAREER OPPORTUNITIES SECTION ===== */}
           <div className="w-full bg-white text-black py-16">

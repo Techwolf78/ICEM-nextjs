@@ -21,8 +21,8 @@ const CampusBeat = () => {
         </p>
       </div>
 
-      {/* ✅ Horizontal marquee for wide image */}
-      <div className="relative w-full overflow-hidden h-[30vh] sm:h-[50vh] md:h-[65vh]">
+      {/* ✅ Horizontal marquee — Hidden on mobile */}
+      <div className="hidden sm:block relative w-full overflow-hidden h-[30vh] sm:h-[50vh] md:h-[65vh]">
         <div className="flex w-[200%] sm:w-[1200%] animate-smoothScroll relative h-full">
           {/* Two identical images for seamless looping */}
           <div className="relative w-1/2 h-full">

@@ -207,82 +207,92 @@ export default function Mech() {
 
       {/* ===== PROGRAM HIGHLIGHTS SECTION ===== */}
       <div className="w-full bg-[#f7f7f7] py-16 text-black">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-secondary mb-4">
-            Programme Highlights
-          </h2>
-          <p className="text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
-            Our B.E. in Mechanical Engineering combines rigorous theoretical
-            instruction with extensive hands-on learning. The programme is
-            structured to develop proficient engineers capable of designing,
-            analysing, and managing complex mechanical systems for a sustainable
-            and automated future.
+  <div className="max-w-7xl mx-auto px-6 text-center">
+    <h2 className="text-3xl font-bold text-secondary mb-4">
+      Programme Highlights
+    </h2>
+    <p className="text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
+      Our B.E. in Mechanical Engineering combines rigorous theoretical
+      instruction with extensive hands-on learning. The programme is
+      structured to develop proficient engineers capable of designing,
+      analysing, and managing complex mechanical systems for a sustainable
+      and automated future.
+    </p>
+
+    {/* HIGHLIGHT CARDS */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* Card 1 */}
+      <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
+        <div className="w-full h-48 relative">
+          <Image
+            src="/Programs/Mech/mech1.jpg"
+            alt="Core & Specialized Knowledge"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="p-6 text-left">
+          <h3 className="font-semibold text-lg text-secondary mb-2">
+            Core & Specialized Knowledge
+          </h3>
+          <p className="text-gray-700 text-sm leading-relaxed">
+            <span className="font-bold">Strong Engineering Foundation: </span>
+            The curriculum builds expertise in core domains like machine
+            design, thermodynamics, and fluid dynamics, while introducing
+            advanced topics in robotics and additive manufacturing.
           </p>
-
-          {/* HIGHLIGHT CARDS */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Card 1 */}
-            <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
-              <div className="w-full h-48 bg-gray-300 flex items-center justify-center text-gray-500">
-                [ Image Placeholder ]
-              </div>
-              <div className="p-6 text-left">
-                <h3 className="font-semibold text-lg text-secondary mb-2">
-                  Core & Specialized Knowledge
-                </h3>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  <span className="font-bold">
-                    Strong Engineering Foundation :{" "}
-                  </span>
-                  The curriculum builds expertise in core domains like machine
-                  design, thermodynamics, and fluid dynamics, while introducing
-                  advanced topics in robotics and additive manufacturing.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 2 */}
-            <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
-              <div className="w-full h-48 bg-gray-300 flex items-center justify-center text-gray-500">
-                [ Image Placeholder ]
-              </div>
-              <div className="p-6 text-left">
-                <h3 className="font-semibold text-lg text-secondary mb-2">
-                  Labs & Practical Exposure
-                </h3>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  <span className="font-bold">
-                    Advanced Engineering Laboratories :{" "}
-                  </span>
-                  Gain hands-on experience in our CAD/CAM, Automation, Fluid
-                  Mechanics, and Materials Testing labs, equipped with
-                  industry-standard software and machinery.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 3 */}
-            <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
-              <div className="w-full h-48 bg-gray-300 flex items-center justify-center text-gray-500">
-                [ Image Placeholder ]
-              </div>
-              <div className="p-6 text-left">
-                <h3 className="font-semibold text-lg text-secondary mb-2">
-                  Industry Alignment
-                </h3>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  <span className="font-bold">
-                    Industry-Ready Competence :{" "}
-                  </span>{" "}
-                  Through industry projects and internships, students develop
-                  the practical skills and problem-solving abilities highly
-                  valued by leading engineering firms.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
+
+      {/* Card 2 */}
+      <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
+        <div className="w-full h-48 relative">
+          <Image
+            src="/Programs/Mech/mech2.jpg"
+            alt="Labs & Practical Exposure"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="p-6 text-left">
+          <h3 className="font-semibold text-lg text-secondary mb-2">
+            Labs & Practical Exposure
+          </h3>
+          <p className="text-gray-700 text-sm leading-relaxed">
+            <span className="font-bold">Advanced Engineering Laboratories: </span>
+            Gain hands-on experience in our CAD/CAM, Automation, Fluid
+            Mechanics, and Materials Testing labs, equipped with
+            industry-standard software and machinery.
+          </p>
+        </div>
+      </div>
+
+      {/* Card 3 */}
+      <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
+        <div className="w-full h-48 relative">
+          <Image
+            src="/Programs/Mech/mech3.jpg"
+            alt="Industry Alignment"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="p-6 text-left">
+          <h3 className="font-semibold text-lg text-secondary mb-2">
+            Industry Alignment
+          </h3>
+          <p className="text-gray-700 text-sm leading-relaxed">
+            <span className="font-bold">Industry-Ready Competence: </span>
+            Through industry projects and internships, students develop
+            the practical skills and problem-solving abilities highly
+            valued by leading engineering firms.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
       {/* <section className="w-full bg-gray-50 py-16 overflow-hidden">
         
@@ -374,107 +384,17 @@ export default function Mech() {
       <RecruiterSection />
 
       {/* ===== NEXT STEPS SECTION ===== */}
-     <CTASection />
+     <div className="bg-white py-16">
+  <CTASection />
+</div>
+
+ 
 
       {/* ===== FREQUENTLY ASKED QUESTIONS SECTION ===== */}
       <FAQSection />
 
       {/* ===== APPLY NOW MODAL ===== */}
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white w-[90%] md:w-[680px] p-6 rounded-lg shadow-lg relative max-h-[90vh] overflow-y-auto">
-            <button
-              onClick={toggleModal}
-              aria-label="Close"
-              className="absolute top-3 right-3 text-gray-600 hover:text-primary text-2xl"
-            >
-              ×
-            </button>
-            <h2 className="text-2xl font-bold text-center mb-6 text-secondary">
-              Enquire Now
-            </h2>
-
-            {/* Modal form - matches the long form */}
-            <form className="space-y-4 modal-form">
-              <input
-                type="text"
-                placeholder="Enter Name *"
-                className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-              <input
-                type="email"
-                placeholder="Enter Email Address *"
-                className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-              <div className="flex gap-2">
-                <select className="w-24 border border-gray-300 rounded px-2 py-2">
-                  <option>+91</option>
-                </select>
-                <input
-                  type="tel"
-                  placeholder="Enter Mobile Number *"
-                  className="flex-1 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-              </div>
-
-              <div className="flex gap-2">
-                <select className="flex-1 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
-                  <option>Select State *</option>
-                </select>
-                <select className="flex-1 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
-                  <option>Select City *</option>
-                </select>
-              </div>
-
-              <div className="flex gap-2">
-                <select className="flex-1 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
-                  <option>Select Discipline Applying For *</option>
-                </select>
-                <select className="flex-1 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
-                  <option>Select Course *</option>
-                </select>
-              </div>
-
-              <select className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
-                <option>Select Program *</option>
-              </select>
-
-              <input
-                type="text"
-                placeholder="Enter CET Score"
-                className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-
-              <div className="flex gap-3 items-center">
-                <div className="bg-gray-100 border border-gray-300 rounded-md w-1/2 flex items-center justify-center py-2">
-                  <span className="text-lg font-bold text-gray-700 select-none">
-                    8fcb09
-                  </span>
-                </div>
-                <input
-                  type="text"
-                  placeholder="Enter Captcha"
-                  className="flex-1 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-              </div>
-
-              <div className="flex items-center gap-2 mt-2">
-                <input type="checkbox" id="agreeModal" />
-                <label htmlFor="agreeModal" className="text-sm text-gray-700">
-                  I agree to receive information regarding my submitted Enquire*
-                </label>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-2 rounded-md transition-colors"
-              >
-                SUBMIT
-              </button>
-            </form>
-          </div>
-        </div>
-      )}
+      
     </div>
   );
 }

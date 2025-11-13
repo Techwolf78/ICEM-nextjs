@@ -305,7 +305,7 @@ const Navbar = () => {
       {/* ===== NAVBAR ===== */}
       <nav
         ref={navbarRef}
-        className="w-full h-[12vh] flex bg-white shadow-sm font-sans  sticky top-0 z-50"
+        className="w-full h-[12vh] flex bg-white shadow-sm font-sans fixed top-0 left-0 right-0 z-50" // Changed from sticky to fixed
       >
         {/* Left: Logo - 80% width on mobile */}
         <div className="w-full md:w-[30%] h-full flex items-center justify-start md:pl-0 md:justify-center">
@@ -479,6 +479,9 @@ const Navbar = () => {
           </div>
         )}
       </nav>
+
+      {/* Add padding to main content to account for fixed navbar */}
+      <div className="pt-[12vh]"></div>
 
       {/* Mobile Menu - Slides from bottom to top */}
       {isMobileMenuOpen && (

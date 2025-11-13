@@ -49,43 +49,9 @@ export default function Computer() {
     <div className="w-full bg-white text-white">
       {/* ===== HERO SECTION ===== */}
 
-      {/* ===== ENHANCED TAB NAVIGATION WITH SLIDING INDICATOR ===== */}
-      <div className="relative bg-white border-b border-gray-200">
-        <div className="flex mx-auto">
-          <button
-            className={`flex-1 py-4 font-medium text-md transition-all duration-150 ${
-              activeTab === "admissions"
-                ? "bg-secondary"
-                : "text-gray-500 hover:text-gray-700"
-            }`}
-            onClick={() => setActiveTab("admissions")}
-          >
-            Admissions & Programs
-          </button>
-          <button
-            className={`flex-1 py-4 font-medium text-md transition-all duration-150 ${
-              activeTab === "department"
-                ? "bg-secondary"
-                : "text-gray-500 hover:text-gray-700"
-            }`}
-            onClick={() => setActiveTab("department")}
-          >
-            Department Info & Staff
-          </button>
-        </div>
-        {/* Sliding Indicator */}
-        <div
-          className="absolute bottom-0 h-1 bg-primary transition-transform duration-150 ease-out"
-          style={{
-            width: "50%",
-            transform: `translateX(${getActiveTabIndex() * 100}%)`,
-          }}
-        ></div>
-      </div>
+  
 
-      {/* ===== TAB CONTENT ===== */}
-      {activeTab === "admissions" ? (
-        <>
+   
           <div className="relative w-full overflow-hidden h-[60vh] md:h-[75vh] flex items-center">
             {/* Background Image */}
             <div className="absolute inset-0">
@@ -380,8 +346,7 @@ export default function Computer() {
        <div className="bg-white py-16">
     <CTASection />
   </div>
-        </>
-      ) : (
+        
         /* ===== DEPARTMENT INFO & STAFF SECTION ===== */
         <div className="w-full bg-white ">
           {/* ===== FREQUENTLY ASKED QUESTIONS SECTION ===== */}
@@ -389,7 +354,7 @@ export default function Computer() {
             <FAQSection />
           </div>
         </div>
-      )}
+
     </div>
   );
 }

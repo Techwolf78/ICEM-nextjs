@@ -119,43 +119,8 @@ export default function AIDS() {
         <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-black/60 to-transparent" />
       </div>
 
-      {/* ===== ENHANCED TAB NAVIGATION WITH SLIDING INDICATOR ===== */}
-      <div className="my-4 relative bg-white border-b border-gray-200">
-        <div className="flex mx-auto">
-          <button
-            className={`flex-1 py-4 font-medium text-md transition-all duration-150 ${
-              activeTab === "admissions"
-                ? "text-blue-600 bg-blue-50"
-                : "text-gray-500 hover:text-gray-700"
-            }`}
-            onClick={() => setActiveTab("admissions")}
-          >
-            Admissions & Programs
-          </button>
-          <button
-            className={`flex-1 py-4 font-medium text-md transition-all duration-150 ${
-              activeTab === "department"
-                ? "text-blue-600 bg-blue-50"
-                : "text-gray-500 hover:text-gray-700"
-            }`}
-            onClick={() => setActiveTab("department")}
-          >
-            Department Info & Staff
-          </button>
-        </div>
-        {/* Sliding Indicator */}
-        <div
-          className="absolute bottom-0 h-1 bg-blue-600 transition-transform duration-150 ease-out"
-          style={{
-            width: "50%",
-            transform: `translateX(${getActiveTabIndex() * 100}%)`,
-          }}
-        ></div>
-      </div>
 
-      {/* ===== TAB CONTENT ===== */}
-      {activeTab === "admissions" ? (
-        <>
+    
           {/* ===== WHITE INFO SECTION ===== */}
           <div className="w-full bg-[#f8f8f8] text-black py-12">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 px-6">
@@ -401,121 +366,11 @@ export default function AIDS() {
           <div ref={faqRef}>
             <FAQSection />
           </div>
-        </>
-      ) : (
-        /* ===== DEPARTMENT INFO & STAFF SECTION ===== */
-        <div className="w-full bg-white py-16">
-          <div className="max-w-7xl mx-auto px-6 text-center">
-            <h2 className="text-3xl font-bold text-secondary mb-4">
-              Department Information & Staff
-            </h2>
-            <p className="text-gray-600 text-lg mb-8">
-              This section is currently under development. Department details,
-              faculty information, and staff profiles will be available soon.
-            </p>
-            <div className="bg-gray-100 rounded-lg p-12">
-              <p className="text-gray-500 text-xl">Content Coming Soon</p>
-            </div>
-          </div>
-        </div>
-      )}
+      
+   
 
-      {/* ===== APPLY NOW MODAL ===== */}
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white w-[90%] md:w-[680px] p-6 rounded-lg shadow-lg relative max-h-[90vh] overflow-y-auto">
-            <button
-              onClick={toggleModal}
-              aria-label="Close"
-              className="absolute top-3 right-3 text-gray-600 hover:text-primary text-2xl"
-            >
-              ×
-            </button>
-            <h2 className="text-2xl font-bold text-center mb-6 text-secondary">
-              Enquire Now
-            </h2>
 
-            {/* Modal form - matches the long form */}
-            <form className="space-y-4 modal-form">
-              <input
-                type="text"
-                placeholder="Enter Name *"
-                className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-              <input
-                type="email"
-                placeholder="Enter Email Address *"
-                className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-              <div className="flex gap-2">
-                <select className="w-24 border border-gray-300 rounded px-2 py-2">
-                  <option>+91</option>
-                </select>
-                <input
-                  type="tel"
-                  placeholder="Enter Mobile Number *"
-                  className="flex-1 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-              </div>
-
-              <div className="flex gap-2">
-                <select className="flex-1 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
-                  <option>Select State *</option>
-                </select>
-                <select className="flex-1 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
-                  <option>Select City *</option>
-                </select>
-              </div>
-
-              <div className="flex gap-2">
-                <select className="flex-1 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
-                  <option>Select Discipline Applying For *</option>
-                </select>
-                <select className="flex-1 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
-                  <option>Select Course *</option>
-                </select>
-              </div>
-
-              <select className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
-                <option>Select Program *</option>
-              </select>
-
-              <input
-                type="text"
-                placeholder="Enter CET Score"
-                className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-
-              <div className="flex gap-3 items-center">
-                <div className="bg-gray-100 border border-gray-300 rounded-md w-1/2 flex items-center justify-center py-2">
-                  <span className="text-lg font-bold text-gray-700 select-none">
-                    8fcb09
-                  </span>
-                </div>
-                <input
-                  type="text"
-                  placeholder="Enter Captcha"
-                  className="flex-1 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-              </div>
-
-              <div className="flex items-center gap-2 mt-2">
-                <input type="checkbox" id="agreeModal" />
-                <label htmlFor="agreeModal" className="text-sm text-gray-700">
-                  I agree to receive information regarding my submitted enquiry*
-                </label>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-secondary hover:bg-primary/90 text-white font-semibold py-2 rounded-md transition-colors"
-              >
-                SUBMIT
-              </button>
-            </form>
-          </div>
-        </div>
-      )}
+ 
     </div>
   );
 }

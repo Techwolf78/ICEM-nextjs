@@ -30,7 +30,8 @@ export default function RootLayout({ children }) {
         />
         <link rel="icon" href="/shortLogo.png" />
       </head>
-      <body className="flex flex-col min-h-screen  bg-white">
+      <body className="min-h-screen bg-white flex flex-col">
+
         <Loader isLoading={isLoading} />
 
         <Navbar />

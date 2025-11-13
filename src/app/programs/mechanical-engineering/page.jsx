@@ -393,7 +393,7 @@ export default function Mech() {
       {/* ===== FREQUENTLY ASKED QUESTIONS SECTION ===== */}
       <FAQSection />
 
-      {/* ===== APPLY NOW MODAL ===== */}
+  
       
     </div>
   );

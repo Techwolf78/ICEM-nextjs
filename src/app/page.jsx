@@ -13,7 +13,7 @@ import CTASection from "@/components/home/CTASection";
 
 export default function HomePage() {
   return (
-    <div className="bg-white text-gray-900">
+    <div className="bg-white  text-gray-900">
       <HeroSlider />
       <ExploreSection />
       <DiscoverPaths />

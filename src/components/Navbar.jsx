@@ -473,7 +473,7 @@ const Navbar = () => {
           <div
             onPointerEnter={() => handleMouseEnter(activeDropdown)}
             onPointerLeave={handleMouseLeave}
-            className="absolute top-full left-0 w-full backdrop-blur-md bg-white/60 shadow-xl border-t border-gray-200 z-50 hidden md:block animate-in fade-in-0 slide-in-from-top-2 duration-300"
+            className="absolute top-full left-0 w-full backdrop-blur-sm bg-white/60 shadow-xl border-t border-gray-200 z-50 hidden md:block animate-in fade-in-0 slide-in-from-top-2 duration-300"
           >
             {renderDropdownContent(dropdownContent[activeDropdown])}
           </div>
@@ -485,7 +485,7 @@ const Navbar = () => {
         <>
           {/* Overlay */}
           <div
-            className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-40 animate-in fade-in-0 duration-300"
+            className="md:hidden fixed inset-0 bg-transparent backdrop-blur-md bg-opacity-50 z-40 animate-in fade-in-0 duration-300"
             onClick={toggleMobileMenu}
           />
 

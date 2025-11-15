@@ -9,38 +9,30 @@ function InductionProgramme() {
 
   // Assets from public folder
   const bannerImg = "/BannerOverviewPage.jpg";
-  const beComp = "/BEComp.pdf";
-
-  const rightLinks = [
-    "Student Welfare",
-    "IIC",
-    "Induction Programme",
-    "Student Council",
-    "National Service Scheme (NSS)",
-    "ICEM Awards",
-    "Academic Cell",
-    "Academic Calendar",
-    "Statutory Committee",
-    "Non-Statutory Committee",
-    "Grievance Redressal",
-  ];
-
-  const quickLinks = [
-    "Eligibility & Fees",
-    "Download Certificate Formats",
-    "Admission Helpline",
-    "Availability of Forms",
-    "Apply Online",
-  ];
+  
+  // PDF files
+  const inductionCPMAM2022_23 = "/pdfs/induction/Induction (CP Mam) Report_2022-23.pdf";
+  const induction2022_23Authenticated = "/pdfs/induction/Induction 2022-23_authenticated.pdf";
+  const induction2023_24Authenticated = "/pdfs/induction/Induction Report 2023-24_authenticated_5.4.24.pdf";
+  const inductionTraining2021_22 = "/pdfs/induction/Induction training Report_2021-22.pdf";
 
   const activityReports = [
-    "Report 2023-2024",
-    "Report 2022-2023",
-    "Report 2021-2022",
-    "Report 2018-2019",
-    "Report 2017-2018",
-    "Report 2016-2017",
-    "Report 2015-2016",
+    { 
+      title: "Report 2023-2024", 
+      file: induction2023_24Authenticated 
+    },
+    { 
+      title: "Report 2022-2023", 
+      file: induction2022_23Authenticated 
+    },
+    { 
+      title: "Induction (CP Mam) Report 2022-23", 
+      file: inductionCPMAM2022_23 
+    },
+    { 
+      title: "Induction Training Report 2021-22", 
+      file: inductionTraining2021_22 
+    },
   ];
 
   const toggleAccordion = (index) => {
@@ -66,9 +58,9 @@ function InductionProgramme() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 py-16 px-6">
+      <div className="max-w-full mx-auto flex flex-col md:flex-row gap-10 py-16 px-6">
         {/* Left Content */}
-        <div className="md:w-2/3 bg-white p-6 rounded-xl shadow-md">
+        <div className="lg:w-3/4 bg-white p-6 rounded-xl shadow-md">
           <h2 className="text-2xl font-semibold text-secondary mb-6">
             About Induction Programme
           </h2>
@@ -77,7 +69,7 @@ function InductionProgramme() {
             The term <b>induction</b> is generally used to describe the process
             whereby new incumbents adjust to or acclimatize to their new roles
             and environment. In other words, it is a well-planned event to
-            educate new entrants about the institution’s environment and connect
+            educate new entrants about the institution's environment and connect
             them with the people in it.
           </p>
 
@@ -124,7 +116,7 @@ function InductionProgramme() {
                   className="w-full flex justify-between items-center px-4 py-3 text-left font-medium text-gray-900 hover:bg-gray-100 transition-colors"
                 >
                   <span className="underline text-[16px] font-semibold hover:text-primary transition">
-                    {report}
+                    {report.title}
                   </span>
                   <span className="text-xl text-gray-700">
                     {openIndex === index ? "−" : "+"}
@@ -134,10 +126,10 @@ function InductionProgramme() {
                 {openIndex === index && (
                   <div className="p-4 bg-white border-t border-gray-200">
                     <p className="text-gray-700 mb-2">
-                      Click below to view the {report} document.
+                      Click below to view the {report.title} document.
                     </p>
                     <a
-                      href={beComp}
+                      href={report.file}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary font-semibold hover:underline"
@@ -152,7 +144,7 @@ function InductionProgramme() {
         </div>
 
         {/* Right Sidebar */}
-        <div className="lg:w-1/3 bg-primary text-white p-6 rounded-xl shadow-md flex flex-col justify-between">
+        <div className="lg:w-1/4">
           <Sidebar />
         </div>
       </div>

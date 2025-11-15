@@ -301,275 +301,403 @@ const Research = () => {
         </div>
       </section>
 
-      {/* Vibrant Research Ecosystem Section */}
-      {/* Vibrant Research Ecosystem Section */}
-{/* Vibrant Research Ecosystem Section */}
-<section className="py-10 bg-white">
-  <div className="max-w-7xl mx-auto px-6">
-    {/* Title */}
-    <h2 className="text-3xl md:text-4xl font-bold text-center text-secondary mb-4">
-      Vibrant Research Ecosystem
-    </h2>
-    <p className="text-gray-700 text-center max-w-5xl mx-auto mb-12 leading-relaxed">
-      From breakthroughs in sustainable technologies to transformative
-      research in healthcare and AI, Indira College's vibrant research
-      ecosystem drives innovation, empowers communities, and inspires
-      global scientific progress.
-    </p>
+      <section className="py-10 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+         
+          {/* PhD Guides Table Section */}
+          <div className="mt-16">
+            <h3 className="text-2xl md:text-3xl font-bold text-center text-secondary mb-8">
+              PhD Research Guides & Scholars
+            </h3>
 
-    {/* Research Highlights Grid */}
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {/* 1 */}
-      <div className="border border-gray-200 shadow-md bg-white p-8 hover:shadow-lg transition-all">
-        <h3 className="text-lg font-bold text-secondary mb-3">
-          13690+ Publications & 97000+ Citations
-        </h3>
-        <p className="text-gray-700 leading-relaxed">
-          Indira's growing publication record reflects its commitment to
-          impactful research that resonates globally. Our strong citation
-          index stands as a testament to our academic credibility and
-          innovation.
-        </p>
-      </div>
+            <div className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse border border-gray-300">
+                  <thead>
+                    <tr className="bg-secondary text-white">
+                      <th className="border border-gray-300 p-3 text-left">
+                        S.No
+                      </th>
+                      <th className="border border-gray-300 p-3 text-left">
+                        Name of Faculty
+                      </th>
+                      <th className="border border-gray-300 p-3 text-left">
+                        Qualification
+                      </th>
+                      <th className="border border-gray-300 p-3 text-left">
+                        Year of Recognition
+                      </th>
+                      <th className="border border-gray-300 p-3 text-left">
+                        Name of Scholar
+                      </th>
+                      <th className="border border-gray-300 p-3 text-left">
+                        Year of Registration
+                      </th>
+                      <th className="border border-gray-300 p-3 text-left">
+                        Title of Thesis
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {/* Dr. Nilesh Uke */}
+                    <tr className="bg-gray-50">
+                      <td className="border border-gray-300 p-2" rowSpan="12">
+                        1
+                      </td>
+                      <td
+                        className="border border-gray-300 p-2 font-semibold"
+                        rowSpan="12"
+                      >
+                        Dr. Nilesh Uke
+                      </td>
+                      <td className="border border-gray-300 p-2" rowSpan="12">
+                        Ph.D in Computer Engineering
+                      </td>
+                      <td className="border border-gray-300 p-2" rowSpan="12">
+                        2022
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        Pankaja Bagul
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        Ph.D awarded in Dec 2023
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        Mapping of Digital Mediation through Process Information
+                        Diagrams in Architectural Design
+                      </td>
+                    </tr>
+                    {[
+                      {
+                        name: "Priya Pise",
+                        year: "Ph.D awarded in Nov 2018",
+                        thesis:
+                          "Secure sensitive big data sharing on recent operating Systems",
+                      },
+                      {
+                        name: "Deepak Dharrao",
+                        year: "Ph.D awarded in Oct 2018",
+                        thesis:
+                          "A study of face detection and recognition methods for real time video surveillance",
+                      },
+                      {
+                        name: "Sarika Deokate",
+                        year: "Ph.D awarded in Apr 2019",
+                        thesis:
+                          "Enhancement Of Document Analysis, Classification, And Post Processing Of Devnagari Script",
+                      },
+                      {
+                        name: "Anchal Agrawal",
+                        year: "1/1/2023",
+                        thesis:
+                          "Design of Effective Techniques for Early Prediction of Heart Arrhythmia",
+                      },
+                      {
+                        name: "Shetty Nikita",
+                        year: "1/1/2023",
+                        thesis:
+                          "Design of trajectories of moving object with non-overlapping Surveillance cameras Field of View Cameras",
+                      },
+                      {
+                        name: "Ajay Kapase",
+                        year: "1/1/2023",
+                        thesis:
+                          "Reactive Multimodal Affective System with Artificial Emotional Intelligence for Effective Human Computer Interaction",
+                      },
+                      {
+                        name: "Kamble Vitthal",
+                        year: "1/1/2023",
+                        thesis:
+                          "Forensics Analysis of Digital Image Tampering Using Algorithmic Approach",
+                      },
+                      {
+                        name: "Priyanka Mane",
+                        year: "1/1/2023",
+                        thesis:
+                          "Fetal Movement Detection to Monitor It's Health Remotely During Prenatal Period",
+                      },
+                      {
+                        name: "Yevale Pallavi",
+                        year: "1/1/2023",
+                        thesis:
+                          "Design of an Intelligent Multilingual Virtual Assistant using Natural Language Understanding",
+                      },
+                      {
+                        name: "Sayali Bamble",
+                        year: "1/1/2023",
+                        thesis:
+                          "Breast Cancer Detection from Mammography Images using Machine Learning",
+                      },
+                      {
+                        name: "Ugile Tukaram",
+                        year: "1/1/2023",
+                        thesis:
+                          "Abnormal Event Detection in Real-time Video Surveillance",
+                      },
+                    ].map((scholar, index) => (
+                      <tr key={index} className="bg-gray-50">
+                        <td className="border border-gray-300 p-2">
+                          {scholar.name}
+                        </td>
+                        <td className="border border-gray-300 p-2">
+                          {scholar.year}
+                        </td>
+                        <td className="border border-gray-300 p-2">
+                          {scholar.thesis}
+                        </td>
+                      </tr>
+                    ))}
 
-      {/* 2 */}
-      <div className="border border-gray-200 shadow-md bg-white p-8 hover:shadow-lg transition-all">
-        <h3 className="text-lg font-bold text-secondary mb-3">
-          Global Research Network Across 140+ Countries
-        </h3>
-        <p className="text-gray-700 leading-relaxed">
-          Collaborations with over 180 institutions and 3700+
-          international authors enable interdisciplinary breakthroughs
-          across fields such as Computer Science, Engineering, and Life
-          Sciences.
-        </p>
-      </div>
+                    {/* Dr. Mrs. Poorna Shankar */}
+                    <tr className="bg-white">
+                      <td className="border border-gray-300 p-2">2</td>
+                      <td className="border border-gray-300 p-2 font-semibold">
+                        Dr. Mrs. Poorna Shankar
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        Ph.D in Computer Science
+                      </td>
+                      <td className="border border-gray-300 p-2">2016</td>
+                      <td className="border border-gray-300 p-2">
+                        Pratibha Kulkarni
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        29/1/2016 (Ph.D Awarded in Dec 2021)
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        A Study of use of Social Networking Sites by the
+                        Academicians in Selected Professional Colleges in and
+                        around Pune City
+                      </td>
+                    </tr>
+                    {[
+                      {
+                        name: "Brijesh Joshi",
+                        year: "20/4/2018 (Ph.D Awarded in June 2022)",
+                        thesis:
+                          "Identifying the performance challenges with Big data processing and partial solutions",
+                      },
+                      {
+                        name: "Awantika Bijwe",
+                        year: "24-03-2018 (Ph.D Awarded in June 2024)",
+                        thesis:
+                          "Analysis of performance measures and effectiveness of devops framework in developing IoT applications",
+                      },
+                      {
+                        name: "Kiran Shinde",
+                        year: "3/11/2020",
+                        thesis:
+                          "Designing of edge computing based smart health care framework using authentication services",
+                      },
+                      {
+                        name: "Ashish Dhoke",
+                        year: "3/11/2020",
+                        thesis:
+                          "To Design a Smart Navigation System for Multiple Destinations using GPS and Machine Learning Algorithm",
+                      },
+                    ].map((scholar, index) => (
+                      <tr key={index} className="bg-white">
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2">
+                          {scholar.name}
+                        </td>
+                        <td className="border border-gray-300 p-2">
+                          {scholar.year}
+                        </td>
+                        <td className="border border-gray-300 p-2">
+                          {scholar.thesis}
+                        </td>
+                      </tr>
+                    ))}
 
-      {/* 3 */}
-      <div className="border border-gray-200 shadow-md bg-white p-8 hover:shadow-lg transition-all">
-        <h3 className="text-lg font-bold text-secondary mb-3">
-          Focus on UN Sustainable Development Goals (SDGs)
-        </h3>
-        <p className="text-gray-700 leading-relaxed">
-          With thousands of publications aligned with the SDGs, our
-          researchers actively address challenges in Good Health &
-          Well-being, Clean Energy, and Industry Innovation.
-        </p>
-      </div>
+                    {/* Dr. Sunil Rathod */}
+                    <tr className="bg-gray-50">
+                      <td className="border border-gray-300 p-2">3</td>
+                      <td className="border border-gray-300 p-2 font-semibold">
+                        Dr. Sunil Rathod
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        Ph.D in Computer Engineering
+                      </td>
+                      <td className="border border-gray-300 p-2">2018</td>
+                      <td className="border border-gray-300 p-2">
+                        Nilesh Mali
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        Ph.D Awarded in JAN 2024
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        Implementation of Information Security in Cloud Through
+                        Multi Access Control & Key Aggregation on Crypto System
+                      </td>
+                    </tr>
+                    <tr className="bg-gray-50">
+                      <td className="border border-gray-300 p-2"></td>
+                      <td className="border border-gray-300 p-2"></td>
+                      <td className="border border-gray-300 p-2"></td>
+                      <td className="border border-gray-300 p-2"></td>
+                      <td className="border border-gray-300 p-2">
+                        Sonali Purney
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        Ph.D Awarded in JAN 2024
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        Using AI to model the Future of Energy Conversation and
+                        Storage System
+                      </td>
+                    </tr>
 
-      {/* 4 */}
-      <div className="border border-gray-200 shadow-md bg-white p-8 hover:shadow-lg transition-all">
-        <h3 className="text-lg font-bold text-secondary mb-3">
-          Undergraduate Research Participation
-        </h3>
-        <p className="text-gray-700 leading-relaxed">
-          We nurture early research aptitude—our undergraduates engage in
-          real-world problem-solving, contributing to impactful papers and
-          industry-ready projects.
-        </p>
-      </div>
+                    {/* Dr. Soumitra Das */}
+                    <tr className="bg-white">
+                      <td className="border border-gray-300 p-2">4</td>
+                      <td className="border border-gray-300 p-2 font-semibold">
+                        Dr. Soumitra Das
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        Ph.D in Computer Engineering
+                      </td>
+                      <td className="border border-gray-300 p-2">2019</td>
+                      <td className="border border-gray-300 p-2">
+                        Mr. Malayaj Kumar
+                      </td>
+                      <td className="border border-gray-300 p-2">1/1/2022</td>
+                      <td className="border border-gray-300 p-2">
+                        Analysis of Speech of Political Leaders Writing NCP and
+                        AI: Its Effect on Political Discourse
+                      </td>
+                    </tr>
 
-      {/* 5 */}
-      <div className="border border-gray-200 shadow-md bg-white p-8 hover:shadow-lg transition-all">
-        <h3 className="text-lg font-bold text-secondary mb-3">
-          Global Recognition
-        </h3>
-        <p className="text-gray-700 leading-relaxed">
-          Our faculty and researchers have been recognized among the Top
-          2% Scientists globally, spanning diverse domains of science,
-          engineering, and technology.
-        </p>
-      </div>
+                    {/* Dr. Archana Ravindra Salve */}
+                    <tr className="bg-gray-50">
+                      <td className="border border-gray-300 p-2">5</td>
+                      <td className="border border-gray-300 p-2 font-semibold">
+                        Dr. Archana Ravindra Salve
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        Ph.D in Management
+                      </td>
+                      <td className="border border-gray-300 p-2">2020</td>
+                      <td className="border border-gray-300 p-2">
+                        Priyanka Budhkar
+                      </td>
+                      <td className="border border-gray-300 p-2">3/22/2022</td>
+                      <td className="border border-gray-300 p-2">
+                        A critical study of hybrid mode of working on employee
+                        performance in IT industry with reference to Pune and
+                        Mumbai region
+                      </td>
+                    </tr>
+                    {[
+                      {
+                        name: "Pradip Sandbhor",
+                        year: "7/5/2022",
+                        thesis:
+                          "Impact of BVOC Education on student skill enhancement and job opportunities",
+                      },
+                      {
+                        name: "Gayatri Nimbalkar",
+                        year: "3/23/2023",
+                        thesis:
+                          "A Study of Work-Life Balance of Women Employees Post-Pandemic and Its Impact on Their Performance",
+                      },
+                    ].map((scholar, index) => (
+                      <tr key={index} className="bg-gray-50">
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2">
+                          {scholar.name}
+                        </td>
+                        <td className="border border-gray-300 p-2">
+                          {scholar.year}
+                        </td>
+                        <td className="border border-gray-300 p-2">
+                          {scholar.thesis}
+                        </td>
+                      </tr>
+                    ))}
 
-      {/* 6 */}
-      <div className="border border-gray-200 shadow-md bg-white p-8 hover:shadow-lg transition-all">
-        <h3 className="text-lg font-bold text-secondary mb-3">
-          Sponsored Research & Funding Success
-        </h3>
-        <p className="text-gray-700 leading-relaxed">
-          With over ₹90 Crores in competitive research grants, our faculty
-          are continuously driving cutting-edge projects aligned with
-          national and international priorities.
-        </p>
-      </div>
-    </div>
+                    {/* Dr. Darshana Jignesh Desai */}
+                    <tr className="bg-white">
+                      <td className="border border-gray-300 p-2">6</td>
+                      <td className="border border-gray-300 p-2 font-semibold">
+                        Dr. Darshana Jignesh Desai
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        Ph.D in Computer Management
+                      </td>
+                      <td className="border border-gray-300 p-2">2021</td>
+                      <td className="border border-gray-300 p-2">
+                        Raj Kamal Sangole
+                      </td>
+                      <td className="border border-gray-300 p-2">6/28/2022</td>
+                      <td className="border border-gray-300 p-2">
+                        Empirical Study of Hiring Trends in the IT Industry and
+                        Design a Model using Machine Learning Techniques
+                      </td>
+                    </tr>
+                    {[
+                      {
+                        name: "Sameer Patil",
+                        year: "5/18/2023",
+                        thesis:
+                          "Design and Develop a Framework using Blockchain with Integration of AI for Indian Judicial System",
+                      },
+                      {
+                        name: "Dhanashree Patil",
+                        year: "In Process",
+                        thesis: "In Process",
+                      },
+                    ].map((scholar, index) => (
+                      <tr key={index} className="bg-white">
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2">
+                          {scholar.name}
+                        </td>
+                        <td className="border border-gray-300 p-2">
+                          {scholar.year}
+                        </td>
+                        <td className="border border-gray-300 p-2">
+                          {scholar.thesis}
+                        </td>
+                      </tr>
+                    ))}
 
-    {/* PhD Guides Table Section */}
-    <div className="mt-16">
-      <h3 className="text-2xl md:text-3xl font-bold text-center text-secondary mb-8">
-        PhD Research Guides & Scholars
-      </h3>
-      
-      <div className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
-        <div className="overflow-x-auto">
-          <table className="w-full border-collapse border border-gray-300">
-            <thead>
-              <tr className="bg-secondary text-white">
-                <th className="border border-gray-300 p-3 text-left">S.No</th>
-                <th className="border border-gray-300 p-3 text-left">Name of Faculty</th>
-                <th className="border border-gray-300 p-3 text-left">Qualification</th>
-                <th className="border border-gray-300 p-3 text-left">Year of Recognition</th>
-                <th className="border border-gray-300 p-3 text-left">Name of Scholar</th>
-                <th className="border border-gray-300 p-3 text-left">Year of Registration</th>
-                <th className="border border-gray-300 p-3 text-left">Title of Thesis</th>
-              </tr>
-            </thead>
-            <tbody>
-              {/* Dr. Nilesh Uke */}
-              <tr className="bg-gray-50">
-                <td className="border border-gray-300 p-2" rowSpan="12">1</td>
-                <td className="border border-gray-300 p-2 font-semibold" rowSpan="12">Dr. Nilesh Uke</td>
-                <td className="border border-gray-300 p-2" rowSpan="12">Ph.D in Computer Engineering</td>
-                <td className="border border-gray-300 p-2" rowSpan="12">2022</td>
-                <td className="border border-gray-300 p-2">Pankaja Bagul</td>
-                <td className="border border-gray-300 p-2">Ph.D awarded in Dec 2023</td>
-                <td className="border border-gray-300 p-2">Mapping of Digital Mediation through Process Information Diagrams in Architectural Design</td>
-              </tr>
-              {[
-                { name: "Priya Pise", year: "Ph.D awarded in Nov 2018", thesis: "Secure sensitive big data sharing on recent operating Systems" },
-                { name: "Deepak Dharrao", year: "Ph.D awarded in Oct 2018", thesis: "A study of face detection and recognition methods for real time video surveillance" },
-                { name: "Sarika Deokate", year: "Ph.D awarded in Apr 2019", thesis: "Enhancement Of Document Analysis, Classification, And Post Processing Of Devnagari Script" },
-                { name: "Anchal Agrawal", year: "1/1/2023", thesis: "Design of Effective Techniques for Early Prediction of Heart Arrhythmia" },
-                { name: "Shetty Nikita", year: "1/1/2023", thesis: "Design of trajectories of moving object with non-overlapping Surveillance cameras Field of View Cameras" },
-                { name: "Ajay Kapase", year: "1/1/2023", thesis: "Reactive Multimodal Affective System with Artificial Emotional Intelligence for Effective Human Computer Interaction" },
-                { name: "Kamble Vitthal", year: "1/1/2023", thesis: "Forensics Analysis of Digital Image Tampering Using Algorithmic Approach" },
-                { name: "Priyanka Mane", year: "1/1/2023", thesis: "Fetal Movement Detection to Monitor It's Health Remotely During Prenatal Period" },
-                { name: "Yevale Pallavi", year: "1/1/2023", thesis: "Design of an Intelligent Multilingual Virtual Assistant using Natural Language Understanding" },
-                { name: "Sayali Bamble", year: "1/1/2023", thesis: "Breast Cancer Detection from Mammography Images using Machine Learning" },
-                { name: "Ugile Tukaram", year: "1/1/2023", thesis: "Abnormal Event Detection in Real-time Video Surveillance" },
-              ].map((scholar, index) => (
-                <tr key={index} className="bg-gray-50">
-                  <td className="border border-gray-300 p-2">{scholar.name}</td>
-                  <td className="border border-gray-300 p-2">{scholar.year}</td>
-                  <td className="border border-gray-300 p-2">{scholar.thesis}</td>
-                </tr>
-              ))}
-              
-              {/* Dr. Mrs. Poorna Shankar */}
-              <tr className="bg-white">
-                <td className="border border-gray-300 p-2">2</td>
-                <td className="border border-gray-300 p-2 font-semibold">Dr. Mrs. Poorna Shankar</td>
-                <td className="border border-gray-300 p-2">Ph.D in Computer Science</td>
-                <td className="border border-gray-300 p-2">2016</td>
-                <td className="border border-gray-300 p-2">Pratibha Kulkarni</td>
-                <td className="border border-gray-300 p-2">29/1/2016 (Ph.D Awarded in Dec 2021)</td>
-                <td className="border border-gray-300 p-2">A Study of use of Social Networking Sites by the Academicians in Selected Professional Colleges in and around Pune City</td>
-              </tr>
-              {[
-                { name: "Brijesh Joshi", year: "20/4/2018 (Ph.D Awarded in June 2022)", thesis: "Identifying the performance challenges with Big data processing and partial solutions" },
-                { name: "Awantika Bijwe", year: "24-03-2018 (Ph.D Awarded in June 2024)", thesis: "Analysis of performance measures and effectiveness of devops framework in developing IoT applications" },
-                { name: "Kiran Shinde", year: "3/11/2020", thesis: "Designing of edge computing based smart health care framework using authentication services" },
-                { name: "Ashish Dhoke", year: "3/11/2020", thesis: "To Design a Smart Navigation System for Multiple Destinations using GPS and Machine Learning Algorithm" },
-              ].map((scholar, index) => (
-                <tr key={index} className="bg-white">
-                  <td className="border border-gray-300 p-2"></td>
-                  <td className="border border-gray-300 p-2"></td>
-                  <td className="border border-gray-300 p-2"></td>
-                  <td className="border border-gray-300 p-2"></td>
-                  <td className="border border-gray-300 p-2">{scholar.name}</td>
-                  <td className="border border-gray-300 p-2">{scholar.year}</td>
-                  <td className="border border-gray-300 p-2">{scholar.thesis}</td>
-                </tr>
-              ))}
-
-              {/* Dr. Sunil Rathod */}
-              <tr className="bg-gray-50">
-                <td className="border border-gray-300 p-2">3</td>
-                <td className="border border-gray-300 p-2 font-semibold">Dr. Sunil Rathod</td>
-                <td className="border border-gray-300 p-2">Ph.D in Computer Engineering</td>
-                <td className="border border-gray-300 p-2">2018</td>
-                <td className="border border-gray-300 p-2">Nilesh Mali</td>
-                <td className="border border-gray-300 p-2">Ph.D Awarded in JAN 2024</td>
-                <td className="border border-gray-300 p-2">Implementation of Information Security in Cloud Through Multi Access Control & Key Aggregation on Crypto System</td>
-              </tr>
-              <tr className="bg-gray-50">
-                <td className="border border-gray-300 p-2"></td>
-                <td className="border border-gray-300 p-2"></td>
-                <td className="border border-gray-300 p-2"></td>
-                <td className="border border-gray-300 p-2"></td>
-                <td className="border border-gray-300 p-2">Sonali Purney</td>
-                <td className="border border-gray-300 p-2">Ph.D Awarded in JAN 2024</td>
-                <td className="border border-gray-300 p-2">Using AI to model the Future of Energy Conversation and Storage System</td>
-              </tr>
-
-              {/* Dr. Soumitra Das */}
-              <tr className="bg-white">
-                <td className="border border-gray-300 p-2">4</td>
-                <td className="border border-gray-300 p-2 font-semibold">Dr. Soumitra Das</td>
-                <td className="border border-gray-300 p-2">Ph.D in Computer Engineering</td>
-                <td className="border border-gray-300 p-2">2019</td>
-                <td className="border border-gray-300 p-2">Mr. Malayaj Kumar</td>
-                <td className="border border-gray-300 p-2">1/1/2022</td>
-                <td className="border border-gray-300 p-2">Analysis of Speech of Political Leaders Writing NCP and AI: Its Effect on Political Discourse</td>
-              </tr>
-
-              {/* Dr. Archana Ravindra Salve */}
-              <tr className="bg-gray-50">
-                <td className="border border-gray-300 p-2">5</td>
-                <td className="border border-gray-300 p-2 font-semibold">Dr. Archana Ravindra Salve</td>
-                <td className="border border-gray-300 p-2">Ph.D in Management</td>
-                <td className="border border-gray-300 p-2">2020</td>
-                <td className="border border-gray-300 p-2">Priyanka Budhkar</td>
-                <td className="border border-gray-300 p-2">3/22/2022</td>
-                <td className="border border-gray-300 p-2">A critical study of hybrid mode of working on employee performance in IT industry with reference to Pune and Mumbai region</td>
-              </tr>
-              {[
-                { name: "Pradip Sandbhor", year: "7/5/2022", thesis: "Impact of BVOC Education on student skill enhancement and job opportunities" },
-                { name: "Gayatri Nimbalkar", year: "3/23/2023", thesis: "A Study of Work-Life Balance of Women Employees Post-Pandemic and Its Impact on Their Performance" },
-              ].map((scholar, index) => (
-                <tr key={index} className="bg-gray-50">
-                  <td className="border border-gray-300 p-2"></td>
-                  <td className="border border-gray-300 p-2"></td>
-                  <td className="border border-gray-300 p-2"></td>
-                  <td className="border border-gray-300 p-2"></td>
-                  <td className="border border-gray-300 p-2">{scholar.name}</td>
-                  <td className="border border-gray-300 p-2">{scholar.year}</td>
-                  <td className="border border-gray-300 p-2">{scholar.thesis}</td>
-                </tr>
-              ))}
-
-              {/* Dr. Darshana Jignesh Desai */}
-              <tr className="bg-white">
-                <td className="border border-gray-300 p-2">6</td>
-                <td className="border border-gray-300 p-2 font-semibold">Dr. Darshana Jignesh Desai</td>
-                <td className="border border-gray-300 p-2">Ph.D in Computer Management</td>
-                <td className="border border-gray-300 p-2">2021</td>
-                <td className="border border-gray-300 p-2">Raj Kamal Sangole</td>
-                <td className="border border-gray-300 p-2">6/28/2022</td>
-                <td className="border border-gray-300 p-2">Empirical Study of Hiring Trends in the IT Industry and Design a Model using Machine Learning Techniques</td>
-              </tr>
-              {[
-                { name: "Sameer Patil", year: "5/18/2023", thesis: "Design and Develop a Framework using Blockchain with Integration of AI for Indian Judicial System" },
-                { name: "Dhanashree Patil", year: "In Process", thesis: "In Process" },
-              ].map((scholar, index) => (
-                <tr key={index} className="bg-white">
-                  <td className="border border-gray-300 p-2"></td>
-                  <td className="border border-gray-300 p-2"></td>
-                  <td className="border border-gray-300 p-2"></td>
-                  <td className="border border-gray-300 p-2"></td>
-                  <td className="border border-gray-300 p-2">{scholar.name}</td>
-                  <td className="border border-gray-300 p-2">{scholar.year}</td>
-                  <td className="border border-gray-300 p-2">{scholar.thesis}</td>
-                </tr>
-              ))}
-
-              {/* Dr. Manjusha Tatiya */}
-              <tr className="bg-gray-50">
-                <td className="border border-gray-300 p-2">7</td>
-                <td className="border border-gray-300 p-2 font-semibold">Dr. Manjusha Tatiya</td>
-                <td className="border border-gray-300 p-2">Ph.D in Computer Engineering</td>
-                <td className="border border-gray-300 p-2">2023</td>
-                <td className="border border-gray-300 p-2">Pallavi Chavan</td>
-                <td className="border border-gray-300 p-2">11/24/2024</td>
-                <td className="border border-gray-300 p-2">Perishable produce quality prediction using machine learning - A smart system for nutrient loss estimation and freshness categorization</td>
-              </tr>
-            </tbody>
-          </table>
+                    {/* Dr. Manjusha Tatiya */}
+                    <tr className="bg-gray-50">
+                      <td className="border border-gray-300 p-2">7</td>
+                      <td className="border border-gray-300 p-2 font-semibold">
+                        Dr. Manjusha Tatiya
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        Ph.D in Computer Engineering
+                      </td>
+                      <td className="border border-gray-300 p-2">2023</td>
+                      <td className="border border-gray-300 p-2">
+                        Pallavi Chavan
+                      </td>
+                      <td className="border border-gray-300 p-2">11/24/2024</td>
+                      <td className="border border-gray-300 p-2">
+                        Perishable produce quality prediction using machine
+                        learning - A smart system for nutrient loss estimation
+                        and freshness categorization
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Department Information Section */}
       <section className="py-16 bg-gray-50">
@@ -1376,8 +1504,6 @@ const Research = () => {
                   ))}
                 </div>
               )}
-
-             
             </div>
           </div>
         </div>

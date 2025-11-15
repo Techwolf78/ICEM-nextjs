@@ -2,37 +2,26 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Sidebar from "@/components/Sidebar";
 
 const Academics = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const rightLinks = [
-    "Student Welfare",
-    "Induction Programme",
-    "Student Council",
-    "National Service Scheme (NSS)",
-    "ICEM Awards",
-    "Academic Cell",
-    "Academic Calendar",
-    "Statutory Committee",
-    "Non-Statutory Committee",
-    "Grievance Redressal",
-  ];
-
-  const quickLinks = [
-    "Eligibility & Fees",
-    "Download Certificate Formats",
-    "Admission Helpline",
-    "Availability of Forms",
-    "Apply Online",
-  ];
-
   const iacReports = [
-    "IAC 2024-25 – Odd Semester",
-    "IAC 2023-24 – Even Semester",
-    "IAC 2021-22 – Sem-I",
-    "IAC 2021-22 – Sem-II",
-  ];
+  {
+    title: "SPPU Academic Calendar_2025-26.pdf",
+    file: "/pdfs/academic/SPPU Academic Calendar_2025-26.pdf",
+  },
+  {
+    title: "SY Autonomy",
+    file: "/pdfs/academic/SY Autonomy.pdf",
+  },
+  {
+    title: "FY Autonomy",
+    file: "/pdfs/academic/FY Autonomy.pdf",
+  },
+];
+
 
   const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -57,9 +46,9 @@ const Academics = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 py-16 px-6">
+      <div className="max-w-full mx-auto flex flex-col md:flex-row gap-10 py-16 px-6">
         {/* Left Section */}
-        <div className="md:w-2/3 bg-white p-6 rounded-xl shadow-md">
+        <div className="lg:w-3/4 bg-white p-6 rounded-xl shadow-md">
           <h2 className="text-2xl font-semibold text-secondary mb-6">
             About the Academic Cell
           </h2>
@@ -147,7 +136,7 @@ const Academics = () => {
                   className="w-full flex justify-between items-center px-4 py-3 text-left font-medium text-gray-900 hover:bg-gray-100 transition"
                 >
                   <span className="underline text-[16px] font-semibold hover:text-secondary transition">
-                    {report}
+                    {report.title}
                   </span>
                   <span className="text-xl text-gray-700">
                     {openIndex === index ? "−" : "+"}
@@ -157,10 +146,10 @@ const Academics = () => {
                 {openIndex === index && (
                   <div className="p-4 bg-white border-t border-gray-200">
                     <p className="text-gray-700 mb-2">
-                      Click below to view the {report} document.
+                      Click below to view the {report.title} document.
                     </p>
                     <a
-                      href={"/BEComp.pdf"}
+                      href={iacReports[index].file }
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-secondary font-semibold underline hover:text-tertiary transition"
@@ -175,83 +164,8 @@ const Academics = () => {
         </div>
 
         {/* Right Sidebar */}
-        <div className="md:w-1/3 bg-primary text-white p-6 rounded-xl shadow-md flex flex-col justify-between">
-          {/* Sidebar Links */}
-          <ul className="space-y-4 mb-8">
-            {rightLinks.map((link, index) => (
-              <li
-                key={index}
-                className="pb-2 border-b border-white/30 hover:text-tertiary cursor-pointer transition-all hover:underline"
-              >
-                {link}
-              </li>
-            ))}
-          </ul>
-
-          {/* Contact Form */}
-          <div className="bg-tertiary p-6 rounded-lg mb-8">
-            <h3 className="text-center text-lg font-bold mb-4 text-secondary">
-              GET IN TOUCH WITH US
-            </h3>
-            <form className="space-y-3 modal-form">
-              <input
-                type="text"
-                placeholder="YOUR NAME*"
-                className="w-full p-2 text-black rounded"
-              />
-              <div className="flex items-center bg-white rounded">
-                <span className="pl-2 text-black">🇮🇳</span>
-                <input
-                  type="text"
-                  placeholder="PHONE NUMBER*"
-                  className="w-full p-2 text-black rounded-r"
-                />
-              </div>
-              <input
-                type="email"
-                placeholder="YOUR EMAIL ID"
-                className="w-full p-2 text-black rounded"
-              />
-              <select className="w-full p-2 text-black rounded">
-                <option>Select Program</option>
-                <option>Engineering</option>
-                <option>MBA</option>
-                <option>MCA</option>
-              </select>
-              <input
-                type="text"
-                placeholder="STATE"
-                className="w-full p-2 text-black rounded"
-              />
-              <p className="text-xs text-gray-300">
-                By providing your contact details, you agree to receive updates
-                from Indira College through WhatsApp.
-              </p>
-              <button
-                type="submit"
-                className="w-full bg-secondary text-white font-semibold py-2 rounded hover:bg-white hover:text-[#003c84] transition-colors duration-300"
-              >
-                Apply Now
-              </button>
-            </form>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-center text-secondary font-bold mb-4 border-t border-white/30 pt-4">
-              QUICK LINKS
-            </h4>
-            <ul className="space-y-2">
-              {quickLinks.map((item, index) => (
-                <li
-                  key={index}
-                  className="flex items-center gap-2 text-sm hover:text-tertiary cursor-pointer transition"
-                >
-                  <span className="text-secondary">•</span> {item}
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="lg:w-1/4">
+          <Sidebar />
         </div>
       </div>
     </div>

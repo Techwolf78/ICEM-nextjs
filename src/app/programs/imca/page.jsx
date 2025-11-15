@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useRef } from "react";
-import FAQSection from "@/components/FAQSection";
+import FAQSection from "@/components/FAQSections/FAQIMCA";
 import Link from "next/link";
 import Image from "next/image";
 import RecruitersSection from "@/components/home/RecruiterSection";
@@ -124,7 +124,7 @@ export default function Computer() {
                 <p className="text-gray-700">
                   Multiple industry internships and live projects throughout the programme ensure cumulative practical experience and professional growth.
                 </p>
-              </div>
+              </div> 
 
               <div>
                 <h4 className="font-semibold text-lg flex items-center gap-2 mb-2">
@@ -206,7 +206,7 @@ export default function Computer() {
                 <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
                   <div className="w-full h-48 relative">
                     <Image
-                      src="/images/interdisciplinary-expertise.jpg"
+                      src="/Programs/IBBAMCA/IBBAMCA1.jpg"
                       alt="Interdisciplinary Expertise"
                       fill
                       className="object-cover"
@@ -228,7 +228,7 @@ export default function Computer() {
                 <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
                   <div className="w-full h-48 relative">
                     <Image
-                      src="/images/cutting-edge-labs.jpg"
+                      src="/Programs/IBBAMCA/IBBAMCA2.jpg"
                       alt="Cutting-Edge Laboratories"
                       fill
                       className="object-cover"
@@ -250,7 +250,7 @@ export default function Computer() {
                 <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
                   <div className="w-full h-48 relative">
                     <Image
-                      src="/images/industry-skills.jpg"
+                      src="/Programs/IBBAMCA/IBBAMCA3.jpg"
                       alt="Industry-Relevant Skills"
                       fill
                       className="object-cover"
@@ -320,11 +320,7 @@ export default function Computer() {
           {/* ===== FREQUENTLY ASKED QUESTIONS SECTION ===== */}
           <div ref={faqRef}>
             <FAQSection />
-          </div>
- 
-
-
-  
+          </div>  
     </div>
   );
 }

@@ -167,7 +167,7 @@ export default function Computer() {
               <div className="bg-white p-6 rounded-lg shadow-sm flex flex-col justify-between border border-gray-100">
                 <div>
                   <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-4 leading-snug">
-                    B.E. in Computer Engineering
+                    BTech in Computer Engineering
                   </h2>
 
                   <p className="text-gray-700 mb-6 leading-relaxed text-sm sm:text-base">

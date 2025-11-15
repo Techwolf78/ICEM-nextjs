@@ -43,6 +43,51 @@ export default function FAQENTC() {
         ], 
       }
     },
+    // ================= NEW SECTIONS FOR IMCA =================
+
+"Fee Structure": {
+  type: "accordion",
+  content: {
+    "Fee Structure": [
+      {
+        label: "View Fee Structure PDF",
+        pdf: "/Programs/IBBAMCA/FeeStructure2526.pdf"
+      }
+    ],
+    "FRA": [
+      {
+        label: "View FRA PDF",
+        pdf: "/Programs/IBBAMCA/FRA2025.pdf"
+      }
+    ]
+  }
+},
+
+"Admission Procedure": {
+  type: "notice",
+  content: "Admission procedure details will be updated soon."
+},
+
+"Sanctioned Intake": {
+  type: "table",
+  content: [
+    {
+      program: "MBA",
+      intake: "60 Seats",
+      duration: "2 Years",
+      type: "Full Time"
+    }
+  ]
+},
+
+"Eligibility Criteria": {
+  type: "text",
+  content: `
+Eligibility for admission to the Integrated MCA program requires candidates to have passed 10+2 from any recognized board with Mathematics or Statistics.
+
+Admission is based on merit and institutional selection guidelines. No entrance exam required.`
+},
+
 
     Faculty: {
       type: "gallery",
@@ -66,25 +111,77 @@ export default function FAQENTC() {
   const renderContent = (data) => {
     switch (data.type) {
       case "accordion":
-        return (
-          <div className="space-y-4">
-            {Object.entries(data.content).map(([title, items]) => (
-              <div key={title} className="border border-gray-200 rounded-lg">
-                <details className="group">
-                  <summary className="flex justify-between items-center p-4 cursor-pointer bg-gray-50 hover:bg-gray-100 rounded-lg">
-                    <h4 className="font-semibold text-secondary text-lg">{title}</h4>
-                    <span className="transition-transform group-open:rotate-180">▼</span>
-                  </summary>
-                  <div className="p-4 pt-2 space-y-2">
-                    {items.map((item, i) => (
-                      <p key={i} className="text-gray-700 leading-relaxed">{item}</p>
-                    ))}
-                  </div>
-                </details>
-              </div>
-            ))}
-          </div>
-        );
+  return (
+    <div className="space-y-4">
+      {Object.entries(data.content).map(([title, items]) => (
+        <div key={title} className="border border-gray-200 rounded-lg">
+          <details className="group">
+            <summary className="flex justify-between items-center p-4 cursor-pointer bg-gray-50 hover:bg-gray-100 rounded-lg">
+              <h4 className="font-semibold text-secondary text-lg">{title}</h4>
+              <span className="transition-transform group-open:rotate-180">▼</span>
+            </summary>
+
+            <div className="p-4 pt-2 space-y-2">
+              {items.map((item, i) =>
+                typeof item === "object" && item.pdf ? (
+                  <a
+                    key={i}
+                    href={item.pdf}
+                    target="_blank"
+                    className="text-secondary underline font-medium hover:text-secondary/80"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <p key={i} className="text-gray-700">{item}</p>
+                )
+              )}
+            </div>
+
+          </details>
+        </div>
+      ))}
+    </div>
+  );
+case "text":
+  return (
+    <div className="prose max-w-none text-gray-700 leading-relaxed">
+      {data.content}
+    </div>
+  );
+case "notice":
+  return (
+    <p className="text-gray-600 text-lg">
+      {data.content}
+    </p>
+  );
+case "table":
+  return (
+    <div className="overflow-x-auto border border-gray-200 rounded-lg">
+      <table className="w-full text-sm text-left">
+        <thead className="bg-gray-50">
+          <tr>
+            <th className="p-3 border-b font-semibold">Program</th>
+            <th className="p-3 border-b font-semibold">Intake</th>
+            <th className="p-3 border-b font-semibold">Duration</th>
+            <th className="p-3 border-b font-semibold">Type</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {data.content.map((row, index) => (
+            <tr key={index} className="border-b hover:bg-gray-50">
+              <td className="p-3">{row.program}</td>
+              <td className="p-3">{row.intake}</td>
+              <td className="p-3">{row.duration}</td>
+              <td className="p-3">{row.type}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+
 
       case "syllabus":
         return (

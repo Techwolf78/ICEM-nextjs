@@ -156,13 +156,13 @@ export default function FAQSectionComputer() {
   type: "accordion",
   content: {
     "About the Department": [
-      `Welcome to the Department of Computer Engineering at Indira College of Engineering and Management, a vibrant hub of innovation, academic excellence, and professional growth. The department is committed to producing competent and creative engineers who can meet the dynamic challenges of the global IT industry. With a strong focus on both theoretical and practical learning, the department offers comprehensive training in core domains such as Programming, Algorithms, Databases, Artificial Intelligence, Cyber security, and Computational Theory and Data Structures.
+      "Welcome to the Department of Computer Engineering at Indira College of Engineering and Management, a vibrant hub of innovation, academic excellence, and professional growth. The department is committed to producing competent and creative engineers who can meet the dynamic challenges of the global IT industry. With a strong focus on both theoretical and practical learning, the department offers comprehensive training in core domains such as Programming, Algorithms, Databases, Artificial Intelligence, Cyber security, and Computational Theory and Data Structures.",
 
-Our faculty members are a blend of experienced academicians and industry professionals who mentor students through innovative teaching methods, research projects, and hands-on learning. The department is equipped with state-of-the-art laboratories, modern computing facilities, and smart classrooms that foster a rich learning environment. We take immense pride in our collaborations with AWS Academy, Robotic Process Academy, UiPath, and CSI Cyber security, which provide students access to global certifications, internships, and real-world project experiences.
+"Our faculty members are a blend of experienced academicians and industry professionals who mentor students through innovative teaching methods, research projects, and hands-on learning. The department is equipped with state-of-the-art laboratories, modern computing facilities, and smart classrooms that foster a rich learning environment. We take immense pride in our collaborations with AWS Academy, Robotic Process Academy, UiPath, and CSI Cyber security, which provide students access to global certifications, internships, and real-world project experiences.",
 
-Beyond academics, the department encourages holistic development through active participation in professional bodies such as CSI, ISTE, IEEE, and the Google Developer Students Club (GDSC). Students regularly engage in hackathons, coding competitions, seminars, workshops, and national as well as international events and state and national sports, consistently bringing laurels to the institution. To enhance employability, specialized training programs in aptitude, soft skills, technical certifications, Guidance for Higher Studies and GATE coaching are integrated into the curriculum.
+"Beyond academics, the department encourages holistic development through active participation in professional bodies such as CSI, ISTE, IEEE, and the Google Developer Students Club (GDSC). Students regularly engage in hackathons, coding competitions, seminars, workshops, and national as well as international events and state and national sports, consistently bringing laurels to the institution. To enhance employability, specialized training programs in aptitude, soft skills, technical certifications, Guidance for Higher Studies and GATE coaching are integrated into the curriculum.",
 
-With a remarkable placement record for the past five years, our graduates are excelling in top multinational companies and pursuing higher studies at reputed universities worldwide. The Department of Computer Engineering at ICEM continues to be a center of excellence empowering students with the knowledge, skills, and confidence to become leaders and innovators in the digital era.`
+"With a remarkable placement record for the past five years, our graduates are excelling in top multinational companies and pursuing higher studies at reputed universities worldwide. The Department of Computer Engineering at ICEM continues to be a center of excellence empowering students with the knowledge, skills, and confidence to become leaders and innovators in the digital era."
     ],
 
     "Vision": [
@@ -214,6 +214,50 @@ With a remarkable placement record for the past five years, our graduates are ex
         ]
       }
     },
+    // ================= NEW SECTIONS =================
+
+"Fee Structure": {
+  type: "accordion",
+  content: {
+    "Fee Structure": [
+      {
+        label: "View Fee Structure PDF",
+        pdf: "/Programs/Computer/Feestructure2526.pdf"
+      }
+    ],
+    "FRA": [
+      {
+        label: "View FRA PDF",
+        pdf: "/Programs/Computer/FRA2025.pdf"
+      }
+    ]
+  }
+},
+
+"Admission Procedure": {
+  type: "notice",
+  content: "Admission procedure details will be updated soon."
+},
+
+"Sanctioned Intake": {
+  type: "table",
+  content: [
+    {
+      program: "B.Tech AIDS Engineering",
+      intake: "60 Seats",
+      duration: "4 Years",
+      type: "Full Time"
+    }
+  ]
+},
+
+"Eligibility Criteria": {
+  type: "text",
+  content: `
+Eligibility for admission to B.Tech Computer Engineering requires candidates to have passed 10+2 with Physics and Mathematics as compulsory subjects along with Chemistry/ Biology/ Vocational subject. 
+Candidates must also secure a valid score in the entrance examination as per government norms.`
+},
+
 
     Faculty: {
       type: "gallery",
@@ -296,7 +340,7 @@ With a remarkable placement record for the past five years, our graduates are ex
           </ul>
         );
 
-      case "accordion":
+            case "accordion":
         return (
           <div className="space-y-4">
             {Object.entries(contentData.content).map(([title, items]) => (
@@ -308,21 +352,62 @@ With a remarkable placement record for the past five years, our graduates are ex
                       ▼
                     </span>
                   </summary>
-                  <div className="p-4 pt-2">
-                    <ul className="space-y-2">
-                      {items.map((item, index) => (
-                        <li key={index} className="flex items-start text-gray-700">
+
+                  <div className="p-4 pt-2 space-y-3">
+                    {items.map((item, index) => (
+                      typeof item === "object" && item.pdf ? (
+                        <a
+                          key={index}
+                          href={item.pdf}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-secondary font-medium underline hover:text-secondary/80"
+                        >
+                          {item.label}
+                        </a>
+                      ) : (
+                        <p key={index} className="flex items-start text-gray-700">
                           <span className="text-secondary mr-2 mt-1">•</span>
                           {item}
-                        </li>
-                      ))}
-                    </ul>
+                        </p>
+                      )
+                    ))}
                   </div>
+
                 </details>
               </div>
             ))}
           </div>
         );
+
+
+        case "table":
+  return (
+    <div className="overflow-x-auto border border-gray-200 rounded-lg">
+      <table className="w-full text-sm text-left">
+        <thead className="bg-gray-50 text-gray-700">
+          <tr>
+            <th className="p-3 border-b font-semibold">Program</th>
+            <th className="p-3 border-b font-semibold">Intake</th>
+            <th className="p-3 border-b font-semibold">Duration</th>
+            <th className="p-3 border-b font-semibold">Type</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {contentData.content.map((row, i) => (
+            <tr key={i} className="hover:bg-gray-50 border-b last:border-b-0">
+              <td className="p-3 text-gray-700">{row.program}</td>
+              <td className="p-3 text-gray-700">{row.intake}</td>
+              <td className="p-3 text-gray-700">{row.duration}</td>
+              <td className="p-3 text-gray-700">{row.type}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+
 
       case "syllabus":
         return (

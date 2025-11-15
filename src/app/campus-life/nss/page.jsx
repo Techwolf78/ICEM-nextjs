@@ -3,33 +3,13 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Sidebar from "@/components/Sidebar";
+import { activities } from "@/static/campuslife/nss";
 
 function NationalServiceScheme() {
   const [openIndex, setOpenIndex] = useState(null);
 
   const bannerImg = "/BannerOverviewPage.jpg"; // put in public folder
   const beComp = "/BEComp.pdf"; // put in public folder
-
-  const rightLinks = [
-    "Student Welfare",
-    "Induction Programme",
-    "Student Council",
-    "National Service Scheme (NSS)",
-    "ICEM Awards",
-    "Academic Cell",
-    "Academic Calendar",
-    "Statutory Committee",
-    "Non-Statutory Committee",
-    "Grievance Redressal",
-  ];
-
-  const quickLinks = [
-    "Eligibility & Fees",
-    "Download Certificate Formats",
-    "Admission Helpline",
-    "Availability of Forms",
-    "Apply Online",
-  ];
 
   const reports = [
     "NSS Activity Report 2022-23",
@@ -40,12 +20,14 @@ function NationalServiceScheme() {
     "NSS Activity Report 2017-18",
   ];
 
+  // Sample NSS activities to display (image placeholders used)
+  
   const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <div className="w-full bg-white text-gray-800">
+    <div className="max w-full bg-white text-gray-800">
       {/* Hero Banner */}
       <div className="relative w-full h-[60vh]">
         <Image
@@ -63,9 +45,9 @@ function NationalServiceScheme() {
       </div>
 
       {/* Content Section */}
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 py-16 px-6">
+      <div className="max-w-full mx-auto flex flex-col md:flex-row gap-10 py-16 px-6">
         {/* Left Section */}
-        <div className="md:w-2/3 bg-white p-6 rounded-xl shadow-md">
+        <div className="md:w-3/4 bg-white p-6 rounded-xl shadow-md">
           <h2 className="text-2xl font-semibold text-secondary mb-6">
             About National Service Scheme (NSS)
           </h2>
@@ -140,10 +122,35 @@ function NationalServiceScheme() {
               </div>
             ))}
           </div>
+
+          {/* NSS Activities Section */}
+          <h3 className="text-xl font-semibold text-secondary mt-8 mb-4">
+            NSS Activities
+          </h3>
+
+          <div className="grid gap-4 md:grid-cols-2">
+            {activities.map((act, idx) => (
+              <div
+                key={idx}
+                className="flex gap-4 items-start bg-white border border-gray-200 rounded-lg p-4"
+              >
+                <div className="w-36 h-24 bg-gray-200 rounded-md flex items-center justify-center text-gray-600 text-sm">
+                  Image placeholder
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg font-semibold text-gray-800">
+                    {act.title}
+                  </h4>
+                  <p className="text-sm text-gray-500">{act.date}</p>
+                  <p className="text-gray-700 mt-2">{act.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Right Section */}
-        <div className="lg:w-1/3 bg-primary text-white p-6 rounded-xl shadow-md flex flex-col justify-between">
+        <div className="lg:w-1/4 shadow-md flex flex-col justify-between">
           <Sidebar />
         </div>
       </div>

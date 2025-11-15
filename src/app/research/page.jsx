@@ -4,7 +4,6 @@ import React from "react";
 import Image from "next/image";
 import { useState } from "react";
 
-const research = "/research.jpg";
 const BEComp = "/BEComp.pdf";
 
 const Research = () => {
@@ -16,7 +15,7 @@ const Research = () => {
       {/* Hero Section */}
       <section className="relative w-full h-[80vh] overflow-hidden">
         <Image
-          src="/research.jpg"
+          src="/BannerOverviewPage.jpg"
           alt="Innovation at Indira College"
           fill
           className="object-cover"
@@ -54,463 +53,652 @@ const Research = () => {
           of innovation
         </p>
       </section>
-      {/* Our Impact in Numbers Section */}
-      <section className="py-5 bg-white text-center">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-lg md:text-4xl font-bold text-secondary mb-4">
-            Our Impact in Numbers
-          </h2>
-          <p className="text-gray-700 max-w-4xl mx-auto mb-12 leading-relaxed">
-            Year after year, Indira College has been recognized among the top
-            institutions in India for pioneering research and innovation. This
-            reflects our strong research team, advanced infrastructure, and
-            unwavering commitment to developing new ideas and emerging
-            technologies.
-          </p>
 
-          {/* Impact Stats Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Research Highlights Summary Section */}
+      <section className="py-10 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-8">
+            Research Highlights 2024-25
+          </h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-8">
             {[
-              {
-                number: "5000+",
-                label: "Patents Successfully Filed",
-              },
-              {
-                number: "51+",
-                label: "Highly Acclaimed Centres of Excellence",
-              },
-              {
-                number: "₹90 Cr+",
-                label: "Research Grants Received",
-              },
-              {
-                number: "11000+",
-                label: "Scopus-indexed Research Papers",
-              },
-              {
-                number: "17+",
-                label: "Joint Research Projects with Global Universities",
-              },
-              {
-                number: "Erasmus+ Program",
-                label: "Empowering Education through Global Collaboration",
-              },
+              { number: "5", label: "UGC Care Group 1" },
+              { number: "26", label: "Scopus Indexed" },
+              { number: "8", label: "Web of Science" },
+              { number: "13", label: "Peer Reviewed" },
+              { number: "75", label: "Student Publications" },
             ].map((item, index) => (
               <div
                 key={index}
-                className="border border-gray-200 shadow-md bg-white p-8 hover:shadow-lg transition-shadow"
+                className="bg-white p-4 rounded-lg shadow-md border border-gray-200"
               >
-                <h3 className="text-3xl md:text-4xl font-bold text-secondary mb-3">
+                <div className="text-2xl font-bold text-secondary mb-1">
                   {item.number}
-                </h3>
-                <p className="font-semibold text-primary leading-snug">
+                </div>
+                <div className="text-sm text-gray-700 leading-tight">
                   {item.label}
-                </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            {[
+              { number: "13", label: "Books" },
+              { number: "6", label: "Book Chapters" },
+              { number: "20", label: "Patents Published" },
+              { number: "8", label: "Patents Granted" },
+              { number: "30", label: "Copyright Granted" },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="bg-white p-4 rounded-lg shadow-md border border-gray-200"
+              >
+                <div className="text-2xl font-bold text-secondary mb-1">
+                  {item.number}
+                </div>
+                <div className="text-sm text-gray-700 leading-tight">
+                  {item.label}
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
-      {/* Vibrant Research Ecosystem Section */}
+
+      {/* Seed Funding Initiative Section */}
+      <section className="py-10 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-secondary mb-6">
+            Seed Funding Initiative at ICEM
+          </h2>
+          <p className="text-gray-700 text-center max-w-4xl mx-auto mb-8 leading-relaxed">
+            The Seed Funding program at ICEM is designed to catalyze innovative
+            research by providing initial financial support to faculty members
+            since 2022. This initiative aims to nurture early-stage ideas,
+            encourage interdisciplinary collaboration, and strengthen the
+            institution's research ecosystem.
+          </p>
+
+          <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6 mb-8">
+            <h3 className="text-xl font-bold text-secondary mb-4 text-center">
+              Sanctioned Seed Funding Projects for 2025-2026
+            </h3>
+
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse border border-gray-300">
+                <thead>
+                  <tr className="bg-secondary text-white">
+                    <th className="border border-gray-300 p-3 text-left">
+                      S.No
+                    </th>
+                    <th className="border border-gray-300 p-3 text-left">
+                      Name of the Faculty
+                    </th>
+                    <th className="border border-gray-300 p-3 text-left">
+                      Department
+                    </th>
+                    <th className="border border-gray-300 p-3 text-left">
+                      Topic
+                    </th>
+                    <th className="border border-gray-300 p-3 text-left">
+                      Amount Sanctioned
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="hover:bg-gray-50">
+                    <td className="border border-gray-300 p-3">1</td>
+                    <td className="border border-gray-300 p-3">
+                      Dr. Saurabh Gupta
+                    </td>
+                    <td className="border border-gray-300 p-3">
+                      Mechanical Engineering
+                    </td>
+                    <td className="border border-gray-300 p-3">
+                      Sustainable parabolic solar cooker for rural area
+                    </td>
+                    <td className="border border-gray-300 p-3">₹60,000/-</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="border border-gray-300 p-3">2</td>
+                    <td className="border border-gray-300 p-3">
+                      Prof. Pranali Khatake
+                    </td>
+                    <td className="border border-gray-300 p-3">
+                      Mechanical Engineering
+                    </td>
+                    <td className="border border-gray-300 p-3">
+                      Smart Material Filters used for automobile oil filtration
+                      process
+                    </td>
+                    <td className="border border-gray-300 p-3">₹40,000/-</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="border border-gray-300 p-3">3</td>
+                    <td className="border border-gray-300 p-3">
+                      Prof. Ashwini Admane
+                    </td>
+                    <td className="border border-gray-300 p-3">
+                      Mechanical Engineering
+                    </td>
+                    <td className="border border-gray-300 p-3">
+                      Heating Water using the waste heat from domestic
+                      refrigerator condenser
+                    </td>
+                    <td className="border border-gray-300 p-3">₹40,000/-</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="border border-gray-300 p-3">4</td>
+                    <td className="border border-gray-300 p-3">
+                      Prof. Ashwini Gaikwad
+                    </td>
+                    <td className="border border-gray-300 p-3">
+                      Mechanical Engineering
+                    </td>
+                    <td className="border border-gray-300 p-3">
+                      Dielectric Heating for Drying agriculture Produce and Food
+                    </td>
+                    <td className="border border-gray-300 p-3">₹40,000/-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* MSME Hackathon Section */}
       <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          {/* Title */}
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-secondary mb-4">
-            Vibrant Research Ecosystem
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-secondary mb-6">
+            MSME Hackathon 4.0
           </h2>
-          <p className="text-gray-700 text-center max-w-5xl mx-auto mb-12 leading-relaxed">
-            From breakthroughs in sustainable technologies to transformative
-            research in healthcare and AI, Indira College's vibrant research
-            ecosystem drives innovation, empowers communities, and inspires
-            global scientific progress.
+          <p className="text-gray-700 text-center max-w-4xl mx-auto mb-8 leading-relaxed">
+            The MSME Idea Hackathon 4.0 is a premier national-level innovation
+            initiative by the Ministry of Micro, Small & Medium Enterprises
+            (MSME), Government of India, under its MSME Innovative Scheme.
+            Designed to empower India's youth, the hackathon solicits
+            cutting-edge ideas from individuals aged 18–35 to solve real-world
+            challenges across diverse sectors—fueling the vision of a "Viksit
+            Bharat @2047".
           </p>
 
-          {/* Research Highlights Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* 1 */}
-            <div className="border border-gray-200 shadow-md bg-white p-8 hover:shadow-lg transition-all">
-              <h3 className="text-lg font-bold text-secondary mb-3">
-                13690+ Publications & 97000+ Citations
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-secondary mb-4">
+                Selection & Support Process
               </h3>
-              <p className="text-gray-700 leading-relaxed">
-                Indira's growing publication record reflects its commitment to
-                impactful research that resonates globally. Our strong citation
-                index stands as a testament to our academic credibility and
-                innovation.
-              </p>
+              <ol className="list-decimal list-inside space-y-3 text-gray-700">
+                <li>
+                  <strong>Host Institute Evaluation:</strong> Each HI assembles
+                  expert panels to shortlist promising ideas.
+                </li>
+                <li>
+                  <strong>Ministry Screening:</strong> Shortlisted ideas undergo
+                  further evaluation by the Ministry of MSME.
+                </li>
+                <li>
+                  <strong>Funding & Incubation:</strong> Selected ideas receive
+                  up to ₹15 lakhs for development support.
+                </li>
+              </ol>
             </div>
 
-            {/* 2 */}
-            <div className="border border-gray-200 shadow-md bg-white p-8 hover:shadow-lg transition-all">
-              <h3 className="text-lg font-bold text-secondary mb-3">
-                Global Research Network Across 140+ Countries
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-secondary mb-4">
+                Impact & Achievements
               </h3>
-              <p className="text-gray-700 leading-relaxed">
-                Collaborations with over 180 institutions and 3700+
-                international authors enable interdisciplinary breakthroughs
-                across fields such as Computer Science, Engineering, and Life
-                Sciences.
-              </p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700">
+                <li>
+                  <strong>Massive Reach:</strong> 29,000+ submissions, 400 ideas
+                  awarded funding
+                </li>
+                <li>
+                  <strong>National Recognition:</strong> Results announced by
+                  Hon'ble President of India
+                </li>
+                <li>
+                  <strong>ICEM Success:</strong> Three innovative proposals
+                  secured funding
+                </li>
+              </ul>
             </div>
 
-            {/* 3 */}
-            <div className="border border-gray-200 shadow-md bg-white p-8 hover:shadow-lg transition-all">
-              <h3 className="text-lg font-bold text-secondary mb-3">
-                Focus on UN Sustainable Development Goals (SDGs)
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-bold text-secondary mb-4">
+                ICEM Funded Projects
               </h3>
-              <p className="text-gray-700 leading-relaxed">
-                With thousands of publications aligned with the SDGs, our
-                researchers actively address challenges in Good Health &
-                Well-being, Clean Energy, and Industry Innovation.
-              </p>
-            </div>
-
-            {/* 4 */}
-            <div className="border border-gray-200 shadow-md bg-white p-8 hover:shadow-lg transition-all">
-              <h3 className="text-lg font-bold text-secondary mb-3">
-                Undergraduate Research Participation
-              </h3>
-              <p className="text-gray-700 leading-relaxed">
-                We nurture early research aptitude—our undergraduates engage in
-                real-world problem-solving, contributing to impactful papers and
-                industry-ready projects.
-              </p>
-            </div>
-
-            {/* 5 */}
-            <div className="border border-gray-200 shadow-md bg-white p-8 hover:shadow-lg transition-all">
-              <h3 className="text-lg font-bold text-secondary mb-3">
-                Global Recognition
-              </h3>
-              <p className="text-gray-700 leading-relaxed">
-                Our faculty and researchers have been recognized among the Top
-                2% Scientists globally, spanning diverse domains of science,
-                engineering, and technology.
-              </p>
-            </div>
-
-            {/* 6 */}
-            <div className="border border-gray-200 shadow-md bg-white p-8 hover:shadow-lg transition-all">
-              <h3 className="text-lg font-bold text-secondary mb-3">
-                Sponsored Research & Funding Success
-              </h3>
-              <p className="text-gray-700 leading-relaxed">
-                With over ₹90 Crores in competitive research grants, our faculty
-                are continuously driving cutting-edge projects aligned with
-                national and international priorities.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* Central Prototyping Facility Section */}
-      <section className="py-5 bg-white">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          {/* Title */}
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-4">
-            Central Prototyping Facility
-          </h2>
-          <p className="text-gray-700 max-w-5xl mx-auto mb-12 leading-relaxed">
-            At Indira College, research and innovation are not confined to
-            laboratories – they are embedded in our culture. We empower students
-            and faculty to imagine, investigate, and implement real-world
-            solutions that make a lasting impact.
-          </p>
-
-          {/* Three Gray Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Card 1 */}
-            <div className="bg-gray-50 border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all">
-              <div className="h-56 bg-gray-200 flex items-center justify-center text-gray-500 text-lg font-medium border-b border-gray-300">
-                (image here)
-              </div>
-              <div className="p-6 text-left">
-                <h3 className="text-xl font-bold text-secondary mb-3">
-                  Advanced Prototyping Infrastructure
-                </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  Our state-of-the-art facility includes CO₂ laser cutting
-                  machines, FDM 3D printers, 3-axis vertical milling machines,
-                  and industry-grade metal forming & surface coating equipment
-                  for precision prototyping and fabrication.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 2 */}
-            <div className="bg-gray-50 border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all">
-              <div className="h-56 bg-gray-200 flex items-center justify-center text-gray-500 text-lg font-medium border-b border-gray-300">
-                (image here)
-              </div>
-              <div className="p-6 text-left">
-                <h3 className="text-xl font-bold text-secondary mb-3">
-                  Free Access for Students and Faculty
-                </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  The facility is provided at no cost to students and faculty,
-                  encouraging hands-on experimentation and prototype
-                  development, fostering innovation and collaborative learning.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 3 */}
-            <div className="bg-gray-50 border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all">
-              <div className="h-56 bg-gray-200 flex items-center justify-center text-gray-500 text-lg font-medium border-b border-gray-300">
-                (image here)
-              </div>
-              <div className="p-6 text-left">
-                <h3 className="text-xl font-bold text-secondary mb-3">
-                  Real-World Impact
-                </h3>
-                <ul className="list-disc list-inside text-gray-700 space-y-2">
-                  <li>42 projects supported with CAD designing</li>
-                  <li>74 projects 3D printed</li>
-                  <li>36 projects utilized laser cutting</li>
-                  <li>
-                    14 projects fabricated using machining and surface
-                    treatments
-                  </li>
-                  <li>
-                    1000+ corporate gifts created using these technologies
-                  </li>
-                </ul>
+              <div className="space-y-4">
+                <div className="border-l-4 border-secondary pl-4">
+                  <h4 className="font-bold text-primary">
+                    Utilization of Images for Monitoring Construction Progress
+                  </h4>
+                  <p className="text-sm text-gray-600">
+                    Gajendra Thakur - AI&DS Branch
+                  </p>
+                  <p className="text-secondary font-semibold">₹13.5 Lakhs</p>
+                </div>
+                <div className="border-l-4 border-secondary pl-4">
+                  <h4 className="font-bold text-primary">Emotion Detector</h4>
+                  <p className="text-sm text-gray-600">
+                    Sumit Kumbhar - Alard College of Pharmacy
+                  </p>
+                  <p className="text-secondary font-semibold">₹13.5 Lakhs</p>
+                </div>
+                <div className="border-l-4 border-secondary pl-4">
+                  <h4 className="font-bold text-primary">Hydrobot</h4>
+                  <p className="text-sm text-gray-600">
+                    Shon Rakesh Gaikwad - Trinity College of Engineering &
+                    Research
+                  </p>
+                  <p className="text-secondary font-semibold">₹14 Lakhs</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      {/* Conferences on Research & Innovation Section */}
-      <section className="py-10 bg-white">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          {/* Title */}
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-4">
-            Conferences on Research & Innovation
-          </h2>
-          <p className="text-gray-700 max-w-4xl mx-auto mb-12 leading-relaxed">
-            At Indira College, conferences are an extension of our innovation
-            culture. We bring together researchers, thought leaders, and
-            students to exchange ideas, present breakthroughs, and encourage
-            collaborations that address real-world challenges through
-            interdisciplinary research and forward-thinking discussions.
-          </p>
 
-          {/* Conference Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Card 1 */}
-            <div className="bg-white border border-gray-200 shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-all">
-              <div className="h-56 bg-gray-200 flex items-center justify-center text-gray-500 text-lg font-medium">
-                (image here)
-              </div>
-              <div className="p-6 text-left">
-                <p className="text-gray-700 font-medium mb-2">
-                  29th - 30th August, 2025
-                </p>
-                <h3 className="text-lg font-bold text-secondary leading-snug">
-                  2nd International Conference on Machine Learning Algorithms
-                </h3>
-              </div>
-            </div>
-
-            {/* Card 2 */}
-            <div className="bg-white border border-gray-200 shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-all">
-              <div className="h-56 bg-gray-200 flex items-center justify-center text-gray-500 text-lg font-medium">
-                (image here)
-              </div>
-              <div className="p-6 text-left">
-                <p className="text-gray-700 font-medium mb-2">
-                  7th - 9th August, 2025
-                </p>
-                <h3 className="text-lg font-bold text-secondary leading-snug">
-                  29th Conference on VLSI Design and Test
-                </h3>
-              </div>
-            </div>
-
-            {/* Card 3 */}
-            <div className="bg-white border border-gray-200 shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-all">
-              <div className="h-56 bg-gray-200 flex items-center justify-center text-gray-500 text-lg font-medium">
-                (image here)
-              </div>
-              <div className="p-6 text-left">
-                <p className="text-gray-700 font-medium mb-2">
-                  28th - 29th September, 2025
-                </p>
-                <h3 className="text-lg font-bold text-secondary leading-snug">
-                  International Conference on Management & Information Systems
-                  at Thailand
-                </h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* Student Prototypes Section */}
       <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          {/* Title */}
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-secondary mb-4">
-            Student Prototypes at a Glance
-          </h2>
-          <p className="text-gray-700 text-center max-w-5xl mx-auto mb-12 leading-relaxed">
-            Fuelled by curiosity and a drive to innovate, Indira College
-            students transform ideas into functional prototypes. These creations
-            showcase their technical expertise, creativity, and problem-solving
-            mindset—bringing real-world solutions to life through hands-on
-            learning and collaboration.
-          </p>
+         
+          {/* PhD Guides Table Section */}
+          <div className="mt-16">
+            <h3 className="text-2xl md:text-3xl font-bold text-center text-secondary mb-8">
+              PhD Research Guides & Scholars
+            </h3>
 
-          {/* Prototypes List */}
-          <div className="space-y-6">
-            {/* Prototype 1 */}
-            <div className="grid grid-cols-1 md:grid-cols-4 border border-gray-200 shadow-sm bg-gray-50 hover:shadow-md transition-all">
-              <div className="col-span-1 bg-gray-200 flex items-center justify-center text-gray-500 text-lg font-medium h-48 md:h-full">
-                (image here)
-              </div>
-              <div className="col-span-3 p-6 flex flex-col justify-center">
-                <h3 className="text-xl font-bold text-secondary mb-2">
-                  InteLights
-                </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  InteLights is an AI-powered traffic management system that
-                  optimises signal timing using real-time traffic data, reducing
-                  wait times, fuel usage, and vehicular emissions.
-                </p>
-              </div>
-            </div>
+            <div className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse border border-gray-300">
+                  <thead>
+                    <tr className="bg-secondary text-white">
+                      <th className="border border-gray-300 p-3 text-left">
+                        S.No
+                      </th>
+                      <th className="border border-gray-300 p-3 text-left">
+                        Name of Faculty
+                      </th>
+                      <th className="border border-gray-300 p-3 text-left">
+                        Qualification
+                      </th>
+                      <th className="border border-gray-300 p-3 text-left">
+                        Year of Recognition
+                      </th>
+                      <th className="border border-gray-300 p-3 text-left">
+                        Name of Scholar
+                      </th>
+                      <th className="border border-gray-300 p-3 text-left">
+                        Year of Registration
+                      </th>
+                      <th className="border border-gray-300 p-3 text-left">
+                        Title of Thesis
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {/* Dr. Nilesh Uke */}
+                    <tr className="bg-gray-50">
+                      <td className="border border-gray-300 p-2" rowSpan="12">
+                        1
+                      </td>
+                      <td
+                        className="border border-gray-300 p-2 font-semibold"
+                        rowSpan="12"
+                      >
+                        Dr. Nilesh Uke
+                      </td>
+                      <td className="border border-gray-300 p-2" rowSpan="12">
+                        Ph.D in Computer Engineering
+                      </td>
+                      <td className="border border-gray-300 p-2" rowSpan="12">
+                        2022
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        Pankaja Bagul
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        Ph.D awarded in Dec 2023
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        Mapping of Digital Mediation through Process Information
+                        Diagrams in Architectural Design
+                      </td>
+                    </tr>
+                    {[
+                      {
+                        name: "Priya Pise",
+                        year: "Ph.D awarded in Nov 2018",
+                        thesis:
+                          "Secure sensitive big data sharing on recent operating Systems",
+                      },
+                      {
+                        name: "Deepak Dharrao",
+                        year: "Ph.D awarded in Oct 2018",
+                        thesis:
+                          "A study of face detection and recognition methods for real time video surveillance",
+                      },
+                      {
+                        name: "Sarika Deokate",
+                        year: "Ph.D awarded in Apr 2019",
+                        thesis:
+                          "Enhancement Of Document Analysis, Classification, And Post Processing Of Devnagari Script",
+                      },
+                      {
+                        name: "Anchal Agrawal",
+                        year: "1/1/2023",
+                        thesis:
+                          "Design of Effective Techniques for Early Prediction of Heart Arrhythmia",
+                      },
+                      {
+                        name: "Shetty Nikita",
+                        year: "1/1/2023",
+                        thesis:
+                          "Design of trajectories of moving object with non-overlapping Surveillance cameras Field of View Cameras",
+                      },
+                      {
+                        name: "Ajay Kapase",
+                        year: "1/1/2023",
+                        thesis:
+                          "Reactive Multimodal Affective System with Artificial Emotional Intelligence for Effective Human Computer Interaction",
+                      },
+                      {
+                        name: "Kamble Vitthal",
+                        year: "1/1/2023",
+                        thesis:
+                          "Forensics Analysis of Digital Image Tampering Using Algorithmic Approach",
+                      },
+                      {
+                        name: "Priyanka Mane",
+                        year: "1/1/2023",
+                        thesis:
+                          "Fetal Movement Detection to Monitor It's Health Remotely During Prenatal Period",
+                      },
+                      {
+                        name: "Yevale Pallavi",
+                        year: "1/1/2023",
+                        thesis:
+                          "Design of an Intelligent Multilingual Virtual Assistant using Natural Language Understanding",
+                      },
+                      {
+                        name: "Sayali Bamble",
+                        year: "1/1/2023",
+                        thesis:
+                          "Breast Cancer Detection from Mammography Images using Machine Learning",
+                      },
+                      {
+                        name: "Ugile Tukaram",
+                        year: "1/1/2023",
+                        thesis:
+                          "Abnormal Event Detection in Real-time Video Surveillance",
+                      },
+                    ].map((scholar, index) => (
+                      <tr key={index} className="bg-gray-50">
+                        <td className="border border-gray-300 p-2">
+                          {scholar.name}
+                        </td>
+                        <td className="border border-gray-300 p-2">
+                          {scholar.year}
+                        </td>
+                        <td className="border border-gray-300 p-2">
+                          {scholar.thesis}
+                        </td>
+                      </tr>
+                    ))}
 
-            {/* Prototype 2 */}
-            <div className="grid grid-cols-1 md:grid-cols-4 border border-gray-200 shadow-sm bg-gray-50 hover:shadow-md transition-all">
-              <div className="col-span-1 bg-gray-200 flex items-center justify-center text-gray-500 text-lg font-medium h-48 md:h-full">
-                (image here)
-              </div>
-              <div className="col-span-3 p-6 flex flex-col justify-center">
-                <h3 className="text-xl font-bold text-secondary mb-2">
-                  Video Laryngoscope
-                </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  Video laryngoscopes enhance laryngeal view and support remote
-                  monitoring and cloud storage—offering ease of use for both
-                  beginner and experienced anaesthesiologists.
-                </p>
-              </div>
-            </div>
+                    {/* Dr. Mrs. Poorna Shankar */}
+                    <tr className="bg-white">
+                      <td className="border border-gray-300 p-2">2</td>
+                      <td className="border border-gray-300 p-2 font-semibold">
+                        Dr. Mrs. Poorna Shankar
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        Ph.D in Computer Science
+                      </td>
+                      <td className="border border-gray-300 p-2">2016</td>
+                      <td className="border border-gray-300 p-2">
+                        Pratibha Kulkarni
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        29/1/2016 (Ph.D Awarded in Dec 2021)
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        A Study of use of Social Networking Sites by the
+                        Academicians in Selected Professional Colleges in and
+                        around Pune City
+                      </td>
+                    </tr>
+                    {[
+                      {
+                        name: "Brijesh Joshi",
+                        year: "20/4/2018 (Ph.D Awarded in June 2022)",
+                        thesis:
+                          "Identifying the performance challenges with Big data processing and partial solutions",
+                      },
+                      {
+                        name: "Awantika Bijwe",
+                        year: "24-03-2018 (Ph.D Awarded in June 2024)",
+                        thesis:
+                          "Analysis of performance measures and effectiveness of devops framework in developing IoT applications",
+                      },
+                      {
+                        name: "Kiran Shinde",
+                        year: "3/11/2020",
+                        thesis:
+                          "Designing of edge computing based smart health care framework using authentication services",
+                      },
+                      {
+                        name: "Ashish Dhoke",
+                        year: "3/11/2020",
+                        thesis:
+                          "To Design a Smart Navigation System for Multiple Destinations using GPS and Machine Learning Algorithm",
+                      },
+                    ].map((scholar, index) => (
+                      <tr key={index} className="bg-white">
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2">
+                          {scholar.name}
+                        </td>
+                        <td className="border border-gray-300 p-2">
+                          {scholar.year}
+                        </td>
+                        <td className="border border-gray-300 p-2">
+                          {scholar.thesis}
+                        </td>
+                      </tr>
+                    ))}
 
-            {/* Prototype 3 */}
-            <div className="grid grid-cols-1 md:grid-cols-4 border border-gray-200 shadow-sm bg-gray-50 hover:shadow-md transition-all">
-              <div className="col-span-1 bg-gray-200 flex items-center justify-center text-gray-500 text-lg font-medium h-48 md:h-full">
-                (image here)
-              </div>
-              <div className="col-span-3 p-6 flex flex-col justify-center">
-                <h3 className="text-xl font-bold text-secondary mb-2">
-                  E-Bike
-                </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  The Smart Electric Bike transforms old motorcycles into
-                  eco-friendly, low-maintenance rides with remote ignition,
-                  digital display, and enhanced performance for sustainable
-                  commuting.
-                </p>
-              </div>
-            </div>
+                    {/* Dr. Sunil Rathod */}
+                    <tr className="bg-gray-50">
+                      <td className="border border-gray-300 p-2">3</td>
+                      <td className="border border-gray-300 p-2 font-semibold">
+                        Dr. Sunil Rathod
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        Ph.D in Computer Engineering
+                      </td>
+                      <td className="border border-gray-300 p-2">2018</td>
+                      <td className="border border-gray-300 p-2">
+                        Nilesh Mali
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        Ph.D Awarded in JAN 2024
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        Implementation of Information Security in Cloud Through
+                        Multi Access Control & Key Aggregation on Crypto System
+                      </td>
+                    </tr>
+                    <tr className="bg-gray-50">
+                      <td className="border border-gray-300 p-2"></td>
+                      <td className="border border-gray-300 p-2"></td>
+                      <td className="border border-gray-300 p-2"></td>
+                      <td className="border border-gray-300 p-2"></td>
+                      <td className="border border-gray-300 p-2">
+                        Sonali Purney
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        Ph.D Awarded in JAN 2024
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        Using AI to model the Future of Energy Conversation and
+                        Storage System
+                      </td>
+                    </tr>
 
-            {/* Prototype 4 - New */}
-            <div className="grid grid-cols-1 md:grid-cols-4 border border-gray-200 shadow-sm bg-gray-50 hover:shadow-md transition-all">
-              <div className="col-span-1 bg-gray-200 flex items-center justify-center text-gray-500 text-lg font-medium h-48 md:h-full">
-                (image here)
-              </div>
-              <div className="col-span-3 p-6 flex flex-col justify-center">
-                <h3 className="text-xl font-bold text-secondary mb-2">
-                  Cold Storage Robot
-                </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  Designed for agricultural applications, the Cold Storage Robot
-                  helps preserve perishables using smart temperature monitoring
-                  and autonomous storage mechanisms.
-                </p>
-              </div>
-            </div>
+                    {/* Dr. Soumitra Das */}
+                    <tr className="bg-white">
+                      <td className="border border-gray-300 p-2">4</td>
+                      <td className="border border-gray-300 p-2 font-semibold">
+                        Dr. Soumitra Das
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        Ph.D in Computer Engineering
+                      </td>
+                      <td className="border border-gray-300 p-2">2019</td>
+                      <td className="border border-gray-300 p-2">
+                        Mr. Malayaj Kumar
+                      </td>
+                      <td className="border border-gray-300 p-2">1/1/2022</td>
+                      <td className="border border-gray-300 p-2">
+                        Analysis of Speech of Political Leaders Writing NCP and
+                        AI: Its Effect on Political Discourse
+                      </td>
+                    </tr>
 
-            {/* Prototype 5 - New */}
-            <div className="grid grid-cols-1 md:grid-cols-4 border border-gray-200 shadow-sm bg-gray-50 hover:shadow-md transition-all">
-              <div className="col-span-1 bg-gray-200 flex items-center justify-center text-gray-500 text-lg font-medium h-48 md:h-full">
-                (image here)
-              </div>
-              <div className="col-span-3 p-6 flex flex-col justify-center">
-                <h3 className="text-xl font-bold text-secondary mb-2">
-                  Smart Water Quality Analyzer
-                </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  This IoT-based prototype analyzes pH, turbidity, and
-                  contamination levels in real time, alerting users through a
-                  connected app for water safety and quality assurance.
-                </p>
+                    {/* Dr. Archana Ravindra Salve */}
+                    <tr className="bg-gray-50">
+                      <td className="border border-gray-300 p-2">5</td>
+                      <td className="border border-gray-300 p-2 font-semibold">
+                        Dr. Archana Ravindra Salve
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        Ph.D in Management
+                      </td>
+                      <td className="border border-gray-300 p-2">2020</td>
+                      <td className="border border-gray-300 p-2">
+                        Priyanka Budhkar
+                      </td>
+                      <td className="border border-gray-300 p-2">3/22/2022</td>
+                      <td className="border border-gray-300 p-2">
+                        A critical study of hybrid mode of working on employee
+                        performance in IT industry with reference to Pune and
+                        Mumbai region
+                      </td>
+                    </tr>
+                    {[
+                      {
+                        name: "Pradip Sandbhor",
+                        year: "7/5/2022",
+                        thesis:
+                          "Impact of BVOC Education on student skill enhancement and job opportunities",
+                      },
+                      {
+                        name: "Gayatri Nimbalkar",
+                        year: "3/23/2023",
+                        thesis:
+                          "A Study of Work-Life Balance of Women Employees Post-Pandemic and Its Impact on Their Performance",
+                      },
+                    ].map((scholar, index) => (
+                      <tr key={index} className="bg-gray-50">
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2">
+                          {scholar.name}
+                        </td>
+                        <td className="border border-gray-300 p-2">
+                          {scholar.year}
+                        </td>
+                        <td className="border border-gray-300 p-2">
+                          {scholar.thesis}
+                        </td>
+                      </tr>
+                    ))}
+
+                    {/* Dr. Darshana Jignesh Desai */}
+                    <tr className="bg-white">
+                      <td className="border border-gray-300 p-2">6</td>
+                      <td className="border border-gray-300 p-2 font-semibold">
+                        Dr. Darshana Jignesh Desai
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        Ph.D in Computer Management
+                      </td>
+                      <td className="border border-gray-300 p-2">2021</td>
+                      <td className="border border-gray-300 p-2">
+                        Raj Kamal Sangole
+                      </td>
+                      <td className="border border-gray-300 p-2">6/28/2022</td>
+                      <td className="border border-gray-300 p-2">
+                        Empirical Study of Hiring Trends in the IT Industry and
+                        Design a Model using Machine Learning Techniques
+                      </td>
+                    </tr>
+                    {[
+                      {
+                        name: "Sameer Patil",
+                        year: "5/18/2023",
+                        thesis:
+                          "Design and Develop a Framework using Blockchain with Integration of AI for Indian Judicial System",
+                      },
+                      {
+                        name: "Dhanashree Patil",
+                        year: "In Process",
+                        thesis: "In Process",
+                      },
+                    ].map((scholar, index) => (
+                      <tr key={index} className="bg-white">
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2">
+                          {scholar.name}
+                        </td>
+                        <td className="border border-gray-300 p-2">
+                          {scholar.year}
+                        </td>
+                        <td className="border border-gray-300 p-2">
+                          {scholar.thesis}
+                        </td>
+                      </tr>
+                    ))}
+
+                    {/* Dr. Manjusha Tatiya */}
+                    <tr className="bg-gray-50">
+                      <td className="border border-gray-300 p-2">7</td>
+                      <td className="border border-gray-300 p-2 font-semibold">
+                        Dr. Manjusha Tatiya
+                      </td>
+                      <td className="border border-gray-300 p-2">
+                        Ph.D in Computer Engineering
+                      </td>
+                      <td className="border border-gray-300 p-2">2023</td>
+                      <td className="border border-gray-300 p-2">
+                        Pallavi Chavan
+                      </td>
+                      <td className="border border-gray-300 p-2">11/24/2024</td>
+                      <td className="border border-gray-300 p-2">
+                        Perishable produce quality prediction using machine
+                        learning - A smart system for nutrient loss estimation
+                        and freshness categorization
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
         </div>
       </section>
-      {/* Student Innovation & Start-up Culture Section */}
-      <section className="py-10 bg-white">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          {/* Title */}
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-6">
-            Student Innovation & Start-up Culture
-          </h2>
 
-          {/* Subtitle */}
-          <p className="text-gray-700 leading-relaxed max-w-5xl mx-auto mb-12">
-            Driven by an entrepreneurial spirit and a passion for solving
-            real-world problems, students at Indira College are leading a
-            vibrant culture of innovation and start-ups. From breakthrough
-            product ideas to scalable tech-enabled ventures, they're turning
-            creativity into impact—building sustainable solutions that shape
-            industries and communities alike.
-          </p>
-
-          {/* Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Card 1 */}
-            <div className="border border-gray-200 shadow-md bg-gray-50 text-left p-8 hover:shadow-lg transition-all">
-              <h3 className="text-lg font-bold text-primary mb-3">
-                NewGen IEDC – Pre-incubation Support
-              </h3>
-              <p className="text-gray-700 leading-relaxed">
-                Our New Generation Innovation and Entrepreneurship Development
-                Centre (NewGen IEDC), funded by the Department of Science &
-                Technology, supports student-led innovations through mentorship
-                and funding.
-              </p>
-            </div>
-
-            {/* Card 2 */}
-            <div className="border border-gray-200 shadow-md bg-gray-50 text-left p-8 hover:shadow-lg transition-all">
-              <h3 className="text-lg font-bold text-primary mb-3">
-                INR 2 Crores+ in Prototype Grants
-              </h3>
-              <p className="text-gray-700 leading-relaxed">
-                Over the past five years, 114 student projects have received
-                prototyping grants, enabling breakthrough innovations across
-                diverse domains. These have led to 60 patents and the creation
-                of 20 thriving start-ups.
-              </p>
-            </div>
-
-            {/* Card 3 */}
-            <div className="border border-gray-200 shadow-md bg-gray-50 text-left p-8 hover:shadow-lg transition-all">
-              <h3 className="text-lg font-bold text-primary mb-3">
-                From Ideas to Impact
-              </h3>
-              <p className="text-gray-700 leading-relaxed">
-                Projects range from AI drones and biofuel reactors to low-cost
-                medical devices and AR-based learning tools, showcasing
-                innovation across disciplines and real-world applications that
-                impact industries and communities.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
       {/* Department Information Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
@@ -528,6 +716,7 @@ const Research = () => {
                   "IPR",
                   "Research Activities",
                   "Research Policy",
+                  "Research Committee",
                 ].map((tab, i) => (
                   <li
                     key={i}
@@ -1176,6 +1365,116 @@ const Research = () => {
                             </a>
                           </li>
                         </ul>
+                      ),
+                    },
+                  ].map((section, i) => (
+                    <div key={i} className="border-b border-gray-200">
+                      <button
+                        onClick={() =>
+                          setActiveAccordion(activeAccordion === i ? null : i)
+                        }
+                        className={`w-full flex justify-between items-center p-4 text-left font-medium transition-all duration-200 ${
+                          activeAccordion === i
+                            ? "bg-secondary text-white"
+                            : "text-primary hover:bg-tertiary"
+                        }`}
+                      >
+                        {section.title}
+                        <span className="text-xl font-bold">
+                          {activeAccordion === i ? "−" : "+"}
+                        </span>
+                      </button>
+
+                      {activeAccordion === i && (
+                        <div className="p-4 bg-tertiary text-primary rounded-b-md">
+                          {section.content}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Research Committee Accordion */}
+              {activeTab === "Research Committee" && (
+                <div className="p-0">
+                  {[
+                    {
+                      title: "ICEM Research Committee AY 2025-26",
+                      content: (
+                        <div className="bg-white rounded-lg border border-gray-200">
+                          <table className="w-full border-collapse border border-gray-300">
+                            <thead>
+                              <tr className="bg-secondary text-white">
+                                <th className="border border-gray-300 p-3 text-left">
+                                  Sr.No.
+                                </th>
+                                <th className="border border-gray-300 p-3 text-left">
+                                  Name of the Staff
+                                </th>
+                                <th className="border border-gray-300 p-3 text-left">
+                                  Designation
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {[
+                                {
+                                  name: "Dr. Poorna Shankar",
+                                  designation: "Coordinator",
+                                },
+                                {
+                                  name: "Dr. Sunil Damodar Rathod",
+                                  designation: "Member",
+                                },
+                                {
+                                  name: "Mr. Shreyas Rajendra Satpute",
+                                  designation: "Member",
+                                },
+                                {
+                                  name: "Dr. Manjusha Rahul Tatiya",
+                                  designation: "Member",
+                                },
+                                {
+                                  name: "Mr. Vishal Abhiman Meshram",
+                                  designation: "Member",
+                                },
+                                {
+                                  name: "Dr. Archana Ravindra Salve",
+                                  designation: "Member",
+                                },
+                                {
+                                  name: "Mrs. Aditee Hrishikesh Huparikar",
+                                  designation: "Member",
+                                },
+                                {
+                                  name: "Dr. Darshana Jignesh Desai",
+                                  designation: "Member",
+                                },
+                                {
+                                  name: "Dr. Mrs. Priya Jeevan Pise",
+                                  designation: "Member",
+                                },
+                                {
+                                  name: "Mr. Sudhir Kumar Sawarkar",
+                                  designation: "Member",
+                                },
+                              ].map((member, index) => (
+                                <tr key={index} className="hover:bg-gray-50">
+                                  <td className="border border-gray-300 p-3">
+                                    {index + 1}
+                                  </td>
+                                  <td className="border border-gray-300 p-3">
+                                    {member.name}
+                                  </td>
+                                  <td className="border border-gray-300 p-3">
+                                    {member.designation}
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
                       ),
                     },
                   ].map((section, i) => (

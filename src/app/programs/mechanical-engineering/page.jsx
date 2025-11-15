@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import FAQSection from "@/components/FAQSection";
+import FAQSection from "@/components/FAQSections/FAQMECH";
 import RecruiterSection from "../../../components/home/RecruiterSection";
 import Image from "next/image";
 import CTASection from "@/components/home/CTASection";
@@ -58,67 +58,146 @@ export default function Mech() {
     "/Programs/Mech/DSC02691.JPG",
   ];
 
+  const labsGallery = [
+    {
+      image: "/Programs/Mech/DSC02662.JPG",
+      title: "Metrology and Quality Control",
+      details: [
+        "Auto Collimator With Angle Dekker",
+        "Floating Carriage Micrometer",
+        "Optical Flat With Monochromatic Light Source",
+        "Portable Surface Roughness Tester",
+        "Pneumatic Comparator",
+        "Profile Projector (PPT-200)",
+      ],
+    },
+    {
+      image: "/Programs/Mech/DSC02667.JPG",
+      title: "Mechatronics",
+      details: [
+        "Micrologix 1000 PLC Trainer",
+        "PID Flow Control Trainer",
+        "Arduino Development Kit",
+        "PID Trainer",
+        "Temperature Sensor Calibration Trainer Kit",
+      ],
+    },
+    {
+      image: "/Programs/Mech/DSC02671.JPG",
+      title: "Refrigeration & Air Conditioning",
+      details: [
+        "Compression Refrigeration Test Rig",
+        "Air Conditioning Trainer",
+        "ICE Plant Test Rig",
+        "Vapour Absorption Test Rig",
+        "Cut Section of Hermetic Compressor",
+      ],
+    },
+    {
+      image: "/Programs/Mech/DSC02675.JPG",
+      title: "Industrial Fluid Power",
+      details: [
+        "Advanced Pneumatic Trainer",
+        "Advanced Hydraulic Trainer",
+        "Gear Pump Test Rig",
+        "Vane Pump Test Rig",
+        "Pressure Relief Valve Testing",
+      ],
+    },
+    {
+      image: "/Programs/Mech/DSC02676.JPG",
+      title: "Heat Mass Transfer",
+      details: [
+        "Thermal Conductivity of Metal Rod Apparatus",
+        "Parallel & Counter Flow Apparatus",
+        "Emissivity Measurement Apparatus",
+        "Thermal Conductivity of Insulating Powder",
+        "Critical Heat Flux Apparatus",
+        "Natural Convection Apparatus",
+        "Forced Convection Apparatus",
+        "Pin Fin Apparatus",
+      ],
+    },
+    {
+      image: "/Programs/Mech/DSC02678.JPG",
+      title: "Theory of Machines",
+      details: [
+        "Synchromesh Gear Box",
+        "Differential Gear Box",
+        "Epicyclic Gear Train Setup",
+        "Motorized Gyroscope",
+        "Gear Tooth Profile Generation Setup",
+      ],
+    },
+    {
+      image: "/Programs/Mech/DSC02680.JPG",
+      title: "Dynamics of Machinery",
+      details: [
+        "Static & Dynamic Balancing Apparatus",
+        "Universal Vibration Testing Machine",
+        "Digital Sound Measurement Apparatus",
+      ],
+    },
+  ];
+
   return (
     <div className="w-full text-white">
       {/* ===== TOP DARK SECTION ===== */}
-     <div className="relative w-full overflow-hidden h-[60vh] md:h-[75vh] flex items-center">
-                  {/* Background Image */}
-                  <div className="absolute inset-0">
-                    <Image
-                      src="/Programs/AIDS2.jpg"
-                      alt="Artificial Intelligence Program"
-                      fill
-                      className="object-cover object-center scale-105  opacity-90"
-                      priority
-                    />
-                  </div>
-          
-                  {/* Dark Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10" />
-          
-                  {/* Content Wrapper */}
-                  {/* Content Wrapper */}
-                  <div className="relative max-w-[1500px] px-6 md:px-12 lg:px-20 z-20">
-                    <div className="max-w-3xl text-white">
-  <h2 className="text-4xl md:text-5xl font-bold leading-snug">
-    4-Year B.Tech Mechanical Engineering Program <br />
-    with specialisation in <br />
-    <span className="bg-gradient-to-br from-cyan-400 to-sky-400 bg-clip-text text-transparent font-extrabold">
-      Advanced Manufacturing & Smart Technologies
-    </span>
-  </h2>
+      <div className="relative w-full overflow-hidden h-[60vh] md:h-[75vh] flex items-center">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/Programs/AIDS2.jpg"
+            alt="Artificial Intelligence Program"
+            fill
+            className="object-cover object-center scale-105  opacity-90"
+            priority
+          />
+        </div>
 
-  <p className="mt-4 text-white/80 leading-relaxed max-w-2xl">
-    The Department of Mechanical Engineering at ICEM focuses on building strong
-    fundamentals in design, thermodynamics, materials, and manufacturing processes.
-    The program integrates modern advancements such as automation, robotics,
-    mechatronics, and smart manufacturing to prepare students for next-generation
-    engineering challenges in industries and research.
-  </p>
+        {/* Dark Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10" />
 
-  {/* Buttons */}
-  <div className="flex gap-4 mt-6">
-    <button
-      onClick={toggleModal}
-      className="bg-secondary text-white px-8 py-3 rounded-lg font-semibold"
-    >
-      Enquire Now
-    </button>
+        {/* Content Wrapper */}
+        {/* Content Wrapper */}
+        <div className="relative max-w-[1500px] px-6 md:px-12 lg:px-20 z-20">
+          <div className="max-w-3xl text-white">
+            <h2 className="text-4xl md:text-5xl font-bold leading-snug">
+              4-Year B.Tech Mechanical Engineering Program <br />
+              with specialisation in <br />
+              <span className="bg-gradient-to-br from-cyan-400 to-sky-400 bg-clip-text text-transparent font-extrabold">
+                Electric Vehicle Technologies
+              </span>
+            </h2>
 
-    <button
-      onClick={handleBrochureDownload}
-      className="bg-secondary text-white px-8 py-3 rounded-lg"
-    >
-      Download Brochure
-    </button>
-  </div>
-</div>
+            <p className="mt-4 text-white/80 leading-relaxed max-w-2xl">
+              This programme equips students with the knowledge and skills to
+              design, develop, and optimize intelligent, automated, and
+              sustainable systems.
+            </p>
 
-                  </div>
-          
-                  {/* Bottom Fade Mask */}
-                  <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-black/60 to-transparent" />
-                </div> 
+            {/* Buttons */}
+            <div className="flex gap-4 mt-6">
+              <button
+                onClick={toggleModal}
+                className="bg-secondary text-white px-8 py-3 rounded-lg font-semibold"
+              >
+                Enquire Now
+              </button>
+
+              <button
+                onClick={handleBrochureDownload}
+                className="bg-secondary text-white px-8 py-3 rounded-lg"
+              >
+                Download Brochure
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Fade Mask */}
+        <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-black/60 to-transparent" />
+      </div>
 
       {/* ===== WHITE INFO SECTION ===== */}
       <div className="w-full bg-[#f8f8f8] text-black py-12">
@@ -167,182 +246,196 @@ export default function Mech() {
 
       {/* ===== PROGRAM STRUCTURE + APPLY FORM SECTION ===== */}
       <div className="w-full bg-white text-black py-16">
-  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 px-4 sm:px-6 items-stretch">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 px-4 sm:px-6 items-stretch">
+          {/* LEFT TEXT SECTION */}
+          <div className="bg-white p-6 rounded-lg shadow-sm flex flex-col justify-between border border-gray-100">
+            <div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-4 leading-snug">
+                B.Tech Mechanical Engineering with Specialization in Electric
+                Vehicle Technologies
+              </h2>
 
-    {/* LEFT TEXT SECTION */}
-    <div className="bg-white p-6 rounded-lg shadow-sm flex flex-col justify-between border border-gray-100">
-      <div>
-        <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-4 leading-snug">
-          B.E. in Mechanical Engineering
-        </h2>
+              <p className="text-gray-700 mb-6 leading-relaxed text-sm sm:text-base">
+                The programme nurture the graduates in technically skilled,
+                industry-ready, and socially responsible engineers — empowering
+                them to shape tomorrow’s engineering solutions today.
+              </p>
 
-        <p className="text-gray-700 mb-6 leading-relaxed text-sm sm:text-base">
-          This programme equips students with a deep understanding of mechanics, design, thermal sciences, 
-          and materials, combined with practical expertise in Computer-Aided Engineering (CAE) and intelligent systems. 
-          The curriculum is designed to foster analytical thinking and innovation, ensuring graduates are ready 
-          to contribute to core engineering and R&D roles.
-        </p>
+              <h3 className="font-semibold text-lg sm:text-xl text-secondary mb-3">
+                Program Structure
+              </h3>
 
-        <h3 className="font-semibold text-lg sm:text-xl text-secondary mb-3">
-          Program Structure
-        </h3>
+              <ul className="list-disc list-inside space-y-2 text-gray-800 text-sm sm:text-base">
+                <li>Modern Infrastructure & Labs</li>
+                <li>Experienced Mentoring</li>
+                <li>EV Technology Integration</li>
+                <li>Industry Collaboration</li>
+                <li>Outcome-Based Learning</li>
+                <li>Career & Higher Education Pathways</li>
+              </ul>
+            </div>
+          </div>
 
-        <ul className="list-disc list-inside space-y-2 text-gray-800 text-sm sm:text-base">
-          <li>Engineering Mechanics, Materials Science, and CAD</li>
-          <li>Thermodynamics, Fluid Mechanics, and Heat Transfer</li>
-          <li>Manufacturing Processes and Automation</li>
-          <li>Machine Design, Dynamics, and Control Systems</li>
-          <li>Mechatronics, Robotics, and Smart Manufacturing</li>
-        </ul>
+          {/* RIGHT FORM SECTION */}
+          <div className="flex flex-col justify-between">
+            <ApplyForm />
+          </div>
+        </div>
       </div>
-    </div>
-
-    {/* RIGHT FORM SECTION */}
-    <div className="flex flex-col justify-between">
-      <ApplyForm />
-    </div>
-  </div>
-</div>
-
 
       {/* ===== PROGRAM HIGHLIGHTS SECTION ===== */}
       <div className="w-full bg-[#f7f7f7] py-16 text-black">
-  <div className="max-w-7xl mx-auto px-6 text-center">
-    <h2 className="text-3xl font-bold text-secondary mb-4">
-      Programme Highlights
-    </h2>
-    <p className="text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
-      Our B.E. in Mechanical Engineering combines rigorous theoretical
-      instruction with extensive hands-on learning. The programme is
-      structured to develop proficient engineers capable of designing,
-      analysing, and managing complex mechanical systems for a sustainable
-      and automated future.
-    </p>
-
-    {/* HIGHLIGHT CARDS */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {/* Card 1 */}
-      <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
-        <div className="w-full h-48 relative">
-          <Image
-            src="/Programs/Mech/mech1.jpg"
-            alt="Core & Specialized Knowledge"
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="p-6 text-left">
-          <h3 className="font-semibold text-lg text-secondary mb-2">
-            Core & Specialized Knowledge
-          </h3>
-          <p className="text-gray-700 text-sm leading-relaxed">
-            <span className="font-bold">Strong Engineering Foundation: </span>
-            The curriculum builds expertise in core domains like machine
-            design, thermodynamics, and fluid dynamics, while introducing
-            advanced topics in robotics and additive manufacturing.
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold text-secondary mb-4">
+            Programme Highlights
+          </h2>
+          <p className="text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
+            Our B.Tech Mechanical Engineering with Specialization in Electric
+            Vehicle Technologies offers a dynamic blend of advanced technical
+            knowledge and practical experience. With a strong focus on
+            innovation, hands-on learning, and industry-driven projects, the
+            program prepares students to excel in emerging areas such as
+            electric vehicle, automation, and smart manufacturing. Backed by
+            state-of-the-art laboratories & robust industry collaborations,
+            students gain real-world exposure and enhanced career opportunities
+            in the evolving field of mechanical engineering.
           </p>
+
+          {/* HIGHLIGHT CARDS */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Card 1 */}
+            <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
+              <div className="w-full h-48 relative">
+                <Image
+                  src="/Programs/Mech/mech1.jpg"
+                  alt="Core & Specialized Knowledge"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6 text-left">
+                <h3 className="font-semibold text-lg text-secondary mb-2">
+                  Core & Specialized Knowledge
+                </h3>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  <span className="font-bold">
+                    Strong Engineering Foundation:{" "}
+                  </span>
+                  The curriculum builds expertise in core domains like machine
+                  design, thermodynamics, and fluid dynamics, while introducing
+                  advanced topics in robotics and additive manufacturing.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
+              <div className="w-full h-48 relative">
+                <Image
+                  src="/Programs/Mech/mech2.jpg"
+                  alt="Labs & Practical Exposure"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6 text-left">
+                <h3 className="font-semibold text-lg text-secondary mb-2">
+                  Labs & Practical Exposure
+                </h3>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  <span className="font-bold">
+                    Advanced Engineering Laboratories:{" "}
+                  </span>
+                  Gain hands-on experience in our CAD/CAM, Automation, Fluid
+                  Mechanics, and Materials Testing labs, equipped with
+                  industry-standard software and machinery.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
+              <div className="w-full h-48 relative">
+                <Image
+                  src="/Programs/Mech/mech3.jpg"
+                  alt="Industry Alignment"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6 text-left">
+                <h3 className="font-semibold text-lg text-secondary mb-2">
+                  Industry Alignment
+                </h3>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  <span className="font-bold">Industry-Ready Competence: </span>
+                  Through industry projects and internships, students develop
+                  the practical skills and problem-solving abilities highly
+                  valued by leading engineering firms.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Card 2 */}
-      <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
-        <div className="w-full h-48 relative">
-          <Image
-            src="/Programs/Mech/mech2.jpg"
-            alt="Labs & Practical Exposure"
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="p-6 text-left">
-          <h3 className="font-semibold text-lg text-secondary mb-2">
-            Labs & Practical Exposure
-          </h3>
-          <p className="text-gray-700 text-sm leading-relaxed">
-            <span className="font-bold">Advanced Engineering Laboratories: </span>
-            Gain hands-on experience in our CAD/CAM, Automation, Fluid
-            Mechanics, and Materials Testing labs, equipped with
-            industry-standard software and machinery.
+      {/* ===== LABS GALLERY SECTION ===== */}
+      {/* ===== LABS GALLERY SECTION ===== */}
+      <div className="w-full bg-white text-black py-16">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold text-secondary mb-4">
+            Mechanical Engineering Laboratories
+          </h2>
+
+          <p className="text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
+            Explore our state-of-the-art laboratories that support practical
+            learning, innovation, and hands-on engineering experience.
           </p>
-        </div>
-      </div>
 
-      {/* Card 3 */}
-      <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
-        <div className="w-full h-48 relative">
-          <Image
-            src="/Programs/Mech/mech3.jpg"
-            alt="Industry Alignment"
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="p-6 text-left">
-          <h3 className="font-semibold text-lg text-secondary mb-2">
-            Industry Alignment
-          </h3>
-          <p className="text-gray-700 text-sm leading-relaxed">
-            <span className="font-bold">Industry-Ready Competence: </span>
-            Through industry projects and internships, students develop
-            the practical skills and problem-solving abilities highly
-            valued by leading engineering firms.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-      {/* <section className="w-full bg-gray-50 py-16 overflow-hidden">
-        
-        <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-10">
-          Laboratories
-        </h2>
-
-        <div className="relative w-full overflow-visible group">
-          <div className="flex animate-marquee space-x-6 px-6 group-hover:pause">
-            {[...mechImages, ...mechImages].map((img, index) => (
+          {/* 🔥 4 Column Grid Layout */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+            {labsGallery.map((lab, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-[260px] sm:w-[300px] md:w-[340px] rounded-xl shadow-md hover:shadow-lg transition-all duration-500 border border-gray-100 overflow-hidden"
+                className="relative group rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
               >
-                <div className="relative w-full h-48 sm:h-56 md:h-60 lg:h-72">
-                  <Image
-                    src={img}
-                    alt={`Mech Lab ${index + 1}`}
-                    fill
-                    className="object-cover"
-                    unoptimized
-                  />
+                {/* IMAGE */}
+                <Image
+                  src={lab.image}
+                  alt={lab.title}
+                  width={500}
+                  height={300}
+                  className="object-cover w-full h-56 transform group-hover:scale-110 transition-all duration-500"
+                />
+
+                {/* HEADING BAR */}
+                <div className="absolute bottom-0 w-full bg-black/60 p-3 text-white text-center font-semibold text-lg">
+                  {lab.title}
+                </div>
+
+                {/* HOVER OVERLAY */}
+                <div
+                  className="
+            absolute inset-0 bg-black/80 
+            opacity-0 group-hover:opacity-100 
+            transition-all duration-300 
+            flex flex-col items-center justify-center p-6
+          "
+                >
+                  <h3 className="text-white font-bold text-lg mb-3">
+                    {lab.title}
+                  </h3>
+                  <ul className="text-white text-sm space-y-1 text-left">
+                    {lab.details.map((d, i) => (
+                      <li key={i}>• {d}</li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             ))}
           </div>
-
-          <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-gray-50 to-transparent pointer-events-none" />
-          <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-gray-50 to-transparent pointer-events-none" />
         </div>
-
-        <style jsx>{`
-          @keyframes marquee {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              transform: translateX(-50%);
-            }
-          }
-          .animate-marquee {
-            display: flex;
-            width: max-content;
-            animation: marquee 40s linear infinite;
-          }
-          .group-hover\\:pause {
-            animation-play-state: paused;
-          }
-        `}</style>
-      </section> */}
+      </div>
 
       {/* ===== CAREER OPPORTUNITIES SECTION ===== */}
       <div className="w-full bg-white text-black py-16">
@@ -353,21 +446,24 @@ export default function Mech() {
               Career Opportunities
             </h2>
             <p className="text-gray-700 mb-6 leading-relaxed">
-              Mechanical Engineering graduates have a wide scope in sectors like
-              automotive, aerospace, energy, and robotics. They are equipped to
-              take on roles that involve the design, development, testing, and
-              management of mechanical systems and processes.
+              This program is equipped to excel in both traditional mechanical
+              roles and emerging technology sectors. With expertise in design,
+              automation, electric vehicle, and smart manufacturing. students
+              are prepared for dynamic careers across industries driving the
+              future of engineering.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-gray-800">
-              <p>Design Engineer </p>
-              <p>Production Engineer </p>
-              <p>R&D Engineer </p>
-              <p>Quality Control Engineer </p>
-              <p>Thermal Engineer </p>
-              <p>Project Engineer </p>
-              <p>Automotive Engineer </p>
-              <p>Robotics Engineer </p>
+              <p>Mechanical Design Engineer </p>
+              <p>Mechatronics Engineer </p>
+              <p>Automation Engineer/Electric Vehicle Engineer</p>
+              <p>Product Development Engineer </p>
+              <p>Manufacturing / Production Engineer </p>
+              <p>Research & Development Engineer </p>
+              <p>Maintenance and Reliability Engineer</p>
+              <p>CAD/CAM Specialist </p>
+              <p>Quality and Process Engineer</p>
+              <p>Project Engineer or Technical Consultant </p>
             </div>
           </div>
 
@@ -384,17 +480,12 @@ export default function Mech() {
       <RecruiterSection />
 
       {/* ===== NEXT STEPS SECTION ===== */}
-     <div className="bg-white py-16">
-  <CTASection />
-</div>
-
- 
+      <div className="bg-white py-16">
+        <CTASection />
+      </div>
 
       {/* ===== FREQUENTLY ASKED QUESTIONS SECTION ===== */}
       <FAQSection />
-
-  
-      
     </div>
   );
 }

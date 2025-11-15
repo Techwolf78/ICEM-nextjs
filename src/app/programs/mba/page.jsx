@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef } from "react";
-import FAQSection from "@/components/FAQSection";
+import FAQSection from "@/components/FAQSections/FAQMBA";
 import Image from "next/image";
 import RecruitersSection from "@/components/home/RecruiterSection";
 import CTASection from "@/components/home/CTASection";
@@ -11,12 +11,13 @@ export default function MBA() {
   const [activeTab, setActiveTab] = useState("admissions");
   const faqRef = useRef(null);
   const [specialization, setSpecialization] = useState("marketing");
+  const [isModalOpen, setIsModalOpen] = useState(false); // Added missing state
 
   const scrollToFAQ = () => {
     faqRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-    const toggleModal = () => setIsModalOpen(!isModalOpen);
+  const toggleModal = () => setIsModalOpen(!isModalOpen);
 
   // Brochure Download
   const handleBrochureDownload = () => {
@@ -28,6 +29,12 @@ export default function MBA() {
     document.body.removeChild(link);
   };
 
+  // Array of MBA highlight images
+  const mbaHighlightImages = [
+    "/Programs/MBA/MBA1.jpg",
+    "/Programs/MBA/MBA2.jpg", 
+    "/Programs/MBA/MBA3.jpg"
+  ];
 
   // ==============================
   // MBA SPECIALIZATION CONTENT
@@ -193,239 +200,222 @@ export default function MBA() {
       {/* =======================
           HERO SECTION
       ======================= */}
-       <div className="relative w-full overflow-hidden h-[60vh] md:h-[75vh] flex items-center">
-              {/* Background Image */}
-              <div className="absolute inset-0">
-                <Image
-                  src="/Programs/MBA1.jpg"
-                  alt="Artificial Intelligence Program"
-                  fill
-                  className="object-cover object-center scale-105  opacity-90"
-                  priority
-                />
-              </div>
-      
-              {/* Dark Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10" />
-      
-              {/* Content Wrapper */}
-              {/* Content Wrapper */}
-              <div className="relative max-w-[1500px] px-6 md:px-12 lg:px-20 z-20">
-                <div className="max-w-3xl text-white">
-                  <h2 className="text-4xl md:text-5xl font-bold leading-snug">
-                    2-Year Master of Business Administration (MBA) Programme <br />
-                    
-                  </h2>
-      
-                  <p className="mt-4 text-white/80 leading-relaxed max-w-2xl">
-                    This rigorous programme is designed to develop strategic thinkers and future business leaders. It combines core management principles with deep specialization, fostering analytical prowess, leadership qualities, and an ethical mindset to drive organizational success in a complex global economy.
-                  </p>
-      
-                  {/* Floating Stat Cards */}
-      
-                  {/* Buttons */}
-                  <div className="flex gap-4 mt-6">
-                    <button
-                      onClick={toggleModal}
-                      className="bg-secondary text-white px-8 py-3 rounded-lg font-semibold 
-                               "
-                    >
-                      Enquire Now
-                    </button>
-      
-                    <button
-                      onClick={handleBrochureDownload}
-                      className="bg-secondary text-white px-8 py-3 rounded-lg"
-                    >
-                      Download Brochure
-                    </button>
-                  </div>
-                </div>
-              </div>
-      
-              {/* Bottom Fade Mask */}
-              <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-black/60 to-transparent" />
+      <div className="relative w-full overflow-hidden h-[60vh] md:h-[75vh] flex items-center">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/Programs/MBA1.jpg"
+            alt="Artificial Intelligence Program"
+            fill
+            className="object-cover object-center scale-105  opacity-90"
+            priority
+          />
+        </div>
+
+        {/* Dark Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10" />
+
+        {/* Content Wrapper */}
+        <div className="relative max-w-[1500px] px-6 md:px-12 lg:px-20 z-20">
+          <div className="max-w-3xl text-white">
+            <h2 className="text-4xl md:text-5xl font-bold leading-snug">
+              2-Year Master of Business Administration (MBA) Programme <br />
+            </h2>
+
+            <p className="mt-4 text-white/80 leading-relaxed max-w-2xl">
+              This rigorous programme is designed to develop strategic thinkers and future business leaders. It combines core management principles with deep specialization, fostering analytical prowess, leadership qualities, and an ethical mindset to drive organizational success in a complex global economy.
+            </p>
+
+            {/* Buttons */}
+            <div className="flex gap-4 mt-6">
+              <button
+                onClick={toggleModal}
+                className="bg-secondary text-white px-8 py-3 rounded-lg font-semibold"
+              >
+                Enquire Now
+              </button>
+
+              <button
+                onClick={handleBrochureDownload}
+                className="bg-secondary text-white px-8 py-3 rounded-lg"
+              >
+                Download Brochure
+              </button>
             </div>
+          </div>
+        </div>
+
+        {/* Bottom Fade Mask */}
+        <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-black/60 to-transparent" />
+      </div>
 
       {/* =======================
-          ENHANCED TAB
+          WHITE INFO SECTION
       ======================= */}
+      <div className="w-full bg-[#f8f8f8] text-black py-12">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 px-6">
+          <div>
+            <h4 className="font-semibold text-lg mb-2">🕓 Course Duration</h4>
+            <p className="text-gray-700">The MBA program lasts 2 years.</p>
+          </div>
 
+          <div>
+            <h4 className="font-semibold text-lg mb-2">💼 Internship</h4>
+            <p className="text-gray-700">
+              Internships with leading organizations across industries.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="font-semibold text-lg mb-2">🏫 Placements</h4>
+            <p className="text-gray-700">
+              Excellent placement record with top companies nationwide.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="font-semibold text-lg mb-2">🎓 Eligibility</h4>
+            <p
+              onClick={scrollToFAQ}
+              className="cursor-pointer hover:text-blue-600 hover:underline"
+            >
+              Click here to see eligibility.
+            </p>
+          </div>
+        </div>
+      </div>
 
       {/* =======================
-          TAB CONTENT
-   
-          {/* =======================
-              WHITE INFO SECTION
-          ======================= */}
-          <div className="w-full bg-[#f8f8f8] text-black py-12">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 px-6">
-              <div>
-                <h4 className="font-semibold text-lg mb-2">🕓 Course Duration</h4>
-                <p className="text-gray-700">The MBA program lasts 2 years.</p>
-              </div>
+          MBA SPECIALIZATION TABS
+      ======================= */}
+      <div className="w-full bg-white py-8">
+        <div className="max-w-7xl mx-auto px-6 flex gap-4 flex-nowrap overflow-hidden">
+          {[
+            ["marketing", "MARKETING MANAGEMENT"],
+            ["finance", "FINANCIAL MANAGEMENT"],
+            ["hr", "HUMAN RESOURCES MANAGEMENT"],
+            ["operations", "OPERATIONS & SUPPLY CHAIN MANAGEMENT"],
+          ].map(([key, label]) => (
+            <button
+              key={key}
+              onClick={() => setSpecialization(key)}
+              className={`px-4 md:px-6 h-14 max-w-[300px] flex items-center justify-center rounded-lg font-semibold text-sm md:text-base text-center border whitespace-normal leading-tight ${
+                specialization === key
+                  ? "bg-secondary text-white"
+                  : "bg-gray-100 text-gray-800"
+              }`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+      </div>
 
-              <div>
-                <h4 className="font-semibold text-lg mb-2">💼 Internship</h4>
-                <p className="text-gray-700">
-                  Internships with leading organizations across industries.
-                </p>
-              </div>
+      {/* =======================
+          STRUCTURE + FORM
+      ======================= */}
+      <div className="w-full bg-white py-16 text-black">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* LEFT */}
+          <div className="bg-white shadow-sm border p-6 rounded-lg">
+            <h2 className="text-3xl font-bold text-secondary mb-4">
+              {s.title}
+            </h2>
+            <p className="text-gray-700 mb-6">{s.overview}</p>
 
-              <div>
-                <h4 className="font-semibold text-lg mb-2">🏫 Placements</h4>
-                <p className="text-gray-700">
-                  Excellent placement record with top companies nationwide.
-                </p>
-              </div>
+            <h3 className="text-xl font-semibold text-secondary mb-3">
+              Program Structure
+            </h3>
 
-              <div>
-                <h4 className="font-semibold text-lg mb-2">🎓 Eligibility</h4>
-                <p
-                  onClick={scrollToFAQ}
-                  className="cursor-pointer hover:text-blue-600 hover:underline"
-                >
-                  Click here to see eligibility.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* =======================
-              MBA SPECIALIZATION TABS
-          ======================= */}
-          <div className="w-full bg-white py-8">
-            <div className="max-w-7xl mx-auto px-6 flex gap-4 flex-nowrap overflow-hidden">
-
-              {[
-                ["marketing", "MARKETING MANAGEMENT"],
-                ["finance", "FINANCIAL MANAGEMENT"],
-                ["hr", "HUMAN RESOURCES MANAGEMENT"],
-                ["operations", "OPERATIONS & SUPPLY CHAIN MANAGEMENT"],
-              ].map(([key, label]) => (
-                <button
-                  key={key}
-                  onClick={() => setSpecialization(key)}
-                  className={`px-4 md:px-6 h-14 max-w-[300px] flex items-center justify-center rounded-lg font-semibold text-sm md:text-base text-center border whitespace-normal leading-tight ${
-                    specialization === key
-                      ? "bg-secondary text-white"
-                      : "bg-gray-100 text-gray-800"
-                  }`}
-                >
-                  {label}
-                </button>
+            <ul className="list-disc list-inside space-y-2 text-gray-800">
+              {s.structure.map((item, index) => (
+                <li key={index}>{item}</li>
               ))}
-            </div>
+            </ul>
           </div>
 
-          {/* =======================
-              STRUCTURE + FORM
-          ======================= */}
-          <div className="w-full bg-white py-16 text-black">
-            <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
-              {/* LEFT */}
-              <div className="bg-white shadow-sm border p-6 rounded-lg">
-                <h2 className="text-3xl font-bold text-secondary mb-4">
-                  {s.title}
-                </h2>
-                <p className="text-gray-700 mb-6">{s.overview}</p>
-
-                <h3 className="text-xl font-semibold text-secondary mb-3">
-                  Program Structure
-                </h3>
-
-                <ul className="list-disc list-inside space-y-2 text-gray-800">
-                  {s.structure.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* RIGHT */}
-              <div>
-                <ApplyForm />
-              </div>
-            </div>
+          {/* RIGHT */}
+          <div>
+            <ApplyForm />
           </div>
+        </div>
+      </div>
 
-          {/* =======================
-              PROGRAM HIGHLIGHTS
-          ======================= */}
-          <div className="w-full bg-[#f7f7f7] py-16 text-black">
-            <div className="max-w-7xl mx-auto px-6 text-center">
-              <h2 className="text-3xl font-bold text-secondary mb-10">
-                Program Highlights
-              </h2>
+      {/* =======================
+          PROGRAM HIGHLIGHTS
+      ======================= */}
+      <div className="w-full bg-[#f7f7f7] py-16 text-black">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold text-secondary mb-10">
+            Program Highlights
+          </h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {s.highlights.map((h, i) => (
-                  <div
-                    key={i}
-                    className="bg-white border rounded-xl shadow-sm overflow-hidden"
-                  >
-                    <div className="w-full h-40 relative">
-                      <Image
-                        src="/placeholder/program.jpg"
-                        alt={h.title}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-
-                    <div className="p-6 text-left">
-                      <h3 className="text-lg font-semibold text-secondary mb-2">
-                        {h.title}
-                      </h3>
-                      <p className="text-gray-700 text-sm">{h.text}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* =======================
-              CAREER OPPORTUNITIES
-          ======================= */}
-          <div className="w-full bg-white py-16 text-black">
-            <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row gap-12">
-              <div className="flex-1">
-                <h2 className="text-3xl font-bold text-secondary mb-4">
-                  Career Opportunities
-                </h2>
-                <p className="text-gray-700 mb-6">
-                  This specialization opens pathways to impactful roles:
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {s.careers.map((item, index) => (
-                    <p key={index}>➜ {item}</p>
-                  ))}
-                </div>
-              </div>
-
-              <div className="flex-1">
-                <div className="w-full h-[300px] relative rounded-lg overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {s.highlights.map((h, i) => (
+              <div
+                key={i}
+                className="bg-white border rounded-xl shadow-sm overflow-hidden"
+              >
+                <div className="w-full h-40 relative">
                   <Image
-                    src="/images/career-opportunities.jpg"
-                    alt="Career Opportunities"
+                    src={mbaHighlightImages[i] || "/placeholder/program.jpg"}
+                    alt={h.title}
                     fill
                     className="object-cover"
                   />
                 </div>
+
+                <div className="p-6 text-left">
+                  <h3 className="text-lg font-semibold text-secondary mb-2">
+                    {h.title}
+                  </h3>
+                  <p className="text-gray-700 text-sm">{h.text}</p>
+                </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* =======================
+          CAREER OPPORTUNITIES
+      ======================= */}
+      <div className="w-full bg-white py-16 text-black">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row gap-12">
+          <div className="flex-1">
+            <h2 className="text-3xl font-bold text-secondary mb-4">
+              Career Opportunities
+            </h2>
+            <p className="text-gray-700 mb-6">
+              This specialization opens pathways to impactful roles:
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {s.careers.map((item, index) => (
+                <p key={index}>➜ {item}</p>
+              ))}
             </div>
           </div>
 
-          <RecruitersSection />
-          <CTASection />
-
-          <div ref={faqRef}>
-            <FAQSection />
+          <div className="flex-1">
+            <div className="w-full h-[300px] relative rounded-lg overflow-hidden">
+              <Image
+                src="/images/career-opportunities.jpg"
+                alt="Career Opportunities"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
-   
- 
+        </div>
+      </div>
 
+      <RecruitersSection />
+      <CTASection />
+
+      <div ref={faqRef}>
+        <FAQSection />
+      </div>
     </div>
   );
 }

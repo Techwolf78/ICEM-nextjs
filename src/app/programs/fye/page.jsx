@@ -206,7 +206,7 @@ export default function Computer() {
                 <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
                   <div className="w-full h-48 relative">
                     <Image
-                      src="/images/interdisciplinary-expertise.jpg"
+                      src="/Programs/FE/FE1.jpg"
                       alt="Interdisciplinary Expertise"
                       fill
                       className="object-cover"
@@ -228,7 +228,7 @@ export default function Computer() {
                 <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
                   <div className="w-full h-48 relative">
                     <Image
-                      src="/images/cutting-edge-labs.jpg"
+                      src="/Programs/FE/FE2.jpg"
                       alt="Cutting-Edge Laboratories"
                       fill
                       className="object-cover"
@@ -250,7 +250,7 @@ export default function Computer() {
                 <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
                   <div className="w-full h-48 relative">
                     <Image
-                      src="/images/industry-skills.jpg"
+                      src="/Programs/FE/FE3.jpg"
                       alt="Industry-Relevant Skills"
                       fill
                       className="object-cover"

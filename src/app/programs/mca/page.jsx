@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useRef } from "react";
-import FAQSection from "@/components/FAQSection";
+import FAQSection from "@/components/FAQSections/FAQMCA";
 import Link from "next/link";
 import Image from "next/image";
 import RecruitersSection from "@/components/home/RecruiterSection";
@@ -206,7 +206,7 @@ export default function Computer() {
                 <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
                   <div className="w-full h-48 relative">
                     <Image
-                      src="/images/interdisciplinary-expertise.jpg"
+                      src="/Programs/MCA/MCA1.jpg"
                       alt="Interdisciplinary Expertise"
                       fill
                       className="object-cover"
@@ -228,7 +228,7 @@ export default function Computer() {
                 <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
                   <div className="w-full h-48 relative">
                     <Image
-                      src="/images/cutting-edge-labs.jpg"
+                      src="/Programs/MCA/MCA2.jpg"
                       alt="Cutting-Edge Laboratories"
                       fill
                       className="object-cover"
@@ -250,7 +250,7 @@ export default function Computer() {
                 <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
                   <div className="w-full h-48 relative">
                     <Image
-                      src="/images/industry-skills.jpg"
+                      src="/Programs/MCA/MCA3.jpg"
                       alt="Industry-Relevant Skills"
                       fill
                       className="object-cover"
@@ -299,7 +299,7 @@ export default function Computer() {
               <div className="flex-1">
                 <div className="w-full h-[300px] relative rounded-lg overflow-hidden">
                   <Image
-                    src="/images/career-opportunities.jpg"
+                    src="/Programs/MCA/CR.jpg"
                     alt="Career Opportunities in AI and Future Technologies"
                     fill
                     className="object-cover"

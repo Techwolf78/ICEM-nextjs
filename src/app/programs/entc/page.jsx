@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useRef } from "react";
-import FAQSection from "@/components/FAQSection";
+import FAQSection from "@/components/FAQSections/FAQENTC";
 import Link from "next/link";
 import Image from "next/image";
 import RecruitersSection from "@/components/home/RecruiterSection";
@@ -68,7 +68,7 @@ export default function ENTC() {
         <div className="relative max-w-[1500px] px-6 md:px-12 lg:px-20 z-20">
           <div className="max-w-3xl text-white">
             <h2 className="text-4xl md:text-5xl font-bold leading-snug">
-              4-Year B.E. Programme in Electronics & Telecommunication
+              4-Year B.Tech Programme in Electronics & Telecommunication
               Engineering <br />
               <span className="bg-gradient-to-br from-cyan-400  to-sky-400 bg-clip-text text-transparent font-extrabold ">
                 Engineering the Connected World of Tomorrow

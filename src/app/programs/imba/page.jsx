@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useRef } from "react";
-import FAQSection from "@/components/FAQSection";
-import Link from "next/link";
+import FAQSection from "@/components/FAQSections/FAQIMBA";
+// import Link from "next/link";
 import Image from "next/image";
 import RecruitersSection from "@/components/home/RecruiterSection";
 import CTASection from "@/components/home/CTASection";
@@ -207,7 +207,7 @@ export default function Computer() {
                 <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
                   <div className="w-full h-48 relative">
                     <Image
-                      src="/images/interdisciplinary-expertise.jpg"
+                      src="/Programs/IBCAMBA/IBBAMBA1.jpg"
                       alt="Interdisciplinary Expertise"
                       fill
                       className="object-cover"
@@ -229,7 +229,7 @@ export default function Computer() {
                 <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
                   <div className="w-full h-48 relative">
                     <Image
-                      src="/images/cutting-edge-labs.jpg"
+                      src="/Programs/IBCAMBA/IBBAMBA2.jpg"
                       alt="Cutting-Edge Laboratories"
                       fill
                       className="object-cover"
@@ -251,7 +251,7 @@ export default function Computer() {
                 <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
                   <div className="w-full h-48 relative">
                     <Image
-                      src="/images/industry-skills.jpg"
+                      src="/Programs/IBCAMBA/IBBAMBA3.jpg"
                       alt="Industry-Relevant Skills"
                       fill
                       className="object-cover"
@@ -271,7 +271,6 @@ export default function Computer() {
               </div>
             </div>
           </div>
-
 
           <div className="w-full bg-[#f7f7f7] py-16 text-black">
             <div className="max-w-7xl mx-auto px-6 text-center">
@@ -403,11 +402,6 @@ export default function Computer() {
           <div ref={faqRef}>
             <FAQSection />
           </div>
-
- 
-
-
-
     </div>
   );
 }

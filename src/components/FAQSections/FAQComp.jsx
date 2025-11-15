@@ -51,34 +51,7 @@ const timeTableList = [
 ];
 
 // ================== CLUBS & MOU DATA ==================
-const clubsMouData = {
-  clubs: [
-    {
-      id: "icons",
-      name: "ICONS",
-      description: "The official technical club of Computer Department"
-    },
-    {
-      id: "rgencoders",
-      name: "RgenCoders: The Coding Club",
-      description: "Inauguration of RgenCoders - The official coding club"
-    }
-  ],
-  mous: [
-    {
-      id: "mou-details",
-      label: "MoUs Details Principal Copy",
-      pdf: "/Programs/Computer/MOU.pdf",
-      type: "pdf"
-    },
-    {
-      id: "internship",
-      label: "A.Y. 2024-25 List of TE Intern Students",
-      pdf: "/Programs/Computer/Intership2425.pdf", 
-      type: "pdf"
-    }
-  ]
-};
+
 
 // ================== LABORATORY DATA ==================
 const labData = [
@@ -166,17 +139,7 @@ const labData = [
 ];
 
 // ================== IMAGE PLACEHOLDERS ==================
-const galleryImages = Array.from({ length: 12 }, (_, i) => ({
-  id: i + 1,
-  src: `/images/placeholder-${(i % 4) + 1}.jpg`,
-  alt: `Gallery Image ${i + 1}`
-}));
 
-const infrastructureImages = Array.from({ length: 12 }, (_, i) => ({
-  id: i + 1,
-  src: `/images/infra-${(i % 4) + 1}.jpg`,
-  alt: `Infrastructure Image ${i + 1}`
-}));
 
 const facultyImages = Array.from({ length: 12 }, (_, i) => ({
   id: i + 1,
@@ -190,45 +153,35 @@ export default function FAQSectionComputer() {
 
   const sectionContent = {
     "About Us": {
-      type: "text",
-      content: `Welcome to the Department of Computer Engineering at Indira College of Engineering and Management, a vibrant hub of innovation, academic excellence, and professional growth. The department is committed to producing competent and creative engineers who can meet the dynamic challenges of the global IT industry. With a strong focus on both theoretical and practical learning, the department offers comprehensive training in core domains such as Programming, Algorithms, Databases, Artificial Intelligence, Cyber security, and Computational Theory and Data Structures.
-
+  type: "accordion",
+  content: {
+    "About the Department": [
+      `Welcome to the Department of Computer Engineering at Indira College of Engineering and Management, a vibrant hub of innovation, academic excellence, and professional growth. The department is committed to producing competent and creative engineers who can meet the dynamic challenges of the global IT industry. With a strong focus on both theoretical and practical learning, the department offers comprehensive training in core domains such as Programming, Algorithms, Databases, Artificial Intelligence, Cyber security, and Computational Theory and Data Structures.
 
 Our faculty members are a blend of experienced academicians and industry professionals who mentor students through innovative teaching methods, research projects, and hands-on learning. The department is equipped with state-of-the-art laboratories, modern computing facilities, and smart classrooms that foster a rich learning environment. We take immense pride in our collaborations with AWS Academy, Robotic Process Academy, UiPath, and CSI Cyber security, which provide students access to global certifications, internships, and real-world project experiences.
 
-
 Beyond academics, the department encourages holistic development through active participation in professional bodies such as CSI, ISTE, IEEE, and the Google Developer Students Club (GDSC). Students regularly engage in hackathons, coding competitions, seminars, workshops, and national as well as international events and state and national sports, consistently bringing laurels to the institution. To enhance employability, specialized training programs in aptitude, soft skills, technical certifications, Guidance for Higher Studies and GATE coaching are integrated into the curriculum.
 
+With a remarkable placement record for the past five years, our graduates are excelling in top multinational companies and pursuing higher studies at reputed universities worldwide. The Department of Computer Engineering at ICEM continues to be a center of excellence empowering students with the knowledge, skills, and confidence to become leaders and innovators in the digital era.`
+    ],
 
-With a remarkable placement record for the past five years, our graduates are excelling in top multinational companies and pursuing higher studies at reputed universities worldwide. The Department of Computer Engineering at ICEM continues to be a center of excellence empowering students with the knowledge, skills, and confidence to become leaders and innovators in the digital era`
-    },
+    "Vision": [
+      "To become an acclaimed center of excellence by rendering modern technology, academics and research for creating holistic, socio-economic professionals with interdisciplinary potential."
+    ],
 
-    Vision: {
-      type: "text",
-      content: `To become an acclaimed center of excellence by rendering modern technology, academics and research for creating holistic, socio-economic professionals with interdisciplinary potential.`
-    },
+    "Mission": [
+      "To foster strong fundamental concepts to students and inspire them to find creative solutions with critical thinking and disciplined time managed environment.",
+      "To impart knowledge and skill based education in collaboration with industry, academia and research organizations.",
+      "To develop a center of excellence and setup a research laboratory to develop software applications for the society with the association of industry.",
+      "To enlighten students with the latest technologies through carefully designed training modules with the alliance of Alumni and Industry as a part of value added education.",
+      "To nurture and nourish effective communication, interpersonal skills, and create awareness of ethical and social responsibilities."
+    ],
 
-    Mission: {
-      type: "list",
-      content: [
-        "To foster strong fundamental concepts to students and inspire them to find creative solutions with critical thinking and disciplined time managed environment.",
-        "To impart knowledge and skill based education in collaboration with industry, academia and research organizations.",
-        "To develop a center of excellence and setup a research laboratory to develop software applications for the society with the association of industry.",
-        "To enlighten students with the latest technologies through carefully designed training modules with the alliance of Alumni and Industry as a part of value added education.",
-        "To nurture and nourish effective communication, interpersonal skills, and create awareness of ethical and social responsibilities."
-      ]
-    },
-
-    "Programs Offered": {
-      type: "text",
-      content: `The Department of Computer Engineering was established in 2007, offering both Undergraduate (B.Tech) and Postgraduate (M.Tech) programs in Computer Engineering. The programs are affiliated to Savitribai Phule Pune University (SPPU), recognized by the Government of Maharashtra, and approved by the All India Council for Technical Education (AICTE), New Delhi. The institute proudly holds the status of an Autonomous Institute under SPPU, enabling the department to design and implement a dynamic, industry-oriented curriculum that meets global standards and fosters innovation, research, and excellence in technical education.
-
-Dr. Soumitra S Das
-
-Head, Computer Engineering Department hodcomp@indiraicem.ac.in
-
-Phone: 2114-661588 / 500`
-    },
+    "Programs Offered": [
+      "The Department of Computer Engineering was established in 2007, offering both Undergraduate (B.Tech) and Postgraduate (M.Tech) programs in Computer Engineering. The programs are affiliated to Savitribai Phule Pune University (SPPU), recognized by the Government of Maharashtra, and approved by the All India Council for Technical Education (AICTE), New Delhi. The institute proudly holds the status of an Autonomous Institute under SPPU, enabling the department to design and implement a dynamic, industry-oriented curriculum that meets global standards and fosters innovation, research, and excellence in technical education"      
+    ]
+  }
+},
 
     "POs, PSOs, PEOs": {
       type: "accordion",
@@ -273,16 +226,7 @@ Phone: 2114-661588 / 500`
       content: syllabusList
     },
 
-    Alumni: {
-      type: "notice",
-      content: "Alumni information is currently under development and will be available soon."
-    },
 
-    Infrastructure: {
-      type: "gallery", 
-      content: infrastructureImages,
-      title: "Infrastructure Facilities"
-    },
 
     Laboratories: {
       type: "labs",
@@ -301,11 +245,7 @@ Phone: 2114-661588 / 500`
       title: "Time Tables"
     },
     
-    "Research Publications": {
-      type: "notice",
-      content: "Research publications are currently under development and will be available soon."
-    },
-    
+
     "Academic Performance": {
       type: "notice",
       content: "Academic performance data is currently under development and will be available soon."
@@ -316,26 +256,6 @@ Phone: 2114-661588 / 500`
       content: "Achievements information is currently under development and will be available soon."
     },
     
-    "Innovative Pedagogy": {
-      type: "notice",
-      content: "Innovative pedagogy details are currently under development and will be available soon."
-    },
-    
-    "Department Newsletter / Magazine": {
-      type: "notice",
-      content: "Department newsletter and magazine are currently under development and will be available soon."
-    },
-    
-    "Photo Gallery": {
-      type: "gallery",
-      content: galleryImages,
-      title: "Photo Gallery"
-    },
-
-    "Clubs, Association & MoU": {
-      type: "clubsMou",
-      content: clubsMouData
-    },
   };
 
   const tabs = Object.keys(sectionContent);
@@ -460,84 +380,9 @@ Phone: 2114-661588 / 500`
           </div>
         );
 
-      case "gallery":
-        return (
-          <div>
-            <h4 className="font-semibold text-secondary text-lg mb-6">
-              {contentData.title}
-            </h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {contentData.content.map((image) => (
-                <div key={image.id} className="group">
-                  <div className="aspect-square bg-gray-200 rounded-lg overflow-hidden flex items-center justify-center">
-                    <div className="text-gray-500 text-center">
-                      <div className="text-4xl mb-2">📷</div>
-                      <p className="text-sm">{image.alt}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        );
 
-      case "clubsMou":
-        return (
-          <div className="space-y-8">
-            {/* Clubs Section */}
-            <div>
-              <h4 className="font-semibold text-secondary text-lg mb-4">Student Clubs</h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {contentData.content.clubs.map((club) => (
-                  <div key={club.id} className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
-                    <h5 className="font-semibold text-gray-800 mb-2">{club.name}</h5>
-                    <p className="text-gray-600 text-sm">{club.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+ 
 
-            {/* MoUs Section */}
-            <div>
-              <h4 className="font-semibold text-secondary text-lg mb-4">MoUs & Documents</h4>
-              <div className="space-y-4">
-                {contentData.content.mous.map((mou) => (
-                  <div
-                    key={mou.id}
-                    className="flex flex-col sm:flex-row sm:items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
-                  >
-                    <div className="flex-1 mb-3 sm:mb-0">
-                      <h5 className="font-semibold text-gray-800">{mou.label}</h5>
-                      <p className="text-gray-600 text-sm mt-1">{mou.type.toUpperCase()} Document</p>
-                    </div>
-                    <a
-                      href={mou.pdf}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 bg-secondary text-white rounded-md hover:bg-secondary/90 transition-colors text-sm font-medium text-center"
-                    >
-                      View / Download
-                    </a>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        );
-
-      case "notice":
-        return (
-          <div className="text-center py-12">
-            <div className="bg-gray-50 rounded-lg p-8 max-w-md mx-auto">
-              <div className="text-4xl mb-4">📋</div>
-              <h4 className="text-lg font-semibold text-gray-700 mb-2">Content Under Development</h4>
-              <p className="text-gray-600">{contentData.content}</p>
-            </div>
-          </div>
-        );
-
-      default:
-        return <div className="text-gray-600">Content not available</div>;
     }
   };
 

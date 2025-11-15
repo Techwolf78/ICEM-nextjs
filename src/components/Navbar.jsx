@@ -120,7 +120,7 @@ const Navbar = () => {
             { label: "Sports & Recreation", link: "/campus-life/sports" },
             { label: "Clubs & Societies", link: "/campus-life/clubs" },
             { label: "Technical Fest", link: "/campus-life/tech-fest" },
-            { label: "Workshops & Seminars", link: "/campus-life/workshops" },
+           // { label: "Workshops & Seminars", link: "/campus-life/workshops" },
             { label: "Annual Fest", link: "/campus-life/annual-fest" },
           ],
         },

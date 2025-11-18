@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import CTASection from "@/components/home/CTASection";
 import ApplyForm from "@/components/home/ApplyForm";
+import EnquireModal from "@/components/EnquireModal";
 
 export default function AIDS() {
   const [activeFAQ, setActiveFAQ] = useState(null);
@@ -118,8 +119,6 @@ export default function AIDS() {
         {/* Bottom Fade Mask */}
         <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-black/60 to-transparent" />
       </div>
-
-
     
           {/* ===== WHITE INFO SECTION ===== */}
           <div className="w-full bg-[#f8f8f8] text-black py-12">
@@ -344,7 +343,7 @@ export default function AIDS() {
               <div className="flex-1">
                 <div className="w-full h-[300px] relative rounded-lg overflow-hidden">
                   <Image
-                    src="/Programs/AIDS/CO.jpg"
+                    src="/Programs/3.jpg"
                     alt="Career Opportunities in AI and Future Technologies"
                     fill
                     className="object-cover"
@@ -366,11 +365,9 @@ export default function AIDS() {
           <div ref={faqRef}>
             <FAQSection />
           </div>
+    <EnquireModal isOpen={isModalOpen} onClose={toggleModal} />
 
-   
-
-
- 
+    
     </div>
   );
 }

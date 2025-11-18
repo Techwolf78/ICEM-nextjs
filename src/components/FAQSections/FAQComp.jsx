@@ -46,7 +46,7 @@ const timeTableList = [
   {
     id: "sett",
     label: "SETT Time Table",
-    pdf: "/Programs/Computer/SETT.pdf",
+    pdf: "/Programs/Computer/SETT.pdf", 
   },
 ];
 

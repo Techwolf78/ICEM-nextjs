@@ -735,7 +735,7 @@ const Navbar = () => {
             </button>
 
             <h2 className="text-2xl font-bold text-center mb-6 text-blue-900 animate-in fade-in-0 slide-in-from-top-2 duration-500">
-              Apply Now
+              Enquire Now
             </h2>
 
             <form className="space-y-4">

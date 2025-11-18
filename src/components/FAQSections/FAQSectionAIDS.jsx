@@ -5,7 +5,12 @@ import Image from "next/image";
 
 // ================== DATA SECTION ==================
 const sanctionIntake = [
-  { program: "B.Tech AIDS Engineering", intake: "60 Seats", duration: "4 Years", type: "Full Time" },
+  {
+    program: "B.Tech AIDS Engineering",
+    intake: "60 Seats",
+    duration: "4 Years",
+    type: "Full Time",
+  },
 ];
 
 const eligibilityCriteria = [
@@ -37,7 +42,6 @@ const courseStructureImages = [
   { id: "be2", label: "BE SEM 2 Course Structure", src: "/Programs/AIDS/BESem2.jpg" },
 ];
 
-// ================== OVERVIEW SECTION ==================
 const overviewData = [
   {
     title: "About Department",
@@ -55,20 +59,27 @@ const overviewData = [
   },
 ];
 
-// ================== MAIN COMPONENT ==================
 export default function FAQSectionAIDS() {
   const [active, setActive] = useState("Overview");
-  const [openOverview, setOpenOverview] = useState(null);
-  const [openEligibility, setOpenEligibility] = useState(null);
 
   return (
-    <section className="w-full bg-[#f7f7f7] text-black py-12">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-secondary mb-8">Department / Admission</h2>
+    <section className="w-full bg-gradient-to-b from-gray-50 to-white text-black py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* LEFT MENU */}
-          <nav className="bg-white rounded-lg shadow-sm p-4 space-y-2 text-sm font-medium">
+        {/* HEADER */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-secondary mb-4">Department of Artificial Intelligence & Data Science</h2>
+          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+            Empowering future innovators with AI knowledge and industry-ready Data Science skills.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+
+          {/* LEFT SIDEBAR */}
+          <nav className="lg:col-span-1 bg-white rounded-xl shadow-sm p-6 space-y-2 border border-gray-100 sticky top-24">
+            <h3 className="font-semibold text-gray-800 mb-4 text-lg">Quick Links</h3>
+
             {[
               "Overview",
               "Sanction Intake",
@@ -80,8 +91,10 @@ export default function FAQSectionAIDS() {
               <button
                 key={tab}
                 onClick={() => setActive(tab)}
-                className={`block w-full text-left px-3 py-2 rounded cursor-pointer hover:bg-gray-100 transition-all ${
-                  active === tab ? "border-l-4 border-secondary bg-gray-50 font-semibold text-secondary" : ""
+                className={`block w-full text-left px-4 py-3 rounded-lg transition-all ${
+                  active === tab
+                    ? "bg-secondary text-white shadow-md"
+                    : "hover:bg-gray-50 text-gray-700 hover:text-secondary"
                 }`}
               >
                 {tab}
@@ -90,117 +103,102 @@ export default function FAQSectionAIDS() {
           </nav>
 
           {/* RIGHT CONTENT */}
-          <div className="md:col-span-2 bg-white rounded-lg shadow-sm p-6 space-y-6">
-            {/* ✅ OVERVIEW */}
+          <div className="lg:col-span-3 bg-white rounded-xl shadow-sm p-8 border border-gray-100">
+            <div className="mb-6 pb-4 border-b border-gray-200">
+              <h3 className="text-2xl font-bold text-secondary">{active}</h3>
+            </div>
+
+            {/* ================= OVERVIEW ================= */}
             {active === "Overview" && (
-              <div>
-                <h3 className="text-lg font-semibold text-secondary mb-4">Overview</h3>
-                {overviewData.map((item, idx) => (
-                  <div key={idx} className="border rounded-md mb-3 overflow-hidden">
-                    <button
-                      onClick={() => setOpenOverview(openOverview === idx ? null : idx)}
-                      className="flex justify-between items-center px-4 py-3 w-full text-left bg-gray-50 hover:bg-gray-100 font-medium"
-                    >
-                      <span className="text-secondary">{item.title}</span>
-                      <span className="text-xl font-bold text-secondary">{openOverview === idx ? "−" : "+"}</span>
-                    </button>
-                    {openOverview === idx && (
-                      <div className="p-4 bg-white text-gray-700 whitespace-pre-line">{item.content}</div>
-                    )}
+              <div className="space-y-4">
+                {overviewData.map((item, i) => (
+                  <div key={i} className="border border-gray-200 rounded-lg">
+                    <details className="group">
+                      <summary className="flex justify-between items-center p-4 cursor-pointer bg-gray-50 hover:bg-gray-100 rounded-lg list-none">
+                        <h4 className="font-semibold text-secondary text-lg">{item.title}</h4>
+                        <span className="transition-transform group-open:rotate-180">▼</span>
+                      </summary>
+
+                      <div className="p-4 text-gray-700 whitespace-pre-line">
+                        {item.content}
+                      </div>
+                    </details>
                   </div>
                 ))}
               </div>
             )}
 
-            {/* ✅ SANCTION INTAKE */}
+            {/* ================= SANCTION INTAKE ================= */}
             {active === "Sanction Intake" && (
-              <div>
-                <h3 className="text-lg font-semibold text-secondary mb-4">Sanctioned Intake</h3>
-                <div className="overflow-x-auto">
-                  <table className="w-full border border-gray-300 text-sm">
-                    <thead className="bg-gray-100">
-                      <tr>
-                        <th className="border p-3 text-left">Program</th>
-                        <th className="border p-3 text-left">Intake</th>
-                        <th className="border p-3 text-left">Duration</th>
-                        <th className="border p-3 text-left">Type</th>
+              <div className="overflow-x-auto border border-gray-200 rounded-lg">
+                <table className="w-full text-sm text-left">
+                  <thead className="bg-gray-50">
+                    <tr>
+                      <th className="p-3 border-b font-semibold">Program</th>
+                      <th className="p-3 border-b font-semibold">Intake</th>
+                      <th className="p-3 border-b font-semibold">Duration</th>
+                      <th className="p-3 border-b font-semibold">Type</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {sanctionIntake.map((row, i) => (
+                      <tr key={i} className="border-b hover:bg-gray-50">
+                        <td className="p-3 font-medium">{row.program}</td>
+                        <td className="p-3">{row.intake}</td>
+                        <td className="p-3">{row.duration}</td>
+                        <td className="p-3">{row.type}</td>
                       </tr>
-                    </thead>
-                    <tbody>
-                      {sanctionIntake.map((row, i) => (
-                        <tr key={i} className="hover:bg-gray-50">
-                          <td className="border p-3 font-medium">{row.program}</td>
-                          <td className="border p-3">{row.intake}</td>
-                          <td className="border p-3">{row.duration}</td>
-                          <td className="border p-3">{row.type}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             )}
 
-            {/* ✅ ELIGIBILITY CRITERIA */}
+            {/* ================= ELIGIBILITY CRITERIA ================= */}
             {active === "Eligibility Criteria" && (
-              <div>
-                <h3 className="text-lg font-semibold text-secondary mb-4">Eligibility Criteria</h3>
-                {eligibilityCriteria.map((item, idx) => (
-                  <div key={idx} className="border rounded-md mb-3">
-                    <button
-                      onClick={() => setOpenEligibility(openEligibility === idx ? null : idx)}
-                      className="flex justify-between items-center px-4 py-3 w-full text-left bg-gray-50 hover:bg-gray-100"
-                    >
-                      <span className="font-semibold text-secondary">{item.program}</span>
-                      <span className="text-xl font-bold text-secondary">{openEligibility === idx ? "−" : "+"}</span>
-                    </button>
-                    {openEligibility === idx && (
-                      <div className="p-4 bg-white text-gray-700 whitespace-pre-line">{item.text}</div>
-                    )}
+              <div className="space-y-4">
+                {eligibilityCriteria.map((item, i) => (
+                  <div key={i} className="border border-gray-200 rounded-lg">
+                    <details className="group">
+                      <summary className="flex justify-between items-center p-4 cursor-pointer bg-gray-50 hover:bg-gray-100 rounded-lg list-none font-semibold text-secondary">
+                        {item.program}
+                        <span className="transition-transform group-open:rotate-180">▼</span>
+                      </summary>
+
+                      <div className="p-4 text-gray-700 whitespace-pre-line">
+                        {item.text}
+                      </div>
+                    </details>
                   </div>
                 ))}
               </div>
             )}
 
-            {/* ✅ ADMISSION PROCEDURE */}
+            {/* ================= ADMISSION PROCEDURE ================= */}
             {active === "Admission Procedure" && (
-              <div>
-                <h3 className="text-lg font-semibold text-secondary mb-4">Admission Procedure</h3>
-                <div className="text-center py-8 bg-gray-50 rounded-lg">
-                  <p className="text-gray-700">
-                    Admission procedure for Academic Year 2024-25 will be updated soon.
-                  </p>
-                </div>
-              </div>
+              <p className="text-gray-600 text-lg">Admission procedure for Academic Year 2024–25 will be updated soon.</p>
             )}
 
-            {/* ✅ FEE STRUCTURE */}
+            {/* ================= FEE STRUCTURE ================= */}
             {active === "Fee Structure" && (
-              <div>
-                <h3 className="text-lg font-semibold text-secondary mb-4">Fee Structure</h3>
-                <div className="text-center py-8 bg-gray-50 rounded-lg">
-                  <p className="text-gray-700 mb-3 whitespace-pre-line">{feeInfo}</p>
-                  <p className="text-sm text-gray-500">Contact Admissions for exact and updated fees.</p>
-                </div>
+              <div className="text-gray-700 whitespace-pre-line bg-gray-50 p-6 rounded-lg border border-gray-200">
+                {feeInfo}
               </div>
             )}
 
-            {/* ✅ SYLLABUS & COURSE STRUCTURE */}
+            {/* ================= SYLLABUS & COURSE STRUCTURE ================= */}
             {active === "Syllabus & Course Structure" && (
-              <div>
-                <h3 className="text-lg font-semibold text-secondary mb-4">Syllabus & Course Structure</h3>
+              <div className="space-y-8">
 
-                {/* PDF Links */}
-                <div className="space-y-3 mb-6">
-                  {syllabusList.map((s) => (
-                    <div key={s.id} className="flex items-center justify-between border rounded-md p-3 bg-gray-50">
-                      <div className="font-semibold text-secondary">{s.label}</div>
-                      <a
-                        href={s.pdf}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-3 py-2 border rounded text-sm font-medium hover:bg-gray-100"
-                      >
+                {/* PDFs */}
+                <div className="space-y-4">
+                  {syllabusList.map((item) => (
+                    <div
+                      key={item.id}
+                      className="flex flex-col sm:flex-row sm:items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50"
+                    >
+                      <h5 className="font-semibold text-gray-800">{item.label}</h5>
+                      <a href={item.pdf} target="_blank" className="px-4 py-2 bg-secondary text-white rounded-md mt-2 sm:mt-0">
                         View / Download
                       </a>
                     </div>
@@ -209,18 +207,17 @@ export default function FAQSectionAIDS() {
 
                 {/* Course Structure Images */}
                 <div>
-                  <h4 className="font-semibold text-secondary mb-3">Course Structure (click to view full image)</h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <h4 className="font-semibold text-secondary mb-3">Course Structure</h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {courseStructureImages.map((img) => (
-                      <div key={img.id} className="border rounded overflow-hidden bg-white">
+                      <div key={img.id} className="border rounded-lg shadow-sm bg-white overflow-hidden">
                         <div className="relative w-full h-48">
-                          <a href={img.src} target="_blank" rel="noopener noreferrer">
+                          <a href={img.src} target="_blank">
                             <Image
                               src={img.src}
                               alt={img.label}
                               fill
-                              className="object-contain"
-                              sizes="(max-width: 768px) 100vw, 33vw"
+                              className="object-contain p-2"
                             />
                           </a>
                         </div>
@@ -229,10 +226,13 @@ export default function FAQSectionAIDS() {
                     ))}
                   </div>
                 </div>
+
               </div>
             )}
+
           </div>
         </div>
+
       </div>
     </section>
   );

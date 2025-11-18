@@ -298,7 +298,7 @@ export default function Computer() {
               <div className="flex-1">
                 <div className="w-full h-[300px] relative rounded-lg overflow-hidden">
                   <Image
-                    src="/images/career-opportunities.jpg"
+                    src="/Programs/6.jpg"
                     alt="Career Opportunities in AI and Future Technologies"
                     fill
                     className="object-cover"
@@ -320,7 +320,165 @@ export default function Computer() {
           <div ref={faqRef}>
             <FAQSection />
           </div>
-  
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex justify-center items-center z-[60] animate-in fade-in-0 duration-300">
+          <div className="bg-white w-[90%] md:w-[680px] p-6 rounded-lg shadow-lg relative max-h-[90vh] overflow-y-auto animate-in fade-in-0 zoom-in-95 duration-500">
+            {/* Close Button */}
+            <button
+              onClick={toggleModal}
+              aria-label="Close"
+              className="absolute top-3 right-3 text-gray-600 hover:text-red-600 text-2xl transition-all duration-300 hover:scale-110"
+            >
+              ×
+            </button>
+
+            <h2 className="text-2xl font-bold text-center mb-6 text-blue-900 animate-in fade-in-0 slide-in-from-top-2 duration-500">
+              Enquire Now
+            </h2>
+
+            <form className="space-y-4">
+              {/* Name & Email */}
+              <input
+                type="text"
+                placeholder="Enter Name *"
+                className="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105"
+              />
+              <input
+                type="email"
+                placeholder="Enter Email Address *"
+                className="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105"
+              />
+
+              {/* Mobile */}
+              <div className="flex gap-2">
+                <select className="w-24 border border-gray-300 rounded-md px-2 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105">
+                  <option value="" selected className="text-gray-400">
+                    +91
+                  </option>
+                  <option value="" className="text-gray-400">
+                    +92
+                  </option>
+                </select>
+                <input
+                  type="tel"
+                  placeholder="Enter Mobile Number *"
+                  className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105"
+                />
+              </div>
+
+              {/* State & City */}
+              <div className="flex gap-2">
+                <select className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105">
+                  <option value="" disabled selected className="text-gray-400">
+                    Select State *
+                  </option>
+                  <option value="Maharashtra" className="text-gray-900">
+                    Maharashtra
+                  </option>
+                  <option value="Karnataka" className="text-gray-900">
+                    Karnataka
+                  </option>
+                </select>
+                <select className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105">
+                  <option value="" disabled selected className="text-gray-400">
+                    Select City *
+                  </option>
+                  <option value="Pune" className="text-gray-900">
+                    Pune
+                  </option>
+                  <option value="Mumbai" className="text-gray-900">
+                    Mumbai
+                  </option>
+                </select>
+              </div>
+
+              {/* Discipline & Course */}
+              <div className="flex gap-2">
+                <select className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105">
+                  <option value="" disabled selected className="text-gray-400">
+                    Select Discipline Applying For *
+                  </option>
+                  <option value="Engineering" className="text-gray-900">
+                    Engineering
+                  </option>
+                  <option value="Management" className="text-gray-900">
+                    Management
+                  </option>
+                </select>
+                <select className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105">
+                  <option value="" disabled selected className="text-gray-400">
+                    Select Course *
+                  </option>
+                  <option
+                    value="Computer Engineering"
+                    className="text-gray-900"
+                  >
+                    Computer Engineering
+                  </option>
+                  <option
+                    value="Mechanical Engineering"
+                    className="text-gray-900"
+                  >
+                    Mechanical Engineering
+                  </option>
+                </select>
+              </div>
+
+              {/* Program */}
+              <select className="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105">
+                <option value="" disabled selected className="text-gray-400">
+                  Select Program *
+                </option>
+                <option value="B.Tech" className="text-gray-900">
+                  B.Tech
+                </option>
+                <option value="M.Tech" className="text-gray-900">
+                  M.Tech
+                </option>
+              </select>
+
+              {/* CET Score */}
+              <input
+                type="text"
+                placeholder="Enter CET Score"
+                className="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105"
+              />
+
+              {/* Captcha */}
+              <div className="flex gap-3 items-center">
+                <div className="bg-gray-100 border border-gray-300 rounded-md w-1/2 flex items-center justify-center py-2 text-gray-700 font-bold select-none transition-all duration-300 hover:shadow-md">
+                  8fcb09
+                </div>
+                <input
+                  type="text"
+                  placeholder="Enter Captcha"
+                  className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105"
+                />
+              </div>
+
+              {/* Checkbox */}
+              <div className="flex items-center gap-2 mt-2">
+                <input
+                  type="checkbox"
+                  id="agreeModal"
+                  className="transition-all duration-300 hover:scale-110"
+                />
+                <label htmlFor="agreeModal" className="text-sm text-gray-700">
+                  I agree to receive information regarding my submitted enquiry*
+                </label>
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                className="w-full bg-[#E85C0D] hover:bg-[#d14f08] text-white font-semibold py-2 rounded-md transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              >
+                SUBMIT
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
   
 
 

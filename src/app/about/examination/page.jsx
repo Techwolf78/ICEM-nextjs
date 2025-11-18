@@ -1,10 +1,13 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import { Clock, Mail, Phone } from "lucide-react";
 
 export default function Examination() {
   const [activeFAQ, setActiveFAQ] = useState(null);
   const CompBrochure = "/pdfs/BEComp.pdf";
+  const ExamCommittee = "/ExamCommittee.pdf";
+  const ExamFees = "/ExamFees.pdf";
 
   const rightLinks = [
     "Overview",
@@ -42,7 +45,7 @@ export default function Examination() {
         />
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
-            Examination System
+            Examination Section
           </h1>
         </div>
       </div>
@@ -102,149 +105,104 @@ export default function Examination() {
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 divide-y divide-gray-200">
             {[
               {
-                title: "Examination Schedule - Semester I & II",
-                pdf: CompBrochure,
-                description:
-                  "Complete examination timetable for all undergraduate and postgraduate programs including theory and practical examinations.",
-              },
-              {
-                title: "Examination Rules & Regulations 2024-25",
-                pdf: CompBrochure,
-                description:
-                  "Official examination rules, code of conduct, and guidelines for students appearing for university examinations.",
-              },
-              {
                 title: "Revaluation & Verification Process",
-                pdf: CompBrochure,
-                description:
-                  "Detailed procedure for applying for answer sheet revaluation and verification of marks.",
-              },
-              {
-                title: "ATKT (Allowed to Keep Term) Rules",
-                pdf: CompBrochure,
-                description:
-                  "Guidelines and eligibility criteria for ATKT students and examination patterns.",
+                description: (
+                  <div className="space-y-4 text-sm leading-relaxed text-gray-700">
+                    <p>
+                      After the declaration of results, students can apply for
+                      revaluation through their ERP login by paying the
+                      prescribed revaluation and photocopy fees.
+                    </p>
+
+                    <p>
+                      Once the application is submitted, students will receive
+                      the photocopy of their answer sheet on their registered
+                      email ID.
+                    </p>
+
+                    <p>
+                      Students must verify the photocopy with the respective
+                      subject teacher within <strong>2 days</strong>. If any
+                      discrepancy or grievance is found, the student should
+                      apply for revaluation within the given timeline.
+                    </p>
+
+                    <p>
+                      After completion of the revaluation process, the revised
+                      result will be declared accordingly.
+                    </p>
+
+                    <div className="bg-yellow-100 border-l-4 border-yellow-400 p-3 text-gray-800 text-sm">
+                      <p className="font-semibold">Important Note:</p>
+                      <p className="mt-1">
+                        The marks obtained after revaluation will be treated as
+                        final. No further changes or requests will be
+                        entertained afterwards.
+                      </p>
+                    </div>
+                  </div>
+                ),
               },
               {
                 title: "Examination Fee Structure 2024-25",
-                pdf: CompBrochure,
+                pdf: ExamFees,
                 description:
                   "Complete fee structure for various examinations including regular, backlog, and improvement examinations.",
               },
+              // 🔹 NEW SECTION 2: EXAMINATION COMMITTEE
               {
-                title: "Hall Ticket Download Guidelines",
-                pdf: CompBrochure,
+                title: "Examination Committee (2024-25)",
+                pdf: ExamCommittee,
                 description:
-                  "Step-by-step process for downloading hall tickets and important instructions for examination day.",
+                  "The Examination Committee is responsible for coordinating examination activities, ensuring proper conduct of theory and practical exams, maintaining confidentiality, and overseeing smooth execution of evaluation and result processes.",
               },
 
               // 🔹 NEW SECTION 1: CONTROLLER OF EXAMINATION
               {
                 title: "Controller & Examination Officers",
                 description: (
-                  <div className="space-y-6">
+                  <div className="space-y-6 text-sm leading-relaxed text-gray-700">
+                    {/* Controller of Examination */}
                     <div>
                       <h4 className="font-semibold text-gray-900">
-                        Mrs. Meenakshi Patil
+                        Prof. Meenakshi Patil
                       </h4>
-                      <p className="text-sm">
-                        <strong>Designation:</strong> Controller of Examination
+                      <p>
+                        <strong>Designation:</strong> Controller of Examination{" "}
                         <br />
                         <strong>Qualification:</strong> ME Electronics
-                        Engineering, First Class. PhD (Pursuing)
-                        <br />
-                        <strong>Total Experience:</strong> 16 years
+                        Engineering, First Class. PhD (Pursuing) <br />
+                        <strong>Total Experience:</strong> 18 years
                       </p>
                     </div>
+
+                    {/* Deputy Controller */}
+                    <div>
+                      <h4 className="font-semibold text-gray-900">
+                        Prof. Mani Shankar Pandey
+                      </h4>
+                      <p>
+                        <strong>Designation:</strong> Deputy Controller of
+                        Examination <br />
+                        <strong>Qualification:</strong> MBA Retail Marketing,
+                        PhD (Pursuing) <br />
+                        <strong>Total Experience:</strong> 8 years
+                      </p>
+                    </div>
+
+                    {/* Examination Officer */}
                     <div>
                       <h4 className="font-semibold text-gray-900">
                         Mr. Somnath Bhote
                       </h4>
-                      <p className="text-sm">
-                        <strong>Designation:</strong> Examination Officer
-                        <br />
+                      <p>
+                        <strong>Designation:</strong> Examination Officer <br />
                         <strong>Qualification:</strong> M.A. Economics, B.Lib,
-                        M.Lib
-                        <br />
+                        M.Lib <br />
                         <strong>Total Experience:</strong> 14 years
                       </p>
                     </div>
                   </div>
-                ),
-              },
-
-              // 🔹 NEW SECTION 2: EXAMINATION COMMITTEE
-              {
-                title: "Examination Committee (2024-25)",
-                description: (
-                  <table className="w-full border border-gray-300 text-sm">
-                    <thead className="bg-gray-100 text-gray-800">
-                      <tr>
-                        <th className="border px-3 py-2">Sr. No</th>
-                        <th className="border px-3 py-2">Name</th>
-                        <th className="border px-3 py-2">Designation</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {[
-                        ["1", "Dr. Nilesh Uke, Principal, ICEM", "Chairman"],
-                        [
-                          "2",
-                          "Dr. Mahesh Kakade, Director, BEE-SPPU, Pune",
-                          "Member nominated by Principal, ICEM",
-                        ],
-                        [
-                          "3",
-                          "Dr. Saurabh Gupta, Dean Academics, ICEM",
-                          "Vice – Chairman",
-                        ],
-                        [
-                          "4",
-                          "Mrs. Pallavi Chavan, Assistant Prof. AI & DS",
-                          "Member",
-                        ],
-                        [
-                          "5",
-                          "Mrs. Ashwini Gaikwad, Assistant Prof. Mechanical",
-                          "Member",
-                        ],
-                        ["6", "Dr. Manjusha Tomar, Asso. Prof. FE", "Member"],
-                        [
-                          "7",
-                          "Mrs. Swetkranti Taware, Assistant Prof. Computer",
-                          "Member",
-                        ],
-                        [
-                          "8",
-                          "Dr. Pravin Thorat, Assistant Prof. MBA",
-                          "Member",
-                        ],
-                        [
-                          "9",
-                          "Mrs. Shreya Shennai, Assistant Prof. MCA",
-                          "Member",
-                        ],
-                        [
-                          "10",
-                          "Mr. Sudhir Sawarkar, Assistant Prof. E&TC",
-                          "Member",
-                        ],
-                        [
-                          "11",
-                          "Mrs. Meenakshi Patil, COE, ICEM",
-                          "Member Secretary",
-                        ],
-                      ].map(([no, name, designation]) => (
-                        <tr key={no} className="border">
-                          <td className="border px-3 py-2 text-center">{no}</td>
-                          <td className="border px-3 py-2">{name}</td>
-                          <td className="border px-3 py-2 text-center">
-                            {designation}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
                 ),
               },
 
@@ -335,27 +293,21 @@ export default function Examination() {
 
           {/* Additional Examination Information */}
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
-              <h4 className="font-semibold text-blue-800 mb-2">
-                Exam Timelines
+            <div className="bg-green-50 p-4 rounded-lg col-span-2 border border-green-200">
+              <h4 className="font-semibold text-green-800 mb-4">
+                For examination-related queries, contact our examination section
+                during office hours.
               </h4>
-              <ul className="text-sm text-blue-700 space-y-1">
-                <li>• Form Submission: 15 days before exams</li>
-                <li>• Hall Tickets: 7 days before exams</li>
-                <li>• Results: Within 45 days of exams</li>
-                <li>• Revaluation: Within 15 days of results</li>
-              </ul>
-            </div>
-
-            <div className="bg-green-50 p-4 rounded-lg border border-green-200">
-              <h4 className="font-semibold text-green-800 mb-2">
-                Important Contacts
-              </h4>
-              <ul className="text-sm text-green-700 space-y-1">
-                <li>• Exam Controller: Dr. Smitha Patil</li>
-                <li>• Deputy Controller: Prof. Rajesh Kumar</li>
-                <li>• Exam Section: exam@indiraicem.ac.in</li>
-                <li>• Helpline: 020-12345678</li>
+              <ul className="text-sm text-green-700 space-y-3">
+                <li className="flex gap-4 items-center">
+                  <Mail /> Email: exam@indiraicem.ac.in
+                </li>
+                <li className="flex gap-4 items-center">
+                  <Phone /> Helpline: 02114 – 661529
+                </li>
+                <li className="flex gap-4 items-center">
+                  <Clock /> Timing: 10:00 AM – 5:00 PM (Mon–Sat)
+                </li>
               </ul>
             </div>
           </div>
@@ -401,7 +353,7 @@ export default function Examination() {
             </ul>
           </div>
 
-          {/* Important Dates Box */}
+          {/* Important Dates Box
           <div className="bg-yellow-500/20 border border-yellow-500/30 rounded-lg p-4 text-sm">
             <h4 className="font-semibold text-yellow-400 mb-2">
               Upcoming Exams
@@ -420,21 +372,27 @@ export default function Examination() {
                 <span className="text-yellow-400">Nov 30</span>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Contact Box */}
-          <div className="bg-secondary/20 border border-secondary/30 rounded-lg p-4 text-sm">
-            <h4 className="font-semibold text-secondary mb-2">Exam Helpline</h4>
+          <div className="bg-secondary/10 border border-secondary/40 rounded-lg p-4 text-sm">
+            <h4 className="font-semibold text-white mb-2">Exam Helpline</h4>
+
             <p className="text-gray-300 leading-relaxed">
               For examination-related queries, contact our examination section
               during office hours.
             </p>
-            <p className="mt-3 text-secondary font-medium">
-              ✉ exam@indiraicem.ac.in
+
+            <p className="mt-3 text-white font-medium flex items-center gap-2">
+              <span>✉</span> exam@indiraicem.ac.in
             </p>
-            <p className="text-secondary font-medium">📞 +91 98765 43210</p>
+
+            <p className="text-white font-medium flex items-center gap-2">
+              <span>📞</span> 02114 – 661529
+            </p>
+
             <p className="text-gray-400 text-xs mt-2">
-              Timing: 10:00 AM - 5:00 PM (Mon-Sat)
+              Timing: 10:00 AM – 5:00 PM (Mon–Sat)
             </p>
           </div>
         </div>

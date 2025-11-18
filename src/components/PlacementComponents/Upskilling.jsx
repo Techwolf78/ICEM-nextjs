@@ -82,8 +82,13 @@ export default function Upskilling() {
 
           {/* Interpersonal Skills */}
           <div className="flex flex-col md:flex-row bg-white border border-gray-200 shadow-sm mb-6 overflow-hidden rounded-lg">
-            <div className="bg-gray-50 md:w-[35%] flex items-center justify-center text-secondary font-semibold text-lg p-6 border-r border-gray-200">
-              (Image here)
+            <div className="relative w-full flex-1 min-h-[200px] bg-gray-50 md:w-[35%] flex items-center justify-center text-secondary font-semibold text-lg p-6 border-r border-gray-200">
+              <Image
+                src="/Interpersonal Skills.jpg"
+                alt="Interpersonal Skills"
+                fill
+                className="object-cover"
+              />
             </div>
 
             <div className="p-6 md:w-[65%]">
@@ -107,8 +112,13 @@ export default function Upskilling() {
 
           {/* Aptitude */}
           <div className="flex flex-col md:flex-row bg-white border border-gray-200 shadow-sm overflow-hidden rounded-lg">
-            <div className="bg-gray-50 md:w-[35%] flex items-center justify-center text-secondary font-semibold text-lg p-6 border-r border-gray-200">
-              (Image here)
+            <div className="relative w-full flex-1 min-h-[350px] bg-gray-50 md:w-[35%] flex items-center justify-center text-secondary font-semibold text-lg p-6 border-r border-gray-200">
+              <Image
+                src="/Aptitude.jpg"
+                alt="Aptitude"
+                fill
+                className="object-cover"
+              />
             </div>
 
             <div className="p-6 md:w-[65%]">

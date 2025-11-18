@@ -1,16 +1,17 @@
+import Image from "next/image";
 export default function ResearchLab() {
   return (
     <>
-      <section className="py-10 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center border border-gray-200 shadow-md p-8 bg-white rounded-lg">
+      <section className="py-6 md:py-10 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center border border-gray-200 shadow-md p-4 md:p-8 bg-white rounded-lg">
             {/* Left Content */}
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-4">
+            <div className="order-2 md:order-1">
+              <h2 className="text-2xl md:text-4xl font-bold text-secondary mb-4">
                 Research Labs & Facilities
               </h2>
 
-              <p className="text-gray-700 leading-relaxed mb-6">
+              <p className="text-gray-700 leading-relaxed mb-6 text-base md:text-lg">
                 ICEM stands as a hub of innovation and experiential learning,
                 where technology, creativity, and research converge. Every
                 laboratory and facility is designed to nurture curiosity,
@@ -25,7 +26,7 @@ export default function ResearchLab() {
               </h3>
 
               {/* ✅ Replaced Logos with List */}
-              <ul className="list-disc pl-6 space-y-2 text-gray-700">
+              <ul className="list-disc pl-5 space-y-2 text-gray-700 text-sm md:text-base">
                 <li>Programming Labs – I & II</li>
                 <li>Artificial Intelligence & Research Labs – I & II</li>
                 <li>Project Lab</li>
@@ -40,8 +41,14 @@ export default function ResearchLab() {
             </div>
 
             {/* Right Image Placeholder */}
-            <div className="w-full h-[580px] bg-gray-200 flex items-center justify-center text-gray-500 text-lg font-medium rounded-md">
-              (image here)
+            <div className=" relative w-full h-[300px] md:h-[580px] rounded-md overflow-hidden order-1 md:order-2 shadow-md shadow-gray-400 bg-white
+            ">
+              <Image
+                src="/researchlab.jpg"
+                alt="Research Lab"
+                fill
+                className="object-cover rounded-md"
+              />
             </div>
           </div>
         </div>

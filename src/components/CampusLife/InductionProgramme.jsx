@@ -10,27 +10,6 @@ export default function InductionProgramme() {
   const bannerImg = "/BannerOverviewPage.jpg";
   const beComp = "/BEComp.pdf";
 
-  const rightLinks = [
-    "Student Welfare",
-    "IIC",
-    "Induction Programme",
-    "Student Council",
-    "National Service Scheme (NSS)",
-    "ICEM Awards",
-    "Academic Cell",
-    "Academic Calendar",
-    "Statutory Committee",
-    "Non-Statutory Committee",
-    "Grievance Redressal",
-  ];
-
-  const quickLinks = [
-    "Eligibility & Fees",
-    "Download Certificate Formats",
-    "Admission Helpline",
-    "Availability of Forms",
-    "Apply Online",
-  ];
 
   const activityReports = [
     "Report 2023-2024",

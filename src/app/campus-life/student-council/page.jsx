@@ -15,7 +15,7 @@ function IcemStudentCouncil() {
     "Induction Programme",
     "Student Council",
     "National Service Scheme (NSS)",
-    "ICEM Awards",
+    "Award Functions",
     "Academic Cell",
     "Academic Calendar",
     "Statutory Committee",

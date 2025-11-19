@@ -104,7 +104,7 @@ const Navbar = () => {
               link: "/campus-life/student-welfare#student-council",
             },
             { label: "National Service Scheme", link: "/campus-life/nss" },
-            { label: "ICEM Awards", link: "/campus-life/icem-awards" },
+            { label: "Award Functions", link: "/campus-life/icem-awards" },
             { label: "Academics", link: "/campus-life/academics" },
             { label: "Committies", link: "/campus-life/committees" },
             {

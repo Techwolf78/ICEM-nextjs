@@ -1,63 +1,25 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
 import Image from "next/image";
-import axios from "axios";
-import toast from "react-hot-toast";
 
-const API_URL = "https://cms-backend-icem.onrender.com/api/banners/type/placement"; // ✅ Placement banners only
-
-const PlacementCarousel = () => {
-  const [desktopImages, setDesktopImages] = useState([]);
-  const [mobileImages, setMobileImages] = useState([]);
+export default function PlacementCarousel() {
+  const [desktopImages, setDesktopImages] = useState([
+    "/banners/placement-banner1.jpg",
+    "/banners/placement-banner2.jpg",
+  ]);
+  const [mobileImages, setMobileImages] = useState([
+    "/banners/placement-banner1.jpg",
+    "/banners/placement-banner2.jpg",
+  ]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(true);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const sliderRef = useRef(null);
-
-  // ✅ Fetch placement banners
-  useEffect(() => {
-    const fetchImages = async () => {
-      try {
-        const res = await axios.get(API_URL);
-        if (res.data && res.data.length > 0) {
-          const desktopUrls = res.data.map((b) => b.desktopImageUrl).filter(Boolean);
-          const mobileUrls = res.data.map((b) => b.mobileImageUrl).filter(Boolean);
-
-          setDesktopImages(desktopUrls);
-          setMobileImages(mobileUrls);
-        } else {
-          toast("No placement banners found — using fallback images");
-          setDesktopImages([
-            "/banners/placement-banner1.jpg",
-            "/banners/placement-banner2.jpg",
-          ]);
-          setMobileImages([
-            "/banners/placement-mobile1.jpg",
-            "/banners/placement-mobile2.jpg",
-          ]);
-        }
-      } catch (error) {
-        console.error("Error fetching placement banners:", error);
-        toast.error("Failed to load placement banners from server");
-        setDesktopImages([
-          "/banners/placement-banner1.jpg",
-          "/banners/placement-banner2.jpg",
-        ]);
-        setMobileImages([
-          "/banners/placement-mobile1.jpg",
-          "/banners/placement-mobile2.jpg",
-        ]);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchImages();
-  }, []);
 
   // ✅ Auto slide
   useEffect(() => {
-    if (!desktopImages.length && !mobileImages.length) return;
+    const total = desktopImages.length || mobileImages.length;
+    if (total === 0) return;
     const interval = setInterval(() => handleNext(), 4000);
     return () => clearInterval(interval);
   }, [currentIndex, desktopImages, mobileImages]);
@@ -94,12 +56,18 @@ const PlacementCarousel = () => {
       )}
 
       {/* ✅ Desktop Slider */}
-      <div className={`hidden md:block ${loading ? "opacity-0" : "opacity-100"}`}>
+      <div
+        className={`hidden md:block ${loading ? "opacity-0" : "opacity-100"}`}
+      >
         {desktopImages.length > 0 ? (
           <>
             <div
               ref={sliderRef}
-              className={`flex z-0 ${isTransitioning ? "transition-transform duration-700 ease-in-out" : ""}`}
+              className={`flex z-0 ${
+                isTransitioning
+                  ? "transition-transform duration-700 ease-in-out"
+                  : ""
+              }`}
               style={{
                 transform: `translateX(-${currentIndex * 100}%)`,
               }}
@@ -112,7 +80,6 @@ const PlacementCarousel = () => {
                   className="w-full object-cover flex-shrink-0"
                   height={700}
                   width={1700}
-                  quality={100}
                   unoptimized={true}
                   priority
                 />
@@ -125,7 +92,6 @@ const PlacementCarousel = () => {
                 <button
                   key={i}
                   onClick={() => handleDotClick(i)}
-                  // ensure the buttons can receive clicks even if other elements overlap
                   className={`h-1.5 rounded-full transition-all duration-300 focus:outline-none pointer-events-auto ${
                     currentIndex % desktopImages.length === i
                       ? "bg-cyan-400 w-8"
@@ -146,12 +112,18 @@ const PlacementCarousel = () => {
       </div>
 
       {/* ✅ Mobile Slider (no dots) */}
-      <div className={`block md:hidden ${loading ? "opacity-0" : "opacity-100"}`}>
+      <div
+        className={`block md:hidden ${loading ? "opacity-0" : "opacity-100"}`}
+      >
         {mobileImages.length > 0 ? (
           <>
             <div
               ref={sliderRef}
-              className={`flex z-0 ${isTransitioning ? "transition-transform duration-700 ease-in-out" : ""}`}
+              className={`flex z-0 ${
+                isTransitioning
+                  ? "transition-transform duration-700 ease-in-out"
+                  : ""
+              }`}
               style={{
                 transform: `translateX(-${currentIndex * 100}%)`,
               }}
@@ -164,7 +136,6 @@ const PlacementCarousel = () => {
                   className="w-full object-cover flex-shrink-0"
                   height={400}
                   width={700}
-                  quality={100}
                   unoptimized={true}
                 />
               ))}
@@ -180,6 +151,4 @@ const PlacementCarousel = () => {
       </div>
     </div>
   );
-};
-
-export default PlacementCarousel;
+}

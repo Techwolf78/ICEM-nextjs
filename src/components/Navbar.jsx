@@ -149,10 +149,11 @@ const Navbar = () => {
               label: "Electronics and Telecommunication",
               link: "/programs/entc",
             },
-            { label: "First Year Engineering", link: "/programs/fye" },
+        
             { label: "Information Technology", link: "/programs/it" },
             { label: "Integrated MBA (BBA + MBA)", link: "/programs/imba" },
             { label: "Integrated MCA (BCA + MCA)", link: "/programs/imca" },
+            { label: "Civil Engineering", link: "/programs/civil" },
           ],
         },
         {

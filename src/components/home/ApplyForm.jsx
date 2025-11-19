@@ -84,7 +84,8 @@ export default function ApplyForm({ variant = "card" }) {
 
   return (
     <div
-      className={`w-full ${
+    id="contact-form"
+      className={`w-full  ${
         isModal
           ? "p-0"
           : "bg-white rounded-lg p-6 shadow-md border border-gray-200"

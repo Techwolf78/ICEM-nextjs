@@ -243,8 +243,8 @@ export default function FAQSectionComputer() {
   type: "table",
   content: [
     {
-      program: "B.Tech AIDS Engineering",
-      intake: "60 Seats",
+      program: "B.Tech Computer Engineering(Dummy)",
+      intake: "120 Seats",
       duration: "4 Years",
       type: "Full Time"
     }
@@ -254,8 +254,7 @@ export default function FAQSectionComputer() {
 "Eligibility Criteria": {
   type: "text",
   content: `
-Eligibility for admission to B.Tech Computer Engineering requires candidates to have passed 10+2 with Physics and Mathematics as compulsory subjects along with Chemistry/ Biology/ Vocational subject. 
-Candidates must also secure a valid score in the entrance examination as per government norms.`
+Under Progress`
 },
 
 

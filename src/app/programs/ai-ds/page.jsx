@@ -98,21 +98,36 @@ export default function AIDS() {
 
             {/* Buttons */}
             <div className="flex gap-4 mt-6">
-              <button
-                onClick={toggleModal}
-                className="bg-secondary text-white px-8 py-3 rounded-lg font-semibold 
-              "
-              >
-                Enquire Now
-              </button>
+  <button
+  onClick={toggleModal}
+  className="relative px-10 py-3 font-semibold rounded-xl
+  text-white 
+  bg-gradient-to-r from-cyan-400 to-sky-400
+  border border-neutral-800
+  shadow-[6px_6px_0px_0px_#e5e7eb]
+  transition-all duration-200
+  hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#e5e7eb]"
+>
+  Enquire Now
+</button>
 
-              <button
-                onClick={handleBrochureDownload}
-                className="bg-secondary text-white px-8 py-3 rounded-lg"
-              >
-                Download Brochure
-              </button>
-            </div>
+
+  <button
+  onClick={handleBrochureDownload}
+  className="relative px-10 py-3 font-semibold rounded-xl
+  text-white 
+  bg-gradient-to-r from-cyan-400 to-sky-400
+  border border-neutral-800
+  shadow-[6px_6px_0px_0px_#e5e7eb]
+  transition-all duration-200
+  hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#e5e7eb]"
+>
+  Download Brochure
+</button>
+
+</div>
+
+
           </div>
         </div>
 

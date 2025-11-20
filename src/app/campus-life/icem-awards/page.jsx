@@ -68,7 +68,7 @@ const IcemAwards = () => {
           priority
           className="transition-transform duration-700 ease-out "
         />
-        <div className="absolute top-1/2 left-1/2 bg-black/10 flex items-center justify-center">
+        <div className="absolute top-1/2 -translate-y-1/2 left-1/2  bg-black/10 flex items-center justify-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg transform transition-all duration-500 ease-out hover:scale-105">
             Awards & Achievements
           </h1>

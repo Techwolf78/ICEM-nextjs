@@ -256,7 +256,7 @@ export default function MBA() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 px-6">
           <div>
             <h4 className="font-semibold text-lg mb-2">🕓 Course Duration</h4>
-            <p className="text-gray-700">The MBA program lasts 2 years.</p>
+            <p className="text-gray-700">The MBA Programme lasts 2 years.</p>
           </div>
 
           <div>
@@ -324,7 +324,7 @@ export default function MBA() {
             <p className="text-gray-700 mb-6">{s.overview}</p>
 
             <h3 className="text-xl font-semibold text-secondary mb-3">
-              Program Structure
+              Programme Structure
             </h3>
 
             <ul className="list-disc list-inside space-y-2 text-gray-800">
@@ -347,7 +347,7 @@ export default function MBA() {
       <div className="w-full bg-[#f7f7f7] py-16 text-black">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-secondary mb-10">
-            Program Highlights
+            Programme Highlights
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -524,7 +524,7 @@ export default function MBA() {
               {/* Program */}
               <select className="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105">
                 <option value="" disabled selected className="text-gray-400">
-                  Select Program *
+                  Select Programme *
                 </option>
                 <option value="B.Tech" className="text-gray-900">
                   B.Tech

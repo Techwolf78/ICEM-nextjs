@@ -68,14 +68,14 @@ export default function Computer() {
                    <div className="relative max-w-[1500px] px-6 md:px-12 lg:px-20 z-20">
                      <div className="max-w-3xl text-white">
                        <h2 className="text-4xl md:text-5xl font-bold leading-snug">
-                         2-Year Master of Computer Applications (MCA) Program <br></br>
+                         2-Year Master of Computer Applications (MCA) Programme <br></br>
                          <span className="bg-gradient-to-br from-cyan-400  to-sky-400 bg-clip-text text-transparent font-extrabold ">
                            Advancing Expertise in Software Development and Systems Architecture
                          </span>
                        </h2>
            
                        <p className="mt-4 text-white/80 leading-relaxed max-w-2xl">
-                         This intensive postgraduate program is designed to build upon foundational computing knowledge, delivering advanced skills in software engineering, application development, and modern IT infrastructure. It prepares students for leadership roles in the creation and management of complex software solutions.
+                         This intensive postgraduate Programme is designed to build upon foundational computing knowledge, delivering advanced skills in software engineering, application development, and modern IT infrastructure. It prepares students for leadership roles in the creation and management of complex software solutions.
                        </p>
            
                        {/* Floating Stat Cards */}
@@ -144,7 +144,7 @@ export default function Computer() {
                   onClick={scrollToFAQ}
                   className="text-gray-700 cursor-pointer hover:text-blue-600 hover:underline transition-colors"
                 >
-                  Click here to read more about the eligibility criteria for our MCA Program.
+                  Click here to read more about the eligibility criteria for our MCA Programme.
                 </p>
               </div>
             </div>
@@ -169,7 +169,7 @@ export default function Computer() {
         </p>
 
         <h3 className="font-semibold text-lg sm:text-xl text-secondary mb-3">
-          Program Structure
+          Programme Structure
         </h3>
 
         <ul className="list-disc list-inside space-y-2 text-gray-800 text-sm sm:text-base">
@@ -194,7 +194,7 @@ export default function Computer() {
           <div className="w-full bg-[#f7f7f7] py-16 text-black">
             <div className="max-w-7xl mx-auto px-6 text-center">
               <h2 className="text-3xl font-bold text-secondary mb-4">
-                Program Highlights
+                Programme Highlights
               </h2>
               <p className="text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
                 Our MCA programme is structured to transform students into proficient software architects and developers. It emphasizes a strong theoretical foundation coupled with hands-on learning using industry-standard tools and methodologies.
@@ -263,7 +263,7 @@ export default function Computer() {
                       Industry-Aligned Curriculum
                     </h3>
                     <p className="text-gray-700 text-sm leading-relaxed">
-                      <span className="font-bold">Focus on Emerging Technologies : </span>The program incorporates cutting-edge topics like cloud computing, data analytics, and mobile application development, ensuring graduates possess skills relevant to current market demands.
+                      <span className="font-bold">Focus on Emerging Technologies : </span>The Programme incorporates cutting-edge topics like cloud computing, data analytics, and mobile application development, ensuring graduates possess skills relevant to current market demands.
                     </p>
                   </div>
                 </div>
@@ -430,7 +430,7 @@ export default function Computer() {
               {/* Program */}
               <select className="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105">
                 <option value="" disabled selected className="text-gray-400">
-                  Select Program *
+                  Select Programme *
                 </option>
                 <option value="B.Tech" className="text-gray-900">
                   B.Tech

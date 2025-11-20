@@ -81,7 +81,7 @@ export default function Civil() {
           </h2>
 
           <p className="text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
-            The Civil Engineering program at ICEM blends strong theoretical
+            The Civil Engineering Programme at ICEM blends strong theoretical
             foundations with practical exposure through latest software,
             cutting-edge construction practices, and hands-on learning across key
             Civil Engineering domains.

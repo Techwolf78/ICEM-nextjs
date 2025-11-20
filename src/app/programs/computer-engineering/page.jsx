@@ -67,7 +67,7 @@ export default function Computer() {
         <div className="relative max-w-[1500px] px-6 md:px-12 lg:px-20 z-20">
           <div className="max-w-3xl text-white">
             <h2 className="text-4xl md:text-5xl font-bold leading-snug">
-              4-Year B.Tech Computer Engineering Program <br />
+              4-Year B.Tech Computer Engineering Programme <br />
               with specialisation in <br />
               <span className="bg-gradient-to-br from-cyan-400 to-sky-400 bg-clip-text text-transparent font-extrabold">
                 Advanced Computing & Emerging Technologies
@@ -79,7 +79,7 @@ export default function Computer() {
               comprehensive foundation in software, hardware, and system design
               while integrating modern innovations in cloud computing,
               artificial intelligence, cybersecurity, and data analytics. The
-              program prepares students for dynamic careers in technology and
+              Programme prepares students for dynamic careers in technology and
               innovation-driven industries.
             </p>
 
@@ -173,7 +173,7 @@ export default function Computer() {
               </p>
 
               <h3 className="font-semibold text-lg sm:text-xl text-secondary mb-3">
-                Program Structure
+                Programme Structure
               </h3>
 
               <ul className="list-disc list-inside space-y-2 text-gray-800 text-sm sm:text-base">
@@ -223,7 +223,7 @@ export default function Computer() {
                   Strong Foundational Core
                 </h3>
                 <p className="text-gray-700 text-sm leading-relaxed">
-                  The program builds a formidable understanding of core computer
+                  The Programme builds a formidable understanding of core computer
                   science concepts, including algorithms, data structures, and
                   systems programming, forming the bedrock for all advanced
                   specializations and innovation.
@@ -444,7 +444,7 @@ export default function Computer() {
               {/* Program */}
               <select className="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105">
                 <option value="" disabled selected className="text-gray-400">
-                  Select Program *
+                  Select Programme *
                 </option>
                 <option value="B.Tech" className="text-gray-900">
                   B.Tech

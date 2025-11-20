@@ -160,7 +160,7 @@ export default function FAQSectionComputer() {
 
 "Our faculty members are a blend of experienced academicians and industry professionals who mentor students through innovative teaching methods, research projects, and hands-on learning. The department is equipped with state-of-the-art laboratories, modern computing facilities, and smart classrooms that foster a rich learning environment. We take immense pride in our collaborations with AWS Academy, Robotic Process Academy, UiPath, and CSI Cyber security, which provide students access to global certifications, internships, and real-world project experiences.",
 
-"Beyond academics, the department encourages holistic development through active participation in professional bodies such as CSI, ISTE, IEEE, and the Google Developer Students Club (GDSC). Students regularly engage in hackathons, coding competitions, seminars, workshops, and national as well as international events and state and national sports, consistently bringing laurels to the institution. To enhance employability, specialized training programs in aptitude, soft skills, technical certifications, Guidance for Higher Studies and GATE coaching are integrated into the curriculum.",
+"Beyond academics, the department encourages holistic development through active participation in professional bodies such as CSI, ISTE, IEEE, and the Google Developer Students Club (GDSC). Students regularly engage in hackathons, coding competitions, seminars, workshops, and national as well as international events and state and national sports, consistently bringing laurels to the institution. To enhance employability, specialized training Programmes in aptitude, soft skills, technical certifications, Guidance for Higher Studies and GATE coaching are integrated into the curriculum.",
 
 "With a remarkable placement record for the past five years, our graduates are excelling in top multinational companies and pursuing higher studies at reputed universities worldwide. The Department of Computer Engineering at ICEM continues to be a center of excellence empowering students with the knowledge, skills, and confidence to become leaders and innovators in the digital era."
     ],
@@ -178,7 +178,7 @@ export default function FAQSectionComputer() {
     ],
 
     "Programs Offered": [
-      "The Department of Computer Engineering was established in 2007, offering both Undergraduate (B.Tech) and Postgraduate (M.Tech) programs in Computer Engineering. The programs are affiliated to Savitribai Phule Pune University (SPPU), recognized by the Government of Maharashtra, and approved by the All India Council for Technical Education (AICTE), New Delhi. The institute proudly holds the status of an Autonomous Institute under SPPU, enabling the department to design and implement a dynamic, industry-oriented curriculum that meets global standards and fosters innovation, research, and excellence in technical education"      
+      "The Department of Computer Engineering was established in 2007, offering both Undergraduate (B.Tech) and Postgraduate (M.Tech) Programmes in Computer Engineering. The Programmes are affiliated to Savitribai Phule Pune University (SPPU), recognized by the Government of Maharashtra, and approved by the All India Council for Technical Education (AICTE), New Delhi. The institute proudly holds the status of an Autonomous Institute under SPPU, enabling the department to design and implement a dynamic, industry-oriented curriculum that meets global standards and fosters innovation, research, and excellence in technical education"      
     ]
   }
 },
@@ -186,7 +186,7 @@ export default function FAQSectionComputer() {
     "POs, PSOs, PEOs": {
       type: "accordion",
       content: {
-        "Program Outcomes (POs)": [
+        "Programme Outcomes (POs)": [
           "Apply Knowledge of Mathematics, Science and Engineering: Relate & apply fundamental knowledge of mathematics, science and engineering paradigm to real world problems.",
           "Problem Analysis: Analyze, identify and formulate tangible products/services/solutions/applications with computing requirements.",
           "Design and Development of algorithms : Design, implement, and evaluate a computer – based solution applicable to public health, ecological safety, human resource management and economical sustainability, cultural, societal and environmental considerations.",
@@ -201,12 +201,12 @@ export default function FAQSectionComputer() {
           "Self-learning: Recognize the need of continuous expertized development through lifelong learning.",
           
         ],
-        "Program Specific Outcomes (PSOs)": [
+        "Programme Specific Outcomes (PSOs)": [
           "Professional Skills: The ability to understand, analyze and develop high-end applications to meet the current industrial requirements using varied algorithmic strategies, system software, multimedia, web design, database management, hardware troubleshooting, and network administration.",
           "Problem-Solving Skills: The ability to apply standard practices and strategies in software project development using open-ended programming environments to deliver a quality product for business success",
           "Successful Career and Entrepreneurship: The ability to employ modern computer languages, environments, and platforms in creating innovative career paths to be an entrepreneur and create employability for nation building, and a zest for higher studies."
         ],
-        "Program Educational Objectives (PEOs)": [
+        "Programme Educational Objectives (PEOs)": [
           "To build graduates for successful careers in Computer Engineering those are able to serve state and regional industries, government agencies, or national and international industries.",
           "To build graduates that identifies the underlying scientific foundation of Computer Aided Innovation and also to evaluate their effectiveness and efficiency",
           "To build graduates who engage in self-development activities through further professional studies and personal research that will allow them to adapt technological challenges in many frames like computer hardware and software design, embedded systems, computer network design, system integration, electronic design automation etc.",
@@ -386,7 +386,7 @@ Under Progress`
       <table className="w-full text-sm text-left">
         <thead className="bg-gray-50 text-gray-700">
           <tr>
-            <th className="p-3 border-b font-semibold">Program</th>
+            <th className="p-3 border-b font-semibold">Programme</th>
             <th className="p-3 border-b font-semibold">Intake</th>
             <th className="p-3 border-b font-semibold">Duration</th>
             <th className="p-3 border-b font-semibold">Type</th>

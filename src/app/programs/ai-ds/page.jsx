@@ -80,7 +80,7 @@ export default function AIDS() {
         <div className="relative max-w-[1500px] px-6 md:px-12 lg:px-20 z-20">
           <div className="max-w-3xl text-white">
             <h2 className="text-4xl md:text-5xl font-bold leading-snug">
-              4-Year B.Tech AIDS Program <br />
+              4-Year B.Tech AIDS Programme <br />
               with specialisation in <br />
               <span className="bg-gradient-to-br from-cyan-400  to-sky-400 bg-clip-text text-transparent font-extrabold ">
                 Artificial Intelligence & Future Technologies
@@ -143,7 +143,7 @@ export default function AIDS() {
                   🕓 Course Duration
                 </h4>
                 <p className="text-gray-700">
-                  The program spans 4 years, providing comprehensive education
+                  The Programme spans 4 years, providing comprehensive education
                   in artificial intelligence and emerging technologies.
                 </p>
               </div>
@@ -177,7 +177,7 @@ export default function AIDS() {
                   onClick={scrollToFAQ}
                   className="text-gray-700 cursor-pointer hover:text-blue-600 hover:underline transition-colors"
                 >
-                  Click here to read more about eligibility for our CSE Program
+                  Click here to read more about eligibility for our CSE Programme
                   with Specialisation in AI & Future Tech.
                 </p>
               </div>
@@ -195,7 +195,7 @@ export default function AIDS() {
             </h2>
 
             <p className="text-gray-700 mb-6 leading-relaxed text-sm sm:text-base">
-              The program prepares graduates to drive innovation in industries
+              The Programme prepares graduates to drive innovation in industries
               like AI, Cloud Computing, Cyber Security, and Blockchain. It
               combines academic rigor with practical experience, ensuring
               students gain real-world skills and exposure to emerging
@@ -203,7 +203,7 @@ export default function AIDS() {
             </p>
 
             <h3 className="font-semibold text-lg sm:text-xl text-secondary mb-3">
-              Program Structure
+              Programme Structure
             </h3>
 
             <ul className="list-disc list-inside space-y-2 text-gray-800 text-sm sm:text-base">
@@ -227,7 +227,7 @@ export default function AIDS() {
           <div className="w-full bg-[#f7f7f7] py-16 text-black">
             <div className="max-w-7xl mx-auto px-6 text-center">
               <h2 className="text-3xl font-bold text-secondary mb-4">
-                Program Highlights
+                Programme Highlights
               </h2>
               <p className="text-gray-700 max-w-7xl mx-auto mb-12 leading-relaxed">
                 Builds a solid foundation in advanced technologies of Artificial
@@ -265,7 +265,7 @@ export default function AIDS() {
                       Interdisciplinary Expertise
                     </h3>
                     <p className="text-gray-700 text-sm leading-relaxed">
-                      The Computer Science program with a specialisation in AI &
+                      The Computer Science Programme with a specialisation in AI &
                       Future Technologies provides a multidisciplinary
                       foundation in AI, Blockchain, Cloud Computing, and Cyber
                       Security, preparing students to tackle complex challenges
@@ -316,7 +316,7 @@ export default function AIDS() {
                       Industry-Relevant Skills
                     </h3>
                     <p className="text-gray-700 text-sm leading-relaxed">
-                      This program equips students to master technologies like
+                      This Programme equips students to master technologies like
                       AI, Cloud Computing, and Blockchain, fostering innovation
                       and ensuring readiness for the future tech industry.
                     </p>

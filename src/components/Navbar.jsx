@@ -161,10 +161,7 @@ const Navbar = () => {
           items: [
             { label: "MBA", link: "/programs/mba" },
             { label: "MCA", link: "/programs/mca" },
-            {
-              label: "M-Tech in Mechanical Engineering",
-              link: "/programs/mtech-mech",
-            },
+            
             {
               label: "M-Tech in Computer Science",
               link: "/programs/mtech-comp",

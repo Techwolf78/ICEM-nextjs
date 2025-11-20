@@ -169,7 +169,7 @@ export default function Computer() {
         </p>
 
         <h3 className="font-semibold text-lg sm:text-xl text-secondary mb-3">
-          Program Structure
+          Programme Structure
         </h3>
 
         <ul className="list-disc list-inside space-y-2 text-gray-800 text-sm sm:text-base">
@@ -194,7 +194,7 @@ export default function Computer() {
           <div className="w-full bg-[#f7f7f7] py-16 text-black">
             <div className="max-w-7xl mx-auto px-6 text-center">
               <h2 className="text-3xl font-bold text-secondary mb-4">
-                Program Highlights
+                Programme Highlights
               </h2>
               <p className="text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
                 Our M.Tech programme is tailored to develop specialists who can push the boundaries of mechanical engineering through advanced analysis, innovation, and research.
@@ -430,7 +430,7 @@ export default function Computer() {
               {/* Program */}
               <select className="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105">
                 <option value="" disabled selected className="text-gray-400">
-                  Select Program *
+                  Select Programme *
                 </option>
                 <option value="B.Tech" className="text-gray-900">
                   B.Tech

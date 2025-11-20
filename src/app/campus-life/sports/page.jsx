@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 export default function SportsRecreation() {
-
   const bannerImg = "/Facilities/FacilitiesSports.jpg";
 
   const achievements = [
@@ -48,7 +47,7 @@ export default function SportsRecreation() {
   };
 
   return (
-    <div className="max-w-full mx-auto bg-white text-gray-800">
+    <div className=" w-full bg-white text-gray-800">
       {/* Hero Banner */}
       <div className="relative w-full h-[70vh]">
         <Image
@@ -64,11 +63,10 @@ export default function SportsRecreation() {
           </h1>
         </div>
       </div>
-
       {/* Content Section */}
-      <div className="max-w-full flex flex-col md:flex-row gap-10 py-1 px-6 pl-3 ">
+      <div className="max-w-full mx-auto px-6 py-10 flex flex-col md:flex-row gap-10">
         {/* Left Section */}
-        <div className=" bg-white p-6 rounded-xl shadow-md">
+        <div className="w-full bg-white p-6 rounded-xl shadow-md">
           <h2 className="text-2xl font-semibold text-secondary mb-6">
             About Sports & Recreation
           </h2>
@@ -184,7 +182,7 @@ export default function SportsRecreation() {
                 </div>
 
                 {/* Right Image Placeholder */}
-                <div className="w-32 h-24 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 text-sm">
+                <div className="w-40 h-30 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 text-sm">
                   Image
                 </div>
               </div>

@@ -82,46 +82,46 @@ export default function Accreditation() {
           development.
         </p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="flex flex-col items-center justify-center p-4 transition-transform duration-300 hover:scale-105">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="flex flex-col items-center justify-center p-4 transition-transform duration-300 hover:scale-105 shadow-lg rounded-lg shadow-gray-200">
             <Image
-              src="/NAAC.webp"
+              src="/NAAC.jpg"
               alt="NAAC"
-              width={200}
-              height={200}
+              width={350}
+              height={350}
               className="mb-2"
             />
-            <p className="font-semibold text-center">NAAC Accredited</p>
+            
           </div>
-          <div className="flex flex-col items-center justify-center p-4 transition-transform duration-300 hover:scale-105">
+          <div className="flex flex-col items-center justify-center p-4 transition-transform duration-300 hover:scale-105 shadow-lg rounded-lg shadow-gray-200">
             <Image
-              src="/AICTE.webp"
+              src="/aicte.jpg"
               alt="UGC"
-              width={200}
-              height={200}
+              width={350}
+              height={350}
               className="mb-2"
             />
-            <p className="font-semibold text-center">Approved by AICTE</p>
+           
           </div>
-          <div className="flex flex-col items-center justify-center p-2 transition-transform duration-300 hover:scale-105">
+          <div className="flex flex-col items-center justify-center p-2 transition-transform duration-300 hover:scale-105 shadow-lg rounded-lg shadow-gray-200">
             <Image
-              src="/SPPU.webp"
+              src="/sspu.jpg"
               alt="SPPU"
-              width={200}
-              height={200}
+              width={300}
+              height={300}
               className="mb-2"
             />
-            <p className="font-semibold text-center">Affiliated to SPPU Pune</p>
+            
           </div>
-          <div className="flex flex-col items-center justify-center p-4 transition-transform duration-300 hover:scale-105">
+          <div className="flex flex-col items-center justify-center p-4 transition-transform duration-300 hover:scale-105 shadow-lg rounded-lg shadow-gray-200">
             <Image
-              src="/coming-soon.webp"
-              alt="Coming Soon"
-              width={200}
-              height={200}
+              src="/logo 4.jpg"
+              alt=""
+              width={350}
+              height={350}
               className="mb-2"
             />
-            <p className="font-semibold text-center">Coming Soon</p>
+            
           </div>
         </div>
       </div>
@@ -130,7 +130,11 @@ export default function Accreditation() {
         <div className="mt-4">
           {/* Intro */}
           <p className="text-gray-700 leading-relaxed mb-8">
-            Indira College of Engineering and Management (ICEM) takes great pride in its consistent recognition through prestigious awards and rankings. These accolades reflect our unwavering commitment to academic excellence, innovative teaching practices, and meaningful industry collaboration. 
+            Indira College of Engineering and Management (ICEM) takes great
+            pride in its consistent recognition through prestigious awards and
+            rankings. These accolades reflect our unwavering commitment to
+            academic excellence, innovative teaching practices, and meaningful
+            industry collaboration.
           </p>
 
           <h2 className="text-2xl font-semibold text-secondary mb-6">

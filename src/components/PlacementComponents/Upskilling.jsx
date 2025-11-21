@@ -42,7 +42,7 @@ export default function Upskilling() {
         { image: "/comp/ml.png", name: "Machine Learning" },
         { image: "/comp/python.png", name: "Python" },
         { image: "/comp/data-science.png", name: "Data Science" },
-        { image: "/comp/tablo.png", name: "Tableau" },
+        { image: "/tablo1.png", name: "Tableau" },
         { image: "/comp/ai.png", name: "Artificial Intelligence" },
         { image: "/comp/deep.png", name: "Deep Learning" },
       ],

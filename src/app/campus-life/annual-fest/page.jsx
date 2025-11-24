@@ -7,26 +7,17 @@ export default function AnnualFestPage() {
   return (
     <div className="w-full bg-white text-gray-800">
       {/* HERO */}
-      <header className="relative w-full h-[36vh] md:h-[60vh]">
+      <div className="relative w-full h-[70vh]">
         <Image
-          src="/BannerOverviewPage.jpg"
+          src="/Annual Fest.jpg"
           alt="Annual Fest"
           fill
           className="object-cover"
           priority
+          unoptimized={true}
+          quality={100}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/30"></div>
-
-        <div className="absolute inset-0 flex items-center justify-center px-6">
-          <div className="max-w-4xl text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg">
-              Annual Fest
-            </h1>
-        
-
-          </div>
-        </div>
-      </header>
+      </div>
 
       <main className="max-w-9xl mx-auto px-6 py-8 space-y-12">
         {/* IWAA SECTION */}

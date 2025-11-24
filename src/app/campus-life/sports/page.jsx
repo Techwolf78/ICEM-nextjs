@@ -1,53 +1,13 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
+import { achievements, highlight } from "@/static/campuslife/sports";
 
 export default function SportsRecreation() {
   const bannerImg = "/Facilities/FacilitiesSports.jpg";
 
-  const achievements = [
-    {
-      title: "Table Tennis Runners-Up",
-      description:
-        "The ICEM Parandwadi Girls Team clinched the Runner-up position in the SPPU Intercollegiate Table Tennis Tournament, honoured by national player Mr. Rajat Kadam.",
-    },
-    {
-      title: "National Gold Medal (Athletics)",
-      description:
-        "Mr. Dhanaraj Raut (B.E. Civil) brought pride to the institute and state by winning a Gold Medal while representing the Maharashtra Team at the Senior National Championship in Karnataka.",
-    },
-    {
-      title: "Gold Medal in Boxing",
-      description:
-        "Ms. Kartikee Salve (T.E. AI-DS) demonstrated exceptional skill to secure a Gold Medal in Boxing, earning a qualification for the SPPU Interzonal round.",
-    },
-    {
-      title: "Bronze Medal in Fencing",
-      description:
-        "Our talented fencer, Ms. Surbhi Jadhav, showcased her prowess by winning a Bronze Medal and qualifying for the prestigious SPPU Interzonal Competition.",
-    },
-    {
-      title: "Water Polo Runners-Up",
-      description:
-        "The ICEM Water Polo Team secured the Runner-up trophy at the SPPU Intercollegiate tournament, with team members Mr. Dhanraj Raut and Mr. Vallabh Lawate selected for the Pune District Team.",
-    },
-    {
-      title: "Mallkhambh Qualification",
-      description:
-        "Mr. Deepak Yadav (S.E. Computer) excelled in his sport, qualifying to represent ICEM at the SPPU Interzonal Mallkhambh Competition.",
-    },
-  ];
-
-  const highlight = {
-    title: "Arjuna Award & Alumnus Felicitation",
-    description1:
-      "In a moment of immense pride, our alumnus Mr. Sachin Khilari was honored with the prestigious Arjuna Award by the Honorable President of India, Smt. Droupadi Murmu.",
-    description2:
-      "The institute also proudly felicitated Mr. Sachin Khilari (Mechanical Engineering, Batch 2013), a Paralympic Silver Medallist in Men's Shot Put F46, during the Induction Programme 2024-25.",
-  };
-
   return (
-    <div className=" w-full bg-white text-gray-800">
+    <div className="w-full bg-white text-gray-800">
       {/* Hero Banner */}
       <div className="relative w-full h-[70vh]">
         <Image
@@ -57,15 +17,11 @@ export default function SportsRecreation() {
           style={{ objectFit: "cover" }}
           priority
         />
-        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg text-center">
-            Sports & Recreation
-          </h1>
-        </div>
       </div>
+
       {/* Content Section */}
-      <div className="max-w-full mx-auto px-6 py-10 flex flex-col md:flex-row gap-10">
-        {/* Left Section */}
+      <div className="max-w-full mx-auto px-6 py-10">
+        {/* Main Content */}
         <div className="w-full bg-white p-6 rounded-xl shadow-md">
           <h2 className="text-2xl font-semibold text-secondary mb-6">
             About Sports & Recreation
@@ -93,69 +49,38 @@ export default function SportsRecreation() {
             <li>Outdoor playground for cricket, football, and athletics</li>
             <li>Basketball and volleyball courts</li>
           </ul>
-          {/* Sports Infrastructure Grid */}
+
+          {/* Sports Infrastructure Marquee */}
           <h2 className="text-2xl font-bold text-secondary mt-10 mb-6">
             Sports Infrastructure
           </h2>
 
-          <div className="overflow-hidden py-4 relative">
-            <div className="flex gap-8 animate-scroll">
-              {[
-                { name: "Badminton", img: "/sports/football.webp" },
-                { name: "Volleyball", img: "/sports/volleyball1.webp" },
-                { name: "Cricket", img: "/sports/cricket.webp" },
-                { name: "Gymnastics", img: "/sports/basketball.webp" },
-                { name: "Athletics", img: "/sports/cricket.webp" },
-                { name: "Basketball", img: "/sports/basketball.webp" },
-                { name: "Chess", img: "/sports/basketball.webp" },
-                { name: "Football", img: "/sports/football.webp" },
-                { name: "Kabbadi", img: "/sports/kabbadi.webp" },
-                { name: "Table Tennis", img: "/sports/basketball.webp" },
-              ].map((item, idx) => (
-                <div
-                  key={idx}
-                  className="relative min-w-[270px] h-[260px] rounded-2xl overflow-hidden shadow-md flex-shrink-0"
-                >
-                  <Image
-                    src={item.img}
-                    alt={item.name}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute bottom-4 left-4 text-white text-2xl font-semibold drop-shadow-lg">
-                    {item.name}
-                  </div>
-                </div>
-              ))}
+          {/* Single Marquee Image */}
+          <div className="relative w-full overflow-hidden h-[50vh] mb-12 ">
+            <div className="flex w-[200%] animate-smoothScroll h-full">
+              {/* Image 1 */}
+              <div className="relative w-full h-full flex-shrink-0">
+                <Image
+                  src="/sportsmarque.jpg"
+                  alt="Sports Infrastructure"
+                  fill
+                  className="object-cover"
+                  unoptimized={true}
+                  priority
+                />
+              </div>
 
-              {/* Duplicate for seamless looping */}
-              {[
-                { name: "Badminton", img: "/sports/football.webp" },
-                { name: "Volleyball", img: "/sports/volleyball1.webp" },
-                { name: "Cricket", img: "/sports/cricket.webp" },
-                { name: "Gymnastics", img: "/sports/basketball.webp" },
-                { name: "Athletics", img: "/sports/cricket.webp" },
-                { name: "Basketball", img: "/sports/basketball.webp" },
-                { name: "Chess", img: "/sports/basketball.webp" },
-                { name: "Football", img: "/sports/football.webp" },
-                { name: "Kabbadi", img: "/sports/kabbadi.webp" },
-                { name: "Table Tennis", img: "/sports/basketball.webp" },
-              ].map((item, idx) => (
-                <div
-                  key={"dup-" + idx}
-                  className="relative min-w-[270px] h-[260px] rounded-2xl overflow-hidden shadow-md flex-shrink-0"
-                >
-                  <Image
-                    src={item.img}
-                    alt={item.name}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute bottom-4 left-4 text-white text-2xl font-semibold drop-shadow-lg">
-                    {item.name}
-                  </div>
-                </div>
-              ))}
+              {/* Image 2 */}
+              <div className="relative w-full h-full flex-shrink-0">
+                <Image
+                  src="/sportsmarque.jpg"
+                  alt="Sports Infrastructure duplicate"
+                  fill
+                  className="object-cover"
+                  unoptimized={true}
+                  priority
+                />
+              </div>
             </div>
           </div>
 
@@ -164,45 +89,84 @@ export default function SportsRecreation() {
             Sports Achievements
           </h3>
 
-          <div className="w-full space-y-6 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {achievements.map((item, index) => (
               <div
                 key={index}
-                className="p-6 border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all bg-white flex items-start justify-between gap-6"
+                className="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all p-6 flex flex-col"
               >
-                {/* Left Text */}
-                <div className="flex-1">
-                  <h4 className="text-xl font-semibold text-secondary">
-                    {item.title}
-                  </h4>
-
-                  <p className="mt-2 text-gray-700 leading-relaxed">
-                    {item.description}
-                  </p>
+                {/* Image Placeholder */}
+                <div className=" relative w-full h-40 bg-gray-200 rounded-sm flex items-center justify-center text-gray-500 text-sm mb-4">
+                  <Image
+                    src={item.img || "/sports/tabletennis.jpg"}
+                    alt="Achievement Icon"
+                    fill
+                    className="object-cover rounded-sm"
+                    unoptimized={true}
+                  />
                 </div>
 
-                {/* Right Image Placeholder */}
-                <div className="w-40 h-30 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 text-sm">
-                  Image
-                </div>
+                {/* Text */}
+                <h4 className="text-lg font-semibold text-secondary mb-2">
+                  {item.title}
+                </h4>
+
+                <p className="text-gray-700 leading-relaxed text-sm">
+                  {item.description}
+                </p>
               </div>
             ))}
           </div>
 
           {/* Special Highlight Section */}
-          <div className="mt-8 p-8 border-2 border-yellow-500 bg-yellow-50 rounded-xl shadow-md">
-            <h3 className="text-2xl font-bold text-yellow-700">
+          <div className="mt-8 p-8 border-2 border-gray-200 bg-secondary-50 rounded-xl shadow-md">
+            {/* Title */}
+            <h3 className="text-2xl font-bold text-secondary mb-4">
               {highlight.title}
             </h3>
-            <p className="mt-4 text-gray-800 leading-relaxed">
-              {highlight.description1}
-            </p>
-            <p className="mt-3 text-gray-800 leading-relaxed">
-              {highlight.description2}
-            </p>
+
+            {/* Content in Two Columns */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+              {/* Text Content */}
+              <div>
+                <p className="text-gray-800 leading-relaxed mb-4">
+                  {highlight.description1}
+                </p>
+                <p className="text-gray-800 leading-relaxed">
+                  {highlight.description2}
+                </p>
+              </div>
+
+              {/* Image */}
+              <div className="relative w-full h-64 lg:h-72 rounded-lg overflow-hidden shadow-md">
+                <Image
+                  src={highlight.img || "/sports/arjunaward.jpg"}
+                  alt="Highlight Image"
+                  fill
+                  className="object-cover"
+                  unoptimized={true}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Animation Styles */}
+      <style jsx>{`
+        @keyframes smoothScroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        .animate-smoothScroll {
+          animation: smoothScroll 60s linear infinite;
+        }
+      `}</style>
     </div>
   );
 }

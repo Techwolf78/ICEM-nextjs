@@ -1,75 +1,32 @@
 "use client";
 import Image from "next/image";
+import { sections } from "@/static/placement/skills";
+import { useEffect, useState, useRef } from "react";
 
-export default function Upskilling() {
-  const sections = [
-    {
-      title: "Mechanical",
-      items: [
-        { image: "/autocad.png", name: "AUTODESK AutoCAD", showName: true },
-        { image: "/ptc-creo.png", name: "Creo" },
-        { image: "/catia.png", name: "CATIA" },
-        { image: "/solidworks.png", name: "SolidWorks" },
-        { image: "/autocad.png", name: "CAD & CAM" },
-        { image: "/assembly.png", name: "Assembly" },
-      ],
-    },
-    {
-      title: "Civil",
-      items: [
-        { image: "/revit.png", name: "Revit" },
-        { image: "/etabs.png", name: "ETABS" },
-        { image: "/bim360.png", name: "Autodesk BIM 360" },
-        { image: "/staad.png", name: "STAAD.Pro" },
-        { image: "/3max.png", name: "3DS Max" },
-        { image: "/autocad.png", name: "AutoCAD", showName: true },
-      ],
-    },
-    {
-      title: "Electrical / ENTC",
-      items: [
-        { image: "/scada.png", name: "PLC SCADA" },
-        { image: "/vehicle.png", name: "Electric Vehicle" },
-        { image: "/trans.png", name: "Transformers & Circuits" },
-        { image: "/battery.png", name: "Battery Management" },
-        { image: "/moble.png", name: "App/Web Development" },
-        { image: "/iot.png", name: "Internet of Things (IoT)" },
-      ],
-    },
-    {
-      title: "AI - DS - ML",
-      items: [
-        { image: "/comp/ml.png", name: "Machine Learning" },
-        { image: "/comp/python.png", name: "Python" },
-        { image: "/comp/data-science.png", name: "Data Science" },
-        { image: "/tablo1.png", name: "Tableau" },
-        { image: "/comp/ai.png", name: "Artificial Intelligence" },
-        { image: "/comp/deep.png", name: "Deep Learning" },
-      ],
-    },
-    {
-      title: "Computer",
-      items: [
-        { image: "/comp/full-stack.png", name: "Full Stack Development" },
-        { image: "/comp/react.png", name: "React" },
-        { image: "/comp/css.png", name: "HTML / CSS" },
-        { image: "/comp/python.png", name: "Python" },
-        { image: "/comp/mongodb.png", name: "MongoDB" },
-        { image: "/comp/dsa.png", name: "DSA" },
-      ],
-    },
-    {
-      title: "IT",
-      items: [
-        { image: "/comp/nodejs.png", name: "Node.js" },
-        { image: "/comp/django.png", name: "Django" },
-        { image: "/comp/webdev.png", name: "App/Web Development" },
-        { image: "/comp/linux.png", name: "Linux" },
-        { image: "/comp/js.png", name: "JavaScript" },
-        { image: "/comp/php.png", name: "PHP" },
-      ],
-    },
-  ];
+export default function Upskilling({}) {
+  const scrollRef = useRef(null);
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    let frameId;
+
+    const animate = () => {
+      if (!scrollRef.current) return;
+
+      const total = scrollRef.current.scrollWidth / 2;
+
+      setOffset((prev) => {
+        const next = prev + 0.5; // SUPER smooth speed
+        return next >= total ? 0 : next;
+      });
+
+      frameId = requestAnimationFrame(animate);
+    };
+
+    frameId = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(frameId);
+  }, []);
 
   return (
     <>
@@ -96,7 +53,10 @@ export default function Upskilling() {
                 Interpersonal Skills
               </h3>
               <ul className="list-disc pl-5 space-y-2 text-gray-700 text-sm leading-relaxed">
-                <li>Effective Communication Skills & Importance of Verbal and Non-Verbal Communication</li>
+                <li>
+                  Effective Communication Skills & Importance of Verbal and
+                  Non-Verbal Communication
+                </li>
                 <li>Questioning Skills to Clarify Doubts and Assumptions</li>
                 <li>Improving Listening Skills</li>
                 <li>Mock GD & Mock PI</li>
@@ -143,31 +103,40 @@ export default function Upskilling() {
       </section>
 
       {/* Engineering - Technical Section */}
-      <section className="py-10 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary mb-8 sm:mb-10 uppercase">
-            Engineering - Technical
-          </h2>
 
-          {/* Columns (Mechanical / Civil / ENTC etc.) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-3">
-            {sections.map((section, idx) => (
-              <div 
-                key={idx} 
-                className="text-center  border border-gray-200 rounded-lg shadow-sm p-4 sm:p-5 hover:shadow-md transition-shadow"
+      <section className="py-10 bg-gray-50 overflow-hidden">
+        <h2 className="text-2xl md:text-3xl font-bold text-center text-secondary mb-8">
+          ENGINEERING - TECHNICAL SKILLS
+        </h2>
+        <div className="relative w-full overflow-hidden py-6 px-4 sm:px-6 lg:px-8">
+          {/* Fade gradients */}
+          <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-gray-50 to-transparent z-20 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-gray-50 to-transparent z-20 pointer-events-none"></div>
+
+          {/* Scrolling container */}
+          <div
+            ref={scrollRef}
+            className="flex gap-6 will-change-transform"
+            style={{
+              transform: `translateX(-${offset}px)`,
+            }}
+          >
+            {[...sections, ...sections].map((section, idx) => (
+              <div
+                key={idx}
+                className="min-w-[380px] bg-white border border-gray-200 shadow-md rounded-lg p-4 pr-8"
               >
-                <h3 className="text-base sm:text-lg font-bold text-secondary mb-4 sm:mb-5 uppercase tracking-wide">
+                <h3 className="text-lg font-bold text-secondary mb-4 uppercase tracking-wide text-center">
                   {section.title}
                 </h3>
-
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 justify-items-center">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                   {section.items.map((item, index) => (
                     <div
                       key={index}
                       className="relative h-18 sm:h-20 md:h-24 w-18 sm:w-20 md:w-24 bg-white border border-gray-200 flex flex-col items-center justify-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all rounded-md overflow-hidden group"
                     >
                       {/* Icon */}
-                      <div className="flex-1 flex items-center justify-center w-full p-1.5">
+                      <div className="flex-1 flex items-center justify-center w-full">
                         <Image
                           src={item.image}
                           alt={item.name}
@@ -177,7 +146,7 @@ export default function Upskilling() {
                         />
                       </div>
 
-                      {/* Name inside same box */}
+                      {/* Name */}
                       <div className="w-full bg-white border-t border-gray-100">
                         <p className="text-[9px] sm:text-[10px] md:text-[11px] text-secondary font-semibold text-center leading-tight px-1 py-1.5">
                           {item.name}
@@ -186,6 +155,7 @@ export default function Upskilling() {
                     </div>
                   ))}
                 </div>
+                {/* ⭐⭐ END OF YOUR ORIGINAL CARD ⭐⭐ */}
               </div>
             ))}
           </div>

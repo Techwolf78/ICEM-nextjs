@@ -11,20 +11,11 @@ function NationalServiceScheme() {
   const bannerImg = "/BannerOverviewPage.jpg"; // put in public folder
   const beComp = "/BEComp.pdf"; // put in public folder
 
-  const reports = [
-    "NSS Activity Report 2022-23",
-    "NSS Activity Report 2021-22",
-    "NSS Activity Report 2020-21",
-    "NSS Activity Report 2019-20",
-    "NSS Activity Report 2018-19",
-    "NSS Activity Report 2017-18",
-  ];
+  
 
   // Sample NSS activities to display (image placeholders used)
   
-  const toggleAccordion = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+  
 
   return (
     <div className="max w-full bg-white text-gray-800">
@@ -82,46 +73,6 @@ function NationalServiceScheme() {
             </li>
           </ul>
 
-          {/* NSS Activity Report Accordion */}
-          <h3 className="text-xl font-semibold text-secondary mb-4">
-            NSS Activity Reports
-          </h3>
-          <div className="space-y-2">
-            {reports.map((report, index) => (
-              <div
-                key={index}
-                className="border border-gray-300 rounded overflow-hidden"
-              >
-                <button
-                  onClick={() => toggleAccordion(index)}
-                  className="w-full flex justify-between items-center px-4 py-3 bg-gray-50 hover:bg-gray-100 transition-colors"
-                >
-                  <span className="font-medium text-gray-800 underline hover:text-primary transition">
-                    {report}
-                  </span>
-                  <span className="text-xl font-bold">
-                    {openIndex === index ? "−" : "+"}
-                  </span>
-                </button>
-
-                {openIndex === index && (
-                  <div className="p-4 bg-white border-t border-gray-300">
-                    <p className="text-gray-700 mb-2">
-                      Click below to view the {report} PDF.
-                    </p>
-                    <a
-                      href={beComp}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary font-semibold hover:underline"
-                    >
-                      View Report
-                    </a>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
 
           {/* NSS Activities Section */}
           <h3 className="text-xl font-semibold text-secondary mt-8 mb-4">

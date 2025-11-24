@@ -47,16 +47,16 @@ const overviewData = [
     title: "About Department",
     content: `The Department of Artificial Intelligence and Data Science at ICEM aims to be one of the leading programs to provide value-added quality education in Computer Science and Engineering with specialization in Artificial Intelligence and Data Science.`,
   },
-  {
-    title: "Vision",
-    content: `To revolutionize pool of knowledge and develop innovative, ethical, responsible, and global leaders who will transform Institute and community services.`,
-  },
-  {
-    title: "Mission",
-    content: `• To offer an industry ready curriculum and happy learning environment, enabling our learners to become responsible citizens with holistic skill sets, to solve worldwide challenges.
-• To inculcate impactful research through global collaborations with faculties, students & industry, using comprehensive technology and infrastructure to nurture innovation.
-• To be a contributor towards a sustainable future by promoting conservation, prosperity, and social impact.`,
-  },
+//   {
+//     title: "Vision",
+//     content: `To revolutionize pool of knowledge and develop innovative, ethical, responsible, and global leaders who will transform Institute and community services.`,
+//   },
+//   {
+//     title: "Mission",
+//     content: `• To offer an industry ready curriculum and happy learning environment, enabling our learners to become responsible citizens with holistic skill sets, to solve worldwide challenges.
+// • To inculcate impactful research through global collaborations with faculties, students & industry, using comprehensive technology and infrastructure to nurture innovation.
+// • To be a contributor towards a sustainable future by promoting conservation, prosperity, and social impact.`,
+//   },
 ];
 
 export default function FAQSectionAIDS() {

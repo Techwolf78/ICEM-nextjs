@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
         <Loader isLoading={isLoading} />
 
         <Navbar />
-        <FixedActionBar />
+        {/* <FixedActionBar /> */}
         <main className="flex-grow">{children}</main>
         <div className="w-full bg-zinc-100">
           <Image

@@ -33,14 +33,14 @@ export default function FAQENTC() {
 "It is well recognized that sustained economic growth is driven by skilled managers and visionary leaders who can provide the strategic impetus for development across all sectors. This vision is being realized through the remarkable advancement of business management education in India. The impact of this transformation has extended across diverse segments of academia and industry, fostering an environment where knowledge, innovation, and leadership converge to build a stronger nation."
 
         ],
-        Vision: [
-          "To be an internationally-recognized leader in global business education, scholarly excellence, and collaborative community engagement."
-        ],
-        Mission: [
-          "To serve our diverse student and alumni population, our multicultural business community, and the global community of scholars by advancing business knowledge and sharing expertise.",
-          "We prepare our students to succeed as responsible global citizens in a dynamic, technology-driven business climate -creating a growing legacy for our alumni. · We serve the business community through professional education, collaboration, and research – strengtheningregional and local industries while providing qualified graduates who can tackle the demands of today's complex business environment",
-          "We conduct innovative research -- nurturing our faculty& intellectual growth and developing the talents of future scholars."
-        ], 
+        // Vision: [
+        //   "To be an internationally-recognized leader in global business education, scholarly excellence, and collaborative community engagement."
+        // ],
+        // Mission: [
+        //   "To serve our diverse student and alumni population, our multicultural business community, and the global community of scholars by advancing business knowledge and sharing expertise.",
+        //   "We prepare our students to succeed as responsible global citizens in a dynamic, technology-driven business climate -creating a growing legacy for our alumni. · We serve the business community through professional education, collaboration, and research – strengtheningregional and local industries while providing qualified graduates who can tackle the demands of today's complex business environment",
+        //   "We conduct innovative research -- nurturing our faculty& intellectual growth and developing the talents of future scholars."
+        // ], 
       }
     },
     // ================= NEW SECTIONS FOR IMCA =================

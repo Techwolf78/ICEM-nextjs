@@ -218,13 +218,13 @@ export default function FAQMECH() {
 "From 2025–26, the department is proud to launch B.Tech Mechanical Engineering with Specialization in Electric Vehicle Technology, aligning our curriculum with the rapidly growing EV industry and future mobility solutions."
 
         ],
-        Vision: [
-          "Be a nationally recognized Mechanical Engineering Department that provides right academic ambience and nurtures innate talent of students"
-        ],
-        Mission: [
-          "Prepare engineering students for successful career in Mechanical Engineering by imparting knowledge, skills and attitude."
-        ],
-        Values: ["Integrity, Innovation, Excellence, Collaboration."],
+        // Vision: [
+        //   "Be a nationally recognized Mechanical Engineering Department that provides right academic ambience and nurtures innate talent of students"
+        // ],
+        // Mission: [
+        //   "Prepare engineering students for successful career in Mechanical Engineering by imparting knowledge, skills and attitude."
+        // ],
+        // Values: ["Integrity, Innovation, Excellence, Collaboration."],
         "Programs Offered": [
   "Department of Mechanical Engineering was established in 2007 by offering undergraduate and Post Graduate program in Mechanical Engineering. The program is affiliated to University of Pune, recognized by Govt. of Maharashtra & All India Council of Technical Education (AICTE) New Delhi.",
   "B.E. in Mechanical Engineering (SPPU) – Intake: 60",

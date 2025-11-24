@@ -35,17 +35,17 @@ export default function FAQENTC() {
 
         ],
         
-         Vission: [
-          "The institute envisions to develop itself into a center of academic excellence in the field of Engineering and Management education in order to develop future technocrats and managers having right knowledge, skill and attitude to serve the society and industries to fulfill their ever changing requirements."
-        ], 
+        //  Vission: [
+        //   "The institute envisions to develop itself into a center of academic excellence in the field of Engineering and Management education in order to develop future technocrats and managers having right knowledge, skill and attitude to serve the society and industries to fulfill their ever changing requirements."
+        // ], 
         
-         Mission: [
-          "To train our students to become best Engineering Entrepreneurs today, who will lead the organizations successfully into the future; locally, nationally and globally",
-          "To provide an environment which fosters continuous improvement & innovation with related technical support & facilities to enhance student and faculty effectiveness.",
-          "To provide programs focusing on the holistic development of the individual with the emphasis on personality grooming, physical fitness and a strong sense of social and environmental responsibility.",
-          "To improve logic & scientific reasoning and to develop global mindset amongst the students and prepare them to work in heterogeneous environment.",
+        //  Mission: [
+        //   "To train our students to become best Engineering Entrepreneurs today, who will lead the organizations successfully into the future; locally, nationally and globally",
+        //   "To provide an environment which fosters continuous improvement & innovation with related technical support & facilities to enhance student and faculty effectiveness.",
+        //   "To provide programs focusing on the holistic development of the individual with the emphasis on personality grooming, physical fitness and a strong sense of social and environmental responsibility.",
+        //   "To improve logic & scientific reasoning and to develop global mindset amongst the students and prepare them to work in heterogeneous environment.",
           
-        ], 
+        // ], 
       }
     },
     // ================= NEW SECTIONS FOR IMCA =================

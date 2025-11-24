@@ -165,17 +165,17 @@ export default function FAQSectionComputer() {
 "With a remarkable placement record for the past five years, our graduates are excelling in top multinational companies and pursuing higher studies at reputed universities worldwide. The Department of Computer Engineering at ICEM continues to be a center of excellence empowering students with the knowledge, skills, and confidence to become leaders and innovators in the digital era."
     ],
 
-    "Vision": [
-      "To become an acclaimed center of excellence by rendering modern technology, academics and research for creating holistic, socio-economic professionals with interdisciplinary potential."
-    ],
+    // "Vision": [
+    //   "To become an acclaimed center of excellence by rendering modern technology, academics and research for creating holistic, socio-economic professionals with interdisciplinary potential."
+    // ],
 
-    "Mission": [
-      "To foster strong fundamental concepts to students and inspire them to find creative solutions with critical thinking and disciplined time managed environment.",
-      "To impart knowledge and skill based education in collaboration with industry, academia and research organizations.",
-      "To develop a center of excellence and setup a research laboratory to develop software applications for the society with the association of industry.",
-      "To enlighten students with the latest technologies through carefully designed training modules with the alliance of Alumni and Industry as a part of value added education.",
-      "To nurture and nourish effective communication, interpersonal skills, and create awareness of ethical and social responsibilities."
-    ],
+    // "Mission": [
+    //   "To foster strong fundamental concepts to students and inspire them to find creative solutions with critical thinking and disciplined time managed environment.",
+    //   "To impart knowledge and skill based education in collaboration with industry, academia and research organizations.",
+    //   "To develop a center of excellence and setup a research laboratory to develop software applications for the society with the association of industry.",
+    //   "To enlighten students with the latest technologies through carefully designed training modules with the alliance of Alumni and Industry as a part of value added education.",
+    //   "To nurture and nourish effective communication, interpersonal skills, and create awareness of ethical and social responsibilities."
+    // ],
 
     "Programs Offered": [
       "The Department of Computer Engineering was established in 2007, offering both Undergraduate (B.Tech) and Postgraduate (M.Tech) Programmes in Computer Engineering. The Programmes are affiliated to Savitribai Phule Pune University (SPPU), recognized by the Government of Maharashtra, and approved by the All India Council for Technical Education (AICTE), New Delhi. The institute proudly holds the status of an Autonomous Institute under SPPU, enabling the department to design and implement a dynamic, industry-oriented curriculum that meets global standards and fosters innovation, research, and excellence in technical education"      
@@ -268,8 +268,6 @@ Under Progress`
       type: "syllabus",
       content: syllabusList
     },
-
-
 
     Laboratories: {
       type: "labs",

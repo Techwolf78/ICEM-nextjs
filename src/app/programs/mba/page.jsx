@@ -30,11 +30,36 @@ export default function MBA() {
   };
 
   // Array of MBA highlight images
-  const mbaHighlightImages = [
-    "/Programs/MBA/MBA1.jpg",
-    "/Programs/MBA/MBA2.jpg", 
-    "/Programs/MBA/MBA3.jpg"
-  ];
+  // const mbaHighlightImages = [
+  //   "/Programs/MBA/MBA1.jpg",
+  //   "/Programs/MBA/MBA2.jpg", 
+  //   "/Programs/MBA/MBA3.jpg"
+  // ];
+
+  const imageSets = {
+    marketing: [
+      "/Programs/MBA/MBA1.jpg",
+      "/Programs/MBA/MBA2.jpg",
+      "/Programs/MBA/MBA3.jpg",
+    ],
+    finance: [
+      "/Programs/MBA/MBAFM1.jpg",
+      "/Programs/MBA/MBAFM2.jpg",
+      "/Programs/MBA/MBAFM3.jpg",
+    ],
+    hr: [
+      "/Programs/MBA/MBAHR1.jpg",
+      "/Programs/MBA/MBAHR2.jpg",
+      "/Programs/MBA/MBAHR3.jpg",
+    ],
+    operations: [
+      "/Programs/MBA/MBAOS1.jpg",
+      "/Programs/MBA/MBAOS2.jpg",
+      "/Programs/MBA/MBAOS3.jpg",
+    ],
+  };
+
+  const mbaHighlightImages = imageSets[specialization];
 
   // ==============================
   // MBA SPECIALIZATION CONTENT

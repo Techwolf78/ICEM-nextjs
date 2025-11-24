@@ -97,7 +97,7 @@ export default function AIDS() {
             {/* Floating Stat Cards */}
 
             {/* Buttons */}
-            <div className="flex gap-4 mt-6">
+            {/* <div className="flex gap-4 mt-6">
   <button
   onClick={toggleModal}
   className="relative px-10 py-3 font-semibold rounded-xl
@@ -125,7 +125,23 @@ export default function AIDS() {
   Download Brochure
 </button>
 
-</div>
+</div> */}
+
+<div className="flex gap-4 mt-6">
+              <button
+                onClick={toggleModal}
+                className="bg-secondary text-white px-8 py-3 rounded-lg font-semibold"
+              >
+                Enquire Now
+              </button>
+
+              <button
+                onClick={handleBrochureDownload}
+                className="bg-secondary text-white px-8 py-3 rounded-lg"
+              >
+                Download Brochure
+              </button>
+            </div>
 
 
           </div>

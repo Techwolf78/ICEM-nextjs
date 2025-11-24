@@ -116,6 +116,27 @@ export default function Overview() {
             </p>
 
             <h3 className="text-xl font-semibold text-primary mt-6 mb-3">
+              Vision
+            </h3>
+
+            <p>The institute envisions to develop itself into a centre of academic excellence in the field of Engineering and Management education in order to develop future technocrats and managers with right knowledge, skill and attitude to serve the society and industries to fulfil their ever-changing requirements. </p>
+
+            <h3 className="text-xl font-semibold text-primary mt-6 mb-3">
+              Mission:
+            </h3>
+
+            <p className="text-gray-700 mb-2 font-medium">
+              Undergraduate Engineering Programs in:
+            </p>
+            <ul className="list-disc list-inside text-gray-700 mb-4">
+              <li>To train our students to become the best Engineering Entrepreneurs today, who will lead the organizations successfully whether it's locally, nationally or globally.</li>
+              <li>To provide an environment which fosters continuous improvement & innovation with related technical support & facilities to enhance student and faculty effectiveness.  </li>
+              <li>Computer Engineering</li>
+              <li>To provide programmes focusing on the holistic development of the individual with the emphasis on personality grooming, physical fitness and a strong sense of social and environmental responsibility.</li>
+              <li>To improve along with scientific reasoning and to develop global mindset amongst the students to prepare them for working in heterogeneous environment. </li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-primary mt-6 mb-3">
               Our Programs:
             </h3>
 
@@ -249,28 +270,36 @@ export default function Overview() {
             <div className="flex flex-col md:flex-row gap-8 bg-gray-50 rounded-xl p-6">
               
               {/* Left Side - Image Placeholder + Socials */}
-              <div className="md:w-1/3">
-                {/* Image Placeholder */}
-                <div className="w-full h-[380px] bg-gray-200 flex items-center justify-center text-gray-500 rounded-lg">
-                  [ Image Placeholder ]
-                </div>
+              {/* Left Side - Image + Socials */}
+<div className="md:w-1/3">
+  
+  {/* Updated Image */}
+  <div className="w-full h-[380px] relative rounded-lg overflow-hidden">
+    <Image
+      src="/TaritaMam1.jpg"   // ← your image path
+      alt="Dr. Tarita Shankar"
+      fill
+      className="object-contain"
+    />
+  </div>
 
-                <div className="flex justify-center gap-4 mt-3 text-gray-700 text-lg">
-                  <FaFacebookF className="hover:text-primary transition-colors cursor-pointer" />
-                  <FaLinkedinIn className="hover:text-primary transition-colors cursor-pointer" />
-                  <FaInstagram className="hover:text-primary transition-colors cursor-pointer" />
-                  <FaTwitter className="hover:text-primary transition-colors cursor-pointer" />
-                  <FaYoutube className="hover:text-primary transition-colors cursor-pointer" />
-                </div>
+  <div className="flex justify-center gap-4 mt-3 text-gray-700 text-lg">
+    <FaFacebookF className="hover:text-primary transition-colors cursor-pointer" />
+    <FaLinkedinIn className="hover:text-primary transition-colors cursor-pointer" />
+    <FaInstagram className="hover:text-primary transition-colors cursor-pointer" />
+    <FaTwitter className="hover:text-primary transition-colors cursor-pointer" />
+    <FaYoutube className="hover:text-primary transition-colors cursor-pointer" />
+  </div>
 
-                <div className="mt-3 text-center">
-                  <h4 className="font-semibold text-lg">DR. TARITA SHANKAR</h4>
-                  <p className="text-sm text-gray-600">
-                    CHAIRPERSON & CHIEF MENTOR<br />
-                    INDIRA GROUP OF INSTITUTES, PUNE
-                  </p>
-                </div>
-              </div>
+  <div className="mt-3 text-center">
+    <h4 className="font-semibold text-lg">DR. TARITA SHANKAR</h4>
+    <p className="text-sm text-gray-600">
+      CHAIRPERSON & CHIEF MENTOR<br />
+      INDIRA GROUP OF INSTITUTES, PUNE
+    </p>
+  </div>
+</div>
+
 
               {/* Right Side - Message Content */}
               <div className="md:w-2/3 text-gray-700 leading-relaxed">
@@ -356,32 +385,51 @@ export default function Overview() {
 
           {/* Institutes Section */}
           <div className="bg-white p-6 rounded-xl shadow-md">
-            <h3 className="text-2xl font-bold text-secondary mb-8">
-              Institutes under Indira Group (IGI)
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {institutes.map((inst, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100"
-                >
-                  <div className="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-500 rounded-t-xl">
-                    [ Image Placeholder ]
-                  </div>
-                  <div className="p-4 text-center">
-                    <a
-                      href={inst.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-semibold text-gray-800 text-base hover:text-secondary transition-colors duration-200"
-                    >
-                      {inst.name}
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
+  <h3 className="text-2xl font-bold text-secondary mb-8">
+    Institutes under Indira Group (IGI)
+  </h3>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    {institutes.map((inst, index) => {
+      // Select image based on institute name
+      const imageSrc =
+        inst.name.includes("Global Business School") 
+          ? "/IGSB.jpg"
+          : inst.name.includes("Engineering & Management")
+          ? "/ICEM.jpg"
+          : "/placeholder.jpg";
+
+      return (
+        <div
+          key={index}
+          className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100"
+        >
+          {/* Image Box */}
+          <div className="w-full h-48 relative rounded-t-xl overflow-hidden bg-gray-200">
+            <Image
+              src={imageSrc}
+              alt={inst.name}
+              fill
+              className="object-cover"
+            />
           </div>
+
+          <div className="p-4 text-center">
+            <a
+              href={inst.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-gray-800 text-base hover:text-secondary transition-colors duration-200"
+            >
+              {inst.name}
+            </a>
+          </div>
+        </div>
+      );
+    })}
+  </div>
+</div>
+
 
           {/* Leader's Desk */}
           <div className="bg-white p-6 rounded-xl shadow-md">

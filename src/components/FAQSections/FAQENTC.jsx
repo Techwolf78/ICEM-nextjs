@@ -52,14 +52,14 @@ export default function FAQENTC() {
 " Our program blends theory and hands-on learning through well-equipped laboratories, project-based courses, and industry collaborations, preparing students for careers in telecom, embedded systems, VLSI, and IT domains"
 
         ],
-        Vision: [
-          "To revolutionize pool of knowledge and develop innovative, ethical, responsitble, and global leaders who will transform Institute and community services."
-        ],
-        Mission: [
-          "To offer an industry ready curriculum and happy learníng environment, enabling our learners To become responsible citizens with holistic skill sets, to solve worldwide challenges.",
-          "To inculcate impactful research through global collaborations with facuties, students & industry, using comprehensive technology and infrastructure to nurture innovation.",
-          "To be a contributor towards a sustainable future by promoting conservation, prosperity, and social impact."
-        ],
+        // Vision: [
+        //   "To revolutionize pool of knowledge and develop innovative, ethical, responsitble, and global leaders who will transform Institute and community services."
+        // ],
+        // Mission: [
+        //   "To offer an industry ready curriculum and happy learníng environment, enabling our learners To become responsible citizens with holistic skill sets, to solve worldwide challenges.",
+        //   "To inculcate impactful research through global collaborations with facuties, students & industry, using comprehensive technology and infrastructure to nurture innovation.",
+        //   "To be a contributor towards a sustainable future by promoting conservation, prosperity, and social impact."
+        // ],
 
 
       }

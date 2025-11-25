@@ -43,5 +43,5 @@ export const highlight = {
       "In a moment of immense pride, our alumnus Mr. Sachin Khilari was honored with the prestigious Arjuna Award by the Honorable President of India, Smt. Droupadi Murmu.",
     description2:
       "The institute also proudly felicitated Mr. Sachin Khilari (Mechanical Engineering, Batch 2013), a Paralympic Silver Medallist in Men's Shot Put F46, during the Induction Programme 2024-25.",
-      img: "/sports/arjunaward.jpg",
+      img: "/sports/arjunaward1.png",
   };

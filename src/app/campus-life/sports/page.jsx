@@ -119,33 +119,48 @@ export default function SportsRecreation() {
           </div>
 
           {/* Special Highlight Section */}
-          <div className="mt-8 p-8 border-2 border-gray-200 bg-secondary-50 rounded-xl shadow-md">
+          <div className="sm:mt-18 sm:p-0 bg-secondary-50 rounded-xl ">
             {/* Title */}
-            <h3 className="text-2xl font-bold text-secondary mb-4">
-              {highlight.title}
-            </h3>
 
-            {/* Content in Two Columns */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
-              {/* Text Content */}
-              <div>
-                <p className="text-gray-800 leading-relaxed mb-4">
+            {/* Highlight Section */}
+            <div className="relative border-2 border-gray-200 rounded-2xl p-2 sm:p-8 sm:pl-80 shadow-md  flex flex-col sm:flex-row  items-center gap-6">
+              {/* Floating Image - Desktop */}
+              <div className="hidden sm:block absolute -left-3 top-1/3 -translate-y-1/2 z-20">
+                <Image
+                  src="/sports/arjunaward1.png"
+                  alt="Arjuna Award Winner"
+                  height={320}
+                  width={320}
+                  className="object-contain drop-shadow-2xl select-none"
+                  unoptimized
+                />
+              </div>
+
+              {/* Floating Image - Mobile (inline instead of absolute) */}
+              <div className="sm:hidden flex justify-center mb-4">
+                <Image
+                  src="/sports/arjunaward1.png"
+                  alt="Arjuna Award Winner"
+                  height={200}
+                  width={200}
+                  className="object-contain drop-shadow-2xl select-none"
+                  unoptimized
+                />
+              </div>
+
+              {/* Text Section */}
+              <div className="flex-1 text-center sm:text-left">
+                <h3 className="text-2xl font-bold text-secondary mb-3">
+                  {highlight.title}
+                </h3>
+
+                <p className="text-gray-800 leading-relaxed mb-3">
                   {highlight.description1}
                 </p>
+
                 <p className="text-gray-800 leading-relaxed">
                   {highlight.description2}
                 </p>
-              </div>
-
-              {/* Image */}
-              <div className="relative w-full h-64 lg:h-72 rounded-lg overflow-hidden shadow-md">
-                <Image
-                  src={highlight.img || "/sports/arjunaward.jpg"}
-                  alt="Highlight Image"
-                  fill
-                  className="object-cover"
-                  unoptimized={true}
-                />
               </div>
             </div>
           </div>

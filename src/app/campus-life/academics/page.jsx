@@ -48,15 +48,21 @@ const Academics = () => {
       {/* Main Content */}
       <div className="max-w-full mx-auto flex flex-col md:flex-row gap-10 py-16 px-6">
         {/* Left Section */}
-        <div className="lg:w-3/4 bg-white p-6 rounded-xl shadow-md">
+        <div className="w-full bg-white p-6 rounded-xl shadow-md">
           <h2 className="text-2xl font-semibold text-secondary mb-6">
             About the Academic Cell
           </h2>
 
           {/* Dean Info */}
-          <div className="flex flex-col sm:flex-row items-center gap-6 mb-8">
+          <div className="flex flex-col sm:flex-row items-center gap-6 mb-8 p-2">
             <div className="w-40 h-40 bg-gray-200 flex items-center justify-center text-gray-500 text-sm rounded-lg shadow-md">
-              [ Image Placeholder ]
+             <Image
+                src="/campuslife/dean.jpg"
+                alt="Dr. Saurabh Harishchand Gupta"
+                width={160}
+                height={160}
+                className="rounded-lg"
+              />
             </div>
             <div>
               <h3 className="text-xl font-bold text-gray-800">
@@ -164,9 +170,7 @@ const Academics = () => {
         </div>
 
         {/* Right Sidebar */}
-        <div className="lg:w-1/4">
-          <Sidebar />
-        </div>
+       
       </div>
     </div>
   );

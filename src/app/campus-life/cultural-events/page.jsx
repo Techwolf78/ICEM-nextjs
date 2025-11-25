@@ -23,14 +23,12 @@ export default function CulturalActivitiesPage() {
       <div className="max-w-full mx-auto">
         <div className="flex flex-col lg:flex-row gap-4">
           {/* Main Content */}
-          <div className="lg:w-3/4 space-y-6 px-2 py-3 m-3">
+          <div className="w-full space-y-6 px-2 py-3 m-3">
             <CulturalEvents />
           </div>
 
           {/* Sidebar */}
-          <div className="lg:w-1/4">
-            <Sidebar />
-          </div>
+          
         </div>
       </div>
     </div>

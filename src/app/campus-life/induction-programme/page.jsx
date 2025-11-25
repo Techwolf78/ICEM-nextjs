@@ -60,7 +60,7 @@ function InductionProgramme() {
       {/* Main Content */}
       <div className="max-w-full mx-auto flex flex-col md:flex-row gap-10 py-16 px-6">
         {/* Left Content */}
-        <div className="lg:w-3/4 bg-white p-6 rounded-xl shadow-md">
+        <div className="lg:w-full bg-white p-6 rounded-xl shadow-md">
           <h2 className="text-2xl font-semibold text-secondary mb-6">
             About Induction Programme
           </h2>
@@ -144,9 +144,7 @@ function InductionProgramme() {
         </div>
 
         {/* Right Sidebar */}
-        <div className="lg:w-1/4">
-          <Sidebar />
-        </div>
+       
       </div>
     </div>
   );

@@ -3,12 +3,19 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import GitCommitHorizontal from "lucide-react";
 
 const ProgramList = () => {
   const programs = [
     { name: "Computer Engineering", link: "/programs/computer-engineering" },
-    { name: "Mechanical Engineering", link: "/programs/mechanical-engineering" },
-    { name: "Artificial Intelligence and Data Science", link: "/programs/ai-ds" },
+    {
+      name: "Mechanical Engineering",
+      link: "/programs/mechanical-engineering",
+    },
+    {
+      name: "Artificial Intelligence and Data Science",
+      link: "/programs/ai-ds",
+    },
     { name: "Electronics and Telecommunication", link: "/programs/entc" },
     { name: "First Year Engineering", link: "/programs/fye" },
     { name: "Information Technology", link: "/programs/it" },
@@ -24,10 +31,7 @@ const ProgramList = () => {
     <div className="lg:col-span-2 bg-white rounded-lg p-4 sm:p-8 shadow-sm border border-gray-200">
       {/* ✅ Heading */}
       <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
-        ACADEMIC <span className="text-secondary">
-  YEAR 2026
-</span>
-
+        ACADEMIC <span className="text-secondary">YEAR 2026</span>
       </h2>
 
       {/* ✅ Program Links */}
@@ -48,7 +52,7 @@ const ProgramList = () => {
       {/* ✅ Academic Image */}
       <div className="mt-4">
         <Image
-          src="/academic.jpg" // Place this image in your public folder
+          src="/Programs/academic.jpg" // Place this image in your public folder
           alt="Academic"
           width={800}
           height={400}

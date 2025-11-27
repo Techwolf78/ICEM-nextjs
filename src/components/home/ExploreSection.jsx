@@ -8,7 +8,7 @@ const ExploreSection = () => {
     { title: "NAAC Accredited", img: "/NAAC.webp" },
     { title: "Approved by AICTE", img: "/AICTE.webp" },
     { title: "Affiliated to SPPU Pune", img: "/SPPU.webp" },
-    { title: "Coming Soon", img: "/coming-soon.webp" }, // Placeholder
+    { title: "Coming Soon", img: "/" }, // Placeholder
   ];
 
   return (

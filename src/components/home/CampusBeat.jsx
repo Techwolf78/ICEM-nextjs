@@ -4,15 +4,24 @@ import Image from "next/image";
 import React from "react";
 
 const CampusBeat = () => {
+  const marqueeImages = [
+    "/Marquee/Marquee1.jpg",
+    "/Marquee/Marquee2.jpg",
+    "/Marquee/Marquee3.jpg",
+    "/Marquee/Marquee4.jpg",
+    "/Marquee/Marquee5.jpg",
+    "/Marquee/Marquee6.jpg",
+  ];
+
   return (
     <div className="bg-white py-10 sm:py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        {/* ✅ Title */}
+        {/* Title */}
         <h2 className="text-xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4 text-center sm:text-left">
           The Campus Beat
         </h2>
 
-        {/* ✅ Description */}
+        {/* Description */}
         <p className="text-gray-700 text-sm sm:text-lg max-w-5xl leading-relaxed mb-6 sm:mb-10 text-center sm:text-left">
           From celebrity talks to Lit Fests and interactions with industry
           icons, our campus pulses with energy, big ideas, and unforgettable
@@ -21,36 +30,47 @@ const CampusBeat = () => {
         </p>
       </div>
 
-      {/* ✅ Horizontal marquee — Hidden on mobile */}
+      {/* Horizontal Scroll Only on Larger Screens */}
       <div className="hidden sm:block relative w-full overflow-hidden h-[30vh] sm:h-[50vh] md:h-[65vh]">
-        <div className="flex w-[200%] sm:w-[1200%] animate-smoothScroll relative h-full">
-          {/* Two identical images for seamless looping */}
-          <div className="relative w-1/2 h-full">
-            <Image
-              src="/newnewMarque.jpg"
-              alt="Campus Life"
-              fill
-              className="object-cover"
-              quality={100}
-              priority
-              unoptimized={true}
-            />
-          </div>
-          <div className="relative w-1/2 h-full">
-            <Image
-              src="/newnewMarque.jpg"
-              alt="Campus Life duplicate"
-              fill
-              className="object-cover"
-              quality={100}
-              priority
-              unoptimized={true}
-            />
-          </div>
+        {/* 🌀 Smooth Scrolling Container */}
+        <div className="flex w-max h-full animate-smoothScroll gap-0.5 select-none">
+          {/* First Loop */}
+          {marqueeImages.map((src, i) => (
+            <div
+              key={`first-${i}`}
+              className="relative h-full"
+              style={{ aspectRatio: "2.77" }}
+            >
+              <Image
+                src={src}
+                alt={`Campus Beat ${i + 1}`}
+                fill
+                className="object-cover"
+                quality={100}
+                unoptimized
+              />
+            </div>
+          ))}
+
+          {/* Duplicate Loop for Seamless Scroll */}
+          {marqueeImages.map((src, i) => (
+            <div
+              key={`second-${i}`}
+              className="relative h-full min-w-[33vw] md:min-w-[25vw]"
+            >
+              <Image
+                src={src}
+                alt={`Campus Beat Duplicate ${i + 1}`}
+                fill
+                className="object-cover"
+                quality={100}
+                unoptimized
+              />
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* ✅ Animation Styles */}
       <style jsx>{`
         @keyframes smoothScroll {
           0% {
@@ -62,7 +82,7 @@ const CampusBeat = () => {
         }
 
         .animate-smoothScroll {
-          animation: smoothScroll 60s linear infinite;
+          animation: smoothScroll 45s linear infinite;
         }
       `}</style>
     </div>

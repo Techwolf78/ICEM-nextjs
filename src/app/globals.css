@@ -103,16 +103,7 @@
 /* ============================================================
    Force White Background (Fixes mobile black screen)
 ============================================================ */
-html,
-body {
-  background-color: #ffffff !important;
-  color: var(--foreground);
-  font-family: 'Helvetica Neue', 'Helvetica', 'Inter', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
+
 
 /* ============================================================
    Disable Dark Mode Black Background Completely
@@ -174,3 +165,22 @@ body {
   animation: scroll 25s linear infinite;
 }
 
+
+html,
+body {
+  background-color: #ffffff !important;
+  color: var(--foreground);
+  font-family: 'Helvetica Neue', 'Helvetica', 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* ❌ REMOVE THIS:
+     scroll-behavior: smooth; 
+  */
+  overflow-x: hidden;
+}
+
+
+html,
+body {
+  scroll-behavior: auto !important;
+}

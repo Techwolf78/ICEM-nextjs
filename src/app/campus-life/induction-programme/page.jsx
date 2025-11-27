@@ -8,7 +8,7 @@ function InductionProgramme() {
   const [openIndex, setOpenIndex] = useState(null);
 
   // Assets from public folder
-  const bannerImg = "/BannerOverviewPage.jpg";
+  const bannerImg = "/campuslife/inductionbanner.jpg";
   
   // PDF files
   const inductionCPMAM2022_23 = "/pdfs/induction/Induction (CP Mam) Report_2022-23.pdf";
@@ -50,11 +50,11 @@ function InductionProgramme() {
           style={{ objectFit: "cover" }}
           priority
         />
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+        {/* <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg text-center">
             Induction Programme
           </h1>
-        </div>
+        </div> */}
       </div>
 
       {/* Main Content */}

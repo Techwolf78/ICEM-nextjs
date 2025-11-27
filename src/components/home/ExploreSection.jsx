@@ -5,10 +5,10 @@ import Image from "next/image";
 
 const ExploreSection = () => {
   const logos = [
-    { title: "NAAC Accredited", img: "/NAAC.webp" },
-    { title: "Approved by AICTE", img: "/AICTE.webp" },
-    { title: "Affiliated to SPPU Pune", img: "/SPPU.webp" },
-    { title: "Coming Soon", img: "/coming-soon.webp" }, // Placeholder
+    { title: "NAAC Accredited", img: "/homepage-logos/NAAC.jpg" },
+    { title: "Approved by AICTE", img: "/homepage-logos/aicte.jpg" },
+    { title: "Affiliated to SPPU Pune", img: "/homepage-logos/sspu.jpg" },
+    { title: "Coming Soon", img: "/homepage-logos/8th.jpg" }, // Placeholder
   ];
 
   return (
@@ -42,13 +42,13 @@ const ExploreSection = () => {
         {logos.map((logo, index) => (
           <div
             key={index} 
-            className="flex flex-col  h-48 transition-transform duration-300 hover:scale-105"
+            className="flex flex-col  h-48 transition-transform duration-300 hover:scale-105 shadow-lg rounded-lg shadow-gray-200 items-center justify-center"
           >
             <Image
               src={logo.img}
               alt={logo.title}
-              width={180}
-              height={180}
+              width={300}
+              height={300}
               className="object-contain mb-2"
             />
           </div>

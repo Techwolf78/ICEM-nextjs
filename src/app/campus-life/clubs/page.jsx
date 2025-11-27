@@ -9,18 +9,18 @@ export default function ClubsAndSocieties() {
       {/* HERO BANNER */}
       <div className="relative w-full h-[65vh]">
         <Image
-          src="/BannerOverviewPage.jpg"
+          src="/campuslife/clubbanner.jpg"
           alt="Clubs and Societies"
           fill
           className="object-cover"
           priority
           unoptimized
         />
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+        {/* <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
             Clubs & Societies
           </h1>
-        </div>
+        </div> */}
       </div>
 
       {/* MAIN CONTENT */}

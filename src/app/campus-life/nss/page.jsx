@@ -8,19 +8,13 @@ import { activities } from "@/static/campuslife/nss";
 function NationalServiceScheme() {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const bannerImg = "/BannerOverviewPage.jpg"; // put in public folder
-  const beComp = "/BEComp.pdf"; // put in public folder
-
-  
-
-  // Sample NSS activities to display (image placeholders used)
-  
+  const bannerImg = "/campuslife/nssbanner.jpg"; // put in public folder
   
 
   return (
     <div className="max w-full bg-white text-gray-800">
       {/* Hero Banner */}
-      <div className="relative w-full h-[60vh]">
+      <div className="relative w-full h-[70vh]">
         <Image
           src={bannerImg}
           alt="ICEM Campus"
@@ -28,15 +22,11 @@ function NationalServiceScheme() {
           style={{ objectFit: "cover" }}
           priority
         />
-        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg text-center">
-            National Service Scheme (NSS)
-          </h1>
-        </div>
+        
       </div>
 
       {/* Content Section */}
-      <div className="max-w-full mx-auto flex flex-col md:flex-row gap-10 py-10 px-6">
+      <div className="max-w-full mx-auto flex flex-col md:flex-row gap-10 py-5 px-6">
         {/* Left Section */}
         <div className="w-full bg-white p-6 rounded-xl shadow-md">
           <h2 className="text-2xl font-semibold text-secondary mb-6">

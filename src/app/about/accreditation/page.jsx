@@ -85,7 +85,7 @@ export default function Accreditation() {
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
           <div className="flex flex-col items-center justify-center p-4 transition-transform duration-300 hover:scale-105 shadow-lg rounded-lg shadow-gray-200">
             <Image
-              src="/NAAC.jpg"
+              src="/homepage-logos/NAAC.jpg"
               alt="NAAC"
               width={350}
               height={350}
@@ -95,7 +95,7 @@ export default function Accreditation() {
           </div>
           <div className="flex flex-col items-center justify-center p-4 transition-transform duration-300 hover:scale-105 shadow-lg rounded-lg shadow-gray-200">
             <Image
-              src="/aicte.jpg"
+              src="/homepage-logos/aicte.jpg"
               alt="UGC"
               width={350}
               height={350}
@@ -105,7 +105,7 @@ export default function Accreditation() {
           </div>
           <div className="flex flex-col items-center justify-center p-2 transition-transform duration-300 hover:scale-105 shadow-lg rounded-lg shadow-gray-200">
             <Image
-              src="/sspu.jpg"
+              src="/homepage-logos/sspu.jpg"
               alt="SPPU"
               width={300}
               height={300}
@@ -115,7 +115,7 @@ export default function Accreditation() {
           </div>
           <div className="flex flex-col items-center justify-center p-4 transition-transform duration-300 hover:scale-105 shadow-lg rounded-lg shadow-gray-200">
             <Image
-              src="/logo 4.jpg"
+              src="/homepage-logos/8th.jpg"
               alt=""
               width={350}
               height={350}

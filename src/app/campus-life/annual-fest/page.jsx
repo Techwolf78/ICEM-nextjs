@@ -9,7 +9,7 @@ export default function AnnualFestPage() {
       {/* HERO */}
       <div className="relative w-full h-[70vh]">
         <Image
-          src="/Annual Fest.jpg"
+          src="/campuslife/Annual Fest.jpg"
           alt="Annual Fest"
           fill
           className="object-cover"

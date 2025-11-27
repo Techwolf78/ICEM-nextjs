@@ -7,11 +7,12 @@ import toast from "react-hot-toast";
 const HeroSlider = () => {
   // 👉 Load banners directly from /public/banners
   const desktopImages = [
-    "/banners/ICEMBANNER27.jpg",
-    "/banners/ICEMBANNER6.jpg",
-    "/banners/ICEMBANNERCOMP.jpg",
-    "/banners/ICEMBANNERCLASS.jpg",
-    "/banners/ICEMBANNERMECH.jpg",
+    // "/banners/ICEMBANNER27.jpg",
+    // "/banners/ICEMBANNER6.jpg",
+    // "/banners/ICEMBANNERCOMP.jpg",
+    // "/banners/ICEMBANNERCLASS.jpg",
+    // "/banners/ICEMBANNERMECH.jpg",
+    "/banners/BannerSize.webp",
   ];
 
   const mobileImages = [
@@ -90,7 +91,7 @@ const HeroSlider = () => {
               key={i}
               src={img}
               alt="banner"
-              className="w-full object-cover flex-shrink-0"
+              className="w-full h-[84vh] object-cover flex-shrink-0"
               width={1600}
               height={700}
               quality={100}

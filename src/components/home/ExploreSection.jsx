@@ -23,17 +23,11 @@
 //             </h2>
 
 //             <h2 className="text-2xl lg:text-3xl font-extrabold text-[#003366] mb-6 leading-snug">
-//               INDIRA COLLEGE OF ENGINEERING <br /> & MANAGEMENT
+//               
 //             </h2>
 
 //             <p className="text-gray-700 text-lg lg:text-xl leading-relaxed text-justify">
-//               Located near Pune, Indira College of Engineering & Management, one
-//               of the leading NAAC accredited engineering institutions, offers a
-//               world of learning to help you achieve your goals. Choose from
-//               industry-led programs, learn from outstanding faculty in
-//               state-of-the-art facilities, and access limitless placement
-//               opportunities with top campus recruiters. Join a vibrant community
-//               of students with ambitions as big as yours.
+//               
 //             </p>
 //           </div>
 
@@ -141,7 +135,7 @@ const ExploreSection = () => {
               Explore Your Potential At
             </h2>
             <h2 className="text-2xl lg:text-3xl font-extrabold text-secondary mt-1 leading-tight">
-              INDIRA GLOBAL SCHOOL OF BUSINESS
+              INDIRA COLLEGE OF ENGINEERING & MANAGEMENT
             </h2>
           </div>
         </div>
@@ -152,14 +146,13 @@ const ExploreSection = () => {
           {/* TEXT */}
           <div className="fade-text">
             <p className="text-gray-700 text-lg lg:text-xl leading-relaxed text-justify">
-              Located near Pune, Indira Global School of Business one of the
-              leading NAAC-accredited MBA institution that offers a rich blend
-              of management education and research driven learning. Choose from
-              industry focused specializations, learn from research active
-              faculty, and gain practical insights through case studies,
-              projects, and data driven analysis, while accessing strong
-              placements and opportunities to participate in seminars,
-              conferences, and research initiatives.
+              Located near Pune, Indira College of Engineering & Management, one
+               of the leading NAAC accredited engineering institutions, offers a
+               world of learning to help you achieve your goals. Choose from
+               industry-led programs, learn from outstanding faculty in
+               state-of-the-art facilities, and access limitless placement
+               opportunities with top campus recruiters. Join a vibrant community
+               of students with ambitions as big as yours.
             </p>
           </div>
 

@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <title>IGSB - Indira Global School of Business</title>
+        <title>ICEM - INDIRA COLLEGE OF ENGINEERING & MANAGEMENT</title>
         <link rel="icon" href="/shortLogo.png" />
       </head>
 

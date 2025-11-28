@@ -359,12 +359,20 @@ export default function Sports() {
  return (
     <div className="w-full bg-white text-gray-800">
        <BannerSlider activeSection={activeSection}/>
-      <div className="max-w-7xl mx-auto py-6 px-6 space-y-12">
+      <div className="max-w-7xl mx-auto py-4 px-6 space-y-12">
         {/* Banner Image */}
        
 
         {/* Navigation Tabs */}
-        <div className="flex flex-wrap gap-2 justify-center mb-8">
+       
+
+        {/* Content Section */}
+        <div className="text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-secondary">
+            {currentFacility.title}
+          </h1>
+
+           <div className="flex flex-wrap gap-2 justify-center mb-8 mt-8">
           {Object.keys(facilities).map((facility) => (
             <button
               key={facility}
@@ -383,11 +391,7 @@ export default function Sports() {
           ))}
         </div>
 
-        {/* Content Section */}
-        <div className="text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-secondary mb-4">
-            {currentFacility.title}
-          </h1>
+
           <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
             {currentFacility.description}
           </p>

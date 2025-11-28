@@ -39,7 +39,7 @@ export default function BannerSlider({ activeSection }) {
             alt={`${activeSection || "Sports"} Facility`}
             width={1920}
             height={1080}
-            className="w-full max-h-[75vh] object-cover"
+            className="w-full h-auto object-cover"
             priority
             unoptimized
           />

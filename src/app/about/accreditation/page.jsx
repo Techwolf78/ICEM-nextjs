@@ -57,7 +57,7 @@ export default function Accreditation() {
   return (
     <div className="w-full bg-white text-gray-800">
       {/* Banner */}
-      <div className="w-full h-[60vh] relative">
+      <div className="w-full h-auto relative">
         <Image
           src="/BannerOverviewPage.jpg"
           alt="Accreditation Banner"

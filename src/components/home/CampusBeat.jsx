@@ -7,12 +7,12 @@ const CampusBeat = () => {
   const [paused, setPaused] = useState(false);
 
   const marqueeImages = [
-    "/Marquee/Marquee1.jpg",
-    "/Marquee/Marquee2.jpg",
-    "/Marquee/Marquee3.jpg",
-    "/Marquee/Marquee4.jpg",
-    "/Marquee/Marquee5.jpg",
-    "/Marquee/Marquee6.jpg",
+    "/marquee/Marquee1.jpg",
+    "/marquee/Marquee2.jpg",
+    "/marquee/Marquee3.jpg",
+    "/marquee/Marquee4.jpg",
+    "/marquee/Marquee5.jpg",
+    "/marquee/Marquee6.jpg",
   ];
 
   // --- Detect tab visibility ---

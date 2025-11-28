@@ -3,11 +3,20 @@
 import React from "react";
 import Image from "next/image";
 
+/**
+ * Render the Annual Fest client page with a hero image and detailed IWAA and Gusto sections.
+ *
+ * The page includes a full-width hero image and two main content sections:
+ * "Indira Women Achievers Awards (IWAA)" and "Gusto - Annual Cultural Festival",
+ * each containing descriptive text, image galleries, highlights, and legacy/CTA content.
+ *
+ * @returns {JSX.Element} The root React element for the Annual Fest page.
+ */
 export default function AnnualFestPage() {
   return (
-    <div className="w-full bg-white text-gray-800">
+    <div className="w-full mx-auto  bg-white text-gray-800">
       {/* HERO */}
-      <div className="relative w-full h-auto">
+      <div className="relative w-full h-[75vh]">
         <Image
           src="/campuslife/Annual Fest.jpg"
           alt="Annual Fest"

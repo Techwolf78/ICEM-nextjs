@@ -29,7 +29,7 @@ const engineeringPrograms = [
 const ugCourses = ["BBA", "BCA", "Engineering", "Direct Second Year"];
 const pgCourses = ["MBA", "MCA", "M-Tech"];
 
-const secondaryColor = "#E85C0D";
+
 // --- Custom Select Component (Replacement for native <select>) ---
 // This component manages its own open/close state and controls the input value via props.
 const CustomSelect = ({
@@ -76,7 +76,7 @@ const CustomSelect = ({
 
   const selectButtonClass = `
     w-full border border-gray-300 bg-white rounded-md px-3 py-2 
-    focus:outline-none focus:ring-2 focus:ring-[${secondaryColor}] 
+    focus:outline-none focus:ring-2 focus:ring-secondary 
     appearance-none cursor-pointer flex justify-between items-center relative 
     transition-colors
   `;
@@ -131,7 +131,7 @@ const CustomSelect = ({
                   className={`px-3 py-2 cursor-pointer text-gray-700 transition-colors 
                     ${
                       isSelected
-                        ? `bg-[${secondaryColor}] text-white font-semibold`
+                        ? `bg-secondary text-white font-semibold`
                         : "hover:bg-gray-100"
                     }
                   `}
@@ -182,7 +182,7 @@ export default function ApplyForm({ variant = "card" }) {
 
   const inputClass =
     "w-full border border-gray-300 bg-white rounded-md px-3 py-2 text-gray-700 placeholder:text-gray-400 " +
-    `focus:outline-none focus:ring-2 focus:ring-[${secondaryColor}]`;
+    `focus:outline-none focus:ring-2 focus:ring-secondary`;
 
   // ------------------- AJAX SUBMIT (NO REDIRECT) -------------------
   const handleSubmit = async (e) => {
@@ -275,7 +275,7 @@ export default function ApplyForm({ variant = "card" }) {
   return (
     <div
       id="contact-form"
-      className={`w-full scroll-mt-[1] ${
+      className={`w-full scroll-mt-[15vh] ${
         isModal
           ? "p-0"
           : "bg-white rounded-lg p-6 shadow-md border border-gray-200"
@@ -283,7 +283,7 @@ export default function ApplyForm({ variant = "card" }) {
     >
       {!isModal && (
         <h3
-          className={`text-xl font-semibold text-[${secondaryColor}] mb-6 text-center`}
+          className={`text-xl font-semibold text-secondary mb-6 text-center`}
         >
           Enquire Now
         </h3>
@@ -443,7 +443,7 @@ export default function ApplyForm({ variant = "card" }) {
         <button
           type="submit"
           disabled={loading}
-          className={`w-full bg-[${secondaryColor}] hover:bg-orange-700 transition-colors text-white font-semibold py-2 rounded-md`}
+          className={`w-full bg-secondary transition-colors text-white font-semibold py-2 rounded-md`}
         >
           {loading ? "Submitting..." : "SUBMIT"}
         </button>

@@ -1,379 +1,354 @@
 "use client";
 import { useState } from "react";
 import BannerSlider from "./BannerSlider";
-
+import Image from "next/image";
 
 export default function Sports() {
   const [activeSection, setActiveSection] = useState("Sports");
   const [activeFAQ, setActiveFAQ] = useState(null);
 
-  const facilities = {
-    Sports: {
-      title: "Sports @ ICEM",
-      description:
-        "At Indira College of Engineering & Management (ICEM), sports are an integral part of the holistic development of students. The college provides a range of sports facilities that encourage physical fitness, teamwork, discipline, and leadership among students.",
-      overview:
-        "ICEM believes that participation in sports is vital for overall growth, instilling in students the values of teamwork, discipline, and perseverance. The college provides ample infrastructure for a variety of sports and games, both indoor and outdoor, to cater to diverse interests. Students are encouraged to participate in sports events, inter-college tournaments, and university-level competitions throughout the year.",
-      items: [
-        "Gymnastics",
-        "Swimming",
-        "Volleyball",
-        "Archery",
-        "Badminton",
-        "Boxing",
-        "Handball",
-        "Table Tennis",
-        "Wrestling",
-        "Athletics",
-        "Basketball",
-        "Chess",
-      ],
-      faqs: [
-        {
-          question: "Does ICEM have dedicated sports facilities on campus?",
-          answer:
-            "Yes, ICEM offers dedicated infrastructure for both indoor and outdoor sports including grounds, courts, and gymnasium facilities for students.",
-        },
-        {
-          question: "Are intercollegiate sports tournaments conducted?",
-          answer:
-            "Yes. ICEM organizes and participates in intercollegiate, university, and national level tournaments in multiple sports disciplines.",
-        },
-        {
-          question: "Is there a sports committee or coordinator?",
-          answer:
-            "Yes, ICEM has a dedicated Sports Committee and Faculty Sports Coordinator who plan, organize, and supervise sports activities throughout the academic year.",
-        },
-        {
-          question: "Are there any awards or scholarships for athletes?",
-          answer:
-            "Outstanding performers in sports are recognized annually with awards, certificates, and in some cases, sports scholarships or fee concessions.",
-        },
-        {
-          question: "Is participation in sports compulsory for students?",
-          answer:
-            "Participation is encouraged but not compulsory. However, students are motivated to take part in annual sports week and fitness programs.",
-        },
-      ],
-      gradient: "from-gray-300 to-gray-400",
+  // Library staff data
+  const libraryStaff = [
+    { name: "Dr. Darshna Desai", designation: "Coordinator", email: "desai.darshana@indiraicem.ac.in" },
+    { name: "Mr. Narayan Jundare", designation: "Librarian & Head", email: "library@indiraicem.ac.in" },
+    { name: "Mrs. Anita Chavan", designation: "Assistant Librarian", email: "anita.chavan@indiraicem.ac.in" },
+    { name: "Mr. Sunil Phuge", designation: "Library Assistant", email: "sunil.phuge@indiraicem.ac.in" },
+    { name: "Mr. Dinesh Deore", designation: "Library Assistant", email: "dinesh.deore@indiraicem.ac.in" },
+    { name: "Mr. Arun Lad", designation: "Sr. Library Clerk", email: "arun.lad@indiraicem.ac.in" }
+  ];
+
+  // Library collection data
+  const libraryCollection = {
+    overview: [
+      { label: "Total number of Books", value: "32948" },
+      { label: "Total Number of Titles", value: "8331" },
+      { label: "Print Journals", value: "30" },
+      { label: "E-Journals", value: "62018" },
+      { label: "NPTEL Video lecture", value: "600" },
+      { label: "E-Books", value: "1050" },
+      { label: "IRC CODE", value: "64" },
+      { label: "IS CODE", value: "128" },
+      { label: "Newspapers", value: "14" },
+      { label: "CDs/DVDs", value: "1300" },
+      { label: "Library Staff", value: "5" },
+      { label: "Library Area", value: "575 SQM" }
+    ],
+    books: [
+      { course: "APPLIED SCIENCE", titles: "404", volumes: "2277" },
+      { course: "CIVIL", titles: "398", volumes: "1735" },
+      { course: "COMPUTER", titles: "390", volumes: "3150" },
+      { course: "E&TC", titles: "699", volumes: "3097" },
+      { course: "IT", titles: "481", volumes: "1860" },
+      { course: "MECH", titles: "995", volumes: "3741" },
+      { course: "MECHANICAL SANDWICH", titles: "131", volumes: "425" },
+      { course: "AIDS", titles: "45", volumes: "188" },
+      { course: "GENERAL BOOKS", titles: "927", volumes: "1012" },
+      { course: "CEXAM", titles: "169", volumes: "245" },
+      { course: "M.TECH( MECH)", titles: "115", volumes: "381" },
+      { course: "M.TECH(COMP)", titles: "58", volumes: "429" },
+      { course: "M.E(E&TC)", titles: "55", volumes: "159" },
+      { course: "MBA", titles: "825", volumes: "4747" },
+      { course: "MCA", titles: "1866", volumes: "8222" },
+      { course: "BBA", titles: "42", volumes: "42" },
+      { course: "BCA", titles: "47", volumes: "138" },
+      { course: "DONATED BOOKS", titles: "684", volumes: "1100" }
+    ],
+    otherMaterials: [
+      { item: "Journals", volumes: "30" },
+      { item: "Magazines", volumes: "10" },
+      { item: "Newspapers", volumes: "14" },
+      { item: "E-Journal Subscription J-Gate (JST/JSSH)", volumes: "2" },
+      { item: "CDs/DVDs (Free with Books & Magazines)", volumes: "1300" }
+    ],
+    newspapers: [
+      { language: "English", count: "7" },
+      { language: "Marathi", count: "6" },
+      { language: "Hindi", count: "1" }
+    ],
+    timing: {
+      regular: "Monday to Saturday: 09:00 am to 4:00 pm",
+      readingRoom: "Reading Room (Exam): 09:00 am to 9:00 pm",
+      closed: "Every Sunday (1st & 3rd Saturday & Public Holiday)"
     },
-    Library: {
-      title: "Library @ ICEM",
-      description:
-        "The ICEM library is a knowledge hub equipped with extensive print and digital resources, providing an ideal environment for learning, research, and academic growth.",
-      overview:
-        "The ICEM library serves as the academic heart of the institution, housing a vast collection of books, journals, periodicals, and digital resources. With state-of-the-art facilities including digital library access, reading halls, and research corners, it provides students and faculty with comprehensive support for their academic and research endeavors.",
-      items: [
-        "Digital Library Section",
-        "E-Journals & E-Books",
-        "Print Books Collection",
-        "Reference Section",
-        "Periodicals Section",
-        "Reading Hall",
-        "Research Corner",
-        "Group Study Rooms",
-        "Newspaper Section",
-        "Thesis & Dissertation",
-        "Book Bank Facility",
-        "Online Database Access",
+    services: [
+      "Computerized Issue / Return",
+      "Reference Service",
+      "Newspaper Clipping",
+      "Current Awareness Service",
+      "Selective Dissemination of Information",
+      "User Orientation / Information Literacy",
+      "New Arrival Service"
+    ],
+    facilities: [
+      "Reading Hall",
+      "Book Bank",
+      "Earn While Learn",
+      "Reprographic, Scanning",
+      "Softcopy of Syllabus and Question Papers",
+      "OPAC",
+      "Internet",
+      "Library Website"
+    ],
+    policies: {
+      general: [
+        "All readers are required to maintain discipline in the library.",
+        "Smoking, eating, sleeping and talking loudly are strictly prohibited in the Library.",
+        "Seek permission of the library staff before entering the stack room.",
+        "The patron should submit his/her Identity card at the counter while entering the library for any purpose.",
+        "The Library remains open on MON – SAT: 09:00 AM – 04:30 PM.",
+        "Changes, if any, in the timings will be notified whenever necessary.",
+        "Every person who enters the library will sign the visitor register.",
+        "Deposit your personal belongings at the property counter.",
+        "Switch off mobile phones or keep on silent mode in the library premises.",
+        "Follow instructions given by the librarian or the staff at the counter."
       ],
-      faqs: [
-        {
-          question: "What are the library timings?",
-          answer:
-            "The library is open from 8:00 AM to 8:00 PM on all working days, and from 9:00 AM to 5:00 PM on weekends and holidays.",
-        },
-        {
-          question: "How many books can a student issue at a time?",
-          answer:
-            "Students can issue up to 4 books for a period of 15 days. Renewal is possible if there are no pending reservations.",
-        },
-        {
-          question: "Does the library provide digital resources?",
-          answer:
-            "Yes, the library provides access to various e-journals, e-books, online databases, and digital learning resources through its digital library section.",
-        },
-        {
-          question: "Is there a book bank facility?",
-          answer:
-            "Yes, the library operates a book bank scheme for economically disadvantaged students to support their academic needs.",
-        },
-        {
-          question: "Can students access library resources remotely?",
-          answer:
-            "Yes, students can access digital resources remotely through the library portal using their institutional login credentials.",
-        },
-      ],
-      gradient: "from-blue-300 to-blue-400",
+      borrowing: [
+        "Books will be issued for a period of 30 days at first instance.",
+        "Four books to PG students and three books to UG students (per month) will be issued against their I-Card.",
+        "Check the book at the time of issuing. In case of defect or damage please inform the library staff.",
+        "Return the issued book on or before the due date.",
+        "Renewals are compulsory before the due date otherwise fine will be charged at Rs. 5/- per day.",
+        "Reference books/Journals/Magazines & project reports will not be issued outside the library.",
+        "In case of loss or damage of book, replacement of book has to be made by the user."
+      ]
     },
-    Transport: {
-      title: "Transport @ ICEM",
-      description:
-        "ICEM provides safe and reliable transport facilities connecting various parts of Pune to the campus, ensuring comfortable and timely commute for students and staff.",
-      overview:
-        "The college operates a fleet of well-maintained buses covering major routes across Pune and nearby areas. With emphasis on safety, punctuality, and comfort, the transport service ensures that students can focus on their academics without worrying about daily commute challenges.",
-      items: [
-        "Pune Station Route",
-        "Shivajinagar Route",
-        "Hinjewadi Route",
-        "Wakad Route",
-        "Pimpri Chinchwad Route",
-        "Hadapsar Route",
-        "Kothrud Route",
-        "Aundh Route",
-        "Baner Route",
-        "Katraj Route",
-        "Swargate Route",
-        "Nigdi Route",
-      ],
-      faqs: [
-        {
-          question: "Is transport facility compulsory for students?",
-          answer:
-            "No, the transport facility is optional. Students can avail bus services based on their convenience and route availability.",
-        },
-        {
-          question: "How are bus fees charged?",
-          answer:
-            "Bus fees are charged on a quarterly or yearly basis. The fee structure varies based on the distance and route.",
-        },
-        {
-          question: "Are the buses equipped with safety features?",
-          answer:
-            "Yes, all college buses are equipped with first-aid kits, fire extinguishers, and experienced drivers. Female attendants are present in buses for additional safety.",
-        },
-        {
-          question: "What is the bus timing schedule?",
-          answer:
-            "Buses typically arrive at college by 8:00 AM and depart after 4:30 PM. Exact timings may vary based on routes and college schedule.",
-        },
-        {
-          question:
-            "Can students change their bus route during the academic year?",
-          answer:
-            "Route changes are subject to availability and can be requested through the transport office with valid reasons.",
-        },
-      ],
-      gradient: "from-green-300 to-green-400",
-    },
-    Canteen: {
-      title: "Canteen @ ICEM",
-      description:
-        "The ICEM canteen offers a variety of delicious, hygienic, and affordable food options to cater to diverse tastes and dietary preferences of students and staff.",
-      overview:
-        "Our canteen is more than just a place to eat - it's a vibrant social hub where students gather, relax, and refuel. With a focus on quality, hygiene, and variety, we serve nutritious meals that cater to different tastes and dietary requirements at reasonable prices.",
-      items: [
-        "North Indian Thali",
-        "South Indian Meals",
-        "Chinese Cuisine",
-        "Sandwiches & Wraps",
-        "Burgers & Fries",
-        "Pizza & Pasta",
-        "Fresh Juices",
-        "Ice Cream & Desserts",
-        "Salads & Healthy Options",
-        "Beverages & Coffee",
-        "Snacks & Fast Food",
-        "Special Diet Menus",
-      ],
-      faqs: [
-        {
-          question: "What are the canteen operating hours?",
-          answer:
-            "The canteen operates from 8:00 AM to 6:00 PM on all college working days, with extended hours during examination periods.",
-        },
-        {
-          question: "Is the food hygienic and quality checked?",
-          answer:
-            "Yes, the canteen maintains high standards of hygiene and quality. Regular inspections and quality checks are conducted to ensure food safety.",
-        },
-        {
-          question: "Are there options for vegetarians and special diets?",
-          answer:
-            "Yes, the canteen offers separate vegetarian and non-vegetarian sections, along with options for special dietary requirements.",
-        },
-        {
-          question: "What payment methods are accepted?",
-          answer:
-            "The canteen accepts cash, UPI payments, and also offers a canteen coupon system for regular students.",
-        },
-        {
-          question: "Can students provide feedback about food quality?",
-          answer:
-            "Yes, students can provide feedback through suggestion boxes or directly to the canteen committee for continuous improvement.",
-        },
-      ],
-      gradient: "from-orange-300 to-orange-400",
-    },
-    Gym: {
-      title: "Gymnasium @ ICEM",
-      description:
-        "State-of-the-art gymnasium facilities at ICEM promote physical fitness and well-being among students with modern equipment and professional guidance.",
-      overview:
-        "Our well-equipped gymnasium provides students with the perfect environment to maintain physical fitness and relieve academic stress. With modern equipment and expert trainers, we encourage a healthy lifestyle and fitness consciousness among the student community.",
-      items: [
-        "Treadmills",
-        "Exercise Bikes",
-        "Elliptical Trainers",
-        "Weight Training Machines",
-        "Free Weights Area",
-        "Cable Cross Machines",
-        "Leg Press Machines",
-        "Smith Machine",
-        "Bench Press Stations",
-        "Dumbbell Racks",
-        "Yoga & Stretching Area",
-        "Functional Training Zone",
-      ],
-      faqs: [
-        {
-          question: "What are the gym timings?",
-          answer:
-            "The gym is open from 6:00 AM to 10:00 AM and 4:00 PM to 8:00 PM on all days, including weekends.",
-        },
-        {
-          question: "Is there a trainer available at the gym?",
-          answer:
-            "Yes, certified fitness trainers are available during operational hours to guide students with proper exercise techniques and workout plans.",
-        },
-        {
-          question: "Are there separate timings for boys and girls?",
-          answer:
-            "Yes, the gym has designated time slots for boys and girls to ensure comfort and privacy for all users.",
-        },
-        {
-          question: "Is gym membership included in college fees?",
-          answer:
-            "Basic gym access is included for all students. Specialized training programs may have additional charges.",
-        },
-        {
-          question: "What safety measures are in place at the gym?",
-          answer:
-            "The gym is equipped with safety equipment, first-aid kits, and trained staff. Regular maintenance and sanitization are conducted.",
-        },
-      ],
-      gradient: "from-purple-300 to-purple-400",
-    },
-    Hostel: {
-      title: "Hostel @ ICEM",
-      description:
-        "Comfortable and secure hostel accommodation at ICEM provides a home away from home for students with all essential amenities and a conducive environment for learning.",
-      overview:
-        "Our hostel facilities are designed to provide a comfortable and secure living environment that supports both academic and personal growth. With modern amenities, nutritious food, and round-the-clock security, we ensure that students feel at home while focusing on their studies.",
-      items: [
-        "AC & Non-AC Rooms",
-        "Wi-Fi Connectivity",
-        "Study Rooms",
-        "Common Recreation Area",
-        "Laundry Services",
-        "Mess with Dining Hall",
-        "24/7 Security",
-        "Medical Assistance",
-        "Hot Water Supply",
-        "Housekeeping Services",
-        "Indoor Games",
-        "Parking Facility",
-      ],
-      faqs: [
-        {
-          question: "Are there separate hostels for boys and girls?",
-          answer:
-            "Yes, ICEM provides separate, secure hostel facilities for boys and girls with dedicated wardens and staff.",
-        },
-        {
-          question: "What is the hostel fee structure?",
-          answer:
-            "Hostel fees vary based on room type (AC/Non-AC) and occupancy. Detailed fee structure is available at the hostel administration office.",
-        },
-        {
-          question: "What are the hostel rules and regulations?",
-          answer:
-            "Hostel has specific rules regarding visiting hours, curfew timings, and conduct to ensure safety and discipline. These are provided to students at the time of admission.",
-        },
-        {
-          question: "Is food included in hostel fees?",
-          answer:
-            "Yes, hostel fees include mess charges providing nutritious and hygienic meals throughout the day.",
-        },
-        {
-          question: "Can students choose roommates?",
-          answer:
-            "Roommate preferences are considered during room allocation, subject to availability and administration approval.",
-        },
-      ],
-      gradient: "from-teal-300 to-teal-400",
-    },
-    "Primary Health Centre": {
-      title: "Primary Health Centre @ ICEM",
-      description:
-        "The Primary Health Centre at ICEM ensures comprehensive healthcare services for students and staff, promoting wellness and providing immediate medical attention when needed.",
-      overview:
-        "Our Primary Health Centre is committed to maintaining the health and well-being of every member of the ICEM community. With qualified medical professionals, essential equipment, and tie-ups with nearby hospitals, we provide comprehensive healthcare services and promote a culture of wellness on campus.",
-      items: [
-        "First Aid Treatment",
-        "Medical Consultations",
-        "Emergency Care",
-        "Health Check-ups",
-        "Vaccination Services",
-        "Health Awareness Programs",
-        "Ambulance Service",
-        "Medicine Dispensing",
-        "Psychological Counseling",
-        "Dental Check-up",
-        "Eye Check-up",
-        "Yoga & Wellness Sessions",
-      ],
-      faqs: [
-        {
-          question: "What are the health centre timings?",
-          answer:
-            "The Primary Health Centre operates from 9:00 AM to 5:00 PM on working days. Emergency services are available 24/7.",
-        },
-        {
-          question: "Is there a doctor available on campus?",
-          answer:
-            "Yes, qualified doctors are available during working hours, and emergency medical assistance is accessible round the clock.",
-        },
-        {
-          question: "Are medical services free for students?",
-          answer:
-            "Basic medical services and first-aid are provided free of cost to all students. Specialized treatments may involve nominal charges.",
-        },
-        {
-          question: "Does the health centre conduct health check-up camps?",
-          answer:
-            "Yes, regular health check-up camps, vaccination drives, and health awareness programs are organized throughout the year.",
-        },
-        {
-          question: "Is ambulance service available?",
-          answer:
-            "Yes, ambulance service is available for emergencies and referrals to nearby hospitals when required.",
-        },
-      ],
-      gradient: "from-red-300 to-red-400",
-    },
+    eContent: [
+      { database: "Science-Direct", url: "http://www.sciencedirect.com" },
+      { database: "FTP", url: "ftp://172.16.32.40" },
+      { database: "NDL (National Digital Library of India)", url: "https://ndl.iitkgp.ac.in" },
+      { database: "DELNET (Developing Library Network)", url: "http://www.delnet.in" },
+      { database: "J-gate", url: "https://www.jgateenext.com" },
+      { database: "Question Papers", url: "Autonomous ENDSEM Question Papers ICEM" }
+    ]
   };
 
-  const currentFacility = facilities[activeSection];
+  // Transport data
+  const transportData = {
+    contact: {
+      telephone: "02114-661661",
+      mobile: "+91 9158302525"
+    }
+  };
 
- return (
+  // Gym data
+  const gymData = {
+    equipment: [
+      "Bicep Machine",
+      "Multifunctional 5 Station Machine",
+      "Benches",
+      "Bars & Plates",
+      "Cardio Station (Treadmill, Cycle, Cross Trainer)",
+      "Chest Press Machine",
+      "Calf Raises Machine",
+      "Dumbbells",
+      "Leg Press Machine",
+      "Leg Extension Machine",
+      "Leg Curl Machine",
+      "Lat Pull Down Machine",
+      "Shoulder Press Machine",
+      "Squat Machine",
+      "Chest Press Machine",
+      "Cross Trainer",
+      "Leg Press Machine",
+      "Leg Curl Machine",
+      "Single Bar",
+      "Twister"
+    ],
+    contact: {
+      name: "Mr. Atul Gore",
+      designation: "Physical Director",
+      telephone: "02114-661599"
+    }
+  };
+
+  // Primary Health Centre data
+  const healthCentreData = {
+    description: "Indira Primary Health Centre is an In-house Medical Clinic Facility for Students and Staffs of ICEM campus. Medical Clinic is equipped with equipment needed for primary health management.",
+    services: [
+      "Medical Consultation",
+      "Gynaecological Consultation",
+      "Counselling for Students",
+      "First Aid",
+      "Nebulization",
+      "Tetanus Vaccination",
+      "Free Medicines"
+    ]
+  };
+
+  // Hostel data
+  const hostelData = {
+    overview: {
+      description: "ICEM is having Boys & Girls hostel facility with spacious rooms.",
+      capacity: {
+        girls: "168",
+        boys: "126"
+      },
+      roomFacilities: [
+        "Beds",
+        "Study table",
+        "Chairs",
+        "Cupboard facility"
+      ]
+    },
+    managementTeam: [
+      { name: "Mr. Dattatray Ovhal", designation: "Boys Hostel Warden", contact: "8788562431", email: "dattatraya.ovhal@indiraicem.ac.in" },
+      { name: "Ms. Manisha Dhiwar", designation: "Girls Hostel Warden", contact: "9588475368", email: "Manisha.dhiwar@indiraicem.ac.in" },
+      { name: "Ms. Sapna Dahake", designation: "Girls Hostel Warden", contact: "9699913109", email: "sapnadahake@indiraicem.ac.in" }
+    ],
+    messTeam: [
+      { name: "Mr. Vikas Kumar Shetty – M/s Little Chef Canteen", designation: "Canteen Owner", contact: "9665869000", email: "" },
+      { name: "Mr. Prajwal Shetty – M/s Little Chef Canteen", designation: "Canteen In-charge for Mess Fees", contact: "8310972775", email: "" }
+    ],
+    facilities: [
+      "Free College Ambulance service 24×7 for hostel students.",
+      "Washing machine Facility.",
+      "Water coolers for drinking water on each floor.",
+      "Separate Common TV room with LCD facility at girls & boys hostel.",
+      "CCTV cameras at all major points at girls & boys hostel.",
+      "Wi-Fi facility.",
+      "DG power backup – 24×7.",
+      "Housekeeping & daily cleaning of all rooms (8 am to 4 pm).",
+      "Hot water facility in all rooms (6 am to 9 am).",
+      "Sanitary pad disposal machine in girls hostel.",
+      "Facility of Easy dry wash system in all rooms.",
+      "Facility of Security Guards – 24×7.",
+      "Facility of warden in hostel.",
+      "Facility of Pest control – Monthly.",
+      "Facility of Separate sports room – carom & table tennis.",
+      "Common Gym facility for hostel students.",
+      "Daily attendance & roll call register is maintained.",
+      "Health & Accident Insurance coverage for all hostel students.",
+      "Hostel committee is operational at hostel.",
+      "Mess facility for all hostel students."
+    ],
+    timings: [
+      "Hostel entry time: 7:00 PM",
+      "Campus Gate closing time: 7:15 PM",
+      "All students should be present in their respective rooms before wardens visit for daily night attendance i.e. by 9:45 PM sharp.",
+      "Late Entry NOT ALLOWED. (In case of valid reason, parents' written message/mail must be sent in advance. Only 2 emergency late entries permitted per month.)",
+      "Admission will be cancelled if found frequently late or indisciplined.",
+      "Students should maintain entries in 'In & Out' registers available at the Main Security Gate."
+    ],
+    messTimings: [
+      "Breakfast: 7:45 am – 9:15 am",
+      "Lunch: 1:00 pm – 2:30 pm",
+      "Evening Snacks: 5:00 pm – 6:00 pm",
+      "Dinner: 8:00 pm – 9:00 pm"
+    ],
+    documents: [
+      "Indemnity Bond (Rs. 100/- Stamp paper with Notary) (format with warden).",
+      "Medical Fitness Certificate on Doctor's Letterhead stamped & signed. (If any medical history exists, it must be informed to warden.)",
+      "Copy of Student's Aadhar Card.",
+      "2 Passport size photos.",
+      "Undertaking by Students & Parents (at time of hostel entry).",
+      "Declarations (at the time of hostel entry).",
+      "Copy of hostel & mess fees receipts.",
+      "Two-wheeler permission form."
+    ],
+    cancellationRules: [
+      {
+        title: "Cancel Seat Before Hostel Accommodation Within 20 Days",
+        steps: [
+          "Inform Institute Coordinator → Fill Hostel Cancellation Form (PDF with warden) → Get Director/HOD signature → Submit to warden within 20 days from date of registration.",
+          "(Refund amount calculated as per management policy.)"
+        ]
+      },
+      {
+        title: "Cancel Seat Before Hostel Accommodation Exceeding 20 Days",
+        steps: [
+          "If student delays more than 20 days → Fill Cancellation Form → Get Director/HOD signature → Submit to warden.",
+          "(No refund after 20 days.)"
+        ]
+      },
+      {
+        title: "Cancel Seat After Taking Hostel Accommodation",
+        steps: [
+          "Step 1: Inform Institute Coordinator → Fill Cancellation Form → Get Director/HOD signature → Submit to warden.",
+          "(No refund policy applicable.)",
+          "Step 2: Fill Hostel Leaving Form at authorized signatures → Submit at Security Gate to take luggage out.",
+          "(No refund policy applicable.)"
+        ]
+      }
+    ],
+    securityDeposit: [
+      "At the end of academic session, Refund Form (signed by warden) + Security deposit of Rs. 5000/- refunded after deducting insurance amount.",
+      "Keep original receipts safely for refund process."
+    ],
+    messInstructions: [
+      "Hostel student must pay full mess fees for academic year in advance.",
+      "Mess food services are mandatory for hostel students.",
+      "Students should not waste food or share food with outsiders.",
+      "Timings must be strictly followed.",
+      "Complaints related to mess must be reported immediately to Canteen In-charge."
+    ],
+    medicalAssistance: [
+      "It is mandatory for all hostel students to submit Medical Fitness Form.",
+      "If a student has any previous medical history, it must be informed during admission.",
+      "For any medical assistance, contact warden immediately (First Aid Box available).",
+      "In case of emergency – Warden & Hostel Team will shift student to nearby hospital in college ambulance.",
+      "Parents & Guardians will be connected for updates & expenses.",
+      "Medical Fitness Certificate must be submitted after vacation/long leave."
+    ]
+  };
+
+  // Sports-specific data
+ const achievements = [
+    {
+      title: "Table Tennis Runners-Up",
+      description:
+        "The ICEM Parandwadi Girls Team clinched the Runner-up position in the SPPU Intercollegiate Table Tennis Tournament, honoured by national player Mr. Rajat Kadam.",
+        img: "/sports/tabletennis.jpg",
+    },
+    {
+      title: "National Gold Medal (Athletics)",
+      description:
+        "Mr. Dhanaraj Raut (B.E. Civil) brought pride to the institute and state by winning a Gold Medal while representing the Maharashtra Team at the Senior National Championship in Karnataka.",
+        img: "/sports/tabletennis.jpg",
+    },
+    {
+      title: "Gold Medal in Boxing",
+      description:
+        "Ms. Kartikee Salve (T.E. AI-DS) demonstrated exceptional skill to secure a Gold Medal in Boxing, earning a qualification for the SPPU Interzonal round.",
+        img: "/sports/boxing.jpg",
+    },
+    {
+      title: "Bronze Medal in Fencing",
+      description:
+        "Our talented fencer, Ms. Surbhi Jadhav, showcased her prowess by winning a Bronze Medal and qualifying for the prestigious SPPU Interzonal Competition.",
+        img: "/sports/fencing.jpg",
+    },
+    {
+      title: "Water Polo Runners-Up",
+      description:
+        "The ICEM Water Polo Team secured the Runner-up trophy at the SPPU Intercollegiate tournament, with team members Mr. Dhanraj Raut and Mr. Vallabh Lawate selected for the Pune District Team.",
+        img: "/sports/water-polo.jpg",
+    },
+    {
+      title: "Mallkhambh Qualification",
+      description:
+        "Mr. Deepak Yadav (S.E. Computer) excelled in his sport, qualifying to represent ICEM at the SPPU Interzonal Mallkhambh Competition.",
+        img: "/sports/malkhamb.jpg",
+    },
+  ];
+
+const highlight = {
+    title: "Arjuna Award & Alumnus Felicitation",
+    description1:
+      "In a moment of immense pride, our alumnus Mr. Sachin Khilari was honored with the prestigious Arjuna Award by the Honorable President of India, Smt. Droupadi Murmu.",
+    description2:
+      "The institute also proudly felicitated Mr. Sachin Khilari (Mechanical Engineering, Batch 2013), a Paralympic Silver Medallist in Men's Shot Put F46, during the Induction Programme 2024-25.",
+      img: "/sports/arjunaward1.png",
+  };
+
+ 
+
+  return (
     <div className="w-full bg-white text-gray-800">
-       <BannerSlider activeSection={activeSection}/>
+      <BannerSlider activeSection={activeSection}/>
       <div className="max-w-7xl mx-auto py-4 px-6 space-y-12">
-        {/* Banner Image */}
-       
-
         {/* Navigation Tabs */}
-       
-
-        {/* Content Section */}
-        <div className="text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-secondary">
-            {currentFacility.title}
-          </h1>
-
-           <div className="flex flex-wrap gap-2 justify-center mb-8 mt-8">
-          {Object.keys(facilities).map((facility) => (
+        <div className="flex flex-wrap gap-2 justify-center mb-8">
+          {["Sports", "Library", "Transport", "Canteen", "Gym", "Hostel", "Primary Health Centre"].map((facility) => (
             <button
               key={facility}
               onClick={() => {
@@ -391,83 +366,880 @@ export default function Sports() {
           ))}
         </div>
 
+        {/* Content Section */}
+        {activeSection === "Sports" ? (
+          // Sports-specific content
+          <div className="max-w-full mx-auto px-6 py-10">
+            {/* Main Content */}
+            <div className="w-full bg-white p-6 rounded-xl shadow-md">
+              <h2 className="text-4xl font-semibold text-secondary text-center mb-6">
+                 Sports & Recreation
+              </h2>
 
-          <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
-            {currentFacility.description}
-          </p>
-        </div>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                At <b>ICEM</b>, we believe in the holistic development of our
+                students, and sports play a vital role in shaping character,
+                building teamwork, and promoting physical fitness.
+              </p>
 
-        <div className="bg-gray-50 p-8 rounded-xl shadow-sm">
-          <h2 className="text-2xl font-bold text-secondary mb-4">
-            {activeSection} Overview
-          </h2>
-          <p className="text-gray-700 leading-relaxed">
-            {currentFacility.overview}
-          </p>
-        </div>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Our institute provides state-of-the-art sports facilities and
+                encourages students to participate in various indoor and outdoor
+                sports activities at university, state, and national levels.
+              </p>
 
-        <div>
-          <h2 className="text-2xl font-bold text-secondary mb-6">
-            {activeSection} Facilities & Services
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {currentFacility.items.map((item, index) => (
-              <div
-                key={index}
-                className="relative rounded-xl shadow-md overflow-hidden bg-gray-200 group h-56 flex items-center justify-center transition-transform duration-300 hover:scale-105"
-              >
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${currentFacility.gradient} group-hover:from-secondary/70 group-hover:to-secondary/60 transition-all duration-300`}
-                ></div>
-                <p className="relative text-white font-semibold text-lg z-10 group-hover:scale-110 transition-transform duration-300 drop-shadow-md text-center px-4">
-                  {item}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
+              <h3 className="text-xl font-semibold text-secondary mb-4">
+                Sports Facilities
+              </h3>
 
-        <div>
-          <h2 className="text-2xl font-bold mb-6 text-secondary">
-            Frequently Asked Questions
-          </h2>
-          <div className="bg-white rounded-lg shadow-sm p-6 space-y-4">
-            {currentFacility.faqs.map((faq, i) => (
-              <div
-                key={i}
-                className="border rounded-md bg-white overflow-hidden transition-all duration-300 hover:shadow-md"
-              >
-                <div
-                  onClick={() => setActiveFAQ(activeFAQ === i ? null : i)}
-                  className={`flex justify-between items-center p-3 cursor-pointer font-medium transition-colors ${
-                    activeFAQ === i
-                      ? "bg-secondary text-white"
-                      : "text-black hover:bg-gray-50"
-                  }`}
-                >
-                  <span>
-                    {i + 1}. {faq.question}
-                  </span>
-                  <span className="text-xl font-bold">
-                    {activeFAQ === i ? "−" : "+"}
-                  </span>
-                </div>
-                <div
-                  className={`transition-all duration-300 overflow-hidden ${
-                    activeFAQ === i ? "max-h-96" : "max-h-0"
-                  }`}
-                >
-                  <div className="p-3 text-sm bg-gray-50 text-gray-700 leading-relaxed">
-                    {faq.answer}
+              <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-8">
+                <li>Well-equipped gymnasium with modern equipment</li>
+                <li>Indoor sports complex for table tennis, chess, and carrom</li>
+                <li>Outdoor playground for cricket, football, and athletics</li>
+                <li>Basketball and volleyball courts</li>
+              </ul>
+
+              {/* Sports Infrastructure Marquee */}
+              <h2 className="text-2xl font-bold text-secondary mt-10 mb-6">
+                Sports Infrastructure
+              </h2>
+
+              {/* Single Marquee Image */}
+              <div className="relative w-full overflow-hidden h-[50vh] mb-12 ">
+                <div className="flex w-[200%] animate-smoothScroll h-full">
+                  {/* Image 1 */}
+                  <div className="relative w-full h-full flex-shrink-0">
+                    <Image
+                      src="/sportsmarque.jpg"
+                      alt="Sports Infrastructure"
+                      fill
+                      className="object-cover"
+                      unoptimized={true}
+                      priority
+                    />
+                  </div>
+
+                  {/* Image 2 */}
+                  <div className="relative w-full h-full flex-shrink-0">
+                    <Image
+                      src="/sportsmarque.jpg"
+                      alt="Sports Infrastructure duplicate"
+                      fill
+                      className="object-cover"
+                      unoptimized={true}
+                      priority
+                    />
                   </div>
                 </div>
               </div>
-            ))}
+
+              {/* Sports Achievements Section */}
+              <h3 className="text-2xl font-semibold text-secondary mb-6">
+                Sports Achievements
+              </h3>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                {achievements.map((item, index) => (
+                  <div
+                    key={index}
+                    className="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all p-6 flex flex-col"
+                  >
+                    {/* Image Placeholder */}
+                    <div className=" relative w-full h-40 bg-gray-200 rounded-sm flex items-center justify-center text-gray-500 text-sm mb-4">
+                      <Image
+                        src={item.img || "/sports/tabletennis.jpg"}
+                        alt="Achievement Icon"
+                        fill
+                        className="object-cover rounded-sm"
+                        unoptimized={true}
+                      />
+                    </div>
+
+                    {/* Text */}
+                    <h4 className="text-lg font-semibold text-secondary mb-2">
+                      {item.title}
+                    </h4>
+
+                    <p className="text-gray-700 leading-relaxed text-sm">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Special Highlight Section */}
+              <div className="sm:mt-18 sm:p-0 bg-secondary-50 rounded-xl ">
+                {/* Highlight Section */}
+                <div className="relative border-2 border-gray-200 rounded-2xl p-2 sm:p-8 sm:pl-80 shadow-md  flex flex-col sm:flex-row  items-center gap-6">
+                  {/* Floating Image - Desktop */}
+                  <div className="hidden sm:block absolute -left-3 top-1/3 -translate-y-1/2 z-20">
+                    <Image
+                      src="/sports/arjunaward1.png"
+                      alt="Arjuna Award Winner"
+                      height={320}
+                      width={320}
+                      className="object-contain drop-shadow-2xl select-none"
+                      unoptimized
+                    />
+                  </div>
+
+                  {/* Floating Image - Mobile (inline instead of absolute) */}
+                  <div className="sm:hidden flex justify-center mb-4">
+                    <Image
+                      src="/sports/arjunaward1.png"
+                      alt="Arjuna Award Winner"
+                      height={200}
+                      width={200}
+                      className="object-contain drop-shadow-2xl select-none"
+                      unoptimized
+                    />
+                  </div>
+
+                  {/* Text Section */}
+                  <div className="flex-1 text-center sm:text-left">
+                    <h3 className="text-2xl font-bold text-secondary mb-3">
+                      {highlight.title}
+                    </h3>
+
+                    <p className="text-gray-800 leading-relaxed mb-3">
+                      {highlight.description1}
+                    </p>
+
+                    <p className="text-gray-800 leading-relaxed">
+                      {highlight.description2}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        ) : activeSection === "Library" ? (
+          // Library-specific content
+          <div className="max-w-full mx-auto px-6 py-10 space-y-12">
+            {/* About Us Tab Content */}
+            <div className="w-full bg-white p-8 rounded-xl shadow-md">
+              <h2 className="text-4xl font-bold text-secondary mb-8 text-center">About Library</h2>
+              
+              {/* Mission & Vision */}
+              <div className="grid md:grid-cols-2 gap-8 mb-12">
+                <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                  <h3 className="text-xl font-bold text-blue-800 mb-4">Library Mission</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    To provide comprehensive resources and services in support of the research, teaching, and learning to its Faculty Members, Students, Researchers and Support Staff.
+                  </p>
+                </div>
+                <div className="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+                  <h3 className="text-xl font-bold text-green-800 mb-4">Library Vision</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    Mr. Shankar Rao Wakalkar Library (ICEM Central Library) will be recognized as leading library by informing and inspiring its user making them all more resilient, more knowledgeable, more connected and more successful.
+                  </p>
+                  <p className="text-gray-700 leading-relaxed mt-3">
+                    The Library continues to embrace change and align itself to thrive on diversity, to support professional growth and opportunity, and to reward flexibility and innovation.
+                  </p>
+                </div>
+              </div>
+
+              {/* Introduction */}
+              <div className="mb-12">
+                <h3 className="text-2xl font-bold text-secondary mb-6">Introduction</h3>
+                <div className="bg-gray-50 p-6 rounded-lg">
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    The college library is well equipped with large number of textbook, reference books, periodicals, journals and newspapers. The number of books in the library at present is about 32948. The library receives 30 journals and 10 magazines in specialized areas.
+                  </p>
+                  <p className="text-gray-700 leading-relaxed">
+                    The library consists of reading hall, internet browsing center, reference section, open access periodical and research library. The library has introduced computerized PVC I- card system for the students as well as staff. The library is automated with Koha Library Software(Version-23.11.06) to ease its clientele at various levels while in the library.
+                  </p>
+                </div>
+              </div>
+
+              {/* Library Information */}
+              <div className="mb-12">
+                <h3 className="text-2xl font-bold text-secondary mb-6">Library Information</h3>
+                <div className="bg-gray-50 p-6 rounded-lg">
+                  <p className="text-gray-700 leading-relaxed">
+                    Mr. Shankar Rao Wakalkar Library, established in the year 2007, is an invaluable resource for students, researchers and faculties of management and engineering. The college library is well equipped with large number of textbook, reference books, periodicals, journals and newspapers. The number of books in the library at present is about 32948. The library receives 30 journals and 10 magazines in specialized areas. The library consists of reading hall, internet browsing center, reference section, open access periodical and research library. The library has introduced computerized PVC I- card system for the students as well as staff. The library is automated with Koha Library Software (Version-23.11.06) to ease its clientele at various levels while in the library.
+                  </p>
+                </div>
+              </div>
+
+              {/* Staff Information */}
+              <div>
+                <h3 className="text-2xl font-bold text-secondary mb-6">Staff Information</h3>
+                <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                  <table className="w-full">
+                    <thead className="bg-secondary text-white">
+                      <tr>
+                        <th className="p-4 text-left">Name</th>
+                        <th className="p-4 text-left">Designation</th>
+                        <th className="p-4 text-left">Email</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {libraryStaff.map((staff, index) => (
+                        <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
+                          <td className="p-4 border-b border-gray-200">{staff.name}</td>
+                          <td className="p-4 border-b border-gray-200">{staff.designation}</td>
+                          <td className="p-4 border-b border-gray-200 text-blue-600">{staff.email}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            {/* Library Resources Tab Content */}
+            <div className="w-full bg-white p-8 rounded-xl shadow-md">
+              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Library Resources</h2>
+              
+              {/* Collection Overview */}
+              <div className="mb-12">
+                <h3 className="text-2xl font-bold text-secondary mb-6">Collection</h3>
+                <div className="bg-gray-50 p-6 rounded-lg mb-6">
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    The library has developed an unlikely collection of over 32196 books, 1300 CD's/ DVD's and over 87 hard copy journals and magazines in last five years. The same tends to grow at a very expediential rate in coming years.
+                  </p>
+                </div>
+
+                <h4 className="text-xl font-bold text-secondary mb-4">Library At A Glance</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+                  {libraryCollection.overview.map((item, index) => (
+                    <div key={index} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                      <div className="text-lg font-semibold text-secondary">{item.value}</div>
+                      <div className="text-sm text-gray-600">{item.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Books Collection */}
+              <div className="mb-12">
+                <h3 className="text-2xl font-bold text-secondary mb-6">Books Collection</h3>
+                <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                  <table className="w-full">
+                    <thead className="bg-secondary text-white">
+                      <tr>
+                        <th className="p-4 text-left">Sr. No</th>
+                        <th className="p-4 text-left">Course</th>
+                        <th className="p-4 text-left">Total No Of Titles</th>
+                        <th className="p-4 text-left">Total No. Of Volumes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {libraryCollection.books.map((book, index) => (
+                        <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
+                          <td className="p-4 border-b border-gray-200">{index + 1}</td>
+                          <td className="p-4 border-b border-gray-200">{book.course}</td>
+                          <td className="p-4 border-b border-gray-200">{book.titles}</td>
+                          <td className="p-4 border-b border-gray-200">{book.volumes}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Other Reading Materials */}
+              <div className="mb-12">
+                <h3 className="text-2xl font-bold text-secondary mb-6">Other Reading Materials</h3>
+                <div className="bg-white border border-gray-200 rounded-lg overflow-hidden mb-6">
+                  <table className="w-full">
+                    <thead className="bg-secondary text-white">
+                      <tr>
+                        <th className="p-4 text-left">Sr. No</th>
+                        <th className="p-4 text-left">Items</th>
+                        <th className="p-4 text-left">Volumes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {libraryCollection.otherMaterials.map((material, index) => (
+                        <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
+                          <td className="p-4 border-b border-gray-200">{index + 1}</td>
+                          <td className="p-4 border-b border-gray-200">{material.item}</td>
+                          <td className="p-4 border-b border-gray-200">{material.volumes}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+
+                <h4 className="text-xl font-bold text-secondary mb-4">Newspapers Breakdown</h4>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {libraryCollection.newspapers.map((paper, index) => (
+                    <div key={index} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                      <div className="text-lg font-semibold text-secondary">{paper.count}</div>
+                      <div className="text-sm text-gray-600">{paper.language} Newspapers</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Timing Tab Content */}
+            <div className="w-full bg-white p-8 rounded-xl shadow-md">
+              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Library Timing</h2>
+              
+              <div className="bg-gray-50 p-8 rounded-lg">
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold text-green-600 mb-4">Working Hours</h3>
+                    <div className="space-y-4">
+                      <div className="bg-white p-4 rounded-lg shadow-sm">
+                        <p className="text-lg font-semibold text-gray-800">{libraryCollection.timing.regular}</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow-sm">
+                        <p className="text-lg font-semibold text-gray-800">{libraryCollection.timing.readingRoom}</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold text-red-600 mb-4">Library Closed On</h3>
+                    <div className="bg-white p-6 rounded-lg shadow-sm">
+                      <p className="text-lg font-semibold text-gray-800">{libraryCollection.timing.closed}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Services Tab Content */}
+            <div className="w-full bg-white p-8 rounded-xl shadow-md">
+              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Library Services & Facilities</h2>
+              
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-2xl font-bold text-secondary mb-6">Library Services</h3>
+                  <div className="bg-gray-50 p-6 rounded-lg">
+                    <ul className="space-y-3">
+                      {libraryCollection.services.map((service, index) => (
+                        <li key={index} className="flex items-start">
+                          <span className="text-green-500 mr-3">✓</span>
+                          <span className="text-gray-700">{service}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                
+                <div>
+                  <h3 className="text-2xl font-bold text-secondary mb-6">Facilities</h3>
+                  <div className="bg-gray-50 p-6 rounded-lg">
+                    <ul className="space-y-3">
+                      {libraryCollection.facilities.map((facility, index) => (
+                        <li key={index} className="flex items-start">
+                          <span className="text-blue-500 mr-3">✓</span>
+                          <span className="text-gray-700">{facility}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Policies Tab Content */}
+            <div className="w-full bg-white p-8 rounded-xl shadow-md">
+              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Library Policies</h2>
+              
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-2xl font-bold text-secondary mb-6">General Policies</h3>
+                  <div className="bg-gray-50 p-6 rounded-lg">
+                    <ul className="space-y-3">
+                      {libraryCollection.policies.general.map((policy, index) => (
+                        <li key={index} className="flex items-start">
+                          <span className="text-red-500 mr-3">•</span>
+                          <span className="text-gray-700">{policy}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                
+                <div>
+                  <h3 className="text-2xl font-bold text-secondary mb-6">Borrowing Policies</h3>
+                  <div className="bg-gray-50 p-6 rounded-lg">
+                    <ul className="space-y-3">
+                      {libraryCollection.policies.borrowing.map((policy, index) => (
+                        <li key={index} className="flex items-start">
+                          <span className="text-orange-500 mr-3">•</span>
+                          <span className="text-gray-700">{policy}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* E-Content Tab Content */}
+            <div className="w-full bg-white p-8 rounded-xl shadow-md">
+              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Electronic Databases</h2>
+              
+              <div className="bg-gray-50 p-6 rounded-lg mb-6">
+                <p className="text-gray-700 leading-relaxed">
+                  Keeping in view the importance of research in the academic sector, the library has provided access to various electronic journal databases. These databases cater to the research needs of its patrons.
+                </p>
+              </div>
+
+              <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                <table className="w-full">
+                  <thead className="bg-secondary text-white">
+                    <tr>
+                      <th className="p-4 text-left">Sr. No</th>
+                      <th className="p-4 text-left">Database / OPAC / FTP / NDL / DELNET / WEB PORTAL</th>
+                      <th className="p-4 text-left">URL's</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {libraryCollection.eContent.map((content, index) => (
+                      <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
+                        <td className="p-4 border-b border-gray-200">{index + 1}</td>
+                        <td className="p-4 border-b border-gray-200 font-medium">{content.database}</td>
+                        <td className="p-4 border-b border-gray-200 text-blue-600 break-all">
+                          {content.url.startsWith('http') ? (
+                            <a href={content.url} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                              {content.url}
+                            </a>
+                          ) : (
+                            content.url
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        ) : activeSection === "Transport" ? (
+          // Transport-specific content
+          <div className="max-w-full mx-auto px-6 py-10">
+            <div className="w-full bg-white p-8 rounded-xl shadow-md">
+              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Transport @ ICEM</h2>
+              
+              {/* Route Layout Section */}
+              <div className="mb-12">
+                <h3 className="text-2xl font-bold text-secondary mb-6">Route Layout</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                  {["Route-Layout-1","Route-Layout-2", "Route-Layout-3", "Route-Layout-4", "Route-Layout-5"].map((item) => (
+                    <div key={item} className=" rounded-lg overflow-hidden shadow-md">
+                      <div className="relative h-106  flex items-center justify-center">
+                        <Image
+                          src={`/Facilities/${item}.jpg`}
+                          alt={`Transport Route ${item}`}
+                          fill
+                          className="object-contain h-auto"
+                          unoptimized={true}
+                        />
+                        <div className="absolute inset-0  bg-opacity-30 flex items-center justify-center">
+                          <span className="text-white font-semibold text-lg">Route {item}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Contact Details */}
+              <div className="bg-secondary text-white p-8 rounded-lg">
+                <h3 className="text-2xl font-bold mb-6 text-center">Contact Details</h3>
+                <div className="grid md:grid-cols-2 gap-6 text-center">
+                  <div>
+                    <h4 className="text-lg font-semibold mb-2">Telephone Number</h4>
+                    <p className="text-xl">{transportData.contact.telephone}</p>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold mb-2">Mobile Number</h4>
+                    <p className="text-xl">{transportData.contact.mobile}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : activeSection === "Gym" ? (
+          // Gym-specific content
+          <div className="max-w-full mx-auto px-6 py-10">
+            <div className="w-full bg-white p-8 rounded-xl shadow-md">
+              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Gymnasium @ ICEM</h2>
+              
+              {/* Gym Images Grid */}
+              <div className="mb-12">
+                <h3 className="text-2xl font-bold text-secondary mb-6">Our Gym Facilities</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                  {["Gym1","Gym2","Gym3","Gym4","Gym5","Gym6","Gym7","Gym8","Gym10"].map((item) => (
+                    <div key={item} className="bg-gray-100 rounded-lg overflow-hidden shadow-md">
+                      <div className="relative h-54 bg-gray-200 flex items-center justify-center">
+                        <Image
+                          src={`/Facilities/${item}.jpg`}
+                          alt={`Gym Equipment ${item}`}
+                          fill
+                          className="object-cover"
+                          unoptimized={true}
+                        />
+                        <div className="absolute inset-0  bg-opacity-30 flex items-center justify-center">
+                         
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Equipment List */}
+              <div className="mb-12">
+                <h3 className="text-2xl font-bold text-secondary mb-6">
+                  Fully Equipped and Specious Gym with following machines
+                </h3>
+                <div className="bg-gray-50 p-6 rounded-lg">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {gymData.equipment.map((equipment, index) => (
+                      <div key={index} className="flex items-center">
+                        <span className="text-green-500 mr-3">✓</span>
+                        <span className="text-gray-700">{equipment}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Contact Details */}
+              <div className="bg-secondary text-white p-8 rounded-lg">
+                <h3 className="text-2xl font-bold mb-6 text-center">Contact Details</h3>
+                <div className="text-center">
+                  <p className="text-xl font-semibold mb-2">{gymData.contact.name}</p>
+                  <p className="text-lg mb-2">{gymData.contact.designation}</p>
+                  <p className="text-lg">Tel: {gymData.contact.telephone}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : activeSection === "Canteen" ? (
+          // Canteen-specific content
+          <div className="max-w-full mx-auto px-6 py-10">
+            <div className="w-full bg-white p-8 rounded-xl shadow-md">
+              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Canteen @ ICEM</h2>
+              
+              {/* Canteen Images Grid */}
+              <div className="mb-12">
+                <h3 className="text-2xl font-bold text-secondary mb-6">Our Canteen Facilities</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {["Canteen1","Canteen2","Canteen3","Canteen4","Canteen5","Canteen6"].map((item) => (
+                    <div key={item} className="bg-gray-100 rounded-lg overflow-hidden shadow-md">
+                      <div className="relative h-48 bg-gray-200 flex items-center justify-center">
+                        <Image
+                          src={`/Facilities/${item}.jpg`}
+                          alt={`Canteen ${item}`}
+                          fill
+                          className="object-cover"
+                          unoptimized={true}
+                        />
+                        <div className="absolute inset-0  bg-opacity-30 flex items-center justify-center">
+                       
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Additional Info */}
+              <div className="bg-gray-50 p-6 rounded-lg text-center">
+                <p className="text-gray-700 text-lg">
+                  Our canteen offers a variety of delicious, hygienic, and affordable food options 
+                  to cater to diverse tastes and dietary preferences of students and staff.
+                </p>
+              </div>
+            </div>
+          </div>
+        ) : activeSection === "Primary Health Centre" ? (
+          // Primary Health Centre-specific content
+          <div className="max-w-full mx-auto px-6 py-10">
+            <div className="w-full bg-white p-8 rounded-xl shadow-md">
+              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Primary Health Centre @ ICEM</h2>
+              
+              {/* Health Centre Images Grid */}
+              <div className="mb-12">
+                <h3 className="text-2xl font-bold text-secondary mb-6">Our Medical Facilities</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                  {["Indira_Primary_Health_Centre_1","Indira_Primary_Health_Centre_2","Indira_Primary_Health_Centre_3","Indira_Primary_Health_Centre_4"].map((item) => (
+                    <div key={item} className="bg-gray-100 rounded-lg overflow-hidden shadow-md">
+                      <div className="relative h-64 bg-gray-200 flex items-center justify-center">
+                        <Image
+                          src={`/Facilities/${item}.jpg`}
+                          alt={`Health Centre ${item}`}
+                          fill
+                          className="object-cover"
+                          unoptimized={true}
+                        />
+                        <div className="absolute inset-0 bg-opacity-30 flex items-center justify-center">
+                         
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Description */}
+              <div className="mb-8">
+                <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                  <p className="text-gray-700 leading-relaxed">
+                    {healthCentreData.description}
+                  </p>
+                </div>
+              </div>
+
+              {/* Services */}
+              <div>
+                <h3 className="text-2xl font-bold text-secondary mb-6">Services Provided</h3>
+                <div className="bg-gray-50 p-6 rounded-lg">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {healthCentreData.services.map((service, index) => (
+                      <div key={index} className="flex items-center">
+                        <span className="text-green-500 mr-3">✓</span>
+                        <span className="text-gray-700">{service}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : activeSection === "Hostel" ? (
+          // Hostel-specific content
+          <div className="max-w-full mx-auto px-6 py-10 space-y-12">
+            {/* Overview Section */}
+            <div className="w-full bg-white p-8 rounded-xl shadow-md">
+              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Hostel @ ICEM</h2>
+              
+              <div className="grid md:grid-cols-2 gap-8 mb-8">
+                <div className="bg-green-50 p-6 rounded-lg">
+                  <h3 className="text-xl font-bold text-green-800 mb-4">Girls Hostel</h3>
+                  <div className="text-4xl font-bold text-green-600 mb-2">{hostelData.overview.capacity.girls}</div>
+                  <p className="text-gray-700">Seats Available</p>
+                </div>
+                <div className="bg-blue-50 p-6 rounded-lg">
+                  <h3 className="text-xl font-bold text-blue-800 mb-4">Boys Hostel</h3>
+                  <div className="text-4xl font-bold text-blue-600 mb-2">{hostelData.overview.capacity.boys}</div>
+                  <p className="text-gray-700">Seats Available</p>
+                </div>
+              </div>
+
+              <div className="bg-gray-50 p-6 rounded-lg">
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  {hostelData.overview.description} All rooms are equipped with:
+                </p>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {hostelData.overview.roomFacilities.map((facility, index) => (
+                    <div key={index} className="flex items-center">
+                      <span className="text-green-500 mr-2">✓</span>
+                      <span className="text-gray-700">{facility}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Details Section */}
+            <div className="w-full bg-white p-8 rounded-xl shadow-md">
+              <h3 className="text-2xl font-bold text-secondary mb-6">Hostel Management Team</h3>
+              <div className="bg-white border border-gray-200 rounded-lg overflow-hidden mb-8">
+                <table className="w-full">
+                  <thead className="bg-secondary text-white">
+                    <tr>
+                      <th className="p-4 text-left">Name</th>
+                      <th className="p-4 text-left">Designation</th>
+                      <th className="p-4 text-left">Contact</th>
+                      <th className="p-4 text-left">Email</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {hostelData.managementTeam.map((staff, index) => (
+                      <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
+                        <td className="p-4 border-b border-gray-200">{staff.name}</td>
+                        <td className="p-4 border-b border-gray-200">{staff.designation}</td>
+                        <td className="p-4 border-b border-gray-200">{staff.contact}</td>
+                        <td className="p-4 border-b border-gray-200 text-blue-600">{staff.email}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="text-2xl font-bold text-secondary mb-6">Mess (Canteen) Team</h3>
+              <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                <table className="w-full">
+                  <thead className="bg-secondary text-white">
+                    <tr>
+                      <th className="p-4 text-left">Name</th>
+                      <th className="p-4 text-left">Designation</th>
+                      <th className="p-4 text-left">Contact</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {hostelData.messTeam.map((staff, index) => (
+                      <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
+                        <td className="p-4 border-b border-gray-200">{staff.name}</td>
+                        <td className="p-4 border-b border-gray-200">{staff.designation}</td>
+                        <td className="p-4 border-b border-gray-200">{staff.contact}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Facilities Section */}
+            <div className="w-full bg-white p-8 rounded-xl shadow-md">
+              <h3 className="text-2xl font-bold text-secondary mb-6">Hostel Facilities</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {hostelData.facilities.map((facility, index) => (
+                  <div key={index} className="flex items-start">
+                    <span className="text-green-500 mr-3 mt-1">✓</span>
+                    <span className="text-gray-700">{facility}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Timings Section */}
+            <div className="w-full bg-white p-8 rounded-xl shadow-md">
+              <h3 className="text-2xl font-bold text-secondary mb-6">Hostel Timings</h3>
+              <div className="bg-yellow-50 p-6 rounded-lg mb-6">
+                <ul className="space-y-3">
+                  {hostelData.timings.map((timing, index) => (
+                    <li key={index} className="flex items-start">
+                      <span className="text-orange-500 mr-3">•</span>
+                      <span className="text-gray-700">{timing}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <h4 className="text-xl font-bold text-secondary mb-4">Mess Timings</h4>
+              <div className="bg-green-50 p-6 rounded-lg">
+                <div className="grid md:grid-cols-2 gap-4">
+                  {hostelData.messTimings.map((timing, index) => (
+                    <div key={index} className="bg-white p-4 rounded-lg shadow-sm">
+                      <p className="font-semibold text-gray-800">{timing}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Documents Section */}
+            <div className="w-full bg-white p-8 rounded-xl shadow-md">
+              <h3 className="text-2xl font-bold text-secondary mb-6">Documents Required for Admission</h3>
+              <div className="bg-gray-50 p-6 rounded-lg">
+                <ul className="space-y-3">
+                  {hostelData.documents.map((doc, index) => (
+                    <li key={index} className="flex items-start">
+                      <span className="text-blue-500 mr-3">{index + 1}.</span>
+                      <span className="text-gray-700">{doc}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Cancellation Rules Section */}
+            <div className="w-full bg-white p-8 rounded-xl shadow-md">
+              <h3 className="text-2xl font-bold text-secondary mb-6">Hostel Admission Cancellation Rules</h3>
+              <div className="space-y-6">
+                {hostelData.cancellationRules.map((rule, index) => (
+                  <div key={index} className="bg-red-50 p-6 rounded-lg border-l-4 border-red-500">
+                    <h4 className="text-lg font-bold text-red-800 mb-3">{rule.title}</h4>
+                    <ul className="space-y-2">
+                      {rule.steps.map((step, stepIndex) => (
+                        <li key={stepIndex} className="flex items-start">
+                          <span className="text-red-500 mr-2">•</span>
+                          <span className="text-gray-700">{step}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-6 bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+                <h4 className="text-lg font-bold text-green-800 mb-3">Security Deposit Refund</h4>
+                <ul className="space-y-2">
+                  {hostelData.securityDeposit.map((item, index) => (
+                    <li key={index} className="flex items-start">
+                      <span className="text-green-500 mr-2">•</span>
+                      <span className="text-gray-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Mess Instructions Section */}
+            <div className="w-full bg-white p-8 rounded-xl shadow-md">
+              <h3 className="text-2xl font-bold text-secondary mb-6">Canteen (Mess) Instructions</h3>
+              <div className="bg-orange-50 p-6 rounded-lg">
+                <ul className="space-y-3">
+                  {hostelData.messInstructions.map((instruction, index) => (
+                    <li key={index} className="flex items-start">
+                      <span className="text-orange-500 mr-3">•</span>
+                      <span className="text-gray-700">{instruction}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Medical Assistance Section */}
+            <div className="w-full bg-white p-8 rounded-xl shadow-md">
+              <h3 className="text-2xl font-bold text-secondary mb-6">Medical Assistance & Insurance</h3>
+              <div className="bg-blue-50 p-6 rounded-lg">
+                <ul className="space-y-3">
+                  {hostelData.medicalAssistance.map((item, index) => (
+                    <li key={index} className="flex items-start">
+                      <span className="text-blue-500 mr-3">•</span>
+                      <span className="text-gray-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        ) : (
+          // Default content for other tabs
+          <div className="max-w-full mx-auto px-6 py-10">
+            <div className="w-full bg-white p-8 rounded-xl shadow-md text-center">
+              <h2 className="text-3xl font-bold text-secondary mb-6">{activeSection} @ ICEM</h2>
+              <div className="bg-gray-50 p-8 rounded-lg">
+                <p className="text-gray-700 text-lg leading-relaxed">
+                  Content for {activeSection} section is being updated. Please check back later for detailed information about our {activeSection.toLowerCase()} facilities and services.
+                </p>
+                <div className="mt-6 text-gray-500">
+                  <p>For immediate assistance, please contact the administration office.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
+
+      {/* Animation Styles */}
+      <style jsx>{`
+        @keyframes smoothScroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        .animate-smoothScroll {
+          animation: smoothScroll 60s linear infinite;
+        }
+      `}</style>
     </div>
   );
 }
-
-

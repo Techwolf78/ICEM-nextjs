@@ -20,18 +20,13 @@ export default function Governance() {
           height={600}
           width={1700}
         />
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
-            Governance at Indira College
-          </h1>
-        </div>
       </div>
 
       {/* ===== Main Section ===== */}
-      <div className="w-full flex flex-col md:flex-row py-6">
+      <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row py-6 mt-10">
         {/* LEFT SECTION */}
         <div className="md:w-full bg-white p-6 rounded-xl shadow-md">
-          <h2 className="text-2xl font-semibold text-secondary mb-6">
+          <h2 className="text-4xl font-semibold text-secondary mb-6 ">
             Institutional Governance and Leadership
           </h2>
 

@@ -29,6 +29,13 @@ const trainingData = [
   },
 ];
 
+/**
+ * Render the Training Overview section with animated statistic cards that begin counting when the section is at least 30% visible.
+ *
+ * Displays a responsive grid of cards (single- or two-line) whose numeric values animate from 0 to their configured target over approximately 2000ms once the section enters the viewport.
+ *
+ * @returns {JSX.Element} The TrainingOverview section containing the heading, description, and animated statistic cards.
+ */
 export default function TrainingOverview() {
   const [counts, setCounts] = useState(trainingData.map(() => 0));
   const sectionRef = useRef(null);

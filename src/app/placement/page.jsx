@@ -12,6 +12,10 @@ import Upskilling from "@/components/PlacementComponents/Upskilling";
 import PlacementCarousel from "@/components/PlacementComponents/PlacementCarousel";
 import CTASection from "@/components/home/CTASection";
 
+/**
+ * Render the Placement page composed of placement-related sections in the defined order.
+ * @returns {JSX.Element} A React element representing the Placement page layout.
+ */
 function Placement() {
   return (
     <div className="w-full bg-white">

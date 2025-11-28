@@ -2,6 +2,12 @@
 import Image from "next/image";
 import { sections } from "@/static/placement/skills";
 
+/**
+ * Render the Upskilling UI: two static upskilling cards and a horizontally scrolling technical-skills carousel.
+ *
+ * The carousel displays section cards arranged in paired columns and duplicates those pairs to produce a wide, looping scroll track (minimum width equivalent to 20 columns; duplication count is forced even). Hovering the carousel pauses the scroll animation.
+ * @returns {JSX.Element} The Upskilling component element.
+ */
 export default function Upskilling() {
   // Logic: Duplicate the data to ensure the carousel is wide enough for a smooth loop.
   const getPairs = () => {

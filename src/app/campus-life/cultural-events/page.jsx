@@ -5,6 +5,14 @@ import Image from "next/image";
 import Sidebar from "@/components/Sidebar";
 import CulturalEvents from "@/components/CampusLife/CulturalEvents";
 
+/**
+ * Render the Cultural Activities page with a full-width banner and main content area.
+ *
+ * The component displays a responsive banner image at the top and a centered layout
+ * that hosts the CulturalEvents content.
+ *
+ * @returns {JSX.Element} A React element containing the Cultural Activities page layout.
+ */
 export default function CulturalActivitiesPage() {
   return (
     <div className="w-full bg-white text-gray-800">

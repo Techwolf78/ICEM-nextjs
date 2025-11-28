@@ -9,7 +9,7 @@ export default function CulturalActivitiesPage() {
   return (
     <div className="w-full bg-white text-gray-800">
       {/* Banner */}
-      <div className="w-full h-[40vh] sm:h-[50vh] lg:h-[60vh] relative">
+      <div className="w-full h-[40vh] sm:h-[50vh] lg:h-[75vh] relative">
         <Image
           src="/cultural-events/CulturalBanner.webp"
           alt="Cultural Activities"

@@ -55,8 +55,9 @@ const CampusBeat = () => {
           {/* Duplicate Loop for Seamless Scroll */}
           {marqueeImages.map((src, i) => (
             <div
-              key={`second-${i}`}
-              className="relative h-full min-w-[33vw] md:min-w-[25vw]"
+              key={`first-${i}`}
+              className="relative h-full"
+              style={{ aspectRatio: "2.77" }}
             >
               <Image
                 src={src}

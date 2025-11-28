@@ -9,7 +9,7 @@ export default function SportsRecreation() {
   return (
     <div className="w-full bg-white text-gray-800">
       {/* Hero Banner */}
-      <div className="relative w-full h-[70vh]">
+      <div className="relative w-full h-[75vh]">
         <Image
           src={bannerImg}
           alt="ICEM Sports"

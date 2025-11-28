@@ -11,11 +11,12 @@ export default function CulturalActivitiesPage() {
       {/* Banner */}
       <div className="w-full h-[40vh] sm:h-[50vh] lg:h-[75vh] relative">
         <Image
-          src="/cultural-events/CulturalBanner.webp"
+          src="/cultural-events/bannercultural2.jpg"
           alt="Cultural Activities"
           fill
           style={{ objectFit: "cover" }}
           priority
+          unoptimized={true}
         />
       </div>
 

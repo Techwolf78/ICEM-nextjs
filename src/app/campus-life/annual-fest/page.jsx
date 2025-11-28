@@ -5,9 +5,9 @@ import Image from "next/image";
 
 export default function AnnualFestPage() {
   return (
-    <div className="w-full bg-white text-gray-800">
+    <div className="w-full mx-auto  bg-white text-gray-800">
       {/* HERO */}
-      <div className="relative w-full h-auto">
+      <div className="relative w-full h-[75vh]">
         <Image
           src="/campuslife/Annual Fest.jpg"
           alt="Annual Fest"

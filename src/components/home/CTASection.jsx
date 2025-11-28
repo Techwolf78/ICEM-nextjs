@@ -15,8 +15,8 @@ export default function CTASection() {
   // ✅ Brochure Download
   const handleBrochureDownload = () => {
     const link = document.createElement("a");
-    link.href = "/IGSB/programmes/IGSB-Prospectus-Final.pdf";
-    link.download = "IGSB-Brochure.pdf";
+    link.href = "/brochures/ICEMAdmissionBrochure2025.pdf";
+    link.download = "ICEMAdmissionBrochure2025.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

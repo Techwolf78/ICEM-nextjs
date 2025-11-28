@@ -34,6 +34,7 @@ export default function TrainingOverview() {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
+  
   // ✅ Detect when section is visible
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -100,7 +101,7 @@ export default function TrainingOverview() {
                 key={index}
                 className={`${
                   index % 2 === 0
-                    ? "bg-primary text-white"
+                    ? "bg-secondary text-white"
                     : "bg-white text-gray-900 border border-gray-200"
                 } flex flex-col items-center justify-center py-6 sm:py-8 lg:py-10 px-4 sm:px-6 rounded-md shadow-md`}
               >
@@ -123,7 +124,7 @@ export default function TrainingOverview() {
                     <p className="text-xs sm:text-sm lg:text-base font-medium text-center">
                       {item.labelTop}
                     </p>
-                    <div
+                    <div  
                       className={`w-2/3 my-3 sm:my-4 ${
                         index % 2 === 0
                           ? "border-t border-white/60"

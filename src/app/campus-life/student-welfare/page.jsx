@@ -9,9 +9,9 @@ import IcemStudentCouncil from "@/components/CampusLife/IcemStudentCouncil";
 
 export default function StudentWelfarePage() {
   return (
-    <div className="w-full bg-white text-gray-800">
+    <div className="w-full mx-auto bg-white text-gray-800">
       {/* Banner */}
-      <div className="w-full h-auto relative">
+      <div className="w-full h-[70vh] relative">
         <Image
           src="/campuslife/council.webp"
           alt="Student Development Cell"

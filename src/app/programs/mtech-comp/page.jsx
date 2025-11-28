@@ -317,10 +317,10 @@ export default function Computer() {
           {/* ===== NEXT STEPS SECTION ===== */}
           <CTASection />
 
-          {/* ===== FREQUENTLY ASKED QUESTIONS SECTION ===== */}
+          {/* ===== FREQUENTLY ASKED QUESTIONS SECTION =====
           <div ref={faqRef}>
             <FAQSection />
-          </div>
+          </div> */}
   
     {isModalOpen && (
         <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex justify-center items-center z-[60] animate-in fade-in-0 duration-300">

@@ -318,9 +318,9 @@ export default function Computer() {
           <CTASection />
 
           {/* ===== FREQUENTLY ASKED QUESTIONS SECTION ===== */}
-          <div ref={faqRef}>
+          {/* <div ref={faqRef}>
             <FAQSection />
-          </div>
+          </div> */}
      
 
       {isModalOpen && (

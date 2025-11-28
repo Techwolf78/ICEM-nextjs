@@ -71,8 +71,8 @@ export default function FAQENTC() {
   content: [
     {
       program: "BBA Program",
-      intake: "120 Seats",
-      duration: "3 Years",
+      intake: "60 Seats",
+      duration: "5 Years",
       type: "Full Time"
     }
   ]
@@ -81,8 +81,7 @@ export default function FAQENTC() {
 "Eligibility Criteria": {
   type: "text",
   content: `
-Eligibility for admission to the BBA program requires students to have passed the 10+2 examination from any recognized board with a minimum of 45% marks (40% for reserved category).  
-No entrance exam is required. Admission is based on merit and availability of seats.`
+For First Year: - (1) Candidates passing SSC and HSC or 10+2 Examination or Diploma in Engineering or D. Voc. Examination from a recognized institution in the Maharashtra State`
 },
 
 

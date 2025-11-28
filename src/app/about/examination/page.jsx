@@ -2,41 +2,17 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Clock, Mail, Phone } from "lucide-react";
-import Sidebar from "@/components/Sidebar";
 
 export default function Examination() {
   const [activeFAQ, setActiveFAQ] = useState(null);
   const ExamCommittee = "/ExamCommittee.pdf";
   const ExamFees = "/ExamFees.pdf";
 
-  const rightLinks = [
-    "Overview",
-    "Examination Schedule",
-    "Exam Forms & Fees",
-    "Results & Grade Cards",
-    "Revaluation Process",
-    "Exam Rules & Regulations",
-    "Hall Tickets",
-    "Important Dates",
-    "Examination Committee",
-    "Contact Exam Section",
-    "Academic Calendar",
-    "Governance",
-  ];
-
-  const quickLinks = [
-    "Download Exam Forms",
-    "Exam Time Table",
-    "Result Portal",
-    "Revaluation Application",
-    "Apply for ATKT",
-  ];
-
   return (
     <div className="w-full bg-white text-gray-800">
       
       {/* ================= HERO BANNER ================= */}
-      <div className="w-full h-[60vh] relative">
+      <div className="w-full h-auto relative">
         <Image
           src="/BannerOverviewPage.jpg"
           alt="Examination at ICEM"
@@ -51,14 +27,12 @@ export default function Examination() {
         </div>
       </div>
 
-      {/* ================= CONTENT + SIDEBAR LAYOUT (UPDATED TO MATCH OVERVIEW) ================= */}
-      <div className="w-full flex flex-col md:flex-row">
-        
-        {/* ================= LEFT SECTION (md:w-3/4) ================= */}
-        <div className="md:w-3/4 space-y-12 p-6">
+      {/* ================= MAIN CONTENT (CENTERED WITH MAX WIDTH) ================= */}
+      <div className="w-full flex justify-center">
+        <div className="w-full max-w-7xl px-6 py-12">
 
           {/* ===== Examination System ===== */}
-          <div className="bg-white p-6 rounded-xl shadow-md">
+          <div className="bg-white p-6 rounded-xl shadow-md mb-12">
             <h2 className="text-2xl font-semibold text-secondary mb-6">
               Examination & Evaluation System
             </h2>
@@ -68,8 +42,8 @@ export default function Examination() {
               Management (ICEM) ensures a fair, transparent, and efficient
               evaluation process in accordance with Savitribai Phule Pune
               University guidelines. Our examination system is designed to assess
-              students' academic performance comprehensively while maintaining the
-              highest standards of integrity.
+              students' academic performance comprehensively while maintaining
+              the highest standards of integrity.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-4">
@@ -104,15 +78,13 @@ export default function Examination() {
           </div>
 
           {/* ===== DOCUMENTS + ACCORDION ===== */}
-          <div className="bg-white p-6 rounded-xl shadow-md">
+          <div className="bg-white p-6 rounded-xl shadow-md mb-12">
             <h3 className="mt-4 text-2xl font-bold mb-6">
               Examination Documents & Resources
             </h3>
 
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 divide-y divide-gray-200">
               {[
-
-                /* ========== ITEM 1 ========== */
                 {
                   title: "Revaluation & Verification Process",
                   description: (
@@ -131,24 +103,18 @@ export default function Examination() {
                     </div>
                   ),
                 },
-
-                /* ========== ITEM 2 ========== */
                 {
                   title: "Examination Fee Structure 2024-25",
                   pdf: ExamFees,
                   description:
                     "Complete fee structure for various examinations including regular, backlog, and improvement examinations.",
                 },
-
-                /* ========== ITEM 3 ========== */
                 {
                   title: "Examination Committee (2024-25)",
                   pdf: ExamCommittee,
                   description:
-                    "The Examination Committee is responsible for coordinating examination activities, ensuring proper conduct of theory and practical exams, maintaining confidentiality, and overseeing smooth execution of evaluation and result processes.",
+                    "The Examination Committee is responsible for coordinating all examination activities, ensuring proper conduct of theory and practical exams, maintaining confidentiality, and overseeing smooth execution of evaluation and result processes.",
                 },
-
-                /* ========== ITEM 4 ========== */
                 {
                   title: "Controller & Examination Officers",
                   description: (
@@ -176,8 +142,6 @@ export default function Examination() {
                     </div>
                   ),
                 },
-
-                /* ========== ITEM 5 – NEW TIMETABLE SECTION ========== */
                 {
                   title: "Examination Timetable",
                   description: (
@@ -192,25 +156,25 @@ export default function Examination() {
                         <ul className="list-decimal ml-6 space-y-2">
                           <li>
                             <a href="/exam/SYBTECH25.pdf" target="_blank" className="text-secondary hover:underline">
-                              SY B.Tech Endsemester Examination Timetable _ Nov/Dec. 2025 (2024 Pattern)
+                              SY B.Tech Endsemester Examination Timetable – Nov/Dec 2025
                             </a>
                           </li>
 
                           <li>
                             <a href="/exam/SYBBA25.pdf" target="_blank" className="text-secondary hover:underline">
-                              SY IMBA/BBA Endsemester Examination Timetable _ Nov/Dec. 2025 (2024 Pattern)
+                              SY IMBA / BBA Endsemester Examination Timetable – Nov/Dec 2025
                             </a>
                           </li>
 
                           <li>
                             <a href="/exam/SYBCA25.pdf" target="_blank" className="text-secondary hover:underline">
-                              SY IMCA/BCA Endsemester Examination Timetable _ Nov/Dec. 2025 (2024 Pattern)
+                              SY IMCA / BCA Endsemester Examination Timetable – Nov/Dec 2025
                             </a>
                           </li>
 
                           <li>
                             <a href="/exam/FYBTECH25.pdf" target="_blank" className="text-secondary hover:underline">
-                              FY B.Tech Endsemester Examination Timetable _ Nov/Dec. 2025 (2024 Pattern)
+                              FY B.Tech Endsemester Examination Timetable – Nov/Dec 2025
                             </a>
                           </li>
                         </ul>
@@ -225,19 +189,19 @@ export default function Examination() {
                         <ul className="list-decimal ml-6 space-y-2">
                           <li>
                             <a href="/exam/SYMBA25.pdf" target="_blank" className="text-secondary hover:underline">
-                              SY MBA Endsemester Examination Timetable _ Nov/Dec. 2025 (2024 Pattern)
+                              SY MBA Endsemester Examination Timetable – Nov/Dec 2025
                             </a>
                           </li>
 
                           <li>
                             <a href="/exam/SYMCA25.pdf" target="_blank" className="text-secondary hover:underline">
-                              SY MCA Endsemester Examination Timetable _ Nov/Dec. 2025 (2024 Pattern)
+                              SY MCA Endsemester Examination Timetable – Nov/Dec 2025
                             </a>
                           </li>
 
                           <li>
                             <a href="/pdfs/sample.pdf" target="_blank" className="text-secondary hover:underline">
-                              FY MTech Endsemester Examination Timetable _ Nov/Dec. 2025 (2024 Pattern)
+                              FY MTech Endsemester Examination Timetable – Nov/Dec 2025
                             </a>
                           </li>
                         </ul>
@@ -246,7 +210,6 @@ export default function Examination() {
                     </div>
                   ),
                 },
-
               ].map((item, index) => (
                 <div key={index} className="overflow-hidden">
                   
@@ -310,12 +273,6 @@ export default function Examination() {
           </div>
 
         </div>
-
-        {/* ================= RIGHT SIDEBAR (md:w-1/4) ================= */}
-        <div className="md:w-1/4">
-          <Sidebar />
-        </div>
-
       </div>
     </div>
   );

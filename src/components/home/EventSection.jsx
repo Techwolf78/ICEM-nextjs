@@ -1,9 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export default function EventsSection() {
+  const [paused, setPaused] = useState(false);
+
   const events = [
     {
       img: "/events/ArshGoyal.JPG",
@@ -55,16 +57,29 @@ export default function EventsSection() {
     },
   ];
 
+  // 👇 Pause when switching tab
+  useEffect(() => {
+    const handleVisibility = () => {
+      setPaused(document.hidden);
+    };
+
+    document.addEventListener("visibilitychange", handleVisibility);
+    return () =>
+      document.removeEventListener("visibilitychange", handleVisibility);
+  }, []);
+
   return (
     <section className="w-full bg-gray-50 py-16 overflow-hidden">
-      {/* ✅ Header */}
       <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-10">
         Academic Conferences & Campus Events
       </h2>
 
-      {/* ✅ Full-width marquee scroll */}
       <div className="relative w-full overflow-visible group">
-        <div className="flex animate-marquee space-x-6 px-6 group-hover:pause">
+        <div
+          className={`flex animate-marquee space-x-6 px-6 ${
+            paused ? "paused" : ""
+          } group-hover:paused`}
+        >
           {[...events, ...events].map((event, index) => (
             <div
               key={index}
@@ -78,6 +93,7 @@ export default function EventsSection() {
                   className="object-cover"
                 />
               </div>
+
               <div className="p-4">
                 <h3 className="font-semibold text-gray-800 text-base mb-1">
                   {event.title}
@@ -89,13 +105,9 @@ export default function EventsSection() {
             </div>
           ))}
         </div>
-
-        {/* ✅ Gradient fade edges for smooth scroll */}
-        <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-gray-50 to-transparent pointer-events-none" />
-        <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-gray-50 to-transparent pointer-events-none" />
       </div>
 
-      {/* 🔹 Animation Keyframes */}
+      {/* Animation + pause class */}
       <style jsx>{`
         @keyframes marquee {
           0% {
@@ -105,13 +117,18 @@ export default function EventsSection() {
             transform: translateX(-50%);
           }
         }
+
         .animate-marquee {
-          display: flex;
-          width: max-content;
           animation: marquee 40s linear infinite;
+          width: max-content;
         }
-        .group-hover\\:pause {
-          animation-play-state: paused;
+
+        .paused {
+          animation-play-state: paused !important;
+        }
+
+        .group-hover\:paused:hover {
+          animation-play-state: paused !important;
         }
       `}</style>
     </section>

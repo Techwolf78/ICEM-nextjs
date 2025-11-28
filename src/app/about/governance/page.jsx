@@ -12,7 +12,7 @@ export default function Governance() {
   return (
     <div className="w-full bg-white text-gray-800">
       {/* ===== Hero Banner ===== */}
-      <div className="w-full h-[60vh] relative">
+      <div className="w-full h-auto relative">
         <Image
           src="/BannerOverviewPage.jpg"
           alt="Governance at ICEM"

@@ -130,21 +130,36 @@ export default function FAQENTC() {
   type: "table",
   content: [
     {
-      program: "Integrated MCA (BCA + MCA)",
+      program: "MCA",
       intake: "60 Seats",
-      duration: "5 Years",
+      duration: "2 Years",
       type: "Full Time"
     }
   ]
 },
 
 "Eligibility Criteria": {
-  type: "text",
-  content: `
-Eligibility for admission to the Integrated MCA program requires candidates to have passed 10+2 from any recognized board with Mathematics or Statistics.
+  type: "eligibility-table",
+  content: [
+    {
+      leftTitle:
+        "1. For Maharashtra State Candidates, All India Candidature Candidates, Union Territory of Jammu and Kashmir and Union Territory of Ladakh Migrant Candidature Candidates.",
+      leftPoints: [
+        "(i) should be a citizen of India;",
+        "(ii) should have passed any graduation degree (e.g.: B.E. or B.Tech. or B.Sc or B.Com. or B.A. or B. Voc. or BCA etc.,) preferably with Mathematics at 10+2 level or at Graduation level and obtained at least fifty per cent marks (at least forty-five per cent in case of candidates of Reserved Categories, Economically Weaker Section and Persons with Disability category belonging to the Maharashtra State) in the qualifying examination;",
+        "(iii) should have obtained non zero score in MAH–MCA–CET 2025 conducted by the Competent Authority."
+      ],
 
-Admission is based on merit and institutional selection guidelines. No entrance exam required.`
+      rightTitle:
+        "2. Non Resident Indian (NRI) or Overseas Citizen of India (OCI) or Person of Indian Origin (PIO), Children of Indian workers in the Gulf countries, Foreign National Candidature Candidates.",
+      rightPoints: [
+        "(i) The candidate should have passed any graduation degree (e.g.: B.E. or B.Tech. or B.Sc or B.Com. or B.A. or B.Voc. or BCA etc.,) preferably with Mathematics at 10+2 level or at Graduation level and obtained at least fifty percent marks in the qualifying examination;",
+        "(ii) Any other eligibility criteria and requirement declared from time to time by the appropriate authority as defined under the Act;"
+      ]
+    }
+  ]
 },
+
 
 
     Faculty: {
@@ -244,6 +259,38 @@ case "table":
       </table>
     </div>
   );
+
+  case "eligibility-table":
+  return (
+    <div className="overflow-x-auto">
+      <table className="w-full border border-gray-300 text-left">
+        <tbody>
+          {data.content.map((row, idx) => (
+            <tr key={idx} className="align-top">
+              <td className="w-1/2 border border-gray-300 p-4">
+                <p className="font-semibold mb-2">{row.leftTitle}</p>
+                <ul className="list-disc ml-6 space-y-1 text-gray-700">
+                  {row.leftPoints.map((pt, i) => (
+                    <li key={i}>{pt}</li>
+                  ))}
+                </ul>
+              </td>
+
+              <td className="w-1/2 border border-gray-300 p-4">
+                <p className="font-semibold mb-2">{row.rightTitle}</p>
+                <ul className="list-disc ml-6 space-y-1 text-gray-700">
+                  {row.rightPoints.map((pt, i) => (
+                    <li key={i}>{pt}</li>
+                  ))}
+                </ul>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+
 
 
       case "syllabus":

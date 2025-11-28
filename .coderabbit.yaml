@@ -33,7 +33,7 @@ reviews:
     - "!yarn.lock"
     - "!pnpm-lock.yaml"
     - "src/app/**"
-    - "components/**"
+    - "src/components/**"
     - "lib/**"
     - "hooks/**"
 

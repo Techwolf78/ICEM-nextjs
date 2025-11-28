@@ -1,0 +1,50 @@
+# CodeRabbit Configuration File
+# Documentation: https://docs.coderabbit.ai/reference/configuration
+# Schema: https://coderabbit.ai/integrations/schema.v2.json
+
+language: "en-US"
+early_access: false
+
+reviews:
+  profile: "chill"
+  request_changes_workflow: false
+  high_level_summary: true
+  high_level_summary_instructions: |
+    Provide a high-level summary of the changes. 
+    Focus specifically on Next.js App Router patterns and React client-side logic.
+  auto_title_placeholder: "@coderabbitai"
+  
+  # Automatic review settings
+  auto_review:
+    enabled: true
+    auto_incremental_review: true
+    drafts: false
+
+  # File patterns to ignore (begins with !) or include
+  path_filters:
+    - "!node_modules/**"
+    - "!.next/**"
+    - "!out/**"
+    - "!build/**"
+    - "!public/**"
+    - "!dist/**"
+    - "!coverage/**"
+    - "!package-lock.json"
+    - "!yarn.lock"
+    - "!pnpm-lock.yaml"
+    - "src/app/**"
+    - "components/**"
+    - "lib/**"
+    - "hooks/**"
+
+  # Specific instructions for your Next.js Client-Side Only architecture
+  path_instructions:
+    - path: "src/app/**/*.(tsx|ts|jsx|js)"
+      instructions: |
+        This is a client-side only Next.js application using the App Router.
+        - STRICTLY verify that components interacting with browser APIs or using hooks (useState, useEffect) have the 'use client' directive at the top.
+        - Flag any usage of server-only functions (like 'fs' or direct database calls) as critical errors.
+        - Ensure layouts and pages follow App Router conventions but remain compatible with static/client export limitations.
+
+chat:
+  auto_reply: true

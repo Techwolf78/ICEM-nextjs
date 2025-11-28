@@ -11,7 +11,7 @@ export default function StudentWelfarePage() {
   return (
     <div className="w-full bg-white text-gray-800">
       {/* Banner */}
-      <div className="w-full h-[70vh] relative">
+      <div className="w-full h-auto relative">
         <Image
           src="/campuslife/council.webp"
           alt="Student Development Cell"
@@ -21,7 +21,7 @@ export default function StudentWelfarePage() {
         />
       </div>
       {/* Page Layout */}
-      <div className="max-w-full mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-4">
           {/* Main Content */}
           <div className="w-full space-y-6 px-2 py-3 m-3">

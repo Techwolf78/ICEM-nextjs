@@ -20,7 +20,7 @@ export default function SportsRecreation() {
       </div>
 
       {/* Content Section */}
-      <div className="max-w-full mx-auto px-6 py-10">
+      <div className="max-w-7xl mx-auto px-6 py-10">
         {/* Main Content */}
         <div className="w-full bg-white p-6 rounded-xl shadow-md">
           <h2 className="text-2xl font-semibold text-secondary mb-6">

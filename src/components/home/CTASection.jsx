@@ -2,6 +2,13 @@
 
 import React, { useEffect, useState } from "react";
 
+/**
+ * Render a call-to-action section with route-specific headline and body plus two action buttons.
+ *
+ * The component selects content based on the current pathname, displays a headline and body text,
+ * and provides buttons to download the admission brochure and to scroll the page to the contact form.
+ * @returns {JSX.Element} The CTA section as a JSX element.
+ */
 export default function CTASection() {
   const [pathname, setPathname] = useState("");
 

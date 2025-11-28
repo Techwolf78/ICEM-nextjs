@@ -1,22 +1,20 @@
 "use client";
 
 import React, { useState } from "react";
-import { Menu } from "lucide-react";
+import { Mail, Menu } from "lucide-react";
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { Grid2x2 } from "lucide-react";
 import { PanelRightOpen } from "lucide-react";
 // import { Menu } from "lucide-react";
 import { LayoutGrid } from "lucide-react";
-
+import Link from "next/link";
 
 const FixedActionBar = () => {
   const [isOpenRight, setIsOpenRight] = useState(false);
 
   return (
     <>
-      
-
       {/* ================= RIGHT BAR (NEW) ================= */}
       <div className="hidden md:flex fixed bottom-10 right-5 z-[99999] items-center">
         <div
@@ -43,39 +41,44 @@ const FixedActionBar = () => {
             }`}
           >
             <div className="bg-secondary px-3 py-2 shadow-lg flex items-center gap-3 rounded-l-md">
-              <a
-                href="#"
+              <Link
+                href="https://www.facebook.com/ICEM.AVIRAT/"
+                target="_blank"
                 className="bg-white text-black p-2.5 rounded-md shadow hover:scale-105 transition"
               >
                 <FaFacebookF size={18} />
-              </a>
+              </Link>
 
               <span className="w-[1px] h-6 bg-white/40"></span>
 
-              <a
-                href="#"
+              <Link
+                href="https://www.linkedin.com/company/indira-college-of-engineering-and-management-pune/?originalSubdomain=in"
+                target="_blank"
                 className="bg-white text-black p-2.5 rounded-md shadow hover:scale-105 transition"
               >
                 <FaLinkedinIn size={18} />
-              </a>
+              </Link>
 
               <span className="w-[1px] h-6 bg-white/40"></span>
 
-              <a
-                href="#"
+              <Link
+                href="mailto:admissions@indiraicem.ac.in"
+                target="_blank"
                 className="bg-white text-black p-2.5 rounded-md shadow hover:scale-105 transition"
               >
-                <FaSquareXTwitter size={18} />
-              </a>
+                <Mail size={18} />
+                {/* <FaSquareXTwitter size={18} /> */}
+              </Link>
 
               <span className="w-[1px] h-6 bg-white/40"></span>
 
-              <a
-                href="#"
+              <Link
+                href="https://www.instagram.com/icem_pune/"
+                target="_blank"
                 className="bg-white text-black p-2.5 rounded-md shadow hover:scale-105 transition"
               >
                 <FaInstagram size={18} />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

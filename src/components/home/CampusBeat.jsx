@@ -7,12 +7,12 @@ const CampusBeat = () => {
   const [paused, setPaused] = useState(false);
 
   const marqueeImages = [
-    "/Marquee/Marquee1.jpg",
-    "/Marquee/Marquee2.jpg",
-    "/Marquee/Marquee3.jpg",
-    "/Marquee/Marquee4.jpg",
-    "/Marquee/Marquee5.jpg",
-    "/Marquee/Marquee6.jpg",
+    "/marquee/Marquee1.jpg",
+    "/marquee/Marquee2.jpg",
+    "/marquee/Marquee3.jpg",
+    "/marquee/Marquee4.jpg",
+    "/marquee/Marquee5.jpg",
+    "/marquee/Marquee6.jpg",
   ];
 
   // --- Detect tab visibility ---
@@ -33,12 +33,12 @@ const CampusBeat = () => {
   return (
     <div className="bg-white py-10 sm:py-16 overflow-hidden hidden sm:block">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <h2 className="text-xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4 text-center sm:text-left">
+        <h2 className="text-xl sm:text-3xl font-extrabold text-secondary mb-3 sm:mb-4 text-center sm:text-left">
           The Campus Beat
         </h2>
 
         <p className="text-gray-700 text-sm sm:text-lg max-w-5xl leading-relaxed mb-6 sm:mb-10 text-center sm:text-left">
-          From celebrity talks to Lit Fests and interactions with industry
+          From celebrity talks to Lit fests and interactions with industry
           icons...
         </p>
       </div>

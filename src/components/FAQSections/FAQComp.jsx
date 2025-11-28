@@ -244,7 +244,7 @@ export default function FAQSectionComputer() {
   content: [
     {
       program: "B.Tech Computer Engineering(Dummy)",
-      intake: "120 Seats",
+      intake: "150 Seats",
       duration: "4 Years",
       type: "Full Time"
     }

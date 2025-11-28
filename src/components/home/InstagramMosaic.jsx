@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 
 export default function InstagramMosaic() {
   const containerRef = useRef(null);
@@ -49,7 +50,7 @@ export default function InstagramMosaic() {
   return (
     <section className="w-full py-12 bg-white relative z-10">
       <h2 className="text-3xl font-semibold text-center mb-10">
-        <span className="text-primary">#Connect</span> with us on Socials
+        <span className="text-secondary">#Connect</span> with us on Socials
       </h2>
 
       <div
@@ -58,12 +59,12 @@ export default function InstagramMosaic() {
         style={{ contain: "content" }}
       >
         {posts.map((url, index) => (
-          <a
+          <Link
             key={index}
             href={url} // Make the whole card clickable
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full flex justify-center items-center relative block cursor-pointer transition-transform hover:scale-[1.02]"
+            className="w-full flex justify-center items-center relative  cursor-pointer transition-transform hover:scale-[1.02]"
             style={{ minHeight: "550px" }}
           >
             {/* Overlay div to ensure clicks work on the link, 
@@ -89,7 +90,7 @@ export default function InstagramMosaic() {
                 pointerEvents: "none",
               }}
             ></blockquote>
-          </a>
+          </Link>
         ))}
       </div>
     </section>

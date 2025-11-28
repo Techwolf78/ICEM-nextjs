@@ -69,8 +69,8 @@ export default function EventsSection() {
   }, []);
 
   return (
-    <section className="w-full bg-gray-50 py-16 overflow-hidden">
-      <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-10">
+    <section className="w-full  bg-gray-50 py-10 sm:py-16 overflow-hidden">
+      <h2 className="text-xl sm:text-3xl font-bold text-center text-secondary mb-10">
         Academic Conferences & Campus Events
       </h2>
 
@@ -78,7 +78,7 @@ export default function EventsSection() {
         <div
           className={`flex animate-marquee space-x-6 px-6 ${
             paused ? "paused" : ""
-          } group-hover:paused`}
+          } sm:group-hover:paused`}
         >
           {[...events, ...events].map((event, index) => (
             <div

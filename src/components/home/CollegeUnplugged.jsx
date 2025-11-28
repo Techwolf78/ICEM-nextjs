@@ -191,9 +191,9 @@ export default function CollegeUnplugged() {
   };
 
   return (
-    <div ref={sectionRef} className="bg-white py-24 fade-up">
+    <div ref={sectionRef} className="bg-white py-10 sm:py-16 fade-up px-4 sm:px-0">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-extrabold text-black  mb-10 fade-up">Indira College Unplugged</h2>
+        <h2 className="text-2xl sm:text-4xl font-extrabold text-secondary  mb-10 fade-up">Indira College Unplugged</h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start fade-up">
 
@@ -248,7 +248,7 @@ export default function CollegeUnplugged() {
                 src={toEmbedUrl(videos[selectedIndex].url)}
                 title={videos[selectedIndex].title}
                 frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
             </div>

@@ -12,10 +12,9 @@ const ExploreSection = () => {
 
   const logos = [
     { title: "NAAC Accredited", img: "/homepage-logos/NAAC.jpg" },
-       { title: "Top Ranking", img: "/homepage-logos/8th.jpg" },
+    { title: "Top Ranking", img: "/homepage-logos/8th.jpg" },
     { title: "Approved by AICTE", img: "/homepage-logos/aicte.jpg" },
     { title: "Affiliated to SPPU Pune", img: "/homepage-logos/sspu.jpg" },
- 
   ];
 
   useEffect(() => {
@@ -57,7 +56,7 @@ const ExploreSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-white relative z-30 pt-20 pb-10"
+      className="w-full bg-white relative z-30 py-10  sm:pt-20 sm:pb-10 px-4"
     >
       <div className="max-w-7xl mx-auto">
         {/* GRID: LEFT | RIGHT */}
@@ -66,16 +65,16 @@ const ExploreSection = () => {
           <div className="flex flex-col space-y-6">
             {/* HEADING */}
             <div className="fade-text">
-              <h2 className="text-2xl lg:text-3xl font-semibold text-gray-800 leading-tight">
+              <h2 className="text-xl lg:text-3xl text-center sm:text-left font-semibold text-gray-800 leading-tight">
                 Explore Your Potential At
               </h2>
-              <h2 className="text-2xl lg:text-3xl font-extrabold text-secondary mt-1 leading-tight">
+              <h2 className="text-xl lg:text-3xl text-center sm:text-left font-extrabold text-secondary mt-1 leading-tight">
                 INDIRA COLLEGE OF ENGINEERING & MANAGEMENT
               </h2>
             </div>
 
             {/* TEXT */}
-            <p className="fade-text text-gray-700 text-lg lg:text-xl leading-relaxed text-justify">
+            <p className="fade-text text-gray-700 text-md lg:text-xl leading-relaxed text-justify">
               Located near Pune, Indira College of Engineering & Management, one
               of the leading NAAC accredited engineering institutions, offers a
               world of learning to help you achieve your goals. Choose from
@@ -86,7 +85,6 @@ const ExploreSection = () => {
             </p>
           </div>
 
-          {/* RIGHT COLUMN — LOGOS (VERTICAL STACK) */}
           {/* RIGHT COLUMN — LOGOS (2×2 GRID) */}
           <div className="logos-column grid grid-cols-2 gap-6 items-start">
             {logos.map((logo, index) => (

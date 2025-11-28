@@ -31,7 +31,7 @@ const CampusBeat = () => {
   }, []);
 
   return (
-    <div className="bg-white py-10 sm:py-16 overflow-hidden">
+    <div className="bg-white py-10 sm:py-16 overflow-hidden hidden sm:block">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <h2 className="text-xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4 text-center sm:text-left">
           The Campus Beat
@@ -60,8 +60,6 @@ const CampusBeat = () => {
                 alt={`Campus Beat ${i + 1}`}
                 fill
                 className="object-cover"
-                quality={100}
-                unoptimized
               />
             </div>
           ))}

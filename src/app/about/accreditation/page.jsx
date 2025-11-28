@@ -55,7 +55,7 @@ export default function Accreditation() {
   };
 
   return (
-    <div className="w-full bg-white text-gray-800">
+    <div className="w-full mx-auto bg-white text-gray-800">
       {/* Banner */}
       <div className="w-full h-auto relative">
         <Image
@@ -67,7 +67,7 @@ export default function Accreditation() {
         />
       </div>
       {/* === Approvals Section === */}
-      <div className="w-full bg-white text-gray-800 px-6 py-12">
+      <div className="max-w-7xl mx-auto bg-white text-gray-800 px-6 py-12">
         <h2 className="text-2xl font-semibold text-secondary mb-4">
           ACCREDITATION AND APPROVALS
         </h2>
@@ -91,7 +91,6 @@ export default function Accreditation() {
               height={350}
               className="mb-2"
             />
-            
           </div>
           <div className="flex flex-col items-center justify-center p-4 transition-transform duration-300 hover:scale-105 shadow-lg rounded-lg shadow-gray-200">
             <Image
@@ -101,7 +100,6 @@ export default function Accreditation() {
               height={350}
               className="mb-2"
             />
-           
           </div>
           <div className="flex flex-col items-center justify-center p-2 transition-transform duration-300 hover:scale-105 shadow-lg rounded-lg shadow-gray-200">
             <Image
@@ -111,7 +109,6 @@ export default function Accreditation() {
               height={300}
               className="mb-2"
             />
-            
           </div>
           <div className="flex flex-col items-center justify-center p-4 transition-transform duration-300 hover:scale-105 shadow-lg rounded-lg shadow-gray-200">
             <Image
@@ -121,11 +118,10 @@ export default function Accreditation() {
               height={350}
               className="mb-2"
             />
-            
           </div>
         </div>
       </div>
-      <div className="w-full mx-auto py-6 px-6">
+      <div className="max-w-7xl mx-auto py-6 px-6">
         {/* === Awards & Recognitions Section === */}
         <div className="mt-4">
           {/* Intro */}
@@ -142,82 +138,108 @@ export default function Accreditation() {
           </h2>
 
           {/* ===== FIRST 4 AWARDS WITH IMAGES ===== */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-3 md:grid-cols-3 gap-6">
             {/* Award 1 */}
-            <div className="flex gap-4 p-4 border border-gray-200 bg-white rounded-xl shadow-sm">
-              <div className="w-40 h-32 rounded-lg bg-gray-200 flex items-center justify-center text-gray-500">
-                Image
+            <div className="bg-gray-100 flex flex-col border border-gray-200 rounded-xl shadow-sm">
+              <div className="relative w-full h-56 rounded-t-xl overflow-hidden">
+                <Image
+                  src="/accreditations/Awards 1.jpg"
+                  alt="Education Leadership Award 2023"
+                  fill
+                  className="object-cover"
+                  unoptimized={true}
+                />
               </div>
-              <div>
-                <h3 className="text-lg font-semibold text-secondary">
-                  Education Leadership Award 2023
-                </h3>
-                <p className="text-sm text-gray-500">
-                  Business Leader of The Year Awards, Mumbai
-                </p>
-                <p className="text-gray-700 mt-2">
-                  Recognized for exemplary leadership in engineering education
-                  and institutional management, demonstrating outstanding
-                  contribution to the education sector.
-                </p>
-              </div>
+
+              <h3 className="text-sm text-center font-semibold text-secondary p-4">
+                Education Leadership Award 2023
+              </h3>
             </div>
 
             {/* Award 2 */}
-            <div className="flex gap-4 p-4 border border-gray-200 bg-white rounded-xl shadow-sm">
-              <div className="w-40 h-32 rounded-lg bg-gray-200 flex items-center justify-center text-gray-500">
-                Image
+            <div className="bg-gray-100 flex flex-col border border-gray-200 rounded-xl shadow-sm">
+              <div className="relative w-full h-56 rounded-t-xl overflow-hidden">
+                <Image
+                  src="/accreditations/Awards 2.jpg"
+                  alt="Education Leadership Award 2023"
+                  fill
+                  className="object-cover"
+                  unoptimized={true}
+                />
               </div>
-              <div>
-                <h3 className="text-lg font-semibold text-secondary">
-                  Innovative Education Leadership Award 2023
-                </h3>
-                <p className="text-gray-700 mt-2">
-                  Awarded for pioneering practices in engineering education,
-                  particularly for implementing cutting-edge teaching
-                  methodologies and curriculum development.
-                </p>
-              </div>
+
+              <h3 className="text-sm text-center font-semibold text-secondary p-4">
+                Education Leadership Award at the Business Leader of The Year
+                Awards-2023 on 17th February 2023 at Mumbai, India
+              </h3>
             </div>
 
             {/* Award 3 */}
-            <div className="flex gap-4 p-4 border border-gray-200 bg-white rounded-xl shadow-sm">
-              <div className="w-40 h-32 rounded-lg bg-gray-200 flex items-center justify-center text-gray-500">
-                Image
+            <div className="bg-gray-100 flex flex-col border border-gray-200 rounded-xl shadow-sm">
+              <div className="relative w-full h-56 rounded-t-xl overflow-hidden">
+                <Image
+                  src="/accreditations/Awards 3.jpg"
+                  alt="Education Leadership Award 2023"
+                  fill
+                  className="object-cover"
+                  unoptimized={true}
+                />
               </div>
-              <div>
-                <h3 className="text-lg font-semibold text-secondary">
-                  Best Academia-Industry Alliance Award 2025
-                </h3>
-                <p className="text-sm text-gray-500">
-                  Education World, New Delhi
-                </p>
-                <p className="text-gray-700 mt-2">
-                  Honored for creating exceptional industry-academia
-                  partnerships that bridge the gap between theoretical knowledge
-                  and practical application, benefiting student development.
-                </p>
-              </div>
+
+              <h3 className="text-sm text-center font-semibold text-secondary p-4">
+                Exemplary Leader Award at the Asian Leadership Awards at Dubai
+                on 11th Oct 2023.
+              </h3>
             </div>
 
-            {/* Award 4 */}
-            <div className="flex gap-4 p-4 border border-gray-200 bg-white rounded-xl shadow-sm">
-              <div className="w-40 h-32 rounded-lg bg-gray-200 flex items-center justify-center text-gray-500">
-                Image
+            {/* Award 5 */}
+            <div className="bg-gray-100 flex flex-col border border-gray-200 rounded-xl shadow-sm">
+              <div className="relative w-full h-56 rounded-t-xl overflow-hidden">
+                <Image
+                  src="/accreditations/Awards 4.jpg"
+                  alt="Pune Leadership Awards 2022"
+                  fill
+                  className="object-cover"
+                  unoptimized={true}
+                />
               </div>
-              <div>
-                <h3 className="text-lg font-semibold text-secondary">
-                  Outstanding Education Institute (West) Award
-                </h3>
-                <p className="text-sm text-gray-500">
-                  ABP News National Education Awards (2022, 2018, 2017)
-                </p>
-                <p className="text-gray-700 mt-2">
-                  Consistently recognized as the premier educational institution
-                  in Western India for comprehensive excellence in technical
-                  education and infrastructure.
-                </p>
+
+              <h3 className="text-sm text-center font-semibold text-secondary p-4">
+                Pune Leadership Awards 2022 Received award for Best Industry
+                Academia Interface Received on 30th September 2022
+              </h3>
+            </div>
+
+            <div className="bg-gray-100 flex flex-col border border-gray-200 rounded-xl shadow-sm">
+              <div className="relative w-full h-56 rounded-t-xl overflow-hidden">
+                <Image
+                  src="/accreditations/Awards 5.jpg"
+                  alt="Pune Leadership Awards 2022"
+                  fill
+                  className="object-cover"
+                  unoptimized={true}
+                />
               </div>
+
+              <h3 className="text-sm text-center font-semibold text-secondary p-4">
+                Award for Best Academic and Industry Interface- ABP News
+                National Education Awards 2017 on 6th July 2017.
+              </h3>
+            </div>
+              <div className="bg-gray-100 flex flex-col border border-gray-200 rounded-xl shadow-sm">
+              <div className="relative w-full h-56 rounded-t-xl overflow-hidden">
+                <Image
+                  src="/accreditations/Awards 6.jpg"
+                  alt="Pune Leadership Awards 2022"
+                  fill
+                  className="object-cover"
+                  unoptimized={true}
+                />
+              </div>
+
+              <h3 className="text-sm text-center font-semibold text-secondary p-4">
+                Best Emerging Institute Award - DNA Innovative Education Awards 2016.
+              </h3>
             </div>
           </div>
 
@@ -304,7 +326,7 @@ export default function Accreditation() {
         </div>
       </div>
       {/* Main Content */}
-      <div className="w-full mx-auto py-2 px-2">
+      <div className="max-w-7xl mx-auto py-2 px-2">
         {/* Left Section */}
         <div className="md:w-full bg-white p-3 rounded-xl shadow-md space-y-12">
           {/* === NAAC Section === */}

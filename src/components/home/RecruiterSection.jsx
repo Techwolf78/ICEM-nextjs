@@ -10,7 +10,7 @@ const RecruitersSection = () => {
   // ✅ Define text content for each route
   const pageContent = {
     "/": {
-      headline: "INDIRA DEGREE OPENS DOORS. WIDE.",
+      headline: "Doors Open, Futures Begin, ICEM.",
       body: "At Indira College of Engineering & Management, there is a strong focus on preparing every student to be industry ready. With numerous recruiters visiting our campus each year, our graduates gain access to a network of opportunities, resources, and the support needed to excel in a rapidly evolving job market.",
     },
     "/programs/computer-engineering": {
@@ -69,7 +69,7 @@ const RecruitersSection = () => {
     <div className="bg-gray-50 py-12 sm:py-16 relative overflow-hidden">
       <div className="max-w-7xl mx-auto text-center">
         {/* ✅ Dynamic Section Heading */}
-        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
+        <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-4 sm:mb-6">
           {headline}
         </h2>
 

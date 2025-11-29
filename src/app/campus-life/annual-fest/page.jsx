@@ -18,7 +18,7 @@ export default function AnnualFestPage() {
       {/* HERO */}
       <div className="relative w-full h-[75vh]">
         <Image
-          src="/campuslife/Annual Fest.jpg"
+          src="/campuslife/Annual Fest.webp"
           alt="Annual Fest"
           fill
           className="object-cover"
@@ -176,7 +176,7 @@ export default function AnnualFestPage() {
             </p>
             <div className="relative rounded-xl overflow-hidden shadow  h-auto md:w-1/2">
               <Image
-                src="/campuslife/fest/gusto4.jpg"
+                src="/campuslife/fest/gusto4.webp"
                 alt="Gusto Event"
                 fill
                 className="object-cover"
@@ -192,7 +192,7 @@ export default function AnnualFestPage() {
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             <div className="h-auto rounded-md overflow-hidden   shadow-sm">
               <Image
-                src="/campuslife/fest/gusto2.jpg"
+                src="/campuslife/fest/gusto2.webp"
                 alt="Gusto Inauguration"
                 height={1200}
                 width={1800}
@@ -201,7 +201,7 @@ export default function AnnualFestPage() {
             </div>
             <div className="h-auto rounded-md overflow-hidden shadow-sm">
               <Image
-                src="/campuslife/fest/gusto3.jpg"
+                src="/campuslife/fest/gusto3.webp"
                 alt="Gusto Crowd"
                 height={1200}
                 width={1800}
@@ -210,7 +210,7 @@ export default function AnnualFestPage() {
             </div>
             <div className="h-auto rounded-md overflow-hidden shadow-sm">
               <Image
-                src="/campuslife/fest/gusto1.jpg"
+                src="/campuslife/fest/gusto1.webp"
                 alt="Gusto Crowd"
                 height={1200}
                 width={1800}

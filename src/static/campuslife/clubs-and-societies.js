@@ -19,7 +19,7 @@ export const clubsAndSocieties = [
       "Guest Session – 'AI for Everyone: From Idea to Impact'",
       "Interactive Q&A and student networking sessions after talks"
     ],
-    image: "/club-photos/friday-tech-talks.jpg"
+    image: "/club-photos/friday-tech-talks.webp"
   },
 
   {
@@ -42,7 +42,7 @@ export const clubsAndSocieties = [
       "Minor Project Hackathon for SY – 08/10/25",
       "Felicitation of ICONS team members on World Students' Day – 15/10/25"
     ],
-    image: "/club-photos/icons.jpg"
+    image: "/club-photos/icons.webp"
   },
 
   {
@@ -63,7 +63,7 @@ export const clubsAndSocieties = [
       "Trailhead Learning Challenges (Monthly)",
       "Coding Levels – Champion, Innovator, Legend"
     ],
-    image: "/club-photos/agentblazer.jpg"
+    image: "/club-photos/agentblazer.webp"
   },
 
   {
@@ -87,7 +87,7 @@ export const clubsAndSocieties = [
       "Hands-on SolidWorks Session – 11/10/2025",
       "Lectures on Basics of Automobile Engineering – 18/09/25 to 23/09/25"
     ],
-    image: "/club-photos/sae.jpg"
+    image: "/club-photos/sae.webp"
   },
 
   {
@@ -109,6 +109,6 @@ export const clubsAndSocieties = [
       "Inauguration of Sentient Labs – 15/10/2025",
       "Icebreaker Activity – 'Two Truths & One Lie: AI Edition'"
     ],
-    image: "/club-photos/sentient-labs.jpg"
+    image: "/club-photos/sentient-labs.webp"
   }
 ];

@@ -31,7 +31,7 @@ const Academics = () => {
       {/* Hero Banner */}
       <div className="w-full h-[60vh] relative">
         <Image
-          src={"/BannerOverviewPage.jpg"}
+          src={"/banners/BannerOverviewPage.webp"}
           alt="ICEM Campus"
           className="object-cover"
           fill
@@ -58,7 +58,7 @@ const Academics = () => {
             <div className="lg:w-1/3 flex flex-col items-center">
               <div className="w-50 h-60 rounded-lg shadow-md overflow-hidden bg-gray-200 mb-4">
                 <Image
-                  src="/campuslife/dean.jpg"
+                  src="/campuslife/dean.webp"
                   alt="Dr. Saurabh Harishchand Gupta"
                   width={192}
                   height={192}

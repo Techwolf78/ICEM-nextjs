@@ -7,7 +7,7 @@ import { awards } from "../../../static/campuslife/awards";
 const IcemAwards = () => {
   const [expanded, setExpanded] = useState(null);
   // Images are in /public folder
-  const bannerImg = "/awards/award3.jpg";
+  const bannerImg = "/awards/award3.webp";
 
   return (
     <div className="w-full bg-gray-50 text-gray-800">

@@ -18,7 +18,7 @@ export default function CulturalActivitiesPage() {
       {/* Banner */}
       <div className="w-full h-auto relative">
         <Image
-          src="/cultural-events/bannercultural.jpg"
+          src="/banners/bannercultural.webp"
           alt="Cultural Activities"
           height={1080}
           width={1920}

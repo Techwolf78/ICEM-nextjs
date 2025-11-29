@@ -8,7 +8,7 @@ import { activities } from "@/static/campuslife/nss";
 function NationalServiceScheme() {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const bannerImg = "/campuslife/nssbanner.jpg"; // put in public folder
+  const bannerImg = "/campuslife/nssbanner.webp"; // put in public folder
   
 
   return (

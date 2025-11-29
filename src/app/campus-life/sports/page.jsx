@@ -61,7 +61,7 @@ export default function SportsRecreation() {
               {/* Image 1 */}
               <div className="relative w-full h-full flex-shrink-0">
                 <Image
-                  src="/sportsmarque.jpg"
+                  src="/sports/sportsmarque.webp"
                   alt="Sports Infrastructure"
                   fill
                   className="object-cover"
@@ -73,7 +73,7 @@ export default function SportsRecreation() {
               {/* Image 2 */}
               <div className="relative w-full h-full flex-shrink-0">
                 <Image
-                  src="/sportsmarque.jpg"
+                  src="/sports/sportsmarque.webp"
                   alt="Sports Infrastructure duplicate"
                   fill
                   className="object-cover"
@@ -98,7 +98,7 @@ export default function SportsRecreation() {
                 {/* Image Placeholder */}
                 <div className=" relative w-full h-40 bg-gray-200 rounded-sm flex items-center justify-center text-gray-500 text-sm mb-4">
                   <Image
-                    src={item.img || "/sports/tabletennis.jpg"}
+                    src={item.img || "/sports/tabletennis.webp"}
                     alt="Achievement Icon"
                     fill
                     className="object-cover rounded-sm"

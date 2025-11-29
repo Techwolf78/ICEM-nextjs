@@ -72,6 +72,7 @@ export const culturalEvents = [
     title: "Navratri Celebration 2025 ",
     description:
       "The college gracefully observed Navratri in September, a nine-night festival dedicated to the worship of the divine feminine. The celebration included a traditional sthapana ceremony, invoking the presence of Goddess Durga. Daily aartis and religious discourses created an atmosphere of devotion and reflection, allowing students and staff to immerse themselves in the spiritual significance of the festival. The event highlighted the cultural and ethical values embedded in Indian traditions, promoting a message of righteousness, inner strength, and the triumph of good over evil, thereby contributing to the holistic development of the students.  ",
+      imageLink: "/cultural-events/Navratri.webp",
   },
   {
     title: "Garba Night 2025",

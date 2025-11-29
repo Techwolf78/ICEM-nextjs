@@ -225,7 +225,7 @@ export default function ENTC() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/Programs/ENTC/Entc1.jpg"
+                  src="/Programs/ENTC/Entc1.webp"
                   alt="Core & Specialized Knowledge"
                   fill
                   className="object-cover"

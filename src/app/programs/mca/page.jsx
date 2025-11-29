@@ -222,7 +222,7 @@ export default function Computer() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/Programs/MCA/MCA1.jpg"
+                  src="/Programs/MCA/MCA1.webp"
                   alt="Interdisciplinary Expertise"
                   fill
                   className="object-cover"

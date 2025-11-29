@@ -241,38 +241,45 @@ export default function MBA() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10" />
 
         {/* Content Wrapper */}
-        <div className="relative max-w-[1500px] px-6 md:px-12 lg:px-20 z-20">
-          <div className="max-w-3xl text-white">
-            <h2 className="text-4xl md:text-5xl font-bold leading-snug">
-              2-Year Master of Business Administration (MBA) Programme <br />
-            </h2>
+        <div className="relative max-w-[1500px] px-4 sm:px-6 md:px-12 lg:px-20 z-20">
+  <div className="max-w-3xl text-white">
 
-            <p className="mt-4 text-white/80 leading-relaxed max-w-2xl">
-              This rigorous programme is designed to develop strategic thinkers
-              and future business leaders. It combines core management
-              principles with deep specialization, fostering analytical prowess,
-              leadership qualities, and an ethical mindset to drive
-              organizational success in a complex global economy.
-            </p>
+    {/* Heading */}
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug">
+      2-Year Master of Business Administration (MBA) Programme
+    </h2>
 
-            {/* Buttons */}
-            <div className="flex gap-4 mt-6">
-              <button
-                onClick={toggleModal}
-                className="bg-secondary text-white px-8 py-3 rounded-lg font-semibold"
-              >
-                Enquire Now
-              </button>
+    {/* Description */}
+    <p className="mt-3 sm:mt-4 text-white/80 leading-relaxed max-w-2xl text-sm sm:text-base">
+      This rigorous programme is designed to develop strategic thinkers and
+      future business leaders. It combines core management principles with deep
+      specialization, fostering analytical prowess, leadership qualities, and an
+      ethical mindset to drive organizational success in a complex global
+      economy.
+    </p>
 
-              <button
-                onClick={handleBrochureDownload}
-                className="bg-secondary text-white px-8 py-3 rounded-lg"
-              >
-                Download Brochure
-              </button>
-            </div>
-          </div>
-        </div>
+    {/* Buttons */}
+    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 w-full sm:w-auto">
+      <button
+        onClick={toggleModal}
+        className="bg-secondary text-white px-6 sm:px-8 py-3 rounded-lg font-semibold
+        text-sm sm:text-base w-full sm:w-auto"
+      >
+        Enquire Now
+      </button>
+
+      <button
+        onClick={handleBrochureDownload}
+        className="bg-secondary text-white px-6 sm:px-8 py-3 rounded-lg
+        text-sm sm:text-base w-full sm:w-auto"
+      >
+        Download Brochure
+      </button>
+    </div>
+
+  </div>
+</div>
+
 
         {/* Bottom Fade Mask */}
         <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-black/60 to-transparent" />

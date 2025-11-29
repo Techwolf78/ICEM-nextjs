@@ -65,16 +65,19 @@ export default function Computer() {
 
         {/* Content Wrapper */}
         {/* Content Wrapper */}
-        <div className="relative max-w-[1500px] px-6 md:px-12 lg:px-20 z-20">
+        <div className="relative max-w-[1500px] px-4 sm:px-6 md:px-12 lg:px-20 z-20">
           <div className="max-w-3xl text-white">
-            <h2 className="text-4xl md:text-5xl font-bold leading-snug">
-              2-Year M.Tech in Mechanical Engineering <br></br>
-              <span className="bg-gradient-to-br from-cyan-400  to-sky-400 bg-clip-text text-transparent font-extrabold ">
+            {/* Heading */}
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug">
+              2-Year M.Tech in Mechanical Engineering
+              <br className="hidden sm:block" />
+              <span className="bg-gradient-to-br from-cyan-400 to-sky-400 bg-clip-text text-transparent font-extrabold">
                 Specializing in Advanced Mechanical Systems and Research
               </span>
             </h2>
 
-            <p className="mt-4 text-white/80 leading-relaxed max-w-2xl">
+            {/* Description */}
+            <p className="mt-3 sm:mt-4 text-white/80 leading-relaxed max-w-2xl text-sm sm:text-base">
               This postgraduate programme offers advanced study and research in
               specialized domains of mechanical engineering. It is designed to
               cultivate expertise in thermal engineering, design engineering, or
@@ -82,21 +85,20 @@ export default function Computer() {
               specialist roles in industry and academia.
             </p>
 
-            {/* Floating Stat Cards */}
-
             {/* Buttons */}
-            <div className="flex gap-4 mt-6">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 w-full sm:w-auto">
               <button
                 onClick={toggleModal}
-                className="bg-secondary text-white px-8 py-3 rounded-lg font-semibold 
-                         "
+                className="bg-secondary text-white px-6 sm:px-8 py-3 rounded-lg font-semibold
+        text-sm sm:text-base w-full sm:w-auto"
               >
                 Enquire Now
               </button>
 
               <button
                 onClick={handleBrochureDownload}
-                className="bg-secondary text-white px-8 py-3 rounded-lg"
+                className="bg-secondary text-white px-6 sm:px-8 py-3 rounded-lg
+        text-sm sm:text-base w-full sm:w-auto"
               >
                 Download Brochure
               </button>

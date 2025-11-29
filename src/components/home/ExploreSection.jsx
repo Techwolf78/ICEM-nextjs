@@ -11,10 +11,10 @@ const ExploreSection = () => {
   const sectionRef = useRef(null);
 
   const logos = [
-    { title: "NAAC Accredited", img: "/homepage-logos/NAAC.jpg" },
-    { title: "Top Ranking", img: "/homepage-logos/8th.jpg" },
-    { title: "Approved by AICTE", img: "/homepage-logos/aicte.jpg" },
-    { title: "Affiliated to SPPU Pune", img: "/homepage-logos/sspu.jpg" },
+    { title: "NAAC Accredited", img: "/homepage-logos/NAAC.webp" },
+    { title: "Top Ranking", img: "/homepage-logos/8th.webp" },
+    { title: "Approved by AICTE", img: "/homepage-logos/aicte.webp" },
+    { title: "Affiliated to SPPU Pune", img: "/homepage-logos/sspu.webp" },
   ];
 
   useEffect(() => {

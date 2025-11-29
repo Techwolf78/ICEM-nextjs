@@ -10,35 +10,39 @@ const DiscoverPaths = () => {
   const courses = [
     {
       name: "Computer Engineering",
-      img: "/Comp.jpg",
+      img: "/Programs/Computer/Comp.webp",
       link: "/programs/computer-engineering",
     },
     {
       name: "Mechanical Engineering",
-      img: "/Mech.jpg",
+      img: "/Programs/Mech/Mech.webp",
       link: "/programs/mechanical-engineering",
     },
     {
       name: "Artificial Intelligence and Data Science",
-      img: "/AIDS.jpg",
+      img: "/Programs/AIDS/AIDS.webp",
       link: "/programs/ai-ds",
     },
     {
       name: "Electronics and Telecommunication",
-      img: "/newENTC.jpg",
+      img: "/Programs/ENTC/ENTC.webp",
       link: "/programs/entc",
     },
-    { name: "Information Technology", img: "/IT1.jpg", link: "/programs/it" },
-    { name: "MBA", img: "/IBBAMBA1.jpg", link: "/programs/mba" },
-    { name: "MCA", img: "/IBCAMCA.jpg", link: "/programs/mca" },
+    {
+      name: "Information Technology",
+      img: "/Programs/IT/IT.webp",
+      link: "/programs/it",
+    },
+    { name: "MBA", img: "/Programs/MBA/MBA.webp", link: "/programs/mba" },
+    { name: "MCA", img: "/Programs/MCA/MCA.webp", link: "/programs/mca" },
     {
       name: "Integrated MBA (BBA + MBA)",
-      img: "/Programs/IBCAMBA/IBBAMBA1.jpg",
+      img: "/Programs/IBCAMBA/IBBAMBA1.webp",
       link: "/programs/imba",
     },
     {
       name: "Integrated MCA (BCA + MCA)",
-      img: "/Programs/IBBAMCA/IBBAMCA3.jpg",
+      img: "/Programs/IBBAMCA/IBBAMCA1.webp",
       link: "/programs/imca",
     },
   ];

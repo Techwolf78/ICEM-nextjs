@@ -8,49 +8,49 @@ export default function EventsSection() {
 
   const events = [
     {
-      img: "/events/ArshGoyal.JPG",
+      img: "/events/ArshGoyal.webp",
       title: "Guest Lecture by Arsh Goyal",
       description:
         "An inspiring session with Arsh Goyal, sharing real-world tech insights and industry experience.",
     },
     {
-      img: "/events/BParak.jpg",
+      img: "/events/BParak.webp",
       title: "Bharat Parakrama",
       description:
         "A celebration of patriotism and valor with vibrant cultural performances and student participation.",
     },
     {
-      img: "/events/EngineeringInduction.jpg",
+      img: "/events/EngineeringInduction.webp",
       title: "Engineering Induction Program",
       description:
         "Welcoming the new engineering batch with orientation, team-building, and innovation showcases.",
     },
     {
-      img: "/events/gusto.jpg",
+      img: "/events/gusto.webp",
       title: "Gusto – Annual Tech Fest",
       description:
         "A thrilling fest of technology, creativity, and innovation featuring workshops and competitions.",
     },
     {
-      img: "/events/IGIIRP.JPG",
+      img: "/events/IGIIRP.webp",
       title: "Indira Global Industrial Research Program",
       description:
         "Encouraging collaboration between academia and industry for impactful research and innovation.",
     },
     {
-      img: "/events/MBAInduction.jpg",
+      img: "/events/MBAInduction.webp",
       title: "MBA Induction Program",
       description:
         "The beginning of the management journey with insights from corporate leaders and alumni.",
     },
     {
-      img: "/events/Navratri.JPG",
+      img: "/events/Navratri.webp",
       title: "Navratri Celebration",
       description:
         "A grand cultural evening filled with Garba, music, and colorful traditional festivities.",
     },
     {
-      img: "/events/SportsComplex.JPG",
+      img: "/events/SportsComplex.webp",
       title: "ICEM Sports Complex",
       description:
         "A flagship event connecting visionaries, innovators, and learners from diverse industries.",

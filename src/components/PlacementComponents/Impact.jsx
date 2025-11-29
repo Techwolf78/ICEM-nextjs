@@ -76,73 +76,85 @@ export default function Impact() {
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Highest Package - Slides from left */}
-          <div className={`
+          <div
+            className={`
             bg-white shadow-lg border border-blue-100 p-8 rounded-xl 
             transition-all duration-700 transform
-            ${animated[0] 
-              ? 'translate-x-0 opacity-100 scale-100' 
-              : '-translate-x-20 opacity-0 scale-90'
+            ${
+              animated[0]
+                ? "translate-x-0 opacity-100 scale-100"
+                : "-translate-x-20 opacity-0 scale-90"
             }
             hover:scale-105 hover:shadow-xl
-          `}>
+          `}
+          >
             <h3 className="text-4xl font-bold text-secondary mb-2">
               ₹{counts[0].toFixed(0)} LPA
             </h3>
-            <p className="text-lg font-semibold text-primary mb-2">
+            <p className="text-lg font-bold text-secondary mb-2">
               Highest Package
             </p>
           </div>
 
           {/* Average Package - Slides from top */}
-          <div className={`
+          <div
+            className={`
             bg-white shadow-lg border border-blue-100 p-8 rounded-xl 
             transition-all duration-700 transform
-            ${animated[1] 
-              ? 'translate-y-0 opacity-100 scale-100' 
-              : '-translate-y-20 opacity-0 scale-90'
+            ${
+              animated[1]
+                ? "translate-y-0 opacity-100 scale-100"
+                : "-translate-y-20 opacity-0 scale-90"
             }
             hover:scale-105 hover:shadow-xl
-          `}>
+          `}
+          >
             <h3 className="text-4xl font-bold text-secondary mb-2">
               ₹{counts[1].toFixed(2)} LPA
             </h3>
-            <p className="text-lg font-semibold text-primary mb-2">
+            <p className="text-lg font-bold text-secondary mb-2">
               Average Package
             </p>
           </div>
 
           {/* Companies - Slides from bottom */}
-          <div className={`
+          <div
+            className={`
             bg-white shadow-lg border border-blue-100 p-8 rounded-xl 
             transition-all duration-700 transform
-            ${animated[2] 
-              ? 'translate-y-0 opacity-100 scale-100' 
-              : 'translate-y-20 opacity-0 scale-90'
+            ${
+              animated[2]
+                ? "translate-y-0 opacity-100 scale-100"
+                : "translate-y-20 opacity-0 scale-90"
             }
             hover:scale-105 hover:shadow-xl
-          `}>
+          `}
+          >
             <h3 className="text-4xl font-bold text-secondary mb-2">
               {Math.floor(counts[2])}+
             </h3>
-            <p className="text-lg font-semibold text-primary mb-2">
+            <p className="text-lg font-bold text-secondary mb-2">
               Recruiting Companies
             </p>
           </div>
 
           {/* Placement Assistance - Slides from right */}
-          <div className={`
+          <div
+            className={`
             bg-white shadow-lg border border-blue-100 p-8 rounded-xl 
             transition-all duration-700 transform
-            ${animated[3] 
-              ? 'translate-x-0 opacity-100 scale-100' 
-              : 'translate-x-20 opacity-0 scale-90'
+            ${
+              animated[3]
+                ? "translate-x-0 opacity-100 scale-100"
+                : "translate-x-20 opacity-0 scale-90"
             }
             hover:scale-105 hover:shadow-xl
-          `}>
+          `}
+          >
             <h3 className="text-4xl font-bold text-secondary mb-2">
               {Math.floor(counts[3])}%
             </h3>
-            <p className="text-lg font-semibold text-primary mb-2">
+            <p className="text-lg font-bold text-secondary mb-2">
               Placement Assistance
             </p>
           </div>

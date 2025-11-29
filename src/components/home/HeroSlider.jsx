@@ -15,9 +15,11 @@ const HeroSlider = () => {
   ];
 
   const mobileImages = [
-    "/banners/placement-banner1.jpg",
-    "/banners/placement-banner2.jpg",
+    "/banners/ICEMBANNER27.jpg",
     "/banners/ICEMBANNER6.jpg",
+    "/banners/ICEMBANNERCOMP.jpg",
+    "/banners/ICEMBANNERCLASS.jpg",
+    "/banners/ICEMBANNERMECH.jpg",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

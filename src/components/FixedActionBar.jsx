@@ -109,3 +109,4 @@ const FixedActionBar = () => {
 };
 
 export default FixedActionBar;
+

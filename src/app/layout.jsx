@@ -10,6 +10,7 @@ import Loader from "@/components/Loader";
 import LenisProvider from "@/components/LenisProvider";
 import { Scroll } from "lucide-react";
 import ScrollToTop from "@/components/ScrollToTop";
+import MobileNav from "@/components/MobileNav";
 
 export default function RootLayout({ children }) {
   const [isLoading, setIsLoading] = useState(true);
@@ -32,7 +33,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <ScrollToTop />
         <FixedActionBar />
-
+        {/* <MobileNav /> */}
         {/* ✔ Wrap entire scrollable content with Lenis */}
         <LenisProvider>
           <main className="flex-grow">{children}</main>

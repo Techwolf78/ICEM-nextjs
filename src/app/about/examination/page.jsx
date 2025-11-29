@@ -10,11 +10,10 @@ export default function Examination() {
 
   return (
     <div className="w-full bg-white text-gray-800">
-      
       {/* ================= HERO BANNER ================= */}
       <div className="w-full h-auto relative">
         <Image
-          src="/BannerOverviewPage.jpg"
+          src="/Facilities/BannerOverviewPage.webp"
           alt="Examination at ICEM"
           className="w-full h-full object-cover"
           width={1700}
@@ -30,7 +29,6 @@ export default function Examination() {
       {/* ================= MAIN CONTENT (CENTERED WITH MAX WIDTH) ================= */}
       <div className="w-full flex justify-center">
         <div className="w-full max-w-7xl px-6 py-12">
-
           {/* ===== Examination System ===== */}
           <div className="bg-white p-6 rounded-xl shadow-md mb-12">
             <h2 className="text-2xl font-semibold text-secondary mb-6">
@@ -41,9 +39,9 @@ export default function Examination() {
               The Examination Department at Indira College of Engineering and
               Management (ICEM) ensures a fair, transparent, and efficient
               evaluation process in accordance with Savitribai Phule Pune
-              University guidelines. Our examination system is designed to assess
-              students' academic performance comprehensively while maintaining
-              the highest standards of integrity.
+              University guidelines. Our examination system is designed to
+              assess students' academic performance comprehensively while
+              maintaining the highest standards of integrity.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-4">
@@ -56,24 +54,24 @@ export default function Examination() {
 
             <p className="text-gray-700 leading-relaxed mb-4">
               Students can access their examination schedules, download hall
-              tickets, check results, and apply for revaluation through our online
-              portal. The examination committee works diligently to address any
-              concerns and ensure a smooth examination experience for all
-              students.
+              tickets, check results, and apply for revaluation through our
+              online portal. The examination committee works diligently to
+              address any concerns and ensure a smooth examination experience
+              for all students.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-4">
               Regular internal assessments, practical examinations, and
               semester-end theory examinations are conducted as per the academic
-              calendar. The evaluation process includes both internal and external
-              examiners to maintain objectivity and fairness.
+              calendar. The evaluation process includes both internal and
+              external examiners to maintain objectivity and fairness.
             </p>
 
             <p className="text-gray-700 leading-relaxed">
               The examination system at ICEM is continuously improved based on
-              feedback from students, faculty, and industry requirements to ensure
-              it remains relevant and effective in measuring student learning
-              outcomes.
+              feedback from students, faculty, and industry requirements to
+              ensure it remains relevant and effective in measuring student
+              learning outcomes.
             </p>
           </div>
 
@@ -146,7 +144,6 @@ export default function Examination() {
                   title: "Examination Timetable",
                   description: (
                     <div className="text-gray-800 text-sm leading-relaxed space-y-6">
-                      
                       {/* UG */}
                       <div>
                         <h4 className="font-semibold text-lg mb-2">
@@ -155,26 +152,46 @@ export default function Examination() {
 
                         <ul className="list-decimal ml-6 space-y-2">
                           <li>
-                            <a href="/exam/SYBTECH25.pdf" target="_blank" className="text-secondary hover:underline">
-                              SY B.Tech Endsemester Examination Timetable – Nov/Dec 2025
+                            <a
+                              href="/exam/SYBTECH25.pdf"
+                              target="_blank"
+                              className="text-secondary hover:underline"
+                            >
+                              SY B.Tech Endsemester Examination Timetable –
+                              Nov/Dec 2025
                             </a>
                           </li>
 
                           <li>
-                            <a href="/exam/SYBBA25.pdf" target="_blank" className="text-secondary hover:underline">
-                              SY IMBA / BBA Endsemester Examination Timetable – Nov/Dec 2025
+                            <a
+                              href="/exam/SYBBA25.pdf"
+                              target="_blank"
+                              className="text-secondary hover:underline"
+                            >
+                              SY IMBA / BBA Endsemester Examination Timetable –
+                              Nov/Dec 2025
                             </a>
                           </li>
 
                           <li>
-                            <a href="/exam/SYBCA25.pdf" target="_blank" className="text-secondary hover:underline">
-                              SY IMCA / BCA Endsemester Examination Timetable – Nov/Dec 2025
+                            <a
+                              href="/exam/SYBCA25.pdf"
+                              target="_blank"
+                              className="text-secondary hover:underline"
+                            >
+                              SY IMCA / BCA Endsemester Examination Timetable –
+                              Nov/Dec 2025
                             </a>
                           </li>
 
                           <li>
-                            <a href="/exam/FYBTECH25.pdf" target="_blank" className="text-secondary hover:underline">
-                              FY B.Tech Endsemester Examination Timetable – Nov/Dec 2025
+                            <a
+                              href="/exam/FYBTECH25.pdf"
+                              target="_blank"
+                              className="text-secondary hover:underline"
+                            >
+                              FY B.Tech Endsemester Examination Timetable –
+                              Nov/Dec 2025
                             </a>
                           </li>
                         </ul>
@@ -188,31 +205,44 @@ export default function Examination() {
 
                         <ul className="list-decimal ml-6 space-y-2">
                           <li>
-                            <a href="/exam/SYMBA25.pdf" target="_blank" className="text-secondary hover:underline">
-                              SY MBA Endsemester Examination Timetable – Nov/Dec 2025
+                            <a
+                              href="/exam/SYMBA25.pdf"
+                              target="_blank"
+                              className="text-secondary hover:underline"
+                            >
+                              SY MBA Endsemester Examination Timetable – Nov/Dec
+                              2025
                             </a>
                           </li>
 
                           <li>
-                            <a href="/exam/SYMCA25.pdf" target="_blank" className="text-secondary hover:underline">
-                              SY MCA Endsemester Examination Timetable – Nov/Dec 2025
+                            <a
+                              href="/exam/SYMCA25.pdf"
+                              target="_blank"
+                              className="text-secondary hover:underline"
+                            >
+                              SY MCA Endsemester Examination Timetable – Nov/Dec
+                              2025
                             </a>
                           </li>
 
                           <li>
-                            <a href="/pdfs/sample.pdf" target="_blank" className="text-secondary hover:underline">
-                              FY MTech Endsemester Examination Timetable – Nov/Dec 2025
+                            <a
+                              href="/pdfs/sample.pdf"
+                              target="_blank"
+                              className="text-secondary hover:underline"
+                            >
+                              FY MTech Endsemester Examination Timetable –
+                              Nov/Dec 2025
                             </a>
                           </li>
                         </ul>
                       </div>
-
                     </div>
                   ),
                 },
               ].map((item, index) => (
                 <div key={index} className="overflow-hidden">
-                  
                   {/* ===== ACCORDION HEADER ===== */}
                   <div
                     onClick={() =>
@@ -253,7 +283,6 @@ export default function Examination() {
                       )}
                     </div>
                   </div>
-
                 </div>
               ))}
             </div>
@@ -266,12 +295,17 @@ export default function Examination() {
               during office hours.
             </h4>
             <ul className="text-sm text-green-700 space-y-3">
-              <li className="flex gap-4 items-center"><Mail /> exam@indiraicem.ac.in</li>
-              <li className="flex gap-4 items-center"><Phone /> 02114 – 661529</li>
-              <li className="flex gap-4 items-center"><Clock /> 10:00 AM – 5:00 PM (Mon–Sat)</li>
+              <li className="flex gap-4 items-center">
+                <Mail /> exam@indiraicem.ac.in
+              </li>
+              <li className="flex gap-4 items-center">
+                <Phone /> 02114 – 661529
+              </li>
+              <li className="flex gap-4 items-center">
+                <Clock /> 10:00 AM – 5:00 PM (Mon–Sat)
+              </li>
             </ul>
           </div>
-
         </div>
       </div>
     </div>

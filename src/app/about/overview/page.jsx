@@ -88,7 +88,7 @@ export default function Overview() {
       {/* Hero Banner */}
       <div className="w-full h-auto relative">
         <Image
-          src="/BannerOverviewPage.jpg"
+          src="/Facilities/BannerOverviewPage.webp"
           alt="ICEM Campus"
           className="w-full h-full object-cover"
           height={600}
@@ -564,7 +564,6 @@ export default function Overview() {
             </div>
           </div>
 
-          {/* Leader's Desk */}
           {/* Leader's Desk */}
           <div className="bg-white p-6 rounded-xl shadow-md">
             <h3 className="text-2xl font-bold text-secondary mb-8">

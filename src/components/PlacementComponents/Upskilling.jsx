@@ -9,69 +9,86 @@ export default function Upskilling({}) {
       <section className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-secondary mb-8">
-            Upskilling for the Future
+            Upskilling for the Future   
           </h2>
 
-          {/* Interpersonal Skills */}
-          <div className="flex flex-col md:flex-row bg-white border border-gray-200 shadow-sm mb-6 overflow-hidden rounded-lg">
-            <div className="relative w-full flex-1 min-h-[200px] bg-gray-50 md:w-[35%] flex items-center justify-center text-secondary font-semibold text-lg p-6 border-r border-gray-200">
-              <Image
-                src="/Interpersonal Skills.jpg"
-                alt="Interpersonal Skills"
-                fill
-                className="object-cover"
-              />
+          {/* Container for Side-by-Side Sections */}
+          <div className="flex flex-col md:flex-row md:space-x-6">
+            {/* Interpersonal Skills Section (Left/Top) */}
+            <div className="flex-1 mb-6 md:mb-0">
+              <div className="flex flex-col bg-white border border-gray-200 shadow-md overflow-hidden rounded-lg h-full">
+                {/* Image and Title container - kept the vertical stacking for image/content within this block */}
+                <div className="relative w-full min-h-[200px] bg-gray-50 flex items-center justify-center text-secondary font-semibold text-lg border-b border-gray-200">
+                  <Image
+                    src="/placement/Interpersonal Skills.webp"
+                    alt="Interpersonal Skills"
+                    fill
+                    className="object-cover"
+                  />
+                  {/* Overlay to ensure title is readable */}
+                  <div className="absolute inset-0 bg-black/50"></div>
+                  <h3 className="relative z-10 text-4xl font-extrabold text-white p-4">
+                    Interpersonal Skills
+                  </h3>
+                </div>
+
+                <div className="p-6">
+                  <ul className="list-disc pl-5 space-y-2 text-gray-700 text-sm leading-relaxed">
+                    <li>
+                      Effective Communication Skills (Verbal, Non-Verbal,
+                      Emotional Intelligence)
+                    </li>
+                    <li>
+                      Questioning Skills to Clarify Doubts and Assumptions
+                    </li>
+                    <li>Improving Listening Skills</li>
+                    <li>
+                      Mock GD & Mock PI (Group Discussion & Personal Interview)
+                    </li>
+                    <li>Effective Writing Skills – Emails & Chats</li>
+                    <li>7Cs of Professional Communication</li>
+                    <li>Telephone Communication Skills – Seven Aspects</li>
+                    <li>Managerial Communication Skills</li>
+                    <li>Conflict Management in Teams</li>
+                  </ul>
+                </div>
+              </div>
             </div>
 
-            <div className="p-6 md:w-[65%]">
-              <h3 className="text-lg font-semibold text-secondary mb-2">
-                Interpersonal Skills
-              </h3>
-              <ul className="list-disc pl-5 space-y-2 text-gray-700 text-sm leading-relaxed">
-                <li>
-                  Effective Communication Skills & Importance of Verbal and
-                  Non-Verbal Communication
-                </li>
-                <li>Questioning Skills to Clarify Doubts and Assumptions</li>
-                <li>Improving Listening Skills</li>
-                <li>Mock GD & Mock PI</li>
-                <li>Effective Writing Skills – Emails & Chats</li>
-                <li>Emotional Intelligence in Communication</li>
-                <li>7Cs of Professional Communication</li>
-                <li>Telephone Communication Skills – Seven Aspects</li>
-                <li>Managerial Communication Skills</li>
-                <li>Conflict Management in Teams</li>
-              </ul>
-            </div>
-          </div>
+            {/* Aptitude Section (Right/Bottom) */}
+            <div className="flex-1">
+              <div className="flex flex-col bg-white border border-gray-200 shadow-md overflow-hidden rounded-lg h-full">
+                {/* Image and Title container - kept the vertical stacking for image/content within this block */}
+                <div className="relative w-full min-h-[200px] bg-gray-50 flex items-center justify-center text-secondary font-semibold text-lg border-b border-gray-200">
+                  <Image
+                    src="/placement/Aptitude.webp"
+                    alt="Aptitude"
+                    fill
+                    className="object-cover"
+                  />
+                  {/* Overlay to ensure title is readable */}
+                  <div className="absolute inset-0 bg-black/50"></div>
+                  <h3 className="relative z-10 text-4xl font-extrabold text-white p-4">
+                    Aptitude
+                  </h3>
+                </div>
 
-          {/* Aptitude */}
-          <div className="flex flex-col md:flex-row bg-white border border-gray-200 shadow-sm overflow-hidden rounded-lg">
-            <div className="relative w-full flex-1 min-h-[350px] bg-gray-50 md:w-[35%] flex items-center justify-center text-secondary font-semibold text-lg p-6 border-r border-gray-200">
-              <Image
-                src="/Aptitude.jpg"
-                alt="Aptitude"
-                fill
-                className="object-cover"
-              />
-            </div>
-
-            <div className="p-6 md:w-[65%]">
-              <h3 className="text-lg font-semibold text-secondary mb-2">
-                Aptitude
-              </h3>
-              <ul className="list-disc pl-5 space-y-2 text-gray-700 text-sm leading-relaxed">
-                <li>Algebra and Number Theory</li>
-                <li>Arithmetic and Mensuration</li>
-                <li>Work, Time and Distance</li>
-                <li>Permutations and Combinations</li>
-                <li>Data Interpretation and Sufficiency</li>
-                <li>Modern and Financial Mathematics</li>
-                <li>Gamification</li>
-                <li>Logical Reasoning and Puzzles</li>
-                <li>Data Analysis and Probability</li>
-                <li>Problem-Solving</li>
-              </ul>
+                <div className="p-6">
+                  <ul className="list-disc pl-5 space-y-2 text-gray-700 text-sm leading-relaxed">
+                    <li>Algebra and Number Theory</li>
+                    <li>
+                      Arithmetic and Mensuration (e.g., Work, Time, Distance)
+                    </li>
+                    <li>Permutations and Combinations</li>
+                    <li>Logical Reasoning and Puzzles</li>
+                    <li>Data Interpretation and Sufficiency</li>
+                    <li>Data Analysis and Probability</li>
+                    <li>Modern and Financial Mathematics</li>
+                    <li>Problem-Solving Techniques</li>
+                    <li>Gamification (Application of aptitude skills)</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -97,7 +114,7 @@ export default function Upskilling({}) {
                 <h3 className="text-lg font-bold text-secondary mb-4 uppercase tracking-wide text-center">
                   {section.title}
                 </h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                <div className="grid grid-cols-3 sm:grid-cols-3 gap-4">
                   {section.items.map((item, index) => (
                     <div
                       key={index}
@@ -139,9 +156,6 @@ export default function Upskilling({}) {
             .animate-scroll {
               animation: scroll 30s linear infinite;
               width: fit-content;
-            }
-            .animate-scroll:hover {
-              animation-play-state: paused;
             }
           `}</style>
         </div>

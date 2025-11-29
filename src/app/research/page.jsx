@@ -15,7 +15,7 @@ const Research = () => {
       {/* Hero Section */}
       <section className="relative w-full h-[80vh] overflow-hidden">
         <Image
-          src="/BannerOverviewPage.jpg"
+          src="/Facilities/BannerOverviewPage.webp"
           alt="Innovation at Indira College"
           fill
           className="object-cover"
@@ -303,7 +303,6 @@ const Research = () => {
 
       <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-         
           {/* PhD Guides Table Section */}
           <div className="mt-16">
             <h3 className="text-2xl md:text-3xl font-bold text-center text-secondary mb-8">

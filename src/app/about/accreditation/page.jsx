@@ -59,7 +59,7 @@ export default function Accreditation() {
       {/* Banner */}
       <div className="w-full h-auto relative">
         <Image
-          src="/BannerOverviewPage.jpg"
+          src="/Facilities/BannerOverviewPage.webp"
           alt="Accreditation Banner"
           className="w-full h-full object-cover"
           width={1700}

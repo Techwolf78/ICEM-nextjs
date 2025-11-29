@@ -37,12 +37,12 @@ const DiscoverPaths = () => {
     { name: "MCA", img: "/Programs/MCA/MCA.webp", link: "/programs/mca" },
     {
       name: "Integrated MBA (BBA + MBA)",
-      img: "/Programs/IBCAMBA/IBBAMBA1.webp",
+      img: "/Programs/IBCAMBA/IBBAMCA1.webp",
       link: "/programs/imba",
     },
     {
       name: "Integrated MCA (BCA + MCA)",
-      img: "/Programs/IBBAMCA/IBBAMCA1.webp",
+      img: "/Programs/IBBAMCA/IBBAMBA3.webp",
       link: "/programs/imca",
     },
   ];

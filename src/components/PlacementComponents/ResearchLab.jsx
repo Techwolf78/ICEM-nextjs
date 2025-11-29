@@ -44,7 +44,7 @@ export default function ResearchLab() {
             <div className=" relative w-full h-[300px] md:h-[580px] rounded-md overflow-hidden order-1 md:order-2 shadow-md shadow-gray-400 bg-white
             ">
               <Image
-                src="/researchlab.jpg"
+                src="/placement/researchlab.webp"
                 alt="Research Lab"
                 fill
                 className="object-cover rounded-md"

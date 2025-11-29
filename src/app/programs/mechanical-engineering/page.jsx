@@ -40,27 +40,11 @@ export default function Mech() {
     "Fee",
   ];
 
-  const mechImages = [
-    "/Programs/Mech/DSC02662.JPG",
-    "/Programs/Mech/DSC02667.JPG",
-    "/Programs/Mech/DSC02671.JPG",
-    "/Programs/Mech/DSC02675.JPG",
-    "/Programs/Mech/DSC02676.JPG",
-    "/Programs/Mech/DSC02678.JPG",
-    "/Programs/Mech/DSC02680.JPG",
-    "/Programs/Mech/DSC02683.JPG",
-    "/Programs/Mech/DSC02684.JPG",
-    "/Programs/Mech/DSC02686.JPG",
-    "/Programs/Mech/DSC02687.JPG",
-    "/Programs/Mech/DSC02688.JPG",
-    "/Programs/Mech/DSC02689.JPG",
-    "/Programs/Mech/DSC02690.JPG",
-    "/Programs/Mech/DSC02691.JPG",
-  ];
+  
 
   const labsGallery = [
     {
-      image: "/Programs/Mech/DSC02662.JPG",
+      image: "/Programs/Mech/DSC02662.webp",
       title: "Metrology and Quality Control",
       details: [
         "Auto Collimator With Angle Dekker",
@@ -72,7 +56,7 @@ export default function Mech() {
       ],
     },
     {
-      image: "/Programs/Mech/DSC02667.JPG",
+      image: "/Programs/Mech/DSC02667.webp",
       title: "Mechatronics",
       details: [
         "Micrologix 1000 PLC Trainer",
@@ -83,7 +67,7 @@ export default function Mech() {
       ],
     },
     {
-      image: "/Programs/Mech/DSC02671.JPG",
+      image: "/Programs/Mech/DSC02671.webp",
       title: "Refrigeration & Air Conditioning",
       details: [
         "Compression Refrigeration Test Rig",
@@ -94,7 +78,7 @@ export default function Mech() {
       ],
     },
     {
-      image: "/Programs/Mech/DSC02675.JPG",
+      image: "/Programs/Mech/DSC02675.webp",
       title: "Industrial Fluid Power",
       details: [
         "Advanced Pneumatic Trainer",
@@ -105,7 +89,7 @@ export default function Mech() {
       ],
     },
     {
-      image: "/Programs/Mech/DSC02676.JPG",
+      image: "/Programs/Mech/DSC02676.webp",
       title: "Heat Mass Transfer",
       details: [
         "Thermal Conductivity of Metal Rod Apparatus",
@@ -119,7 +103,7 @@ export default function Mech() {
       ],
     },
     {
-      image: "/Programs/Mech/DSC02678.JPG",
+      image: "/Programs/Mech/DSC02678.webp",
       title: "Theory of Machines",
       details: [
         "Synchromesh Gear Box",
@@ -130,7 +114,7 @@ export default function Mech() {
       ],
     },
     {
-      image: "/Programs/Mech/DSC02680.JPG",
+      image: "/Programs/Mech/DSC02680.webp",
       title: "Dynamics of Machinery",
       details: [
         "Static & Dynamic Balancing Apparatus",
@@ -315,7 +299,7 @@ export default function Mech() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/Programs/Mech/mech1.jpg"
+                  src="/Programs/Mech/mech1.webp"
                   alt="Core & Specialized Knowledge"
                   fill
                   className="object-cover"
@@ -340,7 +324,7 @@ export default function Mech() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/Programs/Mech/mech2.jpg"
+                  src="/Programs/Mech/mech2.webp"
                   alt="Labs & Practical Exposure"
                   fill
                   className="object-cover"
@@ -365,7 +349,7 @@ export default function Mech() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/Programs/Mech/mech3.jpg"
+                  src="/Programs/Mech/mech3.webp"
                   alt="Industry Alignment"
                   fill
                   className="object-cover"
@@ -479,7 +463,7 @@ export default function Mech() {
           <div className="flex-1">
             <div className="w-full h-[300px] relative rounded-lg overflow-hidden">
               <Image
-                src="/Programs/2.jpg"
+                src="/Programs/2.webp"
                 alt="Career Opportunities in AI and Future Technologies"
                 fill
                 className="object-cover"

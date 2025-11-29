@@ -64,7 +64,7 @@ export default function AIDS() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/Programs/IT11.jpg"
+            src="/Programs/IT11.webp"
             alt="Artificial Intelligence Program"
             fill
             className="object-cover object-center scale-105  opacity-90"
@@ -237,7 +237,7 @@ export default function AIDS() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/Programs/AIDS/AIDS1.jpg"
+                  src="/Programs/AIDS/AIDS1.webp"
                   alt="Interdisciplinary Expertise"
                   fill
                   className="object-cover"
@@ -263,7 +263,7 @@ export default function AIDS() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/Programs/AIDS/AIDS2.jpg"
+                  src="/Programs/AIDS/AIDS2.webp"
                   alt="Cutting-Edge Laboratories"
                   fill
                   className="object-cover"
@@ -288,7 +288,7 @@ export default function AIDS() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/Programs/AIDS/AIDS3.jpg"
+                  src="/Programs/AIDS/AIDS3.webp"
                   alt="Industry-Relevant Skills"
                   fill
                   className="object-cover object-top-right"
@@ -342,7 +342,7 @@ export default function AIDS() {
           <div className="flex-1">
             <div className="w-full h-[300px] relative rounded-lg overflow-hidden">
               <Image
-                src="/Programs/3.jpg"
+                src="/Programs/3.webp"
                 alt="Career Opportunities in AI and Future Technologies"
                 fill
                 className="object-cover"

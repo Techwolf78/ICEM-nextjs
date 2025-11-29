@@ -2,6 +2,13 @@
 
 import React, { useEffect, useState } from "react";
 
+/**
+ * Render a call-to-action section with route-specific headline and body plus two action buttons.
+ *
+ * The component selects content based on the current pathname, displays a headline and body text,
+ * and provides buttons to download the admission brochure and to scroll the page to the contact form.
+ * @returns {JSX.Element} The CTA section as a JSX element.
+ */
 export default function CTASection() {
   const [pathname, setPathname] = useState("");
 
@@ -15,8 +22,8 @@ export default function CTASection() {
   // ✅ Brochure Download
   const handleBrochureDownload = () => {
     const link = document.createElement("a");
-    link.href = "/IGSB/programmes/IGSB-Prospectus-Final.pdf";
-    link.download = "IGSB-Brochure.pdf";
+    link.href = "/brochures/ICEMAdmissionBrochure2025.pdf";
+    link.download = "ICEMAdmissionBrochure2025.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

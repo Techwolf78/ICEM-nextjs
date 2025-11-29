@@ -100,7 +100,7 @@ export default function InductionProgramme() {
                     href={beComp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary font-semibold hover:underline text-sm sm:text-base"
+                    className="text-secondary font-semibold hover:underline text-sm sm:text-base"
                   >
                     View Report
                   </a>

@@ -7,19 +7,19 @@ import toast from "react-hot-toast";
 const HeroSlider = () => {
   // 👉 Load banners directly from /public/banners
   const desktopImages = [
-    "/banners/ICEMBANNER27.jpg",
-    "/banners/ICEMBANNER6.jpg",
-    "/banners/ICEMBANNERCOMP.jpg",
-    "/banners/ICEMBANNERCLASS.jpg",
-    "/banners/ICEMBANNERMECH.jpg",
+    "/banners/ICEMBANNER27.webp",
+    "/banners/ICEMBANNER6.webp",
+    "/banners/ICEMBANNERCOMP.webp",
+    "/banners/ICEMBANNERCLASS.webp",
+    "/banners/ICEMBANNERMECH.webp",
   ];
 
   const mobileImages = [
-    "/banners/ICEMBANNER27.jpg",
-    "/banners/ICEMBANNER6.jpg",
-    "/banners/ICEMBANNERCOMP.jpg",
-    "/banners/ICEMBANNERCLASS.jpg",
-    "/banners/ICEMBANNERMECH.jpg",
+    "/banners/ICEMBANNER27.webp",
+    "/banners/ICEMBANNER6.webp",
+    "/banners/ICEMBANNERCOMP.webp",
+    "/banners/ICEMBANNERCLASS.webp",
+    "/banners/ICEMBANNERMECH.webp",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

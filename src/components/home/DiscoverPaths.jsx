@@ -32,14 +32,14 @@ const DiscoverPaths = () => {
     { name: "MBA", img: "/IBBAMBA1.jpg", link: "/programs/mba" },
     { name: "MCA", img: "/IBCAMCA.jpg", link: "/programs/mca" },
     {
-      name: "M-Tech in Mechanical Engineering",
-      img: "/BannerOverviewPage.jpg",
-      link: "/programs/mtech-mech",
+      name: "Integrated MBA (BBA + MBA)",
+      img: "/Programs/IBCAMBA/IBBAMBA1.jpg",
+      link: "/programs/imba",
     },
     {
-      name: "M-Tech in Computer Science",
-      img: "/BannerOverviewPage.jpg",
-      link: "/programs/mtech-comp",
+      name: "Integrated MCA (BCA + MCA)",
+      img: "/Programs/IBBAMCA/IBBAMCA3.jpg",
+      link: "/programs/imca",
     },
   ];
 

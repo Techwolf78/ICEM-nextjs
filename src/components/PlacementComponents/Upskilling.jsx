@@ -1,33 +1,8 @@
 "use client";
 import Image from "next/image";
 import { sections } from "@/static/placement/skills";
-import { useEffect, useState, useRef } from "react";
 
 export default function Upskilling({}) {
-  const scrollRef = useRef(null);
-  const [offset, setOffset] = useState(0);
-
-  useEffect(() => {
-    let frameId;
-
-    const animate = () => {
-      if (!scrollRef.current) return;
-
-      const total = scrollRef.current.scrollWidth / 2;
-
-      setOffset((prev) => {
-        const next = prev + 0.5; // SUPER smooth speed
-        return next >= total ? 0 : next;
-      });
-
-      frameId = requestAnimationFrame(animate);
-    };
-
-    frameId = requestAnimationFrame(animate);
-
-    return () => cancelAnimationFrame(frameId);
-  }, []);
-
   return (
     <>
       {/* Upskilling for the Future Section */}
@@ -112,15 +87,8 @@ export default function Upskilling({}) {
           {/* Fade gradients */}
           <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-gray-50 to-transparent z-20 pointer-events-none"></div>
           <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-gray-50 to-transparent z-20 pointer-events-none"></div>
-
           {/* Scrolling container */}
-          <div
-            ref={scrollRef}
-            className="flex gap-6 will-change-transform"
-            style={{
-              transform: `translateX(-${offset}px)`,
-            }}
-          >
+          <div className="flex gap-6 will-change-transform animate-scroll">
             {[...sections, ...sections].map((section, idx) => (
               <div
                 key={idx}
@@ -155,10 +123,27 @@ export default function Upskilling({}) {
                     </div>
                   ))}
                 </div>
-                {/* ⭐⭐ END OF YOUR ORIGINAL CARD ⭐⭐ */}
               </div>
             ))}
           </div>
+
+          <style jsx>{`
+            @keyframes scroll {
+              0% {
+                transform: translateX(0);
+              }
+              100% {
+                transform: translateX(-50%);
+              }
+            }
+            .animate-scroll {
+              animation: scroll 30s linear infinite;
+              width: fit-content;
+            }
+            .animate-scroll:hover {
+              animation-play-state: paused;
+            }
+          `}</style>
         </div>
       </section>
     </>

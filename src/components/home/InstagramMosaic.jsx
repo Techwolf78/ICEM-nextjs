@@ -22,12 +22,15 @@ export default function InstagramMosaic() {
       document.body.appendChild(script);
     }
 
-    // 2. Resize Observer (Kept from previous steps for layout safety)
+    // 2. Resize Observer
     let timeout;
     const resizeObserver = new ResizeObserver(() => {
       clearTimeout(timeout);
       timeout = setTimeout(() => {
-        ScrollTrigger.refresh();
+        // Ensure ScrollTrigger exists before calling refresh
+        if (typeof ScrollTrigger !== "undefined") {
+          ScrollTrigger.refresh();
+        }
       }, 500);
     });
 
@@ -42,9 +45,9 @@ export default function InstagramMosaic() {
   }, []);
 
   const posts = [
-    "https://www.instagram.com/p/DP0GgGyCEa9/?utm_source=ig_embed",
-    "https://www.instagram.com/p/DPv1b_BjHqw/?utm_source=ig_embed",
-    "https://www.instagram.com/p/DPLxX_7jFyx/?utm_source=ig_embed",
+    "https://www.instagram.com/p/DP0GgGyCEa9/?utm_source=ig_embed", // Post 1 (Always visible)
+    "https://www.instagram.com/p/DPv1b_BjHqw/?utm_source=ig_embed", // Post 2 (Hidden on mobile)
+    "https://www.instagram.com/p/DPLxX_7jFyx/?utm_source=ig_embed", // Post 3 (Hidden on mobile)
   ];
 
   return (
@@ -55,7 +58,8 @@ export default function InstagramMosaic() {
 
       <div
         ref={containerRef}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 md:px-12 max-w-7xl mx-auto"
+        // Change grid-cols: grid-cols-1 for mobile, md:grid-cols-2 for tablet/desktop
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6 md:px-12 max-w-7xl mx-auto"
         style={{ contain: "content" }}
       >
         {posts.map((url, index) => (
@@ -64,11 +68,14 @@ export default function InstagramMosaic() {
             href={url} // Make the whole card clickable
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full flex justify-center items-center relative  cursor-pointer transition-transform hover:scale-[1.02]"
+            // Hide the 2nd and 3rd posts on mobile (index > 0)
+            className={`w-full flex justify-center items-center relative cursor-pointer transition-transform hover:scale-[1.02] ${
+              index > 0 ? "hidden md:flex" : "" // ONLY Post 1 (index 0) is visible on mobile
+            }`}
             style={{ minHeight: "550px" }}
           >
             {/* Overlay div to ensure clicks work on the link, 
-               not getting eaten by the iframe
+                not getting eaten by the iframe
             */}
             <div className="absolute inset-0 z-20 bg-transparent" />
 

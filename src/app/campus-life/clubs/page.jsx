@@ -24,7 +24,7 @@ export default function ClubsAndSocieties() {
       </div>
 
       {/* MAIN CONTENT */}
-      <main className="max-w-9xl mx-auto px-6 py-10 space-y-12">
+      <main className="max-w-7xl mx-auto px-6 py-10 space-y-12">
 
         {/* -------------------- QUANTI CLUB -------------------- */}
         <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-200 space-y-6">

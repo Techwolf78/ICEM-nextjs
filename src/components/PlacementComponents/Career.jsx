@@ -9,22 +9,22 @@ import {
 export default function Career() {
   const cards = [
     {
-      icon: <FaUserGraduate className="text-3xl sm:text-4xl mb-2 text-primary" />,
+      icon: <FaUserGraduate className="text-3xl sm:text-4xl mb-2 text-secondary" />,
       title: "Alumni Mentorship & Placement Guidance",
       desc: "Connect with our powerful network of accomplished alumni for one-on-one mentorship. Get personalized guidance on career paths, resume building, and interview strategies to land your dream role.",
     },
     {
-      icon: <FaHandshake className="text-3xl sm:text-4xl mb-2 text-primary" />,
+      icon: <FaHandshake className="text-3xl sm:text-4xl mb-2 text-secondary" />,
       title: "Corporate Partnerships & Recruitment Drive",
       desc: "We have established strong, lasting relationships with a diverse portfolio of national and multinational corporations. Benefit from exclusive recruitment drives, on-campus placements, and direct access to sought-after employers actively seeking ICEM talent.",
     },
     {
-      icon: <FaLightbulb className="text-3xl sm:text-4xl mb-2 text-primary" />,
+      icon: <FaLightbulb className="text-3xl sm:text-4xl mb-2 text-secondary" />,
       title: "Internships & Industry Exposure",
       desc: "Theory meets practice through mandatory, paid internships with our partner companies. From semester-long projects in Pune to global opportunities, gain invaluable hands-on experience that makes your resume stand out.",
     },
     {
-      icon: <FaIndustry className="text-3xl sm:text-4xl mb-2 text-primary" />,
+      icon: <FaIndustry className="text-3xl sm:text-4xl mb-2 text-secondary" />,
       title: "Career Development Workshops",
       desc: "We polish your professional edge. Through a continuous schedule of workshops—from mastering communication and leadership to acing mock interviews and building a powerful personal brand—we ensure you are not just qualified, but truly job-ready.",
     },
@@ -57,14 +57,14 @@ export default function Career() {
           {cards.map((card, index) => (
             <div
               key={index}
-              className="bg-white/10 border border-white/10 hover:border-primary/40 hover:bg-white/15 p-4 sm:p-6 lg:p-8 rounded-xl lg:rounded-2xl shadow-lg backdrop-blur-md transition-all duration-300 flex flex-col items-center text-center h-full"
+              className="bg-white/90 border border-white/10 hover:border-secondary/40 hover:bg-white p-4 sm:p-6 lg:p-8 rounded-xl lg:rounded-2xl shadow-lg backdrop-blur-md transition-all duration-300 flex flex-col items-center text-center h-full"
             >
               <div className="flex flex-col items-center text-center flex-1 justify-between">
                 {card.icon}
-                <h3 className="text-base sm:text-lg font-bold mb-2 sm:mb-3 text-white">
+                <h3 className="text-base sm:text-lg font-bold mb-2 sm:mb-3 text-secondary">
                   {card.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-gray-200 leading-relaxed">
+                <p className="text-xs sm:text-sm text-gray-900 leading-relaxed">
                   {card.desc}
                 </p>
               </div>

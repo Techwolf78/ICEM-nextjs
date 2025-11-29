@@ -10,7 +10,12 @@ import Testimonials from "@/components/PlacementComponents/Testimonials";
 import PlacementInformation from "@/components/PlacementComponents/PlacementInformation";
 import Upskilling from "@/components/PlacementComponents/Upskilling";
 import PlacementCarousel from "@/components/PlacementComponents/PlacementCarousel";
+import CTASection from "@/components/home/CTASection";
 
+/**
+ * Render the Placement page composed of placement-related sections in the defined order.
+ * @returns {JSX.Element} A React element representing the Placement page layout.
+ */
 function Placement() {
   return (
     <div className="w-full bg-white">
@@ -24,6 +29,7 @@ function Placement() {
       <TrainingOverview />
       <Upskilling />
       <Testimonials />
+      <CTASection />
       <PlacementInformation /> {/* All the extra content goes here */}
     </div>
   );

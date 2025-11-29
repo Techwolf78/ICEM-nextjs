@@ -15,9 +15,11 @@ const HeroSlider = () => {
   ];
 
   const mobileImages = [
-    "/banners/placement-banner1.jpg",
-    "/banners/placement-banner2.jpg",
+    "/banners/ICEMBANNER27.jpg",
     "/banners/ICEMBANNER6.jpg",
+    "/banners/ICEMBANNERCOMP.jpg",
+    "/banners/ICEMBANNERCLASS.jpg",
+    "/banners/ICEMBANNERMECH.jpg",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -53,8 +55,8 @@ const HeroSlider = () => {
   return (
     <div className="relative w-full overflow-hidden">
       {/* ---------------- TOP SPOTLIGHT SECTION ---------------- */}
-      <div className="w-full h-[4vh] bg-white border-b border-gray-200 flex items-center overflow-hidden relative">
-        <div className="relative flex items-center justify-center font-semibold text-sm px-8 py-2 clip-ribbon-left z-10 bg-secondary text-white">
+      <div className="w-full  sm:h-[4vh] bg-white border-b border-gray-200 flex items-center overflow-hidden relative">
+        <div className="relative flex items-center justify-center font-semibold text-xs sm:text-sm px-4 sm:px-8 py-2 clip-ribbon-left z-10 bg-secondary text-white">
           SPOTLIGHT
         </div>
 

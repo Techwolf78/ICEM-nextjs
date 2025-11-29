@@ -52,7 +52,7 @@ export default function Computer() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/Programs/computer.jpg"
+            src="/Programs/computer.webp"
             alt="Artificial Intelligence Program"
             fill
             className="object-cover object-center scale-105  opacity-90"
@@ -216,7 +216,7 @@ export default function Computer() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/Programs/Computer/Comp1.jpg"
+                  src="/Programs/Computer/Comp1.webp"
                   alt="Strong Foundational Core"
                   fill
                   className="object-cover"
@@ -239,7 +239,7 @@ export default function Computer() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/Programs/Computer/Comp2.jpg"
+                  src="/Programs/Computer/Comp2.webp"
                   alt="Labs & Practical Exposure"
                   fill
                   className="object-cover"
@@ -262,7 +262,7 @@ export default function Computer() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/Programs/Computer/Comp3.jpg"
+                  src="/Programs/Computer/Comp3.webp"
                   alt="Industry-Relevant Skills"
                   fill
                   className="object-cover"
@@ -316,7 +316,7 @@ export default function Computer() {
           <div className="flex-1 flex justify-center">
             <div className="w-full h-[320px] relative rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all">
               <Image
-                src="/Programs/1.jpg"
+                src="/Programs/1.webp"
                 alt="Career Opportunities in Computer Engineering"
                 fill
                 className="object-cover object-center"

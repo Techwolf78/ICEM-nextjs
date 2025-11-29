@@ -827,7 +827,7 @@ const highlight = {
                     <div key={item} className=" rounded-lg overflow-hidden shadow-md">
                       <div className="relative h-106  flex items-center justify-center">
                         <Image
-                          src={`/Facilities/${item}.jpg`}
+                          src={`/Facilities/${item}.webp`}
                           alt={`Transport Route ${item}`}
                           fill
                           className="object-contain h-auto"
@@ -872,7 +872,7 @@ const highlight = {
                     <div key={item} className="bg-gray-100 rounded-lg overflow-hidden shadow-md">
                       <div className="relative h-54 bg-gray-200 flex items-center justify-center">
                         <Image
-                          src={`/Facilities/${item}.jpg`}
+                          src={`/Facilities/${item}.webp`}
                           alt={`Gym Equipment ${item}`}
                           fill
                           className="object-cover"
@@ -967,7 +967,7 @@ const highlight = {
                     <div key={item} className="bg-gray-100 rounded-lg overflow-hidden shadow-md">
                       <div className="relative h-64 bg-gray-200 flex items-center justify-center">
                         <Image
-                          src={`/Facilities/${item}.jpg`}
+                          src={`/Facilities/${item}.webp`}
                           alt={`Health Centre ${item}`}
                           fill
                           className="object-cover"

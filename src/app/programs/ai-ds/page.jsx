@@ -76,73 +76,46 @@ export default function AIDS() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10" />
 
         {/* Content Wrapper */}
-        <div className="relative max-w-[1500px] px-6 md:px-12 lg:px-20 z-20">
-          <div className="max-w-3xl text-white">
-            <h2 className="text-4xl md:text-5xl font-bold leading-snug">
-              4-Year B.Tech AIDS Programme <br />
-              with specialisation in <br />
-              <span className="bg-gradient-to-br from-cyan-400  to-sky-400 bg-clip-text text-transparent font-extrabold ">
-                Artificial Intelligence & Future Technologies
-              </span>
-            </h2>
+        {/* Content Wrapper */}
+<div className="relative max-w-[1500px] px-4 sm:px-6 md:px-12 lg:px-20 z-20">
+  <div className="max-w-3xl text-white">
 
-            <p className="mt-4 text-white/80 leading-relaxed max-w-2xl">
-              The Department of Artificial Intelligence and Data Science at ICEM
-              aim to be one of the leading programs to provide value-added
-              quality education in Computer Science and Engineering with
-              specialization in Artificial Intelligence and Data Science.
-            </p>
+    {/* Heading */}
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug">
+      4-Year B.Tech AIDS Programme <br className="hidden sm:block" />
+      with specialisation in <br className="hidden sm:block" />
+      <span className="bg-gradient-to-br from-cyan-400 to-sky-400 bg-clip-text text-transparent font-extrabold">
+        Artificial Intelligence & Future Technologies
+      </span>
+    </h2>
 
-            {/* Floating Stat Cards */}
+    {/* Description */}
+    <p className="mt-3 sm:mt-4 text-white/80 leading-relaxed max-w-2xl text-sm sm:text-base">
+      The Department of Artificial Intelligence and Data Science at ICEM aim to
+      be one of the leading programs to provide value-added quality education in
+      Computer Science and Engineering with specialization in Artificial
+      Intelligence and Data Science.
+    </p>
 
-            {/* Buttons */}
-            {/* <div className="flex gap-4 mt-6">
-  <button
-  onClick={toggleModal}
-  className="relative px-10 py-3 font-semibold rounded-xl
-  text-white 
-  bg-gradient-to-r from-cyan-400 to-sky-400
-  border border-neutral-800
-  shadow-[6px_6px_0px_0px_#e5e7eb]
-  transition-all duration-200
-  hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#e5e7eb]"
->
-  Enquire Now
-</button>
+    {/* Buttons */}
+    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 w-full sm:w-auto">
+      <button
+        onClick={toggleModal}
+        className="bg-secondary text-white px-6 sm:px-8 py-3 rounded-lg font-semibold text-sm sm:text-base w-full sm:w-auto"
+      >
+        Enquire Now
+      </button>
 
+      <button
+        onClick={handleBrochureDownload}
+        className="bg-secondary text-white px-6 sm:px-8 py-3 rounded-lg text-sm sm:text-base w-full sm:w-auto"
+      >
+        Download Brochure
+      </button>
+    </div>
+  </div>
+</div>
 
-  <button
-  onClick={handleBrochureDownload}
-  className="relative px-10 py-3 font-semibold rounded-xl
-  text-white 
-  bg-gradient-to-r from-cyan-400 to-sky-400
-  border border-neutral-800
-  shadow-[6px_6px_0px_0px_#e5e7eb]
-  transition-all duration-200
-  hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#e5e7eb]"
->
-  Download Brochure
-</button>
-
-</div> */}
-
-            <div className="flex gap-4 mt-6">
-              <button
-                onClick={toggleModal}
-                className="bg-secondary text-white px-8 py-3 rounded-lg font-semibold"
-              >
-                Enquire Now
-              </button>
-
-              <button
-                onClick={handleBrochureDownload}
-                className="bg-secondary text-white px-8 py-3 rounded-lg"
-              >
-                Download Brochure
-              </button>
-            </div>
-          </div>
-        </div>
 
         {/* Bottom Fade Mask */}
         <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-black/60 to-transparent" />

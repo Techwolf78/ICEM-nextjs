@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import Sidebar from "@/components/Sidebar";
 import CulturalEvents from "@/components/CampusLife/CulturalEvents";
 
 /**
@@ -17,12 +16,12 @@ export default function CulturalActivitiesPage() {
   return (
     <div className="w-full bg-white text-gray-800">
       {/* Banner */}
-      <div className="w-full h-[40vh] sm:h-[50vh] lg:h-[75vh] relative">
+      <div className="w-full h-auto relative">
         <Image
-          src="/cultural-events/bannercultural2.jpg"
+          src="/cultural-events/bannercultural.jpg"
           alt="Cultural Activities"
-          fill
-          style={{ objectFit: "cover" }}
+          height={1080}
+          width={1920}
           priority
           unoptimized={true}
         />
@@ -37,7 +36,6 @@ export default function CulturalActivitiesPage() {
           </div>
 
           {/* Sidebar */}
-          
         </div>
       </div>
     </div>

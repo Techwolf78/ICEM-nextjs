@@ -131,7 +131,7 @@ export default function StudentWelfare() {
             },
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-3 bg-white p-0">
-              <div className="flex-shrink-0 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold mt-0.5">
+              <div className="flex-shrink-0 w-6 h-6 bg-secondary text-white rounded-full flex items-center justify-center text-sm font-bold mt-0.5">
                 {index + 1}
               </div>
               <div>
@@ -226,7 +226,7 @@ export default function StudentWelfare() {
                   <td className="border border-gray-300 p-2 text-xs sm:text-sm">
                     <a
                       href={`mailto:${email}`}
-                      className="text-primary hover:underline"
+                      className="text-secondary hover:underline"
                     >
                       {email}
                     </a>

@@ -72,7 +72,7 @@ const IcemAwards = () => {
                     onClick={() =>
                       setExpanded(expanded === award.id ? null : award.id)
                     }
-                    className="text-primary text-sm font-medium mt-3 hover:underline transition-all duration-300 ease-in-out transform hover:translate-x-1"
+                    className="text-secondary text-sm font-medium mt-3 hover:underline transition-all duration-300 ease-in-out transform hover:translate-x-1"
                   >
                     {expanded === award.id ? "Read Less" : "Read More"}
                     <span className="inline-block ml-1 transition-transform duration-300">

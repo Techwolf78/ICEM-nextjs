@@ -132,7 +132,7 @@ function InductionProgramme() {
                       href={report.file}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary font-semibold hover:underline"
+                      className="text-secondary font-semibold hover:underline"
                     >
                       View Report
                     </a>

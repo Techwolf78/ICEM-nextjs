@@ -40,7 +40,7 @@ const Footer = () => {
           {/* Spans 2 columns on MD */}
           {/* Logo */}
           <Image
-            src="/Logo.png"
+            src="/Logo.webp"
             alt="ICEM Logo"
             width={400}
             height={500}

@@ -22,10 +22,10 @@ export default function HomePage() {
         <RecruitersSection />
         <CampusBeat />
         <EnergyInnovation />
-        {/* <CollegeUnplugged /> */}
+        <CollegeUnplugged />
         <EventsSection />
         <CTASection />
-        {/* <InstagramMosaic /> */}
+        <InstagramMosaic />
       </ScrollCrushWrapper>
     </div>
   );

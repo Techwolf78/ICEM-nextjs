@@ -52,7 +52,7 @@ export default function ENTC() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/Programs/Entc1.jpg"
+            src="/Programs/Entc1.webp"
             alt="Artificial Intelligence Program"
             fill
             className="object-cover object-center scale-105  opacity-90"
@@ -251,7 +251,7 @@ export default function ENTC() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/Programs/ENTC/Entc2.jpg"
+                  src="/Programs/ENTC/Entc2.webp"
                   alt="Labs & Practical Exposure"
                   fill
                   className="object-cover"
@@ -276,7 +276,7 @@ export default function ENTC() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/Programs/ENTC/Entc3.jpg"
+                  src="/Programs/ENTC/Entc3.webp"
                   alt="Industry Alignment"
                   fill
                   className="object-cover"
@@ -332,7 +332,7 @@ export default function ENTC() {
           <div className="flex-1">
             <div className="w-full h-[300px] relative rounded-lg overflow-hidden">
               <Image
-                src="/Programs/4.jpg"
+                src="/Programs/4.webp"
                 alt="Career Opportunities in AI and Future Technologies"
                 fill
                 className="object-cover"

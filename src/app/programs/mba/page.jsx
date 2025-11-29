@@ -40,22 +40,22 @@ export default function MBA() {
     marketing: [
       "/Programs/MBA/MBA1.jpg",
       "/Programs/MBA/MBA2.jpg",
-      "/Programs/MBA/MBA3.jpg",
+      "/Programs/MBA/MBA3.webp",
     ],
     finance: [
-      "/Programs/MBA/MBAFM1.jpg",
-      "/Programs/MBA/MBAFM2.jpg",
-      "/Programs/MBA/MBAFM3.jpg",
+      "/Programs/MBA/MBAFM1.webp",
+      "/Programs/MBA/MBAFM2.webp",
+      "/Programs/MBA/MBAFM3.webp",
     ],
     hr: [
-      "/Programs/MBA/MBAHR1.jpg",
-      "/Programs/MBA/MBAHR2.jpg",
-      "/Programs/MBA/MBAHR3.jpg",
+      "/Programs/MBA/MBAHR1.webp",
+      "/Programs/MBA/MBAHR2.webp",
+      "/Programs/MBA/MBAHR3.webp",
     ],
     operations: [
-      "/Programs/MBA/MBAOS1.jpg",
-      "/Programs/MBA/MBAOS2.jpg",
-      "/Programs/MBA/MBAOS3.jpg",
+      "/Programs/MBA/MBAOS1.webp",
+      "/Programs/MBA/MBAOS2.webp",
+      "/Programs/MBA/MBAOS3.webp",
     ],
   };
 
@@ -229,7 +229,7 @@ export default function MBA() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/Programs/MBA1.jpg"
+            src="/Programs/MBA1.webp"
             alt="Artificial Intelligence Program"
             fill
             className="object-cover object-center scale-105  opacity-90"
@@ -401,6 +401,7 @@ export default function MBA() {
                   />
                 </div>
 
+
                 <div className="p-6 text-left">
                   <h3 className="text-lg font-semibold text-secondary mb-2">
                     {h.title}
@@ -436,7 +437,7 @@ export default function MBA() {
           <div className="flex-1">
             <div className="w-full h-[300px] relative rounded-lg overflow-hidden">
               <Image
-                src="/Programs/9.jpg"
+                src="/Programs/9.webp"
                 alt="Career Opportunities"
                 fill
                 className="object-cover"

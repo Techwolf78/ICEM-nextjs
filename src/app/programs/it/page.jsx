@@ -52,7 +52,7 @@ export default function Computer() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/Programs/IT2.jpg"
+            src="/Programs/IT2.webp"
             alt="Artificial Intelligence Program"
             fill
             className="object-cover object-center scale-105  opacity-90"
@@ -221,7 +221,7 @@ export default function Computer() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/Programs/IT/IT1.jpg"
+                  src="/Programs/IT/IT1.webp"
                   alt="Core & Specialized Knowledge"
                   fill
                   className="object-cover"
@@ -272,7 +272,7 @@ export default function Computer() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/Programs/IT/IT3.jpg"
+                  src="/Programs/IT/IT3.webp"
                   alt="Industry-Relevant Skills"
                   fill
                   className="object-cover"
@@ -329,7 +329,7 @@ export default function Computer() {
           <div className="flex-1">
             <div className="w-full h-[300px] relative rounded-lg overflow-hidden">
               <Image
-                src="/Programs/6.jpg"
+                src="/Programs/6.webp"
                 alt="Career Opportunities in AI and Future Technologies"
                 fill
                 className="object-cover"

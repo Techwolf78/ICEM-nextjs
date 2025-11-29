@@ -11,35 +11,35 @@ import "slick-carousel/slick/slick-theme.css";
 export default function Testimonials() {
   const testimonials = [
     {
-      image: "/logos/logo8.png",
+      image: "/logos/logo8.webp",
       quote:
         "ICEM has always provided us with trained mechanical engineers, and as an organization, we appreciate the college's efforts to prepare the students for the industry.",
       name: "Mr. Rahul Bagale",
       position: "Group HR Head – Force Motors",
     },
     {
-      image: "/logos/logo45.png",
+      image: "/logos/logo45.webp",
       quote:
         "We have entered into an MOU with ICEM to actively support their endeavours in providing excellent job opportunities for civil engineering students. Our longstanding partnership of over a decade with ICEM will continue further to support the civil engineers. ",
       name: "Mr. Siddharth Moorthy",
       position: "Managing Director – Vascon Engineers",
     },
     {
-      image: "/logos/logo2.png",
+      image: "/logos/logo2.webp",
       quote:
         "While conducting campus recruitment drives across the country, ICEM consistently emerges as the top choice due to their exceptional commitment to preparing students for their dream job offers.",
       name: "Ms. Shilpi Mahar",
       position: "Manager, TA – Data Axle",
     },
     {
-      image: "/logos/logo22.png",
+      image: "/logos/logo22.webp",
       quote:
         "We appreciate the designed training programs by ICEM aimed at equipping core Mechanical Engineering students with the necessary skills to excel in the industry. These programs ensure that students emerge as industry-ready professionals  ",
       name: "Ms. Sumana Chakraborty",
       position: "HR Business Partner – Bridgestone India",
     },
     {
-      image: "/logos/logo19.png",
+      image: "/logos/logo19.webp",
       quote:
         "ICEM has been a part of Ready Engineers Programme from a long time. Their way of creating resources prepared specifically to meet the needs of students, ensures a transformative experience that prepares them effectively for the corporate world.",
       name: "Mr. Sushant Kumar",

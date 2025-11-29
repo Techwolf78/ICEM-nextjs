@@ -52,7 +52,7 @@ const ProgramList = () => {
       {/* ✅ Academic Image */}
       <div className="mt-4">
         <Image
-          src="/Programs/academic.jpg" // Place this image in your public folder
+          src="/Home/academic.webp" // Place this image in your public folder
           alt="Academic"
           width={800}
           height={400}

@@ -9,19 +9,19 @@ const DiscoverSection = () => {
       title: "Get Industry-ready",
       description:
         "We ensure every graduate is industry-ready through cutting-edge curriculum, innovation labs, and strong industry collaborations that keep students aligned with the latest technologies and trends.",
-      image: "/industry.JPG",
+      image: "/Home/industry.webp",
     },
     {
       title: "Research from Day One",
       description:
         "At Indira College, research is a way of life, supported by state-of-the-art facilities, experienced faculty, and collaborations that empower students to solve real-world challenges.",
-      image: "/Researchfromday1.jpg",
+      image: "/Home/Researchfromday1.webp",
     },
     {
       title: "Corporate Partnerships & Recruitment",
       description:
         "We have established strong, lasting relationships with a diverse portfolio of national and multinational corporations. Benefit from recruitment drives, on-campus placements, and access to employers seeking ICEM talent.",
-      image: "/CorporateRelations.JPG",
+      image: "/Home/CorporateRelations.webp",
     },
   ];
 

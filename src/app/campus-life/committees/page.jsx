@@ -496,7 +496,7 @@ const Statutory = () => {
       {/* Banner */}
       <div className="w-full h-[60vh] relative">
         <Image
-          src="/BannerOverviewPage.jpg"
+          src="/banners/BannerOverviewPage.webp"
           alt="Statutory Committee"
           fill
           className="object-cover"

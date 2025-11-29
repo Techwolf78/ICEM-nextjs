@@ -8,7 +8,7 @@ function InductionProgramme() {
   const [openIndex, setOpenIndex] = useState(null);
 
   // Assets from public folder
-  const bannerImg = "/campuslife/inductionbanner.jpg";
+  const bannerImg = "/campuslife/inductionbanner.webp";
   
   // PDF files
   const inductionCPMAM2022_23 = "/pdfs/induction/Induction (CP Mam) Report_2022-23.pdf";

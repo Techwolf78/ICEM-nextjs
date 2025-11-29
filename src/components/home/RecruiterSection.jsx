@@ -59,7 +59,7 @@ const RecruitersSection = () => {
   const { headline, body } = pageContent[pathname] || pageContent["/"];
 
   // ✅ Logos (unchanged)
-  const allLogos = Array.from({ length: 44 }, (_, i) => `/logos/logo${i + 1}.png`).filter(
+  const allLogos = Array.from({ length: 44 }, (_, i) => `/logos/logo${i + 1}.webp`).filter(
     (_, index) => ![35, 37].includes(index + 1)
   );
   const mainLogos = allLogos.filter((_, index) => ![17, 24].includes(index));

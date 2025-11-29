@@ -33,7 +33,7 @@ export default function Career() {
   return (
     <section
       className="relative bg-cover bg-center bg-no-repeat text-white py-12 sm:py-16 lg:py-20"
-      style={{ backgroundImage: `url('/studentsraisinghands.jpg')` }}
+      style={{ backgroundImage: `url('/placement/studentsraisinghands.webp')` }}
     >
       {/* Overlay for better contrast */}
       <div className="absolute inset-0 bg-black/60"></div>

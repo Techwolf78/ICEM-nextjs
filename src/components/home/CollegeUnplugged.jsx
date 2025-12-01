@@ -96,7 +96,7 @@ export default function CollegeUnplugged() {
                 /* STATE 2: ACTUAL IFRAME (Loads only on click) */
                 <iframe
                   className="w-full h-full"
-                  src={`https://www.youtube.com/embed/${videos[selectedIndex].url}?autoplay=1&rel=0`}
+                  src={`https://www.youtube.com/embed/${videos[selectedIndex].url}?autoplay=1&rel=0&vq=hd1080&modestbranding=1`}
                   title={videos[selectedIndex].title}
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

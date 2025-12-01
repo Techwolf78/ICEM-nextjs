@@ -1,9 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState  } from "react";
 import Image from "next/image";
 
 // ================== SYLLABUS DATA ==================
+
+
+
+
 const syllabusList = [
   {
     id: "sybtech",
@@ -470,50 +474,74 @@ Under Progress`
 
   return (
     <section className="w-full bg-gradient-to-b from-gray-50 to-white text-black py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-secondary mb-4">
-            Department of Computer Engineering
-          </h2>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Empowering future innovators with cutting-edge education and research in computer science and engineering
-          </p>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    {/* Header */}
+    <div className="text-center mb-12">
+      <h2 className="text-4xl font-bold text-secondary mb-4">
+        Department of Computer Engineering
+      </h2>
+      <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+        Empowering future innovators with cutting-edge education and research in computer science and engineering
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+
+      {/* LEFT MENU */}
+      <nav className="lg:col-span-1 bg-white rounded-xl shadow-sm p-6 space-y-2 sticky top-24 self-start border border-gray-100">
+        <h3 className="font-semibold text-gray-800 mb-4 text-lg">Quick Links</h3>
+
+        {tabs.map((tab) => (
+          <button
+            key={tab}
+            onClick={() => {
+  setActive(tab);
+
+  if (window.innerWidth < 1024) {
+    setTimeout(() => {
+      const el = document.getElementById("right-content");
+      if (el) {
+        const yOffset = -160; // 🔥 adjust this if needed (navbar height)
+        const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+    }, 50);
+  }
+}}
+
+            className={`block w-full text-left px-4 py-3 rounded-lg transition-all duration-200 ${
+              active === tab
+                ? "bg-secondary text-white shadow-md"
+                : "hover:bg-gray-50 text-gray-700 hover:text-secondary hover:border-l-4 hover:border-secondary"
+            }`}
+          >
+            <span className="font-medium">{tab}</span>
+          </button>
+        ))}
+
+      </nav>
+
+      {/* RIGHT CONTENT */}
+      <div
+        id="right-content"  
+        className="lg:col-span-3 bg-white rounded-xl shadow-sm p-8 border border-gray-100"
+      >
+        <div className="mb-6 pb-4 border-b border-gray-200">
+          <h3 className="text-2xl font-bold text-secondary">
+            {active}
+          </h3>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          {/* LEFT MENU */}
-          <nav className="lg:col-span-1 bg-white rounded-xl shadow-sm p-6 space-y-2 sticky top-24 self-start border border-gray-100">
-            <h3 className="font-semibold text-gray-800 mb-4 text-lg">Quick Links</h3>
-            {tabs.map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActive(tab)}
-                className={`block w-full text-left px-4 py-3 rounded-lg transition-all duration-200 ${
-                  active === tab
-                    ? "bg-secondary text-white shadow-md"
-                    : "hover:bg-gray-50 text-gray-700 hover:text-secondary hover:border-l-4 hover:border-secondary"
-                }`}
-              >
-                <span className="font-medium">{tab}</span>
-              </button>
-            ))}
-          </nav>
-
-          {/* RIGHT CONTENT */}
-          <div className="lg:col-span-3 bg-white rounded-xl shadow-sm p-8 border border-gray-100">
-            <div className="mb-6 pb-4 border-b border-gray-200">
-              <h3 className="text-2xl font-bold text-secondary">
-                {active}
-              </h3>
-            </div>
-            
-            <div className="content-area">
-              {renderContent(sectionContent[active])}
-            </div>
-          </div>
+        <div className="content-area">
+          {renderContent(sectionContent[active])}
         </div>
       </div>
-    </section>
+
+    </div>
+  </div>
+</section>
+
   );
 }

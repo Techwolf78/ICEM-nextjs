@@ -66,7 +66,7 @@ const RecruitersSection = () => {
   const reorderedLogos = [...mainLogos, allLogos[17], allLogos[24]];
 
   return (
-    <div className="bg-gray-50 py-12 sm:py-16 relative overflow-hidden">
+    <div className="bg-gray-50 py-12  relative overflow-hidden">
       <div className="max-w-7xl mx-auto text-center">
         {/* ✅ Dynamic Section Heading */}
         <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-4 sm:mb-6">
@@ -74,7 +74,7 @@ const RecruitersSection = () => {
         </h2>
 
         {/* ✅ Dynamic Description */}
-        <p className="text-gray-700 text-xs sm:text-sm max-w-5xl mx-auto leading-relaxed mb-10 sm:mb-12 px-2">
+        <p className="text-gray-700 text-sm sm:text-sm max-w-5xl mx-auto leading-relaxed mb-10 sm:mb-12 px-2">
           {body}
         </p>
 

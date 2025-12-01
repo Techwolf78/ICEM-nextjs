@@ -1,16 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["img.youtube.com"],
+    // 1. Fix: Migrate "domains" to "remotePatterns"
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "img.youtube.com",
+      },
+    ],
+    // 2. Fix: Explicitly allow quality="100" used in your banners
+    qualities: [25, 50, 75, 100],
   },
-
-  // 🔥 Modern Browsers Only — Do NOT transpile for IE/Old Android
-  experimental: {
-    legacyBrowsers: false,
-  },
-
-  // 🔥 Ensure modern minification
-  swcMinify: true,
 };
 
 export default nextConfig;

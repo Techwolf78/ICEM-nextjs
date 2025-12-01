@@ -6,27 +6,26 @@ import ApplyForm from "./ApplyForm";
 
 const AcademicYearSection = () => {
   return (
-    <div className="bg-gray-50 py-16">
-      <div
-        className="
-          max-w-7xl mx-auto
-          grid grid-cols-1 
-          lg:grid-cols-2 
-          gap-12
-          px-4 sm:px-6 lg:px-0
-        "
-      >
-        {/* LEFT: Program List (50%) */}
-        <div className="w-full">
-          <ProgramList />
-        </div>
+    <section className="bg-gray-50 py-12 sm:py-16 lg:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_450px] gap-12  items-start">
+          {/* LEFT: Program List */}
+          <div className="w-full order-2 lg:order-1">
+            <ProgramList />
+          </div>
 
-        {/* RIGHT: Apply Form (50%) */}
-        <div className="w-full">
-          <ApplyForm />
+          {/* RIGHT: Apply Form 
+             - sticky top-24: Makes the form float on desktop
+             - order-1: On Mobile, form comes FIRST (conversion priority)
+          */}
+          <div className="w-full order-1 lg:order-2 lg:sticky lg:top-24 z-10">
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+              <ApplyForm />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

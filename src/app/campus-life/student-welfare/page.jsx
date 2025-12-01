@@ -22,9 +22,9 @@ export default function StudentWelfarePage() {
       </div>
       {/* Page Layout */}
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-4">
+        <div className="flex flex-col lg:flex-row ">
           {/* Main Content */}
-          <div className="w-full space-y-6 px-2 py-3 m-3">
+          <div className="w-full p-1 ">
             <section id="student-welfare">
               <StudentWelfare />
             </section>

@@ -38,7 +38,7 @@ export default function Impact() {
       targets.forEach((target, i) => {
         setTimeout(() => {
           // Trigger slide-in animation for this card
-          setAnimated(prev => {
+          setAnimated((prev) => {
             const updated = [...prev];
             updated[i] = true;
             return updated;
@@ -66,95 +66,109 @@ export default function Impact() {
   }, [isVisible]);
 
   return (
-    <section ref={sectionRef} className="py-16 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 text-center">
+    <section ref={sectionRef} className="py-12 md:py-16 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
         {/* Section Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-12">
+        <h2 className="text-2xl md:text-4xl font-bold text-secondary mb-8 md:mb-12">
           Our Impact in Numbers
         </h2>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Highest Package - Slides from left */}
+        {/* RESPONSIVE GRID LOGIC:
+            - grid-cols-2: Two cards per row on mobile (looks like a dashboard)
+            - lg:grid-cols-4: Four cards in a row on laptops
+            - gap-3: Tighter spacing on mobile
+            - md:gap-8: Wider spacing on desktop
+        */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8">
+          
+          {/* Highest Package */}
           <div
             className={`
-            bg-white shadow-lg border border-blue-100 p-8 rounded-xl 
+            bg-white shadow-lg border border-blue-100 
+            p-4 md:p-8 rounded-xl 
             transition-all duration-700 transform
+            flex flex-col justify-center items-center
             ${
               animated[0]
                 ? "translate-x-0 opacity-100 scale-100"
-                : "-translate-x-20 opacity-0 scale-90"
+                : "-translate-x-10 md:-translate-x-20 opacity-0 scale-90"
             }
             hover:scale-105 hover:shadow-xl
           `}
           >
-            <h3 className="text-4xl font-bold text-secondary mb-2">
+            <h3 className="text-2xl md:text-4xl font-bold text-secondary mb-1 md:mb-2">
               ₹{counts[0].toFixed(0)} LPA
             </h3>
-            <p className="text-lg font-bold text-secondary mb-2">
+            <p className="text-xs md:text-lg font-bold text-secondary opacity-80">
               Highest Package
             </p>
           </div>
 
-          {/* Average Package - Slides from top */}
+          {/* Average Package */}
           <div
             className={`
-            bg-white shadow-lg border border-blue-100 p-8 rounded-xl 
+            bg-white shadow-lg border border-blue-100 
+            p-4 md:p-8 rounded-xl 
             transition-all duration-700 transform
+            flex flex-col justify-center items-center
             ${
               animated[1]
                 ? "translate-y-0 opacity-100 scale-100"
-                : "-translate-y-20 opacity-0 scale-90"
+                : "-translate-y-10 md:-translate-y-20 opacity-0 scale-90"
             }
             hover:scale-105 hover:shadow-xl
           `}
           >
-            <h3 className="text-4xl font-bold text-secondary mb-2">
+            <h3 className="text-2xl md:text-4xl font-bold text-secondary mb-1 md:mb-2">
               ₹{counts[1].toFixed(2)} LPA
             </h3>
-            <p className="text-lg font-bold text-secondary mb-2">
+            <p className="text-xs md:text-lg font-bold text-secondary opacity-80">
               Average Package
             </p>
           </div>
 
-          {/* Companies - Slides from bottom */}
+          {/* Companies */}
           <div
             className={`
-            bg-white shadow-lg border border-blue-100 p-8 rounded-xl 
+            bg-white shadow-lg border border-blue-100 
+            p-4 md:p-8 rounded-xl 
             transition-all duration-700 transform
+            flex flex-col justify-center items-center
             ${
               animated[2]
                 ? "translate-y-0 opacity-100 scale-100"
-                : "translate-y-20 opacity-0 scale-90"
+                : "translate-y-10 md:translate-y-20 opacity-0 scale-90"
             }
             hover:scale-105 hover:shadow-xl
           `}
           >
-            <h3 className="text-4xl font-bold text-secondary mb-2">
+            <h3 className="text-2xl md:text-4xl font-bold text-secondary mb-1 md:mb-2">
               {Math.floor(counts[2])}+
             </h3>
-            <p className="text-lg font-bold text-secondary mb-2">
+            <p className="text-xs md:text-lg font-bold text-secondary opacity-80">
               Recruiting Companies
             </p>
           </div>
 
-          {/* Placement Assistance - Slides from right */}
+          {/* Placement Assistance */}
           <div
             className={`
-            bg-white shadow-lg border border-blue-100 p-8 rounded-xl 
+            bg-white shadow-lg border border-blue-100 
+            p-4 md:p-8 rounded-xl 
             transition-all duration-700 transform
+            flex flex-col justify-center items-center
             ${
               animated[3]
                 ? "translate-x-0 opacity-100 scale-100"
-                : "translate-x-20 opacity-0 scale-90"
+                : "translate-x-10 md:translate-x-20 opacity-0 scale-90"
             }
             hover:scale-105 hover:shadow-xl
           `}
           >
-            <h3 className="text-4xl font-bold text-secondary mb-2">
+            <h3 className="text-2xl md:text-4xl font-bold text-secondary mb-1 md:mb-2">
               {Math.floor(counts[3])}%
             </h3>
-            <p className="text-lg font-bold text-secondary mb-2">
+            <p className="text-xs md:text-lg font-bold text-secondary opacity-80">
               Placement Assistance
             </p>
           </div>

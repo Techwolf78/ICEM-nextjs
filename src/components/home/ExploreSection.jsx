@@ -5,7 +5,10 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+// Safely register the plugin
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const ExploreSection = () => {
   const sectionRef = useRef(null);
@@ -13,96 +16,130 @@ const ExploreSection = () => {
   const logos = [
     { title: "NAAC Accredited", img: "/homepage-logos/NAAC.webp" },
     { title: "Top Ranking", img: "/homepage-logos/8th.webp" },
-    { title: "Approved by AICTE", img: "/homepage-logos/aicte.webp" },
+    { title: "Approved by AICTE", img: "/homepage-logos/AICTE.webp" },
     { title: "Affiliated to SPPU Pune", img: "/homepage-logos/sspu.webp" },
   ];
 
   useEffect(() => {
-    const section = sectionRef.current;
+    const ctx = gsap.context(() => {
+      // 1. PRE-OPTIMIZATION:
+      // Tell the browser these elements will change.
+      // This prevents the "paint flash" on the first frame of animation.
+      gsap.set(".fade-text, .fade-logo", {
+        willChange: "transform, opacity",
+        backfaceVisibility: "hidden", // Fixes font blurring on Mac
+      });
 
-    // TEXT ANIMATION
-    gsap.fromTo(
-      section.querySelectorAll(".fade-text"),
-      { autoAlpha: 0, y: 40 },
-      {
-        autoAlpha: 1,
-        y: 0,
-        duration: 1.2,
-        ease: "power3.out",
-        stagger: 0.2,
-        scrollTrigger: { trigger: section, start: "top 85%", once: true },
-      }
-    );
-
-    // LOGO ANIMATION
-    gsap.fromTo(
-      section.querySelectorAll(".fade-logo"),
-      { autoAlpha: 0, x: 60 },
-      {
-        autoAlpha: 1,
-        x: 0,
-        duration: 1.2,
-        ease: "power3.out",
-        stagger: 0.25,
-        scrollTrigger: {
-          trigger: section.querySelector(".logos-column"),
-          start: "top 90%",
-          once: true,
+      // 2. TEXT ANIMATION
+      gsap.fromTo(
+        ".fade-text",
+        {
+          autoAlpha: 0,
+          y: 40,
         },
-      }
-    );
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          stagger: 0.15,
+          force3D: true, // FORCE GPU ACCELERATION
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 80%",
+            once: true,
+          },
+          // Clean up "will-change" after animation to save memory
+          onComplete: () => {
+            gsap.set(".fade-text", { willChange: "auto" });
+          },
+        }
+      );
+
+      // 3. LOGO ANIMATION
+      gsap.fromTo(
+        ".fade-logo",
+        {
+          autoAlpha: 0,
+          y: 30,
+          scale: 0.95,
+        },
+        {
+          autoAlpha: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          ease: "back.out(1.7)",
+          stagger: 0.1,
+          force3D: true, // FORCE GPU ACCELERATION
+          scrollTrigger: {
+            trigger: ".logos-column",
+            start: "top 85%",
+            once: true,
+          },
+          onComplete: () => {
+            gsap.set(".fade-logo", { willChange: "auto" });
+          },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
   }, []);
 
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-white relative z-30 py-10  sm:pt-20 sm:pb-10 px-4"
+      className="w-full bg-white relative z-30 py-12 sm:pt-12  px-4 sm:px-6 lg:px-8 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
-        {/* GRID: LEFT | RIGHT */}
-        <div className="grid grid-cols-1 lg:grid-cols-[65%_35%] gap-10 items-start">
-          {/* LEFT COLUMN */}
-          <div className="flex flex-col space-y-6">
-            {/* HEADING */}
-            <div className="fade-text">
-              <h2 className="text-xl lg:text-3xl text-center sm:text-left font-semibold text-gray-800 leading-tight">
+        {/* MAIN GRID */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[1.4fr_0.8fr] gap-12 lg:gap-16 items-center">
+          {/* LEFT COLUMN: Text Content */}
+          <div className="flex flex-col space-y-6 text-left lg:text-left items-center lg:items-start order-1">
+            <div className="fade-text space-y-2">
+              <h2 className="text-xl sm:text-3xl lg:text-4xl font-semibold text-gray-800 leading-tight">
                 Explore Your Potential At
               </h2>
-              <h2 className="text-xl lg:text-3xl text-center sm:text-left font-extrabold text-secondary mt-1 leading-tight">
+              <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-secondary leading-tight bg-clip-text">
                 INDIRA COLLEGE OF ENGINEERING & MANAGEMENT
               </h2>
             </div>
 
-            {/* TEXT */}
-            <p className="fade-text text-gray-700 text-md lg:text-xl leading-relaxed text-justify">
+            <p className="fade-text text-gray-600 text-base sm:text-lg lg:text-xl text-justify leading-relaxed sm:leading-loose max-w-3xl mx-auto lg:mx-0">
               Located near Pune, Indira College of Engineering & Management, one
               of the leading NAAC accredited engineering institutions, offers a
               world of learning to help you achieve your goals. Choose from
               industry-led programs, learn from outstanding faculty in
               state-of-the-art facilities, and access limitless placement
-              opportunities with top campus recruiters. Join a vibrant community
-              of students with ambitions as big as yours.
+              opportunities.
             </p>
           </div>
 
-          {/* RIGHT COLUMN — LOGOS (2×2 GRID) */}
-          <div className="logos-column grid grid-cols-2 gap-6 items-start">
-            {logos.map((logo, index) => (
-              <div
-                key={index}
-                className="fade-logo bg-white rounded-xl shadow-md p-5 
-                 flex items-center justify-center h-32
-                 transition-transform duration-300 hover:scale-105"
-              >
-                <Image
-                  src={logo.img}
-                  alt={logo.title}
-                  width={150}
-                  height={150}
-                  className="object-contain"
-                />
-              </div>
-            ))}
+          {/* RIGHT COLUMN: Logos */}
+          <div className="logos-column w-full order-2">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6 max-w-md mx-auto lg:max-w-none lg:mx-0">
+              {logos.map((logo, index) => (
+                <div
+                  key={index}
+                  // Added 'transform-gpu' class for extra safety
+                  className="fade-logo transform-gpu bg-white border border-gray-100 rounded-2xl shadow-lg hover:shadow-xl p-4 sm:p-6 
+                    flex items-center justify-center 
+                    h-28 sm:h-36 lg:h-40
+                    transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={logo.img}
+                      alt={logo.title}
+                      fill
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                      className="object-contain"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

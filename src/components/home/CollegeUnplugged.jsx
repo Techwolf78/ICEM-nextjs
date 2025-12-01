@@ -1,266 +1,119 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, memo } from "react";
 import Image from "next/image";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
-
-// 🔥 UPDATED: Using 'maxresdefault.jpg' for crisp images
+// Static Data
 const videos = [
   {
-    title: "Ek aisa College jo kisi Resort se Kam nahi || Indira College of Engineering & Management",
-    thumbnail: "https://img.youtube.com/vi/VFNW2xjcLS4/0.jpg",
-    url: "https://youtu.be/VFNW2xjcLS4?si=82O2nNba-C76P6Sj",
+    title:
+      "Ek aisa College jo kisi Resort se Kam nahi || Indira College of Engineering & Management",
+    // Use 'maxresdefault' for the main player (high quality)
+    thumbnail: "https://img.youtube.com/vi/VFNW2xjcLS4/maxresdefault.jpg",
+    url: "VFNW2xjcLS4",
   },
   {
     title: "ICEM (Indira College of Engineering and Management) Award Function",
     thumbnail: "https://img.youtube.com/vi/KrkLiGVGeT0/maxresdefault.jpg",
-    url: "https://youtu.be/KrkLiGVGeT0?si=-OHivtfzbudfoUWz",
+    url: "KrkLiGVGeT0",
   },
   {
     title: "Sunidhi Chauhan at ICEM",
     thumbnail: "https://img.youtube.com/vi/UxjeDzFtpMY/maxresdefault.jpg",
-    url: "https://youtu.be/UxjeDzFtpMY?si=1PQkCtSjM5gDA0ez",
+    url: "UxjeDzFtpMY",
   },
   {
-    title: "Life at Indira University, Pune | Explore Vibrant Campus Life | Cutting Edge Facilities",
-    thumbnail: "https://img.youtube.com/vi/gEXvD4OVyXg/0.jpg",
-    url: "https://youtu.be/gEXvD4OVyXg?si=68Sex6D7MOVnPik3",
+    title: "Life at Indira University, Pune | Explore Vibrant Campus Life",
+    thumbnail: "https://img.youtube.com/vi/gEXvD4OVyXg/maxresdefault.jpg",
+    url: "gEXvD4OVyXg",
   },
 ];
 
-function toEmbedUrl(url) {
-  if (!url) return "";
-  const match = url.match(/(?:v=|\/)([0-9A-Za-z_-]{11})(?:\?|&|$)/);
-  const videoId = match ? match[1] : null;
-
-  // 🔥 UPDATED: Added '&vq=hd1080' to request High Definition
-  // Note: YouTube still adjusts based on user bandwidth, but this sets the preference.
-  return videoId
-    ? `https://www.youtube.com/embed/${videoId}?autoplay=1&vq=hd720&rel=0`
-    : url;
-}
-
 export default function CollegeUnplugged() {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
 
-  const sectionRef = useRef(null);
-  const listRef = useRef(null);
-  const playerRef = useRef(null);
-
-  const itemRefs = useRef([]);
-
-  /* ------------------------------------------------------
-     1️⃣  FIX SCROLL STUCK ON YOUTUBE (Iframe Scroll Lock Fix)
-  -------------------------------------------------------*/
-  useEffect(() => {
-    let iframe = null;
-    let scrollTimeout;
-
-    const enableIframe = () => {
-      if (iframe) iframe.style.pointerEvents = "auto";
-    };
-
-    const disableIframe = () => {
-      if (iframe) iframe.style.pointerEvents = "none";
-
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(enableIframe, 250);
-    };
-
-    const handler = () => disableIframe();
-    window.addEventListener("scroll", handler);
-
-    iframe = document.querySelector("#youtube-frame");
-
-    return () => window.removeEventListener("scroll", handler);
-  }, []);
-
-  /* ------------------------------------------------------
-     2️⃣  GSAP Fade-In Animations
-  -------------------------------------------------------*/
-  useEffect(() => {
-    const section = sectionRef.current;
-
-    gsap.fromTo(
-      section.querySelectorAll(".fade-up"),
-      { autoAlpha: 0, y: 40 },
-      {
-        autoAlpha: 1,
-        y: 0,
-        duration: 0.2,
-        ease: "power2.out",
-        stagger: 0.12,
-        scrollTrigger: {
-          trigger: section,
-          start: "top 85%",
-          once: true,
-        },
-      }
-    );
-  }, []);
-
-  /* ------------------------------------------------------
-     3️⃣  SWAP Animation (Your existing flip logic stays same)
-  -------------------------------------------------------*/
-
-  const createClone = (sourceRect, contentNode) => {
-    const clone = document.createElement("div");
-    clone.style.position = "fixed";
-    clone.style.left = `${sourceRect.left}px`;
-    clone.style.top = `${sourceRect.top}px`;
-    clone.style.width = `${sourceRect.width}px`;
-    clone.style.height = `${sourceRect.height}px`;
-    clone.style.zIndex = 9999;
-    clone.style.pointerEvents = "none";
-    clone.style.borderRadius =
-      getComputedStyle(contentNode).borderRadius || "8px";
-    clone.style.overflow = "hidden";
-    clone.style.boxShadow = "0 10px 30px rgba(0,0,0,0.15)";
-    clone.style.transition =
-      "transform 520ms cubic-bezier(.2,.9,.3,1), left 520ms cubic-bezier(.2,.9,.3,1), top 520ms cubic-bezier(.2,.9,.3,1), width 520ms, height 520ms, opacity 320ms";
-    return clone;
-  };
-
-  const handleSelect = (clickedIndex) => {
-    if (clickedIndex === selectedIndex) return;
-
-    const fromNode = itemRefs.current[clickedIndex];
-    const toNode = playerRef.current;
-
-    if (!fromNode || !toNode) {
-      setSelectedIndex(clickedIndex);
-      return;
-    }
-
-    const fromRect = fromNode.getBoundingClientRect();
-    const toRect = toNode.getBoundingClientRect();
-
-    const cloneFrom = createClone(fromRect, fromNode);
-    cloneFrom.innerHTML = `
-      <div style="display:flex;align-items:center;height:100%">
-        <img src="${videos[clickedIndex].thumbnail}" style="width:40%;height:100%;object-fit:cover" />
-        <div style="padding:10px;flex:1;display:flex;align-items:center">
-          <div style="font-size:14px;color:#0f172a">
-            ${escapeHtmlShort(videos[clickedIndex].title)}
-          </div>
-        </div>
-      </div>`;
-    document.body.appendChild(cloneFrom);
-
-    const cloneTo = createClone(toRect, toNode);
-    cloneTo.innerHTML = `
-      <div style="width:100%;height:100%;background:#000;display:flex;align-items:center;justify-content:center">
-        <img src="${videos[selectedIndex].thumbnail}" style="width:60%;height:60%;object-fit:cover;border-radius:6px" />
-      </div>`;
-    document.body.appendChild(cloneTo);
-
-    fromNode.style.visibility = "hidden";
-    toNode.style.visibility = "hidden";
-
-    cloneFrom.getBoundingClientRect();
-    cloneTo.getBoundingClientRect();
-
-    cloneFrom.style.left = `${toRect.left}px`;
-    cloneFrom.style.top = `${toRect.top}px`;
-    cloneFrom.style.width = `${toRect.width}px`;
-    cloneFrom.style.height = `${toRect.height}px`;
-
-    cloneTo.style.left = `${fromRect.left}px`;
-    cloneTo.style.top = `${fromRect.top}px`;
-    cloneTo.style.width = `${fromRect.width}px`;
-    cloneTo.style.height = `${fromRect.height}px`;
-
-    let finished = 0;
-    const onFinish = () => {
-      finished++;
-      if (finished < 2) return;
-
-      cloneFrom.remove();
-      cloneTo.remove();
-      fromNode.style.visibility = "";
-      toNode.style.visibility = "";
-
-      setSelectedIndex(clickedIndex);
-    };
-
-    cloneFrom.addEventListener("transitionend", onFinish);
-    cloneTo.addEventListener("transitionend", onFinish);
+  // Handle switching videos
+  const handleVideoSelect = (index) => {
+    setSelectedIndex(index);
+    setIsPlaying(false); // Reset to thumbnail view when switching
   };
 
   return (
-    <div ref={sectionRef} className="bg-white py-10 sm:py-16 fade-up px-4 sm:px-0">
+    <div className="bg-white py-12 sm:py-16 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-2xl sm:text-4xl font-extrabold text-secondary  mb-10 fade-up">Indira College Unplugged</h2>
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-secondary mb-10 text-center sm:text-left">
+          Indira College Unplugged
+        </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start fade-up">
-
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           {/* LEFT LIST */}
-          <div className="lg:col-span-5 space-y-4 fade-up" ref={listRef}>
-            {videos.map((v, i) => (
-              <div
-                key={i}
-                ref={(el) => (itemRefs.current[i] = el)}
-                onClick={() => handleSelect(i)}
-                className={`flex items-center gap-4 p-3 rounded-lg border cursor-pointer transition-all duration-300 fade-up 
-                  ${selectedIndex === i
-                    ? "bg-white shadow-md border-blue-100"
-                    : "bg-gray-50 border-gray-100"}`}
-              >
-                <div className="relative w-28 h-16 rounded-md overflow-hidden flex-shrink-0">
-                  <Image
-                    src={v.thumbnail}
-                    alt={v.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-
-                <div className="flex-1 min-w-0">
-                  <div className="text-sm font-medium text-gray-800 line-clamp-2">
-                    {v.title}
-                  </div>
-                </div>
-                {selectedIndex === i && (
-                  <div className="ml-2 text-xs text-blue-600 font-medium whitespace-nowrap">
-                    Playing
-                  </div>
-                )}
-              </div>
-            ))}
+          <div className="order-2 lg:order-1 lg:col-span-5">
+            <VideoList
+              videos={videos}
+              selectedIndex={selectedIndex}
+              onSelect={handleVideoSelect}
+            />
           </div>
 
-          {/* RIGHT VIDEO PLAYER */}
-          <div className="lg:col-span-7 fade-up">
-            <div
-              ref={playerRef}
-              className="w-full bg-black rounded-xl overflow-hidden shadow-xl fade-up"
-              style={{ minHeight: 260 }}
-            >
-              <iframe
-                id="youtube-frame"
-                key={videos[selectedIndex].url}
-                width="100%"
-                height="100%"
-                className="min-h-[260px] lg:min-h-[360px]"
-                src={toEmbedUrl(videos[selectedIndex].url)}
-                title={videos[selectedIndex].title}
-                frameBorder="0"
-                allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+          {/* RIGHT PLAYER FACADE */}
+          <div className="order-1 lg:order-2 lg:col-span-7 space-y-4">
+            {/* THE FACADE: 
+                This container holds the video. 
+                It has a fixed aspect ratio (16/9) to prevent layout shifts.
+            */}
+            <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-xl bg-black group">
+              {!isPlaying ? (
+                /* STATE 1: STATIC IMAGE (Zero JS, Zero CPU) */
+                <button
+                  onClick={() => setIsPlaying(true)}
+                  className="relative w-full h-full block cursor-pointer"
+                  aria-label="Play Video"
+                >
+                  <Image
+                    src={videos[selectedIndex].thumbnail}
+                    alt={videos[selectedIndex].title}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 60vw"
+                    className="object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+                    priority // Load the main video image immediately
+                  />
+
+                  {/* Custom Play Button */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/90 rounded-full flex items-center justify-center shadow-2xl transition-transform duration-300 group-hover:scale-110">
+                      <svg
+                        className="w-8 h-8 text-secondary ml-1"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+              ) : (
+                /* STATE 2: ACTUAL IFRAME (Loads only on click) */
+                <iframe
+                  className="w-full h-full"
+                  src={`https://www.youtube.com/embed/${videos[selectedIndex].url}?autoplay=1&rel=0`}
+                  title={videos[selectedIndex].title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              )}
             </div>
 
-            <div className="mt-4 p-3 fade-up">
-              <h3 className="text-lg font-semibold text-gray-800">{videos[selectedIndex].title}</h3>
-              <p className="text-sm text-gray-600 mt-2">
+            <div className="space-y-1">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-snug">
+                {videos[selectedIndex].title}
+              </h3>
+              <p className="text-sm sm:text-base text-gray-600">
                 Watch the full video to explore campus life, events and
                 facilities.
               </p>
             </div>
-
           </div>
         </div>
       </div>
@@ -268,16 +121,76 @@ export default function CollegeUnplugged() {
   );
 }
 
-/* HTML escape helper */
-function escapeHtmlShort(str) {
-  return String(str).replace(/[&<>"']/g, (s) => {
-    const map = {
-      "&": "&amp;",
-      "<": "&lt;",
-      ">": "&gt;",
-      '"': "&quot;",
-      "'": "&#39;",
-    };
-    return map[s];
-  });
-}
+/* MEMOIZED LIST */
+const VideoList = memo(({ videos, selectedIndex, onSelect }) => (
+  <div className="space-y-3">
+    {videos.map((v, i) => {
+      const isSelected = selectedIndex === i;
+
+      // Use smaller thumbnails for the list to save data
+      // mqdefault = 320x180 (Perfect for list)
+      const listThumbnail = `https://img.youtube.com/vi/${v.url}/mqdefault.jpg`;
+
+      return (
+        <button
+          key={i}
+          onClick={() => onSelect(i)}
+          className={`
+            group flex w-full items-center gap-4 p-3 rounded-xl border text-left transition-all duration-200
+            ${
+              isSelected
+                ? "bg-secondary/5 border-secondary shadow-sm ring-1 ring-secondary"
+                : "bg-white border-gray-100 hover:bg-gray-50 hover:border-gray-300"
+            }
+          `}
+        >
+          {/* THUMBNAIL */}
+          <div className="relative w-28 h-16 sm:w-32 sm:h-20 rounded-lg overflow-hidden shrink-0 bg-gray-200">
+            <Image
+              src={listThumbnail}
+              alt={v.title}
+              fill
+              sizes="(max-width: 640px) 30vw, 15vw"
+              className={`object-cover transition-transform duration-300 ${
+                !isSelected && "group-hover:scale-105"
+              }`}
+            />
+            <div
+              className={`absolute inset-0 flex items-center justify-center bg-black/20 ${
+                isSelected ? "opacity-0" : "opacity-100"
+              }`}
+            >
+              <div className="w-6 h-6 bg-white/90 rounded-full flex items-center justify-center shadow-sm">
+                <svg
+                  className="w-3 h-3 text-secondary ml-0.5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          {/* TEXT */}
+          <div className="flex-1 min-w-0">
+            <p
+              className={`text-sm font-medium line-clamp-2 ${
+                isSelected ? "text-secondary" : "text-gray-700"
+              }`}
+            >
+              {v.title}
+            </p>
+            {isSelected && (
+              <span className="inline-flex items-center mt-1 text-xs font-bold text-secondary animate-pulse">
+                ● Playing
+              </span>
+            )}
+          </div>
+        </button>
+      );
+    })}
+  </div>
+));
+
+VideoList.displayName = "VideoList";

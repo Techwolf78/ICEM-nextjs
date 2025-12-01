@@ -8,7 +8,7 @@ export default function IIC() {
   const iicRatingCert = "/IIC_Rating_Certificate_2023-24.pdf";
 
   return (
-    <div className="bg-white p-6 rounded-xl shadow-md">
+    <div className="  p-6 rounded-xl shadow-md bg-white">
       {/* Header Section */}
       <div className="space-y-2 mb-6">
         <h2 className="text-2xl font-semibold text-secondary mb-2">

@@ -9,7 +9,7 @@ export default function ClubsAndSocieties() {
       {/* HERO BANNER */}
       <div className="relative w-full h-[65vh]">
         <Image
-          src="/quanti.webp"
+          src="/placeholder.webp"
           alt="Clubs and Societies"
           fill
           className="object-cover"
@@ -32,7 +32,7 @@ export default function ClubsAndSocieties() {
           {/* IMAGE */}
           <div className="rounded-xl overflow-hidden shadow border">
             <Image
-              src="/quanti.webp"
+              src="/placeholder.webp"
               alt="Quanti Club"
               width={1200}
               height={600}
@@ -101,7 +101,7 @@ export default function ClubsAndSocieties() {
           {/* IMAGE */}
           <div className="rounded-xl overflow-hidden shadow border">
             <Image
-              src="/codeverse.webp"
+              src="/placeholder.webp"
               alt="CodeVerse Club"
               width={1200}
               height={600}

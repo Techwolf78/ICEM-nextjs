@@ -48,71 +48,128 @@ export default function Computer() {
   return (
     <div className="w-full bg-white text-white">
       {/* ===== HERO SECTION ===== */}
-      <div className="relative w-full overflow-hidden h-[60vh] md:h-[75vh] flex items-center">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/Programs/MCA1.webp"
-            alt="Artificial Intelligence Program"
-            fill
-            className="object-cover object-center scale-105  opacity-90"
-            priority
-          />
-        </div>
+      <div className="relative w-full overflow-hidden 
+  h-[55vh] sm:h-[65vh] md:h-[70vh] lg:h-[75vh] flex items-center">
 
-        {/* Dark Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10" />
+  {/* Background Image */}
+  <div className="absolute inset-0">
+    <Image
+      src="/Programs/MCA1.webp"
+      alt="Artificial Intelligence Program"
+      fill
+      className="
+        object-cover 
+        object-center 
+        md:object-[60%]   /* improves framing on small desktop */
+        scale-100 
+        md:scale-105 
+        lg:scale-110 
+        opacity-90
+      "
+      priority
+    />
+  </div>
 
-        {/* Content Wrapper */}
-        {/* Content Wrapper */}
-      <div className="relative max-w-[1500px] px-4 sm:px-6 md:px-12 lg:px-20 z-20">
-  <div className="max-w-3xl text-white">
+  {/* Dark Gradient Overlay */}
+  <div
+    className="
+      absolute inset-0 
+      bg-gradient-to-r 
+      from-black/85 
+      via-black/60 
+      to-transparent 
+      md:via-black/50 
+      lg:via-black/40 
+      z-10
+    "
+  />
 
-    {/* Heading */}
-    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug">
-      5-Year Integrated MCA Programme (BCA + MCA)
-      <br className="hidden sm:block" />
-      <span className="bg-gradient-to-br from-cyan-400 to-sky-400 bg-clip-text text-transparent font-extrabold">
-        A Comprehensive Journey in Computer Applications
-      </span>
-    </h2>
+  {/* Content Wrapper */}
+  <div className="relative max-w-[1400px] px-4 sm:px-6 md:px-10 lg:px-20 z-20">
+    <div className="max-w-2xl md:max-w-xl lg:max-w-3xl text-white">
 
-    {/* Description */}
-    <p className="mt-3 sm:mt-4 text-white/80 leading-relaxed max-w-2xl text-sm sm:text-base">
-      This streamlined dual-degree programme offers an uninterrupted and
-      in-depth exploration of computer applications. It seamlessly blends the
-      foundational concepts of a Bachelor's in Computer Applications (BCA) with
-      the advanced, specialized knowledge of a Master's in Computer Applications
-      (MCA), creating highly competent software professionals ready for the
-      tech industry.
-    </p>
+      {/* Heading */}
+      <h2
+        className="
+          text-2xl sm:text-2xl md:text-2xl lg:text-4xl
+          font-bold leading-tight md:leading-snug
+        "
+      >
+        5-Year Integrated MCA Programme (BCA + MCA)
+        <br className="hidden sm:block" />
+        <span
+          className="
+            bg-gradient-to-br 
+            from-cyan-400 
+            to-sky-400 
+            bg-clip-text 
+            text-transparent 
+            font-extrabold
+            text-2xl sm:text-2xl md:text-2xl lg:text-4xl
+          "
+        >
+          A Comprehensive Journey in Computer Applications
+        </span>
+      </h2>
 
-    {/* Buttons */}
-    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 w-full sm:w-auto">
+      {/* Description */}
+      <p
+        className="
+          mt-3 sm:mt-4 
+          text-white/80 
+          leading-relaxed 
+          max-w-xl md:max-w-md lg:max-w-xl
+          text-xs sm:text-sm md:text-base text-justify
+        "
+      >
+        This streamlined dual-degree programme offers an uninterrupted and
+        in-depth exploration of computer applications. It seamlessly blends the
+        foundational concepts of a Bachelor's in Computer Applications (BCA) with
+        the advanced, specialized knowledge of a Master's in Computer Applications
+        (MCA), creating highly competent software professionals ready for the
+        tech industry.
+      </p>
+
+      {/* Buttons */}
+       <div className="flex  sm:flex-row gap-3 sm:gap-4 mt-6 ">
       <button
         onClick={toggleModal}
-        className="bg-secondary text-white px-6 sm:px-8 py-3 rounded-lg font-semibold
-        text-sm sm:text-base w-full sm:w-auto"
+        className="
+          bg-secondary text-white px-6 sm:px-8 py-3 rounded-lg font-semibold
+          text-sm sm:text-base md:text-lg
+          w-full sm:w-auto
+          transition-all duration-300
+          hover:bg-gray-200 hover:text-secondary
+          border-2 border-transparent hover:border-secondary
+          active:scale-95
+        "
       >
         Enquire Now
       </button>
 
       <button
         onClick={handleBrochureDownload}
-        className="bg-secondary text-white px-6 sm:px-8 py-3 rounded-lg
-        text-sm sm:text-base w-full sm:w-auto"
+        className="
+          bg-secondary text-white px-6 sm:px-8 py-3 rounded-lg font-semibold
+          text-sm sm:text-base md:text-lg
+          w-full sm:w-auto
+          transition-all duration-300
+          hover:bg-white hover:text-secondary
+          border-2 border-transparent hover:border-secondary
+          active:scale-95
+        "
       >
         Download Brochure
       </button>
     </div>
 
+    </div>
   </div>
+
+  {/* Bottom Fade Mask */}
+  <div className="absolute bottom-0 w-full h-20 bg-gradient-to-t from-black/50 to-transparent" />
 </div>
 
-
-        {/* Bottom Fade Mask */}
-        <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-black/60 to-transparent" />
-      </div>
 
       {/* ===== WHITE INFO SECTION ===== */}
       <div className="w-full bg-[#f8f8f8] text-black py-12">

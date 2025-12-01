@@ -350,13 +350,13 @@ const Navbar = () => {
       {/* ===== NAVBAR (Fixed) ===== */}
       <nav
         ref={navbarRef}
-        className="w-full h-[12vh] flex bg-white shadow-sm font-sans fixed top-0 left-0 right-0 z-50"
+        className="w-full h-[12vh]  flex bg-white shadow-sm font-sans fixed top-0 left-0 right-0 z-50"
       >
         {/* Left: Logo */}
         <div className="w-full md:w-[30%] h-full flex items-center justify-start md:pl-0 md:justify-center">
           <Link href="/">
             <Image
-              src="/Logo.webp"
+              src="/Logo.png"
               alt="Logo"
               height={240}
               width={240}
@@ -368,16 +368,16 @@ const Navbar = () => {
         </div>
 
         {/* Right Section - Desktop */}
-        <div className="hidden md:flex w-[70%] h-full flex-col">
+        <div className="hidden md:flex w-[70%] h-full flex-col ">
           {/* Top Bar */}
-          <div className="flex justify-end  w-full h-[45%] text-sm text-black">
-            <div className="flex gap-4">
-              <div className="flex items-center gap-2 font-semibold">
+          <div className="flex justify-end  w-full h-[45%] text-xs text-black sm:text-xs md:text-xs lg:text-sm ">
+            <div className="flex gap-1">
+              <div className="flex items-center font-semibold">
                 <a
                   href="https://rapid.grayquest.com/iudp-master"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-secondary transition-colors duration-200"
+                  className="hover:text-secondary transition-colors duration-200 px-1"
                 >
                   Pay Fee
                 </a>
@@ -386,7 +386,7 @@ const Navbar = () => {
                   href="https://indira.edupluscampus.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-secondary transition-colors duration-200"
+                  className="hover:text-secondary transition-colors duration-200 px-1 lg:px-2"
                 >
                   ERP Login Staff
                 </a>
@@ -395,7 +395,7 @@ const Navbar = () => {
                   href="https://myindira.edupluscampus.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-secondary transition-colors duration-200"
+                  className="hover:text-secondary transition-colors duration-200 px-1 lg:px-2"
                 >
                   ERP Login Student
                 </a>
@@ -404,7 +404,7 @@ const Navbar = () => {
                   href="https://indiraicem.ac.in/ICEM-360-degree-virtual-tour/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-secondary transition-colors duration-200"
+                  className="hover:text-secondary transition-colors duration-200 px-1 lg:px-2"
                 >
                   360<sup>0</sup> Tour
                 </a>
@@ -413,14 +413,14 @@ const Navbar = () => {
                   href="https://lc-icem-sumedh.vercel.app"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-secondary transition-colors duration-200"
+                  className="hover:text-secondary transition-colors duration-200 px-1 lg:px-2"
                 >
                   Leaving Certificate
                 </a>
                 <span className="text-gray-400">|</span>
                 <Link
                   href="/contact"
-                  className="hover:text-secondary transition-colors duration-200"
+                  className="hover:text-secondary transition-colors duration-200 px-1 lg:px-2"
                 >
                   Contact Us
                 </Link>
@@ -430,7 +430,7 @@ const Navbar = () => {
               <div className="flex">
                 <button
                   onClick={toggleModal}
-                  className="bg-secondary hover:scale-[1.03] text-white px-8 py-3  font-semibold "
+                  className="bg-secondary hover:scale-[1.03] text-white px-4 py-1 font-semibold"
                 >
                   Enquire Now
                 </button>
@@ -439,7 +439,7 @@ const Navbar = () => {
           </div>
 
           {/* Bottom Nav Links */}
-          <div className="flex  justify-end items-center gap-1 h-[55%] text-black px-6 text-md font-semibold whitespace-nowrap ">
+          <div className="flex justify-end items-center h-[55%] text-black font-semibold whitespace-nowrap text-xs sm:text-xs md:text-xs lg:text-base ">
             <div
               className="flex  h-full  items-center gap-1 cursor-pointer hover:text-secondary transition-all duration-200 group"
               onPointerEnter={() => handleMouseEnter("aboutUs")}
@@ -453,7 +453,7 @@ const Navbar = () => {
               />
             </div>
             <div
-              className="flex items-center gap-1  px-5  cursor-pointer hover:text-secondary transition-all duration-200 group"
+              className="flex items-center gap-1  px-2 lg:px-4 cursor-pointer hover:text-secondary transition-all duration-200 group"
               onPointerEnter={() => handleMouseEnter("campusLife")}
               onPointerLeave={handleMouseLeave}
             >
@@ -465,7 +465,7 @@ const Navbar = () => {
               />
             </div>
             <div
-              className="flex items-center gap-1  px-5  cursor-pointer hover:text-secondary transition-all duration-200 group"
+              className="flex items-center gap-1  px-2 lg:px-4  cursor-pointer hover:text-secondary transition-all duration-200 group"
               onPointerEnter={() => handleMouseEnter("programs")}
               onPointerLeave={handleMouseLeave}
             >
@@ -478,25 +478,25 @@ const Navbar = () => {
             </div>
             <Link
               href="/placement"
-              className="hover:text-secondary  px-5  transition-colors duration-200 group"
+              className="hover:text-secondary  px-2 lg:px-4   transition-colors duration-200 group"
             >
               Placement
             </Link>
             <Link
               href="/about/examination"
-              className="hover:text-secondary  px-5  transition-colors duration-200 group"
+              className="hover:text-secondary  px-2 lg:px-4  transition-colors duration-200 group"
             >
               Examination
             </Link>
             <Link
               href="/alumni"
-              className="hover:text-secondary  px-5  transition-colors duration-200 group"
+              className="hover:text-secondary  px-2 lg:px-4  transition-colors duration-200 group"
             >
               Alumni
             </Link>
             <Link
               href="/research"
-              className="hover:text-secondary  px-5  transition-colors duration-200 group"
+              className="hover:text-secondary  px-2 lg:px-4  transition-colors duration-200 group"
             >
               Research
             </Link>

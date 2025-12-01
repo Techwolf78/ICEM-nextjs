@@ -8,6 +8,26 @@ import {
 export default function PlacementInformation() {
   const [active, setActive] = useState("Placement Team");
 
+  const handleMobileScroll = (e) => {
+    // 1. Only run on mobile/tablet (less than 1024px)
+    if (typeof window !== "undefined" && window.innerWidth >= 1024) return;
+
+    const summary = e.currentTarget;
+    const details = summary.parentElement;
+
+    // 2. We check if it is currently closed (meaning the user just clicked to OPEN it)
+    // Note: The onClick fires before the 'open' attribute toggles, so !open means it's about to open.
+    if (!details.open) {
+      // 3. specific timeout to let the DOM expand before scrolling
+      setTimeout(() => {
+        summary.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 300);
+    }
+  };
+
   // ALL ACCORDION CONTENT
   const sectionContent = {
     "Placement Team": {
@@ -45,7 +65,10 @@ export default function PlacementInformation() {
         {Object.entries(contentData).map(([year, programs]) => (
           <div key={year} className="border border-gray-200 rounded-lg">
             <details className="group">
-              <summary className="flex justify-between items-center p-4 cursor-pointer bg-gray-50 hover:bg-gray-100 rounded-lg">
+              <summary
+                onClick={handleMobileScroll}
+                className="flex justify-between items-center p-4 cursor-pointer bg-gray-50 hover:bg-gray-100 rounded-lg"
+              >
                 <h4 className="font-semibold text-secondary text-lg">
                   Academic Year {year}
                 </h4>
@@ -339,7 +362,7 @@ export default function PlacementInformation() {
     <section className="w-full bg-gradient-to-b from-gray-50 to-white text-black py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-secondary mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-4">
             Placement Information
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
@@ -370,9 +393,12 @@ export default function PlacementInformation() {
           </nav>
 
           {/* RIGHT CONTENT */}
-          <div className="lg:col-span-3 bg-white rounded-xl shadow-sm p-8 border border-gray-100">
-            <div className="mb-6 pb-4 border-b border-gray-200">
-              <h3 className="text-2xl font-bold text-secondary">{active}</h3>
+          <div className="lg:col-span-3 bg-white rounded-xl shadow-sm p-2 md:p4 border border-gray-100">
+            <div
+              className="mb-6
+            3 pb-4 border-b border-gray-200"
+            >
+              <h3 className="text-lg font-bold text-secondary">{active}</h3>
             </div>
 
             <div className="content-area">

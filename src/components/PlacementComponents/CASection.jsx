@@ -3,10 +3,10 @@ export default function CASsection() {
     <>
       <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-5">
+          <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-5">
             We turn your potential into placement.
           </h2>
-          <p className="text-xl text-gray-700 max-w-5xl mx-auto mb-16 leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-700 max-w-5xl mx-auto mb-16 leading-relaxed">
             Indira College of Engineering and Management ensures every student
             steps into the industry with confidence. From specialized training
             to top-tier recruiter connect, our placement ecosystem is built to
@@ -16,8 +16,8 @@ export default function CASsection() {
           {/* Three Info Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* IRP */}
-            <div className="bg-white border border-gray-200 shadow-md hover:shadow-lg transition-shadow p-8 text-left rounded-lg">
-              <h3 className="text-xl font-bold text-secondary mb-4">
+            <div className="bg-white border border-gray-200 shadow-md hover:shadow-lg transition-shadow p-4 text-left rounded-lg">
+              <h3 className="text-lg md:text-xl font-bold text-secondary mb-4">
                 Industry Readiness Programme (IRP)
               </h3>
               <p className="text-gray-700 leading-relaxed text-base">
@@ -33,8 +33,8 @@ export default function CASsection() {
             </div>
 
             {/* CLDP */}
-            <div className="bg-white border border-gray-200 shadow-md hover:shadow-lg transition-shadow p-8 text-left rounded-lg">
-              <h3 className="text-xl font-bold text-secondary mb-4">
+            <div className="bg-white border border-gray-200 shadow-md hover:shadow-lg transition-shadow p-4  text-left rounded-lg">
+              <h3 className="text-lg md:text-xl font-bold text-secondary mb-4">
                 Career Leadership Development Programme (CLDP)
               </h3>
               <p className="text-gray-700 leading-relaxed text-base">

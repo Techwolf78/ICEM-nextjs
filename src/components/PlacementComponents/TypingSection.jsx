@@ -40,7 +40,7 @@ export default function Typingsection() {
     <>
       {/* Typing Text Button Section */}
       <div className="flex justify-center items-center pr-6 pt-14 md:-mt-12 relative z-10">
-        <button className="bg-secondary text-white px-6 py-3 rounded-full text-2xl font-semibold shadow-lg hover:bg-primary/90 transition-all duration-300 flex items-center gap-2">
+        <button className="bg-secondary text-white px-6 py-3 rounded-full text-lg md:text-2xl font-semibold shadow-lg hover:bg-primary/90 transition-all duration-300 flex items-center gap-2">
           Crafting Your{" "}
           <span className="relative inline-block text-white font-bold">
             {currentText}

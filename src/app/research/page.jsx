@@ -140,7 +140,7 @@ const Research = () => {
             <div className="flex-1">
               <div className="relative h-65 p-4 rounded-lg overflow-hidden shadow-lg">
                 <Image
-                  src="/path/to/seed-funding-image.jpg"
+                  src="/nss/seed-funding.webp"
                   alt="Seed Funding Initiative"
                   fill
                   className="w-full h-full object-cover"

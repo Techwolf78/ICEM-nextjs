@@ -4,19 +4,18 @@ import Image from "next/image";
 
 export default function StudentWelfare() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 px-4 md:px-6">
       {/* ================= Banner Section ================= */}
-      <section className=" p-6 text-secondary shadow-md rounded-md">
-        <div className=" mx-auto space-y-4">
-          <h1 className="text-2xl font-semibold text-secondary mb-2">
+      <section className="p-4 md:p-6 text-secondary shadow-md rounded-md">
+        <div className="space-y-4">
+          <h1 className="text-xl md:text-2xl font-semibold text-secondary mb-2">
             Student Development Cell (SDC)
           </h1>
-          <div className=" bg-white p-4 rounded-lg border border-gray-300 hover:shadow-md transition-shadow">
-            <h2 className="text-lg text-secondary font-medium">
+          <div className="bg-white p-4 rounded-lg border border-gray-300 hover:shadow-md transition-shadow">
+            <h2 className="text-base md:text-lg text-secondary font-medium">
               Fostering Holistic Growth Beyond the Classroom
             </h2>
-
-            <p className="text-secondary  leading-relaxed mx-auto">
+            <p className="text-secondary leading-relaxed text-sm md:text-base">
               The Student Development Cell at Indira College is the cornerstone
               of our commitment to creating well-rounded, socially conscious,
               and future-ready graduates. As the official liaison with
@@ -29,11 +28,11 @@ export default function StudentWelfare() {
       </section>
 
       {/* ================= SWO Message Section ================= */}
-      <section className="bg-white p-6 rounded-xl shadow-md">
-        <div className="flex flex-col lg:flex-row items-start gap-6">
+      <section className="bg-white p-4 md:p-6 rounded-xl shadow-md">
+        <div className="flex flex-col lg:flex-row items-start gap-4 md:gap-6">
           {/* Left: Image */}
-          <div className="w-full lg:w-1/3 flex flex-col items-center">
-            <div className="relative w-48 h-48 rounded-xl overflow-hidden shadow-lg">
+          <div className="w-full lg:w-1/3 flex flex-col items-center mb-4 md:mb-0">
+            <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-xl overflow-hidden shadow-lg">
               <Image
                 src="/campuslife/student-services/prof.saini.webp"
                 alt="Prof. Vijay Kumar Saini"
@@ -42,23 +41,22 @@ export default function StudentWelfare() {
                 priority
               />
             </div>
-            <div className="mt-4 text-center">
-              <p className="font-bold text-secondary">
+            <div className="mt-3 md:mt-4 text-center">
+              <p className="font-bold text-secondary text-base md:text-lg">
                 Prof. Vijay Kumar Saini
               </p>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600 text-xs md:text-sm">
                 Student Welfare Officer (SWO)
               </p>
             </div>
           </div>
 
           {/* Right: Message */}
-          <div className="w-full lg:w-2/3 space-y-4">
-            <h2 className="text-xl font-semibold text-secondary">
+          <div className="w-full lg:w-2/3 space-y-3 md:space-y-4 ">
+            <h2 className="text-lg md:text-xl font-semibold text-secondary">
               Message from the Student Welfare Officer
             </h2>
-
-            <div className="space-y-4 text-gray-700 leading-relaxed">
+            <div className="space-y-3 md:space-y-4 text-gray-700 leading-relaxed text-sm md:text-base">
               <p>
                 The office of the{" "}
                 <span className="font-semibold">
@@ -74,10 +72,10 @@ export default function StudentWelfare() {
                 Through the{" "}
                 <span className="font-semibold">
                   Student Council and its committees
-                </span>{" "}
+                </span>
                 , we aim to cultivate responsibility, inclusivity,and teamwork.
                 Each activity — whether academic, cultural, technical, or social
-                — is designed toenhance students' skills and strengthen their
+                — is designed to enhance students' skills and strengthen their
                 connection with the institution. The Student WelfareOffice also
                 facilitates student participation in outreach programs, welfare
                 initiatives, and civicengagement activities that contribute to
@@ -96,18 +94,16 @@ export default function StudentWelfare() {
       </section>
 
       {/* ================= Mandate & Objectives ================= */}
-      <section className="bg-white p-6 rounded-xl shadow-md">
-        <h2 className="text-xl font-semibold text-secondary mb-4">
+      <section className="bg-white p-4 md:p-6 rounded-xl shadow-md">
+        <h2 className="text-lg md:text-xl font-semibold text-secondary mb-3 md:mb-4">
           Our Strategic Role in Student Development
         </h2>
-
-        <p className="text-gray-700 leading-relaxed mb-6">
+        <p className="text-gray-700 leading-relaxed mb-4 md:mb-6 text-sm md:text-base">
           Officially recognized by SPPU, the SDC operates with a clear mandate
           to bridge academic learning with personal and professional
           development. Our core objectives are:
         </p>
-
-        <div className="space-y-4">
+        <div className="space-y-3 md:space-y-4">
           {[
             {
               title: "Scheme Implementation",
@@ -130,15 +126,15 @@ export default function StudentWelfare() {
                 "To ensure the systematic follow-up, implementation, and auditing of all approved BSD schemes for maximum impact and transparency.",
             },
           ].map((item, index) => (
-            <div key={index} className="flex items-start gap-3 bg-white p-0">
+            <div key={index} className="flex items-start gap-3">
               <div className="flex-shrink-0 w-6 h-6 bg-secondary text-white rounded-full flex items-center justify-center text-sm font-bold mt-0.5">
                 {index + 1}
               </div>
               <div>
-                <h3 className="font-semibold text-secondary mb-1">
+                <h3 className="font-semibold text-secondary mb-1 text-sm md:text-base">
                   {item.title}
                 </h3>
-                <p className="text-gray-700 leading-relaxed text-sm">
+                <p className="text-gray-700 leading-relaxed text-xs md:text-sm">
                   {item.description}
                 </p>
               </div>
@@ -148,12 +144,11 @@ export default function StudentWelfare() {
       </section>
 
       {/* ================= Key Initiatives ================= */}
-      <section className="bg-white p-6 rounded-xl shadow-md">
-        <h2 className="text-xl font-semibold text-secondary mb-4">
+      <section className="bg-white p-4 md:p-6 rounded-xl shadow-md">
+        <h2 className="text-lg md:text-xl font-semibold text-secondary mb-3 md:mb-4">
           Our Key Student Development Initiatives
         </h2>
-
-        <div className="space-y-4">
+        <div className="space-y-3 md:space-y-4">
           {[
             {
               title: "Disaster Shield 2025: Workshop on Safety & Preparedness",
@@ -173,20 +168,19 @@ export default function StudentWelfare() {
           ].map((initiative, index) => (
             <div
               key={index}
-              className="flex gap-4 bg-white p-4 rounded-lg border border-gray-300 hover:shadow-md transition-shadow"
+              className="flex flex-col sm:flex-row gap-3 md:gap-4 bg-white p-3 md:p-4 rounded-lg border border-gray-300 hover:shadow-md transition-shadow"
             >
               {/* Text Content */}
               <div className="flex-1">
-                <h3 className="font-semibold text-secondary mb-2">
+                <h3 className="font-semibold text-secondary mb-2 text-sm md:text-base">
                   {initiative.title}
                 </h3>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-gray-700 leading-relaxed text-xs md:text-sm">
                   {initiative.description}
                 </p>
               </div>
-
               {/* Image Placeholder */}
-              <div className="flex-shrink-0 w-24 h-24 bg-gray-200 rounded-lg flex items-center justify-center">
+              <div className="flex-shrink-0 w-full sm:w-24 h-24 bg-gray-200 rounded-lg flex items-center justify-center">
                 <span className="text-gray-500 text-xs text-center">
                   Image
                   <br />
@@ -199,42 +193,57 @@ export default function StudentWelfare() {
       </section>
 
       {/* ================= Committee Members ================= */}
-      <section className="bg-white p-6 rounded-xl shadow-md">
-        <h2 className="text-xl font-semibold text-secondary mb-4">
+      <section className="bg-white p-4 md:p-6 rounded-xl shadow-md">
+        <h2 className="text-lg md:text-xl font-semibold text-secondary mb-3 md:mb-4">
           Student Development Cell Committee
         </h2>
-
-        <div className="overflow-x-auto">
-          <table className="w-full border border-gray-300 text-left text-gray-800 text-xs sm:text-sm">
-            <thead className="bg-gray-100">
-              <tr>
-                <th className="border border-gray-300 p-2">Staff Name</th>
-                <th className="border border-gray-300 p-2">Department</th>
-                <th className="border border-gray-300 p-2">Contact No.</th>
-                <th className="border border-gray-300 p-2">Mail ID</th>
-              </tr>
-            </thead>
-            <tbody>
-              {committeeMembers.map(([name, dept, contact, email], index) => (
-                <tr
-                  key={index}
-                  className="odd:bg-white even:bg-gray-50 hover:bg-blue-50 transition-colors"
-                >
-                  <td className="border border-gray-300 p-2">{name}</td>
-                  <td className="border border-gray-300 p-2">{dept}</td>
-                  <td className="border border-gray-300 p-2">{contact}</td>
-                  <td className="border border-gray-300 p-2 text-xs sm:text-sm">
-                    <a
-                      href={`mailto:${email}`}
-                      className="text-secondary hover:underline"
-                    >
-                      {email}
-                    </a>
-                  </td>
+        <div className="overflow-x-auto -mx-4 md:mx-0">
+          <div className="min-w-full inline-block align-middle">
+            <table className="w-full border border-gray-300 text-left text-gray-800">
+              <thead className="bg-gray-100">
+                <tr>
+                  <th className="border border-gray-300 p-2 text-xs md:text-sm font-medium">
+                    Staff Name
+                  </th>
+                  <th className="border border-gray-300 p-2 text-xs md:text-sm font-medium">
+                    Department
+                  </th>
+                  <th className="border border-gray-300 p-2 text-xs md:text-sm font-medium">
+                    Contact No.
+                  </th>
+                  <th className="border border-gray-300 p-2 text-xs md:text-sm font-medium">
+                    Mail ID
+                  </th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {committeeMembers.map(([name, dept, contact, email], index) => (
+                  <tr
+                    key={index}
+                    className="odd:bg-white even:bg-gray-50 hover:bg-blue-50 transition-colors"
+                  >
+                    <td className="border border-gray-300 p-2 text-xs md:text-sm">
+                      {name}
+                    </td>
+                    <td className="border border-gray-300 p-2 text-xs md:text-sm">
+                      {dept}
+                    </td>
+                    <td className="border border-gray-300 p-2 text-xs md:text-sm">
+                      {contact}
+                    </td>
+                    <td className="border border-gray-300 p-2">
+                      <a
+                        href={`mailto:${email}`}
+                        className="text-secondary hover:underline text-xs md:text-sm break-all"
+                      >
+                        {email}
+                      </a>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
     </div>

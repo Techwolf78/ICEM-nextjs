@@ -20,23 +20,23 @@ const Research = () => {
   return (
     <div className="w-full bg-white">
       {/* Hero Section */}
-      <section className="relative w-full h-[80vh] overflow-hidden">
+      <section className="relative w-full h-[50vh] md:h-[80vh] overflow-hidden">
         <Image
           src="/Facilities/BannerOverviewPage.webp"
           alt="Innovation at Indira College"
           fill
           className="object-cover"
-          priority // Important for above-the-fold images
+          priority
           unoptimized={true}
         />
 
         {/* Overlay for better readability */}
-        <div className="absolute inset-0 bg-black/40 flex flex-col justify-center px-6 md:px-20">
-          <div className="max-w-2xl bg-black/60 p-6 rounded-lg backdrop-blur-sm">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+        <div className="absolute inset-0 bg-black/40 flex flex-col justify-center px-4 md:px-20">
+          <div className="max-w-2xl bg-black/60 p-4 md:p-6 rounded-lg backdrop-blur-sm">
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-white mb-3 md:mb-4 leading-tight">
               Innovation that Makes a Difference
             </h1>
-            <p className="text-lg text-gray-100 leading-relaxed">
+            <p className="text-sm md:text-lg text-gray-100 leading-relaxed">
               Turn ideas into impact through real-world research, invention, and
               entrepreneurial thinking. Our research culture encourages
               curiosity, creativity, and collaboration — empowering students and
@@ -47,11 +47,11 @@ const Research = () => {
       </section>
 
       {/* Placeholder for next sections */}
-      <section className="py-10 text-center">
-        <h2 className="text-4xl font-bold text-secondary mb-6">
+      <section className="py-8 md:py-10 px-4 md:px-6 text-center">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary mb-4 md:mb-6">
           Research & Innovation
         </h2>
-        <p className="max-w-3xl mx-auto text-gray-700 leading-relaxed">
+        <p className="max-w-3xl mx-auto text-gray-700 leading-relaxed text-sm md:text-base">
           At Indira College, research and innovation are not confined to
           laboratories—they are embedded in the culture. We empower our students
           and faculty to imagine, investigate, and implement solutions for
@@ -62,36 +62,19 @@ const Research = () => {
       </section>
 
       {/* Research Highlights Summary Section */}
-      <section className="py-10 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-8">
+      <section className="py-8 md:py-10 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 text-center">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-secondary mb-6 md:mb-8">
             Research Highlights 2024-25
           </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4 mb-6 md:mb-8">
             {[
               { number: "5", label: "UGC Care Group 1" },
               { number: "26", label: "Scopus Indexed" },
               { number: "8", label: "Web of Science" },
               { number: "13", label: "Peer Reviewed" },
               { number: "75", label: "Student Publications" },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="bg-white p-4 rounded-lg shadow-md border border-gray-200"
-              >
-                <div className="text-2xl font-bold text-secondary mb-1">
-                  {item.number}
-                </div>
-                <div className="text-sm text-gray-700 leading-tight">
-                  {item.label}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-            {[
               { number: "13", label: "Books" },
               { number: "6", label: "Book Chapters" },
               { number: "20", label: "Patents Published" },
@@ -100,31 +83,32 @@ const Research = () => {
             ].map((item, index) => (
               <div
                 key={index}
-                className="bg-white p-4 rounded-lg shadow-md border border-gray-200"
+                className="bg-white p-3 md:p-4 rounded-lg shadow-sm md:shadow-md border border-gray-200"
               >
-                <div className="text-2xl font-bold text-secondary mb-1">
+                <div className="text-lg md:text-xl lg:text-2xl font-bold text-secondary mb-1">
                   {item.number}
                 </div>
-                <div className="text-sm text-gray-700 leading-tight">
+                <div className="text-xs md:text-sm text-gray-700 leading-tight">
                   {item.label}
                 </div>
               </div>
             ))}
           </div>
+
         </div>
       </section>
 
       {/* Seed Funding Initiative Section */}
-      <section className="py-10 bg-gray-50 ">
-        <div className="max-w-7xl mx-auto px-6 ">
+      <section className="py-8 md:py-10 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
           {/* Content and Image Row */}
-          <div className=" flex flex-col lg:flex-row gap-4 items-center mb-8">
+          <div className="flex flex-col lg:flex-row gap-6 md:gap-8 items-center mb-6 md:mb-8">
             {/* Text Content - Left Side */}
             <div className="flex-1">
-              <h2 className="text-3xl font-bold text-secondary mb-6 text-center lg:text-left">
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-secondary mb-4 md:mb-6 text-center lg:text-left">
                 Seed Funding Initiative
               </h2>
-              <p className="text-gray-700 leading-relaxed text-lg">
+              <p className="text-gray-700 leading-relaxed text-sm md:text-base lg:text-lg">
                 The Seed Funding program at ICEM is designed to catalyze
                 innovative research by providing initial financial support to
                 faculty members since 2022. This initiative aims to nurture
@@ -137,8 +121,8 @@ const Research = () => {
             </div>
 
             {/* Image - Right Side */}
-            <div className="flex-1">
-              <div className="relative h-65 p-4 rounded-lg overflow-hidden shadow-lg">
+            <div className="flex-1 w-full">
+              <div className="relative h-48 md:h-56 lg:h-64 rounded-lg overflow-hidden shadow-lg">
                 <Image
                   src="/nss/seed-funding.webp"
                   alt="Seed Funding Initiative"
@@ -150,101 +134,120 @@ const Research = () => {
           </div>
 
           {/* Projects Table */}
-          <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6 mb-8">
-            <h3 className="text-xl font-bold text-secondary mb-4 text-center">
+          <div className="bg-white rounded-lg shadow-md border border-gray-200 p-4 md:p-6 mb-6 md:mb-8">
+            <h3 className="text-lg md:text-xl font-bold text-secondary mb-3 md:mb-4 text-center">
               Sanctioned Seed Funding Projects for 2025-2026
             </h3>
 
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse border border-gray-300">
-                <thead>
-                  <tr className="bg-secondary text-white">
-                    <th className="border border-gray-300 p-3 text-left">
-                      S.No
-                    </th>
-                    <th className="border border-gray-300 p-3 text-left">
-                      Name of the Faculty
-                    </th>
-                    <th className="border border-gray-300 p-3 text-left">
-                      Department
-                    </th>
-                    <th className="border border-gray-300 p-3 text-left">
-                      Topic
-                    </th>
-                    <th className="border border-gray-300 p-3 text-left">
-                      Amount Sanctioned
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="hover:bg-gray-50">
-                    <td className="border border-gray-300 p-3">1</td>
-                    <td className="border border-gray-300 p-3">
-                      Dr. Saurabh Gupta
-                    </td>
-                    <td className="border border-gray-300 p-3">
-                      Mechanical Engineering
-                    </td>
-                    <td className="border border-gray-300 p-3">
-                      Sustainable parabolic solar cooker for rural area
-                    </td>
-                    <td className="border border-gray-300 p-3">₹60,000/-</td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="border border-gray-300 p-3">2</td>
-                    <td className="border border-gray-300 p-3">
-                      Prof. Pranali Khatake
-                    </td>
-                    <td className="border border-gray-300 p-3">
-                      Mechanical Engineering
-                    </td>
-                    <td className="border border-gray-300 p-3">
-                      Smart Material Filters used for automobile oil filtration
-                      process
-                    </td>
-                    <td className="border border-gray-300 p-3">₹40,000/-</td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="border border-gray-300 p-3">3</td>
-                    <td className="border border-gray-300 p-3">
-                      Prof. Ashwini Admane
-                    </td>
-                    <td className="border border-gray-300 p-3">
-                      Mechanical Engineering
-                    </td>
-                    <td className="border border-gray-300 p-3">
-                      Heating Water using the waste heat from domestic
-                      refrigerator condenser
-                    </td>
-                    <td className="border border-gray-300 p-3">₹40,000/-</td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="border border-gray-300 p-3">4</td>
-                    <td className="border border-gray-300 p-3">
-                      Prof. Ashwini Gaikwad
-                    </td>
-                    <td className="border border-gray-300 p-3">
-                      Mechanical Engineering
-                    </td>
-                    <td className="border border-gray-300 p-3">
-                      Dielectric Heating for Drying agriculture Produce and Food
-                    </td>
-                    <td className="border border-gray-300 p-3">₹40,000/-</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div className="overflow-x-auto -mx-2 md:mx-0">
+              <div className="min-w-full inline-block align-middle">
+                <table className="w-full border-collapse border border-gray-300">
+                  <thead>
+                    <tr className="bg-secondary text-white">
+                      <th className="border border-gray-300 p-2 md:p-3 text-left text-xs md:text-sm">
+                        S.No
+                      </th>
+                      <th className="border border-gray-300 p-2 md:p-3 text-left text-xs md:text-sm">
+                        Name of the Faculty
+                      </th>
+                      <th className="border border-gray-300 p-2 md:p-3 text-left text-xs md:text-sm">
+                        Department
+                      </th>
+                      <th className="border border-gray-300 p-2 md:p-3 text-left text-xs md:text-sm">
+                        Topic
+                      </th>
+                      <th className="border border-gray-300 p-2 md:p-3 text-left text-xs md:text-sm">
+                        Amount Sanctioned
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="hover:bg-gray-50">
+                      <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
+                        1
+                      </td>
+                      <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
+                        Dr. Saurabh Gupta
+                      </td>
+                      <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
+                        Mechanical Engineering
+                      </td>
+                      <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
+                        Sustainable parabolic solar cooker for rural area
+                      </td>
+                      <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
+                        ₹60,000/-
+                      </td>
+                    </tr>
+                    <tr className="hover:bg-gray-50">
+                      <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
+                        2
+                      </td>
+                      <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
+                        Prof. Pranali Khatake
+                      </td>
+                      <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
+                        Mechanical Engineering
+                      </td>
+                      <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
+                        Smart Material Filters used for automobile oil
+                        filtration process
+                      </td>
+                      <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
+                        ₹40,000/-
+                      </td>
+                    </tr>
+                    <tr className="hover:bg-gray-50">
+                      <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
+                        3
+                      </td>
+                      <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
+                        Prof. Ashwini Admane
+                      </td>
+                      <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
+                        Mechanical Engineering
+                      </td>
+                      <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
+                        Heating Water using the waste heat from domestic
+                        refrigerator condenser
+                      </td>
+                      <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
+                        ₹40,000/-
+                      </td>
+                    </tr>
+                    <tr className="hover:bg-gray-50">
+                      <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
+                        4
+                      </td>
+                      <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
+                        Prof. Ashwini Gaikwad
+                      </td>
+                      <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
+                        Mechanical Engineering
+                      </td>
+                      <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
+                        Dielectric Heating for Drying agriculture Produce and
+                        Food
+                      </td>
+                      <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
+                        ₹40,000/-
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* MSME Hackathon Section */}
-      <section className="py-10 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-secondary mb-6">
+      <section className="py-8 md:py-10 bg-white">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-center text-secondary mb-4 md:mb-6">
             MSME Hackathon 4.0
           </h2>
-          <p className="text-gray-700 text-center max-w-4xl mx-auto mb-8 leading-relaxed">
+          <p className="text-gray-700 text-center max-w-4xl mx-auto mb-6 md:mb-8 leading-relaxed text-sm md:text-base">
             The MSME Idea Hackathon 4.0 is a premier national-level innovation
             initiative by the Ministry of Micro, Small & Medium Enterprises
             (MSME), Government of India, under its MSME Innovative Scheme.
@@ -254,12 +257,12 @@ const Research = () => {
             Bharat @2047".
           </p>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-bold text-secondary mb-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-6 md:mb-8">
+            <div className="bg-gray-50 p-4 md:p-6 rounded-lg border border-gray-200">
+              <h3 className="text-lg md:text-xl font-bold text-secondary mb-3 md:mb-4">
                 Selection & Support Process
               </h3>
-              <ol className="list-decimal list-inside space-y-3 text-gray-700">
+              <ol className="list-decimal list-inside space-y-2 md:space-y-3 text-gray-700 text-sm md:text-base">
                 <li>
                   <strong>Host Institute Evaluation:</strong> Each HI assembles
                   expert panels to shortlist promising ideas.
@@ -275,11 +278,11 @@ const Research = () => {
               </ol>
             </div>
 
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-bold text-secondary mb-4">
+            <div className="bg-gray-50 p-4 md:p-6 rounded-lg border border-gray-200">
+              <h3 className="text-lg md:text-xl font-bold text-secondary mb-3 md:mb-4">
                 Impact & Achievements
               </h3>
-              <ul className="list-disc list-inside space-y-2 text-gray-700">
+              <ul className="list-disc list-inside space-y-2 md:space-y-2 text-gray-700 text-sm md:text-base">
                 <li>
                   <strong>Massive Reach:</strong> 29,000+ submissions, 400 ideas
                   awarded funding
@@ -295,34 +298,44 @@ const Research = () => {
               </ul>
             </div>
 
-            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-bold text-secondary mb-4">
+            <div className="bg-gray-50 p-4 md:p-6 rounded-lg border border-gray-200">
+              <h3 className="text-lg md:text-xl font-bold text-secondary mb-3 md:mb-4">
                 ICEM Funded Projects
               </h3>
-              <div className="space-y-4">
-                <div className="border-l-4 border-secondary pl-4">
-                  <h4 className="font-bold text-primary">
+              <div className="space-y-3 md:space-y-4">
+                <div className="border-l-4 border-secondary pl-3 md:pl-4">
+                  <h4 className="font-bold text-secondary text-sm md:text-base">
                     Utilization of Images for Monitoring Construction Progress
                   </h4>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-xs md:text-sm text-gray-600">
                     Gajendra Thakur - AI&DS Branch
                   </p>
-                  <p className="text-secondary font-semibold">₹13.5 Lakhs</p>
+                  <p className="text-secondary font-semibold text-sm md:text-base">
+                    ₹13.5 Lakhs
+                  </p>
                 </div>
-                <div className="border-l-4 border-secondary pl-4">
-                  <h4 className="font-bold text-primary">Emotion Detector</h4>
-                  <p className="text-sm text-gray-600">
+                <div className="border-l-4 border-secondary pl-3 md:pl-4">
+                  <h4 className="font-bold text-secondary text-sm md:text-base">
+                    Emotion Detector
+                  </h4>
+                  <p className="text-xs md:text-sm text-gray-600">
                     Sumit Kumbhar - Alard College of Pharmacy
                   </p>
-                  <p className="text-secondary font-semibold">₹13.5 Lakhs</p>
+                  <p className="text-secondary font-semibold text-sm md:text-base">
+                    ₹13.5 Lakhs
+                  </p>
                 </div>
-                <div className="border-l-4 border-secondary pl-4">
-                  <h4 className="font-bold text-primary">Hydrobot</h4>
-                  <p className="text-sm text-gray-600">
+                <div className="border-l-4 border-secondary pl-3 md:pl-4">
+                  <h4 className="font-bold text-secondary text-sm md:text-base">
+                    Hydrobot
+                  </h4>
+                  <p className="text-xs md:text-sm text-gray-600">
                     Shon Rakesh Gaikwad - Trinity College of Engineering &
                     Research
                   </p>
-                  <p className="text-secondary font-semibold">₹14 Lakhs</p>
+                  <p className="text-secondary font-semibold text-sm md:text-base">
+                    ₹14 Lakhs
+                  </p>
                 </div>
               </div>
             </div>
@@ -331,15 +344,15 @@ const Research = () => {
       </section>
 
       {/* Department Information Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-8">
+      <section className="py-8 md:py-12 lg:py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-secondary mb-6 md:mb-8">
             Research Information
           </h2>
 
-          <div className="grid grid-cols-4 gap-6">
-            {/* Left Sidebar Tabs */}
-            <div className="col-span-1 bg-white shadow-md border border-gray-200 rounded-lg p-4">
+          <div className="flex flex-col lg:flex-row gap-6">
+            {/* Left Sidebar Tabs - Stack vertically on mobile */}
+            <div className="lg:w-1/4 bg-white shadow-md border border-gray-200 rounded-lg p-4">
               <ul className="space-y-2">
                 {[
                   "Overview",
@@ -352,10 +365,10 @@ const Research = () => {
                   <li
                     key={i}
                     onClick={() => setActiveTab(tab)}
-                    className={`p-3 rounded-md cursor-pointer font-medium ${
+                    className={`p-3 rounded-md cursor-pointer font-medium text-sm md:text-base ${
                       activeTab === tab
                         ? "bg-tertiary border-l-4 border-secondary text-secondary"
-                        : "hover:bg-gray-100 text-primary"
+                        : "hover:bg-gray-100 text-secondary"
                     }`}
                   >
                     {tab}
@@ -365,7 +378,7 @@ const Research = () => {
             </div>
 
             {/* Right Accordion */}
-            <div className="col-span-3 bg-white shadow-md border border-gray-200 rounded-lg">
+            <div className="lg:w-3/4 bg-white shadow-md border border-gray-200 rounded-lg">
               {/* Overview Accordion */}
               {activeTab === "Overview" && (
                 <>
@@ -374,7 +387,7 @@ const Research = () => {
                       title: "1. About the R&D Cell",
                       content: (
                         <>
-                          <p className="text-primary">
+                          <p className="text-secondary text-sm md:text-base">
                             Indira College of Engineering and Management is
                             committed to inculcate research culture among
                             faculty, researchers and students. The R&D Cell aims
@@ -384,7 +397,7 @@ const Research = () => {
                             and social significance will be identified and thus
                             contributing to the nation development.
                           </p>
-                          <p className="mt-3 text-primary">
+                          <p className="mt-3 text-secondary text-sm md:text-base">
                             The research policy defines the applicable rules and
                             regulations to be adhered while carrying out various
                             research activities and norms related to safe and
@@ -407,7 +420,7 @@ const Research = () => {
                     {
                       title: "2. Objectives",
                       content: (
-                        <ul className="list-disc pl-6 space-y-2 text-primary">
+                        <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
                           <li>
                             To identify and inform all researchers about the
                             research opportunities available in academic,
@@ -450,7 +463,7 @@ const Research = () => {
                     {
                       title: "3. Memorandums of Understanding (MoUs)",
                       content: (
-                        <ul className="list-disc pl-6 space-y-2 text-primary">
+                        <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
                           <li>
                             MoU with Consortium of Technical Education for
                             innovative programs and research initiatives.
@@ -502,7 +515,6 @@ const Research = () => {
                       title: "4. Research & Development Documents",
                       content: (
                         <div className="space-y-4">
-                          {/* Single expandable item for Ph.D Guides */}
                           <ExpandableTableSection
                             title="Registered Ph.D Guides"
                             tables={[
@@ -521,7 +533,6 @@ const Research = () => {
                             ]}
                           />
 
-                          {/* Single expandable item for R&D Committee */}
                           <ExpandableTableSection
                             title="Research & Development Committee"
                             tables={[
@@ -548,10 +559,10 @@ const Research = () => {
                         onClick={() =>
                           setActiveAccordion(activeAccordion === i ? null : i)
                         }
-                        className={`w-full flex justify-between items-center p-4 text-left font-medium ${
+                        className={`w-full flex justify-between items-center p-3 md:p-4 text-left font-medium text-sm md:text-base ${
                           activeAccordion === i
                             ? "bg-secondary text-white"
-                            : "text-primary hover:bg-tertiary"
+                            : "text-secondary hover:bg-tertiary"
                         }`}
                       >
                         {section.title}
@@ -560,7 +571,7 @@ const Research = () => {
                         </span>
                       </button>
                       {activeAccordion === i && (
-                        <div className="p-4 bg-tertiary text-primary">
+                        <div className="p-3 md:p-4 bg-tertiary text-secondary">
                           {section.content}
                         </div>
                       )}
@@ -576,7 +587,7 @@ const Research = () => {
                     {
                       title: "1. Journals",
                       content: (
-                        <ul className="list-disc pl-6 space-y-2 text-secondary">
+                        <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
                           <li>
                             <a
                               href={BEComp}
@@ -616,7 +627,7 @@ const Research = () => {
                     {
                       title: "2. Conferences",
                       content: (
-                        <ul className="list-disc pl-6 space-y-2 text-secondary">
+                        <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
                           <li>
                             <a
                               href={BEComp}
@@ -653,7 +664,7 @@ const Research = () => {
                     {
                       title: "3. Books",
                       content: (
-                        <ul className="list-disc pl-6 space-y-2 text-secondary">
+                        <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
                           <li>
                             <a
                               href={BEComp}
@@ -693,10 +704,10 @@ const Research = () => {
                         onClick={() =>
                           setActiveAccordion(activeAccordion === i ? null : i)
                         }
-                        className={`w-full flex justify-between items-center p-4 text-left font-medium ${
+                        className={`w-full flex justify-between items-center p-3 md:p-4 text-left font-medium text-sm md:text-base ${
                           activeAccordion === i
                             ? "bg-secondary text-white"
-                            : "text-primary hover:bg-tertiary"
+                            : "text-secondary hover:bg-tertiary"
                         }`}
                       >
                         {section.title}
@@ -705,7 +716,7 @@ const Research = () => {
                         </span>
                       </button>
                       {activeAccordion === i && (
-                        <div className="p-4 bg-tertiary text-primary">
+                        <div className="p-3 md:p-4 bg-tertiary text-secondary">
                           {section.content}
                         </div>
                       )}
@@ -721,7 +732,7 @@ const Research = () => {
                     {
                       title: "1. Patents",
                       content: (
-                        <ul className="list-disc pl-6 space-y-2 text-secondary">
+                        <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
                           <li>
                             <a
                               href={BEComp}
@@ -758,7 +769,7 @@ const Research = () => {
                     {
                       title: "2. Copyrights",
                       content: (
-                        <ul className="list-disc pl-6 space-y-2 text-secondary">
+                        <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
                           <li>
                             <a
                               href={BEComp}
@@ -785,7 +796,7 @@ const Research = () => {
                     {
                       title: "3. Trademarks",
                       content: (
-                        <ul className="list-disc pl-6 space-y-2 text-secondary">
+                        <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
                           <li>
                             <a
                               href={BEComp}
@@ -815,10 +826,10 @@ const Research = () => {
                         onClick={() =>
                           setActiveAccordion(activeAccordion === i ? null : i)
                         }
-                        className={`w-full flex justify-between items-center p-4 text-left font-medium transition-all duration-200 ${
+                        className={`w-full flex justify-between items-center p-3 md:p-4 text-left font-medium text-sm md:text-base transition-all duration-200 ${
                           activeAccordion === i
                             ? "bg-secondary text-white"
-                            : "text-primary hover:bg-tertiary"
+                            : "text-secondary hover:bg-tertiary"
                         }`}
                       >
                         {section.title}
@@ -828,7 +839,7 @@ const Research = () => {
                       </button>
 
                       {activeAccordion === i && (
-                        <div className="p-4 bg-tertiary text-primary rounded-b-md">
+                        <div className="p-3 md:p-4 bg-tertiary text-secondary rounded-b-md">
                           {section.content}
                         </div>
                       )}
@@ -844,7 +855,7 @@ const Research = () => {
                     {
                       title: "1. Workshops/Seminars Conducted AY-[2023-24]",
                       content: (
-                        <ul className="list-disc pl-6 space-y-2 text-secondary">
+                        <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
                           <li>
                             <a
                               href={BEComp}
@@ -861,7 +872,7 @@ const Research = () => {
                     {
                       title: "2. Workshops/Seminars Conducted AY-[2022-23]",
                       content: (
-                        <ul className="list-disc pl-6 space-y-2 text-secondary">
+                        <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
                           <li>
                             <a
                               href={BEComp}
@@ -878,7 +889,7 @@ const Research = () => {
                     {
                       title: "3. Workshops/Seminars Conducted AY-[2021-22]",
                       content: (
-                        <ul className="list-disc pl-6 space-y-2 text-secondary">
+                        <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
                           <li>
                             <a
                               href={BEComp}
@@ -898,10 +909,10 @@ const Research = () => {
                         onClick={() =>
                           setActiveAccordion(activeAccordion === i ? null : i)
                         }
-                        className={`w-full flex justify-between items-center p-4 text-left font-medium transition-all duration-200 ${
+                        className={`w-full flex justify-between items-center p-3 md:p-4 text-left font-medium text-sm md:text-base transition-all duration-200 ${
                           activeAccordion === i
                             ? "bg-secondary text-white"
-                            : "text-primary hover:bg-tertiary"
+                            : "text-secondary hover:bg-tertiary"
                         }`}
                       >
                         {section.title}
@@ -911,7 +922,7 @@ const Research = () => {
                       </button>
 
                       {activeAccordion === i && (
-                        <div className="p-4 bg-tertiary text-primary rounded-b-md">
+                        <div className="p-3 md:p-4 bg-tertiary text-secondary rounded-b-md">
                           {section.content}
                         </div>
                       )}
@@ -927,7 +938,7 @@ const Research = () => {
                     {
                       title: "Research Policy [2023-24]",
                       content: (
-                        <ul className="list-disc pl-6 space-y-2 text-secondary">
+                        <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
                           <li>
                             <a
                               href={BEComp}
@@ -944,7 +955,7 @@ const Research = () => {
                     {
                       title: "Research Policy [2022-23]",
                       content: (
-                        <ul className="list-disc pl-6 space-y-2 text-secondary">
+                        <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
                           <li>
                             <a
                               href={BEComp}
@@ -961,7 +972,7 @@ const Research = () => {
                     {
                       title: "Research Policy [2021-22]",
                       content: (
-                        <ul className="list-disc pl-6 space-y-2 text-secondary">
+                        <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
                           <li>
                             <a
                               href={BEComp}
@@ -981,10 +992,10 @@ const Research = () => {
                         onClick={() =>
                           setActiveAccordion(activeAccordion === i ? null : i)
                         }
-                        className={`w-full flex justify-between items-center p-4 text-left font-medium transition-all duration-200 ${
+                        className={`w-full flex justify-between items-center p-3 md:p-4 text-left font-medium text-sm md:text-base transition-all duration-200 ${
                           activeAccordion === i
                             ? "bg-secondary text-white"
-                            : "text-primary hover:bg-tertiary"
+                            : "text-secondary hover:bg-tertiary"
                         }`}
                       >
                         {section.title}
@@ -994,7 +1005,7 @@ const Research = () => {
                       </button>
 
                       {activeAccordion === i && (
-                        <div className="p-4 bg-tertiary text-primary rounded-b-md">
+                        <div className="p-3 md:p-4 bg-tertiary text-secondary rounded-b-md">
                           {section.content}
                         </div>
                       )}
@@ -1011,77 +1022,84 @@ const Research = () => {
                       title: "ICEM Research Committee AY 2025-26",
                       content: (
                         <div className="bg-white rounded-lg border border-gray-200">
-                          <table className="w-full border-collapse border border-gray-300">
-                            <thead>
-                              <tr className="bg-secondary text-white">
-                                <th className="border border-gray-300 p-3 text-left">
-                                  Sr.No.
-                                </th>
-                                <th className="border border-gray-300 p-3 text-left">
-                                  Name of the Staff
-                                </th>
-                                <th className="border border-gray-300 p-3 text-left">
-                                  Designation
-                                </th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              {[
-                                {
-                                  name: "Dr. Poorna Shankar",
-                                  designation: "Coordinator",
-                                },
-                                {
-                                  name: "Dr. Sunil Damodar Rathod",
-                                  designation: "Member",
-                                },
-                                {
-                                  name: "Mr. Shreyas Rajendra Satpute",
-                                  designation: "Member",
-                                },
-                                {
-                                  name: "Dr. Manjusha Rahul Tatiya",
-                                  designation: "Member",
-                                },
-                                {
-                                  name: "Mr. Vishal Abhiman Meshram",
-                                  designation: "Member",
-                                },
-                                {
-                                  name: "Dr. Archana Ravindra Salve",
-                                  designation: "Member",
-                                },
-                                {
-                                  name: "Mrs. Aditee Hrishikesh Huparikar",
-                                  designation: "Member",
-                                },
-                                {
-                                  name: "Dr. Darshana Jignesh Desai",
-                                  designation: "Member",
-                                },
-                                {
-                                  name: "Dr. Mrs. Priya Jeevan Pise",
-                                  designation: "Member",
-                                },
-                                {
-                                  name: "Mr. Sudhir Kumar Sawarkar",
-                                  designation: "Member",
-                                },
-                              ].map((member, index) => (
-                                <tr key={index} className="hover:bg-gray-50">
-                                  <td className="border border-gray-300 p-3">
-                                    {index + 1}
-                                  </td>
-                                  <td className="border border-gray-300 p-3">
-                                    {member.name}
-                                  </td>
-                                  <td className="border border-gray-300 p-3">
-                                    {member.designation}
-                                  </td>
-                                </tr>
-                              ))}
-                            </tbody>
-                          </table>
+                          <div className="overflow-x-auto -mx-2 md:mx-0">
+                            <div className="min-w-full inline-block align-middle">
+                              <table className="w-full border-collapse border border-gray-300">
+                                <thead>
+                                  <tr className="bg-secondary text-white">
+                                    <th className="border border-gray-300 p-2 md:p-3 text-left text-xs md:text-sm">
+                                      Sr.No.
+                                    </th>
+                                    <th className="border border-gray-300 p-2 md:p-3 text-left text-xs md:text-sm">
+                                      Name of the Staff
+                                    </th>
+                                    <th className="border border-gray-300 p-2 md:p-3 text-left text-xs md:text-sm">
+                                      Designation
+                                    </th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  {[
+                                    {
+                                      name: "Dr. Poorna Shankar",
+                                      designation: "Coordinator",
+                                    },
+                                    {
+                                      name: "Dr. Sunil Damodar Rathod",
+                                      designation: "Member",
+                                    },
+                                    {
+                                      name: "Mr. Shreyas Rajendra Satpute",
+                                      designation: "Member",
+                                    },
+                                    {
+                                      name: "Dr. Manjusha Rahul Tatiya",
+                                      designation: "Member",
+                                    },
+                                    {
+                                      name: "Mr. Vishal Abhiman Meshram",
+                                      designation: "Member",
+                                    },
+                                    {
+                                      name: "Dr. Archana Ravindra Salve",
+                                      designation: "Member",
+                                    },
+                                    {
+                                      name: "Mrs. Aditee Hrishikesh Huparikar",
+                                      designation: "Member",
+                                    },
+                                    {
+                                      name: "Dr. Darshana Jignesh Desai",
+                                      designation: "Member",
+                                    },
+                                    {
+                                      name: "Dr. Mrs. Priya Jeevan Pise",
+                                      designation: "Member",
+                                    },
+                                    {
+                                      name: "Mr. Sudhir Kumar Sawarkar",
+                                      designation: "Member",
+                                    },
+                                  ].map((member, index) => (
+                                    <tr
+                                      key={index}
+                                      className="hover:bg-gray-50"
+                                    >
+                                      <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
+                                        {index + 1}
+                                      </td>
+                                      <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
+                                        {member.name}
+                                      </td>
+                                      <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
+                                        {member.designation}
+                                      </td>
+                                    </tr>
+                                  ))}
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
                         </div>
                       ),
                     },
@@ -1091,10 +1109,10 @@ const Research = () => {
                         onClick={() =>
                           setActiveAccordion(activeAccordion === i ? null : i)
                         }
-                        className={`w-full flex justify-between items-center p-4 text-left font-medium transition-all duration-200 ${
+                        className={`w-full flex justify-between items-center p-3 md:p-4 text-left font-medium text-sm md:text-base transition-all duration-200 ${
                           activeAccordion === i
                             ? "bg-secondary text-white"
-                            : "text-primary hover:bg-tertiary"
+                            : "text-secondary hover:bg-tertiary"
                         }`}
                       >
                         {section.title}
@@ -1104,7 +1122,7 @@ const Research = () => {
                       </button>
 
                       {activeAccordion === i && (
-                        <div className="p-4 bg-tertiary text-primary rounded-b-md">
+                        <div className="p-3 md:p-4 bg-tertiary text-secondary rounded-b-md">
                           {section.content}
                         </div>
                       )}

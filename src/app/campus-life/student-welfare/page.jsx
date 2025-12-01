@@ -24,17 +24,17 @@ export default function StudentWelfarePage() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row ">
           {/* Main Content */}
-          <div className="w-full p-1 ">
+          <div className="py-6 ">
             <section id="student-welfare">
               <StudentWelfare />
             </section>
-            <section id="iic" className="scroll-mt-[110px] scroll-smooth">
+            <section id="iic" className="scroll-mt-[110px] scroll-smooth py-6">
               <IIC />
             </section>
 
             <section
               id="student-council"
-              className="scroll-mt-[110px] scroll-smooth"
+              className="scroll-mt-[110px] scroll-smooth py-6"
             >
               <IcemStudentCouncil />
             </section>

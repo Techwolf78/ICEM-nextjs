@@ -1,132 +1,127 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React from "react";
+import Image from "next/image";
 import Link from "next/link";
+import { Instagram, Heart, MessageCircle, Play } from "lucide-react";
+
+// STATIC DATA
+const posts = [
+  {
+    id: 1,
+    type: "image",
+    link: "https://www.instagram.com/p/DPv1b_BjHqw/ ", // Replace with actual link
+    src: "/socials/post1.webp",
+    alt: "Students celebrating at Indira College",
+    likes: "518",
+    comments: "2",
+  },
+  {
+    id: 2,
+    type: "image",
+    link: "https://www.instagram.com/p/DPTnMazDKut/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    src: "/socials/post2.webp",
+    alt: "Campus event highlights",
+    likes: "30",
+    comments: "0",
+  },
+  {
+    id: 3,
+    type: "video",
+    link: "https://www.instagram.com/reel/DPTtTCXjPrE/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    src: "/socials/post3.mp4",
+    alt: "Academic achievement awards video",
+    likes: "1862",
+    comments: "5",
+  },
+];
 
 export default function InstagramMosaic() {
-  const containerRef = useRef(null);
-  const sectionRef = useRef(null);
-  const [shouldLoad, setShouldLoad] = useState(false);
-
-  useEffect(() => {
-    if (!sectionRef.current) return;
-
-    // ⬅️ Lazy-load when user scrolls NEAR the section
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setShouldLoad(true);
-            observer.disconnect(); // Load only once
-          }
-        });
-      },
-      {
-        root: null,
-        threshold: 0.1,
-        rootMargin: "300px", // ⬅️ Loads one section BEFORE entering view
-      }
-    );
-
-    observer.observe(sectionRef.current);
-
-    return () => observer.disconnect();
-  }, []);
-
-  // Only load IG script AFTER section comes near viewport
-  useEffect(() => {
-    if (!shouldLoad) return;
-
-    // 1. Load Instagram script
-    if (window.instgrm) {
-      window.instgrm.Embeds.process();
-    } else {
-      const script = document.createElement("script");
-      script.src = "https://www.instagram.com/embed.js";
-      script.async = true;
-      script.defer = true;
-      script.onload = () => {
-        if (window.instgrm) window.instgrm.Embeds.process();
-      };
-      document.body.appendChild(script);
-    }
-
-    // 2. Resize Observer to fix layout issues
-    let timeout;
-    const resizeObserver = new ResizeObserver(() => {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => {
-        if (typeof ScrollTrigger !== "undefined") {
-          ScrollTrigger.refresh();
-        }
-      }, 500);
-    });
-
-    if (containerRef.current) {
-      resizeObserver.observe(containerRef.current);
-    }
-
-    return () => {
-      resizeObserver.disconnect();
-      clearTimeout(timeout);
-    };
-  }, [shouldLoad]);
-
-  const posts = [
-    "https://www.instagram.com/p/DP0GgGyCEa9/?utm_source=ig_embed",
-    "https://www.instagram.com/p/DPv1b_BjHqw/?utm_source=ig_embed",
-    "https://www.instagram.com/p/DPLxX_7jFyx/?utm_source=ig_embed",
-  ];
-
   return (
-    <section
-      ref={sectionRef}
-      className="w-full py-12 bg-white relative z-10"
-    >
-      <h2 className="text-3xl font-semibold text-center mb-10">
-        <span className="text-secondary">#Connect</span> with us on Socials
-      </h2>
+    <section className="w-full py-16 bg-white relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        {/* HEADER */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+            <span className="text-secondary">#Connect</span> with us
+          </h2>
+          <p className="mt-3 text-gray-500 text-lg">
+            Follow our journey on Instagram @indiracollege
+          </p>
+        </div>
 
-      {/* Render the IG embeds ONLY after it starts loading */}
-      <div
-        ref={containerRef}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6 md:px-12 max-w-7xl mx-auto"
-        style={{ contain: "content" }}
-      >
-        {shouldLoad &&
-          posts.map((url, index) => (
+        {/* GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {posts.map((post) => (
             <Link
-              key={index}
-              href={url}
+              key={post.id}
+              href={post.link}
               target="_blank"
               rel="noopener noreferrer"
-              className={`w-full flex justify-center items-center relative cursor-pointer transition-transform hover:scale-[1.02] ${
-                index > 0 ? "hidden md:flex" : ""
-              }`}
-              style={{ minHeight: "550px" }}
+              className="group relative block w-full aspect-square sm:aspect-[4/5] overflow-hidden rounded-2xl bg-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              aria-label={`View post: ${post.alt}`}
             >
-              <div className="absolute inset-0 z-20 bg-transparent" />
+              {/* MEDIA RENDERER */}
+              {post.type === "video" ? (
+                <div className="relative w-full h-full">
+                  <video
+                    src={post.src}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline // Crucial for iOS
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Video Indicator Icon (Top Right) */}
+                  <div className="absolute top-3 right-3 bg-black/50 p-1.5 rounded-full backdrop-blur-md">
+                    <Play className="w-4 h-4 text-white fill-white" />
+                  </div>
+                </div>
+              ) : (
+                <Image
+                  src={post.src}
+                  alt={post.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              )}
 
-              <blockquote
-                className="instagram-media"
-                data-instgrm-permalink={url}
-                data-instgrm-version="14"
-                style={{
-                  background: "#FFF",
-                  border: 0,
-                  borderRadius: "12px",
-                  boxShadow:
-                    "0 0 1px 0 rgba(0,0,0,0.5), 0 4px 10px 0 rgba(0,0,0,0.15)",
-                  margin: "auto",
-                  padding: 0,
-                  width: "100%",
-                  maxWidth: "350px",
-                  pointerEvents: "none",
-                }}
-              ></blockquote>
+              {/* OVERLAY (Appears on Hover) */}
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white gap-4 backdrop-blur-[2px] z-20">
+                {/* Instagram Icon */}
+                <Instagram className="w-10 h-10 mb-2" />
+
+                {/* Stats */}
+                <div className="flex items-center gap-6 font-semibold text-lg">
+                  <div className="flex items-center gap-2">
+                    <Heart className="w-6 h-6 fill-white" />
+                    <span>{post.likes}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <MessageCircle className="w-6 h-6 fill-white" />
+                    <span>{post.comments}</span>
+                  </div>
+                </div>
+
+                <span className="mt-4 text-sm font-medium uppercase tracking-wider border border-white/50 px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors">
+                  View Post
+                </span>
+              </div>
             </Link>
           ))}
+        </div>
+
+        {/* MOBILE BUTTON */}
+        <div className="mt-10 text-center sm:hidden">
+          <Link
+            href="https://www.instagram.com/icem_pune?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" // Replace with actual profile link
+            target="_blank"
+            className="inline-flex items-center justify-center px-8 py-3 bg-secondary text-white font-semibold rounded-full shadow-lg"
+          >
+            Visit Profile
+          </Link>
+        </div>
       </div>
     </section>
   );

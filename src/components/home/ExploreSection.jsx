@@ -96,17 +96,17 @@ const ExploreSection = () => {
         {/* MAIN GRID */}
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[1.4fr_0.8fr] gap-12 lg:gap-16 items-center">
           {/* LEFT COLUMN: Text Content */}
-          <div className="flex flex-col space-y-6 text-center lg:text-left items-center lg:items-start order-1">
+          <div className="flex flex-col space-y-6 text-left lg:text-left items-center lg:items-start order-1">
             <div className="fade-text space-y-2">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-800 leading-tight">
+              <h2 className="text-xl sm:text-3xl lg:text-4xl font-semibold text-gray-800 leading-tight">
                 Explore Your Potential At
               </h2>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-secondary leading-tight bg-clip-text">
+              <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-secondary leading-tight bg-clip-text">
                 INDIRA COLLEGE OF ENGINEERING & MANAGEMENT
               </h2>
             </div>
 
-            <p className="fade-text text-gray-600 text-base sm:text-lg lg:text-xl leading-relaxed sm:leading-loose max-w-3xl mx-auto lg:mx-0">
+            <p className="fade-text text-gray-600 text-base sm:text-lg lg:text-xl text-justify leading-relaxed sm:leading-loose max-w-3xl mx-auto lg:mx-0">
               Located near Pune, Indira College of Engineering & Management, one
               of the leading NAAC accredited engineering institutions, offers a
               world of learning to help you achieve your goals. Choose from

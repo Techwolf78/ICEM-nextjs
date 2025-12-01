@@ -25,58 +25,96 @@ export default function Civil() {
   return (
     <div className="w-full bg-white text-white">
       {/* -------------------------------------- HERO SECTION -------------------------------------- */}
-      <div className="relative w-full overflow-hidden h-[60vh] md:h-[75vh] flex items-center">
-        <div className="absolute inset-0">
-          <Image
-            src="/Programs/computer.jpg"
-            alt="Civil Engineering Department"
-            fill
-            className="object-cover object-center scale-105 opacity-90"
-            priority
-          />
-        </div>
+      <div className="relative w-full overflow-hidden 
+  h-[55vh] sm:h-[65vh] md:h-[70vh] lg:h-[75vh] flex items-center">
 
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10" />
-
-        <div className="relative max-w-[1500px] px-4 sm:px-6 md:px-12 lg:px-20 z-20">
-  <div className="max-w-3xl text-white">
-
-    {/* Heading */}
-    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug">
-      Department of Civil Engineering
-    </h2>
-
-    {/* Description */}
-    <p className="mt-3 sm:mt-4 text-white/80 leading-relaxed max-w-2xl text-sm sm:text-base">
-      The Department of Civil Engineering at Indira College of Engineering and
-      Management (ICEM) stands as a pillar of innovation, knowledge, and
-      excellence in shaping tomorrow’s infrastructure leaders.
-      <br />
-      <br />
-      The department is equipped with well-established laboratories, modern
-      instruments, advanced computing facilities with licensed software, and
-      interactive teaching aids such as models, visual charts, and multimedia
-      content. It emphasizes research and development in Structural,
-      Geotechnical, Transportation, Water Resources, and Environmental
-      Engineering.
-    </p>
-
-    {/* Buttons */}
-    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 w-full sm:w-auto">
-      <button
-        onClick={handleBrochureDownload}
-        className="bg-secondary text-white px-6 sm:px-8 py-3 rounded-lg font-semibold text-sm sm:text-base w-full sm:w-auto"
-      >
-        Download Brochure
-      </button>
-    </div>
-
+  {/* Background Image */}
+  <div className="absolute inset-0">
+    <Image
+      src="/Programs/computer.jpg"
+      alt="Civil Engineering Department"
+      fill
+      className="
+        object-cover 
+        object-center 
+        md:object-[60%]   /* better framing on small desktop */
+        scale-100 
+        md:scale-105 
+        lg:scale-110 
+        opacity-90
+      "
+      priority
+    />
   </div>
+
+  {/* Gradient Overlay */}
+  <div
+    className="
+      absolute inset-0 
+      bg-gradient-to-r 
+      from-black/85 
+      via-black/60 
+      to-transparent 
+      md:via-black/50 
+      lg:via-black/40 
+      z-10
+    "
+  />
+
+  {/* Content Wrapper */}
+  <div className="relative max-w-[1400px] px-4 sm:px-6 md:px-10 lg:px-20 z-20">
+    <div className="max-w-2xl md:max-w-xl lg:max-w-3xl text-white">
+
+      {/* Heading */}
+      <h2
+        className="
+          text-2xl sm:text-2xl md:text-2xl lg:text-4xl
+          font-bold leading-tight md:leading-snug
+        "
+      >
+        Department of Civil Engineering
+      </h2>
+
+      {/* Description */}
+      <p
+        className="
+          mt-3 sm:mt-4 
+          text-white/80 
+          leading-relaxed 
+          max-w-xl md:max-w-md lg:max-w-xl
+          text-xs sm:text-sm md:text-base text-justify
+        "
+      >
+        The Department of Civil Engineering at Indira College of Engineering and
+        Management (ICEM) stands as a pillar of innovation, knowledge, and
+        excellence in shaping tomorrow’s infrastructure leaders.
+        <br />
+        <br />
+        The department is equipped with well-established laboratories, modern
+        instruments, advanced computing facilities with licensed software, and
+        interactive teaching aids such as models, visual charts, and multimedia
+        content. It emphasizes research and development in Structural,
+        Geotechnical, Transportation, Water Resources, and Environmental
+        Engineering.
+      </p>
+
+      {/* Buttons */}
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 w-full sm:w-auto">
+        <button
+          onClick={handleBrochureDownload}
+          className="bg-secondary text-white px-6 sm:px-8 py-3 rounded-lg font-semibold text-sm sm:text-md w-full sm:w-auto"
+        >
+          Download Brochure
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  {/* Bottom Fade Mask */}
+  <div className="absolute bottom-0 w-full h-20 bg-gradient-to-t from-black/50 to-transparent" />
 </div>
 
-
-        <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-black/60 to-transparent" />
-      </div>
 
       {/* -------------------------------------- PROGRAM HIGHLIGHTS -------------------------------------- */}
       <div className="w-full bg-[#f7f7f7] py-16 text-black">

@@ -8,7 +8,6 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 
-
 export default function Overview() {
   const leaders = [
     {
@@ -371,7 +370,7 @@ export default function Overview() {
                 {/* Updated Image */}
                 <div className="w-full h-[380px] relative rounded-lg overflow-hidden">
                   <Image
-                    src="/TaritaMam1.jpg" // ← your image path
+                    src="/Faculty/tarita_shankar.webp" // ← your image path
                     alt="Dr. Tarita Shankar"
                     fill
                     className="object-contain"
@@ -528,10 +527,10 @@ export default function Overview() {
               {institutes.map((inst, index) => {
                 // Select image based on institute name
                 const imageSrc = inst.name.includes("Global Business School")
-                  ? "/IGSB.jpg"
+                  ? "/Facilities/BannerOverviewPage.webp"
                   : inst.name.includes("Engineering & Management")
-                  ? "/ICEM.jpg"
-                  : "/placeholder.jpg";
+                  ? "/Facilities/BannerOverviewPage.webp"
+                  : "/placeholder.webp";
 
                 return (
                   <div
@@ -574,12 +573,12 @@ export default function Overview() {
               {leaders.map((leader, index) => {
                 // Assign images by index
                 const leaderImages = [
-                  "/NK.jpg", // For Dr. Nilesh Uke
-                  "/Soumitra.jpg", // For Dr. Soumitra S Das (replace with correct file)
-                  "/Saurabh.jpg", // For Dr. Saurabh Harishchand Gupta (replace if needed)
+                  "/Faculty/nilesh_uke.webp", // For Dr. Nilesh Uke
+                  "/Faculty/soumitra_das.webp", // For Dr. Soumitra S Das (replace with correct file)
+                  "/Faculty/saurabh_gupta.PNG", // For Dr. Saurabh Harishchand Gupta (replace if needed)
                 ];
 
-                const imgSrc = leaderImages[index] || "/placeholder.jpg";
+                const imgSrc = leaderImages[index] || "/placeholder.webp";
 
                 return (
                   <div

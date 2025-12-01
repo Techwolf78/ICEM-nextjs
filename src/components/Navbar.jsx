@@ -335,7 +335,7 @@ const Navbar = () => {
         <div className="w-[70%] md:w-[30%] h-full flex items-center justify-start pl-2 md:pl-0 md:justify-center">
           <Link href="/">
             <Image
-              src="/Logo.png"
+              src="/Logo.webp"
               alt="Logo"
               height={260}
               width={260}

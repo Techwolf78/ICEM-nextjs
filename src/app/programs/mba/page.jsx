@@ -38,8 +38,8 @@ export default function MBA() {
 
   const imageSets = {
     marketing: [
-      "/Programs/MBA/MBA1.jpg",
-      "/Programs/MBA/MBA2.jpg",
+      "/Programs/MBA/MBA1.webp",
+      "/Programs/MBA/MBA2.webp",
       "/Programs/MBA/MBA3.webp",
     ],
     finance: [

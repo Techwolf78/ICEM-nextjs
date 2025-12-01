@@ -85,7 +85,7 @@ export default function Accreditation() {
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
           <div className="flex flex-col items-center justify-center p-4 transition-transform duration-300 hover:scale-105 shadow-lg rounded-lg shadow-gray-200">
             <Image
-              src="/homepage-logos/NAAC.jpg"
+              src="/homepage-logos/NAAC.webp"
               alt="NAAC"
               width={350}
               height={350}
@@ -94,7 +94,7 @@ export default function Accreditation() {
           </div>
           <div className="flex flex-col items-center justify-center p-4 transition-transform duration-300 hover:scale-105 shadow-lg rounded-lg shadow-gray-200">
             <Image
-              src="/homepage-logos/aicte.jpg"
+              src="/homepage-logos/aicte.webp"
               alt="UGC"
               width={350}
               height={350}
@@ -103,7 +103,7 @@ export default function Accreditation() {
           </div>
           <div className="flex flex-col items-center justify-center p-2 transition-transform duration-300 hover:scale-105 shadow-lg rounded-lg shadow-gray-200">
             <Image
-              src="/homepage-logos/sspu.jpg"
+              src="/homepage-logos/sspu.webp"
               alt="SPPU"
               width={300}
               height={300}
@@ -112,7 +112,7 @@ export default function Accreditation() {
           </div>
           <div className="flex flex-col items-center justify-center p-4 transition-transform duration-300 hover:scale-105 shadow-lg rounded-lg shadow-gray-200">
             <Image
-              src="/homepage-logos/8th.jpg"
+              src="/homepage-logos/8th.webp"
               alt=""
               width={350}
               height={350}
@@ -143,7 +143,7 @@ export default function Accreditation() {
             <div className="bg-gray-100 flex flex-col border border-gray-200 rounded-xl shadow-sm">
               <div className="relative w-full h-56 rounded-t-xl overflow-hidden">
                 <Image
-                  src="/accreditations/Awards 1.jpg"
+                  src="/accreditations/Awards 1.webp"
                   alt="Education Leadership Award 2023"
                   fill
                   className="object-cover"
@@ -160,7 +160,7 @@ export default function Accreditation() {
             <div className="bg-gray-100 flex flex-col border border-gray-200 rounded-xl shadow-sm">
               <div className="relative w-full h-56 rounded-t-xl overflow-hidden">
                 <Image
-                  src="/accreditations/Awards 2.jpg"
+                  src="/accreditations/Awards 2.webp"
                   alt="Education Leadership Award 2023"
                   fill
                   className="object-cover"
@@ -178,7 +178,7 @@ export default function Accreditation() {
             <div className="bg-gray-100 flex flex-col border border-gray-200 rounded-xl shadow-sm">
               <div className="relative w-full h-56 rounded-t-xl overflow-hidden">
                 <Image
-                  src="/accreditations/Awards 3.jpg"
+                  src="/accreditations/Awards 3.webp"
                   alt="Education Leadership Award 2023"
                   fill
                   className="object-cover"
@@ -196,7 +196,7 @@ export default function Accreditation() {
             <div className="bg-gray-100 flex flex-col border border-gray-200 rounded-xl shadow-sm">
               <div className="relative w-full h-56 rounded-t-xl overflow-hidden">
                 <Image
-                  src="/accreditations/Awards 4.jpg"
+                  src="/accreditations/Awards 4.webp"
                   alt="Pune Leadership Awards 2022"
                   fill
                   className="object-cover"
@@ -213,7 +213,7 @@ export default function Accreditation() {
             <div className="bg-gray-100 flex flex-col border border-gray-200 rounded-xl shadow-sm">
               <div className="relative w-full h-56 rounded-t-xl overflow-hidden">
                 <Image
-                  src="/accreditations/Awards 5.jpg"
+                  src="/accreditations/Awards 5.webp"
                   alt="Pune Leadership Awards 2022"
                   fill
                   className="object-cover"
@@ -229,7 +229,7 @@ export default function Accreditation() {
               <div className="bg-gray-100 flex flex-col border border-gray-200 rounded-xl shadow-sm">
               <div className="relative w-full h-56 rounded-t-xl overflow-hidden">
                 <Image
-                  src="/accreditations/Awards 6.jpg"
+                  src="/accreditations/Awards 6.webp"
                   alt="Pune Leadership Awards 2022"
                   fill
                   className="object-cover"

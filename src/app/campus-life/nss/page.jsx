@@ -9,7 +9,6 @@ function NationalServiceScheme() {
   const [openIndex, setOpenIndex] = useState(null);
 
   const bannerImg = "/campuslife/nssbanner.webp"; // put in public folder
-  
 
   return (
     <div className="max w-full bg-white text-gray-800">
@@ -22,7 +21,6 @@ function NationalServiceScheme() {
           style={{ objectFit: "cover" }}
           priority
         />
-        
       </div>
 
       {/* Content Section */}
@@ -63,7 +61,6 @@ function NationalServiceScheme() {
             </li>
           </ul>
 
-
           {/* NSS Activities Section */}
           <h3 className="text-xl font-semibold text-secondary mt-8 mb-4">
             NSS Activities
@@ -75,8 +72,13 @@ function NationalServiceScheme() {
                 key={idx}
                 className="flex gap-4 items-start bg-white border border-gray-200 rounded-lg p-4"
               >
-                <div className="w-36 h-24 bg-gray-200 rounded-md flex items-center justify-center text-gray-600 text-sm">
-                  Image placeholder
+                <div className="relative w-36 h-28 bg-gray-200 rounded-md flex items-center justify-center text-gray-600 text-sm">
+                  <Image
+                    src={act.img}
+                    alt={act.title}
+                    fill
+                    className="rounded-md"
+                  />
                 </div>
                 <div className="flex-1">
                   <h4 className="text-lg font-semibold text-gray-800">
@@ -91,7 +93,6 @@ function NationalServiceScheme() {
         </div>
 
         {/* Right Section */}
-        
       </div>
     </div>
   );

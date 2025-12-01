@@ -37,10 +37,23 @@ const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState(null);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   // ✅ Refs to manage hover timers and outside clicks (no flicker)
   const dropdownTimeoutRef = useRef(null);
   const navbarRef = useRef(null);
+
+  // Check screen size on mount and resize
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsSmallScreen(window.innerWidth < 1280); // lg breakpoint
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
 
   const toggleHelpline = () => setIsHelplineOpen(!isHelplineOpen);
   const toggleModal = () => setIsModalOpen(!isModalOpen);
@@ -231,58 +244,25 @@ const Navbar = () => {
         },
       ],
     },
-
-    // NOTE: This structure is currently not linked in the main mobile loop.
-    // I'll skip adding a dedicated mobile handler for it for brevity.
-    accreditation: {
-      title: "Accreditation",
-      sections: [
-        {
-          title: "NAAC",
-          items: [
-            { label: "SSR reports year wise", link: "/naac/ssr" },
-            { label: "Criteria wise Details", link: "/naac/criteria" },
-            { label: "AQAR reports", link: "/naac/aqar" },
-            { label: "NAAC Certificate", link: "/naac/certificate" },
-          ],
-        },
-        {
-          title: "IQAC",
-          items: [
-            { label: "IQAC Committee", link: "/iqac/committee" },
-            { label: "IQAC Notices", link: "/iqac/notices" },
-            { label: "MOMS & Actions", link: "/iqac/moms" },
-            { label: "IQAC Formats", link: "/iqac/formats" },
-          ],
-        },
-        {
-          title: "Reports & Others",
-          items: [
-            { label: "NIRF", link: "/reports/nirf" },
-            { label: "Financial Statements", link: "/reports/financial" },
-          ],
-        },
-      ],
-    },
   };
 
   const renderDropdownContent = (content) => (
-    <div className="max-w-8xl px-8 py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 animate-in fade-in-0 zoom-in-95 duration-300 ">
+    <div className="max-w-8xl px-4 lg:px-8 py-6 lg:py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 animate-in fade-in-0 zoom-in-95 duration-300">
       {content.sections.map((section, index) => (
         <div key={index}>
-          <h3 className="text-lg font-semibold text-secondary mb-4">
+          <h3 className="text-base lg:text-lg font-semibold text-secondary mb-3 lg:mb-4">
             {section.title || content.title}
           </h3>
-          <ul className="space-y-4 text-gray-800 text-sm">
+          <ul className="space-y-3 lg:space-y-4 text-gray-800 text-sm">
             {section.items.map((item, itemIndex) => (
               <li
                 key={itemIndex}
-                className="flex justify-between items-center border-b border-black pb-2 group"
+                className="flex justify-between items-center border-b border-black pb-1 lg:pb-2 group"
               >
                 {item.link ? (
                   <Link
                     href={item.link}
-                    className="font-semibold flex justify-between items-center w-full text-gray-800 hover:text-primary transition-all duration-200 group-hover:translate-x-1"
+                    className="font-semibold flex justify-between items-center w-full text-sm lg:text-base text-gray-800 hover:text-primary transition-all duration-200 group-hover:translate-x-1"
                     onClick={() => setActiveDropdown(null)}
                   >
                     <span>{item.label || item}</span>
@@ -303,11 +283,11 @@ const Navbar = () => {
   );
 
   const renderMobileDropdown = (content) => (
-    <div className="bg-gray-50 rounded-lg mt-2 overflow-hidden **animate-in fade-in slide-in-from-top-2 duration-300 ease-in-out**">
+    <div className="bg-gray-50 rounded-lg mt-2 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-300 ease-in-out">
       {content.sections.map((section, index) => (
         <div key={index} className="border-t border-gray-200 first:border-t-0">
           {section.title && (
-            <h4 className="font-semibold text-secondary px-4 py-2 bg-gray-100">
+            <h4 className="font-semibold text-secondary px-4 py-2 bg-gray-100 text-sm">
               {section.title}
             </h4>
           )}
@@ -315,8 +295,7 @@ const Navbar = () => {
             {section.items.map((item, itemIndex) => (
               <li
                 key={itemIndex}
-                // STAGGERED ANIMATION: Fade in and slide in from the left slowly
-                className="**animate-in fade-in-0 slide-in-from-left-2 duration-300**"
+                className="animate-in fade-in-0 slide-in-from-left-2 duration-300"
                 style={{ animationDelay: `${itemIndex * 50}ms` }}
               >
                 <Link
@@ -331,7 +310,7 @@ const Navbar = () => {
                       ? "noopener noreferrer"
                       : ""
                   }
-                  className="flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-all duration-200 hover:translate-x-1"
+                  className="flex items-center justify-between px-4 py-2 text-xs lg:text-sm text-gray-700 hover:bg-gray-100 transition-all duration-200 hover:translate-x-1"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <span>{item.label || item}</span>
@@ -350,161 +329,33 @@ const Navbar = () => {
       {/* ===== NAVBAR (Fixed) ===== */}
       <nav
         ref={navbarRef}
-        className="w-full h-[12vh] flex bg-white shadow-sm font-sans fixed top-0 left-0 right-0 z-50"
+        className="w-full h-[10vh] lg:h-[12vh] flex bg-white shadow-sm font-sans fixed top-0 left-0 right-0 z-50"
       >
         {/* Left: Logo */}
-        <div className="w-full md:w-[30%] h-full flex items-center justify-start md:pl-0 md:justify-center">
+        <div className="w-[70%] md:w-[30%] h-full flex items-center justify-start pl-2 md:pl-0 md:justify-center">
           <Link href="/">
             <Image
               src="/Logo.png"
               alt="Logo"
-              height={240}
-              width={240}
-              className="h-40 w-[80%] md:h-24 md:w-full cursor-pointer object-contain transition-transform duration-300 "
+              height={260}
+              width={260}
+              className="
+    h-32 w-48              /* Default slightly bigger */
+    md:h-28 md:w-56        /* Medium screens */
+    lg:h-48 lg:w-106        /* Larger on desktop */
+    cursor-pointer 
+    object-contain 
+    transition-transform 
+    duration-300
+  "
               priority
               unoptimized={true}
             />
           </Link>
         </div>
 
-        {/* Right Section - Desktop */}
-        <div className="hidden md:flex w-[70%] h-full flex-col">
-          {/* Top Bar */}
-          <div className="flex justify-end  w-full h-[45%] text-sm text-black">
-            <div className="flex gap-4">
-              <div className="flex items-center gap-2 font-semibold">
-                <a
-                  href="https://rapid.grayquest.com/iudp-master"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-secondary transition-colors duration-200"
-                >
-                  Pay Fee
-                </a>
-                <span className="text-gray-400">|</span>
-                <a
-                  href="https://indira.edupluscampus.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-secondary transition-colors duration-200"
-                >
-                  ERP Login Staff
-                </a>
-                <span className="text-gray-400">|</span>
-                <a
-                  href="https://myindira.edupluscampus.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-secondary transition-colors duration-200"
-                >
-                  ERP Login Student
-                </a>
-                <span className="text-gray-400">|</span>
-                <a
-                  href="https://indiraicem.ac.in/ICEM-360-degree-virtual-tour/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-secondary transition-colors duration-200"
-                >
-                  360<sup>0</sup> Tour
-                </a>
-                <span className="text-gray-400">|</span>
-                <a
-                  href="https://lc-icem-sumedh.vercel.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-secondary transition-colors duration-200"
-                >
-                  Leaving Certificate
-                </a>
-                <span className="text-gray-400">|</span>
-                <Link
-                  href="/contact"
-                  className="hover:text-secondary transition-colors duration-200"
-                >
-                  Contact Us
-                </Link>
-              </div>
-
-              {/* Buttons */}
-              <div className="flex">
-                <button
-                  onClick={toggleModal}
-                  className="bg-secondary hover:scale-[1.03] text-white px-8 py-3  font-semibold "
-                >
-                  Enquire Now
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom Nav Links */}
-          <div className="flex  justify-end items-center gap-1 h-[55%] text-black px-6 text-md font-semibold whitespace-nowrap ">
-            <div
-              className="flex  h-full  items-center gap-1 cursor-pointer hover:text-secondary transition-all duration-200 group"
-              onPointerEnter={() => handleMouseEnter("aboutUs")}
-              onPointerLeave={handleMouseLeave}
-            >
-              <span>About Us</span>
-              <FiChevronDown
-                className={`w-3 h-3 transition-transform duration-300 ${
-                  activeDropdown === "aboutUs" ? "rotate-180" : ""
-                }`}
-              />
-            </div>
-            <div
-              className="flex items-center gap-1  px-5  cursor-pointer hover:text-secondary transition-all duration-200 group"
-              onPointerEnter={() => handleMouseEnter("campusLife")}
-              onPointerLeave={handleMouseLeave}
-            >
-              <span>Campus Life</span>
-              <FiChevronDown
-                className={`w-3 h-3 transition-transform duration-300 ${
-                  activeDropdown === "campusLife" ? "rotate-180" : ""
-                }`}
-              />
-            </div>
-            <div
-              className="flex items-center gap-1  px-5  cursor-pointer hover:text-secondary transition-all duration-200 group"
-              onPointerEnter={() => handleMouseEnter("programs")}
-              onPointerLeave={handleMouseLeave}
-            >
-              <span>Programs & Admission</span>
-              <FiChevronDown
-                className={`w-3 h-3 transition-transform duration-300 ${
-                  activeDropdown === "programs" ? "rotate-180" : ""
-                }`}
-              />
-            </div>
-            <Link
-              href="/placement"
-              className="hover:text-secondary  px-5  transition-colors duration-200 group"
-            >
-              Placement
-            </Link>
-            <Link
-              href="/about/examination"
-              className="hover:text-secondary  px-5  transition-colors duration-200 group"
-            >
-              Examination
-            </Link>
-            <Link
-              href="/alumni"
-              className="hover:text-secondary  px-5  transition-colors duration-200 group"
-            >
-              Alumni
-            </Link>
-            <Link
-              href="/research"
-              className="hover:text-secondary  px-5  transition-colors duration-200 group"
-            >
-              Research
-            </Link>
-          </div>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <div className="md:hidden w-[20%] flex items-center justify-center pr-4">
+        {/* Tablet/Mid Size Screen Menu Button */}
+        <div className="md:hidden flex-1 flex justify-end items-center pr-4">
           <button
             onClick={toggleMobileMenu}
             className="text-gray-700 hover:text-primary transition-all duration-300 hover:scale-110"
@@ -519,7 +370,6 @@ const Navbar = () => {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="lucide lucide-text-align-justify-icon lucide-text-align-justify"
             >
               <path d="M3 5h18" />
               <path d="M3 12h18" />
@@ -528,7 +378,147 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Dropdown Menu - Desktop */}
+        {/* Right Section - Desktop */}
+        <div className="hidden md:flex flex-1 h-full flex-col">
+          {/* Top Bar - Responsive for different screen sizes */}
+          <div className="flex justify-end items-center w-full h-[40%] lg:h-[45%] px-2 lg:px-4">
+            <div className="flex flex-wrap gap-1 lg:gap-2 items-center justify-end">
+              {/* Quick Links with responsive text */}
+              <div className="flex flex-wrap items-center gap-1 lg:gap-2 text-xs lg:text-sm font-medium text-black">
+                <a
+                  href="https://rapid.grayquest.com/iudp-master"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-secondary transition-colors duration-200 px-1 lg:px-0"
+                >
+                  Pay Fee
+                </a>
+                <span className="text-gray-300">|</span>
+                <a
+                  href="https://indira.edupluscampus.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-secondary transition-colors duration-200 px-1 lg:px-0"
+                >
+                  ERP Staff
+                </a>
+                <span className="text-gray-300">|</span>
+                <a
+                  href="https://myindira.edupluscampus.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-secondary transition-colors duration-200 px-1 lg:px-0"
+                >
+                  ERP Student
+                </a>
+                <span className="text-gray-300">|</span>
+                <a
+                  href="https://indiraicem.ac.in/ICEM-360-degree-virtual-tour/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-secondary transition-colors duration-200 px-1 lg:px-0 hidden lg:inline"
+                >
+                  360<sup>0</sup> Tour
+                </a>
+                <span className="text-gray-300 hidden lg:inline">|</span>
+                <a
+                  href="https://lc-icem-sumedh.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-secondary transition-colors duration-200 px-1 lg:px-0 hidden xl:inline"
+                >
+                  Leaving Certificate
+                </a>
+                <span className="text-gray-300 hidden xl:inline">|</span>
+                <Link
+                  href="/contact"
+                  className="hover:text-secondary transition-colors duration-200 px-1 lg:px-0"
+                >
+                  Contact Us
+                </Link>
+              </div>
+
+              {/* Enquire Now Button - Responsive padding */}
+              <div className="flex ml-1 lg:ml-2">
+                <button
+                  onClick={toggleModal}
+                  className="bg-secondary hover:scale-[1.03] text-white px-3 lg:px-6 py-2 text-xs lg:text-sm font-semibold transition-all duration-200"
+                >
+                  Enquire Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Nav Links - Responsive spacing */}
+          <div className="flex justify-end items-center h-[60%] lg:h-[55%] px-2 lg:px-6 text-black text-sm lg:text-base font-semibold whitespace-nowrap">
+            <div className="flex items-center gap-4 xl:gap-6">
+              <div
+                className="flex items-center gap-1 cursor-pointer hover:text-secondary transition-all duration-200 group"
+                onPointerEnter={() => handleMouseEnter("aboutUs")}
+                onPointerLeave={handleMouseLeave}
+              >
+                <span>About Us</span>
+                <FiChevronDown
+                  className={`w-3 h-3 transition-transform duration-300 ${
+                    activeDropdown === "aboutUs" ? "rotate-180" : ""
+                  }`}
+                />
+              </div>
+              <div
+                className="flex items-center gap-1 cursor-pointer hover:text-secondary transition-all duration-200 group"
+                onPointerEnter={() => handleMouseEnter("campusLife")}
+                onPointerLeave={handleMouseLeave}
+              >
+                <span>Campus Life</span>
+                <FiChevronDown
+                  className={`w-3 h-3 transition-transform duration-300 ${
+                    activeDropdown === "campusLife" ? "rotate-180" : ""
+                  }`}
+                />
+              </div>
+              <div
+                className="flex items-center gap-1 cursor-pointer hover:text-secondary transition-all duration-200 group"
+                onPointerEnter={() => handleMouseEnter("programs")}
+                onPointerLeave={handleMouseLeave}
+              >
+                <span className="hidden xl:inline">Programs & Admission</span>
+                <span className="xl:hidden">Programs</span>
+                <FiChevronDown
+                  className={`w-3 h-3 transition-transform duration-300 ${
+                    activeDropdown === "programs" ? "rotate-180" : ""
+                  }`}
+                />
+              </div>
+              <Link
+                href="/placement"
+                className="hover:text-secondary transition-colors duration-200 group"
+              >
+                Placement
+              </Link>
+              <Link
+                href="/about/examination"
+                className="hover:text-secondary transition-colors duration-200 group hidden lg:inline"
+              >
+                Examination
+              </Link>
+              <Link
+                href="/alumni"
+                className="hover:text-secondary transition-colors duration-200 group hidden xl:inline"
+              >
+                Alumni
+              </Link>
+              <Link
+                href="/research"
+                className="hover:text-secondary transition-colors duration-200 group hidden 2xl:inline"
+              >
+                Research
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Dropdown Menu - Desktop with responsive adjustments */}
         {activeDropdown && (
           <div
             onPointerEnter={() => handleMouseEnter(activeDropdown)}
@@ -541,21 +531,20 @@ const Navbar = () => {
       </nav>
 
       {/* Add padding to main content to account for fixed navbar */}
-      <div className="pt-[12vh]"></div>
+      <div className="pt-[10vh] lg:pt-[12vh]"></div>
 
-      {/* Mobile Menu - Slides from bottom to top */}
+      {/* Mobile Menu - Responsive for all screen sizes when needed */}
       {isMobileMenuOpen && (
         <>
           {/* Overlay */}
           <div
-            className="md:hidden fixed inset-0 bg-transparent backdrop-blur-md bg-opacity-50 z-40 animate-in fade-in-0 duration-300"
+            className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40 animate-in fade-in-0 duration-300 md:hidden"
             onClick={toggleMobileMenu}
           />
 
-          {/* Mobile Menu Panel */}
+          {/* Mobile Menu Panel - Shows on mobile, hides on medium+ */}
           <div
-            className={`md:hidden fixed bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-2xl z-50 transform transition-all duration-500 **ease-[cubic-bezier(0.65,0.05,0.36,1)]** ${
-              // Slightly adjusted ease for a smoother slide
+            className={`fixed bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-2xl z-50 transform transition-all duration-500 ease-[cubic-bezier(0.65,0.05,0.36,1)] md:hidden ${
               isMobileMenuOpen ? "translate-y-0" : "translate-y-full"
             }`}
             style={{ maxHeight: "85vh" }}
@@ -577,19 +566,15 @@ const Navbar = () => {
               style={{ maxHeight: "calc(85vh - 60px)" }}
             >
               <div className="p-3 space-y-0">
-                {/* 🔹 Main Nav Items (with stagger animation applied) */}
                 {mobileNavItems.map((navItem, index) => {
-                  // Determine if it's a dropdown or a single link
                   const isDropdown = !navItem.href;
-
-                  // Get the content for the dropdown if it exists
                   const content = dropdownContent[navItem.name];
 
                   if (isDropdown) {
                     return (
                       <div
                         key={navItem.name}
-                        className="border-b border-gray-200 **animate-in fade-in-0 slide-in-from-top-1 duration-300**"
+                        className="border-b border-gray-200 animate-in fade-in-0 slide-in-from-top-1 duration-300"
                         style={{ animationDelay: `${index * 50}ms` }}
                       >
                         <button
@@ -614,7 +599,7 @@ const Navbar = () => {
                     return (
                       <div
                         key={navItem.name}
-                        className="border-b border-gray-200 **animate-in fade-in-0 slide-in-from-top-1 duration-300**"
+                        className="border-b border-gray-200 animate-in fade-in-0 slide-in-from-top-1 duration-300"
                         style={{ animationDelay: `${index * 50}ms` }}
                       >
                         <Link
@@ -631,7 +616,7 @@ const Navbar = () => {
                 })}
               </div>
 
-              {/* 🔹 Compact Enquire Now Button */}
+              {/* Compact Enquire Now Button */}
               <div className="p-3 border-t border-gray-200 bg-gray-50">
                 <button
                   onClick={() => {
@@ -648,7 +633,7 @@ const Navbar = () => {
         </>
       )}
 
-      {/* ===== Helpline Drawer (Unchanged) ===== */}
+      {/* ===== Helpline Drawer ===== */}
       <div
         className={`fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transform transition-all duration-500 ease-in-out z-50 ${
           isHelplineOpen ? "translate-x-0" : "translate-x-full"
@@ -685,23 +670,25 @@ const Navbar = () => {
         />
       )}
 
-      {/* ===== APPLY NOW MODAL (Unchanged) ===== */}
+      {/* ===== APPLY NOW MODAL ===== */}
       {isModalOpen && (
         <div
           className="fixed inset-0 bg-black/30 backdrop-blur-sm flex justify-center items-center z-[60]"
           onClick={() => setIsModalOpen(false)}
         >
-          <div className="max-w-7xl" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="max-w-7xl w-full mx-4"
+            onClick={(e) => e.stopPropagation()}
+          >
             <ApplyForm />
           </div>
         </div>
       )}
 
-      {/* ===== MOBILE FAB (Social Bar) - New Initial Animation ===== */}
+      {/* ===== MOBILE FAB (Social Bar) ===== */}
       {!isMobileMenuOpen && (
-        <div className="fixed bottom-2 left-5 right-5 z-[9999] md:hidden bg-secondary text-white shadow-2xl rounded-full transition-all duration-300 hover:scale-[1.02] **animate-in fade-in slide-in-from-bottom-4 duration-500 ease-out**">
+        <div className="fixed bottom-2 left-5 right-5 z-[9999] md:hidden bg-secondary text-white shadow-2xl rounded-full transition-all duration-300 hover:scale-[1.02] animate-in fade-in slide-in-from-bottom-4 duration-500 ease-out">
           <div className="flex justify-between items-center px-4 py-3">
-            {/* Facebook Link */}
             <Link
               href="https://www.facebook.com/ICEM.AVIRAT/"
               target="_blank"
@@ -709,7 +696,6 @@ const Navbar = () => {
             >
               <FaFacebookF className="text-secondary" size={18} />
             </Link>
-            {/* LinkedIn Link */}
             <Link
               href="https://www.linkedin.com/company/indira-college-of-engineering-and-management-pune/"
               target="_blank"
@@ -717,7 +703,6 @@ const Navbar = () => {
             >
               <FaLinkedinIn className="text-secondary" size={18} />
             </Link>
-            {/* Mail Link - Primary CTA */}
             <Link
               href="mailto:admissions@indiraicem.ac.in"
               target="_blank"
@@ -725,7 +710,6 @@ const Navbar = () => {
             >
               <Mail size={18} className="text-secondary" />
             </Link>
-            {/* Instagram Link */}
             <Link
               href="https://www.instagram.com/icem_pune/"
               target="_blank"

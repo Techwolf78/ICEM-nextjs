@@ -61,7 +61,7 @@ export const sections = {
           },
           {
             name: "Academic Calendar 2018-19 Sem I",
-            url: "/pdfs/accreditation/calendar 2018-19 Sem I.pdf",
+            url: "/pdfs/accreditation/calender 2018-19 Sem I.pdf",
           },
           {
             name: "Academic Calendar 2018-19 Sem II",
@@ -69,7 +69,7 @@ export const sections = {
           },
           {
             name: "Academic Calendar 2017-18 Sem II",
-            url: "/pdfs/accreditation/calendar 2017-18 Sem II.pdf",
+            url: "/pdfs/accreditation/calender 2017-18 Sem II.pdf",
           },
         ],
       },
@@ -116,7 +116,7 @@ export const sections = {
         pdfs: [
           {
             name: "NAAC Certificate",
-            url: "/pdfs/accreditaion/NAAC-Cerificate-of-Accreditation-2024.pdf",
+            url: "/pdfs/accreditation/NAAC-Cerificate-of-Accreditation-2024.pdf",
           },
         ],
       },
@@ -145,18 +145,37 @@ export const sections = {
     title: "IQAC",
     accordions: [
       {
-        heading: "IQAC Committee",
-        pdfs: [
-          {
-            name: "IQAC Committee 2023-24",
-            url: "/pdfs/iqac-committee-2024.pdf",
-          },
-          {
-            name: "IQAC Roles & Responsibilities",
-            url: "/pdfs/iqac-roles.pdf",
-          },
-        ],
-      },
+  heading: "IQAC Committee",
+  content: "",
+  isTable: true,
+  tableData: {
+    headers: ["Sr. No.", "Name of the Member", "Designation"],
+    rows: [
+      ["1", "Mr. Sandeep Gaekwad", "Member (Management Representative)"],
+      ["2", "Dr. R. K. Jain", "Ext. Experts (Local Society)"],
+      ["3", "Dr. Pravin Ghanegaonkar", "Principal - Chairman- IQAC ICEM"],
+      ["4", "Dr. Sunil Ingole", "Dy. Chairman - IQAC ICEM"],
+      ["5", "Dr. Rupa Hiremath", "Dean Member Secretary (Sr. Teacher)"],
+      ["6", "Dr. Kiran Devade", "Coordinator Member (Jr. Secretary)"],
+      ["7", "Mr. Avinash Sukhwani", "Member Alumni Nominee"],
+      ["8", "Miss. Akanksha Ramane", "Member (Student Nominee)"],
+      ["9", "Dr. Mahesh Bhon", "Member (Admin. Nominee)"],
+      ["10", "Dr. Poornashankar", "Member (Admin. Nominee[Dean])"],
+      ["11", "Mr. Atul Gore", "Member (Admin. Nominee)"],
+      ["12", "Mr. J S Sidhu", "Member (Admin. Nominee)"],
+      ["13", "Mr. Anita Surve", "Member (Admin. Nominee)"],
+      ["14", "Dr. Prianka Pawar", "Member(Teacher's Nominee)"],
+      ["15", "Mrs. Manjusha Tatiya", "Member(Teacher's Nominee)"],
+      ["16", "Dr. Archana Salve", "Member(Teacher's Nominee)"],
+      ["17", "Dr. Darshana Desai", "Member(Teacher's Nominee)"],
+      ["18", "Dr. Soumitra Das", "Member(Teacher's Nominee)"],
+      ["19", "Dr. Priya Pise", "Member (Teacher's Nominee)"],
+      ["20", "Mr. VijayKumar Saini", "Member (Teacher's Nominee)"],
+      ["21", "Mr. Dhananjay Jagtap", "Stakeholder Parents Nominee"]
+    ]
+  },
+
+},
       {
         heading: "IQAC Notices, MOM's & Actions",
         pdfs: [
@@ -174,14 +193,14 @@ export const sections = {
           },
         ],
       },
-      {
-        heading: "IQAC Formats",
-        pdfs: [
-          { name: "Quality Assurance Format", url: "/pdfs/qa-format.pdf" },
-          { name: "Feedback Forms", url: "/pdfs/feedback-forms.pdf" },
-          { name: "Monitoring Formats", url: "/pdfs/monitoring-formats.pdf" },
-        ],
-      },
+      // {
+      //   heading: "IQAC Formats",
+      //   pdfs: [
+      //     { name: "Quality Assurance Format", url: "/pdfs/qa-format.pdf" },
+      //     { name: "Feedback Forms", url: "/pdfs/feedback-forms.pdf" },
+      //     { name: "Monitoring Formats", url: "/pdfs/monitoring-formats.pdf" },
+      //   ],
+      // },
     ],
   },
 
@@ -240,18 +259,24 @@ export const sections = {
         pdfs: [
           {
             name: "Staff Code of Conduct",
-            url: "/pdfs/accreditation/Code of  Conduct 2021-22",
+            url: "/pdfs/accreditation/staff_code_of_conduct.pdf",
           },
         ],
       },
       {
         heading: "NIRF",
         pdfs: [
-          { name: "NIRF Data 2023", url: "/pdfs/nirf-2023.pdf" },
-          {
-            name: "NIRF Submission Report",
-            url: "/pdfs/nirf-submission.pdf",
-          },
+          { name: "NIRF 2025 Overall", url: "/pdfs/accreditation/NIRF_Overall-25.pdf" },
+           { name: "NIRF 2025 Management", url: "/pdfs/accreditation/NIRF-Mgmt-25.pdf" }, 
+           { name: "NIRF 2025 Engineering", url: "/pdfs/accreditation/NIRF_Engg-25.pdf" },
+            { name: "NIRF 2025 SDG", url: "/pdfs/accreditation/NIRF_SDG-2025.pdf" }, 
+            { name: "NIRF 2024 Overall", url: "/pdfs/accreditation/ICEM 2024-overall.pdf" }, { name: "NIRF 2024 Management", url: "/pdfs/accreditation/ICEM 2024- Mgmt.pdf" },
+             { name: "NIRF 2024 Engineering", url: "/pdfs/accreditation/ICEM 2024-Engg.pdf" },
+              { name: "NIRF 2023 Overall", url: "/pdfs/accreditation/Overall-23.pdf" },
+              { name: "NIRF 2023 Management", url: "/pdfs/accreditation/Management-23.pdf" },
+              { name: "NIRF 2023 Engineering", url: "/pdfs/accreditation/Engineering-23.pdf" },
+              { name: "NIRF 2022 Overall", url: "/pdfs/accreditation/NIRF 22 Overall.pdf" },
+              { name: "NIRF 2022 Management", url: "/pdfs/accreditation/NIRF 22 Management.pdf" },{ name: "NIRF 2022 Engineering", url: "/pdfs/accreditation/NIRF 22 Engineering.pdf" },
         ],
       },
       {
@@ -271,20 +296,20 @@ export const sections = {
           },
         ],
       },
-      {
-        heading: "Soft Skills and Aptitude Reports",
-        pdfs: [
-          {
-            name: "Soft Skills Report 2023",
-            url: "/pdfs/soft-skills-2023.pdf",
-          },
-          {
-            name: "Aptitude Test Results",
-            url: "/pdfs/aptitude-results.pdf",
-          },
-          { name: "Placement Training", url: "/pdfs/placement-training.pdf" },
-        ],
-      },
+      // {
+      //   heading: "Soft Skills and Aptitude Reports",
+      //   pdfs: [
+      //     {
+      //       name: "Soft Skills Report 2023",
+      //       url: "/pdfs/soft-skills-2023.pdf",
+      //     },
+      //     {
+      //       name: "Aptitude Test Results",
+      //       url: "/pdfs/aptitude-results.pdf",
+      //     },
+      //     { name: "Placement Training", url: "/pdfs/placement-training.pdf" },
+      //   ],
+      // },
     ],
   },
 };

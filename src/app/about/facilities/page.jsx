@@ -297,37 +297,37 @@ export default function Sports() {
       title: "Table Tennis Runners-Up",
       description:
         "The ICEM Parandwadi Girls Team clinched the Runner-up position in the SPPU Intercollegiate Table Tennis Tournament, honoured by national player Mr. Rajat Kadam.",
-        img: "/sports/tabletennis.jpg",
+        img: "/sports/tabletennis.webp",
     },
     {
       title: "National Gold Medal (Athletics)",
       description:
         "Mr. Dhanaraj Raut (B.E. Civil) brought pride to the institute and state by winning a Gold Medal while representing the Maharashtra Team at the Senior National Championship in Karnataka.",
-        img: "/sports/tabletennis.jpg",
+        img: "/sports/tabletennis.webp",
     },
     {
       title: "Gold Medal in Boxing",
       description:
         "Ms. Kartikee Salve (T.E. AI-DS) demonstrated exceptional skill to secure a Gold Medal in Boxing, earning a qualification for the SPPU Interzonal round.",
-        img: "/sports/boxing.jpg",
+        img: "/sports/boxing.webp",
     },
     {
       title: "Bronze Medal in Fencing",
       description:
         "Our talented fencer, Ms. Surbhi Jadhav, showcased her prowess by winning a Bronze Medal and qualifying for the prestigious SPPU Interzonal Competition.",
-        img: "/sports/fencing.jpg",
+        img: "/sports/fencing.webp",
     },
     {
       title: "Water Polo Runners-Up",
       description:
         "The ICEM Water Polo Team secured the Runner-up trophy at the SPPU Intercollegiate tournament, with team members Mr. Dhanraj Raut and Mr. Vallabh Lawate selected for the Pune District Team.",
-        img: "/sports/water-polo.jpg",
+        img: "/sports/water-polo.webp",
     },
     {
       title: "Mallkhambh Qualification",
       description:
         "Mr. Deepak Yadav (S.E. Computer) excelled in his sport, qualifying to represent ICEM at the SPPU Interzonal Mallkhambh Competition.",
-        img: "/sports/malkhamb.jpg",
+        img: "/sports/malkhamb.webp",
     },
   ];
 

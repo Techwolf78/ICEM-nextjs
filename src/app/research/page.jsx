@@ -10,6 +10,9 @@ import PhdGuidesTable2324 from "@/components/research/PhdGuidesTable2223";
 import RDCommitteeTable2425 from "@/components/research/RDCommitteeTable2425";
 import RDCommitteeTableGeneral from "@/components/research/RDCommitteeTableGeneral";
 import RDCommitteeTable2324 from "@/components/research/RDCommitteeTable2324";
+import { publicationsData } from "@/static/research/publicationsData";
+import { iprData } from "@/static/research/publicationsData";
+import { researchData } from "@/static/research/researchdata";
 
 const BEComp = "/BEComp.pdf";
 
@@ -94,7 +97,6 @@ const Research = () => {
               </div>
             ))}
           </div>
-
         </div>
       </section>
 
@@ -583,123 +585,9 @@ const Research = () => {
               {/* Publication Accordion */}
               {activeTab === "Publication" && (
                 <>
-                  {[
-                    {
-                      title: "1. Journals",
-                      content: (
-                        <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
-                          <li>
-                            <a
-                              href={BEComp}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="hover:underline"
-                            >
-                              Key Publications in the Indexed Journals by
-                              Faculty Members AY-[2023-2024]
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href={BEComp}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="hover:underline"
-                            >
-                              Key Publications in the Indexed Journals by
-                              Faculty Members AY-[2022-2023]
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href={BEComp}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="hover:underline"
-                            >
-                              Key Publications in the Indexed Journals by
-                              Faculty Members AY-[2021-2022]
-                            </a>
-                          </li>
-                        </ul>
-                      ),
-                    },
-                    {
-                      title: "2. Conferences",
-                      content: (
-                        <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
-                          <li>
-                            <a
-                              href={BEComp}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="hover:underline"
-                            >
-                              Conference 2023-24
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href={BEComp}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="hover:underline"
-                            >
-                              Conference 2022-23
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href={BEComp}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="hover:underline"
-                            >
-                              Conference 2021-22
-                            </a>
-                          </li>
-                        </ul>
-                      ),
-                    },
-                    {
-                      title: "3. Books",
-                      content: (
-                        <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
-                          <li>
-                            <a
-                              href={BEComp}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="hover:underline"
-                            >
-                              Books AY-2023-2024
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href={BEComp}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="hover:underline"
-                            >
-                              Books AY-2022-2023
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href={BEComp}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="hover:underline"
-                            >
-                              Books AY-2021-2022
-                            </a>
-                          </li>
-                        </ul>
-                      ),
-                    },
-                  ].map((section, i) => (
+                  {publicationsData.map((section, i) => (
                     <div key={i} className="border-b border-gray-200">
+                      {/* Main Section Header (Journals, Conferences, etc.) */}
                       <button
                         onClick={() =>
                           setActiveAccordion(activeAccordion === i ? null : i)
@@ -715,9 +603,100 @@ const Research = () => {
                           {activeAccordion === i ? "−" : "+"}
                         </span>
                       </button>
+
+                      {/* Section Content */}
                       {activeAccordion === i && (
                         <div className="p-3 md:p-4 bg-tertiary text-secondary">
-                          {section.content}
+                          {/* Loop through the items (Years/Categories) */}
+                          {section.items.map((item, j) => (
+                            <div key={j} className="mb-4 last:mb-0">
+                              {/* Check if this item has the big data array attached */}
+                              {item.data ? (
+                                <details className="group">
+                                  <summary className="cursor-pointer list-none font-semibold hover:text-primary transition-colors flex items-center justify-between border-b border-gray-300 pb-2">
+                                    {item.label}
+                                    <span className="transform group-open:rotate-180 transition-transform">
+                                      ▼
+                                    </span>
+                                  </summary>
+
+                                  {/* The Table - Rendered only if data exists */}
+                                  <div className="mt-4 overflow-x-auto max-h-[500px] overflow-y-auto border border-gray-300 rounded">
+                                    <table className="min-w-full text-xs md:text-sm text-left">
+                                      <thead className="bg-secondary text-white sticky top-0">
+                                        <tr>
+                                          <th className="p-2 border-r border-gray-500">
+                                            Sr.No
+                                          </th>
+                                          <th className="p-2 border-r border-gray-500">
+                                            Faculty
+                                          </th>
+                                          <th className="p-2 border-r border-gray-500">
+                                            Title
+                                          </th>
+                                          <th className="p-2 border-r border-gray-500">
+                                            Publication/Journal
+                                          </th>
+                                          <th className="p-2 border-r border-gray-500">
+                                            Date
+                                          </th>
+                                          <th className="p-2">Link</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody className="divide-y divide-gray-200 bg-white text-gray-800">
+                                        {item.data.map((row, k) => (
+                                          <tr
+                                            key={k}
+                                            className="hover:bg-gray-50"
+                                          >
+                                            <td className="p-2 border-r">
+                                              {row.srNo}
+                                            </td>
+                                            <td className="p-2 border-r font-medium">
+                                              {row.author}
+                                            </td>
+                                            <td className="p-2 border-r w-1/3 min-w-[200px]">
+                                              {row.title}
+                                            </td>
+                                            <td className="p-2 border-r">
+                                              {row.publication}
+                                            </td>
+                                            <td className="p-2 border-r whitespace-nowrap">
+                                              {row.date}
+                                            </td>
+                                            <td className="p-2 text-center">
+                                              {row.link ? (
+                                                <a
+                                                  href={row.link}
+                                                  target="_blank"
+                                                  rel="noopener noreferrer"
+                                                  className="text-blue-600 hover:underline"
+                                                >
+                                                  View
+                                                </a>
+                                              ) : (
+                                                <span className="text-gray-400">
+                                                  -
+                                                </span>
+                                              )}
+                                            </td>
+                                          </tr>
+                                        ))}
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </details>
+                              ) : (
+                                /* Standard Link for items without the JSON data (Old archives) */
+                                <a
+                                  href={item.href}
+                                  className="block p-2 hover:bg-white rounded transition-colors"
+                                >
+                                  • {item.label}
+                                </a>
+                              )}
+                            </div>
+                          ))}
                         </div>
                       )}
                     </div>
@@ -727,100 +706,8 @@ const Research = () => {
 
               {/* IPR Accordion */}
               {activeTab === "IPR" && (
-                <div className="p-0">
-                  {[
-                    {
-                      title: "1. Patents",
-                      content: (
-                        <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
-                          <li>
-                            <a
-                              href={BEComp}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="hover:underline"
-                            >
-                              Patents Filed/Published in the AY-[2023-24]
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href={BEComp}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="hover:underline"
-                            >
-                              Patents Filed/Published in the AY-[2022-23]
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href={BEComp}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="hover:underline"
-                            >
-                              Patents Filed/Published in the AY-[2021-22]
-                            </a>
-                          </li>
-                        </ul>
-                      ),
-                    },
-                    {
-                      title: "2. Copyrights",
-                      content: (
-                        <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
-                          <li>
-                            <a
-                              href={BEComp}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="hover:underline"
-                            >
-                              Copyrights Filed in the academic year 2023-24
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href={BEComp}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="hover:underline"
-                            >
-                              Copyrights Filed in the academic year 2022-23
-                            </a>
-                          </li>
-                        </ul>
-                      ),
-                    },
-                    {
-                      title: "3. Trademarks",
-                      content: (
-                        <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
-                          <li>
-                            <a
-                              href={BEComp}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="hover:underline"
-                            >
-                              Trademarks Registered in the academic year 2023-24
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href={BEComp}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="hover:underline"
-                            >
-                              Trademarks Registered in the academic year 2022-23
-                            </a>
-                          </li>
-                        </ul>
-                      ),
-                    },
-                  ].map((section, i) => (
+                <>
+                  {iprData.map((section, i) => (
                     <div key={i} className="border-b border-gray-200">
                       <button
                         onClick={() =>
@@ -839,71 +726,111 @@ const Research = () => {
                       </button>
 
                       {activeAccordion === i && (
-                        <div className="p-3 md:p-4 bg-tertiary text-secondary rounded-b-md">
-                          {section.content}
+                        <div className="p-3 md:p-4 bg-tertiary text-secondary">
+                          {section.items.map((item, j) => (
+                            <div key={j} className="mb-4 last:mb-0">
+                              {/* Check if JSON data exists for this year */}
+                              {item.data ? (
+                                <details className="group">
+                                  <summary className="cursor-pointer list-none font-semibold hover:text-primary transition-colors flex items-center justify-between border-b border-gray-300 pb-2">
+                                    {item.label}
+                                    <span className="transform group-open:rotate-180 transition-transform">
+                                      ▼
+                                    </span>
+                                  </summary>
+
+                                  {/* IPR Table */}
+                                  <div className="mt-4 overflow-x-auto max-h-[500px] overflow-y-auto border border-gray-300 rounded">
+                                    <table className="min-w-full text-xs md:text-sm text-left">
+                                      <thead className="bg-secondary text-white sticky top-0">
+                                        <tr>
+                                          <th className="p-2 border-r border-gray-500">
+                                            Sr.No
+                                          </th>
+                                          <th className="p-2 border-r border-gray-500">
+                                            Name
+                                          </th>
+                                          <th className="p-2 border-r border-gray-500">
+                                            Title
+                                          </th>
+                                          {/* Adjusted Header for Patents/Copyrights */}
+                                          <th className="p-2 border-r border-gray-500">
+                                            Type/App. No.
+                                          </th>
+                                          <th className="p-2 border-r border-gray-500">
+                                            Status/Date
+                                          </th>
+                                          <th className="p-2">Link</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody className="divide-y divide-gray-200 bg-white text-gray-800">
+                                        {item.data.map((row, k) => (
+                                          <tr
+                                            key={k}
+                                            className="hover:bg-gray-50"
+                                          >
+                                            <td className="p-2 border-r">
+                                              {row.srNo}
+                                            </td>
+                                            <td className="p-2 border-r font-medium">
+                                              {row.author}
+                                            </td>
+                                            <td className="p-2 border-r w-1/3 min-w-[200px]">
+                                              {row.title}
+                                            </td>
+                                            {/* Mapping generic fields to potential Patent/Copyright data */}
+                                            <td className="p-2 border-r">
+                                              {row.publication}
+                                            </td>
+                                            <td className="p-2 border-r whitespace-nowrap">
+                                              {row.date}
+                                            </td>
+                                            <td className="p-2 text-center">
+                                              {row.link ? (
+                                                <a
+                                                  href={row.link}
+                                                  target="_blank"
+                                                  rel="noopener noreferrer"
+                                                  className="text-blue-600 hover:underline"
+                                                >
+                                                  View
+                                                </a>
+                                              ) : (
+                                                <span className="text-gray-400">
+                                                  -
+                                                </span>
+                                              )}
+                                            </td>
+                                          </tr>
+                                        ))}
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </details>
+                              ) : (
+                                /* Fallback link if no JSON data provided yet */
+                                <a
+                                  href={item.href}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block p-2 hover:bg-white rounded transition-colors"
+                                >
+                                  • {item.label}
+                                </a>
+                              )}
+                            </div>
+                          ))}
                         </div>
                       )}
                     </div>
                   ))}
-                </div>
+                </>
               )}
 
               {/* Research Activities Accordion */}
               {activeTab === "Research Activities" && (
-                <div className="p-0">
-                  {[
-                    {
-                      title: "1. Workshops/Seminars Conducted AY-[2023-24]",
-                      content: (
-                        <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
-                          <li>
-                            <a
-                              href={BEComp}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="hover:underline"
-                            >
-                              Workshops/Seminars Conducted AY-[2023-24]
-                            </a>
-                          </li>
-                        </ul>
-                      ),
-                    },
-                    {
-                      title: "2. Workshops/Seminars Conducted AY-[2022-23]",
-                      content: (
-                        <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
-                          <li>
-                            <a
-                              href={BEComp}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="hover:underline"
-                            >
-                              Workshops/Seminars Conducted AY-[2022-23]
-                            </a>
-                          </li>
-                        </ul>
-                      ),
-                    },
-                    {
-                      title: "3. Workshops/Seminars Conducted AY-[2021-22]",
-                      content: (
-                        <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
-                          <li>
-                            <a
-                              href={BEComp}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="hover:underline"
-                            >
-                              Workshops/Seminars Conducted AY-[2021-22]
-                            </a>
-                          </li>
-                        </ul>
-                      ),
-                    },
-                  ].map((section, i) => (
+                <>
+                  {researchData.map((section, i) => (
                     <div key={i} className="border-b border-gray-200">
                       <button
                         onClick={() =>
@@ -922,13 +849,103 @@ const Research = () => {
                       </button>
 
                       {activeAccordion === i && (
-                        <div className="p-3 md:p-4 bg-tertiary text-secondary rounded-b-md">
-                          {section.content}
+                        <div className="p-3 md:p-4 bg-tertiary text-secondary">
+                          {section.items.map((item, j) => (
+                            <div key={j} className="mb-4 last:mb-0">
+                              {/* Check if JSON data exists for this year */}
+                              {item.data ? (
+                                <details className="group">
+                                  <summary className="cursor-pointer list-none font-semibold hover:text-primary transition-colors flex items-center justify-between border-b border-gray-300 pb-2">
+                                    {item.label}
+                                    <span className="transform group-open:rotate-180 transition-transform">
+                                      ▼
+                                    </span>
+                                  </summary>
+
+                                  {/* Research/Workshop Table */}
+                                  <div className="mt-4 overflow-x-auto max-h-[500px] overflow-y-auto border border-gray-300 rounded">
+                                    <table className="min-w-full text-xs md:text-sm text-left">
+                                      <thead className="bg-secondary text-white sticky top-0">
+                                        <tr>
+                                          <th className="p-2 border-r border-gray-500">
+                                            Sr.No
+                                          </th>
+                                          <th className="p-2 border-r border-gray-500">
+                                            Coordinator/Faculty
+                                          </th>
+                                          <th className="p-2 border-r border-gray-500">
+                                            Activity Title
+                                          </th>
+                                          <th className="p-2 border-r border-gray-500">
+                                            Resource Person/Agency
+                                          </th>
+                                          <th className="p-2 border-r border-gray-500">
+                                            Date/Duration
+                                          </th>
+                                          <th className="p-2">Link</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody className="divide-y divide-gray-200 bg-white text-gray-800">
+                                        {item.data.map((row, k) => (
+                                          <tr
+                                            key={k}
+                                            className="hover:bg-gray-50"
+                                          >
+                                            <td className="p-2 border-r">
+                                              {row.srNo}
+                                            </td>
+                                            <td className="p-2 border-r font-medium">
+                                              {row.author}
+                                            </td>
+                                            <td className="p-2 border-r w-1/3 min-w-[200px]">
+                                              {row.title}
+                                            </td>
+                                            <td className="p-2 border-r">
+                                              {row.publication}
+                                            </td>
+                                            <td className="p-2 border-r whitespace-nowrap">
+                                              {row.date}
+                                            </td>
+                                            <td className="p-2 text-center">
+                                              {row.link ? (
+                                                <a
+                                                  href={row.link}
+                                                  target="_blank"
+                                                  rel="noopener noreferrer"
+                                                  className="text-blue-600 hover:underline"
+                                                >
+                                                  View
+                                                </a>
+                                              ) : (
+                                                <span className="text-gray-400">
+                                                  -
+                                                </span>
+                                              )}
+                                            </td>
+                                          </tr>
+                                        ))}
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </details>
+                              ) : (
+                                /* Fallback link */
+                                <a
+                                  href={item.href}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block p-2 hover:bg-white rounded transition-colors"
+                                >
+                                  • {item.label}
+                                </a>
+                              )}
+                            </div>
+                          ))}
                         </div>
                       )}
                     </div>
                   ))}
-                </div>
+                </>
               )}
 
               {/* Research Policy Accordion */}
@@ -941,7 +958,7 @@ const Research = () => {
                         <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
                           <li>
                             <a
-                              href={BEComp}
+                              href="/pdfs/Research_Policy_2024.pdf"
                               target="_blank"
                               rel="noopener noreferrer"
                               className="hover:underline"
@@ -958,7 +975,7 @@ const Research = () => {
                         <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
                           <li>
                             <a
-                              href={BEComp}
+                              href="/pdfs/Research_Policy_2023.pdf"
                               target="_blank"
                               rel="noopener noreferrer"
                               className="hover:underline"
@@ -975,7 +992,7 @@ const Research = () => {
                         <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
                           <li>
                             <a
-                              href={BEComp}
+                              href="/pdfs/Research_Policy_2022.pdf"
                               target="_blank"
                               rel="noopener noreferrer"
                               className="hover:underline"

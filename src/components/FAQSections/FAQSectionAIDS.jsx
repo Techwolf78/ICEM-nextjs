@@ -46,17 +46,7 @@ const overviewData = [
   {
     title: "About Department",
     content: `The Department of Artificial Intelligence and Data Science at ICEM aims to be one of the leading programs to provide value-added quality education in Computer Science and Engineering with specialization in Artificial Intelligence and Data Science.`,
-  },
-//   {
-//     title: "Vision",
-//     content: `To revolutionize pool of knowledge and develop innovative, ethical, responsible, and global leaders who will transform Institute and community services.`,
-//   },
-//   {
-//     title: "Mission",
-//     content: `• To offer an industry ready curriculum and happy learning environment, enabling our learners to become responsible citizens with holistic skill sets, to solve worldwide challenges.
-// • To inculcate impactful research through global collaborations with faculties, students & industry, using comprehensive technology and infrastructure to nurture innovation.
-// • To be a contributor towards a sustainable future by promoting conservation, prosperity, and social impact.`,
-//   },
+  }
 ];
 
 export default function FAQSectionAIDS() {
@@ -68,7 +58,9 @@ export default function FAQSectionAIDS() {
 
         {/* HEADER */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-secondary mb-4">Department of Artificial Intelligence & Data Science</h2>
+          <h2 className="text-4xl font-bold text-secondary mb-4">
+            Department of Artificial Intelligence & Data Science
+          </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
             Empowering future innovators with AI knowledge and industry-ready Data Science skills.
           </p>
@@ -90,7 +82,25 @@ export default function FAQSectionAIDS() {
             ].map((tab) => (
               <button
                 key={tab}
-                onClick={() => setActive(tab)}
+                onClick={() => {
+                  setActive(tab);
+
+                  // 🔥 Auto-scroll only on mobile screens
+                  if (typeof window !== "undefined" && window.innerWidth < 1024) {
+                    setTimeout(() => {
+                      const target = document.getElementById("aids-right-content");
+                      if (target) {
+                        const yOffset = -160;
+                        const y = target.getBoundingClientRect().top + window.scrollY + yOffset;
+
+                        window.scrollTo({
+                          top: y,
+                          behavior: "smooth",
+                        });
+                      }
+                    }, 120);
+                  }
+                }}
                 className={`block w-full text-left px-4 py-3 rounded-lg transition-all ${
                   active === tab
                     ? "bg-secondary text-white shadow-md"
@@ -103,7 +113,10 @@ export default function FAQSectionAIDS() {
           </nav>
 
           {/* RIGHT CONTENT */}
-          <div className="lg:col-span-3 bg-white rounded-xl shadow-sm p-8 border border-gray-100">
+          <div
+            id="aids-right-content"
+            className="lg:col-span-3 bg-white rounded-xl shadow-sm p-8 border border-gray-100"
+          >
             <div className="mb-6 pb-4 border-b border-gray-200">
               <h3 className="text-2xl font-bold text-secondary">{active}</h3>
             </div>
@@ -198,7 +211,11 @@ export default function FAQSectionAIDS() {
                       className="flex flex-col sm:flex-row sm:items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50"
                     >
                       <h5 className="font-semibold text-gray-800">{item.label}</h5>
-                      <a href={item.pdf} target="_blank" className="px-4 py-2 bg-secondary text-white rounded-md mt-2 sm:mt-0">
+                      <a
+                        href={item.pdf}
+                        target="_blank"
+                        className="px-4 py-2 bg-secondary text-white rounded-md mt-2 sm:mt-0"
+                      >
                         View / Download
                       </a>
                     </div>
@@ -232,7 +249,6 @@ export default function FAQSectionAIDS() {
 
           </div>
         </div>
-
       </div>
     </section>
   );

@@ -370,7 +370,7 @@ export default function Overview() {
                 {/* Updated Image */}
                 <div className="w-full h-[380px] relative rounded-lg overflow-hidden">
                   <Image
-                    src="/Faculty/tarita_shankar.webp" // ← your image path
+                    src="/faculty/tarita_shankar.webp" // ← your image path
                     alt="Dr. Tarita Shankar"
                     fill
                     className="object-contain"
@@ -573,9 +573,9 @@ export default function Overview() {
               {leaders.map((leader, index) => {
                 // Assign images by index
                 const leaderImages = [
-                  "/Faculty/nilesh_uke.webp", // For Dr. Nilesh Uke
-                  "/Faculty/soumitra_das.webp", // For Dr. Soumitra S Das (replace with correct file)
-                  "/Faculty/saurabh_gupta.PNG", // For Dr. Saurabh Harishchand Gupta (replace if needed)
+                  "/faculty/nilesh_uke.webp", // For Dr. Nilesh Uke
+                  "/faculty/soumitra_das.webp", // For Dr. Soumitra S Das (replace with correct file)
+                  "/faculty/saurabh_gupta.PNG", // For Dr. Saurabh Harishchand Gupta (replace if needed)
                 ];
 
                 const imgSrc = leaderImages[index] || "/placeholder.webp";

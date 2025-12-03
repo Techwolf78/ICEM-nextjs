@@ -13,6 +13,11 @@ export default function ScrollCrushWrapper({ Hero, children }) {
     const hero = heroRef.current;
     if (!hero) return;
 
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+    // ❌ Skip GSAP on Safari (ADD THIS)
+    if (isSafari) return;
+
     const heroHeight = hero.offsetHeight;
 
     // Safe ScrollTrigger
@@ -20,7 +25,7 @@ export default function ScrollCrushWrapper({ Hero, children }) {
       scrollTrigger: {
         trigger: hero,
         start: "top top",
-        end: "+=600",           // 🔥 FIXED LENGTH (prevents collapsing)
+        end: "+=600", // 🔥 FIXED LENGTH (prevents collapsing)
         scrub: true,
         pin: true,
         pinSpacing: false,
@@ -50,9 +55,7 @@ export default function ScrollCrushWrapper({ Hero, children }) {
         {Hero}
       </div>
 
-      <div className="relative z-20 pt-5">
-        {children}
-      </div>
+      <div className="relative z-20 pt-5">{children}</div>
     </div>
   );
 }

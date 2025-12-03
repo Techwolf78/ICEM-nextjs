@@ -4,11 +4,11 @@ import Image from "next/image";
 
 export default function PlacementCarousel() {
   const [desktopImages, setDesktopImages] = useState([
-    "/banners/placement-banner1.webp",
+    "/placement/PlacementBanner2.webp",
     "/banners/placement-banner2.webp",
   ]);
   const [mobileImages, setMobileImages] = useState([
-    "/banners/placement-banner1.webp",
+    "/placement/PlacementBanner2.webp",
     "/banners/placement-banner2.webp",
   ]);
   const [currentIndex, setCurrentIndex] = useState(0);

@@ -13,13 +13,35 @@ import RDCommitteeTable2324 from "@/components/research/RDCommitteeTable2324";
 import { publicationsData } from "@/static/research/publicationsData";
 import { iprData } from "@/static/research/publicationsData";
 import { researchData } from "@/static/research/researchdata";
-
-const BEComp = "/BEComp.pdf";
+import {
+  BookOpen,
+  GraduationCap,
+  FileCheck,
+  Globe,
+  Atom,
+  Users,
+  BookCopy,
+  Lightbulb,
+  Award,
+  Copyright,
+} from "lucide-react";
 
 const Research = () => {
   const [activeAccordion, setActiveAccordion] = useState(null);
   const [activeTab, setActiveTab] = useState("Overview");
 
+  const stats = [
+    { number: "5", label: "UGC Care Group 1", icon: FileCheck },
+    { number: "26", label: "Scopus Indexed", icon: Globe },
+    { number: "8", label: "Web of Science", icon: Atom },
+    { number: "13", label: "Peer Reviewed", icon: Users },
+    { number: "75", label: "Student Publications", icon: GraduationCap },
+    { number: "13", label: "Books", icon: BookOpen },
+    { number: "6", label: "Book Chapters", icon: BookCopy },
+    { number: "20", label: "Patents Published", icon: Lightbulb },
+    { number: "8", label: "Patents Granted", icon: Award },
+    { number: "30", label: "Copyright Granted", icon: Copyright },
+  ];
   return (
     <div className="w-full bg-white">
       {/* Hero Section */}
@@ -72,22 +94,16 @@ const Research = () => {
           </h2>
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4 mb-6 md:mb-8">
-            {[
-              { number: "5", label: "UGC Care Group 1" },
-              { number: "26", label: "Scopus Indexed" },
-              { number: "8", label: "Web of Science" },
-              { number: "13", label: "Peer Reviewed" },
-              { number: "75", label: "Student Publications" },
-              { number: "13", label: "Books" },
-              { number: "6", label: "Book Chapters" },
-              { number: "20", label: "Patents Published" },
-              { number: "8", label: "Patents Granted" },
-              { number: "30", label: "Copyright Granted" },
-            ].map((item, index) => (
+            {stats.map((item, index) => (
               <div
                 key={index}
-                className="bg-white p-3 md:p-4 rounded-lg shadow-sm md:shadow-md border border-gray-200"
+                className="bg-white p-3 md:p-4 rounded-lg shadow-sm md:shadow-md border border-gray-200 flex flex-col items-center justify-center hover:shadow-lg transition-shadow duration-300"
               >
+                {/* 3. Render the Icon */}
+                <div className="mb-3 p-2 bg-gray-100 rounded-full">
+                  <item.icon className="w-6 h-6 md:w-8 md:h-8 text-secondary" />
+                </div>
+
                 <div className="text-lg md:text-xl lg:text-2xl font-bold text-secondary mb-1">
                   {item.number}
                 </div>

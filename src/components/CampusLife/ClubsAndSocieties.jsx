@@ -3,7 +3,7 @@
 import React from "react";
 import { clubsAndSocieties } from "@/static/campuslife/clubs-and-societies";
 
-export default function ClubsAndSocieties() {
+export default function ClubsAndSocietiesold() {
   return (
     <>
     <div className="space-y-12">

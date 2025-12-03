@@ -31,17 +31,17 @@ const Academics = () => {
       {/* Hero Banner */}
       <div className="w-full h-[60vh] relative">
         <Image
-          src={"/banners/BannerOverviewPage.webp"}
+          src="/governance/AcademicsBanner.webp"
           alt="ICEM Campus"
           className="object-cover"
           fill
           priority
         />
-        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+        {/* <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
             Academic Cell
           </h1>
-        </div>
+        </div> */}
       </div>
 
       {/* Main Content Container */}
@@ -65,20 +65,20 @@ const Academics = () => {
                   className="object-cover w-full h-full"
                 />
               </div>
-              
+
               <h3 className="text-xl font-bold text-gray-800 text-center mb-2">
                 Dr. Saurabh Harishchand Gupta
               </h3>
               <p className="text-gray-600 text-center mb-6">Dean (Academics)</p>
-              
+
               <div className="w-full">
                 <p className="text-gray-700 leading-relaxed text-justify">
                   The <b>Academic Cell</b> is one of the core departments on the
                   campus serving the academic community. It ensures the smooth
                   functioning of all academic operations and facilitates
                   continuous improvement in teaching and learning processes. The
-                  cell plays a vital role in academic coordination, planning, and
-                  monitoring across all departments of the institution.
+                  cell plays a vital role in academic coordination, planning,
+                  and monitoring across all departments of the institution.
                 </p>
               </div>
             </div>
@@ -92,11 +92,17 @@ const Academics = () => {
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700">
                 <li className="flex items-start">
                   <span className="text-secondary mr-2 mt-1">•</span>
-                  <span>Coordinate the Academic Calendar and teaching plan for the college.</span>
+                  <span>
+                    Coordinate the Academic Calendar and teaching plan for the
+                    college.
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-secondary mr-2 mt-1">•</span>
-                  <span>Coordinate with departments for load calculations and faculty assignments.</span>
+                  <span>
+                    Coordinate with departments for load calculations and
+                    faculty assignments.
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-secondary mr-2 mt-1">•</span>
@@ -108,7 +114,10 @@ const Academics = () => {
                 </li>
                 <li className="flex items-start">
                   <span className="text-secondary mr-2 mt-1">•</span>
-                  <span>Time Table preparation and monthly review ensuring effective implementation.</span>
+                  <span>
+                    Time Table preparation and monthly review ensuring effective
+                    implementation.
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-secondary mr-2 mt-1">•</span>
@@ -116,27 +125,43 @@ const Academics = () => {
                 </li>
                 <li className="flex items-start">
                   <span className="text-secondary mr-2 mt-1">•</span>
-                  <span>Review and monitor proper conduction of classes and adherence to teaching plan.</span>
+                  <span>
+                    Review and monitor proper conduction of classes and
+                    adherence to teaching plan.
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-secondary mr-2 mt-1">•</span>
-                  <span>Ensure proper conduction of teacher reviews, student feedback, and mentoring.</span>
+                  <span>
+                    Ensure proper conduction of teacher reviews, student
+                    feedback, and mentoring.
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-secondary mr-2 mt-1">•</span>
-                  <span>Collate and report continuous student assessment marks.</span>
+                  <span>
+                    Collate and report continuous student assessment marks.
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-secondary mr-2 mt-1">•</span>
-                  <span>Oversee preparation of provisional and final detention lists.</span>
+                  <span>
+                    Oversee preparation of provisional and final detention
+                    lists.
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-secondary mr-2 mt-1">•</span>
-                  <span>Monitor result analysis and academic performance trends.</span>
+                  <span>
+                    Monitor result analysis and academic performance trends.
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-secondary mr-2 mt-1">•</span>
-                  <span>Coordinate and conduct <b>Founders Day (Graduation Ceremony)</b>.</span>
+                  <span>
+                    Coordinate and conduct{" "}
+                    <b>Founders Day (Graduation Ceremony)</b>.
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-secondary mr-2 mt-1">•</span>
@@ -144,15 +169,22 @@ const Academics = () => {
                 </li>
                 <li className="flex items-start">
                   <span className="text-secondary mr-2 mt-1">•</span>
-                  <span>Collect and analyze feedback (online & classroom).</span>
+                  <span>
+                    Collect and analyze feedback (online & classroom).
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-secondary mr-2 mt-1">•</span>
-                  <span>Drive academic reforms and ensure effective implementation.</span>
+                  <span>
+                    Drive academic reforms and ensure effective implementation.
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-secondary mr-2 mt-1">•</span>
-                  <span>Coordinate <b>Digital Learning</b> initiatives and monitor online TLP.</span>
+                  <span>
+                    Coordinate <b>Digital Learning</b> initiatives and monitor
+                    online TLP.
+                  </span>
                 </li>
               </ul>
             </div>

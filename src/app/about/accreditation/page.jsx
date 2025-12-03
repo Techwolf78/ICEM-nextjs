@@ -59,7 +59,7 @@ export default function Accreditation() {
       {/* Banner */}
       <div className="w-full h-auto relative">
         <Image
-          src="/Facilities/BannerOverviewPage.webp"
+          src="/accreditations/AccreditationBanner.webp"
           alt="Accreditation Banner"
           className="w-full h-full object-cover"
           width={1700}
@@ -91,7 +91,6 @@ export default function Accreditation() {
               alt="NAAC"
               width={350}
               height={350}
-  
             />
           </div>
           <div className="flex flex-col items-center justify-center p-4 sm:p-6 transition-transform duration-300 hover:scale-105 shadow-lg rounded-lg shadow-gray-200">
@@ -100,7 +99,6 @@ export default function Accreditation() {
               alt="UGC"
               width={350}
               height={350}
-
             />
           </div>
           <div className="flex flex-col items-center justify-center p-2 sm:p-4 transition-transform duration-300 hover:scale-105 shadow-lg rounded-lg shadow-gray-200">
@@ -117,7 +115,6 @@ export default function Accreditation() {
               alt=""
               width={350}
               height={350}
-
             />
           </div>
         </div>

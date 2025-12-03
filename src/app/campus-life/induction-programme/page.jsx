@@ -8,7 +8,7 @@ function InductionProgramme() {
   const [openIndex, setOpenIndex] = useState(null);
 
   // Assets from public folder
-  const bannerImg = "/campuslife/inductionbanner.webp";
+  const bannerImg = "/campuslife/InductionProgramme1.webp";
   
   // PDF files
   const inductionCPMAM2022_23 = "/pdfs/induction/Induction (CP Mam) Report_2022-23.pdf";
@@ -42,7 +42,7 @@ function InductionProgramme() {
   return (
     <div className="w-full  bg-white text-gray-800">
       {/* Hero Banner */}
-      <div className="relative w-full h-[60vh]">
+      <div className="relative w-full h-[70vh]">
         <Image
           src={bannerImg}
           alt="Induction Programme"

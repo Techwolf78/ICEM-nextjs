@@ -6,27 +6,26 @@ export default function BannerSlider({ activeSection }) {
   // ✅ Static local images (object mapping)
   const desktopImages = {
     Sports: "/Facilities/FacilitiesSports.jpg",
-    Transport: "/Facilities/FacilitiesGymTransport.jpg",
+    Transport: "/Facilities/Transport.jpg",
     Canteen: "/Facilities/FacilitiesCanteen.jpg",
     Hostel: "/Facilities/FacilitiesHostel.jpg",
     Library: "/Facilities/FacilitiesLibrary.jpg",
     Gym: "/Facilities/FacilitiesGymTransport.jpg",
-    "Primary Health Centre": "/Facilities/FacilitiesGymTransport.jpg",
+    "Primary Health Centre": "/Facilities/HealthCentreBanner.jpg",
   };
 
   const mobileImages = {
     Sports: "/Facilities/FacilitiesSports.jpg",
-    Transport: "/Facilities/FacilitiesGymTransport.jpg",
+    Transport: "/Facilities/Transport.jpg",
     Canteen: "/Facilities/FacilitiesCanteen.jpg",
     Hostel: "/Facilities/FacilitiesHostel.jpg",
     Library: "/Facilities/FacilitiesLibrary.jpg",
     Gym: "/Facilities/FacilitiesGymTransport.jpg",
-    "Primary Health Centre": "/Facilities/FacilitiesGymTransport.jpg",
+    "Primary Health Centre": "/Facilities/HealthCentreBanner.jpg",
   };
 
   // ✅ Get correct image paths safely
-  const desktopImage =
-    desktopImages[activeSection] || desktopImages["Sports"];
+  const desktopImage = desktopImages[activeSection] || desktopImages["Sports"];
   const mobileImage = mobileImages[activeSection] || mobileImages["Sports"];
 
   return (

@@ -8,17 +8,19 @@ const HeroSlider = () => {
   // 👉 Load banners directly from /public/banners
   const desktopImages = [
     "/banners/ICEMBANNER27.webp",
+    "/placement/PlacementBanner2.webp",
     "/banners/ICEMBANNER6.webp",
     "/banners/ICEMBANNERCOMP.webp",
-    "/banners/ICEMBANNERCLASS.webp",
+    // "/banners/ICEMBANNERCLASS.webp",
     "/banners/ICEMBANNERMECH.webp",
   ];
 
   const mobileImages = [
     "/banners/ICEMBANNER27.webp",
+    "/placement/PlacementBanner2.webp",
     "/banners/ICEMBANNER6.webp",
     "/banners/ICEMBANNERCOMP.webp",
-    "/banners/ICEMBANNERCLASS.webp",
+    // "/banners/ICEMBANNERCLASS.webp",
     "/banners/ICEMBANNERMECH.webp",
   ];
 

@@ -43,22 +43,20 @@ export default function FAQENTC() {
     // ================= NEW SECTIONS FOR BBA / IT =================
 
     "Fee Structure": {
-      type: "accordion",
-      content: {
-        "Fee Structure": [
-          {
-            label: "View Fee Structure PDF",
-            pdf: "/Programs/BBA/FeeStructure2526.pdf",
-          },
-        ],
-        FRA: [
-          {
-            label: "View FRA PDF",
-            pdf: "/Programs/BBA/FRA2025.pdf",
-          },
-        ],
-      },
+  type: "syllabus",
+  content: [
+    {
+      id: "fee-structure",
+      label: "Fee Structure (2025–26)",
+      pdf: "/Programs/Computer/Feestructure2526.pdf",
     },
+    {
+      id: "fee-fra",
+      label: "FRA Document",
+      pdf: "/Programs/Computer/FRA2025.pdf",
+    },
+  ],
+},
 
     "Admission Procedure": {
       type: "syllabus",
@@ -75,7 +73,7 @@ export default function FAQENTC() {
       type: "table",
       content: [
         {
-          program: "BBA Program",
+          program: "Integrated MBA (BBA + MBA) Program",
           intake: "60 Seats",
           duration: "5 Years",
           type: "Full Time",
@@ -89,11 +87,11 @@ export default function FAQENTC() {
 For First Year: - (1) Candidates passing SSC and HSC or 10+2 Examination or Diploma in Engineering or D. Voc. Examination from a recognized institution in the Maharashtra State`,
     },
 
-    Faculty: {
-      type: "gallery",
-      content: facultyImages,
-      title: "Faculty Members",
-    },
+    // Faculty: {
+    //   type: "gallery",
+    //   content: facultyImages,
+    //   title: "Faculty Members",
+    // },
   };
 
   const tabs = Object.keys(sectionContent);

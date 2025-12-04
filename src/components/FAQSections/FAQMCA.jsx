@@ -7,12 +7,12 @@ import Image from "next/image";
 const syllabusList = [
   {
     id: "sybtech",
-    label: "SY B.Tech (2025 Pattern) Syllabus",
+    label: "MCA-(2024-26) Syllabus",
     pdf: "/Programs/MCA/SY2426.pdf",
   },
   {
     id: "sybtech",
-    label: "SY B.Tech (2025 Pattern) Syllabus",
+    label: "MCA-(2025-27) Syllabus",
     pdf: "/Programs/MCA/SY2527.pdf",
   },
 ];
@@ -100,22 +100,20 @@ export default function FAQENTC() {
     // ================= NEW SECTIONS FOR IMCA =================
 
     "Fee Structure": {
-      type: "accordion",
-      content: {
-        "Fee Structure": [
-          {
-            label: "View Fee Structure PDF",
-            pdf: "/Programs/IBBAMCA/FeeStructure2526.pdf",
-          },
-        ],
-        FRA: [
-          {
-            label: "View FRA PDF",
-            pdf: "/Programs/IBBAMCA/FRA2025.pdf",
-          },
-        ],
-      },
+  type: "syllabus",
+  content: [
+    {
+      id: "fee-structure",
+      label: "Fee Structure (2025–26)",
+      pdf: "/Programs/Computer/Feestructure2526.pdf",
     },
+    {
+      id: "fee-fra",
+      label: "FRA Document",
+      pdf: "/Programs/Computer/FRA2025.pdf",
+    },
+  ],
+},
 
     "Admission Procedure": {
       type: "syllabus",
@@ -161,11 +159,11 @@ export default function FAQENTC() {
       ],
     },
 
-    Faculty: {
-      type: "gallery",
-      content: facultyImages,
-      title: "Faculty Members",
-    },
+    // Faculty: {
+    //   type: "gallery",
+    //   content: facultyImages,
+    //   title: "Faculty Members",
+    // },
     "Syllabus & Course Structure": {
       type: "syllabus",
       content: syllabusList,

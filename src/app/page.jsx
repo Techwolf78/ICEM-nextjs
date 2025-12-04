@@ -11,6 +11,7 @@ import EventsSection from "@/components/home/EventSection";
 import CTASection from "@/components/home/CTASection";
 import InstagramMosaic from "@/components/home/InstagramMosaic";
 import CampusBeat from "@/components/home/CampusBeat";
+import Testimonials from "@/components/PlacementComponents/Testimonials";
 
 export default function HomePage() {
   return (
@@ -24,6 +25,7 @@ export default function HomePage() {
         <EnergyInnovation />
         <CollegeUnplugged />
         <EventsSection />
+        <Testimonials />
         <CTASection />
         <InstagramMosaic />
       </ScrollCrushWrapper>

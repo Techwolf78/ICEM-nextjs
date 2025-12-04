@@ -37,6 +37,16 @@ const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState(null);
+  const [showDialog, setShowDialog] = useState(false);
+  const [notify, setNotify] = useState(false);
+  const tourRef = useRef(null);
+
+  useEffect(() => {
+    if (notify) {
+      const timer = setTimeout(() => setNotify(false), 2500);
+      return () => clearTimeout(timer);
+    }
+  }, [notify]);
 
   // ✅ Refs to manage hover timers and outside clicks (no flicker)
   const dropdownTimeoutRef = useRef(null);
@@ -370,46 +380,53 @@ const Navbar = () => {
         {/* Right Section - Desktop */}
         <div className="hidden md:flex sm:w-[70%] h-full flex-col ">
           {/* Top Bar */}
-          <div className="flex justify-end  w-full h-[45%] text-xs text-black sm:text-xs md:text-xs lg:text-sm ">
+          <div className="flex justify-end w-full h-[45%] text-xs lg:text-sm text-black">
             <div className="flex gap-1">
-              <div className="flex items-center font-semibold">
-                <a
+              <div className="flex items-center font-semibold gap-1">
+                <Link
                   href="https://rapid.grayquest.com/iudp-master"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-secondary transition-colors duration-200 px-1"
                 >
                   Pay Fee
-                </a>
+                </Link>
+
                 <span className="text-gray-400">|</span>
-                <a
+
+                <Link
                   href="https://indira.edupluscampus.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-secondary transition-colors duration-200 px-1 lg:px-2"
                 >
                   ERP Login Staff
-                </a>
+                </Link>
+
                 <span className="text-gray-400">|</span>
-                <a
+
+                <Link
                   href="https://myindira.edupluscampus.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-secondary transition-colors duration-200 px-1 lg:px-2"
                 >
                   ERP Login Student
-                </a>
+                </Link>
+
                 <span className="text-gray-400">|</span>
 
-                {/* <a
-                  href="https://lc-icem-sumedh.vercel.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-secondary transition-colors duration-200 px-1 lg:px-2"
+                {/* 🔔 Tooltip Trigger */}
+                <button
+                  ref={tourRef}
+                  onClick={() => setNotify(true)}
+                  className="relative hover:text-secondary transition-colors duration-200 px-1 lg:px-2"
                 >
-                  Leaving Certificate
-                </a>
-                <span className="text-gray-400">|</span> */}
+                  360<sup>°</sup> Tour
+                </button>
+
+                <span className="text-gray-400">|</span>
+
                 <Link
                   href="/contact"
                   className="hover:text-secondary transition-colors duration-200 px-1 lg:px-2"
@@ -418,17 +435,22 @@ const Navbar = () => {
                 </Link>
               </div>
 
-              {/* Buttons */}
-              <div className="flex">
-                <button
-                  onClick={toggleModal}
-                  className="bg-secondary hover:scale-[1.03] text-white px-4 py-1 font-semibold"
-                >
-                  Enquire Now
-                </button>
-              </div>
+              {/* CTA Button */}
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="bg-secondary hover:scale-[1.03] text-white px-4 py-1 font-semibold transition-all duration-200"
+              >
+                Enquire Now
+              </button>
             </div>
           </div>
+
+          {/* 🎉 Tooltip Notification */}
+          {notify && (
+            <div className="absolute right-[20vh] top-8 bg-gray-900 text-white text-xs px-3 py-2 rounded-md shadow-md animate-fadeIn z-[999]">
+              🚧 Virtual Tour Coming Soon!
+            </div>
+          )}
 
           {/* Bottom Nav Links */}
           <div className="flex justify-end items-center h-[55%] text-black font-semibold whitespace-nowrap text-xs sm:text-xs md:text-xs lg:text-sm xl:text-base">

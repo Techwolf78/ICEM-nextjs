@@ -9,7 +9,6 @@ import Career from "@/components/PlacementComponents/Career";
 import Testimonials from "@/components/PlacementComponents/Testimonials";
 import PlacementInformation from "@/components/PlacementComponents/PlacementInformation";
 import Upskilling from "@/components/PlacementComponents/Upskilling";
-import PlacementCarousel from "@/components/PlacementComponents/PlacementCarousel";
 import CTASection from "@/components/home/CTASection";
 
 /**
@@ -19,7 +18,15 @@ import CTASection from "@/components/home/CTASection";
 function Placement() {
   return (
     <div className="w-full bg-white">
-      <PlacementCarousel/>
+      <div className="w-full">
+        <Image
+          src="/placement/PlacementBanner2.webp"
+          alt="Placement Banner"
+          width={1920}
+          height={600}
+          className="object-cover w-full h-auto"
+        />
+      </div>
       <Typingsection />
       <Impact />
       <Companies />

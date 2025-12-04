@@ -7,6 +7,112 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+const alumniProfiles = [
+  {
+    id: 1,
+    name: "Aaditya Narayan",
+    position: "Alumni",
+    company: "ICEM",
+    year: "2024",
+    image: "/alumni/Aaditya Narayan.webp",
+  },
+  {
+    id: 2,
+    name: "Anmol Bajpai",
+    position: "Alumni",
+    company: "ICEM",
+    year: "2024",
+    image: "/alumni/Anmol Bajpai.webp",
+  },
+  {
+    id: 3,
+    name: "Arpita Jha",
+    position: "Alumni",
+    company: "ICEM",
+    year: "2024",
+    image: "/alumni/Arpita Jha.webp",
+  },
+  {
+    id: 4,
+    name: "Bharat Thorat",
+    position: "Alumni",
+    company: "ICEM",
+    year: "2024",
+    image: "/alumni/Bharat Thorat.webp",
+  },
+  {
+    id: 5,
+    name: "Ganesh Lawand",
+    position: "Alumni",
+    company: "ICEM",
+    year: "2024",
+    image: "/alumni/Ganesh Lawand.webp",
+  },
+  {
+    id: 6,
+    name: "Gaurav Pate",
+    position: "Alumni",
+    company: "ICEM",
+    year: "2024",
+    image: "/alumni/Gaurav Pate.webp",
+  },
+  {
+    id: 7,
+    name: "Ishita Gupta",
+    position: "Alumni",
+    company: "ICEM",
+    year: "2024",
+    image: "/alumni/Ishita Gupta.webp",
+  },
+  {
+    id: 8,
+    name: "Mandar Adsul",
+    position: "Alumni",
+    company: "ICEM",
+    year: "2024",
+    image: "/alumni/Mandar Adsul.webp",
+  },
+  {
+    id: 9,
+    name: "Prayush Parekh",
+    position: "Alumni",
+    company: "ICEM",
+    year: "2024",
+    image: "/alumni/Prayush Parekh.webp",
+  },
+  {
+    id: 10,
+    name: "Rajita Roy",
+    position: "Alumni",
+    company: "ICEM",
+    year: "2024",
+    image: "/alumni/Rajita Roy.webp",
+  },
+  {
+    id: 11,
+    name: "Sourabh Madukar",
+    position: "Alumni",
+    company: "ICEM",
+    year: "2024",
+    image: "/alumni/Sourabh Madukar.webp",
+  },
+  {
+    id: 12,
+    name: "Swapnil Patil",
+    position: "Alumni",
+    company: "ICEM",
+    year: "2024",
+    image: "/alumni/Swapnil Patil.webp",
+  },
+  {
+    id: 13,
+    name: "Vaishnavi Shinde",
+    position: "Alumni",
+    company: "ICEM",
+    year: "2024",
+    image: "/alumni/Vaishnavi Shinde.webp",
+  },
+];
 export default function Alumni() {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -69,113 +175,6 @@ export default function Alumni() {
       }));
     }
   };
-
-  const alumniProfiles = [
-    {
-      id: 1,
-      name: "Aaditya Narayan",
-      position: "Alumni",
-      company: "ICEM",
-      year: "2024",
-      image: "/alumni/Aaditya Narayan.webp",
-    },
-    {
-      id: 2,
-      name: "Anmol Bajpai",
-      position: "Alumni",
-      company: "ICEM",
-      year: "2024",
-      image: "/alumni/Anmol Bajpai.webp",
-    },
-    {
-      id: 3,
-      name: "Arpita Jha",
-      position: "Alumni",
-      company: "ICEM",
-      year: "2024",
-      image: "/alumni/Arpita Jha.webp",
-    },
-    {
-      id: 4,
-      name: "Bharat Thorat",
-      position: "Alumni",
-      company: "ICEM",
-      year: "2024",
-      image: "/alumni/Bharat Thorat.webp",
-    },
-    {
-      id: 5,
-      name: "Ganesh Lawand",
-      position: "Alumni",
-      company: "ICEM",
-      year: "2024",
-      image: "/alumni/Ganesh Lawand.webp",
-    },
-    {
-      id: 6,
-      name: "Gaurav Pate",
-      position: "Alumni",
-      company: "ICEM",
-      year: "2024",
-      image: "/alumni/Gaurav Pate.webp",
-    },
-    {
-      id: 7,
-      name: "Ishita Gupta",
-      position: "Alumni",
-      company: "ICEM",
-      year: "2024",
-      image: "/alumni/Ishita Gupta.webp",
-    },
-    {
-      id: 8,
-      name: "Mandar Adsul",
-      position: "Alumni",
-      company: "ICEM",
-      year: "2024",
-      image: "/alumni/Mandar Adsul.webp",
-    },
-    {
-      id: 9,
-      name: "Prayush Parekh",
-      position: "Alumni",
-      company: "ICEM",
-      year: "2024",
-      image: "/alumni/Prayush Parekh.webp",
-    },
-    {
-      id: 10,
-      name: "Rajita Roy",
-      position: "Alumni",
-      company: "ICEM",
-      year: "2024",
-      image: "/alumni/Rajita Roy.webp",
-    },
-    {
-      id: 11,
-      name: "Sourabh Madukar",
-      position: "Alumni",
-      company: "ICEM",
-      year: "2024",
-      image: "/alumni/Sourabh Madukar.webp",
-    },
-    {
-      id: 12,
-      name: "Swapnil Patil",
-      position: "Alumni",
-      company: "ICEM",
-      year: "2024",
-      image: "/alumni/Swapnil Patil.webp",
-    },
-    {
-      id: 13,
-      name: "Vaishnavi Shinde",
-      position: "Alumni",
-      company: "ICEM",
-      year: "2024",
-      image: "/alumni/Vaishnavi Shinde.webp",
-    },
-  ];
 
   const testimonials = [
     {
@@ -360,9 +359,9 @@ export default function Alumni() {
               {...{
                 dots: true,
                 infinite: true,
-                speed: 800,
+                speed: 600,
                 autoplay: true,
-                autoplaySpeed: 4500,
+                autoplaySpeed: 2500,
                 arrows: false,
                 pauseOnHover: true,
                 slidesToShow: 1,
@@ -374,16 +373,9 @@ export default function Alumni() {
             >
               {testimonials.map((item, index) => (
                 <div key={index} className="px-3 md:px-6">
-                  <div className="bg-gradient-to-br from-white to-blue-50/60 border border-gray-200 rounded-2xl shadow-md p-6 md:p-10 h-[355px] md:h-[320px] lg:h-[310px] flex flex-col justify-between transition-all duration-300 hover:shadow-xl">
-                    {/* Story */}
-                    <div>
-                      <p className="text-gray-700 leading-relaxed text-base md:text-lg italic">
-                        “{item.story}”
-                      </p>
-                    </div>
-
-                    {/* Alumni Info */}
-                    <div className="border-t border-gray-300 pt-5 mt-6">
+                  <div className="bg-gradient-to-br from-white to-blue-50/60 border border-gray-200 rounded-2xl shadow-md p-6 md:p-10 h-[355px] md:h-[320px] lg:h-[290px] flex flex-col justify-between transition-all duration-300 hover:shadow-xl">
+                    {/* Alumni Info - NOW AT TOP */}
+                    <div className="border-b border-gray-300 pb-4 mb-6">
                       <h3 className="text-xl font-bold text-secondary mb-1">
                         {item.name}
                       </h3>
@@ -392,6 +384,13 @@ export default function Alumni() {
                       </p>
                       <p className="text-sm text-gray-600 font-medium">
                         Batch: {item.year}
+                      </p>
+                    </div>
+
+                    {/* Story - NOW BELOW */}
+                    <div>
+                      <p className="text-gray-700 leading-relaxed text-base md:text-lg italic">
+                        “{item.story}”
                       </p>
                     </div>
                   </div>

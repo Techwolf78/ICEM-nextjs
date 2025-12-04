@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 // ================== SYLLABUS DATA ==================
-
 const syllabusList = [
   {
     id: "sybtech",
@@ -36,18 +35,52 @@ const academicCalendarList = [
 const timeTableList = [
   {
     id: "bett",
-    label: "BETT Time Table",
+    label: "BE Time Table",
     pdf: "/Programs/Computer/BETT.pdf",
   },
   {
     id: "tett",
-    label: "TETT Time Table",
+    label: "TE Time Table",
     pdf: "/Programs/Computer/TETT.pdf",
   },
   {
     id: "sett",
-    label: "SETT Time Table",
+    label: "SE Time Table",
     pdf: "/Programs/Computer/SETT.pdf",
+  },
+];
+
+// ================== ACADEMIC PERFORMANCE DATA ==================
+const academicPerformanceList = {
+  "2024-25": [
+    {
+      id: "sem1-2024-25",
+      label: "Semester 1 - Academic Year 2024-25",
+      pdf: "/Programs/Computer/SE.pdf", // Using existing PDF
+    },
+    {
+      id: "sem2-2024-25",
+      label: "Semester 2 - Academic Year 2024-25",
+      pdf: "/Programs/Computer/TE.pdf", // Using existing PDF
+    },
+  ],
+};
+
+// ================== RESEARCH DATA ==================
+const researchList = [
+  {
+    id: "research",
+    label: "Research Publications & Projects",
+    pdf: "/Programs/Computer/CompResearch.pdf", // Using existing PDF
+  },
+];
+
+// ================== INNOVATIVE PEDAGOGY DATA ==================
+const innovativePedagogyList = [
+  {
+    id: "pedagogy",
+    label: "Innovative Pedagogy Methods",
+    pdf: "/Programs/Computer/InnovativePedagogy.pdf", // Using existing PDF
   },
 ];
 
@@ -137,7 +170,6 @@ const labData = [
 ];
 
 // ================== IMAGE PLACEHOLDERS ==================
-
 const facultyImages = Array.from({ length: 12 }, (_, i) => ({
   id: i + 1,
   src: `/images/faculty-${(i % 4) + 1}.jpg`,
@@ -162,18 +194,6 @@ export default function FAQSectionComputer() {
           "With a remarkable placement record for the past five years, our graduates are excelling in top multinational companies and pursuing higher studies at reputed universities worldwide. The Department of Computer Engineering at ICEM continues to be a center of excellence empowering students with the knowledge, skills, and confidence to become leaders and innovators in the digital era.",
         ],
 
-        // "Vision": [
-        //   "To become an acclaimed center of excellence by rendering modern technology, academics and research for creating holistic, socio-economic professionals with interdisciplinary potential."
-        // ],
-
-        // "Mission": [
-        //   "To foster strong fundamental concepts to students and inspire them to find creative solutions with critical thinking and disciplined time managed environment.",
-        //   "To impart knowledge and skill based education in collaboration with industry, academia and research organizations.",
-        //   "To develop a center of excellence and setup a research laboratory to develop software applications for the society with the association of industry.",
-        //   "To enlighten students with the latest technologies through carefully designed training modules with the alliance of Alumni and Industry as a part of value added education.",
-        //   "To nurture and nourish effective communication, interpersonal skills, and create awareness of ethical and social responsibilities."
-        // ],
-
         "Programs Offered": [
           "The Department of Computer Engineering was established in 2007, offering both Undergraduate (B.Tech) and Postgraduate (M.Tech) Programmes in Computer Engineering. The Programmes are affiliated to Savitribai Phule Pune University (SPPU), recognized by the Government of Maharashtra, and approved by the All India Council for Technical Education (AICTE), New Delhi. The institute proudly holds the status of an Autonomous Institute under SPPU, enabling the department to design and implement a dynamic, industry-oriented curriculum that meets global standards and fosters innovation, research, and excellence in technical education",
         ],
@@ -190,7 +210,7 @@ export default function FAQSectionComputer() {
           "Analysis design and modeling of complex problems: Understand management and engineering principles meets need of atomization of industry.",
           "Usage of latest open source tools and technologies: Select & use current techniques, skills, and tools to solve societal, health, safety, cultural issues by analyzing the local and global impact of engineering on individuals or society.",
           "Social contribution of Engineers: Distinguish a problem; design a solution for the needs of the society in health, safety, public, private sectors applying relevant engineering practices.",
-          "Environment and Sustainability: Understand the affecting factors thru’ various fields of engineering to the environment context, develop the solutions which would support green Environment initiative.",
+          "Environment and Sustainability: Understand the affecting factors thru' various fields of engineering to the environment context, develop the solutions which would support green Environment initiative.",
           "Professional Development and Ethics: Inculcate ethical values amongst students to develop best engineering practices.",
           "Commitment at Individual level and as a team: Work effectively in multidisciplinary environment as individual & diverse team structure too.",
           "Communication skills: Learn an emphatic communication to function effective on teams, including diversified and multidisciplinary goal.",
@@ -210,25 +230,23 @@ export default function FAQSectionComputer() {
         ],
       },
     },
-    // ================= NEW SECTIONS =================
 
     "Fee Structure": {
-      type: "accordion",
-      content: {
-        "Fee Structure": [
-          {
-            label: "View Fee Structure PDF",
-            pdf: "/Programs/Computer/Feestructure2526.pdf",
-          },
-        ],
-        FRA: [
-          {
-            label: "View FRA PDF",
-            pdf: "/Programs/Computer/FRA2025.pdf",
-          },
-        ],
-      },
+  type: "syllabus",
+  content: [
+    {
+      id: "fee-structure",
+      label: "Fee Structure (2025–26)",
+      pdf: "/Programs/Computer/Feestructure2526.pdf",
     },
+    {
+      id: "fee-fra",
+      label: "FRA Document",
+      pdf: "/Programs/Computer/FRA2025.pdf",
+    },
+  ],
+},
+
 
     "Admission Procedure": {
       type: "syllabus",
@@ -238,7 +256,6 @@ export default function FAQSectionComputer() {
           label: "Procedure PDF",
           pdf: "/pdfs/AdmissionProcedure.pdf",
         },
-        
       ],
     },
 
@@ -246,7 +263,7 @@ export default function FAQSectionComputer() {
       type: "table",
       content: [
         {
-          program: "B.Tech Computer Engineering(Dummy)",
+          program: "B.Tech Computer Engineering",
           intake: "150 Seats",
           duration: "4 Years",
           type: "Full Time",
@@ -255,15 +272,81 @@ export default function FAQSectionComputer() {
     },
 
     "Eligibility Criteria": {
-      type: "text",
-      content: `Under Progress`,
+      type: "accordion",
+      content: {
+        "Eligibility Criteria for Admission to First Year Engineering 2024-25": [
+          "For details about First Year Engineering Admission and Eligibility Criteria, refer https://cetcell.mahacet.org/",
+        ],
+        "Maharashtra State Candidature Candidates": [
+          "The Candidate should be an Indian National.",
+          "Passed HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State), in the above subjects taken together; and the Candidate should have appeared in all the subjects in CET and should obtain non zero score in CET conducted by the Competent Authority.",
+          "Or",
+          "Passed Diploma in Engineering and Technology and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State).",
+        ],
+        "All India Candidature Candidates, Union Territory of Jammu and Kashmir and Union Territory of Ladakh Migrant Candidature Candidates": [
+          "The Candidate should be an Indian National.",
+          "Passed HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State) in the above subjects taken together; and should obtain non zero positive score in JEE (Main) B.E./B.Tech or the candidate should have appeared in all the subjects in CET and should obtain non zero score in CET conducted by the Competent Authority. However, preference shall be given to the candidate obtaining non zero positive score in JEE (Main) B.E./B.Tech over the candidates who obtained non zero score in CET.",
+          "Or",
+          "Passed Diploma in Engineering and Technology and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State).",
+        ],
+        "NRI / OCI / PIO, Children of Indian workers in the Gulf countries and Foreign National Candidature Candidates": [
+          "The candidate should have passed the HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies, and obtained at least 45 % marks in the above subjects taken together.",
+        ],
+        "Additional Information": [
+          "Any other criterion declared from time to time by the appropriate authority as defined under the Act.",
+        ],
+      },
     },
 
-    // Faculty: {
-    //   type: "gallery",
-    //   content: facultyImages,
-    //   title: "Faculty Members",
-    // },
+    Research: {
+      type: "syllabus",
+      content: researchList,
+      title: "Research Publications & Projects",
+    },
+
+    "Academic Performance": {
+  type: "syllabus",
+  content: [
+    {
+      id: "ap-1",
+      label: "SE - A.Y. 2024-25 SEM I",
+      pdf: "/Programs/Computer/SEAcademicPerformance5.pdf",
+    },
+    {
+      id: "ap-2",
+      label: "TE - A.Y. 2024-25 SEM I",
+      pdf: "/Programs/Computer/TEAcademicPerformance4.pdf",
+    },
+    {
+      id: "ap-3",
+      label: "BE - A.Y. 2024-25 SEM I",
+      pdf: "/Programs/Computer/BEAcademicPerformance6.pdf",
+    },
+    {
+      id: "ap-4",
+      label: "SE - A.Y. 2024-25 SEM II",
+      pdf: "/Programs/Computer/SEAcademicPerformance2.pdf",
+    },
+    {
+      id: "ap-5",
+      label: "TE - A.Y. 2024-25 SEM II",
+      pdf: "/Programs/Computer/TEAcademicPerformance1.pdf",
+    },
+    {
+      id: "ap-6",
+      label: "BE - A.Y. 2024-25 SEM II",
+      pdf: "/Programs/Computer/BEAcademicPerformance3.pdf",
+    },
+  ],
+},
+
+
+
+    "Innovative Pedagogy": {
+      type: "syllabus",
+      content: innovativePedagogyList,
+      title: "Innovative Pedagogy Methods",
+    },
 
     "Syllabus & Course Structure": {
       type: "syllabus",
@@ -287,17 +370,11 @@ export default function FAQSectionComputer() {
       title: "Time Tables",
     },
 
-    "Academic Performance": {
-      type: "notice",
-      content:
-        "Academic performance data is currently under development and will be available soon.",
-    },
-
-    Achievements: {
-      type: "notice",
-      content:
-        "Achievements information is currently under development and will be available soon.",
-    },
+    // Achievements: {
+    //   type: "notice",
+    //   content:
+    //     "Achievements information is currently under development and will be available soon.",
+    // },
   };
 
   const tabs = Object.keys(sectionContent);
@@ -344,7 +421,7 @@ export default function FAQSectionComputer() {
           <div className="space-y-4">
             {Object.entries(contentData.content).map(([title, items]) => (
               <div key={title} className="border border-gray-200 rounded-lg">
-                <details className="group">
+                <details className="group" open={title.includes("Eligibility")}>
                   <summary className="flex justify-between items-center p-4 cursor-pointer bg-gray-50 hover:bg-gray-100 rounded-lg">
                     <h4 className="font-semibold text-secondary text-lg">
                       {title}
@@ -482,6 +559,13 @@ export default function FAQSectionComputer() {
             </div>
           </div>
         );
+
+      case "notice":
+        return (
+          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+            <p className="text-yellow-800">{contentData.content}</p>
+          </div>
+        );
     }
   };
 
@@ -502,8 +586,8 @@ export default function FAQSectionComputer() {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* LEFT MENU */}
           <nav className="lg:col-span-1 bg-white rounded-xl shadow-sm p-6 space-y-2 sticky top-24 self-start border border-gray-100">
-            <h3 className="font-semibold text-gray-800 mb-4 text-lg">
-              Quick Links
+            <h3 className="font-semibold text-gray-800 mb-4 text-lg text-center">
+              Computer Overview
             </h3>
 
             {tabs.map((tab) => (
@@ -516,7 +600,7 @@ export default function FAQSectionComputer() {
                     setTimeout(() => {
                       const el = document.getElementById("right-content");
                       if (el) {
-                        const yOffset = -160; // 🔥 adjust this if needed (navbar height)
+                        const yOffset = -160;
                         const y =
                           el.getBoundingClientRect().top +
                           window.pageYOffset +

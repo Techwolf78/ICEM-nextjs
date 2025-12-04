@@ -234,22 +234,20 @@ export default function FAQMECH() {
     // ================= NEW SECTIONS (MECHANICAL) =================
 
     "Fee Structure": {
-      type: "accordion",
-      content: {
-        "Fee Structure": [
-          {
-            label: "View Fee Structure PDF",
-            pdf: "/Programs/Mechanical/FeeStructure2526.pdf",
-          },
-        ],
-        FRA: [
-          {
-            label: "View FRA PDF",
-            pdf: "/Programs/Mechanical/FRA2025.pdf",
-          },
-        ],
-      },
+  type: "syllabus",
+  content: [
+    {
+      id: "fee-structure",
+      label: "Fee Structure (2025–26)",
+      pdf: "/Programs/Computer/Feestructure2526.pdf",
     },
+    {
+      id: "fee-fra",
+      label: "FRA Document",
+      pdf: "/Programs/Computer/FRA2025.pdf",
+    },
+  ],
+},
 
     "Admission Procedure": {
       type: "syllabus",
@@ -269,6 +267,12 @@ export default function FAQMECH() {
           program: "B.Tech Mechanical Engineering",
           intake: "60 Seats",
           duration: "4 Years",
+          type: "Full Time",
+        },
+        {
+          program: "M. Tech Mechanical Engineering",
+          intake: "12 seats",
+          duration: "2 Year",
           type: "Full Time",
         },
       ],

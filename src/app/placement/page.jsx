@@ -29,10 +29,16 @@ function Placement() {
       </div>
       <Typingsection />
       <Impact />
-      <Companies />
-      <ResearchLab />
+      <section id="companies" className="scroll-mt-[110px] scroll-smooth ">
+        <Companies />
+      </section>
+      <section id="lab" className="scroll-mt-[110px] scroll-smooth">
+        <ResearchLab />
+      </section>
       <Career /> {/* Add logos etc here */}
-      <CASsection />
+      <section id="career-advancement" className="scroll-mt-[110px] scroll-smooth">
+        <CASsection />
+      </section>
       <TrainingOverview />
       <Upskilling />
       <Testimonials />

@@ -437,7 +437,7 @@ const Navbar = () => {
 
               {/* CTA Button */}
               <button
-                onClick={() => console.log("Open main enquiry modal")}
+                onClick={() => setIsModalOpen(true)}
                 className="bg-secondary hover:scale-[1.03] text-white px-4 py-1 font-semibold transition-all duration-200"
               >
                 Enquire Now

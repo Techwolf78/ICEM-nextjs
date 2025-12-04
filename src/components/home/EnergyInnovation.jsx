@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const cards = [
   {
@@ -9,31 +10,30 @@ const cards = [
     description:
       "We ensure every graduate is industry-ready through cutting-edge curriculum, innovation labs, and strong industry collaborations that keep students aligned with the latest technologies and trends.",
     image: "/Home/industry.webp",
+    link: "/placement#career-advancement", // Link to Career section
   },
   {
     title: "Research from Day One",
     description:
       "At Indira College, research is a way of life, supported by state-of-the-art facilities, experienced faculty, and collaborations that empower students to solve real-world challenges.",
     image: "/Home/Researchfromday1.webp",
+    link: "/placement#lab", // Link to Upskilling section
   },
   {
     title: "Corporate Partnerships & Recruitment",
     description:
       "We have established strong, lasting relationships with a diverse portfolio of national and multinational corporations. Benefit from recruitment drives, on-campus placements, and access to employers seeking ICEM talent.",
     image: "/Home/CorporateRelations.webp",
+    link: "/placement#companies", // Link to Companies section
   },
 ];
 
 const DiscoverSection = () => {
   return (
     <section className="relative bg-[#003366] py-12 sm:py-20 px-6 lg:px-8 overflow-hidden">
-      {/* BACKGROUND LAYERS (Optimized) */}
+      {/* BACKGROUND LAYERS */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#003366] via-[#004080] to-[#002b55] opacity-90 pointer-events-none"></div>
 
-      {/* 2. PERFORMANCE: Fixed Blur 
-         - Using translate-x/y center instead of expensive calculation
-         - 'opacity-40' reduces visual noise
-      */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[500px] bg-cyan-400/20 blur-[100px] rounded-full pointer-events-none"></div>
 
       <div className="relative max-w-7xl mx-auto z-10">
@@ -51,19 +51,17 @@ const DiscoverSection = () => {
         {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           {cards.map((card, index) => (
-            <div
+            <Link
               key={index}
+              href={card.link}
               className="
                 group relative flex flex-col h-full
                 p-5 rounded-2xl
-                /* 3. PERFORMANCE: Removed backdrop-blur */
-                /* Used high opacity white for the 'frosted' look without the GPU cost */
                 bg-white border border-white/10
                 shadow-2xl shadow-black/20
-                
-                /* 4. PERFORMANCE: Hardware Acceleration */
                 transition-transform duration-300 ease-out
                 hover:-translate-y-2 will-change-transform
+                no-underline
               "
             >
               {/* IMAGE WRAPPER */}
@@ -72,8 +70,6 @@ const DiscoverSection = () => {
                   src={card.image}
                   alt={card.title}
                   fill
-                  // 5. PERFORMANCE: Precise Sizes
-                  // 100vw on mobile, 33vw on desktop
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="
                     object-cover transition-transform duration-500 
@@ -91,14 +87,22 @@ const DiscoverSection = () => {
                 {card.description}
               </p>
 
-              <button className="flex items-center gap-2 text-secondary font-bold text-sm mt-6 group-hover:gap-3 transition-all">
+              <div className="flex items-center gap-2 text-secondary font-bold text-sm mt-6 group-hover:gap-3 transition-all">
                 Know more
                 <span className="text-lg">→</span>
-              </button>
-            </div>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
+
+      <style jsx>{`
+        @media (prefers-reduced-motion: reduce) {
+          .will-change-transform {
+            will-change: auto;
+          }
+        }
+      `}</style>
     </section>
   );
 };

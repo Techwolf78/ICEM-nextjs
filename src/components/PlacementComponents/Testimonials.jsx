@@ -9,11 +9,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 const testimonials = [
   {
-    image: "/logos/logo8.webp",
+    image: "/placement/ultra.webp",
     quote:
       "ICEM has always provided us with trained mechanical engineers, and as an organization, we appreciate the college's efforts to prepare the students for the industry.",
-    name: "Mr. Rahul Bagale",
-    position: "Group HR Head – Force Motors",
+    name: "Dr. Rahul Bagale",
+    position: "Vice President Human Resources – Ultra Corpotech Pvt Ltd",
   },
   {
     image: "/logos/logo45.webp",
@@ -23,25 +23,33 @@ const testimonials = [
     position: "Managing Director – Vascon Engineers",
   },
   {
-    image: "/logos/logo2.webp",
+    image: "/placement/zinnovfinal.png",
     quote:
       "While conducting campus recruitment drives across the country, ICEM consistently emerges as the top choice due to their exceptional commitment to preparing students for their dream job offers.",
     name: "Ms. Shilpi Mahar",
-    position: "Manager, TA – Data Axle",
+    position: "Associate Director – Zinnov",
   },
   {
-    image: "/logos/logo22.webp",
+    image: "/placement/expleo1.webp",
     quote:
       "We appreciate the designed training programs by ICEM aimed at equipping core Mechanical Engineering students with the necessary skills to excel in the industry. These programs ensure that students emerge as industry-ready professionals  ",
     name: "Ms. Sumana Chakraborty",
-    position: "HR Business Partner – Bridgestone India",
+    position: "General Manager,HR – Expleo Group",
   },
   {
-    image: "/logos/logo19.webp",
+    image: "/placement/ey1.png",
     quote:
       "ICEM has been a part of Ready Engineers Programme from a long time. Their way of creating resources prepared specifically to meet the needs of students, ensures a transformative experience that prepares them effectively for the corporate world.",
     name: "Mr. Sushant Kumar",
-    position: "India Lead – University Relations, Tata Technologies",
+    position: "Assistant Director – EY",
+  },
+  {
+    image: "/logos/logo30.webp",
+    quote:
+      "ICEM’s commitment to blending technical education with real-world readiness is evident in their students, who arrive well-prepared to contribute meaningfully from day one, making them a preferred choice for our campus recruitment.",
+    name: "Mr. Urvish Pandey",
+    position:
+      "India Head,University Relations & Early Talent Engagement – Mastercard",
   },
 ];
 export default function Testimonials() {
@@ -102,7 +110,7 @@ export default function Testimonials() {
                       </div>
 
                       {/* Logo */}
-                      <div className="w-20 sm:w-24 md:w-28 h-10 sm:h-12 md:h-14 relative bg-white p-1 sm:p-2 rounded-lg shadow-md border border-gray-100">
+                      <div className="w-20 sm:w-24 md:w-28 h-10 sm:h-12 md:h-14 relative p-1 sm:p-2 rounded-lg shadow-md border bg-white border-gray-100">
                         <Image
                           src={item.image}
                           alt={item.name}

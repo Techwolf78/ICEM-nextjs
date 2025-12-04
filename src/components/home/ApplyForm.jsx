@@ -29,7 +29,6 @@ const engineeringPrograms = [
 const ugCourses = ["BBA", "BCA", "Engineering", "Direct Second Year"];
 const pgCourses = ["MBA", "MCA", "M-Tech"];
 
-
 // --- Custom Select Component (Replacement for native <select>) ---
 // This component manages its own open/close state and controls the input value via props.
 const CustomSelect = ({
@@ -85,7 +84,7 @@ const CustomSelect = ({
     "absolute z-20 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-y-auto";
 
   return (
-    <div className={`relative ${className}`} ref={wrapperRef}>
+    <div className={`relative  ${className}`} ref={wrapperRef}>
       <button
         type="button"
         onClick={() => !disabled && setIsOpen(!isOpen)}
@@ -275,16 +274,14 @@ export default function ApplyForm({ variant = "card" }) {
   return (
     <div
       id="contact-form"
-      className={`w-full scroll-mt-[15vh] ${
+      className={`w-full scroll-pt-[15vh] ${
         isModal
           ? "p-0"
           : "bg-white rounded-lg p-6 shadow-md border border-gray-200"
       }`}
     >
       {!isModal && (
-        <h3
-          className={`text-xl font-semibold text-secondary mb-6 text-center`}
-        >
+        <h3 className={`text-xl font-semibold text-secondary mb-6 text-center`}>
           Enquire Now
         </h3>
       )}

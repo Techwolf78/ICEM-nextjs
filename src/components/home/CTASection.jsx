@@ -32,9 +32,15 @@ export default function CTASection() {
   // ✅ Scroll to Apply Form
   const handleScrollToForm = () => {
     const formElement = document.getElementById("contact-form");
-    if (formElement) {
-      formElement.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    if (!formElement) return;
+
+    const navbar = document.querySelector("nav"); // adjust if your navbar has another selector
+    const offset = navbar ? navbar.offsetHeight + 10 : 120; // fallback if not detected
+
+    const y =
+      formElement.getBoundingClientRect().top + window.pageYOffset - offset;
+
+    window.scrollTo({ top: y, behavior: "smooth" });
   };
 
   // ✅ Headline & Body text per route
@@ -61,31 +67,30 @@ export default function CTASection() {
       {/* ✅ Buttons */}
       <div className="flex flex-col sm:flex-row justify-center gap-4">
         <button
-  onClick={handleBrochureDownload}
-  className="
+          onClick={handleBrochureDownload}
+          className="
     bg-white text-[#002D72] font-semibold px-8 py-3 rounded-md 
     transition-all duration-300 
     hover:bg-gray-100 
     hover:shadow-lg 
     hover:-translate-y-1
   "
->
-  Download Brochure
-</button>
+        >
+          Download Brochure
+        </button>
 
-<button
-  onClick={handleScrollToForm}
-  className="
+        <button
+          onClick={handleScrollToForm}
+          className="
     bg-white text-[#002D72] font-semibold px-8 py-3 rounded-md 
     transition-all duration-300 
     hover:bg-gray-100 
     hover:shadow-lg 
     hover:-translate-y-1
   "
->
-  Get in Touch
-</button>
-
+        >
+          Get in Touch
+        </button>
       </div>
     </section>
   );

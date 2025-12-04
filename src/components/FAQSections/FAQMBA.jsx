@@ -5,19 +5,18 @@ import Image from "next/image";
 
 // ================== SYLLABUS DATA ==================
 const syllabusList = [
-  
   {
     id: "sybtech",
     label: "SY B.Tech (2025 Pattern) Syllabus",
     pdf: "/Programs/IT/SE.pdf",
-  },  
+  },
 ];
 
 // ================== FACULTY IMAGES ==================
 const facultyImages = Array.from({ length: 12 }, (_, i) => ({
   id: i + 1,
   src: `/images/faculty-${(i % 4) + 1}.jpg`,
-  alt: `Faculty Member ${i + 1}`
+  alt: `Faculty Member ${i + 1}`,
 }));
 
 // ================== MAIN COMPONENT ==================
@@ -29,9 +28,8 @@ export default function FAQENTC() {
       type: "accordion",
       content: {
         "About the Department": [
-          "Indira College of Engineering and Management (ICEM), Pune is committed to its pursuit of excellence by focusing on holistic development, thereby nurturing well-rounded and competent individuals – the proud Indiraites. At the heart of the ICEM MBA philosophy lies a steadfast conviction to evolve as one of India’s best business schools in the field of management education, dedicated to shaping a better and more progressive future for generations to come",       
-"It is well recognized that sustained economic growth is driven by skilled managers and visionary leaders who can provide the strategic impetus for development across all sectors. This vision is being realized through the remarkable advancement of business management education in India. The impact of this transformation has extended across diverse segments of academia and industry, fostering an environment where knowledge, innovation, and leadership converge to build a stronger nation."
-
+          "Indira College of Engineering and Management (ICEM), Pune is committed to its pursuit of excellence by focusing on holistic development, thereby nurturing well-rounded and competent individuals – the proud Indiraites. At the heart of the ICEM MBA philosophy lies a steadfast conviction to evolve as one of India’s best business schools in the field of management education, dedicated to shaping a better and more progressive future for generations to come",
+          "It is well recognized that sustained economic growth is driven by skilled managers and visionary leaders who can provide the strategic impetus for development across all sectors. This vision is being realized through the remarkable advancement of business management education in India. The impact of this transformation has extended across diverse segments of academia and industry, fostering an environment where knowledge, innovation, and leadership converge to build a stronger nation.",
         ],
         // Vision: [
         //   "To be an internationally-recognized leader in global business education, scholarly excellence, and collaborative community engagement."
@@ -40,69 +38,70 @@ export default function FAQENTC() {
         //   "To serve our diverse student and alumni population, our multicultural business community, and the global community of scholars by advancing business knowledge and sharing expertise.",
         //   "We prepare our students to succeed as responsible global citizens in a dynamic, technology-driven business climate -creating a growing legacy for our alumni. · We serve the business community through professional education, collaboration, and research – strengtheningregional and local industries while providing qualified graduates who can tackle the demands of today's complex business environment",
         //   "We conduct innovative research -- nurturing our faculty& intellectual growth and developing the talents of future scholars."
-        // ], 
-      }
+        // ],
+      },
     },
     // ================= NEW SECTIONS FOR IMCA =================
 
-"Fee Structure": {
-  type: "accordion",
-  content: {
-    "Fee Structure": [
-      {
-        label: "View Fee Structure PDF",
-        pdf: "/Programs/IBBAMCA/FeeStructure2526.pdf"
-      }
-    ],
-    "FRA": [
-      {
-        label: "View FRA PDF",
-        pdf: "/Programs/IBBAMCA/FRA2025.pdf"
-      }
-    ]
-  }
-},
+    "Fee Structure": {
+      type: "accordion",
+      content: {
+        "Fee Structure": [
+          {
+            label: "View Fee Structure PDF",
+            pdf: "/Programs/IBBAMCA/FeeStructure2526.pdf",
+          },
+        ],
+        FRA: [
+          {
+            label: "View FRA PDF",
+            pdf: "/Programs/IBBAMCA/FRA2025.pdf",
+          },
+        ],
+      },
+    },
 
-"Admission Procedure": {
-  type: "notice",
-  content: "Admission procedure details will be updated soon."
-},
+    "Admission Procedure": {
+      type: "syllabus",
+      content: [
+        {
+          id: "admission",
+          label: "Procedure PDF",
+          pdf: "/pdfs/AdmissionProcedure.pdf",
+        },
+      ],
+    },
 
-"Sanctioned Intake": {
-  type: "table",
-  content: [
-    {
-      program: "MBA",
-      intake: "60 Seats",
-      duration: "2 Years",
-      type: "Full Time"
-    }
-  ]
-},
+    "Sanctioned Intake": {
+      type: "table",
+      content: [
+        {
+          program: "MBA",
+          intake: "60 Seats",
+          duration: "2 Years",
+          type: "Full Time",
+        },
+      ],
+    },
 
-"Eligibility Criteria": {
-  type: "text",
-  content: `
+    "Eligibility Criteria": {
+      type: "text",
+      content: `
 Eligibility for admission to the Integrated MCA program requires candidates to have passed 10+2 from any recognized board with Mathematics or Statistics.
 
-Admission is based on merit and institutional selection guidelines. No entrance exam required.`
-},
-
+Admission is based on merit and institutional selection guidelines. No entrance exam required.`,
+    },
 
     Faculty: {
       type: "gallery",
       content: facultyImages,
-      title: "Faculty Members"
+      title: "Faculty Members",
     },
 
     "Syllabus & Course Structure": {
       type: "syllabus",
-      content: syllabusList
+      content: syllabusList,
     },
-
-
-
-
   };
 
   const tabs = Object.keys(sectionContent);
@@ -111,77 +110,77 @@ Admission is based on merit and institutional selection guidelines. No entrance 
   const renderContent = (data) => {
     switch (data.type) {
       case "accordion":
-  return (
-    <div className="space-y-4">
-      {Object.entries(data.content).map(([title, items]) => (
-        <div key={title} className="border border-gray-200 rounded-lg">
-          <details className="group">
-            <summary className="flex justify-between items-center p-4 cursor-pointer bg-gray-50 hover:bg-gray-100 rounded-lg">
-              <h4 className="font-semibold text-secondary text-lg">{title}</h4>
-              <span className="transition-transform group-open:rotate-180">▼</span>
-            </summary>
+        return (
+          <div className="space-y-4">
+            {Object.entries(data.content).map(([title, items]) => (
+              <div key={title} className="border border-gray-200 rounded-lg">
+                <details className="group">
+                  <summary className="flex justify-between items-center p-4 cursor-pointer bg-gray-50 hover:bg-gray-100 rounded-lg">
+                    <h4 className="font-semibold text-secondary text-lg">
+                      {title}
+                    </h4>
+                    <span className="transition-transform group-open:rotate-180">
+                      ▼
+                    </span>
+                  </summary>
 
-            <div className="p-4 pt-2 space-y-2">
-              {items.map((item, i) =>
-                typeof item === "object" && item.pdf ? (
-                  <a
-                    key={i}
-                    href={item.pdf}
-                    target="_blank"
-                    className="text-secondary underline font-medium hover:text-secondary/80"
-                  >
-                    {item.label}
-                  </a>
-                ) : (
-                  <p key={i} className="text-gray-700">{item}</p>
-                )
-              )}
-            </div>
+                  <div className="p-4 pt-2 space-y-2">
+                    {items.map((item, i) =>
+                      typeof item === "object" && item.pdf ? (
+                        <a
+                          key={i}
+                          href={item.pdf}
+                          target="_blank"
+                          className="text-secondary underline font-medium hover:text-secondary/80"
+                        >
+                          {item.label}
+                        </a>
+                      ) : (
+                        <p key={i} className="text-gray-700">
+                          {item}
+                        </p>
+                      )
+                    )}
+                  </div>
+                </details>
+              </div>
+            ))}
+          </div>
+        );
+      case "text":
+        return (
+          <div className="prose max-w-none text-gray-700 leading-relaxed">
+            {data.content}
+          </div>
+        );
+      case "notice":
+        return <p className="text-gray-600 text-lg">{data.content}</p>;
+      case "table":
+        return (
+          <div className="overflow-x-auto border border-gray-200 rounded-lg">
+            <table className="w-full text-sm text-left">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="p-3 border-b font-semibold">Program</th>
+                  <th className="p-3 border-b font-semibold">Intake</th>
+                  <th className="p-3 border-b font-semibold">Duration</th>
+                  <th className="p-3 border-b font-semibold">Type</th>
+                </tr>
+              </thead>
 
-          </details>
-        </div>
-      ))}
-    </div>
-  );
-case "text":
-  return (
-    <div className="prose max-w-none text-gray-700 leading-relaxed">
-      {data.content}
-    </div>
-  );
-case "notice":
-  return (
-    <p className="text-gray-600 text-lg">
-      {data.content}
-    </p>
-  );
-case "table":
-  return (
-    <div className="overflow-x-auto border border-gray-200 rounded-lg">
-      <table className="w-full text-sm text-left">
-        <thead className="bg-gray-50">
-          <tr>
-            <th className="p-3 border-b font-semibold">Program</th>
-            <th className="p-3 border-b font-semibold">Intake</th>
-            <th className="p-3 border-b font-semibold">Duration</th>
-            <th className="p-3 border-b font-semibold">Type</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {data.content.map((row, index) => (
-            <tr key={index} className="border-b hover:bg-gray-50">
-              <td className="p-3">{row.program}</td>
-              <td className="p-3">{row.intake}</td>
-              <td className="p-3">{row.duration}</td>
-              <td className="p-3">{row.type}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-
+              <tbody>
+                {data.content.map((row, index) => (
+                  <tr key={index} className="border-b hover:bg-gray-50">
+                    <td className="p-3">{row.program}</td>
+                    <td className="p-3">{row.intake}</td>
+                    <td className="p-3">{row.duration}</td>
+                    <td className="p-3">{row.type}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        );
 
       case "syllabus":
         return (
@@ -204,51 +203,57 @@ case "table":
           </div>
         );
 
-        case "entcLabs":
-  return (
-    <div>
-      <h4 className="font-semibold text-secondary text-lg mb-4">Department Laboratories</h4>
+      case "entcLabs":
+        return (
+          <div>
+            <h4 className="font-semibold text-secondary text-lg mb-4">
+              Department Laboratories
+            </h4>
 
-      <div className="overflow-x-auto border border-gray-300 rounded-lg">
-        <table className="w-full text-sm text-left border-collapse">
-          <thead className="bg-gray-100 text-gray-700">
-            <tr>
-              <th className="border p-3">Sr. No.</th>
-              <th className="border p-3">Lab No.</th>
-              <th className="border p-3">Lab Name</th>
-              <th className="border p-3">Total PCs</th>
-              <th className="border p-3">Configuration</th>
-              <th className="border p-3">Software Installed</th>
-            </tr>
-          </thead>
+            <div className="overflow-x-auto border border-gray-300 rounded-lg">
+              <table className="w-full text-sm text-left border-collapse">
+                <thead className="bg-gray-100 text-gray-700">
+                  <tr>
+                    <th className="border p-3">Sr. No.</th>
+                    <th className="border p-3">Lab No.</th>
+                    <th className="border p-3">Lab Name</th>
+                    <th className="border p-3">Total PCs</th>
+                    <th className="border p-3">Configuration</th>
+                    <th className="border p-3">Software Installed</th>
+                  </tr>
+                </thead>
 
-          <tbody>
-            {data.content.map((lab, index) => (
-              <tr key={index} className="border-b align-top">
-                <td className="border p-3">{lab.srNo}</td>
-                <td className="border p-3">{lab.labNo}</td>
-                <td className="border p-3">{lab.labName}</td>
-                <td className="border p-3">{lab.totalPCs}</td>
-                <td className="border p-3 whitespace-pre-line">{lab.configuration}</td>
-                <td className="border p-3 whitespace-pre-line">{lab.software}</td>
-              </tr>
-            ))}
+                <tbody>
+                  {data.content.map((lab, index) => (
+                    <tr key={index} className="border-b align-top">
+                      <td className="border p-3">{lab.srNo}</td>
+                      <td className="border p-3">{lab.labNo}</td>
+                      <td className="border p-3">{lab.labName}</td>
+                      <td className="border p-3">{lab.totalPCs}</td>
+                      <td className="border p-3 whitespace-pre-line">
+                        {lab.configuration}
+                      </td>
+                      <td className="border p-3 whitespace-pre-line">
+                        {lab.software}
+                      </td>
+                    </tr>
+                  ))}
 
-            {/* Total PCs Row */}
-            <tr className="font-semibold bg-gray-50">
-              <td className="border p-3" colSpan={3}>Total PCs</td>
-              <td className="border p-3">75</td>
-              <td className="border p-3" colSpan={2}></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
-
+                  {/* Total PCs Row */}
+                  <tr className="font-semibold bg-gray-50">
+                    <td className="border p-3" colSpan={3}>
+                      Total PCs
+                    </td>
+                    <td className="border p-3">75</td>
+                    <td className="border p-3" colSpan={2}></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        );
 
       // ========== UPDATED MECHANICAL LAB TABLE (2 COLUMNS) ==========
-
 
       default:
         return null;
@@ -257,73 +262,72 @@ case "table":
 
   return (
     <section className="w-full bg-gradient-to-b from-gray-50 to-white text-black py-16">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    {/* Header */}
-    <div className="text-center mb-12">
-      <h2 className="text-4xl font-bold text-secondary mb-4">
-        Department of Computer Engineering
-      </h2>
-      <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-        Empowering future innovators with cutting-edge education and research in computer science and engineering
-      </p>
-    </div>
-
-    <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-
-      {/* LEFT MENU */}
-      <nav className="lg:col-span-1 bg-white rounded-xl shadow-sm p-6 space-y-2 sticky top-24 self-start border border-gray-100">
-        <h3 className="font-semibold text-gray-800 mb-4 text-lg">Quick Links</h3>
-
-        {tabs.map((tab) => (
-          <button
-            key={tab}
-            onClick={() => {
-  setActive(tab);
-
-  if (window.innerWidth < 1024) {
-    setTimeout(() => {
-      const el = document.getElementById("right-content");
-      if (el) {
-        const yOffset = -160; // 🔥 adjust this if needed (navbar height)
-        const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-        window.scrollTo({ top: y, behavior: "smooth" });
-      }
-    }, 50);
-  }
-}}
-
-            className={`block w-full text-left px-4 py-3 rounded-lg transition-all duration-200 ${
-              active === tab
-                ? "bg-secondary text-white shadow-md"
-                : "hover:bg-gray-50 text-gray-700 hover:text-secondary hover:border-l-4 hover:border-secondary"
-            }`}
-          >
-            <span className="font-medium">{tab}</span>
-          </button>
-        ))}
-
-      </nav>
-
-      {/* RIGHT CONTENT */}
-      <div
-        id="right-content"  
-        className="lg:col-span-3 bg-white rounded-xl shadow-sm p-8 border border-gray-100"
-      >
-        <div className="mb-6 pb-4 border-b border-gray-200">
-          <h3 className="text-2xl font-bold text-secondary">
-            {active}
-          </h3>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-secondary mb-4">
+            Department of Computer Engineering
+          </h2>
+          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+            Empowering future innovators with cutting-edge education and
+            research in computer science and engineering
+          </p>
         </div>
 
-        <div className="content-area">
-          {renderContent(sectionContent[active])}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          {/* LEFT MENU */}
+          <nav className="lg:col-span-1 bg-white rounded-xl shadow-sm p-6 space-y-2 sticky top-24 self-start border border-gray-100">
+            <h3 className="font-semibold text-gray-800 mb-4 text-lg">
+              Quick Links
+            </h3>
+
+            {tabs.map((tab) => (
+              <button
+                key={tab}
+                onClick={() => {
+                  setActive(tab);
+
+                  if (window.innerWidth < 1024) {
+                    setTimeout(() => {
+                      const el = document.getElementById("right-content");
+                      if (el) {
+                        const yOffset = -160; // 🔥 adjust this if needed (navbar height)
+                        const y =
+                          el.getBoundingClientRect().top +
+                          window.pageYOffset +
+                          yOffset;
+
+                        window.scrollTo({ top: y, behavior: "smooth" });
+                      }
+                    }, 50);
+                  }
+                }}
+                className={`block w-full text-left px-4 py-3 rounded-lg transition-all duration-200 ${
+                  active === tab
+                    ? "bg-secondary text-white shadow-md"
+                    : "hover:bg-gray-50 text-gray-700 hover:text-secondary hover:border-l-4 hover:border-secondary"
+                }`}
+              >
+                <span className="font-medium">{tab}</span>
+              </button>
+            ))}
+          </nav>
+
+          {/* RIGHT CONTENT */}
+          <div
+            id="right-content"
+            className="lg:col-span-3 bg-white rounded-xl shadow-sm p-8 border border-gray-100"
+          >
+            <div className="mb-6 pb-4 border-b border-gray-200">
+              <h3 className="text-2xl font-bold text-secondary">{active}</h3>
+            </div>
+
+            <div className="content-area">
+              {renderContent(sectionContent[active])}
+            </div>
+          </div>
         </div>
       </div>
-
-    </div>
-  </div>
-</section>
+    </section>
   );
 }

@@ -29,83 +29,82 @@ export default function FAQENTC() {
       type: "accordion",
       content: {
         "About the Department": [
-          "The Department offers Integrated MCA(BCA+MCA) program in Computer Applications. This program is affiliated with the University of Pune and is recognized by the Government of Maharashtra and the All-India Council of Technical Education (AICTE), New Delhi.",  
+          "The Department offers Integrated MCA(BCA+MCA) program in Computer Applications. This program is affiliated with the University of Pune and is recognized by the Government of Maharashtra and the All-India Council of Technical Education (AICTE), New Delhi.",
           "Welcome to the Integrated MCA Department, situated on a lush, green campus with state-of-the-art infrastructure. Our department is staffed by experienced faculty and features an employer-aligned curriculum designed to maximize your career relevance. Students will benefit from live sessions with industry experts, project-based assessments, and hands-on experience through live projects. The program provides exposure to international business practices and connects you to an extensive alumni network.",
-          "Our comprehensive curriculum includes industry engagement, international visits, and guaranteed placement support. Students will participate in field projects, presentations, role plays, case studies, brainstorming sessions, and guest lectures. Additionally, we offer specialized learning opportunities through events like Outdoor Management Training, GUSTO, I-MUN, IPL, and Techno-Fiesta, all designed to equip you with the essential skills and competencies needed for a successful career."
-
+          "Our comprehensive curriculum includes industry engagement, international visits, and guaranteed placement support. Students will participate in field projects, presentations, role plays, case studies, brainstorming sessions, and guest lectures. Additionally, we offer specialized learning opportunities through events like Outdoor Management Training, GUSTO, I-MUN, IPL, and Techno-Fiesta, all designed to equip you with the essential skills and competencies needed for a successful career.",
         ],
-        
+
         //  Vission: [
         //   "The institute envisions to develop itself into a center of academic excellence in the field of Engineering and Management education in order to develop future technocrats and managers having right knowledge, skill and attitude to serve the society and industries to fulfill their ever changing requirements."
-        // ], 
-        
+        // ],
+
         //  Mission: [
         //   "To train our students to become best Engineering Entrepreneurs today, who will lead the organizations successfully into the future; locally, nationally and globally",
         //   "To provide an environment which fosters continuous improvement & innovation with related technical support & facilities to enhance student and faculty effectiveness.",
         //   "To provide programs focusing on the holistic development of the individual with the emphasis on personality grooming, physical fitness and a strong sense of social and environmental responsibility.",
         //   "To improve logic & scientific reasoning and to develop global mindset amongst the students and prepare them to work in heterogeneous environment.",
-          
-        // ], 
-      }
+
+        // ],
+      },
     },
     // ================= NEW SECTIONS FOR IMCA =================
 
-"Fee Structure": {
-  type: "accordion",
-  content: {
-    "Fee Structure": [
-      {
-        label: "View Fee Structure PDF",
-        pdf: "/Programs/IBBAMCA/FeeStructure2526.pdf"
-      }
-    ],
-    "FRA": [
-      {
-        label: "View FRA PDF",
-        pdf: "/Programs/IBBAMCA/FRA2025.pdf"
-      }
-    ]
-  }
-},
+    "Fee Structure": {
+      type: "accordion",
+      content: {
+        "Fee Structure": [
+          {
+            label: "View Fee Structure PDF",
+            pdf: "/Programs/IBBAMCA/FeeStructure2526.pdf",
+          },
+        ],
+        FRA: [
+          {
+            label: "View FRA PDF",
+            pdf: "/Programs/IBBAMCA/FRA2025.pdf",
+          },
+        ],
+      },
+    },
 
-"Admission Procedure": {
-  type: "notice",
-  content: "Admission procedure details will be updated soon."
-},
+    "Admission Procedure": {
+      type: "syllabus",
+      content: [
+        {
+          id: "admission",
+          label: "Procedure PDF",
+          pdf: "/pdfs/AdmissionProcedure.pdf",
+        },
+      ],
+    },
 
-"Sanctioned Intake": {
-  type: "table",
-  content: [
-    {
-      program: "Integrated MCA (BCA + MCA)",
-      intake: "60 Seats",
-      duration: "5 Years",
-      type: "Full Time"
-    }
-  ]
-},
+    "Sanctioned Intake": {
+      type: "table",
+      content: [
+        {
+          program: "Integrated MCA (BCA + MCA)",
+          intake: "60 Seats",
+          duration: "5 Years",
+          type: "Full Time",
+        },
+      ],
+    },
 
-"Eligibility Criteria": {
-  type: "text",
-  content: `
-For Integrated MCA course admission, students should have passed 10+2 examination with Mathematics or Statistics or Accountancy as compulsory subjects and obtained at least forty five per cent. marks in aggregate (at least forty per cent. marks in aggregate for Reserved Categories, Economically Weaker Section and Persons with Disabilities category candidates belonging to Maharashtra State) and obtained non zero score in MAH - BCA/BBA/BMS/BBM CET conducted by the Competent Authority.`
-},
-
+    "Eligibility Criteria": {
+      type: "text",
+      content: `
+For Integrated MCA course admission, students should have passed 10+2 examination with Mathematics or Statistics or Accountancy as compulsory subjects and obtained at least forty five per cent. marks in aggregate (at least forty per cent. marks in aggregate for Reserved Categories, Economically Weaker Section and Persons with Disabilities category candidates belonging to Maharashtra State) and obtained non zero score in MAH - BCA/BBA/BMS/BBM CET conducted by the Competent Authority.`,
+    },
 
     Faculty: {
       type: "gallery",
       content: facultyImages,
-      title: "Faculty Members"
+      title: "Faculty Members",
     },
     "Syllabus & Course Structure": {
       type: "syllabus",
-      content: syllabusList
+      content: syllabusList,
     },
-
-
-
-
-
   };
 
   const tabs = Object.keys(sectionContent);

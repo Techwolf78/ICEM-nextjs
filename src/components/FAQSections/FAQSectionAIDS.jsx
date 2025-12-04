@@ -26,27 +26,71 @@ const feeInfo = `Fee structure for Academic Year 2024-25 will be updated soon.
 Please contact the admission office for the latest and exact fee details.`;
 
 const syllabusList = [
-  { id: "sybtech", label: "SY B.Tech (2025 Pattern) Syllabus", pdf: "/Programs/AIDS/SESyllabus.pdf" },
-  { id: "te", label: "TE AIDS Engineering (2019 Pattern) Syllabus", pdf: "/Programs/AIDS/TEsyllabus.pdf" },
-  { id: "be", label: "BE AIDS Engineering (2019 Pattern) Syllabus", pdf: "/Programs/AIDS/BESyllabus.pdf" },
+  {
+    id: "sybtech",
+    label: "SY B.Tech (2025 Pattern) Syllabus",
+    pdf: "/Programs/AIDS/SESyllabus.pdf",
+  },
+  {
+    id: "te",
+    label: "TE AIDS Engineering (2019 Pattern) Syllabus",
+    pdf: "/Programs/AIDS/TEsyllabus.pdf",
+  },
+  {
+    id: "be",
+    label: "BE AIDS Engineering (2019 Pattern) Syllabus",
+    pdf: "/Programs/AIDS/BESyllabus.pdf",
+  },
 ];
 
 const courseStructureImages = [
-  { id: "fe1", label: "FE SEM 1 Course Structure", src: "/Programs/AIDS/FESem1.jpg" },
-  { id: "fe2", label: "FE SEM 2 Course Structure", src: "/Programs/AIDS/FESem2.jpg" },
-  { id: "se1", label: "SE SEM 1 Course Structure", src: "/Programs/AIDS/SYBtechSem1.jpg" },
-  { id: "se2", label: "SE SEM 2 Course Structure", src: "/Programs/AIDS/SYBtechSem2.jpg" },
-  { id: "te1", label: "TE SEM 1 Course Structure", src: "/Programs/AIDS/TESem1.jpg" },
-  { id: "te2", label: "TE SEM 2 Course Structure", src: "/Programs/AIDS/TESem2.jpg" },
-  { id: "be1", label: "BE SEM 1 Course Structure", src: "/Programs/AIDS/BESem1.jpg" },
-  { id: "be2", label: "BE SEM 2 Course Structure", src: "/Programs/AIDS/BESem2.jpg" },
+  {
+    id: "fe1",
+    label: "FE SEM 1 Course Structure",
+    src: "/Programs/AIDS/FESem1.jpg",
+  },
+  {
+    id: "fe2",
+    label: "FE SEM 2 Course Structure",
+    src: "/Programs/AIDS/FESem2.jpg",
+  },
+  {
+    id: "se1",
+    label: "SE SEM 1 Course Structure",
+    src: "/Programs/AIDS/SYBtechSem1.jpg",
+  },
+  {
+    id: "se2",
+    label: "SE SEM 2 Course Structure",
+    src: "/Programs/AIDS/SYBtechSem2.jpg",
+  },
+  {
+    id: "te1",
+    label: "TE SEM 1 Course Structure",
+    src: "/Programs/AIDS/TESem1.jpg",
+  },
+  {
+    id: "te2",
+    label: "TE SEM 2 Course Structure",
+    src: "/Programs/AIDS/TESem2.jpg",
+  },
+  {
+    id: "be1",
+    label: "BE SEM 1 Course Structure",
+    src: "/Programs/AIDS/BESem1.jpg",
+  },
+  {
+    id: "be2",
+    label: "BE SEM 2 Course Structure",
+    src: "/Programs/AIDS/BESem2.jpg",
+  },
 ];
 
 const overviewData = [
   {
     title: "About Department",
     content: `The Department of Artificial Intelligence and Data Science at ICEM aims to be one of the leading programs to provide value-added quality education in Computer Science and Engineering with specialization in Artificial Intelligence and Data Science.`,
-  }
+  },
 ];
 
 export default function FAQSectionAIDS() {
@@ -55,22 +99,23 @@ export default function FAQSectionAIDS() {
   return (
     <section className="w-full bg-gradient-to-b from-gray-50 to-white text-black py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         {/* HEADER */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-secondary mb-4">
             Department of Artificial Intelligence & Data Science
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Empowering future innovators with AI knowledge and industry-ready Data Science skills.
+            Empowering future innovators with AI knowledge and industry-ready
+            Data Science skills.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-
           {/* LEFT SIDEBAR */}
           <nav className="lg:col-span-1 bg-white rounded-xl shadow-sm p-6 space-y-2 border border-gray-100 sticky top-24">
-            <h3 className="font-semibold text-gray-800 mb-4 text-lg">Quick Links</h3>
+            <h3 className="font-semibold text-gray-800 mb-4 text-lg">
+              Quick Links
+            </h3>
 
             {[
               "Overview",
@@ -86,12 +131,19 @@ export default function FAQSectionAIDS() {
                   setActive(tab);
 
                   // 🔥 Auto-scroll only on mobile screens
-                  if (typeof window !== "undefined" && window.innerWidth < 1024) {
+                  if (
+                    typeof window !== "undefined" &&
+                    window.innerWidth < 1024
+                  ) {
                     setTimeout(() => {
-                      const target = document.getElementById("aids-right-content");
+                      const target =
+                        document.getElementById("aids-right-content");
                       if (target) {
                         const yOffset = -160;
-                        const y = target.getBoundingClientRect().top + window.scrollY + yOffset;
+                        const y =
+                          target.getBoundingClientRect().top +
+                          window.scrollY +
+                          yOffset;
 
                         window.scrollTo({
                           top: y,
@@ -126,10 +178,14 @@ export default function FAQSectionAIDS() {
               <div className="space-y-4">
                 {overviewData.map((item, i) => (
                   <div key={i} className="border border-gray-200 rounded-lg">
-                    <details className="group">
+                    <details className="group" {...(i === 0 && { open: true })}>
                       <summary className="flex justify-between items-center p-4 cursor-pointer bg-gray-50 hover:bg-gray-100 rounded-lg list-none">
-                        <h4 className="font-semibold text-secondary text-lg">{item.title}</h4>
-                        <span className="transition-transform group-open:rotate-180">▼</span>
+                        <h4 className="font-semibold text-secondary text-lg">
+                          {item.title}
+                        </h4>
+                        <span className="transition-transform group-open:rotate-180">
+                          ▼
+                        </span>
                       </summary>
 
                       <div className="p-4 text-gray-700 whitespace-pre-line">
@@ -172,10 +228,12 @@ export default function FAQSectionAIDS() {
               <div className="space-y-4">
                 {eligibilityCriteria.map((item, i) => (
                   <div key={i} className="border border-gray-200 rounded-lg">
-                    <details className="group">
+                    <details className="group" {...(i === 0 && { open: true })}>
                       <summary className="flex justify-between items-center p-4 cursor-pointer bg-gray-50 hover:bg-gray-100 rounded-lg list-none font-semibold text-secondary">
                         {item.program}
-                        <span className="transition-transform group-open:rotate-180">▼</span>
+                        <span className="transition-transform group-open:rotate-180">
+                          ▼
+                        </span>
                       </summary>
 
                       <div className="p-4 text-gray-700 whitespace-pre-line">
@@ -189,7 +247,16 @@ export default function FAQSectionAIDS() {
 
             {/* ================= ADMISSION PROCEDURE ================= */}
             {active === "Admission Procedure" && (
-              <p className="text-gray-600 text-lg">Admission procedure for Academic Year 2024–25 will be updated soon.</p>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                <h5 className="font-semibold text-gray-800">Procedure PDF</h5>
+                <a
+                  href="/pdfs/AdmissionProcedure.pdf"
+                  target="_blank"
+                  className="px-4 py-2 bg-secondary text-white rounded-md mt-2 sm:mt-0"
+                >
+                  View / Download
+                </a>
+              </div>
             )}
 
             {/* ================= FEE STRUCTURE ================= */}
@@ -202,7 +269,6 @@ export default function FAQSectionAIDS() {
             {/* ================= SYLLABUS & COURSE STRUCTURE ================= */}
             {active === "Syllabus & Course Structure" && (
               <div className="space-y-8">
-
                 {/* PDFs */}
                 <div className="space-y-4">
                   {syllabusList.map((item) => (
@@ -210,7 +276,9 @@ export default function FAQSectionAIDS() {
                       key={item.id}
                       className="flex flex-col sm:flex-row sm:items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50"
                     >
-                      <h5 className="font-semibold text-gray-800">{item.label}</h5>
+                      <h5 className="font-semibold text-gray-800">
+                        {item.label}
+                      </h5>
                       <a
                         href={item.pdf}
                         target="_blank"
@@ -224,10 +292,15 @@ export default function FAQSectionAIDS() {
 
                 {/* Course Structure Images */}
                 <div>
-                  <h4 className="font-semibold text-secondary mb-3">Course Structure</h4>
+                  <h4 className="font-semibold text-secondary mb-3">
+                    Course Structure
+                  </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {courseStructureImages.map((img) => (
-                      <div key={img.id} className="border rounded-lg shadow-sm bg-white overflow-hidden">
+                      <div
+                        key={img.id}
+                        className="border rounded-lg shadow-sm bg-white overflow-hidden"
+                      >
                         <div className="relative w-full h-48">
                           <a href={img.src} target="_blank">
                             <Image
@@ -243,10 +316,8 @@ export default function FAQSectionAIDS() {
                     ))}
                   </div>
                 </div>
-
               </div>
             )}
-
           </div>
         </div>
       </div>

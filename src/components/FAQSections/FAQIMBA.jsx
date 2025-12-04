@@ -29,73 +29,71 @@ export default function FAQENTC() {
       type: "accordion",
       content: {
         "About the Department": [
-          "The Department of BBA offers undergraduate programs in Human Resource Management, Marketing Management, and Financial Management. These programs are affiliated with the University of Pune and are recognized by the Government of Maharashtra and the All-India Council of Technical Education (AICTE), New Delhi.",  
+          "The Department of BBA offers undergraduate programs in Human Resource Management, Marketing Management, and Financial Management. These programs are affiliated with the University of Pune and are recognized by the Government of Maharashtra and the All-India Council of Technical Education (AICTE), New Delhi.",
           "Welcome to the BBA Department, set within a lush green campus featuring Advanced infrastructure. Our department boasts experienced teaching staff and an employer-aligned curriculum designed to ensure optimal relevance for your career",
-          "Students will benefit from live sessions with industry experts, project-based assessments, and real work experience through live projects. You'll gain exposure to international business practices and be part of a vast alumni network",     
-"Our comprehensive program includes industry exposure, foreign visits, and 100% placement assistance. Students will engage in field projects, presentations, role plays, case studies, brainstorming sessions, and guest lectures. Additionally, we offer learning management tactics through events like Outdoor Management Training, GUSTO, I-MUN, IPL, and Youth Parliament, all aimed at equipping you with essential skills and competencies for a successful career."
-
+          "Students will benefit from live sessions with industry experts, project-based assessments, and real work experience through live projects. You'll gain exposure to international business practices and be part of a vast alumni network",
+          "Our comprehensive program includes industry exposure, foreign visits, and 100% placement assistance. Students will engage in field projects, presentations, role plays, case studies, brainstorming sessions, and guest lectures. Additionally, we offer learning management tactics through events like Outdoor Management Training, GUSTO, I-MUN, IPL, and Youth Parliament, all aimed at equipping you with essential skills and competencies for a successful career.",
         ],
-        
+
         "Programs Offered ": [
-          "The Bachelor of Business Administration (BBA) is a comprehensive undergraduate program designed to equip students with a solid foundation in various aspects of business management. This overview covers the three primary specializations within the BBA program: Human Resources (HR), Finance, and Marketing. Each specialization offers a unique set of courses and experiences to prepare students for successful careers in their chosen field."
-        ], 
-      }
+          "The Bachelor of Business Administration (BBA) is a comprehensive undergraduate program designed to equip students with a solid foundation in various aspects of business management. This overview covers the three primary specializations within the BBA program: Human Resources (HR), Finance, and Marketing. Each specialization offers a unique set of courses and experiences to prepare students for successful careers in their chosen field.",
+        ],
+      },
     },
     // ================= NEW SECTIONS FOR BBA / IT =================
 
-"Fee Structure": {
-  type: "accordion",
-  content: {
-    "Fee Structure": [
-      {
-        label: "View Fee Structure PDF",
-        pdf: "/Programs/BBA/FeeStructure2526.pdf"
-      }
-    ],
-    "FRA": [
-      {
-        label: "View FRA PDF",
-        pdf: "/Programs/BBA/FRA2025.pdf"
-      }
-    ]
-  }
-},
+    "Fee Structure": {
+      type: "accordion",
+      content: {
+        "Fee Structure": [
+          {
+            label: "View Fee Structure PDF",
+            pdf: "/Programs/BBA/FeeStructure2526.pdf",
+          },
+        ],
+        FRA: [
+          {
+            label: "View FRA PDF",
+            pdf: "/Programs/BBA/FRA2025.pdf",
+          },
+        ],
+      },
+    },
 
-"Admission Procedure": {
-  type: "notice",
-  content: "Admission procedure details will be updated soon."
-},
+    "Admission Procedure": {
+      type: "syllabus",
+      content: [
+        {
+          id: "admission",
+          label: "Procedure PDF",
+          pdf: "/pdfs/AdmissionProcedure.pdf",
+        },
+      ],
+    },
 
-"Sanctioned Intake": {
-  type: "table",
-  content: [
-    {
-      program: "BBA Program",
-      intake: "60 Seats",
-      duration: "5 Years",
-      type: "Full Time"
-    }
-  ]
-},
+    "Sanctioned Intake": {
+      type: "table",
+      content: [
+        {
+          program: "BBA Program",
+          intake: "60 Seats",
+          duration: "5 Years",
+          type: "Full Time",
+        },
+      ],
+    },
 
-"Eligibility Criteria": {
-  type: "text",
-  content: `
-For First Year: - (1) Candidates passing SSC and HSC or 10+2 Examination or Diploma in Engineering or D. Voc. Examination from a recognized institution in the Maharashtra State`
-},
-
+    "Eligibility Criteria": {
+      type: "text",
+      content: `
+For First Year: - (1) Candidates passing SSC and HSC or 10+2 Examination or Diploma in Engineering or D. Voc. Examination from a recognized institution in the Maharashtra State`,
+    },
 
     Faculty: {
       type: "gallery",
       content: facultyImages,
-      title: "Faculty Members"
+      title: "Faculty Members",
     },
-
-
-
-
-
-
   };
 
   const tabs = Object.keys(sectionContent);

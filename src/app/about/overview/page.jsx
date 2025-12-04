@@ -527,7 +527,7 @@ export default function Overview() {
               {institutes.map((inst, index) => {
                 // Select image based on institute name
                 const imageSrc = inst.name.includes("Global Business School")
-                  ? "/Facilities/BannerOverviewPage.webp"
+                  ? "/IGSB.jpg"
                   : inst.name.includes("Engineering & Management")
                   ? "/Facilities/BannerOverviewPage.webp"
                   : "/placeholder.webp";

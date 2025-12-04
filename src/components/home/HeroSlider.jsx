@@ -68,7 +68,7 @@ const HeroSlider = () => {
             <span className="mr-12">
               All 4 PG Programs Computer Engineering
             </span>
-            <span className="mr-12">Admission Open 2025–26</span>
+            {/* <span className="mr-12">Admission Open 2025–26</span> */}
             <span className="mr-12">Placement Record 2025 Announced</span>
 
             {/* Duplicate for seamless loop */}
@@ -76,7 +76,15 @@ const HeroSlider = () => {
             <span className="mr-12">
               All 4 PG Programs Computer Engineering
             </span>
-            <span className="mr-12">Admission Open 2025–26</span>
+            {/* <span className="mr-12">Admission Open 2025–26</span> */}
+            <span className="mr-12">Placement Record 2025 Announced</span>
+
+            {/* Duplicate for seamless loop */}
+            <span className="mr-12">Public Advisory Notice</span>
+            <span className="mr-12">
+              All 4 PG Programs Computer Engineering
+            </span>
+            {/* <span className="mr-12">Admission Open 2025–26</span> */}
             <span className="mr-12">Placement Record 2025 Announced</span>
           </div>
         </div>

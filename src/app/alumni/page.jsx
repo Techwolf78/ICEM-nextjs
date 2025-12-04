@@ -360,9 +360,9 @@ export default function Alumni() {
               {...{
                 dots: true,
                 infinite: true,
-                speed: 800,
+                speed: 600,
                 autoplay: true,
-                autoplaySpeed: 4500,
+                autoplaySpeed: 2500,
                 arrows: false,
                 pauseOnHover: true,
                 slidesToShow: 1,
@@ -374,16 +374,9 @@ export default function Alumni() {
             >
               {testimonials.map((item, index) => (
                 <div key={index} className="px-3 md:px-6">
-                  <div className="bg-gradient-to-br from-white to-blue-50/60 border border-gray-200 rounded-2xl shadow-md p-6 md:p-10 h-[355px] md:h-[320px] lg:h-[310px] flex flex-col justify-between transition-all duration-300 hover:shadow-xl">
-                    {/* Story */}
-                    <div>
-                      <p className="text-gray-700 leading-relaxed text-base md:text-lg italic">
-                        “{item.story}”
-                      </p>
-                    </div>
-
-                    {/* Alumni Info */}
-                    <div className="border-t border-gray-300 pt-5 mt-6">
+                  <div className="bg-gradient-to-br from-white to-blue-50/60 border border-gray-200 rounded-2xl shadow-md p-6 md:p-10 h-[355px] md:h-[320px] lg:h-[290px] flex flex-col justify-between transition-all duration-300 hover:shadow-xl">
+                    {/* Alumni Info - NOW AT TOP */}
+                    <div className="border-b border-gray-300 pb-4 mb-6">
                       <h3 className="text-xl font-bold text-secondary mb-1">
                         {item.name}
                       </h3>
@@ -392,6 +385,13 @@ export default function Alumni() {
                       </p>
                       <p className="text-sm text-gray-600 font-medium">
                         Batch: {item.year}
+                      </p>
+                    </div>
+
+                    {/* Story - NOW BELOW */}
+                    <div>
+                      <p className="text-gray-700 leading-relaxed text-base md:text-lg italic">
+                        “{item.story}”
                       </p>
                     </div>
                   </div>

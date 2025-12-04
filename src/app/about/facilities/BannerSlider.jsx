@@ -10,7 +10,7 @@ export default function BannerSlider({ activeSection }) {
     Canteen: "/Facilities/FacilitiesCanteen.jpg",
     Hostel: "/Facilities/FacilitiesHostel.jpg",
     Library: "/Facilities/FacilitiesLibrary.jpg",
-    Gym: "/Facilities/FacilitiesGymTransport.jpg",
+    Gym: "/Facilities/gymbannerfinal.webp",
     "Primary Health Centre": "/Facilities/HealthCentreBanner.jpg",
   };
 
@@ -20,7 +20,7 @@ export default function BannerSlider({ activeSection }) {
     Canteen: "/Facilities/FacilitiesCanteen.jpg",
     Hostel: "/Facilities/FacilitiesHostel.jpg",
     Library: "/Facilities/FacilitiesLibrary.jpg",
-    Gym: "/Facilities/FacilitiesGymTransport.jpg",
+    Gym: "/Facilities/gymbannerfinal.webp",
     "Primary Health Centre": "/Facilities/HealthCentreBanner.jpg",
   };
 

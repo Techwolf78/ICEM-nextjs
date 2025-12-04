@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 const HeroSlider = () => {
   // 👉 Load banners directly from /public/banners
   const desktopImages = [
-    "/banners/ICEMBANNER27.webp",
+    "/banners/icembannernewfinal.webp",
     "/placement/PlacementBanner2.webp",
     "/banners/ICEMBANNER6.webp",
     "/banners/ICEMBANNERCOMP.webp",
@@ -16,7 +16,7 @@ const HeroSlider = () => {
   ];
 
   const mobileImages = [
-    "/banners/ICEMBANNER27.webp",
+    "/banners/icembannernewfinal.webp",
     "/placement/PlacementBanner2.webp",
     "/banners/ICEMBANNER6.webp",
     "/banners/ICEMBANNERCOMP.webp",

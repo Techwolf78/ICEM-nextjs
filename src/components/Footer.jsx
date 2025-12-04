@@ -193,7 +193,7 @@ const Footer = () => {
               { name: "Staff Grievance Form (PDF)", link: "/pdfs/SGForm.pdf" },
               {
                 name: "Women Welfare Policy (PDF)",
-                link: "/pdfs/WomeWelfarePolicy.pdf",
+                link: "/pdfs/WomenWelfarePolicy.pdf",
               },
               {
                 name: "Anti Ragging Policy (PDF)",

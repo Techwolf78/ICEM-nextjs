@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
   }, []);
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <title>ICEM | Indira College of Engineering & Management, Pune</title>
         <meta

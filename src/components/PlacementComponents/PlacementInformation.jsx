@@ -46,12 +46,41 @@ export default function PlacementInformation() {
       type: "accordion",
       content: {
         "Policy Overview": [
-          "Our placement policy ensures fair and transparent placement opportunities for all eligible students.",
-          "Guidelines for students and recruiters.",
+          "The role of the Training and Placement Cell is of a facilitator and counselor for placement related activities. Training and Placement Cell provides 100% placement assistance to all the Registered students as per the norms provided here.",
+          "Student interested in placements needs to register themselves as per the registration link provided which will contain their percentage of marks and contact details etc. in VI Semester, if they fail in submitting/updating their details by the end of the VI semester they will not be permitted to attend the interviews starting from VII semester onwards.",
+        ],
+        "Selection of Companies": [
+          "Companies will be invited and scheduled by the Placement Cell on the basis of the following parameters:",
+          "Job profile and growth prospects.",
+          "The package being offered by the company.",
+          "Past record of recruitment at ICEM.",
+          "Feedback from the Alumni regarding the company.",
         ],
         "Eligibility Criteria": [
-          "Information about eligibility criteria, academic requirements, and prerequisites for placements.",
+          "Student should get an aggregate of 60% & above throughout from SSC onwards.",
+          "Student should not have any backlog subjects in B.E.",
+          "Student should secure a minimum of 60% score in internal marks and soft skill training.",
+          "Student should secure a minimum of 60% score in internal marks and soft skill training, Technical & Aptitude training conducted in the institute.",
         ],
+        // "Rules for Placement": [
+        //   "The placement committee strictly enforces ONE STUDENT ONE JOB OFFER policy.",
+        //   "Companies visiting the campus are divided into the following categories:",
+        //   "Category-A: Companies offering CTC >= Rs. 4 LPA.",
+        //   "Category-B: Companies offering CTC >= Rs. 1.8 LPA but < Rs. 4 LPA.",
+        //   "Category-C: Companies offering CTC < Rs. 1.8 LPA.",
+        //   "Students may choose companies based on their specialization subject to all placement conditions.",
+        //   "Once a student gives their name for an interview but does not attend, they will be blacklisted from further interviews and fined Rs. 1000 (subject to management approval).",
+        //   "Once a student is placed in a company of their choice/potential, they cannot attend any further interviews conducted by the college (on-campus or off-campus).",
+        //   "Any student withdrawing deliberately during a selection process will be disqualified from placements for the rest of the year.",
+        //   "Any student opting out of the placement process must submit a written letter to the Placement Head stating the reason.",
+        //   "Dress Code: Students must be formally dressed during any interaction with company representatives. Minimum requirement for men: formal shirt, trousers, tie, and leather shoes. For women: Salwar-Kameez or formal shirt and trousers.",
+        //   "Once placed, students must submit a photocopy of the offer letter to the Placement Officer for records.",
+        //   "Students must not negotiate CTC or compensation directly with company executives. Violation will lead to strict disciplinary action.",
+        //   "Misbehaviour with Training & Placement Cell staff or student representatives will lead to debarment from the placement session.",
+        //   "Students must provide correct and verifiable information in their resume. Any false information will lead to de-registration from placements.",
+        //   "Placement policy may be revised based on market conditions to benefit the student community.",
+        //   "Placement Cell will select student coordinators from all streams in December/January each year after completion/appearance of the 5th semester.",
+        // ],
       },
     },
   };
@@ -308,7 +337,7 @@ export default function PlacementInformation() {
                         key={index}
                         className="flex items-start gap-4 p-4 rounded-lg border border-gray-100 shadow-sm"
                       >
-                        <div className="w-16 h-16 rounded-md bg-gray-200 overflow-hidden">
+                        <div className="w-30 h-30 rounded-md bg-gray-200 overflow-hidden">
                           {item.img ? (
                             <img
                               src={item.img}

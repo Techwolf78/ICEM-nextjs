@@ -476,7 +476,7 @@ mca: [
  // STAFF LIST (IMAGE + DETAILS)
 export const placementMembers = [
     {
-      img: "",
+      img: "/placement/siddhusir.webp",
       name: "Mr. J S Sidhu",
       position: "Director- Placement & Corporate Relations",
       department: "Indira College of Engineering and Management",
@@ -484,7 +484,7 @@ export const placementMembers = [
       email: "js.sidhu@indiraicem.ac.in",
     },
     {
-      img: "",
+      img: "/placement/VaibhavKulkurni.webp",
       name: "Mr. Vaibhav Kulkurni",
       position: "Assistant Professor",
       department: "Civil Engineering, ICEM",
@@ -492,23 +492,23 @@ export const placementMembers = [
       email: "kulkarni.vaibhav@indiraicem.ac.in",
     },
     {
-      img: "",
+      img: "/placement/VishalMesharam.webp",
       name: "Mr. Vishal Meshram",
       position: "Assistant Professor",
       department: "Mechanical Engineering, ICEM",
       mobile: "7720010715",
       email: "vishal.meshram@indiraicem.ac.in",
     },
+    // {
+    //   img: "",
+    //   name: "Prof. Harshal Mahajan",
+    //   position: "Assistant Professor",
+    //   department: "Computer Engineering, ICEM",
+    //   mobile: "9922964354",
+    //   email: "mahajan.harshal@indiraicem.ac.in",
+    // },
     {
-      img: "",
-      name: "Prof. Harshal Mahajan",
-      position: "Assistant Professor",
-      department: "Computer Engineering, ICEM",
-      mobile: "9922964354",
-      email: "mahajan.harshal@indiraicem.ac.in",
-    },
-    {
-      img: "",
+      img: "/placement/PravinThorat.webp",
       name: "Prof. Pravin Thorat",
       position: "Assistant Professor",
       department: "MBA, ICEM",
@@ -516,7 +516,7 @@ export const placementMembers = [
       email: "pravin.thorat@indiraicem.ac.in",
     },
     {
-      img: "",
+      img: "/placement/TejasPawar.webp",
       name: "Mr. Tejas Pawar",
       position: "Assistant Professor",
       department: "MCA, ICEM",

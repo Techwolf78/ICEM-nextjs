@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <title>ICEM | Indira College of Engineering & Management, Pune</title>
+        <title> Indira College of Engineering & Management, Pune (ICEM)</title>
         <meta
           name="title"
           content="ICEM | Indira College of Engineering & Management, Pune"

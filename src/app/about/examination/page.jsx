@@ -173,16 +173,16 @@ export default function Examination() {
                             </a>
                           </li>
 
-                          {/* <li>
+                          <li>
                             <a
-                              href="/exam/SYBCA25.pdf"
+                              href="/exam/SYBCA.pdf"
                               target="_blank"
                               className="text-secondary hover:underline"
                             >
                               SY IMCA / BCA Endsemester Examination Timetable –
                               Nov/Dec 2025
                             </a>
-                          </li> */}
+                          </li>
 
                           <li>
                             <a
@@ -225,7 +225,7 @@ export default function Examination() {
                               2025
                             </a>
                           </li>
-
+{/* 
                           <li>
                             <a
                               href="/pdfs/sample.pdf"
@@ -235,7 +235,7 @@ export default function Examination() {
                               FY MTech Endsemester Examination Timetable –
                               Nov/Dec 2025
                             </a>
-                          </li>
+                          </li> */}
                         </ul>
                       </div>
                     </div>

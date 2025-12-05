@@ -7,7 +7,7 @@ import Image from "next/image";
 const syllabusList = [
   {
     id: "sybtech",
-    label: "SY B.Tech (2025 Pattern) Syllabus",
+    label: "B.Tech (2025 Pattern) Syllabus",
     pdf: "/Programs/IT/SE.pdf",
   },
 ];
@@ -75,22 +75,20 @@ export default function FAQENTC() {
     // ================= NEW SECTIONS FOR IMCA =================
 
     "Fee Structure": {
-      type: "accordion",
-      content: {
-        "Fee Structure": [
-          {
-            label: "View Fee Structure PDF",
-            pdf: "/Programs/IBBAMCA/FeeStructure2526.pdf",
-          },
-        ],
-        FRA: [
-          {
-            label: "View FRA PDF",
-            pdf: "/Programs/IBBAMCA/FRA2025.pdf",
-          },
-        ],
-      },
+  type: "syllabus",
+  content: [
+    {
+      id: "fee-structure",
+      label: "Fee Structure (2025–26)",
+      pdf: "/Programs/Computer/Feestructure2526.pdf",
     },
+    {
+      id: "fee-fra",
+      label: "FRA Document",
+      pdf: "/Programs/Computer/FRA2025.pdf",
+    },
+  ],
+},
 
     "Admission Procedure": {
       type: "syllabus",
@@ -123,11 +121,11 @@ Eligibility for admission to the Integrated MCA program requires candidates to h
 Admission is based on merit and institutional selection guidelines. No entrance exam required.`,
     },
 
-    Faculty: {
-      type: "gallery",
-      content: facultyImages,
-      title: "Faculty Members",
-    },
+    // Faculty: {
+    //   type: "gallery",
+    //   content: facultyImages,
+    //   title: "Faculty Members",
+    // },
 
     "Syllabus & Course Structure": {
       type: "syllabus",

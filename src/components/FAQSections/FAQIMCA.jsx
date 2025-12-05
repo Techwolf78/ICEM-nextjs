@@ -8,7 +8,7 @@ const syllabusList = [
   
   {
     id: "sybtech",
-    label: "SY B.Tech (2025 Pattern) Syllabus",
+    label: "IMCA (2025 Course Pattern) Syllabus Structure IMCA 2025",
     pdf: "/Programs/IBBAMCA/SY.pdf",
   },  
 ];
@@ -50,22 +50,20 @@ export default function FAQENTC() {
     // ================= NEW SECTIONS FOR IMCA =================
 
     "Fee Structure": {
-      type: "accordion",
-      content: {
-        "Fee Structure": [
-          {
-            label: "View Fee Structure PDF",
-            pdf: "/Programs/IBBAMCA/FeeStructure2526.pdf",
-          },
-        ],
-        FRA: [
-          {
-            label: "View FRA PDF",
-            pdf: "/Programs/IBBAMCA/FRA2025.pdf",
-          },
-        ],
-      },
+  type: "syllabus",
+  content: [
+    {
+      id: "fee-structure",
+      label: "Fee Structure (2025–26)",
+      pdf: "/Programs/Computer/Feestructure2526.pdf",
     },
+    {
+      id: "fee-fra",
+      label: "FRA Document",
+      pdf: "/Programs/Computer/FRA2025.pdf",
+    },
+  ],
+},
 
     "Admission Procedure": {
       type: "syllabus",
@@ -96,11 +94,7 @@ export default function FAQENTC() {
 For Integrated MCA course admission, students should have passed 10+2 examination with Mathematics or Statistics or Accountancy as compulsory subjects and obtained at least forty five per cent. marks in aggregate (at least forty per cent. marks in aggregate for Reserved Categories, Economically Weaker Section and Persons with Disabilities category candidates belonging to Maharashtra State) and obtained non zero score in MAH - BCA/BBA/BMS/BBM CET conducted by the Competent Authority.`,
     },
 
-    Faculty: {
-      type: "gallery",
-      content: facultyImages,
-      title: "Faculty Members",
-    },
+    
     "Syllabus & Course Structure": {
       type: "syllabus",
       content: syllabusList,

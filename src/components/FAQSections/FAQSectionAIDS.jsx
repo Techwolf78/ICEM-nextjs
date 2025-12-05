@@ -114,7 +114,7 @@ export default function FAQSectionAIDS() {
           {/* LEFT SIDEBAR */}
           <nav className="lg:col-span-1 bg-white rounded-xl shadow-sm p-6 space-y-2 border border-gray-100 sticky top-24">
             <h3 className="font-semibold text-gray-800 mb-4 text-lg">
-              Quick Links
+              AIDS Overview
             </h3>
 
             {[
@@ -261,10 +261,37 @@ export default function FAQSectionAIDS() {
 
             {/* ================= FEE STRUCTURE ================= */}
             {active === "Fee Structure" && (
-              <div className="text-gray-700 whitespace-pre-line bg-gray-50 p-6 rounded-lg border border-gray-200">
-                {feeInfo}
-              </div>
-            )}
+  <div className="space-y-4">
+    {/* Fee Structure 25–26 */}
+    <div className="flex flex-col sm:flex-row sm:items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+      <h5 className="font-semibold text-gray-800">
+        Fee Structure (2025–26)
+      </h5>
+      <a
+        href="/Programs/Computer/Feestructure2526.pdf"
+        target="_blank"
+        className="px-4 py-2 bg-secondary text-white rounded-md mt-2 sm:mt-0"
+      >
+        View / Download
+      </a>
+    </div>
+
+    {/* FRA Document */}
+    <div className="flex flex-col sm:flex-row sm:items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+      <h5 className="font-semibold text-gray-800">
+        FRA Document
+      </h5>
+      <a
+        href="/Programs/Computer/FRA2025.pdf"
+        target="_blank"
+        className="px-4 py-2 bg-secondary text-white rounded-md mt-2 sm:mt-0"
+      >
+        View / Download
+      </a>
+    </div>
+  </div>
+)}
+
 
             {/* ================= SYLLABUS & COURSE STRUCTURE ================= */}
             {active === "Syllabus & Course Structure" && (

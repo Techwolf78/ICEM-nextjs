@@ -68,7 +68,7 @@ export default function EventsSection() {
         </p>
       </div>
 
-      <div className="relative w-full overflow-hidden group">
+      <div className="relative w-full overflow-hidden group py-5">
         <div className="flex animate-marquee space-x-6 w-max hover:[animation-play-state:paused] will-change-transform backface-invisible">
           {marqueeList.map((event, index) => (
             <div

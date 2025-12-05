@@ -7,18 +7,18 @@ import Image from "next/image";
 const syllabusList = [
   {
     id: "sybtech",
-    label: "SY B.Tech (2025 Pattern) Syllabus",
-    pdf: "/Programs/Computer/SE.pdf",
+    label: "BE Mechanical Engineering 2019 Course Syllabus",
+    pdf: "/Programs/Mech/BESY.pdf",
   },
   {
     id: "te",
-    label: "TE Computer Engineering (2019 Pattern) Syllabus",
-    pdf: "/Programs/Computer/TE.pdf",
+    label: "TE Mechanical Engineering 2019 Course Syllabus",
+    pdf: "/Programs/Mech/TESY.pdf",
   },
   {
     id: "be",
-    label: "BE Computer Engineering (2019 Pattern) Syllabus",
-    pdf: "/Programs/Computer/BE.pdf",
+    label: "SY B Tech Mechanical Engineering 2025 Course",
+    pdf: "/Programs/Mech/SESY.pdf",
   },
 ];
 
@@ -227,29 +227,27 @@ export default function FAQMECH() {
           "Department of Mechanical Engineering was established in 2007 by offering undergraduate and Post Graduate program in Mechanical Engineering. The program is affiliated to University of Pune, recognized by Govt. of Maharashtra & All India Council of Technical Education (AICTE) New Delhi.",
           "B.E. in Mechanical Engineering (SPPU) – Intake: 60",
           "M.E. (Mechanical Engineering) – Intake: 12",
-          "B. Tech (Mechanical - EV Specialization)",
+          "B. Tech (Mechanical - EV Specialization) – Newly introduced",
         ],
       },
     },
     // ================= NEW SECTIONS (MECHANICAL) =================
 
     "Fee Structure": {
-      type: "accordion",
-      content: {
-        "Fee Structure": [
-          {
-            label: "View Fee Structure PDF",
-            pdf: "/Programs/Mechanical/FeeStructure2526.pdf",
-          },
-        ],
-        FRA: [
-          {
-            label: "View FRA PDF",
-            pdf: "/Programs/Mechanical/FRA2025.pdf",
-          },
-        ],
-      },
+  type: "syllabus",
+  content: [
+    {
+      id: "fee-structure",
+      label: "Fee Structure (2025–26)",
+      pdf: "/Programs/Computer/Feestructure2526.pdf",
     },
+    {
+      id: "fee-fra",
+      label: "FRA Document",
+      pdf: "/Programs/Computer/FRA2025.pdf",
+    },
+  ],
+},
 
     "Admission Procedure": {
       type: "syllabus",
@@ -271,24 +269,31 @@ export default function FAQMECH() {
           duration: "4 Years",
           type: "Full Time",
         },
+        {
+          program: "M. Tech Mechanical Engineering",
+          intake: "12 seats",
+          duration: "2 Year",
+          type: "Full Time",
+        },
       ],
     },
 
     "Eligibility Criteria": {
-      type: "text",
-      content: `
-An interested candidate seeking engineering admission in Maharashtra must be a citizen of India. A candidate opting for engineering 1st-year admission is stated eligible if he/she has passed class 12th exam of CBSC/HSC/ICSE board with min 50% for open category, 45% for backward class from any state in India. A candidate also has to have a valid positive score in either of the examinations MH-CET/JEE-Mains, can apply for an engineering admission process.
+  type: "text",
+  content: [
+    "An interested candidate seeking engineering admission in Maharashtra must be a citizen of India. A candidate opting for engineering 1st-year admission is stated eligible if he/she has passed class 12th exam of CBSC/HSC/ICSE board with min 50% for open category, 45% for backward class from any state in India. A candidate also has to have a valid positive score in either of the examinations MH-CET/JEE-Mains, can apply for an engineering admission process.",
 
-Engineering admission criteria for Direct 2nd-year admission
+    "Engineering admission criteria for Direct 2nd-year admission – The Candidate opting for engineering 2nd-year admission should be an Indian Citizen. Candidate must have completed Diploma Course in Engineering and Technology with at least 45% marks (40% for Backward class categories and Persons with Disability belonging to Maharashtra State) from AICTE or Government approved Institution."
+  ]
+},
 
-The Candidate opting for engineering 2nd-year admission should be an Indian Citizen.Candidate must have completed Diploma Course in Engineering and Technology with at least 45% marks (40% marks for Backward class categories students and Persons with Disability belonging to Maharashtra State only) in appropriate branch of Engineering and Technology from an (AICTE) All India Council for Technical Education or Central or State Government approved Institution or its equivalent for securing engineering 2nd-year admission`,
-    },
 
-    Faculty: {
-      type: "gallery",
-      content: facultyImages,
-      title: "Faculty Members",
-    },
+
+    // Faculty: {
+    //   type: "gallery",
+    //   content: facultyImages,
+    //   title: "Faculty Members",
+    // },
 
     "Syllabus & Course Structure": {
       type: "syllabus",
@@ -372,11 +377,21 @@ The Candidate opting for engineering 2nd-year admission should be an Indian Citi
           </div>
         );
       case "text":
-        return (
-          <div className="prose max-w-none text-gray-700 leading-relaxed">
-            {data.content}
-          </div>
-        );
+  return (
+    <div className="space-y-4 text-gray-700 leading-relaxed">
+      {Array.isArray(data.content)
+        ? data.content.map((para, i) => (
+            <p key={i} className="text-gray-700">
+              {para}
+            </p>
+          ))
+        : (
+            <p>{data.content}</p>
+          )
+      }
+    </div>
+  );
+
       case "notice":
         return <p className="text-gray-600 text-lg">{data.content}</p>;
       case "table":
@@ -460,8 +475,8 @@ The Candidate opting for engineering 2nd-year admission should be an Indian Citi
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* LEFT MENU */}
           <nav className="lg:col-span-1 bg-white rounded-xl shadow-sm p-6 space-y-2 sticky top-24 self-start border border-gray-100">
-            <h3 className="font-semibold text-gray-800 mb-4 text-lg">
-              Quick Links
+            <h3 className="font-semibold text-gray-800 mb-4 text-lg text-center">
+              Mechanical Overview
             </h3>
 
             {tabs.map((tab) => (

@@ -62,22 +62,20 @@ export default function FAQENTC() {
     // ================= NEW SECTIONS FOR ENTC =================
 
     "Fee Structure": {
-      type: "accordion",
-      content: {
-        "Fee Structure": [
-          {
-            label: "View Fee Structure PDF",
-            pdf: "/Programs/ENTC/FeeStructure2526.pdf",
-          },
-        ],
-        FRA: [
-          {
-            label: "View FRA PDF",
-            pdf: "/Programs/ENTC/FRA2025.pdf",
-          },
-        ],
-      },
+  type: "syllabus",
+  content: [
+    {
+      id: "fee-structure",
+      label: "Fee Structure (2025–26)",
+      pdf: "/Programs/Computer/Feestructure2526.pdf",
     },
+    {
+      id: "fee-fra",
+      label: "FRA Document",
+      pdf: "/Programs/Computer/FRA2025.pdf",
+    },
+  ],
+},
 
     "Admission Procedure": {
       type: "syllabus",
@@ -107,16 +105,16 @@ export default function FAQENTC() {
       content: `
 Passed 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry/Biotechnology/Biology/Technical Vocational subject.
 
-· Obtained at least 45% marks (40% in case of candidate belonging to reserved category) in the above subjects taken together.
+Obtained at least 45% marks (40% in case of candidate belonging to reserved category) in the above subjects taken together.
 
-· Valid score in JEE Main/MHT-CET or equivalent entrance examination.`,
+Valid score in JEE Main/MHT-CET or equivalent entrance examination.`,
     },
 
-    Faculty: {
-      type: "gallery",
-      content: facultyImages,
-      title: "Faculty Members",
-    },
+    // Faculty: {
+    //   type: "gallery",
+    //   content: facultyImages,
+    //   title: "Faculty Members",
+    // },
 
     "Syllabus & Course Structure": {
       type: "syllabus",
@@ -189,11 +187,17 @@ Passed 10+2 examination with Physics and Mathematics as compulsory subjects alon
           </div>
         );
       case "text":
-        return (
-          <div className="prose max-w-none text-gray-700 leading-relaxed">
-            {data.content}
-          </div>
-        );
+  return (
+    <div className="space-y-3 text-gray-700 leading-relaxed whitespace-pre-line">
+      {data.content
+        .split("\n")
+        .filter((line) => line.trim() !== "")
+        .map((line, i) => (
+          <p key={i}>{line}</p>
+        ))}
+    </div>
+  );
+
       case "notice":
         return <p className="text-gray-600 text-lg">{data.content}</p>;
       case "table":

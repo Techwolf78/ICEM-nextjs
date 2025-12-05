@@ -9,6 +9,14 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 const testimonials = [
   {
+    image: "/logos/logo30.webp",
+    quote:
+      "ICEM’s commitment to blending technical education with real-world readiness is evident in their students, who arrive well-prepared to contribute meaningfully from day one, making them a preferred choice for our campus recruitment.",
+    name: "Mr. Urvish Pandey",
+    position:
+      "India Head,University Relations & Early Talent Engagement – Mastercard",
+  },
+  {
     image: "/placement/ultra.webp",
     quote:
       "ICEM has always provided us with trained mechanical engineers, and as an organization, we appreciate the college's efforts to prepare the students for the industry.",
@@ -42,14 +50,6 @@ const testimonials = [
       "ICEM has been a part of Ready Engineers Programme from a long time. Their way of creating resources prepared specifically to meet the needs of students, ensures a transformative experience that prepares them effectively for the corporate world.",
     name: "Mr. Sushant Kumar",
     position: "Assistant Director – EY",
-  },
-  {
-    image: "/logos/logo30.webp",
-    quote:
-      "ICEM’s commitment to blending technical education with real-world readiness is evident in their students, who arrive well-prepared to contribute meaningfully from day one, making them a preferred choice for our campus recruitment.",
-    name: "Mr. Urvish Pandey",
-    position:
-      "India Head,University Relations & Early Talent Engagement – Mastercard",
   },
 ];
 export default function Testimonials() {

@@ -13,17 +13,17 @@ export default function Overview() {
     {
       name: "Dr. Nilesh Uke",
       designation:
-        "Principal, Indira College of Engineering and Management, Pune.",
+        "Principal",
     },
     {
       name: "Dr. Soumitra S Das",
       designation:
-        "Vice-Principal, Indira College of Engineering and Management, Pune.",
+        "Vice-Principal",
     },
     {
       name: "Dr. Saurabh Harishchand Gupta",
       designation:
-        "Dean Academics, Indira College of Engineering and Management, Pune.",
+        "Dean Academics",
     },
   ];
 
@@ -601,6 +601,9 @@ export default function Overview() {
                       </h4>
                       <p className="text-sm text-gray-600">
                         {leader.designation}
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        Indira College of Engineering and Management
                       </p>
                     </div>
                   </div>

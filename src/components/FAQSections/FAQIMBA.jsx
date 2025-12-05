@@ -8,8 +8,8 @@ const syllabusList = [
   
   {
     id: "sybtech",
-    label: "SY B.Tech (2025 Pattern) Syllabus",
-    pdf: "/Programs/IT/SE.pdf",
+    label: "First Year (I-MBA) Integrated- Masters of Business Management Syllabus",
+    pdf: "/Programs/IBCAMBA/IMBASY.pdf",
   },  
 ];
 
@@ -122,6 +122,11 @@ export default function FAQENTC() {
     //   content: facultyImages,
     //   title: "Faculty Members",
     // },
+
+    "Syllabus & Course Structure": {
+      type: "syllabus",
+      content: syllabusList,
+    },
   };
 
   const tabs = Object.keys(sectionContent);

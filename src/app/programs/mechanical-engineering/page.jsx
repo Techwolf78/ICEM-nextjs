@@ -16,6 +16,9 @@ export default function Mech() {
   // Toggle Apply Now Modal
   const toggleModal = () => setIsModalOpen(!isModalOpen);
 
+  const faqRef = React.useRef(null);
+
+
   // Brochure Download
   const handleBrochureDownload = () => {
     const link = document.createElement("a");
@@ -25,6 +28,16 @@ export default function Mech() {
     link.click();
     document.body.removeChild(link);
   };
+
+  const scrollToFAQ = () => {
+  if (faqRef.current) {
+    faqRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+};
+
 
   const [activeTab, setActiveTab] = useState("Overview");
 
@@ -289,7 +302,10 @@ export default function Mech() {
             <h4 className="font-semibold text-lg flex items-center gap-2 mb-2">
               🎓 Eligibility
             </h4>
-            <p className="text-gray-700">
+            <p 
+              onClick={scrollToFAQ}
+            className="text-gray-700 cursor-pointer hover:text-blue-600 hover:underline transition-colors">
+              
               Click here to read more about the eligibility criteria for our
               B.E. in Mechanical Engineering.
             </p>
@@ -433,66 +449,82 @@ export default function Mech() {
       </div>
 
       {/* ===== LABS GALLERY SECTION ===== */}
-      <div className="max-w-7xl mx-auto px-6 overflow-hidden relative">
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-    {labsGallery.map((lab, index) => (
-      <div
-        key={index}
-        className="
-          relative group rounded-xl
-          transition-transform duration-500
-          hover:scale-105
-        "
-      >
-        {/* CARD WRAPPER */}
-        <div className="rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500">
+      <div className="w-full py-16 bg-white text-black">
+  <div className="max-w-7xl mx-auto px-6">
 
-          {/* IMAGE */}
-          <Image
-            src={lab.image}
-            alt={lab.title}
-            width={500}
-            height={300}
-            className="
-              object-cover w-full h-56
-              transform group-hover:scale-110
-              transition-all duration-500
-            "
-          />
+    {/* 🔥 Heading Section */}
+    <h2 className="text-3xl font-bold text-secondary text-center mb-4">
+      Mechanical Engineering Laboratories
+    </h2>
 
-          {/* BOTTOM TITLE */}
-          <div
-            className="
-              absolute bottom-0 w-full bg-black/60 p-3 text-white 
-              text-center font-semibold text-lg
-              transition-all duration-300
-              group-hover:opacity-0 group-hover:translate-y-3
-            "
-          >
-            {lab.title}
-          </div>
+    <p className="text-gray-700 text-center max-w-2xl mx-auto mb-12">
+      Explore our state-of-the-art laboratories designed to enhance 
+      practical learning, innovation, and hands-on engineering experience.
+    </p>
 
-          {/* HOVER OVERLAY WITH BUTTON */}
-          <div
-            className="
-              absolute inset-0 bg-black/70 
-              opacity-0 group-hover:opacity-100 
-              transition-all duration-300 
-              flex flex-col items-center justify-center
-            "
-          >
-            <button
-              onClick={() => setSelectedLab(lab)}
-              className="px-4 py-2 bg-secondary text-white rounded-lg shadow-md hover:bg-secondary/90 transition"
+    {/* 🔥 Card Grid */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      {labsGallery.map((lab, index) => (
+        <div
+          key={index}
+          className="
+            relative group rounded-xl
+            transition-transform duration-500
+            hover:scale-105
+          "
+        >
+          {/* CARD WRAPPER */}
+          <div className="rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500">
+
+            {/* IMAGE */}
+            <Image
+              src={lab.image}
+              alt={lab.title}
+              width={500}
+              height={300}
+              className="
+                object-cover w-full h-56
+                transform group-hover:scale-110
+                transition-all duration-500
+              "
+            />
+
+            {/* BOTTOM TITLE */}
+            <div
+              className="
+                absolute bottom-0 w-full bg-black/60 p-3 text-white 
+                text-center font-semibold text-lg
+                transition-all duration-300
+                group-hover:opacity-0 group-hover:translate-y-3
+              "
             >
-              Know More
-            </button>
+              {lab.title}
+            </div>
+
+            {/* HOVER OVERLAY WITH BUTTON */}
+            <div
+              className="
+                absolute inset-0 bg-black/70 
+                opacity-0 group-hover:opacity-100 
+                transition-all duration-300 
+                flex flex-col items-center justify-center
+              "
+            >
+              <button
+                onClick={() => setSelectedLab(lab)}
+                className="px-4 py-2 bg-secondary text-white rounded-lg shadow-md hover:bg-secondary/90 transition"
+              >
+                Know More
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    ))}
+      ))}
+    </div>
+
   </div>
 </div>
+
 
 {selectedLab && (
   <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-[999] px-4">
@@ -592,7 +624,10 @@ export default function Mech() {
       </div>
 
       {/* ===== FREQUENTLY ASKED QUESTIONS SECTION ===== */}
-      <FAQSection />
+      <div ref={faqRef}>
+  <FAQSection />
+</div>
+
 
       {isModalOpen && (
         <div

@@ -11,7 +11,7 @@ export default function Examination() {
   return (
     <div className="w-full bg-white text-gray-800">
       {/* ================= HERO BANNER ================= */}
-      <div className="w-full h-auto relative">
+      {/* <div className="w-full h-auto relative">
         <Image
           src="/Facilities/BannerOverviewPage.webp"
           alt="Examination at ICEM"
@@ -24,7 +24,7 @@ export default function Examination() {
             Examination Section
           </h1>
         </div>
-      </div>
+      </div> */}
 
       {/* ================= MAIN CONTENT (CENTERED WITH MAX WIDTH) ================= */}
       <div className="w-full flex justify-center">
@@ -173,7 +173,7 @@ export default function Examination() {
                             </a>
                           </li>
 
-                          <li>
+                          {/* <li>
                             <a
                               href="/exam/SYBCA25.pdf"
                               target="_blank"
@@ -182,7 +182,7 @@ export default function Examination() {
                               SY IMCA / BCA Endsemester Examination Timetable –
                               Nov/Dec 2025
                             </a>
-                          </li>
+                          </li> */}
 
                           <li>
                             <a

@@ -1,29 +1,23 @@
 "use client";
 import Image from "next/image";
-import {
-  FaFacebookF,
-  FaLinkedinIn,
-  FaInstagram,
-  FaTwitter,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
 export default function Overview() {
   const leaders = [
     {
       name: "Dr. Nilesh Uke",
       designation: "Principal",
-      image: "/faculty/NileshUke.webp", // Assumed based on convention
+      image: "/faculty/NileshUke.webp",
     },
     {
       name: "Dr. Soumitra S Das",
       designation: "Vice-Principal",
-      image: "/faculty/soumitra_das.webp", // Updated per instruction
+      image: "/faculty/soumitra_das.webp",
     },
     {
       name: "Dr. Saurabh Harishchand Gupta",
       designation: "Dean Academics",
-      image: "/faculty/SaurabhGupta.webp", // Assumed based on convention
+      image: "/faculty/SaurabhGupta.webp",
     },
   ];
 
@@ -89,6 +83,12 @@ export default function Overview() {
       name: "Indira College of Engineering & Management (ICEM)",
       url: "https://indiraicem.ac.in/",
     },
+  ];
+
+  const tarita_socials = [
+    "https://www.facebook.com/p/Tarita-Shankar-100063952002805/",
+    "https://www.linkedin.com/in/tarita-shankar-a1901489",
+    "https://www.instagram.com/taritashankar/",
   ];
 
   return (
@@ -384,12 +384,32 @@ export default function Overview() {
                   />
                 </div>
 
+                {/* SOCIAL LINKS ADDED HERE */}
                 <div className="flex justify-center gap-4 mt-3 text-gray-700 text-lg">
-                  <FaFacebookF className="hover:text-primary transition-colors cursor-pointer" />
-                  <FaLinkedinIn className="hover:text-primary transition-colors cursor-pointer" />
-                  <FaInstagram className="hover:text-primary transition-colors cursor-pointer" />
-                  <FaTwitter className="hover:text-primary transition-colors cursor-pointer" />
-                  <FaYoutube className="hover:text-primary transition-colors cursor-pointer" />
+                  <a
+                    href={tarita_socials[0]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                  >
+                    <FaFacebookF className="hover:text-primary transition-colors cursor-pointer" />
+                  </a>
+                  <a
+                    href={tarita_socials[1]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                  >
+                    <FaLinkedinIn className="hover:text-primary transition-colors cursor-pointer" />
+                  </a>
+                  <a
+                    href={tarita_socials[2]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                  >
+                    <FaInstagram className="hover:text-primary transition-colors cursor-pointer" />
+                  </a>
                 </div>
 
                 <div className="mt-3 text-center">
@@ -623,8 +643,8 @@ export default function Overview() {
                       width={0}
                       height={0}
                       sizes="100vw"
-                      style={{ width: "100%", height: "auto" }} // This allows the image to scale naturally
-                      className="object-top" // Keeps focus on the top (faces) if cropping occurs elsewhere
+                      style={{ width: "100%", height: "auto" }}
+                      className="object-top"
                     />
                   </div>
                   <div className="mt-4">

@@ -248,7 +248,7 @@ export default function FAQSectionAIDS() {
             {/* ================= ADMISSION PROCEDURE ================= */}
             {active === "Admission Procedure" && (
               <div className="flex flex-col sm:flex-row sm:items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
-                <h5 className="font-semibold text-gray-800">Procedure PDF</h5>
+                <h5 className="font-semibold text-gray-800">Institute Level /ACAP Admission Round Procedure</h5>
                 <a
                   href="/pdfs/AdmissionProcedure.pdf"
                   target="_blank"
@@ -282,7 +282,7 @@ export default function FAQSectionAIDS() {
         FRA Document
       </h5>
       <a
-        href="/Programs/Computer/FRA2025.pdf"
+        href="/Programs/Computer/NewFRA.pdf"
         target="_blank"
         className="px-4 py-2 bg-secondary text-white rounded-md mt-2 sm:mt-0"
       >

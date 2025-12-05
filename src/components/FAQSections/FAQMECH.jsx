@@ -244,7 +244,7 @@ export default function FAQMECH() {
     {
       id: "fee-fra",
       label: "FRA Document",
-      pdf: "/Programs/Computer/FRA2025.pdf",
+      pdf: "/Programs/Computer/NewFRA.pdf",
     },
   ],
 },
@@ -254,7 +254,7 @@ export default function FAQMECH() {
       content: [
         {
           id: "admission",
-          label: "Procedure PDF",
+          label: "Institute Level /ACAP Admission Round Procedure",
           pdf: "/pdfs/AdmissionProcedure.pdf",
         },
       ],

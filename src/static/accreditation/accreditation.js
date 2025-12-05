@@ -296,20 +296,60 @@ export const sections = {
           },
         ],
       },
-      // {
-      //   heading: "Soft Skills and Aptitude Reports",
-      //   pdfs: [
-      //     {
-      //       name: "Soft Skills Report 2023",
-      //       url: "/pdfs/soft-skills-2023.pdf",
-      //     },
-      //     {
-      //       name: "Aptitude Test Results",
-      //       url: "/pdfs/aptitude-results.pdf",
-      //     },
-      //     { name: "Placement Training", url: "/pdfs/placement-training.pdf" },
-      //   ],
-      // },
+{
+  heading: "Soft Skills and Aptitude Reports",
+  pdfs: [
+    {
+      name: "Aptitude and Softskill Training MCA",
+      url: "/pdfs/accreditation/softskills/Aptitude_and_Softskill_Training_MCA.pdf",
+    },
+    {
+      name: "BE TE CIVIL Softskill Aptitude",
+      url: "/pdfs/accreditation/softskills/BE_TE_CIVIL_Softskill_Aptitude.pdf",
+    },
+    {
+      name: "Computer Soft skill",
+      url: "/pdfs/accreditation/softskills/Computer Soft skill.pdf",
+    },
+    {
+      name: "Computer Aptitude",
+      url: "/pdfs/accreditation/softskills/Computer_Aptitude.pdf",
+    },
+    {
+      name: "FY MCA SOFTSKILL training",
+      url: "/pdfs/accreditation/softskills/FY MCA SOFTSKILL training.pdf",
+    },
+    {
+      name: "ICT Skill",
+      url: "/pdfs/accreditation/softskills/ICT Skill.pdf",
+    },
+    {
+      name: "International Yoga Day Report 2021-22",
+      url: "/pdfs/accreditation/softskills/International Yoga Day Report 2021-22.pdf",
+    },
+    {
+      name: "Life Skill Training laughter yoga",
+      url: "/pdfs/accreditation/softskills/Life Skill Training laughter yoga.pdf",
+    },
+    {
+      name: "Life Skill Zumba",
+      url: "/pdfs/accreditation/softskills/Life Skill Zumba.pdf",
+    },
+    {
+      name: "mba Aptitude",
+      url: "/pdfs/accreditation/softskills/mba Aptitude.pdf",
+    },
+    {
+      name: "MBA Softskill Aptitude Training",
+      url: "/pdfs/accreditation/softskills/MBA Softskill Aptitude Training.pdf",
+    },
+    {
+      name: "TE BE Civil Soft skill Training",
+      url: "/pdfs/accreditation/softskills/TE BE Civil Soft skill Training.pdf",
+    },
+  ],
+}
+
     ],
   },
 };

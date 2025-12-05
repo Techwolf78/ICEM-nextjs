@@ -36,12 +36,12 @@ const courses = [
   { name: "MCA", img: "/Programs/MCA/MCA.webp", link: "/programs/mca" },
   {
     name: "Integrated MBA (BBA + MBA)",
-    img: "/Programs/MBA/MBA.webp",
+    img: "/Programs/MBA/IMBA.webp",
     link: "/programs/imba",
   },
   {
     name: "Integrated MCA (BCA + MCA)",
-    img: "/Programs/MCA/MCA.webp",
+    img: "/Programs/MBA/IBBA.webp",
     link: "/programs/imca",
   },
 ];

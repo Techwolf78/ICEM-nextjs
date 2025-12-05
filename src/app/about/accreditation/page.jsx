@@ -36,7 +36,7 @@ export default function Accreditation() {
       // Create temporary link and trigger download
       const link = document.createElement("a");
       link.href = blobUrl;
-      link.download = pdfName;
+      link.download = pdfName.endsWith(".pdf") ? pdfName : `${pdfName}.pdf`;
       document.body.appendChild(link);
       link.click();
 

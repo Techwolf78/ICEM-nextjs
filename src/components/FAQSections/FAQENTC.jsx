@@ -100,14 +100,40 @@ export default function FAQENTC() {
       ],
     },
 
+//     "Eligibility Criteria": {
+//       type: "text",
+//       content: `
+// `,
+//     },
+
     "Eligibility Criteria": {
-      type: "text",
-      content: `
-Passed 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry/Biotechnology/Biology/Technical Vocational subject.
-
-Obtained at least 45% marks (40% in case of candidate belonging to reserved category) in the above subjects taken together.
-
-Valid score in JEE Main/MHT-CET or equivalent entrance examination.`,
+      type: "accordion",
+      content: {
+        "Eligibility Criteria for Admission to First Year Engineering 2024-25": [
+          "For details about First Year Engineering Admission and Eligibility Criteria, refer https://cetcell.mahacet.org/",
+        ],
+        "Maharashtra State Candidature Candidates": [
+          "The Candidate should be an Indian National.",
+          "Passed HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State), in the above subjects taken together; and the Candidate should have appeared in all the subjects in CET and should obtain non zero score in CET conducted by the Competent Authority.",
+          "Or",
+          "Passed Diploma in Engineering and Technology and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State).",
+        ],
+        "All India Candidature Candidates, Union Territory of Jammu and Kashmir and Union Territory of Ladakh Migrant Candidature Candidates": [
+          "The Candidate should be an Indian National.",
+          "Passed HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State) in the above subjects taken together; and should obtain non zero positive score in JEE (Main) B.E./B.Tech or the candidate should have appeared in all the subjects in CET and should obtain non zero score in CET conducted by the Competent Authority. However, preference shall be given to the candidate obtaining non zero positive score in JEE (Main) B.E./B.Tech over the candidates who obtained non zero score in CET.",
+          "Or",
+          "Passed Diploma in Engineering and Technology and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State).",
+        ],
+        "NRI / OCI / PIO, Children of Indian workers in the Gulf countries and Foreign National Candidature Candidates": [
+          "The candidate should have passed the HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies, and obtained at least 45 % marks in the above subjects taken together.",
+        ],
+        "Additional Information": [
+          "Any other criterion declared from time to time by the appropriate authority as defined under the Act.",
+        ],
+        "ENTC Eligibility": [
+          "Passed 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry/Biotechnology/Biology/Technical Vocational subject.Obtained at least 45% marks (40% in case of candidate belonging to reserved category) in the above subjects taken together.Valid score in JEE Main/MHT-CET or equivalent entrance examination.",
+        ],
+      },
     },
 
     // Faculty: {

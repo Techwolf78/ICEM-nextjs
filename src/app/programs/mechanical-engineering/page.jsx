@@ -40,11 +40,14 @@ export default function Mech() {
     "Fee",
   ];
 
+  const [selectedLab, setSelectedLab] = useState(null);
+
+
   
 
   const labsGallery = [
     {
-      image: "/Programs/Mech/DSC02662.webp",
+      image: "/Programs/Mech/DSC02683.webp",
       title: "Metrology and Quality Control",
       details: [
         "Auto Collimator With Angle Dekker",
@@ -56,18 +59,18 @@ export default function Mech() {
       ],
     },
     {
-      image: "/Programs/Mech/DSC02667.webp",
+      image: "/Programs/Mech/DSC02671.webp",
       title: "Mechatronics",
       details: [
         "Micrologix 1000 PLC Trainer",
         "PID Flow Control Trainer",
-        "Arduino Development Kit",
+        "Arduino (Atmega 328P) Development Kit",
         "PID Trainer",
         "Temperature Sensor Calibration Trainer Kit",
       ],
     },
     {
-      image: "/Programs/Mech/DSC02671.webp",
+      image: "/Programs/Mech/DSC02680.webp",
       title: "Refrigeration & Air Conditioning",
       details: [
         "Compression Refrigeration Test Rig",
@@ -78,7 +81,7 @@ export default function Mech() {
       ],
     },
     {
-      image: "/Programs/Mech/DSC02675.webp",
+      image: "/Programs/Mech/DSC02662.webp",
       title: "Industrial Fluid Power",
       details: [
         "Advanced Pneumatic Trainer",
@@ -89,7 +92,7 @@ export default function Mech() {
       ],
     },
     {
-      image: "/Programs/Mech/DSC02676.webp",
+      image: "/Programs/Mech/DSC02678.webp",
       title: "Heat Mass Transfer",
       details: [
         "Thermal Conductivity of Metal Rod Apparatus",
@@ -103,18 +106,19 @@ export default function Mech() {
       ],
     },
     {
-      image: "/Programs/Mech/DSC02678.webp",
+      image: "/Programs/Mech/DSC02690.webp",
       title: "Theory of Machines",
       details: [
         "Synchromesh Gear Box",
         "Differential Gear Box",
         "Epicyclic Gear Train Setup",
         "Motorized Gyroscope",
-        "Gear Tooth Profile Generation Setup",
+        "Generation involute gear tooth profile",
+        "Rack shift Equipment",
       ],
     },
     {
-      image: "/Programs/Mech/DSC02680.webp",
+      image: "/Programs/Mech/DSC02689.webp",
       title: "Dynamics of Machinery",
       details: [
         "Static & Dynamic Balancing Apparatus",
@@ -127,7 +131,7 @@ export default function Mech() {
   return (
     <div className="w-full text-white">
       {/* ===== TOP DARK SECTION ===== */}
-      <div className="relative w-full overflow-hidden 
+      <div className="relative w-full overflow-hidden   
   h-[55vh] sm:h-[65vh] md:h-[70vh] lg:h-[75vh] flex items-center">
 
   {/* Background Image */}
@@ -429,62 +433,109 @@ export default function Mech() {
       </div>
 
       {/* ===== LABS GALLERY SECTION ===== */}
-      {/* ===== LABS GALLERY SECTION ===== */}
-      <div className="w-full bg-white text-black py-16">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-secondary mb-4">
-            Mechanical Engineering Laboratories
-          </h2>
+      <div className="max-w-7xl mx-auto px-6 overflow-hidden relative">
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    {labsGallery.map((lab, index) => (
+      <div
+        key={index}
+        className="
+          relative group rounded-xl
+          transition-transform duration-500
+          hover:scale-105
+        "
+      >
+        {/* CARD WRAPPER */}
+        <div className="rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500">
 
-          <p className="text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
-            Explore our state-of-the-art laboratories that support practical
-            learning, innovation, and hands-on engineering experience.
-          </p>
+          {/* IMAGE */}
+          <Image
+            src={lab.image}
+            alt={lab.title}
+            width={500}
+            height={300}
+            className="
+              object-cover w-full h-56
+              transform group-hover:scale-110
+              transition-all duration-500
+            "
+          />
 
-          {/* 🔥 4 Column Grid Layout */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-            {labsGallery.map((lab, index) => (
-              <div
-                key={index}
-                className="relative group rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
-              >
-                {/* IMAGE */}
-                <Image
-                  src={lab.image}
-                  alt={lab.title}
-                  width={500}
-                  height={300}
-                  className="object-cover w-full h-56 transform group-hover:scale-110 transition-all duration-500"
-                />
+          {/* BOTTOM TITLE */}
+          <div
+            className="
+              absolute bottom-0 w-full bg-black/60 p-3 text-white 
+              text-center font-semibold text-lg
+              transition-all duration-300
+              group-hover:opacity-0 group-hover:translate-y-3
+            "
+          >
+            {lab.title}
+          </div>
 
-                {/* HEADING BAR */}
-                <div className="absolute bottom-0 w-full bg-black/60 p-3 text-white text-center font-semibold text-lg">
-                  {lab.title}
-                </div>
-
-                {/* HOVER OVERLAY */}
-                <div
-                  className="
-            absolute inset-0 bg-black/80 
-            opacity-0 group-hover:opacity-100 
-            transition-all duration-300 
-            flex flex-col items-center justify-center p-6
-          "
-                >
-                  <h3 className="text-white font-bold text-lg mb-3">
-                    {lab.title}
-                  </h3>
-                  <ul className="text-white text-sm space-y-1 text-left">
-                    {lab.details.map((d, i) => (
-                      <li key={i}>• {d}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
+          {/* HOVER OVERLAY WITH BUTTON */}
+          <div
+            className="
+              absolute inset-0 bg-black/70 
+              opacity-0 group-hover:opacity-100 
+              transition-all duration-300 
+              flex flex-col items-center justify-center
+            "
+          >
+            <button
+              onClick={() => setSelectedLab(lab)}
+              className="px-4 py-2 bg-secondary text-white rounded-lg shadow-md hover:bg-secondary/90 transition"
+            >
+              Know More
+            </button>
           </div>
         </div>
       </div>
+    ))}
+  </div>
+</div>
+
+{selectedLab && (
+  <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-[999] px-4">
+    <div className="bg-white rounded-xl shadow-xl max-w-lg w-full overflow-hidden animate-fadeIn">
+      
+      {/* IMAGE */}
+      <Image
+        src={selectedLab.image}
+        alt={selectedLab.title}
+        width={600}
+        height={350}
+        className="w-full h-64 object-cover"
+      />
+
+      {/* CONTENT */}
+      <div className="p-6">
+        <h2 className="text-2xl font-bold text-secondary mb-4">
+          {selectedLab.title}
+        </h2>
+
+        <ul className="text-gray-700 text-sm space-y-1 mb-6">
+          {selectedLab.details.map((d, i) => (
+            <li key={i}>• {d}</li>
+          ))}
+        </ul>
+
+        {/* CLOSE BUTTON */}
+        <div className="text-right">
+          <button
+            onClick={() => setSelectedLab(null)}
+            className="px-4 py-2 bg-secondary text-white rounded-lg hover:bg-secondary/90"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
+
+
+
 
       {/* ===== CAREER OPPORTUNITIES SECTION ===== */}
       <div className="w-full bg-white text-black py-16">

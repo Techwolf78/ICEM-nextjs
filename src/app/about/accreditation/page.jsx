@@ -281,7 +281,7 @@ export default function Accreditation() {
               </p>
             </div>
 
-            <div className="p-3 sm:p-4 border border-gray-200 rounded-lg bg-gray-50 shadow-sm">
+            {/* <div className="p-3 sm:p-4 border border-gray-200 rounded-lg bg-gray-50 shadow-sm">
               <h3 className="text-base sm:text-lg font-semibold text-secondary">
                 Best Emerging Institute Award 2016
               </h3>
@@ -292,7 +292,7 @@ export default function Accreditation() {
                 Recognized as a rising institution with exceptional potential
                 and innovative approaches to technical education.
               </p>
-            </div>
+            </div> */}
 
             <div className="p-3 sm:p-4 border border-gray-200 rounded-lg bg-gray-50 shadow-sm">
               <h3 className="text-base sm:text-lg font-semibold text-secondary">

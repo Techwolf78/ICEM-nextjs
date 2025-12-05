@@ -12,63 +12,72 @@ export default function Overview() {
   const leaders = [
     {
       name: "Dr. Nilesh Uke",
-      designation:
-        "Principal",
+      designation: "Principal",
+      image: "/faculty/NileshUke.webp", // Assumed based on convention
     },
     {
       name: "Dr. Soumitra S Das",
-      designation:
-        "Vice-Principal",
+      designation: "Vice-Principal",
+      image: "/faculty/soumitra_das.webp", // Updated per instruction
     },
     {
       name: "Dr. Saurabh Harishchand Gupta",
-      designation:
-        "Dean Academics",
+      designation: "Dean Academics",
+      image: "/faculty/SaurabhGupta.webp", // Assumed based on convention
     },
   ];
 
   const hods = [
-    { name: "Dr. Mahesh G. Bhong", designation: "HoD Mechanical Engineering." },
-    { name: "Prof. Savita Jangale", designation: "I/C HoD Civil Engineering." },
-    { name: "Dr. Soumitra S Das", designation: "HoD Computer Engineering." },
-    { name: "Dr. Poorna Shankar", designation: "HoD First Year Engineering." },
+    {
+      name: "Dr. Mahesh G. Bhong",
+      designation: "HoD Mechanical Engineering.",
+      image: "/faculty/MaheshBhong.webp",
+    },
+    {
+      name: "Prof. Savita Jangale",
+      designation: "I/C HoD Civil Engineering.",
+      image: "/faculty/SavitaJangale.webp",
+    },
+    {
+      name: "Dr. Soumitra S Das",
+      designation: "HoD Computer Engineering.",
+      image: "/faculty/SoumitraDas.webp",
+    },
+    {
+      name: "Dr. Poorna Shankar",
+      designation: "HoD First Year Engineering.",
+      image: "/faculty/PoornaShankar.webp",
+    },
     {
       name: "Dr. Manjusha Tatiya",
       designation: "HoD Artificial Intelligence and Data Science.",
+      image: "/faculty/Manjusha2.webp",
     },
     {
       name: "Dr. Archana Salve",
       designation: "HoD Master of Business Administration.",
+      image: "/faculty/ArchanaSalve.webp",
     },
     {
       name: "Dr. Darshana Desai",
       designation: "HoD Master of Computer Applications.",
+      image: "/faculty/DarshanaDesai.webp",
     },
     {
       name: "Prof. Dhiraj S. Bhagwate",
       designation: "HoD Electronics and Telecommunication Engineering.",
+      image: "/faculty/DhirajBhagwate.webp",
     },
     {
       name: "Dr. Awantika Bijwe",
       designation: "HoD Bachelor of Computer Applications.",
+      image: "/faculty/AwantikaBijwe.webp",
     },
     {
       name: "Dr. Deepa Jamnik",
       designation: "HoD Bachelor of Business Administration.",
+      image: "/faculty/DeepaJamnik.webp",
     },
-  ];
-
-  const trustees = [
-    { name: "Smt. Sarita Shankar Wakalkar", role: "President" },
-    {
-      name: "Dr. Tarita Shankar",
-      role: "Chief Managing Trustee and Founder Secretary",
-    },
-    { name: "Mr. Shardul Gangal", role: "Vice - President" },
-    { name: "Mr. Sahil Tarita Shankar", role: "Joint Secretary" },
-    { name: "Mr. Pilaji Sursingh Jadhavrao", role: "Treasurer" },
-    { name: "Mr. Vasant Maruti Maske", role: "Trustee Member" },
-    { name: "Mr. Shaan Tarita Shankar", role: "Trustee Member" },
   ];
 
   const institutes = [
@@ -309,7 +318,7 @@ export default function Overview() {
               established in February 1994 under the visionary leadership of{" "}
               <strong>Dr. Tarita Shankar</strong>, with the mission to provide
               high-quality postgraduate education in{" "}
-              <strong>Business Management, International Business,</strong> and
+              <strong>Business Management, International Business,</strong> and{" "}
               <strong> Information Technology</strong>. What began with just 60
               students and a single program has evolved into a thriving academic
               ecosystem under the brand of <strong>Indira University</strong>,
@@ -364,13 +373,11 @@ export default function Overview() {
               Chairperson & Chief Mentor's - IGI Message
             </h3>
             <div className="flex flex-col md:flex-row gap-8 bg-gray-50 rounded-xl p-6">
-              {/* Left Side - Image Placeholder + Socials */}
               {/* Left Side - Image + Socials */}
               <div className="md:w-1/3">
-                {/* Updated Image */}
                 <div className="w-full h-[380px] relative rounded-lg overflow-hidden">
                   <Image
-                    src="/faculty/tarita_shankar.webp" // ← your image path
+                    src="/faculty/tarita_shankar.webp"
                     alt="Dr. Tarita Shankar"
                     fill
                     className="object-contain"
@@ -525,7 +532,6 @@ export default function Overview() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
               {institutes.map((inst, index) => {
-                // Select image based on institute name
                 const imageSrc = inst.name.includes("Global Business School")
                   ? "/IGSB.jpg"
                   : inst.name.includes("Engineering & Management")
@@ -537,7 +543,6 @@ export default function Overview() {
                     key={index}
                     className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100"
                   >
-                    {/* Image Box */}
                     <div className="w-full h-64 relative rounded-t-xl overflow-hidden bg-gray-200">
                       <Image
                         src={imageSrc}
@@ -570,45 +575,33 @@ export default function Overview() {
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {leaders.map((leader, index) => {
-                // Assign images by index
-                const leaderImages = [
-                  "/faculty/nilesh_uke.webp", // For Dr. Nilesh Uke
-                  "/faculty/soumitra_das.webp", // For Dr. Soumitra S Das (replace with correct file)
-                  "/faculty/saurabh_gupta.PNG", // For Dr. Saurabh Harishchand Gupta (replace if needed)
-                ];
-
-                const imgSrc = leaderImages[index] || "/placeholder.webp";
-
-                return (
-                  <div
-                    key={index}
-                    className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center p-4 border border-gray-100"
-                  >
-                    {/* Image Box */}
-                    <div className="w-full h-64 relative bg-gray-100 rounded-t-xl overflow-hidden">
-                      <Image
-                        src={imgSrc}
-                        alt={leader.name}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-
-                    <div className="mt-4">
-                      <h4 className="font-semibold text-gray-800">
-                        {leader.name}
-                      </h4>
-                      <p className="text-sm text-gray-600">
-                        {leader.designation}
-                      </p>
-                      <p className="text-sm text-gray-600">
-                        Indira College of Engineering and Management
-                      </p>
-                    </div>
+              {leaders.map((leader, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center p-4 border border-gray-100"
+                >
+                  <div className="w-full h-68 relative bg-gray-100 rounded-t-xl overflow-hidden">
+                    <Image
+                      src={leader.image}
+                      alt={leader.name}
+                      fill
+                      className="object-cover object-top"
+                    />
                   </div>
-                );
-              })}
+
+                  <div className="mt-4">
+                    <h4 className="font-semibold text-gray-800">
+                      {leader.name}
+                    </h4>
+                    <p className="text-sm text-gray-600">
+                      {leader.designation}
+                    </p>
+                    <p className="text-sm text-gray-600">
+                      Indira College of Engineering and Management
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -617,14 +610,22 @@ export default function Overview() {
             <h3 className="text-2xl font-bold text-secondary mb-8">
               Head of Departments (HoDs)
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-8">
               {hods.map((hod, index) => (
                 <div
                   key={index}
                   className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center p-4 border border-gray-100"
                 >
-                  <div className="w-full h-60 bg-gray-100 rounded-t-xl flex items-center justify-center text-gray-500 text-sm">
-                    [ Image Placeholder ]
+                  <div className="w-full bg-gray-100 rounded-t-xl overflow-hidden">
+                    <Image
+                      src={hod.image}
+                      alt={hod.name}
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{ width: "100%", height: "auto" }} // This allows the image to scale naturally
+                      className="object-top" // Keeps focus on the top (faces) if cropping occurs elsewhere
+                    />
                   </div>
                   <div className="mt-4">
                     <h4 className="font-semibold text-gray-800">{hod.name}</h4>
@@ -635,8 +636,6 @@ export default function Overview() {
             </div>
           </div>
         </div>
-
-        {/* Right Section - Sidebar */}
       </div>
     </div>
   );

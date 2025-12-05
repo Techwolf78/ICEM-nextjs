@@ -11,7 +11,7 @@ export default function Examination() {
   return (
     <div className="w-full bg-white text-gray-800">
       {/* ================= HERO BANNER ================= */}
-      <div className="w-full h-auto relative">
+      {/* <div className="w-full h-auto relative">
         <Image
           src="/Facilities/BannerOverviewPage.webp"
           alt="Examination at ICEM"
@@ -24,7 +24,7 @@ export default function Examination() {
             Examination Section
           </h1>
         </div>
-      </div>
+      </div> */}
 
       {/* ================= MAIN CONTENT (CENTERED WITH MAX WIDTH) ================= */}
       <div className="w-full flex justify-center">
@@ -175,7 +175,7 @@ export default function Examination() {
 
                           <li>
                             <a
-                              href="/exam/SYBCA25.pdf"
+                              href="/exam/SYBCA.pdf"
                               target="_blank"
                               className="text-secondary hover:underline"
                             >
@@ -225,7 +225,7 @@ export default function Examination() {
                               2025
                             </a>
                           </li>
-
+{/* 
                           <li>
                             <a
                               href="/pdfs/sample.pdf"
@@ -235,7 +235,7 @@ export default function Examination() {
                               FY MTech Endsemester Examination Timetable –
                               Nov/Dec 2025
                             </a>
-                          </li>
+                          </li> */}
                         </ul>
                       </div>
                     </div>

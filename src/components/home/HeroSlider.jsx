@@ -197,3 +197,7 @@ const HeroSlider = () => {
 };
 
 export default HeroSlider;
+
+
+// IL & ACAP Merit List and Vacancy Position     |         Affiliated to Savitribai Phule Pune University     |     'NAAC' Accredited     |     "Autonomous Status by UGC, New Delhi."     |     Approved by AICTE, DTE Maharashtra    
+

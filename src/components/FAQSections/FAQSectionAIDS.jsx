@@ -15,12 +15,56 @@ const sanctionIntake = [
 
 const eligibilityCriteria = [
   {
-    program: "B.Tech AIDS Engineering",
-    text: `• Passed 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry/Biotechnology/Biology/Technical Vocational subject.
-• Obtained at least 45% marks (40% in case of candidate belonging to reserved category) in the above subjects taken together.
-• Valid score in JEE Main/MHT-CET or equivalent entrance examination.`,
+    program: "Eligibility Criteria for Admission to First Year Engineering 2024-25",
+    text: `For details about First Year Engineering Admission and Eligibility Criteria, refer https://cetcell.mahacet.org/`,
+  },
+
+  {
+    program: "Maharashtra State Candidature Candidates",
+    text: `• The Candidate should be an Indian National.
+• Passed HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry/ Biotechnology/ Biology/ Technical Vocational subject/ Computer Science/ Information Technology/ Informatics Practices/ Agriculture/ Engineering Graphics/ Business Studies.
+
+• Obtained at least 45% marks (40% for Backward Class, EWS & PwD candidates of Maharashtra) in the above subjects taken together.
+
+• AND appeared in all CET subjects with a non-zero score.
+
+OR
+
+• Passed Diploma in Engineering and Technology with at least 45% marks (40% for reserved categories).`,
+  },
+
+  {
+    program:
+      "All India Candidature Candidates, Jammu & Kashmir and Ladakh Migrant Candidates",
+    text: `• The Candidate should be an Indian National.
+
+• Passed HSC with Physics and Mathematics as compulsory subjects along with one of Chemistry/ Biotechnology/ Biology/ Technical Vocational subject/ Computer Science/ IT/ Informatics Practices/ Agriculture/ Engineering Graphics/ Business Studies.
+
+• Obtained at least 45% marks (40% for reserved categories from Maharashtra).
+
+• Must have a non-zero positive score in JEE Main B.E./B.Tech
+OR
+• Non-zero score in MHT-CET (JEE score preferred over CET score).
+
+OR
+
+• Passed Diploma in Engineering and Technology with at least 45% marks (40% for reserved categories).`,
+  },
+
+  {
+    program:
+      "NRI / OCI / PIO / Children of Indian workers in Gulf countries / Foreign Nationals",
+    text: `• Passed HSC or equivalent examination with Physics & Mathematics and one additional subject (Chemistry/ Biotechnology/ Biology/ Technical Vocational subject/ Computer Science/ IT/ Informatics Practices/ Agriculture/ Engineering Graphics/ Business Studies).
+
+• Obtained at least 45% marks in these subjects taken together.`,
+  },
+
+  {
+    program: "Additional Information",
+    text: `• Any other eligibility criteria declared by the appropriate authority under the Act.`,
   },
 ];
+
 
 const feeInfo = `Fee structure for Academic Year 2024-25 will be updated soon.
 Please contact the admission office for the latest and exact fee details.`;

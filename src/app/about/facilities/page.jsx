@@ -332,12 +332,12 @@ export default function Sports() {
   ];
 
 const highlight = {
-    title: "National Gold Medal (Athletics)",
+    title: "Arjuna Award & Alumnus Felicitation",
     description1:
-      "Mr. Dhanaraj Raut (B.E. Civil) brought pride to the institute and state by winning a Gold Medal while representing the Maharashtra Team at the Senior National Championship in Karnataka.This achievement stands as an inspiration for aspiring athletes across the institute.",
+       "In a moment of immense pride, our alumnus Mr. Sachin Khilari was honored with the prestigious Arjuna Award by the Honorable President of India, Smt. Droupadi Murmu.",
     description2:
-      "His achievement stands as an inspiration for aspiring athletes across the institute.",
-      img: "/sports/arjunaward1.png",
+      "The institute also proudly felicitated Mr. Sachin Khilari (Mechanical Engineering, Batch 2013), a Paralympic Silver Medallist in Men's Shot Put F46, during the Induction Programme 2024-25.",
+      img: "/sports/sachin.png",
   };
 
  
@@ -470,26 +470,26 @@ const highlight = {
               {/* Special Highlight Section */}
               <div className="sm:mt-18 sm:p-0 bg-secondary-50 rounded-xl ">
                 {/* Highlight Section */}
-                <div className="relative border-2 border-gray-200 rounded-2xl p-2 sm:p-8 sm:pl-80 shadow-md  flex flex-col sm:flex-row  items-center gap-6">
+                <div className="relative border-2 border-gray-200 rounded-2xl p-2 sm:p-8 sm:pl-120 shadow-md  flex flex-col sm:flex-row  items-center gap-3">
                   {/* Floating Image - Desktop */}
                   <div className="hidden sm:block absolute -left-3 top-1/3 -translate-y-1/2 z-20">
                     <Image
-                      src="/sports/arjunaward1.png"
+                      src="/sports/sachin.png"
                       alt="Arjuna Award Winner"
-                      height={320}
-                      width={320}
+                      height={440}
+                      width={460}
                       className="object-contain drop-shadow-2xl select-none"
-                      unoptimized
+                      unoptimized={true}
                     />
                   </div>
 
                   {/* Floating Image - Mobile (inline instead of absolute) */}
                   <div className="sm:hidden flex justify-center mb-4">
                     <Image
-                      src="/sports/arjunaward1.png"
+                      src="/sports/sachin.png"
                       alt="Arjuna Award Winner"
-                      height={200}
-                      width={200}
+                      height={300}
+                      width={300}
                       className="object-contain drop-shadow-2xl select-none"
                       unoptimized
                     />

@@ -1400,15 +1400,6 @@ export const sections = {
           },
         ],
       },
-      {
-        heading: "Media Center",
-        pdfs: [
-          {
-            name: "NAAC Certificate",
-            url: "/pdfs/accreditation/4.4.2 merged.pdf",
-          },
-        ],
-      },
     ],
   },
 

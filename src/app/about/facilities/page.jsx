@@ -303,7 +303,7 @@ export default function Sports() {
       title: "National Gold Medal (Athletics)",
       description:
         "Mr. Dhanaraj Raut (B.E. Civil) brought pride to the institute and state by winning a Gold Medal while representing the Maharashtra Team at the Senior National Championship in Karnataka.",
-        img: "/sports/tabletennis.webp",
+        img: "/sports/arjunaward.webp",
     },
     {
       title: "Gold Medal in Boxing",
@@ -332,11 +332,11 @@ export default function Sports() {
   ];
 
 const highlight = {
-    title: "Arjuna Award & Alumnus Felicitation",
+    title: "National Gold Medal (Athletics)",
     description1:
-      "In a moment of immense pride, our alumnus Mr. Sachin Khilari was honored with the prestigious Arjuna Award by the Honorable President of India, Smt. Droupadi Murmu.",
+      "Mr. Dhanaraj Raut (B.E. Civil) brought pride to the institute and state by winning a Gold Medal while representing the Maharashtra Team at the Senior National Championship in Karnataka.This achievement stands as an inspiration for aspiring athletes across the institute.",
     description2:
-      "The institute also proudly felicitated Mr. Sachin Khilari (Mechanical Engineering, Batch 2013), a Paralympic Silver Medallist in Men's Shot Put F46, during the Induction Programme 2024-25.",
+      "His achievement stands as an inspiration for aspiring athletes across the institute.",
       img: "/sports/arjunaward1.png",
   };
 

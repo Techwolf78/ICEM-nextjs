@@ -1,24 +1,7 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 
 export default function EnquireModal({ isOpen, onClose }) {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [error, setError] = useState(false);
-  const timerRef = useRef(null);
-
-  useEffect(() => {
-    if (!isLoaded && !error) {
-      timerRef.current = setTimeout(() => {
-        setError(true);
-      }, 5000);
-    } else {
-      if (timerRef.current) clearTimeout(timerRef.current);
-    }
-    return () => {
-      if (timerRef.current) clearTimeout(timerRef.current);
-    };
-  }, [isLoaded, error]);
-
   if (!isOpen) return null;
 
   return (
@@ -43,22 +26,15 @@ export default function EnquireModal({ isOpen, onClose }) {
 
         {/* NPF Form */}
         <div className="flex-1 flex items-center justify-center">
-          {error ? (
-            <div className="text-center text-red-500">
-              Domain is not eligible for this nopaperforms form.
-            </div>
-          ) : (
-            <iframe
-              src="https://widgets.nopaperforms.com/register?&w=9fa0f32fe4f405fa68dc3df39ef6a11b"
-              width="100%"
-              height="100%"
-              frameBorder="0"
-              allowFullScreen
-              title="NPF Enquiry Form"
-              className="rounded-lg"
-              onLoad={() => setIsLoaded(true)}
-            ></iframe>
-          )}
+          <iframe
+            src="https://widgets.nopaperforms.com/register?&w=9fa0f32fe4f405fa68dc3df39ef6a11b"
+            width="100%"
+            height="100%"
+            frameBorder="0"
+            allowFullScreen
+            title="NPF Enquiry Form"
+            className="rounded-lg"
+          ></iframe>
         </div>
       </div>
     </div>

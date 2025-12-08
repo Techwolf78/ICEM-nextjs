@@ -1,31 +1,14 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
 export default function NavEnquireModal({ isOpen, onClose }) {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [error, setError] = useState(false);
-  const timerRef = useRef(null);
   const formRef = useRef(null);
-  useEffect(() => {
-    if (!isLoaded && !error) {
-      timerRef.current = setTimeout(() => {
-        setError(true);
-      }, 5000);
-    } else {
-      if (timerRef.current) clearTimeout(timerRef.current);
-    }
-    return () => {
-      if (timerRef.current) clearTimeout(timerRef.current);
-    };
-  }, [isLoaded, error]);
-
   useEffect(() => {
     if (isOpen) {
       const script = document.createElement("script");
       script.type = "text/javascript";
       script.async = true;
       script.src = "https://widgets.nopaperforms.com/emwgts.js";
-      script.onload = () => setIsLoaded(true);
       document.body.appendChild(script);
 
       // Set responsive height for the form
@@ -72,13 +55,7 @@ export default function NavEnquireModal({ isOpen, onClose }) {
 
         {/* NPF Form */}
         <div className="flex-1 flex items-center justify-centermd:min-h-[520px]">
-          {error ? (
-            <div className="text-center text-red-500 w-full">
-              Domain is not eligible for this nopaperforms form.
-            </div>
-          ) : (
-            <div ref={formRef} className="npf_wgts w-full" data-height="520px" data-w="9fa0f32fe4f405fa68dc3df39ef6a11b"></div>
-          )}
+          <div ref={formRef} className="npf_wgts w-full" data-height="520px" data-w="9fa0f32fe4f405fa68dc3df39ef6a11b"></div>
         </div>
       </div>
     </div>

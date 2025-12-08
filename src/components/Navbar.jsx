@@ -38,8 +38,11 @@ const Navbar = () => {
   const [mobileDropdown, setMobileDropdown] = useState(null);
   const [showDialog, setShowDialog] = useState(false);
   const [notify, setNotify] = useState(false);
+  const [isEnquireLoaded, setIsEnquireLoaded] = useState(false);
+  const [enquireError, setEnquireError] = useState(false);
   const tourRef = useRef(null);
   const enquireFormRef = useRef(null);
+  const enquireTimerRef = useRef(null);
 
   useEffect(() => {
     if (notify) {
@@ -54,6 +57,7 @@ const Navbar = () => {
       script.type = "text/javascript";
       script.async = true;
       script.src = "https://widgets.nopaperforms.com/emwgts.js";
+      script.onload = () => setIsEnquireLoaded(true);
       document.body.appendChild(script);
 
       const setFormHeight = () => {
@@ -85,6 +89,19 @@ const Navbar = () => {
       document.body.style.overflow = '';
     }
   }, [isEnquireDrawerOpen]);
+
+  useEffect(() => {
+    if (!isEnquireLoaded && !enquireError) {
+      enquireTimerRef.current = setTimeout(() => {
+        setEnquireError(true);
+      }, 5000);
+    } else {
+      if (enquireTimerRef.current) clearTimeout(enquireTimerRef.current);
+    }
+    return () => {
+      if (enquireTimerRef.current) clearTimeout(enquireTimerRef.current);
+    };
+  }, [isEnquireLoaded, enquireError]);
 
   // ✅ Refs to manage hover timers and outside clicks (no flicker)
   const dropdownTimeoutRef = useRef(null);
@@ -754,7 +771,13 @@ const Navbar = () => {
         </div>
 
         <div className="p-6 text-gray-800 h-full overflow-y-auto">
-          <div ref={enquireFormRef} className="npf_wgts w-full" data-height="1000px" data-w="9fa0f32fe4f405fa68dc3df39ef6a11b"></div>
+          {enquireError ? (
+            <div className="text-center text-red-500">
+              Domain is not eligible for this nopaperforms form.
+            </div>
+          ) : (
+            <div ref={enquireFormRef} className="npf_wgts w-full" data-height="1000px" data-w="9fa0f32fe4f405fa68dc3df39ef6a11b"></div>
+          )}
         </div>
       </div>
 

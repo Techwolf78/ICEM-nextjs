@@ -264,11 +264,11 @@ export default function FAQENTC() {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-secondary mb-4">
-            Department of Computer Engineering
+            Department of Electronics & Telecommunication Engineering
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
             Empowering future innovators with cutting-edge education and
-            research in computer science and engineering
+            research in electronics and telecommunication engineering
           </p>
         </div>
 

@@ -123,15 +123,15 @@ export default function SportsRecreation() {
             {/* Title */}
 
             {/* Highlight Section */}
-            <div className="relative border-2 border-gray-200 rounded-2xl p-2 sm:p-8 sm:pl-80 shadow-md  flex flex-col sm:flex-row  items-center gap-6">
+            <div className="relative border-2 border-gray-200 rounded-2xl p-2 sm:p-8 sm:pl-125 shadow-md  flex flex-col sm:flex-row  items-center gap-6">
               {/* Floating Image - Desktop */}
               <div className="hidden sm:block absolute -left-3 top-1/3 -translate-y-1/2 z-20">
                 <Image
-                  src="/sports/arjunaward1.png"
+                  src="/sports/sachin.png"
                   alt="Arjuna Award Winner"
-                  height={320}
-                  width={320}
-                  className="object-contain drop-shadow-2xl select-none"
+                  height={440}
+                  width={460}
+                  className="object-contain drop-shadow-lg shadow-gray-400 select-none"
                   unoptimized
                 />
               </div>
@@ -139,11 +139,11 @@ export default function SportsRecreation() {
               {/* Floating Image - Mobile (inline instead of absolute) */}
               <div className="sm:hidden flex justify-center mb-4">
                 <Image
-                  src="/sports/arjunaward1.png"
+                  src="/sports/sachin.png"
                   alt="Arjuna Award Winner"
-                  height={200}
-                  width={200}
-                  className="object-contain drop-shadow-2xl select-none"
+                  height={300}
+                  width={300}
+                  className="object-contain drop-shadow-lg shadow-gray-400 select-none"
                   unoptimized
                 />
               </div>

@@ -234,20 +234,20 @@ export default function FAQMECH() {
     // ================= NEW SECTIONS (MECHANICAL) =================
 
     "Fee Structure": {
-  type: "syllabus",
-  content: [
-    {
-      id: "fee-structure",
-      label: "Fee Structure (2025–26)",
-      pdf: "/Programs/Computer/Feestructure2526.pdf",
+      type: "syllabus",
+      content: [
+        {
+          id: "fee-structure",
+          label: "Fee Structure (2025–26)",
+          pdf: "/Programs/Computer/Feestructure2526.pdf",
+        },
+        {
+          id: "fee-fra",
+          label: "FRA Document",
+          pdf: "/Programs/Computer/NewFRA.pdf",
+        },
+      ],
     },
-    {
-      id: "fee-fra",
-      label: "FRA Document",
-      pdf: "/Programs/Computer/NewFRA.pdf",
-    },
-  ],
-},
 
     "Admission Procedure": {
       type: "syllabus",
@@ -278,47 +278,47 @@ export default function FAQMECH() {
       ],
     },
 
-//     "Eligibility Criteria": {
-//   type: "text",
-//   content: [
-//     ""
-//   ]
-// },
+    //     "Eligibility Criteria": {
+    //   type: "text",
+    //   content: [
+    //     ""
+    //   ]
+    // },
 
-"Eligibility Criteria": {
+    "Eligibility Criteria": {
       type: "accordion",
       content: {
-        "Eligibility Criteria for Admission to First Year Engineering 2024-25": [
-          "For details about First Year Engineering Admission and Eligibility Criteria, refer https://cetcell.mahacet.org/",
-        ],
+        "Eligibility Criteria for Admission to First Year Engineering 2024-25":
+          [
+            "For details about First Year Engineering Admission and Eligibility Criteria, refer https://cetcell.mahacet.org/",
+          ],
         "Maharashtra State Candidature Candidates": [
           "The Candidate should be an Indian National.",
           "Passed HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State), in the above subjects taken together; and the Candidate should have appeared in all the subjects in CET and should obtain non zero score in CET conducted by the Competent Authority.",
           "Or",
           "Passed Diploma in Engineering and Technology and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State).",
         ],
-        "All India Candidature Candidates, Union Territory of Jammu and Kashmir and Union Territory of Ladakh Migrant Candidature Candidates": [
-          "The Candidate should be an Indian National.",
-          "Passed HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State) in the above subjects taken together; and should obtain non zero positive score in JEE (Main) B.E./B.Tech or the candidate should have appeared in all the subjects in CET and should obtain non zero score in CET conducted by the Competent Authority. However, preference shall be given to the candidate obtaining non zero positive score in JEE (Main) B.E./B.Tech over the candidates who obtained non zero score in CET.",
-          "Or",
-          "Passed Diploma in Engineering and Technology and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State).",
-        ],
-        "NRI / OCI / PIO, Children of Indian workers in the Gulf countries and Foreign National Candidature Candidates": [
-          "The candidate should have passed the HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies, and obtained at least 45 % marks in the above subjects taken together.",
-        ],
+        "All India Candidature Candidates, Union Territory of Jammu and Kashmir and Union Territory of Ladakh Migrant Candidature Candidates":
+          [
+            "The Candidate should be an Indian National.",
+            "Passed HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State) in the above subjects taken together; and should obtain non zero positive score in JEE (Main) B.E./B.Tech or the candidate should have appeared in all the subjects in CET and should obtain non zero score in CET conducted by the Competent Authority. However, preference shall be given to the candidate obtaining non zero positive score in JEE (Main) B.E./B.Tech over the candidates who obtained non zero score in CET.",
+            "Or",
+            "Passed Diploma in Engineering and Technology and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State).",
+          ],
+        "NRI / OCI / PIO, Children of Indian workers in the Gulf countries and Foreign National Candidature Candidates":
+          [
+            "The candidate should have passed the HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies, and obtained at least 45 % marks in the above subjects taken together.",
+          ],
         "Additional Information": [
           "Any other criterion declared from time to time by the appropriate authority as defined under the Act.",
         ],
         "Mechanical Engineering Eligibility": [
           "An interested candidate seeking engineering admission in Maharashtra must be a citizen of India. A candidate opting for engineering 1st-year admission is stated eligible if he/she has passed class 12th exam of CBSC/HSC/ICSE board with min 50% for open category, 45% for backward class from any state in India. A candidate also has to have a valid positive score in either of the examinations MH-CET/JEE-Mains, can apply for an engineering admission process.",
 
-    "Engineering admission criteria for Direct 2nd-year admission – The Candidate opting for engineering 2nd-year admission should be an Indian Citizen. Candidate must have completed Diploma Course in Engineering and Technology with at least 45% marks (40% for Backward class categories and Persons with Disability belonging to Maharashtra State) from AICTE or Government approved Institution.",
+          "Engineering admission criteria for Direct 2nd-year admission – The Candidate opting for engineering 2nd-year admission should be an Indian Citizen. Candidate must have completed Diploma Course in Engineering and Technology with at least 45% marks (40% for Backward class categories and Persons with Disability belonging to Maharashtra State) from AICTE or Government approved Institution.",
         ],
-        
       },
     },
-
-
 
     // Faculty: {
     //   type: "gallery",
@@ -331,10 +331,10 @@ export default function FAQMECH() {
       content: syllabusList,
     },
 
-    Laboratories: {
-      type: "mechLabs",
-      content: mechanicalLabs,
-    },
+    // Laboratories: {
+    //   type: "mechLabs",
+    //   content: mechanicalLabs,
+    // },
   };
 
   const tabs = Object.keys(sectionContent);
@@ -408,20 +408,19 @@ export default function FAQMECH() {
           </div>
         );
       case "text":
-  return (
-    <div className="space-y-4 text-gray-700 leading-relaxed">
-      {Array.isArray(data.content)
-        ? data.content.map((para, i) => (
-            <p key={i} className="text-gray-700">
-              {para}
-            </p>
-          ))
-        : (
-            <p>{data.content}</p>
-          )
-      }
-    </div>
-  );
+        return (
+          <div className="space-y-4 text-gray-700 leading-relaxed">
+            {Array.isArray(data.content) ? (
+              data.content.map((para, i) => (
+                <p key={i} className="text-gray-700">
+                  {para}
+                </p>
+              ))
+            ) : (
+              <p>{data.content}</p>
+            )}
+          </div>
+        );
 
       case "notice":
         return <p className="text-gray-600 text-lg">{data.content}</p>;
@@ -495,11 +494,11 @@ export default function FAQMECH() {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-secondary mb-4">
-            Department of Computer Engineering
+            Department of Mechanical Engineering
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
             Empowering future innovators with cutting-edge education and
-            research in computer science and engineering
+            research in mechanical engineering
           </p>
         </div>
 

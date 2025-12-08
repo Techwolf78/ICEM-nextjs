@@ -106,7 +106,7 @@ export default function Mech() {
     },
     {
       image: "/Programs/Mech/DSC02678.webp",
-      title: "Heat Mass Transfer",
+      title: "Heat and Mass Transfer",
       details: [
         "Thermal Conductivity of Metal Rod Apparatus",
         "Parallel & Counter Flow Apparatus",

@@ -16,7 +16,6 @@ import {
   FiAward,
   FiInfo,
 } from "react-icons/fi";
-import ApplyForm from "./home/ApplyForm";
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
 // Define the main navigation items for easy staggering
@@ -33,13 +32,14 @@ const mobileNavItems = [
 
 const Navbar = () => {
   const [isHelplineOpen, setIsHelplineOpen] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isEnquireDrawerOpen, setIsEnquireDrawerOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState(null);
   const [showDialog, setShowDialog] = useState(false);
   const [notify, setNotify] = useState(false);
   const tourRef = useRef(null);
+  const enquireFormRef = useRef(null);
 
   useEffect(() => {
     if (notify) {
@@ -48,12 +48,50 @@ const Navbar = () => {
     }
   }, [notify]);
 
+  useEffect(() => {
+    if (isEnquireDrawerOpen) {
+      const script = document.createElement("script");
+      script.type = "text/javascript";
+      script.async = true;
+      script.src = "https://widgets.nopaperforms.com/emwgts.js";
+      document.body.appendChild(script);
+
+      const setFormHeight = () => {
+        if (enquireFormRef.current) {
+          const navbarHeight = window.innerHeight * 0.12;
+          const headerHeight = 64;
+          const padding = 48;
+          const availableHeight = window.innerHeight - navbarHeight - headerHeight - padding;
+          const height = Math.max(availableHeight, 300);
+          enquireFormRef.current.setAttribute('data-height', `${height}px`);
+        }
+      };
+
+      setFormHeight();
+
+      window.addEventListener('resize', setFormHeight);
+
+      // Disable global scrolling
+      document.body.style.overflow = 'hidden';
+
+      return () => {
+        if (document.body.contains(script)) document.body.removeChild(script);
+        window.removeEventListener('resize', setFormHeight);
+        // Re-enable global scrolling
+        document.body.style.overflow = '';
+      };
+    } else {
+      // Re-enable global scrolling when closed
+      document.body.style.overflow = '';
+    }
+  }, [isEnquireDrawerOpen]);
+
   // ✅ Refs to manage hover timers and outside clicks (no flicker)
   const dropdownTimeoutRef = useRef(null);
   const navbarRef = useRef(null);
 
   const toggleHelpline = () => setIsHelplineOpen(!isHelplineOpen);
-  const toggleModal = () => setIsModalOpen(!isModalOpen);
+  const toggleEnquireDrawer = () => setIsEnquireDrawerOpen(!isEnquireDrawerOpen);
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   // === Hover Handlers (fixed flicker) ===
@@ -437,7 +475,7 @@ const Navbar = () => {
 
               {/* CTA Button */}
               <button
-                onClick={() => setIsModalOpen(true)}
+                onClick={toggleEnquireDrawer}
                 className="bg-secondary hover:scale-[1.03] text-white px-4 py-1 font-semibold transition-all duration-200"
               >
                 Enquire Now
@@ -649,7 +687,7 @@ const Navbar = () => {
               <div className="p-3 border-t border-gray-200 bg-gray-50">
                 <button
                   onClick={() => {
-                    toggleModal();
+                    toggleEnquireDrawer();
                     setIsMobileMenuOpen(false);
                   }}
                   className="w-full bg-gradient-to-r from-[#278da4] to-[#003c84] text-white py-2 text-sm font-semibold rounded-md hover:from-[#278da4]/90 hover:to-[#003c84]/90 transition-all duration-300 hover:scale-105 hover:shadow-lg"
@@ -699,16 +737,32 @@ const Navbar = () => {
         />
       )}
 
-      {/* ===== APPLY NOW MODAL (Unchanged) ===== */}
-      {isModalOpen && (
-        <div
-          className="fixed inset-0 bg-black/30 backdrop-blur-sm flex justify-center items-center z-[60]"
-          onClick={() => setIsModalOpen(false)}
-        >
-          <div className="max-w-7xl" onClick={(e) => e.stopPropagation()}>
-            <ApplyForm />
-          </div>
+      {/* ===== Enquire Drawer ===== */}
+      <div
+        className={`fixed top-0 right-0 h-full w-full md:w-[28rem] bg-white shadow-2xl transform transition-all duration-500 ease-in-out z-70 ${
+          isEnquireDrawerOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="bg-secondary text-white p-4 flex justify-between items-center">
+          <h3 className="text-lg font-bold">Enquire Now</h3>
+          <button
+            onClick={toggleEnquireDrawer}
+            className="hover:scale-110 transition-transform duration-300 text-white hover:text-gray-200"
+          >
+            <HiX size={24} />
+          </button>
         </div>
+
+        <div className="p-6 text-gray-800 h-full overflow-y-auto">
+          <div ref={enquireFormRef} className="npf_wgts w-full" data-height="1000px" data-w="9fa0f32fe4f405fa68dc3df39ef6a11b"></div>
+        </div>
+      </div>
+
+      {isEnquireDrawerOpen && (
+        <div
+          className="fixed inset-0 bg-transparent backdrop-blur-md bg-opacity-70 z-60 animate-in fade-in-0 duration-300"
+          onClick={toggleEnquireDrawer}
+        />
       )}
 
       {/* ===== MOBILE FAB (Social Bar) - New Initial Animation ===== */}

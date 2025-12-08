@@ -94,7 +94,7 @@ export default function RootLayout({ children }) {
         <meta name="ICBM" content="18.5822, 73.7380" />
       </head>
 
-      <body className="min-h-screen bg-white">
+      <body className="min-h-screen bg-white" suppressHydrationWarning={true}>
         <Loader isLoading={isLoading} />
 
         <Navbar />

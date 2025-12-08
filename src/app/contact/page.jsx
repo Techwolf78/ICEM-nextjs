@@ -3,7 +3,6 @@
 import React from "react";
 import Link from "next/link";
 import { Phone, Mail, MapPin, Clock, User, Globe } from "lucide-react"; // Using Lucide for cleaner, modern icons
-import ApplyForm from "@/components/home/ApplyForm";
 
 // --- Data ---
 const adminContacts = [
@@ -264,7 +263,14 @@ const ContactPage = () => {
 
             {/* Form Right Side (Inputs) */}
             <div className="lg:col-span-3 p-8 sm:p-12">
-             <ApplyForm />
+              <iframe
+                src="https://widgets.nopaperforms.com/register?&w=9fa0f32fe4f405fa68dc3df39ef6a11b"
+                width="100%"
+                height="600"
+                frameBorder="0"
+                allowFullScreen
+                title="NPF Enquiry Form"
+              ></iframe>
             </div>
           </div>
         </div>

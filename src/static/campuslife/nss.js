@@ -9,7 +9,7 @@ export const activities = [
       title: "Health Awareness Camp",
       date: "05 Sep 2023",
       desc: "A health camp was organized offering free checkups and awareness sessions to local residents.",
-      img:"/nss/img2.webp"
+      img:"/nss/img12.webp"
     },
     // {
     //   title: "Cleanliness Drive",
@@ -21,7 +21,7 @@ export const activities = [
       title: "Blood Donation Camp",
       date: "20 Nov 2023",
       desc: "Organized a blood donation camp in association with a local hospital, collecting life-saving units.",
-      img:"/nss/img1.webp"
+      img:"/nss/img11.webp"
     },
     {
       title: "Helmet Awareness Drive",
@@ -50,7 +50,7 @@ export const activities = [
     },
     {
       title: "Har Ghar Tiranga Notice",
-      date: "October 16",
+      date: "August 14",
       desc: "A national pride initiative campaign encouraging students and community members to participate in the Har Ghar Tiranga movement.",
       img:"/nss/img3.webp"
     },

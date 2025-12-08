@@ -335,9 +335,9 @@ export default function PlacementInformation() {
                     return (
                       <div
                         key={index}
-                        className="flex items-start gap-4 p-4 rounded-lg border border-gray-100 shadow-sm"
+                        className="flex items-start gap-2 p-2 rounded-lg border border-gray-100 shadow-sm"
                       >
-                        <div className="w-30 h-30 rounded-md bg-gray-200 overflow-hidden">
+                        <div className="w-30 h-30 sm:w-30 sm:h-30 rounded-md bg-gray-200 overflow-hidden">
                           {item.img ? (
                             <img
                               src={item.img}

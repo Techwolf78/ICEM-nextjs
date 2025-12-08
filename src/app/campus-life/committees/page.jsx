@@ -120,7 +120,7 @@ const Statutory = () => {
           <h3 className="font-semibold mt-4">
             Internal Compliance Committee Members:
           </h3>
-          <table className="w-full border border-gray-300 mt-3">
+          <table className="overflow-x-auto w-full border border-gray-300 mt-3">
             <thead className="bg-gray-100">
               <tr>
                 <th className="border p-2">S.No.</th>

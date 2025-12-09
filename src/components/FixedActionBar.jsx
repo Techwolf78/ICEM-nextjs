@@ -93,7 +93,7 @@ const FixedActionBar = () => {
             <button
               title="Social Media"
               onClick={() => setIsOpenMobile(!isOpenMobile)}
-              className="relative flex items-center justify-center bg-secondary text-white p-3 rounded-md shadow-lg hover:brightness-110 transition-all duration-300"
+              className="relative flex items-center justify-center bg-secondary text-white p-2 shadow-lg hover:brightness-110 transition-all duration-300"
             >
               {isOpenMobile ? <PanelRightOpen size={20} /> : <PanelLeftOpen size={20} />}
             </button>
@@ -107,11 +107,11 @@ const FixedActionBar = () => {
                 : "opacity-0 -translate-x-3 pointer-events-none"
             }`}
           >
-            <div className="bg-secondary px-2 py-2 shadow-lg flex items-center gap-2 rounded-r-md">
+            <div className="bg-secondary px-2 py-1 shadow-lg flex items-center gap-2">
               <Link
                 href="https://www.facebook.com/ICEM.AVIRAT/"
                 target="_blank"
-                className="bg-white text-black p-2 rounded-md shadow hover:scale-105 transition"
+                className="bg-white text-black p-2 shadow hover:scale-105 transition"
               >
                 <FaFacebookF size={16} />
               </Link>
@@ -121,7 +121,7 @@ const FixedActionBar = () => {
               <Link
                 href="https://www.linkedin.com/company/indira-college-of-engineering-and-management-pune/"
                 target="_blank"
-                className="bg-white text-black p-2 rounded-md shadow hover:scale-105 transition"
+                className="bg-white text-black p-2 shadow hover:scale-105 transition"
               >
                 <FaLinkedinIn size={16} />
               </Link>
@@ -131,7 +131,7 @@ const FixedActionBar = () => {
               <Link
                 href="mailto:admissions@indiraicem.ac.in"
                 target="_blank"
-                className="bg-white text-black p-2 rounded-md shadow hover:scale-105 transition"
+                className="bg-white text-black p-2 shadow hover:scale-105 transition"
               >
                 <Mail size={16} />
               </Link>
@@ -141,7 +141,7 @@ const FixedActionBar = () => {
               <Link
                 href="https://www.instagram.com/icem_pune/"
                 target="_blank"
-                className="bg-white text-black p-2 rounded-md shadow hover:scale-105 transition"
+                className="bg-white text-black p-2 shadow hover:scale-105 transition"
               >
                 <FaInstagram size={16} />
               </Link>

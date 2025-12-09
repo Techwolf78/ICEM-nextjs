@@ -63,29 +63,40 @@ const HeroSlider = () => {
         </div>
 
         <div className="flex-1 overflow-hidden whitespace-nowrap bg-white">
-          <div className="flex animate-seamlessMarquee font-semibold text-sm py-2 text-secondary">
-            <span className="mr-12">Public Advisory Notice</span>
-            <span className="mr-12">
+          <div className="flex animate-seamlessMarquee font-semibold text-xs sm:text-sm py-1 sm:py-2 text-secondary">
+            <span className="mr-8">Public Advisory Notice</span>
+            <span className="mr-8">
               All 4 PG Programs Computer Engineering
             </span>
-            {/* <span className="mr-12">Admission Open 2025–26</span> */}
-            <span className="mr-12">Placement Record 2025 Announced</span>
+            <span className="mr-8">Placement Record 2025 Announced</span>
 
             {/* Duplicate for seamless loop */}
-            <span className="mr-12">Public Advisory Notice</span>
-            <span className="mr-12">
+            <span className="mr-8">Public Advisory Notice</span>
+            <span className="mr-8">
               All 4 PG Programs Computer Engineering
             </span>
-            {/* <span className="mr-12">Admission Open 2025–26</span> */}
-            <span className="mr-12">Placement Record 2025 Announced</span>
+            <span className="mr-8">Placement Record 2025 Announced</span>
 
             {/* Duplicate for seamless loop */}
-            <span className="mr-12">Public Advisory Notice</span>
-            <span className="mr-12">
+            <span className="mr-8">Public Advisory Notice</span>
+            <span className="mr-8">
               All 4 PG Programs Computer Engineering
             </span>
-            {/* <span className="mr-12">Admission Open 2025–26</span> */}
-            <span className="mr-12">Placement Record 2025 Announced</span>
+            <span className="mr-8">Placement Record 2025 Announced</span>
+
+            {/* Duplicate for seamless loop */}
+            <span className="mr-8">Public Advisory Notice</span>
+            <span className="mr-8">
+              All 4 PG Programs Computer Engineering
+            </span>
+            <span className="mr-8">Placement Record 2025 Announced</span>
+
+            {/* Duplicate for seamless loop */}
+            <span className="mr-8">Public Advisory Notice</span>
+            <span className="mr-8">
+              All 4 PG Programs Computer Engineering
+            </span>
+            <span className="mr-8">Placement Record 2025 Announced</span>
           </div>
         </div>
 
@@ -185,7 +196,7 @@ const HeroSlider = () => {
           }
         }
         .animate-seamlessMarquee {
-          animation: seamlessMarquee 25s linear infinite;
+          animation: seamlessMarquee 10s linear infinite;
         }
 
         .clip-ribbon-left {

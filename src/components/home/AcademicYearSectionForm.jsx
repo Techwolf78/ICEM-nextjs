@@ -13,7 +13,7 @@ export default function AcademicYearSectionForm() {
     // Set responsive height for the form
     const setFormHeight = () => {
       if (formRef.current) {
-        const height = window.innerWidth < 640 ? '300px' : window.innerWidth < 768 ? '350px' : '520px';
+        const height = window.innerWidth < 640 ? '460px' : window.innerWidth < 768 ? '350px' : '520px';
         formRef.current.setAttribute('data-height', height);
       }
     };
@@ -30,9 +30,9 @@ export default function AcademicYearSectionForm() {
   }, []);
 
   return (
-    <div className="p-6 h-full">
+    <div className="p-3 md:p-6 h-full">
       {/* Title */}
-      <h3 className="text-xl font-bold text-center mb-4 text-secondary">
+      <h3 className="text-xl font-bold text-center mb-2 text-secondary">
         Enquire Now
       </h3>
 

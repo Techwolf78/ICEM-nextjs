@@ -6,9 +6,9 @@ import AcademicYearSectionForm from "./AcademicYearSectionForm";
 
 const AcademicYearSection = () => {
   return (
-    <section className="bg-gray-50 py-12 sm:py-16 lg:py-20">
+    <section className="bg-gray-50 py-4 sm:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_450px] gap-12  items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_450px] gap-4 md:gap-12  items-start">
           {/* LEFT: Program List */}
           <div className="w-full order-2 lg:order-1">
             <ProgramList />

@@ -90,11 +90,11 @@ const ExploreSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-white relative z-30 py-12 sm:pt-12  px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="w-full bg-white relative z-30 py-2 md:py-6  px-4 sm:px-6 lg:px-8 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
         {/* MAIN GRID */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[1.4fr_0.8fr] gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[1.4fr_0.8fr] gap-6 lg:gap-16 items-center">
           {/* LEFT COLUMN: Text Content */}
           {/* LEFT COLUMN: Text Content */}
           <div

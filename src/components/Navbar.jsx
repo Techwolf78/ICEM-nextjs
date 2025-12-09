@@ -765,45 +765,7 @@ const Navbar = () => {
         />
       )}
 
-      {/* ===== MOBILE FAB (Social Bar) - New Initial Animation ===== */}
-      {!isMobileMenuOpen && (
-        <div className="fixed bottom-2 left-5 right-5 z-[9999] md:hidden bg-secondary text-white shadow-2xl rounded-full transition-all duration-300 hover:scale-[1.02] **animate-in fade-in slide-in-from-bottom-4 duration-500 ease-out**">
-          <div className="flex justify-between items-center px-4 py-3">
-            {/* Facebook Link */}
-            <Link
-              href="https://www.facebook.com/ICEM.AVIRAT/"
-              target="_blank"
-              className="p-3 bg-white rounded-full transition-all duration-200 active:scale-110 shadow-md hover:shadow-lg"
-            >
-              <FaFacebookF className="text-secondary" size={18} />
-            </Link>
-            {/* LinkedIn Link */}
-            <Link
-              href="https://www.linkedin.com/company/indira-college-of-engineering-and-management-pune/"
-              target="_blank"
-              className="p-3 bg-white rounded-full transition-all duration-200 active:scale-110 shadow-md hover:shadow-lg"
-            >
-              <FaLinkedinIn className="text-secondary" size={18} />
-            </Link>
-            {/* Mail Link - Primary CTA */}
-            <Link
-              href="mailto:admissions@indiraicem.ac.in"
-              target="_blank"
-              className="p-3 bg-white rounded-full transition-all duration-200 active:scale-95 shadow-xl hover:shadow-2xl"
-            >
-              <Mail size={18} className="text-secondary" />
-            </Link>
-            {/* Instagram Link */}
-            <Link
-              href="https://www.instagram.com/icem_pune/"
-              target="_blank"
-              className="p-3 bg-white rounded-full transition-all duration-200 active:scale-110 shadow-md hover:shadow-lg"
-            >
-              <FaInstagram className="text-secondary" size={18} />
-            </Link>
-          </div>
-        </div>
-      )}
+
     </>
   );
 };

@@ -2,7 +2,7 @@
 
 import React from "react";
 import ProgramList from "./ProgramList";
-import ApplyForm from "./ApplyForm";
+import AcademicYearSectionForm from "./AcademicYearSectionForm";
 
 const AcademicYearSection = () => {
   return (
@@ -18,9 +18,9 @@ const AcademicYearSection = () => {
              - sticky top-24: Makes the form float on desktop
              - order-1: On Mobile, form comes FIRST (conversion priority)
           */}
-          <div className="w-full order-1 lg:order-2 lg:sticky lg:top-24 z-10">
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-              <ApplyForm />
+          <div className="w-full order-1 lg:order-2 lg:sticky lg:top-24 z-10 h-full">
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 h-full">
+              <AcademicYearSectionForm />
             </div>
           </div>
         </div>

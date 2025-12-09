@@ -5,13 +5,14 @@ import { Mail, Menu } from "lucide-react";
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { Grid2x2 } from "lucide-react";
-import { PanelRightOpen } from "lucide-react";
+import { PanelRightOpen, PanelLeftOpen } from "lucide-react";
 // import { Menu } from "lucide-react";
 import { LayoutGrid } from "lucide-react";
 import Link from "next/link";
 
 const FixedActionBar = () => {
   const [isOpenRight, setIsOpenRight] = useState(false);
+  const [isOpenMobile, setIsOpenMobile] = useState(true);
 
   return (
     <>
@@ -84,41 +85,68 @@ const FixedActionBar = () => {
         </div>
       </div>
 
-      {/* ===== MOBILE FAB (Social Bar) - New Initial Animation ===== */}
-      <div className="fixed bottom-2 left-5 right-5 z-[9999] md:hidden bg-secondary text-white shadow-2xl rounded-full hover:scale-[1.02] **animate-in fade-in slide-in-from-bottom-4 duration-500 ease-out**">
-        <div className="flex justify-between items-center px-4 py-3">
-          {/* Facebook Link */}
-          <Link
-            href="https://www.facebook.com/ICEM.AVIRAT/"
-            target="_blank"
-            className="p-3 bg-white rounded-full transition-all duration-200 active:scale-110 shadow-md hover:shadow-lg"
+      {/* ===== MOBILE SOCIAL BAR (Button + Sliding Icons) ===== */}
+      <div className="md:hidden fixed bottom-2 left-5 z-[99999] items-center">
+        <div className="relative flex items-center">
+          {/* Mobile Button */}
+          <div className="relative p-[2px] transition-all duration-500 rounded-md">
+            <button
+              title="Social Media"
+              onClick={() => setIsOpenMobile(!isOpenMobile)}
+              className="relative flex items-center justify-center bg-secondary text-white p-3 rounded-md shadow-lg hover:brightness-110 transition-all duration-300"
+            >
+              {isOpenMobile ? <PanelRightOpen size={20} /> : <PanelLeftOpen size={20} />}
+            </button>
+          </div>
+
+          {/* Sliding Social Icons */}
+          <div
+            className={`absolute left-full top-1/2 -translate-y-1/2 flex items-center transition-all duration-500 ease-in-out ${
+              isOpenMobile
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-3 pointer-events-none"
+            }`}
           >
-            <FaFacebookF className="text-secondary" size={18} />
-          </Link>
-          {/* LinkedIn Link */}
-          <Link
-            href="https://www.linkedin.com/company/indira-college-of-engineering-and-management-pune/"
-            target="_blank"
-            className="p-3 bg-white rounded-full transition-all duration-200 active:scale-110 shadow-md hover:shadow-lg"
-          >
-            <FaLinkedinIn className="text-secondary" size={18} />
-          </Link>
-          {/* Mail Link - Primary CTA */}
-          <Link
-            href="mailto:admissions@indiraicem.ac.in"
-            target="_blank"
-            className="p-3 bg-white rounded-full transition-all duration-200 active:scale-95 shadow-xl hover:shadow-2xl"
-          >
-            <Mail size={18} className="text-secondary" />
-          </Link>
-          {/* Instagram Link */}
-          <Link
-            href="https://www.instagram.com/icem_pune/"
-            target="_blank"
-            className="p-3 bg-white rounded-full transition-all duration-200 active:scale-110 shadow-md hover:shadow-lg"
-          >
-            <FaInstagram className="text-secondary" size={18} />
-          </Link>
+            <div className="bg-secondary px-2 py-2 shadow-lg flex items-center gap-2 rounded-r-md">
+              <Link
+                href="https://www.facebook.com/ICEM.AVIRAT/"
+                target="_blank"
+                className="bg-white text-black p-2 rounded-md shadow hover:scale-105 transition"
+              >
+                <FaFacebookF size={16} />
+              </Link>
+
+              <span className="w-[1px] h-5 bg-white/40"></span>
+
+              <Link
+                href="https://www.linkedin.com/company/indira-college-of-engineering-and-management-pune/"
+                target="_blank"
+                className="bg-white text-black p-2 rounded-md shadow hover:scale-105 transition"
+              >
+                <FaLinkedinIn size={16} />
+              </Link>
+
+              <span className="w-[1px] h-5 bg-white/40"></span>
+
+              <Link
+                href="mailto:admissions@indiraicem.ac.in"
+                target="_blank"
+                className="bg-white text-black p-2 rounded-md shadow hover:scale-105 transition"
+              >
+                <Mail size={16} />
+              </Link>
+
+              <span className="w-[1px] h-5 bg-white/40"></span>
+
+              <Link
+                href="https://www.instagram.com/icem_pune/"
+                target="_blank"
+                className="bg-white text-black p-2 rounded-md shadow hover:scale-105 transition"
+              >
+                <FaInstagram size={16} />
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
 

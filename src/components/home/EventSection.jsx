@@ -58,39 +58,39 @@ export default function EventsSection() {
   const marqueeList = [...events, ...events, ...events];
 
   return (
-    <section className="w-full bg-gray-50 py-12 sm:py-20 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 mb-10">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-center text-secondary">
+    <section className="w-full bg-gray-50 py-4 md:py-8  overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4">
+        <h2 className="text-xl md:text-2xl lg:text-3xl font-extrabold text-center text-secondary">
           Academic Conferences & Campus Events
         </h2>
-        <p className="text-center text-gray-500 mt-2 text-sm sm:text-base">
+        <p className="text-center text-gray-500 mt-2 text-xs md:text-sm lg:text-base">
           Glimpses of life happening at our campus
         </p>
       </div>
 
-      <div className="relative w-full overflow-hidden group py-5">
-        <div className="flex animate-marquee space-x-6 w-max hover:[animation-play-state:paused] will-change-transform backface-invisible">
+      <div className="relative w-full overflow-hidden group py-3 md:py-5">
+        <div className="flex animate-marquee space-x-4 md:space-x-6 w-max hover:[animation-play-state:paused] will-change-transform backface-invisible">
           {marqueeList.map((event, index) => (
             <div
               key={index}
-              className="relative flex-shrink-0 w-[260px] sm:w-[320px] md:w-[360px] bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 overflow-hidden"
+              className="relative flex-shrink-0 w-[220px] md:w-[260px] lg:w-[320px] xl:w-[360px] bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 overflow-hidden"
             >
-              <div className="relative w-full h-40 sm:h-48 md:h-56">
+              <div className="relative w-full h-32 md:h-40 lg:h-48 xl:h-56">
                 <Image
                   src={event.img}
                   alt={event.title}
                   fill
-                  sizes="(max-width: 640px) 260px, (max-width: 768px) 320px, 360px"
+                  sizes="(max-width: 768px) 220px, (max-width: 1024px) 260px, (max-width: 1280px) 320px, 360px"
                   className="object-cover"
                   priority={index < 5}
                 />
               </div>
 
-              <div className="p-5">
-                <h3 className="font-bold text-gray-800 text-base mb-2 line-clamp-1">
+              <div className="p-3 md:p-4 lg:p-5">
+                <h3 className="font-bold text-gray-800 text-sm md:text-base mb-1 md:mb-2 line-clamp-1">
                   {event.title}
                 </h3>
-                <p className="text-gray-600 text-sm line-clamp-2 leading-relaxed">
+                <p className="text-gray-600 text-xs md:text-sm line-clamp-2 leading-relaxed">
                   {event.description}
                 </p>
               </div>

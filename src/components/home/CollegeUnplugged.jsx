@@ -40,13 +40,13 @@ export default function CollegeUnplugged() {
   };
 
   return (
-    <div className="bg-white py-12 sm:py-16 px-4 sm:px-6">
+    <div className="bg-white py-8 md:py-12 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-secondary mb-10 text-center sm:text-left">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-secondary mb-6 md:mb-10 text-center md:text-left">
           Indira College Unplugged
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-10 items-start">
           {/* LEFT LIST */}
           <div className="order-2 lg:order-1 lg:col-span-5">
             <VideoList
@@ -57,7 +57,7 @@ export default function CollegeUnplugged() {
           </div>
 
           {/* RIGHT PLAYER FACADE */}
-          <div className="order-1 lg:order-2 lg:col-span-7 space-y-4">
+          <div className="order-1 lg:order-2 lg:col-span-7 space-y-2 md:space-y-4">
             {/* THE FACADE: 
                 This container holds the video. 
                 It has a fixed aspect ratio (16/9) to prevent layout shifts.
@@ -81,9 +81,9 @@ export default function CollegeUnplugged() {
 
                   {/* Custom Play Button */}
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/90 rounded-full flex items-center justify-center shadow-2xl transition-transform duration-300 group-hover:scale-110">
+                    <div className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-white/90 rounded-full flex items-center justify-center shadow-2xl transition-transform duration-300 group-hover:scale-110">
                       <svg
-                        className="w-8 h-8 text-secondary ml-1"
+                        className="w-6 h-6 md:w-8 md:h-8 text-secondary ml-1"
                         fill="currentColor"
                         viewBox="0 0 24 24"
                       >
@@ -106,10 +106,10 @@ export default function CollegeUnplugged() {
             </div>
 
             <div className="space-y-1">
-              <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-snug">
+              <h3 className="text-base md:text-lg lg:text-xl font-bold text-gray-900 leading-snug">
                 {videos[selectedIndex].title}
               </h3>
-              <p className="text-sm sm:text-base text-gray-600">
+              <p className="text-xs md:text-sm lg:text-base text-gray-600">
                 Watch the full video to explore campus life, events and
                 facilities.
               </p>
@@ -123,7 +123,7 @@ export default function CollegeUnplugged() {
 
 /* MEMOIZED LIST */
 const VideoList = memo(({ videos, selectedIndex, onSelect }) => (
-  <div className="space-y-3">
+  <div className="space-y-2 md:space-y-3">
     {videos.map((v, i) => {
       const isSelected = selectedIndex === i;
 
@@ -136,7 +136,7 @@ const VideoList = memo(({ videos, selectedIndex, onSelect }) => (
           key={i}
           onClick={() => onSelect(i)}
           className={`
-            group flex w-full items-center gap-4 p-3 rounded-xl border text-left transition-all duration-200
+            group flex w-full items-center gap-3 md:gap-4 p-2 md:p-3 rounded-xl border text-left transition-all duration-200
             ${
               isSelected
                 ? "bg-secondary/5 border-secondary shadow-sm ring-1 ring-secondary"
@@ -145,7 +145,7 @@ const VideoList = memo(({ videos, selectedIndex, onSelect }) => (
           `}
         >
           {/* THUMBNAIL */}
-          <div className="relative w-28 h-16 sm:w-32 sm:h-20 rounded-lg overflow-hidden shrink-0 bg-gray-200">
+          <div className="relative w-24 md:w-28 lg:w-32 h-14 md:h-16 lg:h-20 rounded-lg overflow-hidden shrink-0 bg-gray-200">
             <Image
               src={listThumbnail}
               alt={v.title}
@@ -160,9 +160,9 @@ const VideoList = memo(({ videos, selectedIndex, onSelect }) => (
                 isSelected ? "opacity-0" : "opacity-100"
               }`}
             >
-              <div className="w-6 h-6 bg-white/90 rounded-full flex items-center justify-center shadow-sm">
+              <div className="w-5 h-5 md:w-6 md:h-6 bg-white/90 rounded-full flex items-center justify-center shadow-sm">
                 <svg
-                  className="w-3 h-3 text-secondary ml-0.5"
+                  className="w-2.5 h-2.5 md:w-3 md:h-3 text-secondary ml-0.5"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -175,7 +175,7 @@ const VideoList = memo(({ videos, selectedIndex, onSelect }) => (
           {/* TEXT */}
           <div className="flex-1 min-w-0">
             <p
-              className={`text-sm font-medium line-clamp-2 ${
+              className={`text-xs md:text-sm font-medium line-clamp-2 ${
                 isSelected ? "text-secondary" : "text-gray-700"
               }`}
             >

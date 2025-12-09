@@ -62,14 +62,14 @@ export default function IGOI() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 py-16 px-6">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-5 md:gap-10 py-8 px-4 md:py-16 md:px-6">
         {/* Left Section */}
-        <div className="md:w-2/3 bg-white p-6 rounded-xl shadow-md">
-          <h2 className="text-2xl font-semibold text-secondary mb-6">
+        <div className="md:w-2/3 bg-white p-4 md:p-6 rounded-xl shadow-md">
+          <h2 className="text-2xl font-semibold text-secondary mb-4 md:mb-6">
             About Indira Group of Institutes (IGI)
           </h2>
 
-          <p className="text-gray-700 leading-relaxed mb-4">
+          <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
             Established in 1994 under the visionary guidance of{" "}
             <strong>Dr. Tarita Shankar</strong>, the{" "}
             <strong>Indira Group of Institutes (IGI)</strong> in Pune has
@@ -81,7 +81,7 @@ export default function IGOI() {
             in a rapidly evolving world.
           </p>
 
-          <p className="text-gray-700 leading-relaxed mb-4">
+          <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
             With a strong legacy spanning over three decades, IGI has
             consistently pursued academic excellence while promoting holistic
             development. The group has expanded its footprint to include{" "}
@@ -94,7 +94,7 @@ export default function IGOI() {
             professional careers.
           </p>
 
-          <p className="text-gray-700 leading-relaxed mb-4">
+          <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
             At the heart of IGI’s philosophy is a commitment to{" "}
             <strong>student empowerment and holistic development</strong>. The
             institutes focus not only on delivering high-quality education but
@@ -105,7 +105,7 @@ export default function IGOI() {
             promotes innovation, ethical values, and social responsibility.
           </p>
 
-          <p className="text-gray-700 leading-relaxed mb-4">
+          <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
             IGI takes pride in its{" "}
             <strong>state-of-the-art infrastructure</strong>, experienced
             faculty, and a supportive learning environment that encourages
@@ -115,7 +115,7 @@ export default function IGOI() {
             conscious professionals.
           </p>
 
-          <p className="text-gray-700 leading-relaxed mb-4">
+          <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
             Over the years, IGI has built a strong{" "}
             <strong>network of alumni</strong> who have made significant
             contributions across industries, demonstrating the institute’s
@@ -134,7 +134,7 @@ export default function IGOI() {
         </div>
 
         {/* Right Sidebar */}
-        <div className="md:w-1/3 bg-primary text-white p-6 rounded-xl shadow-md flex flex-col justify-between">
+        <div className="md:w-1/3 bg-primary text-white p-4 md:p-6 rounded-xl shadow-md flex flex-col justify-between">
           <ul className="space-y-4 w-full mb-8">
             {rightLinks.map((link, index) => (
               <li
@@ -214,12 +214,12 @@ export default function IGOI() {
       </div>
 
       {/* Institutes Section */}
-      <div className="max-w-7xl mx-auto px-6 pb-20">
-        <h3 className="text-2xl font-bold text-secondary mb-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 pb-20">
+        <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-8">
           Institutes under Indira Group (IGI)
         </h3>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
           {institutes.map((inst, index) => (
             <div
               key={index}
@@ -229,7 +229,7 @@ export default function IGOI() {
               <div className="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-500 rounded-t-xl">
                 [ Image Placeholder ]
               </div>
-              <div className="p-4 text-center">
+              <div className="p-2 md:p-4 text-center">
                 <h4 className="font-semibold text-gray-800 text-base">
                   {inst.name}
                 </h4>

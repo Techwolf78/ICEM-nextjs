@@ -345,9 +345,9 @@ const highlight = {
   return (
     <div className="w-full bg-white text-gray-800">
       <BannerSlider activeSection={activeSection}/>
-      <div className="max-w-7xl mx-auto py-4 px-6 space-y-12">
+      <div className="max-w-7xl mx-auto py-2 md:py-4 px-4 md:px-6 space-y-6 md:space-y-12">
         {/* Navigation Tabs */}
-        <div className="flex flex-wrap gap-2 justify-center mb-8">
+        <div className="flex flex-wrap gap-2 justify-center mb-4 md:mb-8">
           {["Sports", "Library", "Transport", "Canteen", "Gym", "Hostel", "Primary Health Centre"].map((facility) => (
             <button
               key={facility}
@@ -369,30 +369,30 @@ const highlight = {
         {/* Content Section */}
         {activeSection === "Sports" ? (
           // Sports-specific content
-          <div className="max-w-full mx-auto px-6 py-10">
+          <div className="max-w-full mx-auto px-4 md:px-6 py-5 md:py-10">
             {/* Main Content */}
-            <div className="w-full bg-white p-6 rounded-xl shadow-md">
-              <h2 className="text-4xl font-semibold text-secondary text-center mb-6">
+            <div className="w-full bg-white p-4 md:p-6 rounded-xl shadow-md">
+              <h2 className="text-4xl font-semibold text-secondary text-center mb-4 md:mb-6">
                  Sports & Recreation
               </h2>
 
-              <p className="text-gray-700 leading-relaxed mb-4">
+              <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
                 At <b>ICEM</b>, we believe in the holistic development of our
                 students, and sports play a vital role in shaping character,
                 building teamwork, and promoting physical fitness.
               </p>
 
-              <p className="text-gray-700 leading-relaxed mb-4">
+              <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
                 Our institute provides state-of-the-art sports facilities and
                 encourages students to participate in various indoor and outdoor
                 sports activities at university, state, and national levels.
               </p>
 
-              <h3 className="text-xl font-semibold text-secondary mb-4">
+              <h3 className="text-xl font-semibold text-secondary mb-2 md:mb-4">
                 Sports Facilities
               </h3>
 
-              <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-8">
+              <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-4 md:mb-8">
                 <li>Well-equipped gymnasium with modern equipment</li>
                 <li>Indoor sports complex for table tennis, chess, and carrom</li>
                 <li>Outdoor playground for cricket, football, and athletics</li>
@@ -400,12 +400,12 @@ const highlight = {
               </ul>
 
               {/* Sports Infrastructure Marquee */}
-              <h2 className="text-2xl font-bold text-secondary mt-10 mb-6">
+              <h2 className="text-2xl font-bold text-secondary mt-5 md:mt-10 mb-4 md:mb-6">
                 Sports Infrastructure
               </h2>
 
               {/* Single Marquee Image */}
-              <div className="relative w-full overflow-hidden h-[50vh] mb-12 ">
+              <div className="relative w-full overflow-hidden h-[50vh] mb-6 md:mb-12 ">
                 <div className="flex w-[200%] animate-smoothScroll h-full">
                   {/* Image 1 */}
                   <div className="relative w-full h-full flex-shrink-0">
@@ -434,18 +434,18 @@ const highlight = {
               </div>
 
               {/* Sports Achievements Section */}
-              <h3 className="text-2xl font-semibold text-secondary mb-6">
+              <h3 className="text-2xl font-semibold text-secondary mb-4 md:mb-6">
                 Sports Achievements
               </h3>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-4 md:mb-8">
                 {achievements.map((item, index) => (
                   <div
                     key={index}
-                    className="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all p-6 flex flex-col"
+                    className="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all p-4 md:p-6 flex flex-col"
                   >
                     {/* Image Placeholder */}
-                    <div className=" relative w-full h-40 bg-gray-200 rounded-sm flex items-center justify-center text-gray-500 text-sm mb-4">
+                    <div className=" relative w-full h-40 bg-gray-200 rounded-sm flex items-center justify-center text-gray-500 text-sm mb-2 md:mb-4">
                       <Image
                         src={item.img || "/sports/tabletennis.jpg"}
                         alt="Achievement Icon"
@@ -456,7 +456,7 @@ const highlight = {
                     </div>
 
                     {/* Text */}
-                    <h4 className="text-lg font-semibold text-secondary mb-2">
+                    <h4 className="text-lg font-semibold text-secondary mb-1 md:mb-2">
                       {item.title}
                     </h4>
 
@@ -515,35 +515,35 @@ const highlight = {
           </div>
         ) : activeSection === "Library" ? (
           // Library-specific content
-          <div className="max-w-full mx-auto px-6 py-10 space-y-12">
+          <div className="max-w-full mx-auto px-4 md:px-6 py-5 md:py-10 space-y-6 md:space-y-12">
             {/* About Us Tab Content */}
-            <div className="w-full bg-white p-8 rounded-xl shadow-md">
-              <h2 className="text-4xl font-bold text-secondary mb-8 text-center">About Library</h2>
+            <div className="w-full bg-white p-4 md:p-8 rounded-xl shadow-md">
+              <h2 className="text-4xl font-bold text-secondary mb-4 md:mb-8 text-center">About Library</h2>
               
               {/* Mission & Vision */}
-              <div className="grid md:grid-cols-2 gap-8 mb-12">
-                <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
-                  <h3 className="text-xl font-bold text-blue-800 mb-4">Library Mission</h3>
+              <div className="grid md:grid-cols-2 gap-4 md:gap-8 mb-6 md:mb-12">
+                <div className="bg-blue-50 p-4 md:p-6 rounded-lg border-l-4 border-blue-500">
+                  <h3 className="text-xl font-bold text-blue-800 mb-2 md:mb-4">Library Mission</h3>
                   <p className="text-gray-700 leading-relaxed">
                     To provide comprehensive resources and services in support of the research, teaching, and learning to its Faculty Members, Students, Researchers and Support Staff.
                   </p>
                 </div>
-                <div className="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
-                  <h3 className="text-xl font-bold text-green-800 mb-4">Library Vision</h3>
+                <div className="bg-green-50 p-4 md:p-6 rounded-lg border-l-4 border-green-500">
+                  <h3 className="text-xl font-bold text-green-800 mb-2 md:mb-4">Library Vision</h3>
                   <p className="text-gray-700 leading-relaxed">
                     Mr. Shankar Rao Wakalkar Library (ICEM Central Library) will be recognized as leading library by informing and inspiring its user making them all more resilient, more knowledgeable, more connected and more successful.
                   </p>
-                  <p className="text-gray-700 leading-relaxed mt-3">
+                  <p className="text-gray-700 leading-relaxed mt-2 md:mt-3">
                     The Library continues to embrace change and align itself to thrive on diversity, to support professional growth and opportunity, and to reward flexibility and innovation.
                   </p>
                 </div>
               </div>
 
               {/* Introduction */}
-              <div className="mb-12">
-                <h3 className="text-2xl font-bold text-secondary mb-6">Introduction</h3>
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <p className="text-gray-700 leading-relaxed mb-4">
+              <div className="mb-6 md:mb-12">
+                <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Introduction</h3>
+                <div className="bg-gray-50 p-4 md:p-6 rounded-lg">
+                  <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
                     The college library is well equipped with large number of textbook, reference books, periodicals, journals and newspapers. The number of books in the library at present is about 32948. The library receives 30 journals and 10 magazines in specialized areas.
                   </p>
                   <p className="text-gray-700 leading-relaxed">
@@ -553,9 +553,9 @@ const highlight = {
               </div>
 
               {/* Library Information */}
-              <div className="mb-12">
-                <h3 className="text-2xl font-bold text-secondary mb-6">Library Information</h3>
-                <div className="bg-gray-50 p-6 rounded-lg">
+              <div className="mb-6 md:mb-12">
+                <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Library Information</h3>
+                <div className="bg-gray-50 p-4 md:p-6 rounded-lg">
                   <p className="text-gray-700 leading-relaxed">
                     Mr. Shankar Rao Wakalkar Library, established in the year 2007, is an invaluable resource for students, researchers and faculties of management and engineering. The college library is well equipped with large number of textbook, reference books, periodicals, journals and newspapers. The number of books in the library at present is about 32948. The library receives 30 journals and 10 magazines in specialized areas. The library consists of reading hall, internet browsing center, reference section, open access periodical and research library. The library has introduced computerized PVC I- card system for the students as well as staff. The library is automated with Koha Library Software (Version-23.11.06) to ease its clientele at various levels while in the library.
                   </p>
@@ -564,22 +564,22 @@ const highlight = {
 
               {/* Staff Information */}
               <div>
-                <h3 className="text-2xl font-bold text-secondary mb-6">Staff Information</h3>
-                <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                  <table className="w-full">
+                <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Staff Information</h3>
+                <div className="bg-white border border-gray-200 rounded-lg overflow-x-auto">
+                  <table className="w-full min-w-max">
                     <thead className="bg-secondary text-white">
                       <tr>
-                        <th className="p-4 text-left">Name</th>
-                        <th className="p-4 text-left">Designation</th>
-                        <th className="p-4 text-left">Email</th>
+                        <th className="p-2 md:p-4 text-left">Name</th>
+                        <th className="p-2 md:p-4 text-left">Designation</th>
+                        <th className="p-2 md:p-4 text-left">Email</th>
                       </tr>
                     </thead>
                     <tbody>
                       {libraryStaff.map((staff, index) => (
                         <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
-                          <td className="p-4 border-b border-gray-200">{staff.name}</td>
-                          <td className="p-4 border-b border-gray-200">{staff.designation}</td>
-                          <td className="p-4 border-b border-gray-200 text-blue-600">{staff.email}</td>
+                          <td className="p-2 md:p-4 border-b border-gray-200">{staff.name}</td>
+                          <td className="p-2 md:p-4 border-b border-gray-200">{staff.designation}</td>
+                          <td className="p-2 md:p-4 border-b border-gray-200 text-blue-600">{staff.email}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -589,22 +589,22 @@ const highlight = {
             </div>
 
             {/* Library Resources Tab Content */}
-            <div className="w-full bg-white p-8 rounded-xl shadow-md">
-              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Library Resources</h2>
+            <div className="w-full bg-white p-4 md:p-8 rounded-xl shadow-md">
+              <h2 className="text-3xl font-bold text-secondary mb-4 md:mb-8 text-center">Library Resources</h2>
               
               {/* Collection Overview */}
-              <div className="mb-12">
-                <h3 className="text-2xl font-bold text-secondary mb-6">Collection</h3>
-                <div className="bg-gray-50 p-6 rounded-lg mb-6">
-                  <p className="text-gray-700 leading-relaxed mb-4">
+              <div className="mb-6 md:mb-12">
+                <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Collection</h3>
+                <div className="bg-gray-50 p-4 md:p-6 rounded-lg mb-4 md:mb-6">
+                  <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
                     The library has developed an unlikely collection of over 32196 books, 1300 CD's/ DVD's and over 87 hard copy journals and magazines in last five years. The same tends to grow at a very expediential rate in coming years.
                   </p>
                 </div>
 
-                <h4 className="text-xl font-bold text-secondary mb-4">Library At A Glance</h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+                <h4 className="text-xl font-bold text-secondary mb-2 md:mb-4">Library At A Glance</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 mb-4 md:mb-8">
                   {libraryCollection.overview.map((item, index) => (
-                    <div key={index} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                    <div key={index} className="bg-white border border-gray-200 rounded-lg p-2 md:p-4 shadow-sm">
                       <div className="text-lg font-semibold text-secondary">{item.value}</div>
                       <div className="text-sm text-gray-600">{item.label}</div>
                     </div>
@@ -612,26 +612,25 @@ const highlight = {
                 </div>
               </div>
 
-              {/* Books Collection */}
-              <div className="mb-12">
-                <h3 className="text-2xl font-bold text-secondary mb-6">Books Collection</h3>
-                <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                  <table className="w-full">
+              <div className="mb-6 md:mb-12">
+                <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Books Collection</h3>
+                <div className="bg-white border border-gray-200 rounded-lg overflow-x-auto">
+                  <table className="w-full min-w-max">
                     <thead className="bg-secondary text-white">
                       <tr>
-                        <th className="p-4 text-left">Sr. No</th>
-                        <th className="p-4 text-left">Course</th>
-                        <th className="p-4 text-left">Total No Of Titles</th>
-                        <th className="p-4 text-left">Total No. Of Volumes</th>
+                        <th className="p-2 md:p-4 text-left">Sr. No</th>
+                        <th className="p-2 md:p-4 text-left">Course</th>
+                        <th className="p-2 md:p-4 text-left">Total No Of Titles</th>
+                        <th className="p-2 md:p-4 text-left">Total No. Of Volumes</th>
                       </tr>
                     </thead>
                     <tbody>
                       {libraryCollection.books.map((book, index) => (
                         <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
-                          <td className="p-4 border-b border-gray-200">{index + 1}</td>
-                          <td className="p-4 border-b border-gray-200">{book.course}</td>
-                          <td className="p-4 border-b border-gray-200">{book.titles}</td>
-                          <td className="p-4 border-b border-gray-200">{book.volumes}</td>
+                          <td className="p-2 md:p-4 border-b border-gray-200">{index + 1}</td>
+                          <td className="p-2 md:p-4 border-b border-gray-200">{book.course}</td>
+                          <td className="p-2 md:p-4 border-b border-gray-200">{book.titles}</td>
+                          <td className="p-2 md:p-4 border-b border-gray-200">{book.volumes}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -640,23 +639,23 @@ const highlight = {
               </div>
 
               {/* Other Reading Materials */}
-              <div className="mb-12">
-                <h3 className="text-2xl font-bold text-secondary mb-6">Other Reading Materials</h3>
-                <div className="bg-white border border-gray-200 rounded-lg overflow-hidden mb-6">
-                  <table className="w-full">
+              <div className="mb-6 md:mb-12">
+                <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Other Reading Materials</h3>
+                <div className="bg-white border border-gray-200 rounded-lg overflow-x-auto mb-4 md:mb-6">
+                  <table className="w-full min-w-max">
                     <thead className="bg-secondary text-white">
                       <tr>
-                        <th className="p-4 text-left">Sr. No</th>
-                        <th className="p-4 text-left">Items</th>
-                        <th className="p-4 text-left">Volumes</th>
+                        <th className="p-2 md:p-4 text-left">Sr. No</th>
+                        <th className="p-2 md:p-4 text-left">Items</th>
+                        <th className="p-2 md:p-4 text-left">Volumes</th>
                       </tr>
                     </thead>
                     <tbody>
                       {libraryCollection.otherMaterials.map((material, index) => (
                         <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
-                          <td className="p-4 border-b border-gray-200">{index + 1}</td>
-                          <td className="p-4 border-b border-gray-200">{material.item}</td>
-                          <td className="p-4 border-b border-gray-200">{material.volumes}</td>
+                          <td className="p-2 md:p-4 border-b border-gray-200">{index + 1}</td>
+                          <td className="p-2 md:p-4 border-b border-gray-200">{material.item}</td>
+                          <td className="p-2 md:p-4 border-b border-gray-200">{material.volumes}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -666,7 +665,7 @@ const highlight = {
                 <h4 className="text-xl font-bold text-secondary mb-4">Newspapers Breakdown</h4>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {libraryCollection.newspapers.map((paper, index) => (
-                    <div key={index} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                    <div key={index} className="bg-white border border-gray-200 rounded-lg p-2 md:p-4 shadow-sm">
                       <div className="text-lg font-semibold text-secondary">{paper.count}</div>
                       <div className="text-sm text-gray-600">{paper.language} Newspapers</div>
                     </div>
@@ -676,11 +675,11 @@ const highlight = {
             </div>
 
             {/* Timing Tab Content */}
-            <div className="w-full bg-white p-8 rounded-xl shadow-md">
-              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Library Timing</h2>
+            <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
+              <h2 className="text-3xl font-bold text-secondary mb-4 md:mb-8 text-center">Library Timing</h2>
               
-              <div className="bg-gray-50 p-8 rounded-lg">
-                <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-gray-50 p-2 md:p-6 rounded-lg">
+                <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                   <div className="text-center">
                     <h3 className="text-2xl font-bold text-green-600 mb-4">Working Hours</h3>
                     <div className="space-y-4">
@@ -704,13 +703,13 @@ const highlight = {
             </div>
 
             {/* Services Tab Content */}
-            <div className="w-full bg-white p-8 rounded-xl shadow-md">
-              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Library Services & Facilities</h2>
+            <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
+              <h2 className="text-3xl font-bold text-secondary mb-4 md:mb-8 text-center">Library Services & Facilities</h2>
               
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                 <div>
-                  <h3 className="text-2xl font-bold text-secondary mb-6">Library Services</h3>
-                  <div className="bg-gray-50 p-6 rounded-lg">
+                  <h3 className="text-2xl font-bold text-secondary mb-2 md:mb-6">Library Services</h3>
+                  <div className="bg-gray-50 p-2 md:p-6 rounded-lg">
                     <ul className="space-y-3">
                       {libraryCollection.services.map((service, index) => (
                         <li key={index} className="flex items-start">
@@ -723,8 +722,8 @@ const highlight = {
                 </div>
                 
                 <div>
-                  <h3 className="text-2xl font-bold text-secondary mb-6">Facilities</h3>
-                  <div className="bg-gray-50 p-6 rounded-lg">
+                  <h3 className="text-2xl font-bold text-secondary mb-2 md:mb-6">Facilities</h3>
+                  <div className="bg-gray-50 p-2 md:p-6 rounded-lg">
                     <ul className="space-y-3">
                       {libraryCollection.facilities.map((facility, index) => (
                         <li key={index} className="flex items-start">
@@ -739,13 +738,13 @@ const highlight = {
             </div>
 
             {/* Policies Tab Content */}
-            <div className="w-full bg-white p-8 rounded-xl shadow-md">
-              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Library Policies</h2>
+            <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
+              <h2 className="text-3xl font-bold text-secondary mb-4 md:mb-8 text-center">Library Policies</h2>
               
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                 <div>
-                  <h3 className="text-2xl font-bold text-secondary mb-6">General Policies</h3>
-                  <div className="bg-gray-50 p-6 rounded-lg">
+                  <h3 className="text-2xl font-bold text-secondary mb-2 md:mb-6">General Policies</h3>
+                  <div className="bg-gray-50 p-2 md:p-6 rounded-lg">
                     <ul className="space-y-3">
                       {libraryCollection.policies.general.map((policy, index) => (
                         <li key={index} className="flex items-start">
@@ -758,8 +757,8 @@ const highlight = {
                 </div>
                 
                 <div>
-                  <h3 className="text-2xl font-bold text-secondary mb-6">Borrowing Policies</h3>
-                  <div className="bg-gray-50 p-6 rounded-lg">
+                  <h3 className="text-2xl font-bold text-secondary mb-2 md:mb-6">Borrowing Policies</h3>
+                  <div className="bg-gray-50 p-2 md:p-6 rounded-lg">
                     <ul className="space-y-3">
                       {libraryCollection.policies.borrowing.map((policy, index) => (
                         <li key={index} className="flex items-start">
@@ -774,30 +773,30 @@ const highlight = {
             </div>
 
             {/* E-Content Tab Content */}
-            <div className="w-full bg-white p-8 rounded-xl shadow-md">
-              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Electronic Databases</h2>
+            <div className="w-full bg-white p-4 md:p-8 rounded-xl shadow-md">
+              <h2 className="text-3xl font-bold text-secondary mb-4 md:mb-8 text-center">Electronic Databases</h2>
               
-              <div className="bg-gray-50 p-6 rounded-lg mb-6">
+              <div className="bg-gray-50 p-4 md:p-6 rounded-lg mb-4 md:mb-6">
                 <p className="text-gray-700 leading-relaxed">
                   Keeping in view the importance of research in the academic sector, the library has provided access to various electronic journal databases. These databases cater to the research needs of its patrons.
                 </p>
               </div>
 
-              <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                <table className="w-full">
+              <div className="bg-white border border-gray-200 rounded-lg overflow-x-auto">
+                <table className="w-full min-w-max">
                   <thead className="bg-secondary text-white">
                     <tr>
-                      <th className="p-4 text-left">Sr. No</th>
-                      <th className="p-4 text-left">Database / OPAC / FTP / NDL / DELNET / WEB PORTAL</th>
-                      <th className="p-4 text-left">URL's</th>
+                      <th className="p-2 md:p-4 text-left">Sr. No</th>
+                      <th className="p-2 md:p-4 text-left">Database / OPAC / FTP / NDL / DELNET / WEB PORTAL</th>
+                      <th className="p-2 md:p-4 text-left">URL's</th>
                     </tr>
                   </thead>
                   <tbody>
                     {libraryCollection.eContent.map((content, index) => (
                       <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
-                        <td className="p-4 border-b border-gray-200">{index + 1}</td>
-                        <td className="p-4 border-b border-gray-200 font-medium">{content.database}</td>
-                        <td className="p-4 border-b border-gray-200 text-blue-600 break-all">
+                        <td className="p-2 md:p-4 border-b border-gray-200">{index + 1}</td>
+                        <td className="p-2 md:p-4 border-b border-gray-200 font-medium">{content.database}</td>
+                        <td className="p-2 md:p-4 border-b border-gray-200 text-blue-600 break-all">
                           {content.url.startsWith('http') ? (
                             <a href={content.url} target="_blank" rel="noopener noreferrer" className="hover:underline">
                               {content.url}
@@ -815,14 +814,14 @@ const highlight = {
           </div>
         ) : activeSection === "Transport" ? (
           // Transport-specific content
-          <div className="max-w-full mx-auto px-6 py-10">
-            <div className="w-full bg-white p-8 rounded-xl shadow-md">
+          <div className="max-w-full mx-auto px-4 md:px-6 py-5 md:py-10">
+            <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
               <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Transport @ ICEM</h2>
               
               {/* Route Layout Section */}
-              <div className="mb-12">
-                <h3 className="text-2xl font-bold text-secondary mb-6">Route Layout</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+              <div className="mb-6 md:mb-12">
+                <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Route Layout</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-4 md:mb-8">
                   {["Route-Layout-1","Route-Layout-2", "Route-Layout-3", "Route-Layout-4", "Route-Layout-5"].map((item) => (
                     <div key={item} className=" rounded-lg overflow-hidden shadow-md">
                       <div className="relative h-106  flex items-center justify-center">
@@ -843,9 +842,9 @@ const highlight = {
               </div>
 
               {/* Contact Details */}
-              <div className="bg-secondary text-white p-8 rounded-lg">
-                <h3 className="text-2xl font-bold mb-6 text-center">Contact Details</h3>
-                <div className="grid md:grid-cols-2 gap-6 text-center">
+              <div className="bg-secondary text-white p-4 md:p-8 rounded-lg">
+                <h3 className="text-2xl font-bold mb-4 md:mb-6 text-center">Contact Details</h3>
+                <div className="grid md:grid-cols-2 gap-4 md:gap-6 text-center">
                   <div>
                     <h4 className="text-lg font-semibold mb-2">Telephone Number</h4>
                     <p className="text-xl">{transportData.contact.telephone}</p>
@@ -860,14 +859,14 @@ const highlight = {
           </div>
         ) : activeSection === "Gym" ? (
           // Gym-specific content
-          <div className="max-w-full mx-auto px-6 py-10">
-            <div className="w-full bg-white p-8 rounded-xl shadow-md">
-              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Gymnasium @ ICEM</h2>
+          <div className="max-w-full mx-auto px-4 md:px-6 py-5 md:py-10">
+            <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
+              <h2 className="text-3xl font-bold text-secondary mb-4 md:mb-8 text-center">Gymnasium @ ICEM</h2>
               
               {/* Gym Images Grid */}
-              <div className="mb-12">
-                <h3 className="text-2xl font-bold text-secondary mb-6">Our Gym Facilities</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+              <div className="mb-6 md:mb-12">
+                <h3 className="text-2xl font-bold text-secondary mb-2 md:mb-6">Our Gym Facilities</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-4 md:mb-8">
                   {["Gym1","Gym2","Gym3","Gym4","Gym5","Gym6","Gym7","Gym8","Gym10"].map((item) => (
                     <div key={item} className="bg-gray-100 rounded-lg overflow-hidden shadow-md">
                       <div className="relative h-54 bg-gray-200 flex items-center justify-center">
@@ -888,12 +887,12 @@ const highlight = {
               </div>
 
               {/* Equipment List */}
-              <div className="mb-12">
-                <h3 className="text-2xl font-bold text-secondary mb-6">
+              <div className="mb-6 md:mb-12">
+                <h3 className="text-2xl font-bold text-secondary mb-2 md:mb-6">
                   Fully Equipped and Specious Gym with following machines
                 </h3>
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="bg-gray-50 p-2 md:p-6 rounded-lg">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4">
                     {gymData.equipment.map((equipment, index) => (
                       <div key={index} className="flex items-center">
                         <span className="text-green-500 mr-3">✓</span>
@@ -905,8 +904,8 @@ const highlight = {
               </div>
 
               {/* Contact Details */}
-              <div className="bg-secondary text-white p-8 rounded-lg">
-                <h3 className="text-2xl font-bold mb-6 text-center">Contact Details</h3>
+              <div className="bg-secondary text-white p-4 md:p-8 rounded-lg">
+                <h3 className="text-2xl font-bold mb-4 md:mb-6 text-center">Contact Details</h3>
                 <div className="text-center">
                   <p className="text-xl font-semibold mb-2">{gymData.contact.name}</p>
                   <p className="text-lg mb-2">{gymData.contact.designation}</p>
@@ -917,14 +916,14 @@ const highlight = {
           </div>
         ) : activeSection === "Canteen" ? (
           // Canteen-specific content
-          <div className="max-w-full mx-auto px-6 py-10">
-            <div className="w-full bg-white p-8 rounded-xl shadow-md">
-              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Canteen @ ICEM</h2>
+          <div className="max-w-full mx-auto px-4 md:px-6 py-5 md:py-10">
+            <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
+              <h2 className="text-3xl font-bold text-secondary mb-4 md:mb-8 text-center">Canteen @ ICEM</h2>
               
               {/* Canteen Images Grid */}
-              <div className="mb-12">
-                <h3 className="text-2xl font-bold text-secondary mb-6">Our Canteen Facilities</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="mb-6 md:mb-12">
+                <h3 className="text-2xl font-bold text-secondary mb-2 md:mb-6">Our Canteen Facilities</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                   {["Canteen1","Canteen2","Canteen3","Canteen4","Canteen5","Canteen6"].map((item) => (
                     <div key={item} className="bg-gray-100 rounded-lg overflow-hidden shadow-md">
                       <div className="relative h-48 bg-gray-200 flex items-center justify-center">
@@ -945,7 +944,7 @@ const highlight = {
               </div>
 
               {/* Additional Info */}
-              <div className="bg-gray-50 p-6 rounded-lg text-center">
+              <div className="bg-gray-50 p-2 md:p-6 rounded-lg text-center">
                 <p className="text-gray-700 text-lg">
                   Our canteen offers a variety of delicious, hygienic, and affordable food options 
                   to cater to diverse tastes and dietary preferences of students and staff.
@@ -955,14 +954,14 @@ const highlight = {
           </div>
         ) : activeSection === "Primary Health Centre" ? (
           // Primary Health Centre-specific content
-          <div className="max-w-full mx-auto px-6 py-10">
-            <div className="w-full bg-white p-8 rounded-xl shadow-md">
-              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Primary Health Centre @ ICEM</h2>
+          <div className="max-w-full mx-auto px-4 md:px-6 py-5 md:py-10">
+            <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
+              <h2 className="text-3xl font-bold text-secondary mb-4 md:mb-8 text-center">Primary Health Centre @ ICEM</h2>
               
               {/* Health Centre Images Grid */}
-              <div className="mb-12">
-                <h3 className="text-2xl font-bold text-secondary mb-6">Our Medical Facilities</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+              <div className="mb-6 md:mb-12">
+                <h3 className="text-2xl font-bold text-secondary mb-2 md:mb-6">Our Medical Facilities</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-8">
                   {["Indira_Primary_Health_Centre_1","Indira_Primary_Health_Centre_2","Indira_Primary_Health_Centre_3","Indira_Primary_Health_Centre_4"].map((item) => (
                     <div key={item} className="bg-gray-100 rounded-lg overflow-hidden shadow-md">
                       <div className="relative h-64 bg-gray-200 flex items-center justify-center">
@@ -983,8 +982,8 @@ const highlight = {
               </div>
 
               {/* Description */}
-              <div className="mb-8">
-                <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+              <div className="mb-4 md:mb-8">
+                <div className="bg-blue-50 p-2 md:p-6 rounded-lg border-l-4 border-blue-500">
                   <p className="text-gray-700 leading-relaxed">
                     {healthCentreData.description}
                   </p>
@@ -993,9 +992,9 @@ const highlight = {
 
               {/* Services */}
               <div>
-                <h3 className="text-2xl font-bold text-secondary mb-6">Services Provided</h3>
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <h3 className="text-2xl font-bold text-secondary mb-2 md:mb-6">Services Provided</h3>
+                <div className="bg-gray-50 p-2 md:p-6 rounded-lg">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                     {healthCentreData.services.map((service, index) => (
                       <div key={index} className="flex items-center">
                         <span className="text-green-500 mr-3">✓</span>
@@ -1011,27 +1010,27 @@ const highlight = {
           // Hostel-specific content
           <div className="max-w-full mx-auto px-6 py-10 space-y-12">
             {/* Overview Section */}
-            <div className="w-full bg-white p-8 rounded-xl shadow-md">
-              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Hostel @ ICEM</h2>
+            <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
+              <h2 className="text-3xl font-bold text-secondary mb-4 md:mb-8 text-center">Hostel @ ICEM</h2>
               
-              <div className="grid md:grid-cols-2 gap-8 mb-8">
-                <div className="bg-green-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-bold text-green-800 mb-4">Girls Hostel</h3>
+              <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-8">
+                <div className="bg-green-50 p-2 md:p-6 rounded-lg">
+                  <h3 className="text-xl font-bold text-green-800 mb-2 md:mb-4">Girls Hostel</h3>
                   <div className="text-4xl font-bold text-green-600 mb-2">{hostelData.overview.capacity.girls}</div>
                   <p className="text-gray-700">Seats Available</p>
                 </div>
-                <div className="bg-blue-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-bold text-blue-800 mb-4">Boys Hostel</h3>
+                <div className="bg-blue-50 p-2 md:p-6 rounded-lg">
+                  <h3 className="text-xl font-bold text-blue-800 mb-2 md:mb-4">Boys Hostel</h3>
                   <div className="text-4xl font-bold text-blue-600 mb-2">{hostelData.overview.capacity.boys}</div>
                   <p className="text-gray-700">Seats Available</p>
                 </div>
               </div>
 
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <p className="text-gray-700 leading-relaxed mb-4">
+              <div className="bg-gray-50 p-2 md:p-6 rounded-lg">
+                <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
                   {hostelData.overview.description} All rooms are equipped with:
                 </p>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-1 md:gap-4">
                   {hostelData.overview.roomFacilities.map((facility, index) => (
                     <div key={index} className="flex items-center">
                       <span className="text-green-500 mr-2">✓</span>
@@ -1043,25 +1042,25 @@ const highlight = {
             </div>
 
             {/* Contact Details Section */}
-            <div className="w-full bg-white p-8 rounded-xl shadow-md">
-              <h3 className="text-2xl font-bold text-secondary mb-6">Hostel Management Team</h3>
-              <div className="bg-white border border-gray-200 rounded-lg overflow-hidden mb-8">
-                <table className="w-full">
+            <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
+              <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Hostel Management Team</h3>
+              <div className="bg-white border border-gray-200 rounded-lg overflow-x-auto mb-8">
+                <table className="w-full min-w-max">
                   <thead className="bg-secondary text-white">
                     <tr>
-                      <th className="p-4 text-left">Name</th>
-                      <th className="p-4 text-left">Designation</th>
-                      <th className="p-4 text-left">Contact</th>
-                      <th className="p-4 text-left">Email</th>
+                      <th className="p-2 md:p-4 text-left">Name</th>
+                      <th className="p-2 md:p-4 text-left">Designation</th>
+                      <th className="p-2 md:p-4 text-left">Contact</th>
+                      <th className="p-2 md:p-4 text-left">Email</th>
                     </tr>
                   </thead>
                   <tbody>
                     {hostelData.managementTeam.map((staff, index) => (
                       <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
-                        <td className="p-4 border-b border-gray-200">{staff.name}</td>
-                        <td className="p-4 border-b border-gray-200">{staff.designation}</td>
-                        <td className="p-4 border-b border-gray-200">{staff.contact}</td>
-                        <td className="p-4 border-b border-gray-200 text-blue-600">{staff.email}</td>
+                        <td className="p-2 md:p-4 border-b border-gray-200">{staff.name}</td>
+                        <td className="p-2 md:p-4 border-b border-gray-200">{staff.designation}</td>
+                        <td className="p-2 md:p-4 border-b border-gray-200">{staff.contact}</td>
+                        <td className="p-2 md:p-4 border-b border-gray-200 text-blue-600">{staff.email}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -1069,21 +1068,21 @@ const highlight = {
               </div>
 
               <h3 className="text-2xl font-bold text-secondary mb-6">Mess (Canteen) Team</h3>
-              <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                <table className="w-full">
+              <div className="bg-white border border-gray-200 rounded-lg overflow-x-auto">
+                <table className="w-full min-w-max">
                   <thead className="bg-secondary text-white">
                     <tr>
-                      <th className="p-4 text-left">Name</th>
-                      <th className="p-4 text-left">Designation</th>
-                      <th className="p-4 text-left">Contact</th>
+                      <th className="p-2 md:p-4 text-left">Name</th>
+                      <th className="p-2 md:p-4 text-left">Designation</th>
+                      <th className="p-2 md:p-4 text-left">Contact</th>
                     </tr>
                   </thead>
                   <tbody>
                     {hostelData.messTeam.map((staff, index) => (
                       <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
-                        <td className="p-4 border-b border-gray-200">{staff.name}</td>
-                        <td className="p-4 border-b border-gray-200">{staff.designation}</td>
-                        <td className="p-4 border-b border-gray-200">{staff.contact}</td>
+                        <td className="p-2 md:p-4 border-b border-gray-200">{staff.name}</td>
+                        <td className="p-2 md:p-4 border-b border-gray-200">{staff.designation}</td>
+                        <td className="p-2 md:p-4 border-b border-gray-200">{staff.contact}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -1092,9 +1091,9 @@ const highlight = {
             </div>
 
             {/* Facilities Section */}
-            <div className="w-full bg-white p-8 rounded-xl shadow-md">
-              <h3 className="text-2xl font-bold text-secondary mb-6">Hostel Facilities</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
+              <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Hostel Facilities</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                 {hostelData.facilities.map((facility, index) => (
                   <div key={index} className="flex items-start">
                     <span className="text-green-500 mr-3 mt-1">✓</span>
@@ -1105,10 +1104,10 @@ const highlight = {
             </div>
 
             {/* Timings Section */}
-            <div className="w-full bg-white p-8 rounded-xl shadow-md">
-              <h3 className="text-2xl font-bold text-secondary mb-6">Hostel Timings</h3>
-              <div className="bg-yellow-50 p-6 rounded-lg mb-6">
-                <ul className="space-y-3">
+            <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
+              <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Hostel Timings</h3>
+              <div className="bg-yellow-50 p-2 md:p-6 rounded-lg mb-4 md:mb-6">
+                <ul className="space-y-2 md:space-y-3">
                   {hostelData.timings.map((timing, index) => (
                     <li key={index} className="flex items-start">
                       <span className="text-orange-500 mr-3">•</span>
@@ -1119,10 +1118,10 @@ const highlight = {
               </div>
 
               <h4 className="text-xl font-bold text-secondary mb-4">Mess Timings</h4>
-              <div className="bg-green-50 p-6 rounded-lg">
-                <div className="grid md:grid-cols-2 gap-4">
+              <div className="bg-green-50 p-2 md:p-6 rounded-lg">
+                <div className="grid md:grid-cols-2 gap-2 md:gap-4">
                   {hostelData.messTimings.map((timing, index) => (
-                    <div key={index} className="bg-white p-4 rounded-lg shadow-sm">
+                    <div key={index} className="bg-white p-2 md:p-4 rounded-lg shadow-sm">
                       <p className="font-semibold text-gray-800">{timing}</p>
                     </div>
                   ))}
@@ -1131,10 +1130,10 @@ const highlight = {
             </div>
 
             {/* Documents Section */}
-            <div className="w-full bg-white p-8 rounded-xl shadow-md">
-              <h3 className="text-2xl font-bold text-secondary mb-6">Documents Required for Admission</h3>
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <ul className="space-y-3">
+            <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
+              <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Documents Required for Admission</h3>
+              <div className="bg-gray-50 p-2 md:p-6 rounded-lg">
+                <ul className="space-y-2 md:space-y-3">
                   {hostelData.documents.map((doc, index) => (
                     <li key={index} className="flex items-start">
                       <span className="text-blue-500 mr-3">{index + 1}.</span>
@@ -1146,13 +1145,13 @@ const highlight = {
             </div>
 
             {/* Cancellation Rules Section */}
-            <div className="w-full bg-white p-8 rounded-xl shadow-md">
-              <h3 className="text-2xl font-bold text-secondary mb-6">Hostel Admission Cancellation Rules</h3>
-              <div className="space-y-6">
+            <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
+              <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Hostel Admission Cancellation Rules</h3>
+              <div className="space-y-4 md:space-y-6">
                 {hostelData.cancellationRules.map((rule, index) => (
-                  <div key={index} className="bg-red-50 p-6 rounded-lg border-l-4 border-red-500">
-                    <h4 className="text-lg font-bold text-red-800 mb-3">{rule.title}</h4>
-                    <ul className="space-y-2">
+                  <div key={index} className="bg-red-50 p-2 md:p-6 rounded-lg border-l-4 border-red-500">
+                    <h4 className="text-lg font-bold text-red-800 mb-2 md:mb-3">{rule.title}</h4>
+                    <ul className="space-y-1 md:space-y-2">
                       {rule.steps.map((step, stepIndex) => (
                         <li key={stepIndex} className="flex items-start">
                           <span className="text-red-500 mr-2">•</span>
@@ -1164,9 +1163,9 @@ const highlight = {
                 ))}
               </div>
 
-              <div className="mt-6 bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
-                <h4 className="text-lg font-bold text-green-800 mb-3">Security Deposit Refund</h4>
-                <ul className="space-y-2">
+              <div className="mt-4 md:mt-6 bg-green-50 p-2 md:p-6 rounded-lg border-l-4 border-green-500">
+                <h4 className="text-lg font-bold text-green-800 mb-2 md:mb-3">Security Deposit Refund</h4>
+                <ul className="space-y-1 md:space-y-2">
                   {hostelData.securityDeposit.map((item, index) => (
                     <li key={index} className="flex items-start">
                       <span className="text-green-500 mr-2">•</span>
@@ -1178,10 +1177,10 @@ const highlight = {
             </div>
 
             {/* Mess Instructions Section */}
-            <div className="w-full bg-white p-8 rounded-xl shadow-md">
-              <h3 className="text-2xl font-bold text-secondary mb-6">Canteen (Mess) Instructions</h3>
-              <div className="bg-orange-50 p-6 rounded-lg">
-                <ul className="space-y-3">
+            <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
+              <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Canteen (Mess) Instructions</h3>
+              <div className="bg-orange-50 p-2 md:p-6 rounded-lg">
+                <ul className="space-y-2 md:space-y-3">
                   {hostelData.messInstructions.map((instruction, index) => (
                     <li key={index} className="flex items-start">
                       <span className="text-orange-500 mr-3">•</span>
@@ -1193,10 +1192,10 @@ const highlight = {
             </div>
 
             {/* Medical Assistance Section */}
-            <div className="w-full bg-white p-8 rounded-xl shadow-md">
-              <h3 className="text-2xl font-bold text-secondary mb-6">Medical Assistance & Insurance</h3>
-              <div className="bg-blue-50 p-6 rounded-lg">
-                <ul className="space-y-3">
+            <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
+              <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Medical Assistance & Insurance</h3>
+              <div className="bg-blue-50 p-2 md:p-6 rounded-lg">
+                <ul className="space-y-2 md:space-y-3">
                   {hostelData.medicalAssistance.map((item, index) => (
                     <li key={index} className="flex items-start">
                       <span className="text-blue-500 mr-3">•</span>
@@ -1209,10 +1208,10 @@ const highlight = {
           </div>
         ) : (
           // Default content for other tabs
-          <div className="max-w-full mx-auto px-6 py-10">
-            <div className="w-full bg-white p-8 rounded-xl shadow-md text-center">
-              <h2 className="text-3xl font-bold text-secondary mb-6">{activeSection} @ ICEM</h2>
-              <div className="bg-gray-50 p-8 rounded-lg">
+          <div className="max-w-full mx-auto px-4 md:px-6 py-5 md:py-10">
+            <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md text-center">
+              <h2 className="text-3xl font-bold text-secondary mb-2 md:mb-6">{activeSection} @ ICEM</h2>
+              <div className="bg-gray-50 p-2 md:p-6 rounded-lg">
                 <p className="text-gray-700 text-lg leading-relaxed">
                   Content for {activeSection} section is being updated. Please check back later for detailed information about our {activeSection.toLowerCase()} facilities and services.
                 </p>

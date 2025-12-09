@@ -370,21 +370,45 @@ export default function Computer() {
               sectors.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-gray-800">
-              <p>R&D Engineer </p>
-              <p>Design & Analysis Engineer </p>
-              <p>CFD/FEA Analyst </p>
-              <p>Project Lead (Engineering) </p>
-              <p>Thermal Engineer </p>
-              <p>Production & Quality Head </p>
-              <p>Academic Researcher/Professor </p>
-              <p>Consultant (Core Engineering) </p>
-            </div>
+            <ul className="space-y-2 text-gray-800">
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                R&D Engineer
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Design & Analysis Engineer
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                CFD/FEA Analyst
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Project Lead (Engineering)
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Thermal Engineer
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Production & Quality Head
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Academic Researcher/Professor
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Consultant (Core Engineering)
+              </li>
+            </ul>
           </div>
 
           {/* RIGHT IMAGE SECTION */}
-          <div className="flex-1">
-            <div className="w-full h-[300px] relative rounded-lg overflow-hidden">
+          <div className="flex-1 w-full md:w-auto">
+            <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] relative rounded-lg overflow-hidden">
               <Image
                 src="/Programs/11.webp"
                 alt="Career Opportunities in AI and Future Technologies"

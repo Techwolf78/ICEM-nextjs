@@ -1,8 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Phone, Mail, MapPin, Clock, User, Globe } from "lucide-react"; // Using Lucide for cleaner, modern icons
+import { Phone, Mail, MapPin, Clock, User } from "lucide-react"; // Using Lucide for cleaner, modern icons
 
 // --- Data ---
 const adminContacts = [
@@ -28,55 +28,44 @@ const adminContacts = [
   },
 ];
 
-const internationalContacts = [
-  {
-    name: "Prateek Patil",
-    role: "International Admissions",
-    email: "international.admissions@indiraicem.ac.in",
-    phone: "+91 77200 61619",
-  },
-  {
-    name: "Amruta Sakhare",
-    role: "International Admissions",
-    email: "international.admissions@indiraicem.ac.in",
-    phone: "+91 74474 54556",
-  },
-  {
-    name: "Mudasir Naik",
-    role: "International Admissions",
-    email: "international.admissions@indiraicem.ac.in",
-    phone: "+91 70309 63294",
-  },
-  {
-    name: "Ninad Sapre",
-    role: "International Admissions",
-    email: "international.admissions@indiraicem.ac.in",
-    phone: "+91 86528 42525",
-  },
-];
-
 const ContactPage = () => {
+  const [iframeHeight, setIframeHeight] = useState("600");
+
+  useEffect(() => {
+    const updateHeight = () => {
+      if (window.innerWidth < 768) {
+        setIframeHeight("420");
+      } else {
+        setIframeHeight("600");
+      }
+    };
+
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+    return () => window.removeEventListener("resize", updateHeight);
+  }, []);
+
   return (
     <main className="min-h-screen bg-gray-50 text-gray-800">
-      <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 space-y-16">
+      <div className="max-w-7xl mx-auto px-4 py-6 sm:py-12 sm:px-6 lg:px-8 space-y-8 sm:space-y-16">
         {/* 2. Top Grid: Main Contact Info + Map */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8 lg:gap-12">
           {/* Left Column: Info Cards */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {/* Programme Enquiry Card */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 bg-secondary/10 rounded-full text-secondary">
-                  <Phone size={24} />
+            <div className="bg-white rounded-2xl p-4 sm:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                <div className="p-2 sm:p-3 bg-secondary/10 rounded-full text-secondary">
+                  <Phone size={20} />
                 </div>
-                <h2 className="text-xl font-bold text-gray-900">
+                <h2 className="text-lg sm:text-xl font-bold text-gray-900">
                   Admissions & Enquiry
                 </h2>
               </div>
 
-              <div className="space-y-4 text-sm sm:text-base">
-                <div className="flex items-start gap-4">
-                  <Clock className="w-5 h-5 text-gray-400 mt-1 shrink-0" />
+              <div className="space-y-2 sm:space-y-4 text-xs sm:text-sm md:text-base">
+                <div className="flex items-start gap-2 sm:gap-4">
+                  <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 mt-1 shrink-0" />
                   <div>
                     <span className="block font-semibold text-gray-700">
                       Office Hours
@@ -87,8 +76,8 @@ const ContactPage = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <Phone className="w-5 h-5 text-gray-400 mt-1 shrink-0" />
+                <div className="flex items-start gap-2 sm:gap-4">
+                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 mt-1 shrink-0" />
                   <div>
                     <span className="block font-semibold text-gray-700">
                       Call Us
@@ -102,8 +91,8 @@ const ContactPage = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <Mail className="w-5 h-5 text-gray-400 mt-1 shrink-0" />
+                <div className="flex items-start gap-2 sm:gap-4">
+                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 mt-1 shrink-0" />
                   <div>
                     <span className="block font-semibold text-gray-700">
                       Email Admissions
@@ -120,16 +109,16 @@ const ContactPage = () => {
             </div>
 
             {/* Campus Address Card */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 bg-secondary/10 rounded-full text-secondary">
-                  <MapPin size={24} />
+            <div className="bg-white rounded-2xl p-4 sm:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                <div className="p-2 sm:p-3 bg-secondary/10 rounded-full text-secondary">
+                  <MapPin size={20} />
                 </div>
-                <h2 className="text-xl font-bold text-gray-900">
+                <h2 className="text-lg sm:text-xl font-bold text-gray-900">
                   Campus Location
                 </h2>
               </div>
-              <p className="text-gray-600 leading-relaxed mb-4">
+              <p className="text-gray-600 leading-tight sm:leading-relaxed mb-2 sm:mb-4">
                 <strong>Indira College of Engineering and Management</strong>
                 <br />
                 Gat No. 276, Tal. Maval, S.No. 64, 65,
@@ -167,29 +156,29 @@ const ContactPage = () => {
 
         {/* 3. Administrative Offices Grid */}
         <div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-8 border-l-4 border-secondary pl-4">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-8 border-l-4 border-secondary pl-2 sm:pl-4">
             Administrative Offices
           </h2>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
             {adminContacts.map((contact, idx) => (
               <div
                 key={idx}
-                className="group bg-white rounded-xl p-6 border border-gray-100 hover:border-secondary/30 hover:shadow-lg transition-all duration-300"
+                className="group bg-white rounded-xl p-4 sm:p-6 border border-gray-100 hover:border-secondary/30 hover:shadow-lg transition-all duration-300"
               >
                 <div className="mb-4">
-                  <User className="w-8 h-8 text-gray-300 group-hover:text-secondary transition-colors" />
+                  <User className="w-6 h-6 sm:w-8 sm:h-8 text-gray-300 group-hover:text-secondary transition-colors" />
                 </div>
-                <h3 className="text-sm font-bold text-secondary uppercase tracking-wider mb-2">
+                <h3 className="text-xs sm:text-sm font-bold text-secondary uppercase tracking-wider mb-1 sm:mb-2">
                   {contact.role}
                 </h3>
-                <p className="font-semibold text-gray-900 text-lg mb-3">
+                <p className="font-semibold text-gray-900 text-base sm:text-lg mb-2 sm:mb-3">
                   {contact.name}
                 </p>
                 <Link
                   href={`mailto:${contact.email}`}
-                  className="inline-flex items-center gap-2 text-sm text-gray-500 group-hover:text-secondary transition-colors"
+                  className="inline-flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-gray-500 group-hover:text-secondary transition-colors"
                 >
-                  <Mail size={14} />
+                  <Mail size={12} />
                   {contact.email}
                 </Link>
               </div>
@@ -197,55 +186,14 @@ const ContactPage = () => {
           </div>
         </div>
 
-        {/* 4. International Admissions Grid */}
-        <div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-8 border-l-4 border-secondary pl-4 flex items-center gap-3">
-            International Admissions <Globe className="text-gray-400 w-5 h-5" />
-          </h2>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {internationalContacts.map((contact, idx) => (
-              <div
-                key={idx}
-                className="group bg-white rounded-xl p-6 border border-gray-100 hover:border-secondary/30 hover:shadow-lg transition-all duration-300"
-              >
-                <div className="mb-4">
-                  <Globe className="w-8 h-8 text-gray-300 group-hover:text-secondary transition-colors" />
-                </div>
-                <h3 className="text-sm font-bold text-secondary uppercase tracking-wider mb-2">
-                  {contact.role}
-                </h3>
-                <p className="font-semibold text-gray-900 text-lg mb-3">
-                  {contact.name}
-                </p>
-                <div className="space-y-2">
-                  <Link
-                    href={`mailto:${contact.email}`}
-                    className="flex items-center gap-2 text-xs text-gray-500 hover:text-secondary truncate"
-                  >
-                    <Mail size={12} />
-                    {contact.email}
-                  </Link>
-                  <a
-                    href={`tel:${contact.phone}`}
-                    className="flex items-center gap-2 text-xs text-gray-500 hover:text-secondary"
-                  >
-                    <Phone size={12} />
-                    {contact.phone}
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* 5. Contact Form */}
-        <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+        <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
           <div className="grid lg:grid-cols-5">
             {/* Form Left Side (Visual) */}
-            <div className="hidden lg:block lg:col-span-2 bg-secondary p-12 text-white flex flex-col justify-between relative overflow-hidden">
+            <div className="hidden lg:block lg:col-span-2 bg-secondary p-6 sm:p-12 text-white flex flex-col justify-between relative overflow-hidden">
               <div className="relative z-10">
-                <h3 className="text-3xl font-bold mb-4">Have Questions?</h3>
-                <p className="text-indigo-100 mb-8 leading-relaxed">
+                <h3 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4">Have Questions?</h3>
+                <p className="text-indigo-100 mb-4 sm:mb-8 leading-relaxed">
                   Whether you're interested in our engineering programs,
                   management courses, or just want to visit the campus, we'd
                   love to hear from you.
@@ -255,18 +203,19 @@ const ContactPage = () => {
                 <p className="font-semibold">
                   Indira College of Engineering & Management
                 </p>
-                <p className="text-sm text-indigo-200 mt-1">Parandwadi, Pune</p>
+                <p className="text-xs sm:text-sm text-indigo-200 mt-0.5 sm:mt-1">Parandwadi, Pune</p>
               </div>
               {/* Decorative Circle */}
-              <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+              <div className="absolute -bottom-24 -right-24 w-32 h-32 sm:w-64 sm:h-64 bg-white/10 rounded-full blur-3xl"></div>
             </div>
 
             {/* Form Right Side (Inputs) */}
-            <div className="lg:col-span-3 p-8 sm:p-12">
+            <div className="lg:col-span-3 p-4 sm:p-12">
+              <h2 className="lg:hidden text-xl sm:text-2xl font-bold mb-2 sm:mb-4 text-gray-900 text-center">Contact Us</h2>
               <iframe
                 src="https://widgets.nopaperforms.com/register?&w=9fa0f32fe4f405fa68dc3df39ef6a11b"
                 width="100%"
-                height="600"
+                height={iframeHeight}
                 frameBorder="0"
                 allowFullScreen
                 title="NPF Enquiry Form"

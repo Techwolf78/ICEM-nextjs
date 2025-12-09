@@ -52,7 +52,6 @@ const ProgramList = () => {
       link: "/programs/entc",
       icon: Radio,
     },
-    { name: "First Year Engineering", link: "/programs/fye", icon: BookOpen },
     { name: "Information Technology", link: "/programs/it", icon: Laptop },
     {
       name: "Integrated MBA (BBA + MBA)",

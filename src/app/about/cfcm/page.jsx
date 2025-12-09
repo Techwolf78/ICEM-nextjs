@@ -12,9 +12,9 @@ export default function CFCM() {
   return (
     <div className="w-full bg-white text-gray-800">
       {/* Chairperson's Message */}
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <h3 className="text-2xl font-bold text-secondary mb-6">Chairperson & Chief Mentor's - IGI Message</h3>
-        <div className="flex flex-col md:flex-row gap-8 bg-gray-50 rounded-xl p-6 shadow-md">
+      <div className="max-w-7xl mx-auto px-4 py-6 md:px-6 md:py-12">
+        <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Chairperson & Chief Mentor's - IGI Message</h3>
+        <div className="flex flex-col md:flex-row gap-4 md:gap-8 bg-gray-50 rounded-xl p-4 md:p-6 shadow-md">
           
           {/* Left Side - Image Placeholder + Socials */}
           <div className="md:w-1/3">
@@ -23,7 +23,7 @@ export default function CFCM() {
               [ Image Placeholder ]
             </div>
 
-            <div className="flex justify-center gap-4 mt-3 text-gray-700 text-lg">
+            <div className="flex justify-center gap-2 md:gap-4 mt-2 md:mt-3 text-gray-700 text-lg">
               <FaFacebookF className="hover:text-primary transition-colors cursor-pointer" />
               <FaLinkedinIn className="hover:text-primary transition-colors cursor-pointer" />
               <FaInstagram className="hover:text-primary transition-colors cursor-pointer" />
@@ -43,13 +43,13 @@ export default function CFCM() {
 
           {/* Right Side - Message Content */}
           <div className="md:w-2/3 text-gray-700 leading-relaxed">
-            <blockquote className="border-l-4 border-primary pl-4 mb-6 italic text-gray-600">
+            <blockquote className="border-l-4 border-primary pl-4 mb-4 md:mb-6 italic text-gray-600">
               "Education is not just about learning facts; it is about igniting curiosity, nurturing innovation, and shaping leaders who can create a meaningful impact in the world."
               <br />
               <span className="font-semibold">— Dr. Tarita Shankar</span>
             </blockquote>
 
-            <p className="mb-4 font-semibold">Dear Students,</p>
+            <p className="mb-2 md:mb-4 font-semibold">Dear Students,</p>
             
             <p className="mb-4">
               Welcome to Indira College of Engineering and Management (ICEM), a place where innovation meets excellence.

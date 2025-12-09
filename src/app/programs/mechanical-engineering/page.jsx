@@ -585,23 +585,53 @@ export default function Mech() {
               future of engineering.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-gray-800">
-              <p>Mechanical Design Engineer </p>
-              <p>Mechatronics Engineer </p>
-              <p>Automation Engineer/Electric Vehicle Engineer</p>
-              <p>Product Development Engineer </p>
-              <p>Manufacturing / Production Engineer </p>
-              <p>Research & Development Engineer </p>
-              <p>Maintenance and Reliability Engineer</p>
-              <p>CAD/CAM Specialist </p>
-              <p>Quality and Process Engineer</p>
-              <p>Project Engineer or Technical Consultant </p>
-            </div>
+            <ul className="space-y-2 text-gray-800">
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Mechanical Design Engineer
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Mechatronics Engineer
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Automation Engineer/Electric Vehicle Engineer
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Product Development Engineer
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Manufacturing / Production Engineer
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Research & Development Engineer
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Maintenance and Reliability Engineer
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                CAD/CAM Specialist
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Quality and Process Engineer
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Project Engineer or Technical Consultant
+              </li>
+            </ul>
           </div>
 
-          {/* RIGHT IMAGE SECTION (Placeholder) */}
-          <div className="flex-1">
-            <div className="w-full h-[300px] relative rounded-lg overflow-hidden">
+          {/* RIGHT IMAGE SECTION */}
+          <div className="flex-1 w-full md:w-auto">
+            <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] relative rounded-lg overflow-hidden">
               <Image
                 src="/Programs/2.webp"
                 alt="Career Opportunities in AI and Future Technologies"

@@ -107,48 +107,6 @@ function ContactUs() {
         </div>
       </section>
 
-      {/* ===== International Admissions ===== */}
-      <section className="max-w-7xl mx-auto px-6 py-12">
-        <h2 className="text-2xl font-bold mb-6">
-          Call for International Category Admissions Only
-        </h2>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            {
-              name: "Prateek Patil",
-              email: "international.admissions@indiraicem.ac.in",
-              phone: "+91 77200 61619",
-            },
-            {
-              name: "Amruta Sakhare",
-              email: "international.admissions@indiraicem.ac.in",
-              phone: "+91 74474 54556",
-            },
-            {
-              name: "Mudasir Naik",
-              email: "international.admissions@indiraicem.ac.in",
-              phone: "+91 70309 63294",
-            },
-            {
-              name: "Ninad Sapre",
-              email: "international.admissions@indiraicem.ac.in",
-              phone: "+91 86528 42525",
-            },
-          ].map((person, index) => (
-            <div
-              key={index}
-              className="bg-cyan-100 p-6 rounded-lg shadow-md text-gray-700"
-            >
-              <h3 className="font-semibold">International</h3>
-              <p className="text-lg font-medium">{person.name}</p>
-              <p className="text-gray-600">{person.email}</p>
-              <p className="text-gray-600">{person.phone}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* ===== Contact Form ===== */}
       <section className="bg-cyan-700 text-white py-12">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">

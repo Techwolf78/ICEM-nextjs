@@ -138,16 +138,16 @@ export default function FAQENTC() {
     switch (data.type) {
       case "accordion":
   return (
-    <div className="space-y-4">
+    <div className="space-y-3 md:space-y-4">
       {Object.entries(data.content).map(([title, items]) => (
         <div key={title} className="border border-gray-200 rounded-lg">
           <details className="group">
-            <summary className="flex justify-between items-center p-4 cursor-pointer bg-gray-50 hover:bg-gray-100 rounded-lg">
+            <summary className="flex justify-between items-center p-3 md:p-4 cursor-pointer bg-gray-50 hover:bg-gray-100 rounded-lg">
               <h4 className="font-semibold text-secondary text-lg">{title}</h4>
               <span className="transition-transform group-open:rotate-180">▼</span>
             </summary>
 
-            <div className="p-4 pt-2 space-y-2">
+            <div className="p-3 md:p-4 pt-2 space-y-2">
               {items.map((item, i) =>
                 typeof item === "object" && item.pdf ? (
                   <a
@@ -187,20 +187,20 @@ case "table":
       <table className="w-full text-sm text-left">
         <thead className="bg-gray-50">
           <tr>
-            <th className="p-3 border-b font-semibold">Program</th>
-            <th className="p-3 border-b font-semibold">Intake</th>
-            <th className="p-3 border-b font-semibold">Duration</th>
-            <th className="p-3 border-b font-semibold">Type</th>
+            <th className="p-2 md:p-3 border-b font-semibold">Program</th>
+            <th className="p-2 md:p-3 border-b font-semibold">Intake</th>
+            <th className="p-2 md:p-3 border-b font-semibold">Duration</th>
+            <th className="p-2 md:p-3 border-b font-semibold">Type</th>
           </tr>
         </thead>
 
         <tbody>
           {data.content.map((row, index) => (
             <tr key={index} className="border-b hover:bg-gray-50">
-              <td className="p-3">{row.program}</td>
-              <td className="p-3">{row.intake}</td>
-              <td className="p-3">{row.duration}</td>
-              <td className="p-3">{row.type}</td>
+              <td className="p-2 md:p-3">{row.program}</td>
+              <td className="p-2 md:p-3">{row.intake}</td>
+              <td className="p-2 md:p-3">{row.duration}</td>
+              <td className="p-2 md:p-3">{row.type}</td>
             </tr>
           ))}
         </tbody>
@@ -211,11 +211,11 @@ case "table":
 
       case "syllabus":
         return (
-          <div className="space-y-4">
+          <div className="space-y-3 md:space-y-4">
             {data.content.map((item) => (
               <div
                 key={item.id}
-                className="flex flex-col sm:flex-row sm:items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50"
+                className="flex flex-col sm:flex-row sm:items-center justify-between p-3 md:p-4 border border-gray-200 rounded-lg hover:bg-gray-50"
               >
                 <h5 className="font-semibold text-gray-800">{item.label}</h5>
                 <a
@@ -243,11 +243,11 @@ case "table":
   };
 
   return (
-    <section className="w-full bg-gradient-to-b from-gray-50 to-white text-black py-16">
+    <section className="w-full bg-gradient-to-b from-gray-50 to-white text-black py-8 md:py-16">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
     {/* Header */}
-    <div className="text-center mb-12">
+    <div className="text-center mb-6 md:mb-12">
       <h2 className="text-4xl font-bold text-secondary mb-4">
         Department of MCA
       </h2>
@@ -256,11 +256,11 @@ case "table":
       </p>
     </div>
 
-    <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+    <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 md:gap-8">
 
       {/* LEFT MENU */}
-      <nav className="lg:col-span-1 bg-white rounded-xl shadow-sm p-6 space-y-2 sticky top-24 self-start border border-gray-100">
-        <h3 className="font-semibold text-gray-800 mb-4 text-lg">Quick Links</h3>
+      <nav className="lg:col-span-1 bg-white rounded-xl shadow-sm p-4 md:p-6 space-y-1 md:space-y-2 sticky top-24 self-start border border-gray-100">
+        <h3 className="font-semibold text-gray-800 mb-3 md:mb-4 text-lg">Quick Links</h3>
 
         {tabs.map((tab) => (
           <button
@@ -296,9 +296,9 @@ case "table":
       {/* RIGHT CONTENT */}
       <div
         id="right-content"  
-        className="lg:col-span-3 bg-white rounded-xl shadow-sm p-8 border border-gray-100"
+        className="lg:col-span-3 bg-white rounded-xl shadow-sm p-4 md:p-8 border border-gray-100"
       >
-        <div className="mb-6 pb-4 border-b border-gray-200">
+        <div className="mb-4 md:mb-6 pb-4 border-b border-gray-200">
           <h3 className="text-2xl font-bold text-secondary">
             {active}
           </h3>

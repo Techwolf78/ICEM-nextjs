@@ -341,37 +341,62 @@ export default function Computer() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 px-6">
           {/* LEFT TEXT SECTION */}
           <div className="flex-1">
-            <h2 className="text-3xl font-bold text-secondary mb-6">
+            <h2 className="text-3xl font-bold text-secondary mb-4">
               Career Opportunities
             </h2>
-            <p className="text-gray-700 mb-8 leading-relaxed">
+            <p className="text-gray-700 mb-6 leading-relaxed">
               A degree in Computer Engineering opens doors to a vast spectrum of
               roles in the global tech industry. Graduates are equipped to
               design, develop, and manage the complex software and hardware
               systems that power modern enterprises and consumer technologies.
             </p>
 
-            {/* Bullet List */}
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-3 text-gray-800 text-base leading-relaxed list-disc list-inside">
-              <li>Software Development Engineer</li>
-              <li>Systems Architect</li>
-              <li>DevOps Engineer</li>
-              <li>Database Administrator</li>
-              <li>Network Engineer</li>
-              <li>Full-Stack Developer</li>
-              <li>Embedded Systems Engineer</li>
-              <li>IT Project Manager</li>
+            <ul className="space-y-2 text-gray-800">
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Software Development Engineer
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Systems Architect
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                DevOps Engineer
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Database Administrator
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Network Engineer
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Full-Stack Developer
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Embedded Systems Engineer
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                IT Project Manager
+              </li>
             </ul>
           </div>
 
           {/* RIGHT IMAGE SECTION */}
-          <div className="flex-1 flex justify-center">
-            <div className="w-full h-[320px] relative rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all">
+          <div className="flex-1 w-full md:w-auto">
+            <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] relative rounded-lg overflow-hidden">
               <Image
                 src="/Programs/1.webp"
                 alt="Career Opportunities in Computer Engineering"
                 fill
-                className="object-cover object-center"
+                className="object-cover"
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
               />
             </div>
           </div>

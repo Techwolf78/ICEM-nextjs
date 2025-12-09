@@ -230,7 +230,7 @@ export default function AIDS() {
       </div>
 
       {/* ===== PROGRAM STRUCTURE + APPLY FORM SECTION ===== */}
-      <div className="w-full bg-white text-black py-16">
+      <div className="w-full bg-white text-black py-4 md:py-16">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 px-4 sm:px-6 items-stretch">
           {/* LEFT TEXT SECTION */}
           <div className="bg-white p-6 rounded-lg shadow-sm flex flex-col justify-between border border-gray-100">
@@ -385,21 +385,45 @@ export default function AIDS() {
               roles focusing on data, security, and emerging technologies.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-gray-800">
-              <p>➜ Artificial Intelligence Engineer</p>
-              <p>➜ Data Scientist</p>
-              <p>➜ Blockchain Developer</p>
-              <p>➜ Cyber Security Analyst</p>
-              <p>➜ Cloud Solutions Architect</p>
-              <p>➜ Machine Learning Specialist</p>
-              <p>➜ AI Researcher</p>
-              <p>➜ Robotics Engineer</p>
-            </div>
+            <ul className="space-y-2 text-gray-800">
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Artificial Intelligence Engineer
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Data Scientist
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Blockchain Developer
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Cyber Security Analyst
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Cloud Solutions Architect
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Machine Learning Specialist
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                AI Researcher
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Robotics Engineer
+              </li>
+            </ul>
           </div>
 
           {/* RIGHT IMAGE SECTION */}
-          <div className="flex-1">
-            <div className="w-full h-[300px] relative rounded-lg overflow-hidden">
+          <div className="flex-1 w-full md:w-auto">
+            <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] relative rounded-lg overflow-hidden">
               <Image
                 src="/Programs/3.webp"
                 alt="Career Opportunities in AI and Future Technologies"

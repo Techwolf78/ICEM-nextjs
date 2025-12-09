@@ -23,14 +23,14 @@ export default function Governance() {
       </div>
 
       {/* ===== Main Section ===== */}
-      <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row py-6 mt-10">
+      <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row py-4 mt-5 md:py-6 md:mt-10">
         {/* LEFT SECTION */}
-        <div className="md:w-full bg-white p-6 rounded-xl shadow-md">
-          <h2 className="text-4xl font-semibold text-secondary mb-6 ">
+        <div className="md:w-full bg-white p-4 md:p-6 rounded-xl shadow-md">
+          <h2 className="text-4xl font-semibold text-secondary mb-4 md:mb-6 ">
             Institutional Governance and Leadership
           </h2>
 
-          <p className="text-gray-700 leading-relaxed mb-4">
+          <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
             Governance at Indira College of Engineering and Management (ICEM)
             emphasizes transparency, accountability, and participative
             decision-making. The institution operates under the strategic vision
@@ -39,7 +39,7 @@ export default function Governance() {
             University.
           </p>
 
-          <p className="text-gray-700 leading-relaxed mb-4">
+          <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
             The Governing Body, Academic Council, and various statutory
             committees ensure the seamless implementation of academic,
             financial, and administrative processes. Each committee functions
@@ -47,14 +47,14 @@ export default function Governance() {
             institutional excellence.
           </p>
 
-          <p className="text-gray-700 leading-relaxed mb-4">
+          <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
             The governance model promotes participative leadership where faculty
             and staff contribute to strategic planning, curriculum design, and
             institutional development initiatives. Student representation in key
             bodies fosters inclusion and mutual growth.
           </p>
 
-          <p className="text-gray-700 leading-relaxed mb-4">
+          <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
             Regular audits, feedback mechanisms, and performance reviews are key
             to ensuring that ICEM operates effectively and ethically while
             achieving its educational mission and objectives.
@@ -68,7 +68,7 @@ export default function Governance() {
           </p>
 
           {/* ===== Governance Documents Section ===== */}
-          <h3 className="mt-10 text-2xl font-bold text-secondary mb-6">
+          <h3 className="mt-5 md:mt-10 text-2xl font-bold text-secondary mb-4 md:mb-6">
             Institutional Committees & Governance Documents
           </h3>
 
@@ -218,7 +218,7 @@ export default function Governance() {
                   onClick={() =>
                     setActiveFAQ(activeFAQ === index ? null : index)
                   }
-                  className="flex justify-between items-center w-full px-4 py-3 cursor-pointer hover:bg-gray-100 transition-colors duration-200"
+                  className="flex justify-between items-center w-full px-2 md:px-4 py-2 md:py-3 cursor-pointer hover:bg-gray-100 transition-colors duration-200"
                 >
                   <span className="font-medium text-gray-900 underline underline-offset-2 hover:text-primary transition-colors">
                     {item.title}
@@ -234,7 +234,7 @@ export default function Governance() {
                     activeFAQ === index ? "max-h-full" : "max-h-0"
                   }`}
                 >
-                  <div className="px-6 py-4 bg-gray-50 text-gray-700 text-sm leading-relaxed">
+                  <div className="px-4 py-2 md:px-6 md:py-4 bg-gray-50 text-gray-700 text-sm leading-relaxed">
                     {item.description && (
                       <p className="mb-3">{item.description}</p>
                     )}

@@ -468,21 +468,45 @@ export default function Computer() {
               market.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-gray-800">
-              <p>Management Trainee </p>
-              <p>HR Business Partner </p>
-              <p>Marketing Executive </p>
-              <p>Financial Analyst </p>
-              <p>Business Development Executive </p>
-              <p>Operations Team Lead </p>
-              <p>Digital Marketing Specialist </p>
-              <p>Sales Manager </p>
-            </div>
+            <ul className="space-y-2 text-gray-800">
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Management Trainee
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                HR Business Partner
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Marketing Executive
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Financial Analyst
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Business Development Executive
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Operations Team Lead
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Digital Marketing Specialist
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Sales Manager
+              </li>
+            </ul>
           </div>
 
           {/* RIGHT IMAGE SECTION */}
-          <div className="flex-1">
-            <div className="w-full h-[300px] relative rounded-lg overflow-hidden">
+          <div className="flex-1 w-full md:w-auto">
+            <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] relative rounded-lg overflow-hidden">
               <Image
                 src="/Programs/7.webp"
                 alt="Career Opportunities in AI and Future Technologies"

@@ -13,7 +13,7 @@ export default function AcademicYearSectionForm() {
     // Set responsive height for the form
     const setFormHeight = () => {
       if (formRef.current) {
-        const height = window.innerWidth < 640 ? '460px' : window.innerWidth < 768 ? '350px' : '520px';
+        const height = window.innerWidth < 640 ? '510px' : window.innerWidth < 768 ? '350px' : '520px';
         formRef.current.setAttribute('data-height', height);
       }
     };

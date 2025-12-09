@@ -344,11 +344,11 @@ export default function FAQMECH() {
     switch (data.type) {
       case "syllabus":
         return (
-          <div className="space-y-4">
+          <div className="space-y-3 md:space-y-4">
             {data.content.map((item) => (
               <div
                 key={item.id}
-                className="flex flex-col sm:flex-row sm:items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50"
+                className="flex flex-col sm:flex-row sm:items-center justify-between p-3 md:p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
               >
                 <h5 className="font-semibold text-gray-800">{item.label}</h5>
                 <a
@@ -364,7 +364,7 @@ export default function FAQMECH() {
         );
       case "accordion":
         return (
-          <div className="space-y-4">
+          <div className="space-y-3 md:space-y-4">
             {Object.entries(data.content).map(([title, items], index) => {
               const shouldOpen = index === 0 && items.length <= 5;
 
@@ -374,7 +374,7 @@ export default function FAQMECH() {
                     className="group"
                     {...(shouldOpen && { open: true })}
                   >
-                    <summary className="flex justify-between items-center p-4 cursor-pointer bg-gray-50 hover:bg-gray-100 rounded-lg">
+                    <summary className="flex justify-between items-center p-3 md:p-4 cursor-pointer bg-gray-50 hover:bg-gray-100 rounded-lg">
                       <h4 className="font-semibold text-secondary text-lg">
                         {title}
                       </h4>
@@ -383,7 +383,7 @@ export default function FAQMECH() {
                       </span>
                     </summary>
 
-                    <div className="p-4 pt-2 space-y-2">
+                    <div className="p-3 md:p-4 pt-2 space-y-2">
                       {items.map((item, i) =>
                         typeof item === "object" && item.pdf ? (
                           <a
@@ -430,20 +430,20 @@ export default function FAQMECH() {
             <table className="w-full text-sm text-left">
               <thead className="bg-gray-50">
                 <tr>
-                  <th className="p-3 border-b font-semibold">Program</th>
-                  <th className="p-3 border-b font-semibold">Intake</th>
-                  <th className="p-3 border-b font-semibold">Duration</th>
-                  <th className="p-3 border-b font-semibold">Type</th>
+                  <th className="p-2 md:p-3 border-b font-semibold">Program</th>
+                  <th className="p-2 md:p-3 border-b font-semibold">Intake</th>
+                  <th className="p-2 md:p-3 border-b font-semibold">Duration</th>
+                  <th className="p-2 md:p-3 border-b font-semibold">Type</th>
                 </tr>
               </thead>
 
               <tbody>
                 {data.content.map((row, index) => (
                   <tr key={index} className="border-b hover:bg-gray-50">
-                    <td className="p-3">{row.program}</td>
-                    <td className="p-3">{row.intake}</td>
-                    <td className="p-3">{row.duration}</td>
-                    <td className="p-3">{row.type}</td>
+                    <td className="p-2 md:p-3">{row.program}</td>
+                    <td className="p-2 md:p-3">{row.intake}</td>
+                    <td className="p-2 md:p-3">{row.duration}</td>
+                    <td className="p-2 md:p-3">{row.type}</td>
                   </tr>
                 ))}
               </tbody>
@@ -455,7 +455,7 @@ export default function FAQMECH() {
       case "mechLabs":
         return (
           <div>
-            <h4 className="font-semibold text-secondary text-lg mb-4">
+            <h4 className="font-semibold text-secondary text-lg mb-3 md:mb-4">
               Mechanical Engineering Laboratories
             </h4>
 
@@ -465,12 +465,12 @@ export default function FAQMECH() {
                   {data.content.map((lab, index) => (
                     <tr key={index} className="border-b last:border-b-0">
                       {/* COLUMN 1 – HEADING */}
-                      <td className="p-4 font-semibold text-gray-900 w-1/3 align-top">
+                      <td className="p-3 md:p-4 font-semibold text-gray-900 w-1/3 align-top">
                         {lab.heading}
                       </td>
 
                       {/* COLUMN 2 – DESCRIPTION */}
-                      <td className="p-4 text-gray-700 space-y-1">
+                      <td className="p-3 md:p-4 text-gray-700 space-y-1">
                         {lab.description.map((item, i) => (
                           <div key={i}>{item}</div>
                         ))}
@@ -489,10 +489,10 @@ export default function FAQMECH() {
   };
 
   return (
-    <section className="w-full bg-gradient-to-b from-gray-50 to-white text-black py-16">
+    <section className="w-full bg-gradient-to-b from-gray-50 to-white text-black py-8 sm:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-6 md:mb-12">
           <h2 className="text-4xl font-bold text-secondary mb-4">
             Department of Mechanical Engineering
           </h2>
@@ -502,10 +502,10 @@ export default function FAQMECH() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-8">
           {/* LEFT MENU */}
-          <nav className="lg:col-span-1 bg-white rounded-xl shadow-sm p-6 space-y-2 sticky top-24 self-start border border-gray-100">
-            <h3 className="font-semibold text-gray-800 mb-4 text-lg text-center">
+          <nav className="lg:col-span-1 bg-white rounded-xl shadow-sm p-4 md:p-6 space-y-1 md:space-y-2 sticky top-24 self-start border border-gray-100">
+            <h3 className="font-semibold text-gray-800 mb-3 md:mb-4 text-lg text-center">
               Mechanical Overview
             </h3>
 
@@ -544,9 +544,9 @@ export default function FAQMECH() {
           {/* RIGHT CONTENT */}
           <div
             id="right-content"
-            className="lg:col-span-3 bg-white rounded-xl shadow-sm p-8 border border-gray-100"
+            className="lg:col-span-3 bg-white rounded-xl shadow-sm p-4 md:p-8 border border-gray-100"
           >
-            <div className="mb-6 pb-4 border-b border-gray-200">
+            <div className="mb-4 md:mb-6 pb-4 border-b border-gray-200">
               <h3 className="text-2xl font-bold text-secondary">{active}</h3>
             </div>
 

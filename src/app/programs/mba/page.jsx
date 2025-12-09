@@ -373,7 +373,7 @@ export default function MBA() {
           MBA SPECIALIZATION TABS
       ======================= */}
       <div className="w-full bg-white py-8">
-        <div className="max-w-7xl mx-auto px-6 flex gap-4 flex-nowrap overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:flex md:gap-4 md:flex-nowrap overflow-hidden gap-2">
           {[
             ["marketing", "MARKETING MANAGEMENT"],
             ["finance", "FINANCIAL MANAGEMENT"],
@@ -383,7 +383,7 @@ export default function MBA() {
             <button
               key={key}
               onClick={() => setSpecialization(key)}
-              className={`px-4 md:px-6 h-14 max-w-[300px] flex items-center justify-center rounded-lg font-semibold text-sm md:text-base text-center border border-gray-200 whitespace-normal leading-tight ${
+              className={`px-2 md:px-4 lg:px-6 h-12 md:h-14 max-w-[200px] md:max-w-[300px] flex items-center justify-center rounded-lg font-semibold text-[10px] md:text-sm lg:text-base text-center border border-gray-200 whitespace-normal leading-tight ${
                 specialization === key
                   ? "bg-secondary text-white"
                   : "bg-gray-100 text-gray-800"
@@ -398,7 +398,7 @@ export default function MBA() {
       {/* =======================
           STRUCTURE + FORM
       ======================= */}
-      <div className="w-full bg-white py-16 text-black">
+      <div className="w-full bg-white py-4 md:py-8 text-black">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* LEFT */}
           <div className="bg-white shadow-sm border border-gray-200 p-6 rounded-lg">
@@ -428,7 +428,7 @@ export default function MBA() {
       {/* =======================
           PROGRAM HIGHLIGHTS
       ======================= */}
-      <div className="w-full bg-[#f7f7f7] py-16 text-black">
+      <div className="w-full bg-[#f7f7f7] py-8 md:py-16 text-black">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-secondary mb-10">
             Programme Highlights
@@ -465,7 +465,7 @@ export default function MBA() {
       {/* =======================
           CAREER OPPORTUNITIES
       ======================= */}
-      <div className="w-full bg-white py-16 text-black">
+      <div className="w-full bg-white py-8 md:py-16 text-black">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row gap-12">
           <div className="flex-1">
             <h2 className="text-3xl font-bold text-secondary mb-4">
@@ -475,20 +475,25 @@ export default function MBA() {
               This specialization opens pathways to impactful roles:
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <ul className="space-y-2 text-gray-800">
               {s.careers.map((item, index) => (
-                <p key={index}>➜ {item}</p>
+                <li key={index} className="flex items-center">
+                  <span className="text-secondary mr-2">✓</span>
+                  {item}
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
-          <div className="flex-1">
-            <div className="w-full h-[300px] relative rounded-lg overflow-hidden">
+          <div className="flex-1 w-full md:w-auto">
+            <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] relative rounded-lg overflow-hidden">
               <Image
                 src="/Programs/9.webp"
                 alt="Career Opportunities"
                 fill
                 className="object-cover"
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
               />
             </div>
           </div>

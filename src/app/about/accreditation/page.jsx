@@ -69,11 +69,11 @@ export default function Accreditation() {
       </div>
 
       {/* === Approvals Section === */}
-      <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
-        <h2 className="text-xl sm:text-2xl font-semibold text-secondary mb-4">
+      <div className="max-w-7xl mx-auto px-2 py-4 md:px-4 md:py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
+        <h2 className="text-xl sm:text-2xl font-semibold text-secondary mb-2 md:mb-4">
           ACCREDITATION AND APPROVALS
         </h2>
-        <p className="text-gray-700 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">
+        <p className="text-gray-700 mb-4 md:mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">
           Indira College of Engineering and Management, Pune is affiliated to
           Savitribai Phule Pune University (SPPU), Pune, and is accredited by
           the National Assessment and Accreditation Council (NAAC) with a 'B+'
@@ -84,8 +84,8 @@ export default function Accreditation() {
           development.
         </p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-          <div className="flex flex-col items-center justify-center p-4 sm:p-6 transition-transform duration-300 hover:scale-105 shadow-lg rounded-lg shadow-gray-200">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 sm:gap-6">
+            <div className="flex flex-col items-center justify-center p-2 md:p-4 sm:p-6 transition-transform duration-300 hover:scale-105 shadow-lg rounded-lg shadow-gray-200">
             <Image
               src="/homepage-logos/NAAC.webp"
               alt="NAAC"
@@ -109,7 +109,7 @@ export default function Accreditation() {
               height={300}
             />
           </div>
-          <div className="flex flex-col items-center justify-center p-4 sm:p-6 transition-transform duration-300 hover:scale-105 shadow-lg rounded-lg shadow-gray-200">
+          <div className="flex flex-col items-center justify-center p-2 md:p-4 sm:p-6 transition-transform duration-300 hover:scale-105 shadow-lg rounded-lg shadow-gray-200">
             <Image
               src="/homepage-logos/8th.webp"
               alt=""
@@ -121,10 +121,10 @@ export default function Accreditation() {
       </div>
 
       {/* === Awards & Recognitions Section === */}
-      <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto py-4 px-2 md:py-6 md:px-4 sm:px-6 lg:px-8">
         <div className="mt-4">
           {/* Intro */}
-          <p className="text-gray-700 leading-relaxed mb-6 sm:mb-8 text-sm sm:text-base">
+          <p className="text-gray-700 leading-relaxed mb-4 md:mb-6 sm:mb-8 text-sm sm:text-base">
             Indira College of Engineering and Management (ICEM) takes great
             pride in its consistent recognition through prestigious awards and
             rankings. These accolades reflect our unwavering commitment to
@@ -132,12 +132,12 @@ export default function Accreditation() {
             industry collaboration.
           </p>
 
-          <h2 className="text-xl sm:text-2xl font-semibold text-secondary mb-4 sm:mb-6">
+          <h2 className="text-xl sm:text-2xl font-semibold text-secondary mb-2 md:mb-4 sm:mb-6">
             National & International Awards
           </h2>
 
           {/* ===== AWARDS GRID WITH IMAGES ===== */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 sm:gap-6">
             {/* Award 1 */}
             <div className="bg-gray-50 flex flex-col border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
               <div className="relative w-full h-48 sm:h-52 lg:h-56 rounded-t-xl overflow-hidden">
@@ -241,7 +241,7 @@ export default function Accreditation() {
           </div>
 
           {/* ===== REMAINING AWARDS — TEXT ONLY ===== */}
-          <div className="mt-8 sm:mt-10 space-y-4 sm:space-y-6">
+          <div className="mt-4 md:mt-8 sm:mt-10 space-y-2 md:space-y-4 sm:space-y-6">
             <div className="p-3 sm:p-4 border border-gray-200 rounded-lg bg-gray-50 shadow-sm">
               <h3 className="text-base sm:text-lg font-semibold text-secondary">
                 Education Leadership Award
@@ -324,21 +324,21 @@ export default function Accreditation() {
       </div>
 
       {/* === Accordion Sections === */}
-      <div className="max-w-7xl mx-auto py-4 sm:py-6 px-4 sm:px-6 lg:px-8">
-        <div className="bg-white p-3 sm:p-6 rounded-xl shadow-md space-y-8 sm:space-y-12">
+      <div className="max-w-7xl mx-auto py-2 md:py-4 sm:py-6 px-2 md:px-4 sm:px-6 lg:px-8">
+        <div className="bg-white p-2 md:p-3 sm:p-6 rounded-xl shadow-md space-y-4 md:space-y-8 sm:space-y-12">
           {Object.keys(sections).map((key) => (
             <div key={key}>
-              <h2 className="text-xl sm:text-2xl font-semibold text-secondary mb-4 sm:mb-6">
+              <h2 className="text-xl sm:text-2xl font-semibold text-secondary mb-2 md:mb-4 sm:mb-6">
                 {sections[key].title}
               </h2>
               {sections[key].accordions.map((item, index) => (
                 <div
                   key={index}
-                  className="border border-gray-200 rounded-lg bg-gray-50 shadow-sm overflow-hidden mb-3"
+                  className="border border-gray-200 rounded-lg bg-gray-50 shadow-sm overflow-hidden mb-2 md:mb-3"
                 >
                   <button
                     onClick={() => toggleAccordion(key, index)}
-                    className="w-full flex justify-between items-center px-4 py-3 text-left font-medium text-gray-900 hover:bg-gray-100 transition text-sm sm:text-base"
+                    className="w-full flex justify-between items-center px-2 md:px-4 py-2 md:py-3 text-left font-medium text-gray-900 hover:bg-gray-100 transition text-sm sm:text-base"
                   >
                     <span className="text-left">{item.heading}</span>
                     <span className="text-xl text-secondary ml-2">
@@ -346,7 +346,7 @@ export default function Accreditation() {
                     </span>
                   </button>
                   {openAccordions[key] === index && (
-                    <div className="p-4 bg-white border-t border-gray-200 text-gray-700">
+                    <div className="p-2 md:p-4 bg-white border-t border-gray-200 text-gray-700">
                       {/* Show content if exists */}
                       {item.content && (
                         <p className="mb-4 text-sm sm:text-base">
@@ -405,14 +405,14 @@ export default function Accreditation() {
                       {/* PDF Section */}
                       {item.pdfs && item.pdfs.length > 0 && (
                         <div className="mt-4">
-                          <h4 className="font-semibold text-gray-800 mb-3 text-sm sm:text-base">
+                          <h4 className="font-semibold text-gray-800 mb-2 md:mb-3 text-sm sm:text-base">
                             Available Documents:
                           </h4>
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 md:gap-2">
                             {item.pdfs.map((pdf, pdfIndex) => (
                               <div
                                 key={pdfIndex}
-                                className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200"
+                                className="flex items-center justify-between p-2 md:p-3 bg-gray-50 rounded-lg border border-gray-200"
                               >
                                 <span className="text-xs sm:text-sm font-medium text-gray-700 truncate pr-2">
                                   {pdf.name}

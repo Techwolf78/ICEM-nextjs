@@ -107,14 +107,14 @@ export default function Overview() {
       {/* Content Section */}
       <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row">
         {/* Left Section */}
-        <div className="md:w-full space-y-12">
+        <div className="md:w-full space-y-6 md:space-y-12">
           {/* Main About Content */}
-          <div className="bg-white p-6 rounded-xl shadow-md mt-15">
-            <h2 className="text-4xl font-semibold text-secondary mb-6">
+          <div className="bg-white p-4 md:p-6 rounded-xl shadow-md mt-4 md:mt-8">
+            <h2 className="text-4xl font-semibold text-secondary mb-4 md:mb-6">
               About Us
             </h2>
 
-            <p className="text-gray-700 leading-relaxed mb-4 text-justify">
+            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4 text-justify">
               Indira College of Engineering and Management (ICEM), Pune,
               established in 2007 under the esteemed Indira Group of Institutes,
               is a premier autonomous institution recognized for its commitment
@@ -126,7 +126,7 @@ export default function Overview() {
               one of the top engineering and management institutes in Pune.
             </p>
 
-            <p className="text-gray-700 leading-relaxed mb-4 text-justify">
+            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4 text-justify">
               Situated in the scenic surroundings of Parandwadi Village, Maval
               Taluka, ICEM has made a significant impact on the educational and
               infrastructural development of the region, especially in rural
@@ -137,7 +137,7 @@ export default function Overview() {
               spectrum of undergraduate, postgraduate, and integrated programs.
             </p>
 
-            <h3 className="text-xl font-semibold text-secondary text-justify mt-6 mb-3">
+            <h3 className="text-xl font-semibold text-secondary text-justify mt-4 md:mt-6 mb-2 md:mb-3">
               Vision
             </h3>
 
@@ -149,11 +149,11 @@ export default function Overview() {
               industries to fulfil their ever-changing requirements.{" "}
             </p>
 
-            <h3 className="text-xl font-semibold text-secondary mt-6 mb-3">
+            <h3 className="text-xl font-semibold text-secondary mt-4 md:mt-6 mb-2 md:mb-3">
               Mission:
             </h3>
 
-            <ul className="list-disc list-inside text-gray-700 mb-4 text-justify">
+            <ul className="list-disc list-inside text-gray-700 mb-2 md:mb-4 text-justify">
               <li>
                 To train our students to become the best Engineering
                 Entrepreneurs today, who will lead the organizations
@@ -178,7 +178,7 @@ export default function Overview() {
               </li>
             </ul>
 
-            <h3 className="text-xl font-semibold text-secondary mt-6 mb-3">
+            <h3 className="text-xl font-semibold text-secondary mt-4 md:mt-6 mb-2 md:mb-3">
               Our Programs:
             </h3>
 
@@ -187,7 +187,7 @@ export default function Overview() {
               Undergraduate Engineering Programs:
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 mb-4 md:mb-6">
               {[
                 "Artificial Intelligence & Data Science",
                 "Information Technology",
@@ -197,7 +197,7 @@ export default function Overview() {
               ].map((program, idx) => (
                 <div
                   key={idx}
-                  className="p-4 rounded-xl bg-gray-100 text-gray-800 font-medium
+                  className="p-2 md:p-4 rounded-xl bg-gray-100 text-gray-800 font-medium
                  border border-gray-200 shadow-sm
                  transition-all duration-300  hover:shadow-md cursor-pointer"
                 >
@@ -211,7 +211,7 @@ export default function Overview() {
               Postgraduate Programs:
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 mb-4 md:mb-6">
               {[
                 "MTech Computer Engineering",
                 "Mtech Mechanical Engineering",
@@ -220,7 +220,7 @@ export default function Overview() {
               ].map((program, idx) => (
                 <div
                   key={idx}
-                  className="p-4 rounded-xl bg-gray-100 text-gray-800 font-medium
+                  className="p-2 md:p-4 rounded-xl bg-gray-100 text-gray-800 font-medium
                  border border-gray-200 shadow-sm
                  transition-all duration-300  hover:shadow-md cursor-pointer"
                 >
@@ -234,12 +234,12 @@ export default function Overview() {
               Integrated Programs:
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 mb-4 md:mb-6">
               {["Integrated MBA (BBA + MBA)", "Integrated MCA (BCA + MCA)"].map(
                 (program, idx) => (
                   <div
                     key={idx}
-                    className="p-4 rounded-xl bg-gray-100 text-gray-800 font-medium
+                    className="p-2 md:p-4 rounded-xl bg-gray-100 text-gray-800 font-medium
                  border border-gray-200 shadow-sm
                  transition-all duration-300  hover:shadow-md cursor-pointer"
                   >
@@ -249,7 +249,7 @@ export default function Overview() {
               )}
             </div>
 
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
               Through a well-balanced academic structure, ICEM blends
               theoretical learning with practical application. Our students gain
               hands-on exposure through industry-relevant projects, expert-led
@@ -257,7 +257,7 @@ export default function Overview() {
               industry-ready from day one.
             </p>
 
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
               A standout feature of ICEM is its strong industry-academia
               interface, supported by collaborations and MoUs with prominent
               organizations and international institutions, including a key
@@ -266,7 +266,7 @@ export default function Overview() {
               by industry experts, such as:
             </p>
 
-            <ul className="list-disc list-inside text-gray-700 mb-4">
+            <ul className="list-disc list-inside text-gray-700 mb-2 md:mb-4">
               <li>Workshops on emerging technologies</li>
               <li>Career-readiness and placement preparation bootcamps</li>
               <li>Advanced domain-specific certifications</li>
@@ -277,14 +277,14 @@ export default function Overview() {
               </li>
             </ul>
 
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
               Our Scholar Clubs further enrich the student experience by
               recognizing and supporting academic talent through personalized
               mentoring in leadership, communication, ethics, and presentation
               skills.
             </p>
 
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
               Our ultra-modern classrooms and labs, equipped with ICT panels,
               are renovated to meet global standards, providing a future-ready
               learning environment. With a highly qualified faculty, robust
@@ -293,7 +293,7 @@ export default function Overview() {
               environment.
             </p>
 
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
               ICEM boasts an impressive placement record, with students securing
               opportunities in leading national and international companies
               across various industries. Our strong industry connections and
@@ -308,12 +308,12 @@ export default function Overview() {
           </div>
 
           {/* Shree Chanakya Education Society Section */}
-          <div className="bg-white p-6 rounded-xl shadow-md">
-            <h2 className="text-2xl font-semibold text-secondary mb-6">
+          <div className="bg-white p-4 md:p-6 rounded-xl shadow-md">
+            <h2 className="text-2xl font-semibold text-secondary mb-4 md:mb-6">
               Shree Chanakya Education Society (SCES)
             </h2>
 
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
               The <strong>Shree Chanakya Education Society (SCES)</strong> was
               established in February 1994 under the visionary leadership of{" "}
               <strong>Dr. Tarita Shankar</strong>, with the mission to provide
@@ -325,7 +325,7 @@ export default function Overview() {
               attracting over 8000 students from across India.
             </p>
 
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
               During a period of significant economic transition in India,{" "}
               <strong>Dr. Tarita Shankar</strong> recognized the need for an
               education system that was practical, industry-aligned, and
@@ -335,7 +335,7 @@ export default function Overview() {
               world.
             </p>
 
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
               Today, <strong>Indira University</strong> stands as a symbol of
               excellence in higher education, offering a wide array of
               undergraduate and postgraduate programs across disciplines. A key
@@ -347,7 +347,7 @@ export default function Overview() {
               integration.
             </p>
 
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
               SCES has always upheld high academic standards and has been
               instrumental in providing skilled talent to India's industrial and
               service sectors. Guided by the core philosophy of offering
@@ -368,11 +368,11 @@ export default function Overview() {
           </div>
 
           {/* Chairperson's Message Section */}
-          <div className="bg-white p-6 rounded-xl shadow-md">
-            <h3 className="text-2xl font-bold text-secondary mb-6">
+          <div className="bg-white p-4 md:p-6 rounded-xl shadow-md">
+            <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">
               Chairperson & Chief Mentor's - IGI Message
             </h3>
-            <div className="flex flex-col md:flex-row gap-8 bg-gray-50 rounded-xl p-6">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-8 bg-gray-50 rounded-xl p-4 md:p-6">
               {/* Left Side - Image + Socials */}
               <div className="md:w-1/3">
                 <div className="w-full h-[380px] relative rounded-lg overflow-hidden">
@@ -424,7 +424,7 @@ export default function Overview() {
 
               {/* Right Side - Message Content */}
               <div className="md:w-2/3 text-gray-700 leading-relaxed">
-                <blockquote className="border-l-4 border-secondary pl-4 mb-6 italic text-gray-600">
+                <blockquote className="border-l-4 border-secondary pl-4 mb-4 md:mb-6 italic text-gray-600">
                   "Education is not just about learning facts; it is about
                   igniting curiosity, nurturing innovation, and shaping leaders
                   who can create a meaningful impact in the world."
@@ -432,14 +432,14 @@ export default function Overview() {
                   <span className="font-semibold">— Dr. Tarita Shankar</span>
                 </blockquote>
 
-                <p className="mb-4 font-semibold">Dear Students,</p>
+                <p className="mb-2 md:mb-4 font-semibold">Dear Students,</p>
 
-                <p className="mb-4">
+                <p className="mb-2 md:mb-4">
                   Welcome to Indira College of Engineering and Management
                   (ICEM), a place where innovation meets excellence.
                 </p>
 
-                <p className="mb-4">
+                <p className="mb-2 md:mb-4">
                   At ICEM, we are committed to providing a transformative
                   educational experience that goes beyond traditional learning.
                   Our mission is to nurture students into competent
@@ -447,7 +447,7 @@ export default function Overview() {
                   technological landscape.
                 </p>
 
-                <p className="mb-4">
+                <p className="mb-2 md:mb-4">
                   We believe in fostering an environment that encourages
                   creativity, critical thinking, and ethical practices. Our
                   state-of-the-art infrastructure, experienced faculty, and
@@ -456,7 +456,7 @@ export default function Overview() {
                   of tomorrow.
                 </p>
 
-                <p className="mb-4">
+                <p className="mb-2 md:mb-4">
                   As you embark on this journey, remember that success is not
                   just about acquiring knowledge but also about developing the
                   right attitude and values. At ICEM, we strive to instil a
@@ -473,12 +473,12 @@ export default function Overview() {
           </div>
 
           {/* IGI Section */}
-          <div className="bg-white p-6 rounded-xl shadow-md">
-            <h2 className="text-3xl font-semibold text-secondary mb-6">
+          <div className="bg-white p-4 md:p-6 rounded-xl shadow-md">
+            <h2 className="text-3xl font-semibold text-secondary mb-4 md:mb-6">
               About Indira Group of Institutes (IGI)
             </h2>
 
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
               Established in 1994 under the visionary guidance of{" "}
               <strong>Dr. Tarita Shankar</strong>, the{" "}
               <strong>Indira Group of Institutes (IGI)</strong> in Pune has
@@ -490,7 +490,7 @@ export default function Overview() {
               succeed in a rapidly evolving world.
             </p>
 
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
               With a strong legacy spanning over three decades, IGI has
               consistently pursued academic excellence while promoting holistic
               development. The group has expanded its footprint to include{" "}
@@ -503,7 +503,7 @@ export default function Overview() {
               excel at every stage of their academic and professional careers.
             </p>
 
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
               At the heart of IGI's philosophy is a commitment to{" "}
               <strong>student empowerment</strong>. The institutes focus not
               only on delivering high-quality education but also on developing
@@ -514,7 +514,7 @@ export default function Overview() {
               innovation, ethical values, and social responsibility.
             </p>
 
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
               IGI takes pride in its{" "}
               <strong>state-of-the-art infrastructure</strong>, experienced
               faculty, and a supportive learning environment that encourages
@@ -524,7 +524,7 @@ export default function Overview() {
               socially conscious professionals.
             </p>
 
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
               Over the years, IGI has built a strong network of alumni who have
               made significant contributions across industries, demonstrating
               the institute's commitment to nurturing talent and leadership. By
@@ -545,12 +545,12 @@ export default function Overview() {
           </div>
 
           {/* Institutes Section */}
-          <div className="bg-white p-6 rounded-xl shadow-md">
-            <h3 className="text-2xl font-bold text-secondary mb-8">
+          <div className="bg-white p-4 md:p-6 rounded-xl shadow-md">
+            <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-8">
               Institutes under Indira Group (IGI)
             </h3>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-8">
               {institutes.map((inst, index) => {
                 const imageSrc = inst.name.includes("Global Business School")
                   ? "/IGSB.jpg"
@@ -572,7 +572,7 @@ export default function Overview() {
                       />
                     </div>
 
-                    <div className="p-4 text-center">
+                    <div className="p-2 md:p-4 text-center">
                       <a
                         href={inst.url}
                         target="_blank"
@@ -589,16 +589,16 @@ export default function Overview() {
           </div>
 
           {/* Leader's Desk */}
-          <div className="bg-white p-6 rounded-xl shadow-md">
-            <h3 className="text-2xl font-bold text-secondary mb-8">
+          <div className="bg-white p-4 md:p-6 rounded-xl shadow-md">
+            <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-8">
               Leader's Desk
             </h3>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
               {leaders.map((leader, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center p-4 border border-gray-100"
+                  className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center p-2 md:p-4 border border-gray-100"
                 >
                   <div className="w-full h-68 relative bg-gray-100 rounded-t-xl overflow-hidden">
                     <Image
@@ -626,15 +626,15 @@ export default function Overview() {
           </div>
 
           {/* HOD Section */}
-          <div className="bg-white p-6 rounded-xl shadow-md mb-15">
-            <h3 className="text-2xl font-bold text-secondary mb-8">
+          <div className="bg-white p-4 md:p-6 rounded-xl shadow-md mb-8 md:mb-15">
+            <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-8">
               Head of Departments (HoDs)
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
               {hods.map((hod, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center p-4 border border-gray-100"
+                  className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center p-2 md:p-4 border border-gray-100"
                 >
                   <div className="w-full bg-gray-100 rounded-t-xl overflow-hidden">
                     <Image

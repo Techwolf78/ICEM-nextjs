@@ -377,21 +377,45 @@ export default function Computer() {
               for core software development positions.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-gray-800">
-              <p>Software Developer/Engineer </p>
-              <p>Systems Analyst </p>
-              <p>Web Application Architect </p>
-              <p>Database Administrator </p>
-              <p>IT Consultant </p>
-              <p>Cloud Support Engineer </p>
-              <p>Data Analyst </p>
-              <p>➜Project Lead (IT) </p>
-            </div>
+            <ul className="space-y-2 text-gray-800">
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Software Developer/Engineer
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Systems Analyst
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Web Application Architect
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Database Administrator
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                IT Consultant
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Cloud Support Engineer
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Data Analyst
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Project Lead (IT)
+              </li>
+            </ul>
           </div>
 
           {/* RIGHT IMAGE SECTION */}
-          <div className="flex-1">
-            <div className="w-full h-[300px] relative rounded-lg overflow-hidden">
+          <div className="flex-1 w-full md:w-auto">
+            <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] relative rounded-lg overflow-hidden">
               <Image
                 src="/Programs/8.webp"
                 alt="Career Opportunities in AI and Future Technologies"

@@ -373,24 +373,48 @@ export default function ENTC() {
               devices and communication systems.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-gray-800">
-              <p>Electronics Design Engineer </p>
-              <p>Network Planning Engineer </p>
-              <p>Embedded Systems Engineer </p>
-              <p>RF Engineer </p>
-              <p>Telecommunications Engineer </p>
-              <p>VLSI Design Engineer </p>
-              <p>Signal Processing Engineer r</p>
-              <p>IoT Solutions Architect </p>
-            </div>
+            <ul className="space-y-2 text-gray-800">
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Electronics Design Engineer
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Network Planning Engineer
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Embedded Systems Engineer
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                RF Engineer
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Telecommunications Engineer
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                VLSI Design Engineer
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                Signal Processing Engineer
+              </li>
+              <li className="flex items-center">
+                <span className="text-secondary mr-2">✓</span>
+                IoT Solutions Architect
+              </li>
+            </ul>
           </div>
 
           {/* RIGHT IMAGE SECTION */}
-          <div className="flex-1">
-            <div className="w-full h-[300px] relative rounded-lg overflow-hidden">
+          <div className="flex-1 w-full md:w-auto">
+            <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] relative rounded-lg overflow-hidden">
               <Image
                 src="/Programs/4.webp"
-                alt="Career Opportunities in AI and Future Technologies"
+                alt="Career Opportunities in Electronics & Telecommunication Engineering"
                 fill
                 className="object-cover"
                 placeholder="blur"

@@ -141,10 +141,10 @@ export default function FAQSectionAIDS() {
   const [active, setActive] = useState("Overview");
 
   return (
-    <section className="w-full bg-gradient-to-b from-gray-50 to-white text-black py-16">
+    <section className="w-full bg-gradient-to-b from-gray-50 to-white text-black py-8 sm:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* HEADER */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-6 md:mb-12">
           <h2 className="text-4xl font-bold text-secondary mb-4">
             Department of Artificial Intelligence & Data Science
           </h2>
@@ -154,10 +154,10 @@ export default function FAQSectionAIDS() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-8">
           {/* LEFT SIDEBAR */}
-          <nav className="lg:col-span-1 bg-white rounded-xl shadow-sm p-6 space-y-2 border border-gray-100 sticky top-24">
-            <h3 className="font-semibold text-gray-800 mb-4 text-lg">
+          <nav className="lg:col-span-1 bg-white rounded-xl shadow-sm p-4 md:p-6 space-y-1 md:space-y-2 border border-gray-100 sticky top-24">
+            <h3 className="font-semibold text-gray-800 mb-3 md:mb-4 text-lg">
               AIDS Overview
             </h3>
 
@@ -211,19 +211,19 @@ export default function FAQSectionAIDS() {
           {/* RIGHT CONTENT */}
           <div
             id="aids-right-content"
-            className="lg:col-span-3 bg-white rounded-xl shadow-sm p-8 border border-gray-100"
+            className="lg:col-span-3 bg-white rounded-xl shadow-sm p-4 md:p-8 border border-gray-100"
           >
-            <div className="mb-6 pb-4 border-b border-gray-200">
+            <div className="mb-4 md:mb-6 pb-4 border-b border-gray-200">
               <h3 className="text-2xl font-bold text-secondary">{active}</h3>
             </div>
 
             {/* ================= OVERVIEW ================= */}
             {active === "Overview" && (
-              <div className="space-y-4">
+              <div className="space-y-3 md:space-y-4">
                 {overviewData.map((item, i) => (
                   <div key={i} className="border border-gray-200 rounded-lg">
                     <details className="group" {...(i === 0 && { open: true })}>
-                      <summary className="flex justify-between items-center p-4 cursor-pointer bg-gray-50 hover:bg-gray-100 rounded-lg list-none">
+                      <summary className="flex justify-between items-center p-3 md:p-4 cursor-pointer bg-gray-50 hover:bg-gray-100 rounded-lg list-none">
                         <h4 className="font-semibold text-secondary text-lg">
                           {item.title}
                         </h4>
@@ -232,7 +232,7 @@ export default function FAQSectionAIDS() {
                         </span>
                       </summary>
 
-                      <div className="p-4 text-gray-700 whitespace-pre-line">
+                      <div className="p-3 md:p-4 text-gray-700 whitespace-pre-line">
                         {item.content}
                       </div>
                     </details>
@@ -247,19 +247,19 @@ export default function FAQSectionAIDS() {
                 <table className="w-full text-sm text-left">
                   <thead className="bg-gray-50">
                     <tr>
-                      <th className="p-3 border-b font-semibold">Program</th>
-                      <th className="p-3 border-b font-semibold">Intake</th>
-                      <th className="p-3 border-b font-semibold">Duration</th>
-                      <th className="p-3 border-b font-semibold">Type</th>
+                      <th className="p-2 md:p-3 border-b font-semibold">Program</th>
+                      <th className="p-2 md:p-3 border-b font-semibold">Intake</th>
+                      <th className="p-2 md:p-3 border-b font-semibold">Duration</th>
+                      <th className="p-2 md:p-3 border-b font-semibold">Type</th>
                     </tr>
                   </thead>
                   <tbody>
                     {sanctionIntake.map((row, i) => (
                       <tr key={i} className="border-b hover:bg-gray-50">
-                        <td className="p-3 font-medium">{row.program}</td>
-                        <td className="p-3">{row.intake}</td>
-                        <td className="p-3">{row.duration}</td>
-                        <td className="p-3">{row.type}</td>
+                        <td className="p-2 md:p-3 font-medium">{row.program}</td>
+                        <td className="p-2 md:p-3">{row.intake}</td>
+                        <td className="p-2 md:p-3">{row.duration}</td>
+                        <td className="p-2 md:p-3">{row.type}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -269,18 +269,18 @@ export default function FAQSectionAIDS() {
 
             {/* ================= ELIGIBILITY CRITERIA ================= */}
             {active === "Eligibility Criteria" && (
-              <div className="space-y-4">
+              <div className="space-y-3 md:space-y-4">
                 {eligibilityCriteria.map((item, i) => (
                   <div key={i} className="border border-gray-200 rounded-lg">
                     <details className="group" {...(i === 0 && { open: true })}>
-                      <summary className="flex justify-between items-center p-4 cursor-pointer bg-gray-50 hover:bg-gray-100 rounded-lg list-none font-semibold text-secondary">
+                      <summary className="flex justify-between items-center p-3 md:p-4 cursor-pointer bg-gray-50 hover:bg-gray-100 rounded-lg list-none font-semibold text-secondary">
                         {item.program}
                         <span className="transition-transform group-open:rotate-180">
                           ▼
                         </span>
                       </summary>
 
-                      <div className="p-4 text-gray-700 whitespace-pre-line">
+                      <div className="p-3 md:p-4 text-gray-700 whitespace-pre-line">
                         {item.text}
                       </div>
                     </details>
@@ -291,7 +291,7 @@ export default function FAQSectionAIDS() {
 
             {/* ================= ADMISSION PROCEDURE ================= */}
             {active === "Admission Procedure" && (
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between p-3 md:p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
                 <h5 className="font-semibold text-gray-800">Institute Level /ACAP Admission Round Procedure</h5>
                 <a
                   href="/pdfs/AdmissionProcedure.pdf"
@@ -305,9 +305,9 @@ export default function FAQSectionAIDS() {
 
             {/* ================= FEE STRUCTURE ================= */}
             {active === "Fee Structure" && (
-  <div className="space-y-4">
+  <div className="space-y-3 md:space-y-4">
     {/* Fee Structure 25–26 */}
-    <div className="flex flex-col sm:flex-row sm:items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+    <div className="flex flex-col sm:flex-row sm:items-center justify-between p-3 md:p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
       <h5 className="font-semibold text-gray-800">
         Fee Structure (2025–26)
       </h5>
@@ -321,7 +321,7 @@ export default function FAQSectionAIDS() {
     </div>
 
     {/* FRA Document */}
-    <div className="flex flex-col sm:flex-row sm:items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+    <div className="flex flex-col sm:flex-row sm:items-center justify-between p-3 md:p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
       <h5 className="font-semibold text-gray-800">
         FRA Document
       </h5>
@@ -339,13 +339,13 @@ export default function FAQSectionAIDS() {
 
             {/* ================= SYLLABUS & COURSE STRUCTURE ================= */}
             {active === "Syllabus & Course Structure" && (
-              <div className="space-y-8">
+              <div className="space-y-4 md:space-y-8">
                 {/* PDFs */}
-                <div className="space-y-4">
+                <div className="space-y-3 md:space-y-4">
                   {syllabusList.map((item) => (
                     <div
                       key={item.id}
-                      className="flex flex-col sm:flex-row sm:items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50"
+                      className="flex flex-col sm:flex-row sm:items-center justify-between p-3 md:p-4 border border-gray-200 rounded-lg hover:bg-gray-50"
                     >
                       <h5 className="font-semibold text-gray-800">
                         {item.label}
@@ -363,10 +363,10 @@ export default function FAQSectionAIDS() {
 
                 {/* Course Structure Images */}
                 <div>
-                  <h4 className="font-semibold text-secondary mb-3">
+                  <h4 className="font-semibold text-secondary mb-2 md:mb-3">
                     Course Structure
                   </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                     {courseStructureImages.map((img) => (
                       <div
                         key={img.id}

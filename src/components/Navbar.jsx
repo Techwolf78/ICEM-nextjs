@@ -398,7 +398,7 @@ const Navbar = () => {
       {/* ===== NAVBAR (Fixed) ===== */}
       <nav
         ref={navbarRef}
-        className="w-full h-[12vh]  flex bg-white shadow-sm font-sans fixed top-0 left-0 right-0 z-50"
+        className="w-full h-[6vh] md:h-[12vh]  flex bg-white shadow-sm font-sans fixed top-0 left-0 right-0 z-50"
       >
         {/* Left: Logo */}
         <div className="w-full md:w-[30%] h-full flex items-center justify-start md:pl-0 md:justify-center">
@@ -593,7 +593,7 @@ const Navbar = () => {
       </nav>
 
       {/* Add padding to main content to account for fixed navbar */}
-      <div className="pt-[12vh]"></div>
+      <div className="pt-[6vh] md:pt-[12vh]"></div>
 
       {/* Mobile Menu - Slides from bottom to top */}
       {isMobileMenuOpen && (

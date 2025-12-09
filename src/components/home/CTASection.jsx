@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { useRouter } from 'next/navigation';
 
 /**
  * Render a call-to-action section with route-specific headline and body plus two action buttons.
@@ -11,6 +12,7 @@ import React, { useEffect, useState } from "react";
  */
 export default function CTASection() {
   const [pathname, setPathname] = useState("");
+  const router = useRouter();
 
   // ✅ Detect route (works for both App & Pages router)
   useEffect(() => {
@@ -29,18 +31,22 @@ export default function CTASection() {
     document.body.removeChild(link);
   };
 
-  // ✅ Scroll to Apply Form
+  // ✅ Scroll to Apply Form or Navigate to Contact
   const handleScrollToForm = () => {
-    const formElement = document.getElementById("contact-form");
-    if (!formElement) return;
+    if (pathname === "/") {
+      router.push("/contact");
+    } else {
+      const formElement = document.getElementById("contact-form");
+      if (!formElement) return;
 
-    const navbar = document.querySelector("nav"); // adjust if your navbar has another selector
-    const offset = navbar ? navbar.offsetHeight + 10 : 120; // fallback if not detected
+      const navbar = document.querySelector("nav"); // adjust if your navbar has another selector
+      const offset = navbar ? navbar.offsetHeight + 10 : 120; // fallback if not detected
 
-    const y =
-      formElement.getBoundingClientRect().top + window.pageYOffset - offset;
+      const y =
+        formElement.getBoundingClientRect().top + window.pageYOffset - offset;
 
-    window.scrollTo({ top: y, behavior: "smooth" });
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
   };
 
   // ✅ Headline & Body text per route

@@ -34,7 +34,7 @@ export default function Civil() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/Programs/computer.jpg"
+            src="/banners/civileng.webp"
             alt="Civil Engineering Department"
             fill
             className="

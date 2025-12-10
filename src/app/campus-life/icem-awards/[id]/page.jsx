@@ -1,13 +1,9 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
-import { useRouter, useParams } from "next/navigation";
+import Link from "next/link";
 
-const AwardDetails = () => {
-  const router = useRouter();
-  const params = useParams();
-  const id = params.id; // Now from dynamic route: /awards/1
+const AwardDetails = ({ params }) => {
+  const id = params.id;
 
   // Images are now in /public folder
   const bannerImg = "/BannerOverviewPage.jpg";
@@ -58,12 +54,12 @@ const AwardDetails = () => {
       <div className="w-full h-screen flex flex-col justify-center items-center text-center bg-white text-gray-700">
         <h1 className="text-2xl font-bold mb-2">Award Not Found</h1>
         <p className="text-gray-600 mb-4">Requested ID: {id}</p>
-        <button
-          onClick={() => router.push("/awards")}
+        <Link
+          href="/campus-life/icem-awards"
           className="text-primary font-semibold hover:underline"
         >
           ← Back to All Awards
-        </button>
+        </Link>
       </div>
     );
   }
@@ -120,3 +116,11 @@ const AwardDetails = () => {
 };
 
 export default AwardDetails;
+
+export async function generateStaticParams() {
+  return [
+    { id: '1' },
+    { id: '2' },
+    { id: '3' },
+  ];
+}

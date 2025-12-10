@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  trailingSlash: true,
   images: {
     // 1. Fix: Migrate "domains" to "remotePatterns"
     remotePatterns: [
@@ -10,6 +12,7 @@ const nextConfig = {
     ],
     // 2. Fix: Explicitly allow quality="100" used in your banners
     qualities: [25, 50, 75, 100],
+    unoptimized: true, // Required for static export
   },
 };
 

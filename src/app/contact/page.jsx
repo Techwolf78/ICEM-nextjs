@@ -76,114 +76,51 @@ const ContactPage = () => {
       <div className="max-w-7xl mx-auto px-4 py-6 sm:py-12 sm:px-6 lg:px-8 space-y-8 sm:space-y-16">
         {/* 2. Top Grid: Main Contact Info + Map */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8 lg:gap-12">
-          {/* Left Column: Info Cards */}
-          <div className="space-y-4 sm:space-y-6">
-            {/* Programme Enquiry Card */}
+          {/* Left Column: Have Questions Card */}
+          <div className="space-y-4 sm:space-y-6 ">
             <div className="bg-white rounded-2xl p-4 sm:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-                <div className="p-2 sm:p-3 bg-secondary/10 rounded-full text-secondary">
-                  <Phone size={20} />
-                </div>
-                <h2 className="text-lg sm:text-xl font-bold text-gray-900">
-                  Admissions & Enquiry
-                </h2>
-              </div>
-
-              <div className="space-y-2 sm:space-y-4 text-xs sm:text-sm md:text-base">
-                <div className="flex items-start gap-2 sm:gap-4">
-                  <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 mt-1 shrink-0" />
-                  <div>
-                    <span className="block font-semibold text-gray-700">
-                      Office Hours
-                    </span>
-                    <span className="text-gray-600">
-                      Mon – Sat : 10:00 AM – 6:00 PM
-                    </span>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-2 sm:gap-4">
-                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 mt-1 shrink-0" />
-                  <div>
-                    <span className="block font-semibold text-gray-700">
-                      Call Us
-                    </span>
-                    <div className="text-gray-600 space-y-1">
-                      <div>Office: <a href="tel:02114661500" className="hover:text-secondary transition-colors">02114 – 661500 / 666</a></div>
-                      <div>Registrar: <a href="tel:02114661521" className="hover:text-secondary transition-colors">02114 – 661521</a></div>
-                      <div>Library: <a href="tel:021146615550" className="hover:text-secondary transition-colors">02114 - 6615550</a></div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-2 sm:gap-4">
-                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 mt-1 shrink-0" />
-                  <div>
-                    <span className="block font-semibold text-gray-700">
-                      Email
-                    </span>
-                    <div className="space-y-1">
-                      <a
-                        href="mailto:info@indiraicem.ac.in"
-                        className="text-secondary font-medium hover:underline block"
-                      >
-                        info@indiraicem.ac.in
+              <div className="text-center">
+                <h3 className="text-2xl sm:text-3xl font-bold mb-6 text-gray-900">Have Questions?</h3>
+                <p className="text-gray-600 mb-8 leading-relaxed text-base sm:text-lg">
+                  We're here to help with admissions, campus visits, placements, and more.
+                </p>
+                <div className="space-y-4">
+                  <div className="bg-secondary/10 rounded-lg p-4">
+                    <h4 className="font-semibold mb-2 text-secondary">📞 Quick Contact</h4>
+                    <p className="text-sm text-gray-600 mb-3">Office: 02114 – 661500</p>
+                    <div className="flex justify-center gap-4">
+                      <a href="tel:02114661500" className="bg-secondary text-white px-4 py-2 rounded-md font-medium hover:bg-secondary/90 transition-colors text-sm">
+                        Call Now
                       </a>
-                      <a
-                        href="mailto:admissions@indiraicem.ac.in"
-                        className="text-secondary font-medium hover:underline block"
-                      >
-                        admissions@indiraicem.ac.in
+                      <a href="mailto:info@indiraicem.ac.in" className="bg-secondary text-white px-4 py-2 rounded-md font-medium hover:bg-secondary/90 transition-colors text-sm">
+                        Email Us
                       </a>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            {/* Campus Address Card */}
-            <div className="bg-white rounded-2xl p-4 sm:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-                <div className="p-2 sm:p-3 bg-secondary/10 rounded-full text-secondary">
-                  <MapPin size={20} />
+                <div className="mt-8">
+                  <p className="font-semibold text-lg text-gray-900">
+                    Indira College of Engineering & Management
+                  </p>
+                  <p className="text-gray-600 mt-1">Parandwadi, Pune</p>
                 </div>
-                <h2 className="text-lg sm:text-xl font-bold text-gray-900">
-                  Campus Location
-                </h2>
               </div>
-              <p className="text-gray-600 leading-tight sm:leading-relaxed mb-2 sm:mb-4">
-                <strong>Indira College of Engineering and Management</strong>
-                <br />
-                Gat No. 276, Tal. Maval, S.No. 64, 65,
-                <br />
-                Indira College Road, Parandvadi,
-                <br />
-                Maharashtra 410506
-              </p>
-              <a
-                href="https://maps.app.goo.gl/xTcc7i8yTaG5bGzb9"
-                target="_blank"
-                className="inline-flex items-center text-secondary font-semibold hover:gap-2 transition-all"
-              >
-                Get Directions <span className="ml-1">→</span>
-              </a>
             </div>
           </div>
 
-          {/* Right Column: Google Map */}
-          <div className="h-full min-h-[400px] lg:min-h-full bg-gray-200 rounded-2xl overflow-hidden shadow-md border border-gray-200 relative">
-            <iframe
-              // ✅ FIXED: Points directly to ICEM Parandwadi
-              src="https://maps.google.com/maps?q=Indira%20College%20of%20Engineering%20and%20Management%20Parandwadi&t=&z=15&ie=UTF8&iwloc=&output=embed"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="absolute inset-0"
-              title="ICEM Campus Map"
-            ></iframe>
+          {/* Right Column: NPF Form */}
+          <div className="h-full min-h-[400px] lg:min-h-full relative">
+            <div>
+              <h2 className="block lg:hidden text-xl font-bold mb-4 text-center text-gray-900">Enquire Now</h2>
+              <iframe
+                src="https://widgets.nopaperforms.com/register?&w=9fa0f32fe4f405fa68dc3df39ef6a11b"
+                width="100%"
+                height="490"
+                frameBorder="0"
+                allowFullScreen
+                title="NPF Enquiry Form"
+              ></iframe>
+            </div>
           </div>
         </div>
 
@@ -276,49 +213,115 @@ const ContactPage = () => {
         {/* 5. Contact Form */}
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
           <div className="grid lg:grid-cols-5">
-            {/* Form Left Side (Visual) */}
-            <div className="hidden lg:block lg:col-span-2 bg-secondary p-8 text-white flex flex-col justify-center relative overflow-hidden min-h-[500px]">
-              <div className="relative z-10 text-center">
-                <h3 className="text-3xl font-bold mb-6">Have Questions?</h3>
-                <p className="text-indigo-100 mb-8 leading-relaxed text-lg">
-                  We're here to help with admissions, campus visits, placements, and more.
-                </p>
-                <div className="space-y-4">
-                  <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
-                    <h4 className="font-semibold mb-2">📞 Quick Contact</h4>
-                    <p className="text-sm text-indigo-200 mb-3">Office: 02114 – 661500</p>
-                    <div className="flex justify-center gap-4">
-                      <a href="tel:02114661500" className="bg-white text-secondary px-4 py-2 rounded-md font-medium hover:bg-gray-100 transition-colors text-sm">
-                        Call Now
-                      </a>
-                      <a href="mailto:info@indiraicem.ac.in" className="bg-white text-secondary px-4 py-2 rounded-md font-medium hover:bg-gray-100 transition-colors text-sm">
-                        Email Us
-                      </a>
+            {/* Form Left Side (Info Cards) */}
+            <div className="lg:col-span-2 bg-secondary p-8 text-white flex flex-col justify-center relative overflow-hidden min-h-[500px]">
+              <div className="space-y-4 sm:space-y-6">
+                {/* Programme Enquiry Card */}
+                <div className="bg-white rounded-2xl p-3 sm:p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                  <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                    <div className="p-2 sm:p-3 bg-secondary/10 rounded-full text-secondary">
+                      <Phone size={20} />
+                    </div>
+                    <h2 className="text-lg sm:text-xl font-bold text-gray-900">
+                      Admissions & Enquiry
+                    </h2>
+                  </div>
+
+                  <div className="space-y-2 sm:space-y-4 text-xs sm:text-sm md:text-base">
+                    <div className="flex items-start gap-2 sm:gap-4">
+                      <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 mt-1 shrink-0" />
+                      <div>
+                        <span className="block font-semibold text-gray-700">
+                          Office Hours
+                        </span>
+                        <span className="text-gray-600">
+                          Mon – Sat : 10:00 AM – 6:00 PM
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2 sm:gap-4">
+                      <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 mt-1 shrink-0" />
+                      <div>
+                        <span className="block font-semibold text-gray-700">
+                          Call Us
+                        </span>
+                        <div className="text-gray-600 space-y-1">
+                          <div>Office: <a href="tel:02114661500" className="hover:text-secondary transition-colors">02114 – 661500 / 666</a></div>
+                          <div>Registrar: <a href="tel:02114661521" className="hover:text-secondary transition-colors">02114 – 661521</a></div>
+                          <div>Library: <a href="tel:021146615550" className="hover:text-secondary transition-colors">02114 - 6615550</a></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2 sm:gap-4">
+                      <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 mt-1 shrink-0" />
+                      <div>
+                        <span className="block font-semibold text-gray-700">
+                          Email
+                        </span>
+                        <div className="space-y-1">
+                          <a
+                            href="mailto:info@indiraicem.ac.in"
+                            className="text-secondary font-medium hover:underline block"
+                          >
+                            info@indiraicem.ac.in
+                          </a>
+                          <a
+                            href="mailto:admissions@indiraicem.ac.in"
+                            className="text-secondary font-medium hover:underline block"
+                          >
+                            admissions@indiraicem.ac.in
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div className="mt-8">
-                  <p className="font-semibold text-lg">
-                    Indira College of Engineering & Management
+
+                {/* Campus Address Card */}
+                <div className="bg-white rounded-2xl p-3 sm:p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                  <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                    <div className="p-2 sm:p-3 bg-secondary/10 rounded-full text-secondary">
+                      <MapPin size={20} />
+                    </div>
+                    <h2 className="text-lg sm:text-xl font-bold text-gray-900">
+                      Campus Location
+                    </h2>
+                  </div>
+                  <p className="text-gray-600 leading-tight sm:leading-relaxed mb-2 sm:mb-4">
+                    <strong>Indira College of Engineering and Management</strong>
+                    <br />
+                    Gat No. 276, Tal. Maval, S.No. 64, 65,
+                    <br />
+                    Indira College Road, Parandvadi,
+                    <br />
+                    Maharashtra 410506
                   </p>
-                  <p className="text-indigo-200 mt-1">Parandwadi, Pune</p>
+                  <a
+                    href="https://maps.app.goo.gl/xTcc7i8yTaG5bGzb9"
+                    target="_blank"
+                    className="inline-flex items-center text-secondary font-semibold hover:gap-2 transition-all"
+                  >
+                    Get Directions <span className="ml-1">→</span>
+                  </a>
                 </div>
               </div>
-              {/* Decorative Elements */}
-              <div className="absolute top-8 right-8 w-20 h-20 bg-white/10 rounded-full blur-xl"></div>
-              <div className="absolute bottom-8 left-8 w-16 h-16 bg-white/10 rounded-full blur-xl"></div>
             </div>
 
-            {/* Form Right Side (Inputs) */}
+            {/* Form Right Side (Map) */}
             <div className="lg:col-span-3 p-4 sm:p-12">
-              <h2 className="lg:hidden text-xl sm:text-2xl font-bold mb-2 sm:mb-4 text-gray-900 text-center">Contact Us</h2>
+              <h2 className="lg:hidden text-xl sm:text-2xl font-bold mb-2 sm:mb-4 text-gray-900 text-center">Campus Map</h2>
               <iframe
-                src="https://widgets.nopaperforms.com/register?&w=9fa0f32fe4f405fa68dc3df39ef6a11b"
+                // ✅ FIXED: Points directly to ICEM Parandwadi
+                src="https://maps.google.com/maps?q=Indira%20College%20of%20Engineering%20and%20Management%20Parandwadi&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height={iframeHeight}
-                frameBorder="0"
-                allowFullScreen
-                title="NPF Enquiry Form"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="ICEM Campus Map"
               ></iframe>
             </div>
           </div>

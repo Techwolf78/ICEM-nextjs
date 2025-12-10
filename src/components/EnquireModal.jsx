@@ -4,6 +4,8 @@ import React from "react";
 export default function EnquireModal({ isOpen, onClose }) {
   if (!isOpen) return null;
 
+  const redirectUrl = '/thank-you';
+
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-md flex justify-center items-center z-[999] p-4">
       <div className="bg-white w-full max-w-5xl h-[90vh] p-6 rounded-2xl shadow-2xl relative 
@@ -27,7 +29,7 @@ export default function EnquireModal({ isOpen, onClose }) {
         {/* NPF Form */}
         <div className="flex-1 flex items-center justify-center">
           <iframe
-            src="https://widgets.nopaperforms.com/register?&w=9fa0f32fe4f405fa68dc3df39ef6a11b"
+            src={`https://widgets.nopaperforms.com/register?&r=${redirectUrl}&w=9fa0f32fe4f405fa68dc3df39ef6a11b`}
             width="100%"
             height="100%"
             frameBorder="0"

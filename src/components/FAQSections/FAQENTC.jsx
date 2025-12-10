@@ -8,22 +8,22 @@ const syllabusList = [
   {
     id: "fe",
     label: "FY B.Tech (2025 Pattern) Syllabus",
-    pdf: "/Programs/ENTC/FE.pdf",
+    pdf: "/programs/ENTC/FE.pdf",
   },
   {
     id: "sybtech",
     label: "SY B.Tech (2025 Pattern) Syllabus",
-    pdf: "/Programs/ENTC/SE.pdf",
+    pdf: "/programs/ENTC/SE.pdf",
   },
   {
     id: "te",
     label: "TE ENTC Engineering (2019 Pattern) Syllabus",
-    pdf: "/Programs/ENTC/TE.pdf",
+    pdf: "/programs/ENTC/TE.pdf",
   },
   {
     id: "be",
     label: "BE ENTC (2019 Pattern) Syllabus",
-    pdf: "/Programs/ENTC/BE.pdf",
+    pdf: "/programs/ENTC/BE.pdf",
   },
 ];
 
@@ -67,12 +67,12 @@ export default function FAQENTC() {
     {
       id: "fee-structure",
       label: "Fee Structure (2025–26)",
-      pdf: "/Programs/Computer/Feestructure2526.pdf",
+      pdf: "/programs/Computer/Feestructure2526.pdf",
     },
     {
       id: "fee-fra",
       label: "FRA Document",
-      pdf: "/Programs/Computer/NewFRA.pdf",
+      pdf: "/programs/Computer/NewFRA.pdf",
     },
   ],
 },

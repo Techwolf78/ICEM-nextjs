@@ -54,7 +54,7 @@ export default function Computer() {
   {/* Background Image */}
   <div className="absolute inset-0">
     <Image
-      src="/Programs/MtechComp.webp"
+      src="/programs/MtechComp.webp"
       alt="Artificial Intelligence Program"
       fill
       className="
@@ -280,7 +280,7 @@ export default function Computer() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/Programs/MTECHcomp/Mtechcomp1.webp"
+                  src="/programs/MTECHcomp/Mtechcomp1.webp"
                   alt="Interdisciplinary Expertise"
                   fill
                   className="object-cover"
@@ -305,7 +305,7 @@ export default function Computer() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/Programs/MTECHcomp/Mtechcomp2.webp"
+                  src="/programs/MTECHcomp/Mtechcomp2.webp"
                   alt="Cutting-Edge Laboratories"
                   fill
                   className="object-cover"
@@ -332,7 +332,7 @@ export default function Computer() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/Programs/MTECHcomp/Mtechcomp3.webp"
+                  src="/programs/MTECHcomp/Mtechcomp3.webp"
                   alt="Industry-Relevant Skills"
                   fill
                   className="object-cover"
@@ -412,7 +412,7 @@ export default function Computer() {
           <div className="flex-1 w-full md:w-auto">
             <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] relative rounded-lg overflow-hidden">
               <Image
-                src="/Programs/12.webp"
+                src="/programs/12.webp"
                 alt="Career Opportunities in AI and Future Technologies"
                 fill
                 className="object-cover"

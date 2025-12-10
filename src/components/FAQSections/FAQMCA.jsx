@@ -8,12 +8,12 @@ const syllabusList = [
   {
     id: "sybtech",
     label: "MCA-(2024-26) Syllabus",
-    pdf: "/Programs/MCA/SY2426.pdf",
+    pdf: "/programs/MCA/SY2426.pdf",
   },
   {
     id: "sybtech2025",
     label: "MCA-(2025-27) Syllabus",
-    pdf: "/Programs/MCA/SY2527.pdf",
+    pdf: "/programs/MCA/SY2527.pdf",
   },
 ];
 
@@ -105,12 +105,12 @@ export default function FAQENTC() {
     {
       id: "fee-structure",
       label: "Fee Structure (2025–26)",
-      pdf: "/Programs/Computer/Feestructure2526.pdf",
+      pdf: "/programs/Computer/Feestructure2526.pdf",
     },
     {
       id: "fee-fra",
       label: "FRA Document",
-      pdf: "/Programs/Computer/NewFRA.pdf",
+      pdf: "/programs/Computer/NewFRA.pdf",
     },
   ],
 },

@@ -90,7 +90,7 @@ const ExploreSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-white relative z-30 py-2 md:py-6  px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="w-full bg-white relative z-30 py-0 md:py-2  px-4 sm:px-6 lg:px-8 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
         {/* MAIN GRID */}

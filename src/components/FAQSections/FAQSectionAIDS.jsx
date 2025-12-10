@@ -73,17 +73,17 @@ const syllabusList = [
   {
     id: "sybtech",
     label: "SY B.Tech (2025 Pattern) Syllabus",
-    pdf: "/Programs/AIDS/SESyllabus.pdf",
+    pdf: "/programs/AIDS/SESyllabus.pdf",
   },
   {
     id: "te",
     label: "TE AIDS Engineering (2019 Pattern) Syllabus",
-    pdf: "/Programs/AIDS/TEsyllabus.pdf",
+    pdf: "/programs/AIDS/TEsyllabus.pdf",
   },
   {
     id: "be",
     label: "BE AIDS Engineering (2019 Pattern) Syllabus",
-    pdf: "/Programs/AIDS/BESyllabus.pdf",
+    pdf: "/programs/AIDS/BESyllabus.pdf",
   },
 ];
 
@@ -91,42 +91,42 @@ const courseStructureImages = [
   {
     id: "fe1",
     label: "FE SEM 1 Course Structure",
-    src: "/Programs/AIDS/FESem1.jpg",
+    src: "/programs/AIDS/FESem1.jpg",
   },
   {
     id: "fe2",
     label: "FE SEM 2 Course Structure",
-    src: "/Programs/AIDS/FESem2.jpg",
+    src: "/programs/AIDS/FESem2.jpg",
   },
   {
     id: "se1",
     label: "SE SEM 1 Course Structure",
-    src: "/Programs/AIDS/SYBtechSem1.jpg",
+    src: "/programs/AIDS/SYBtechSem1.jpg",
   },
   {
     id: "se2",
     label: "SE SEM 2 Course Structure",
-    src: "/Programs/AIDS/SYBtechSem2.jpg",
+    src: "/programs/AIDS/SYBtechSem2.jpg",
   },
   {
     id: "te1",
     label: "TE SEM 1 Course Structure",
-    src: "/Programs/AIDS/TESem1.jpg",
+    src: "/programs/AIDS/TESem1.jpg",
   },
   {
     id: "te2",
     label: "TE SEM 2 Course Structure",
-    src: "/Programs/AIDS/TESem2.jpg",
+    src: "/programs/AIDS/TESem2.jpg",
   },
   {
     id: "be1",
     label: "BE SEM 1 Course Structure",
-    src: "/Programs/AIDS/BESem1.jpg",
+    src: "/programs/AIDS/BESem1.jpg",
   },
   {
     id: "be2",
     label: "BE SEM 2 Course Structure",
-    src: "/Programs/AIDS/BESem2.jpg",
+    src: "/programs/AIDS/BESem2.jpg",
   },
 ];
 
@@ -312,7 +312,7 @@ export default function FAQSectionAIDS() {
         Fee Structure (2025–26)
       </h5>
       <a
-        href="/Programs/Computer/Feestructure2526.pdf"
+        href="/programs/Computer/Feestructure2526.pdf"
         target="_blank"
         className="px-4 py-2 bg-secondary text-white rounded-md mt-2 sm:mt-0"
       >
@@ -326,7 +326,7 @@ export default function FAQSectionAIDS() {
         FRA Document
       </h5>
       <a
-        href="/Programs/Computer/NewFRA.pdf"
+        href="/programs/Computer/NewFRA.pdf"
         target="_blank"
         className="px-4 py-2 bg-secondary text-white rounded-md mt-2 sm:mt-0"
       >

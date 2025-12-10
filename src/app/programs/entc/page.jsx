@@ -54,7 +54,7 @@ export default function ENTC() {
   {/* Background Image */}
   <div className="absolute inset-0">
     <Image
-      src="/Programs/Entc1.webp"
+      src="/programs/Entc1.webp"
       alt="Artificial Intelligence Program"
       fill
       className="
@@ -282,7 +282,7 @@ export default function ENTC() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/Programs/ENTC/Entc1.webp"
+                  src="/programs/ENTC/Entc1.webp"
                   alt="Core & Specialized Knowledge"
                   fill
                   className="object-cover"
@@ -308,7 +308,7 @@ export default function ENTC() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/Programs/ENTC/Entc2.webp"
+                  src="/programs/ENTC/Entc2.webp"
                   alt="Labs & Practical Exposure"
                   fill
                   className="object-cover"
@@ -333,7 +333,7 @@ export default function ENTC() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/Programs/ENTC/Entc3.webp"
+                  src="/programs/ENTC/Entc3.webp"
                   alt="Industry Alignment"
                   fill
                   className="object-cover"
@@ -413,7 +413,7 @@ export default function ENTC() {
           <div className="flex-1 w-full md:w-auto">
             <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] relative rounded-lg overflow-hidden">
               <Image
-                src="/Programs/4.webp"
+                src="/programs/4.webp"
                 alt="Career Opportunities in Electronics & Telecommunication Engineering"
                 fill
                 className="object-cover"

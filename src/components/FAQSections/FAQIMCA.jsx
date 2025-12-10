@@ -9,7 +9,7 @@ const syllabusList = [
   {
     id: "sybtech",
     label: "IMCA (2025 Course Pattern) Syllabus Structure IMCA 2025",
-    pdf: "/Programs/IBBAMCA/SY.pdf",
+    pdf: "/programs/IBBAMCA/SY.pdf",
   },  
 ];
 
@@ -55,12 +55,12 @@ export default function FAQENTC() {
     {
       id: "fee-structure",
       label: "Fee Structure (2025–26)",
-      pdf: "/Programs/Computer/Feestructure2526.pdf",
+      pdf: "/programs/Computer/Feestructure2526.pdf",
     },
     {
       id: "fee-fra",
       label: "FRA Document",
-      pdf: "/Programs/Computer/NewFRA.pdf",
+      pdf: "/programs/Computer/NewFRA.pdf",
     },
   ],
 },

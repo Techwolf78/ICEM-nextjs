@@ -9,39 +9,39 @@ import Link from "next/link";
 const courses = [
   {
     name: "Computer Engineering",
-    img: "/Programs/Computer/Comp.webp",
+    img: "/programs/Computer/Comp.webp",
     link: "/programs/computer-engineering",
   },
   {
     name: "Mechanical Engineering",
-    img: "/Programs/Mech/Mech.webp",
+    img: "/programs/Mech/Mech.webp",
     link: "/programs/mechanical-engineering",
   },
   {
     name: "Artificial Intelligence and Data Science",
-    img: "/Programs/AIDS/AIDS.webp",
+    img: "/programs/AIDS/AIDS.webp",
     link: "/programs/ai-ds",
   },
   {
     name: "Electronics and Telecommunication",
-    img: "/Programs/ENTC/ENTC.webp",
+    img: "/programs/ENTC/ENTC.webp",
     link: "/programs/entc",
   },
   {
     name: "Information Technology",
-    img: "/Programs/IT/IT.webp",
+    img: "/programs/IT/IT.webp",
     link: "/programs/it",
   },
-  { name: "MBA", img: "/Programs/MBA/SectionMBA.webp", link: "/programs/mba" },
-  { name: "MCA", img: "/Programs/MBA/IMBA.webp", link: "/programs/mca" },
+  { name: "MBA", img: "/programs/MBA/SectionMBA.webp", link: "/programs/mba" },
+  { name: "MCA", img: "/programs/MBA/IMBA.webp", link: "/programs/mca" },
   {
     name: "Integrated MBA (BBA + MBA)",
-    img: "/Programs/MBA/MBA.webp",
+    img: "/programs/MBA/MBA.webp",
     link: "/programs/imba",
   },
   {
     name: "Integrated MCA (BCA + MCA)",
-    img: "/Programs/MCA/MCA.webp",
+    img: "/programs/MCA/MCA.webp",
     link: "/programs/imca",
   },
 ];
@@ -50,10 +50,10 @@ const DiscoverPaths = () => {
   const [showAll, setShowAll] = useState(false);
 
   return (
-    <div className="bg-gray-50 py-4 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+    <div className="bg-gray-50 py-4 sm:py-16 lg:py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-left mb-10 sm:mb-14 lg:mb-16">
+        <div className="text-left mb-10 sm:mb-14 lg:mb-8">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-secondary mb-4 leading-tight">
             Discover Your Path to Success
           </h2>
@@ -64,7 +64,7 @@ const DiscoverPaths = () => {
         </div>
 
         {/* Grid Container */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 xl:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-4 xl:gap-6">
           {courses.map((course, index) => {
             const isHiddenOnMobile =
               index > 3 && !showAll ? "hidden sm:block" : "block";

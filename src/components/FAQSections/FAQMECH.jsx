@@ -8,17 +8,17 @@ const syllabusList = [
   {
     id: "sybtech",
     label: "BE Mechanical Engineering 2019 Course Syllabus",
-    pdf: "/Programs/Mech/BESY.pdf",
+    pdf: "/programs/Mech/BESY.pdf",
   },
   {
     id: "te",
     label: "TE Mechanical Engineering 2019 Course Syllabus",
-    pdf: "/Programs/Mech/TESY.pdf",
+    pdf: "/programs/Mech/TESY.pdf",
   },
   {
     id: "be",
     label: "SY B Tech Mechanical Engineering 2025 Course",
-    pdf: "/Programs/Mech/SESY.pdf",
+    pdf: "/programs/Mech/SESY.pdf",
   },
 ];
 
@@ -239,12 +239,12 @@ export default function FAQMECH() {
         {
           id: "fee-structure",
           label: "Fee Structure (2025–26)",
-          pdf: "/Programs/Computer/Feestructure2526.pdf",
+          pdf: "/programs/Computer/Feestructure2526.pdf",
         },
         {
           id: "fee-fra",
           label: "FRA Document",
-          pdf: "/Programs/Computer/NewFRA.pdf",
+          pdf: "/programs/Computer/NewFRA.pdf",
         },
       ],
     },

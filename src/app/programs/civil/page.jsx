@@ -137,7 +137,7 @@ export default function Civil() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/Programs/Computer/Comp1.jpg"
+                  src="/programs/Computer/Comp1.jpg"
                   alt="Interdisciplinary Expertise"
                   fill
                   className="object-cover"
@@ -206,7 +206,7 @@ export default function Civil() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/Programs/Computer/Comp2.jpg"
+                  src="/programs/Computer/Comp2.jpg"
                   alt="Cutting Edge Laboratories"
                   fill
                   className="object-cover"
@@ -236,7 +236,7 @@ export default function Civil() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/Programs/Computer/Comp3.jpg"
+                  src="/programs/Computer/Comp3.jpg"
                   alt="Industry Alignment"
                   fill
                   className="object-cover"
@@ -408,7 +408,7 @@ export default function Civil() {
             <div className="flex-1 w-full lg:h-[600px] relative hidden md:block">
               <div className="sticky top-8 w-full h-full rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/Programs/1.jpg"
+                  src="/programs/1.jpg"
                   alt="Civil Engineering Careers"
                   fill
                   className="object-cover object-center hover:scale-105 transition-transform duration-700"

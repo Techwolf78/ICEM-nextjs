@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Phone, Mail, MapPin, Clock, User } from "lucide-react"; // Using Lucide for cleaner, modern icons
 
+const redirectUrl = '/thank-you';
+
 // --- Admissions Contacts Data ---
 const admissionsContacts = [
   {
@@ -113,7 +115,7 @@ const ContactPage = () => {
             <div>
               <h2 className="block lg:hidden text-xl font-bold mb-4 text-center text-gray-900">Enquire Now</h2>
               <iframe
-                src="https://widgets.nopaperforms.com/register?&w=9fa0f32fe4f405fa68dc3df39ef6a11b"
+                src={`https://widgets.nopaperforms.com/register?&r=${redirectUrl}&w=9fa0f32fe4f405fa68dc3df39ef6a11b`}
                 width="100%"
                 height="490"
                 frameBorder="0"

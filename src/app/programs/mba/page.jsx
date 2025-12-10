@@ -31,31 +31,31 @@ export default function MBA() {
 
   // Array of MBA highlight images
   // const mbaHighlightImages = [
-  //   "/Programs/MBA/MBA1.jpg",
-  //   "/Programs/MBA/MBA2.jpg", 
-  //   "/Programs/MBA/MBA3.jpg"
+  //   "/programs/MBA/MBA1.jpg",
+  //   "/programs/MBA/MBA2.jpg", 
+  //   "/programs/MBA/MBA3.jpg"
   // ];
 
   const imageSets = {
     marketing: [
-      "/Programs/MBA/MBA1.webp",
-      "/Programs/MBA/MBA2.webp",
-      "/Programs/MBA/MBA3.webp",
+      "/programs/MBA/MBA1.webp",
+      "/programs/MBA/MBA2.webp",
+      "/programs/MBA/MBA3.webp",
     ],
     finance: [
-      "/Programs/MBA/MBAFM1.webp",
-      "/Programs/MBA/MBAFM2.webp",
-      "/Programs/MBA/MBAFM3.webp",
+      "/programs/MBA/MBAFM1.webp",
+      "/programs/MBA/MBAFM2.webp",
+      "/programs/MBA/MBAFM3.webp",
     ],
     hr: [
-      "/Programs/MBA/MBAHR1.webp",
-      "/Programs/MBA/MBAHR2.webp",
-      "/Programs/MBA/MBAHR3.webp",
+      "/programs/MBA/MBAHR1.webp",
+      "/programs/MBA/MBAHR2.webp",
+      "/programs/MBA/MBAHR3.webp",
     ],
     operations: [
-      "/Programs/MBA/MBAOS1.webp",
-      "/Programs/MBA/MBAOS2.webp",
-      "/Programs/MBA/MBAOS3.webp",
+      "/programs/MBA/MBAOS1.webp",
+      "/programs/MBA/MBAOS2.webp",
+      "/programs/MBA/MBAOS3.webp",
     ],
   };
 
@@ -231,7 +231,7 @@ export default function MBA() {
   {/* Background Image */}
   <div className="absolute inset-0">
     <Image
-      src="/Programs/MBA1.webp"
+      src="/programs/MBA1.webp"
       alt="Artificial Intelligence Program"
       fill
       className="
@@ -488,7 +488,7 @@ export default function MBA() {
           <div className="flex-1 w-full md:w-auto">
             <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] relative rounded-lg overflow-hidden">
               <Image
-                src="/Programs/9.webp"
+                src="/programs/9.webp"
                 alt="Career Opportunities"
                 fill
                 className="object-cover"

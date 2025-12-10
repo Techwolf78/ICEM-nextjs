@@ -8,7 +8,7 @@ const syllabusList = [
   {
     id: "sybtech",
     label: "B.Tech (2025 Pattern) Syllabus",
-    pdf: "/Programs/IT/SE.pdf",
+    pdf: "/programs/IT/SE.pdf",
   },
 ];
 
@@ -80,12 +80,12 @@ export default function FAQENTC() {
     {
       id: "fee-structure",
       label: "Fee Structure (2025–26)",
-      pdf: "/Programs/Computer/Feestructure2526.pdf",
+      pdf: "/programs/Computer/Feestructure2526.pdf",
     },
     {
       id: "fee-fra",
       label: "FRA Document",
-      pdf: "/Programs/Computer/NewFRA.pdf",
+      pdf: "/programs/Computer/NewFRA.pdf",
     },
   ],
 },

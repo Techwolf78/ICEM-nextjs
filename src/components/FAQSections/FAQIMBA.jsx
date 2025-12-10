@@ -9,7 +9,7 @@ const syllabusList = [
   {
     id: "sybtech",
     label: "First Year (I-MBA) Integrated- Masters of Business Management Syllabus",
-    pdf: "/Programs/IBCAMBA/IMBASY.pdf",
+    pdf: "/programs/IBCAMBA/IMBASY.pdf",
   },  
 ];
 
@@ -48,12 +48,12 @@ export default function FAQENTC() {
     {
       id: "fee-structure",
       label: "Fee Structure (2025–26)",
-      pdf: "/Programs/Computer/Feestructure2526.pdf",
+      pdf: "/programs/Computer/Feestructure2526.pdf",
     },
     {
       id: "fee-fra",
       label: "FRA Document",
-      pdf: "/Programs/Computer/NewFRA.pdf",
+      pdf: "/programs/Computer/NewFRA.pdf",
     },
   ],
 },

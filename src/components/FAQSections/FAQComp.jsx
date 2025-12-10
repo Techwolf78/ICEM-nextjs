@@ -8,17 +8,17 @@ const syllabusList = [
   {
     id: "sybtech",
     label: "SY B.Tech (2025 Pattern) Syllabus",
-    pdf: "/Programs/Computer/SE.pdf",
+    pdf: "/programs/Computer/SE.pdf",
   },
   {
     id: "te",
     label: "TE Computer Engineering (2019 Pattern) Syllabus",
-    pdf: "/Programs/Computer/TE.pdf",
+    pdf: "/programs/Computer/TE.pdf",
   },
   {
     id: "be",
     label: "BE Computer Engineering (2019 Pattern) Syllabus",
-    pdf: "/Programs/Computer/BE.pdf",
+    pdf: "/programs/Computer/BE.pdf",
   },
 ];
 
@@ -27,7 +27,7 @@ const academicCalendarList = [
   {
     id: "compac",
     label: "Computer Academic Calendar",
-    pdf: "/Programs/Computer/COMPAC.pdf",
+    pdf: "/programs/Computer/COMPAC.pdf",
   },
 ];
 
@@ -36,17 +36,17 @@ const timeTableList = [
   {
     id: "bett",
     label: "BE Time Table",
-    pdf: "/Programs/Computer/BETT.pdf",
+    pdf: "/programs/Computer/BETT.pdf",
   },
   {
     id: "tett",
     label: "TE Time Table",
-    pdf: "/Programs/Computer/TETT.pdf",
+    pdf: "/programs/Computer/TETT.pdf",
   },
   {
     id: "sett",
     label: "SE Time Table",
-    pdf: "/Programs/Computer/SETT.pdf",
+    pdf: "/programs/Computer/SETT.pdf",
   },
 ];
 
@@ -56,12 +56,12 @@ const academicPerformanceList = {
     {
       id: "sem1-2024-25",
       label: "Semester 1 - Academic Year 2024-25",
-      pdf: "/Programs/Computer/SE.pdf", // Using existing PDF
+      pdf: "/programs/Computer/SE.pdf", // Using existing PDF
     },
     {
       id: "sem2-2024-25",
       label: "Semester 2 - Academic Year 2024-25",
-      pdf: "/Programs/Computer/TE.pdf", // Using existing PDF
+      pdf: "/programs/Computer/TE.pdf", // Using existing PDF
     },
   ],
 };
@@ -71,7 +71,7 @@ const researchList = [
   {
     id: "research",
     label: "Research Publications & Projects",
-    pdf: "/Programs/Computer/CompResearch.pdf", // Using existing PDF
+    pdf: "/programs/Computer/CompResearch.pdf", // Using existing PDF
   },
 ];
 
@@ -80,7 +80,7 @@ const innovativePedagogyList = [
   {
     id: "pedagogy",
     label: "Innovative Pedagogy Methods",
-    pdf: "/Programs/Computer/InnovativePedagogy.pdf", // Using existing PDF
+    pdf: "/programs/Computer/InnovativePedagogy.pdf", // Using existing PDF
   },
 ];
 
@@ -237,12 +237,12 @@ export default function FAQSectionComputer() {
     {
       id: "fee-structure",
       label: "Fee Structure (2025–26)",
-      pdf: "/Programs/Computer/Feestructure2526.pdf",
+      pdf: "/programs/Computer/Feestructure2526.pdf",
     },
     {
       id: "fee-fra",
       label: "FRA Document",
-      pdf: "/Programs/Computer/NewFRA.pdf",
+      pdf: "/programs/Computer/NewFRA.pdf",
     },
   ],
 },
@@ -310,32 +310,32 @@ export default function FAQSectionComputer() {
     {
       id: "ap-1",
       label: "SE - A.Y. 2024-25 SEM I",
-      pdf: "/Programs/Computer/SEAcademicPerformance5.pdf",
+      pdf: "/programs/Computer/SEAcademicPerformance5.pdf",
     },
     {
       id: "ap-2",
       label: "TE - A.Y. 2024-25 SEM I",
-      pdf: "/Programs/Computer/TEAcademicPerformance4.pdf",
+      pdf: "/programs/Computer/TEAcademicPerformance4.pdf",
     },
     {
       id: "ap-3",
       label: "BE - A.Y. 2024-25 SEM I",
-      pdf: "/Programs/Computer/BEAcademicPerformance6.pdf",
+      pdf: "/programs/Computer/BEAcademicPerformance6.pdf",
     },
     {
       id: "ap-4",
       label: "SE - A.Y. 2024-25 SEM II",
-      pdf: "/Programs/Computer/SEAcademicPerformance2.pdf",
+      pdf: "/programs/Computer/SEAcademicPerformance2.pdf",
     },
     {
       id: "ap-5",
       label: "TE - A.Y. 2024-25 SEM II",
-      pdf: "/Programs/Computer/TEAcademicPerformance1.pdf",
+      pdf: "/programs/Computer/TEAcademicPerformance1.pdf",
     },
     {
       id: "ap-6",
       label: "BE - A.Y. 2024-25 SEM II",
-      pdf: "/Programs/Computer/BEAcademicPerformance3.pdf",
+      pdf: "/programs/Computer/BEAcademicPerformance3.pdf",
     },
   ],
 },

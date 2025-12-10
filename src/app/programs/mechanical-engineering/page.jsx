@@ -60,7 +60,7 @@ export default function Mech() {
 
   const labsGallery = [
     {
-      image: "/Programs/Mech/DSC02683.webp",
+      image: "/programs/Mech/DSC02683.webp",
       title: "Metrology and Quality Control",
       details: [
         "Auto Collimator With Angle Dekker",
@@ -72,7 +72,7 @@ export default function Mech() {
       ],
     },
     {
-      image: "/Programs/Mech/DSC02671.webp",
+      image: "/programs/Mech/DSC02671.webp",
       title: "Mechatronics",
       details: [
         "Micrologix 1000 PLC Trainer",
@@ -83,7 +83,7 @@ export default function Mech() {
       ],
     },
     {
-      image: "/Programs/Mech/DSC02680.webp",
+      image: "/programs/Mech/DSC02680.webp",
       title: "Refrigeration & Air Conditioning",
       details: [
         "Compression Refrigeration Test Rig",
@@ -94,7 +94,7 @@ export default function Mech() {
       ],
     },
     {
-      image: "/Programs/Mech/DSC02662.webp",
+      image: "/programs/Mech/DSC02662.webp",
       title: "Industrial Fluid Power",
       details: [
         "Advanced Pneumatic Trainer",
@@ -105,7 +105,7 @@ export default function Mech() {
       ],
     },
     {
-      image: "/Programs/Mech/DSC02678.webp",
+      image: "/programs/Mech/DSC02678.webp",
       title: "Heat and Mass Transfer",
       details: [
         "Thermal Conductivity of Metal Rod Apparatus",
@@ -119,7 +119,7 @@ export default function Mech() {
       ],
     },
     {
-      image: "/Programs/Mech/DSC02690.webp",
+      image: "/programs/Mech/DSC02690.webp",
       title: "Theory of Machines",
       details: [
         "Synchromesh Gear Box",
@@ -131,7 +131,7 @@ export default function Mech() {
       ],
     },
     {
-      image: "/Programs/Mech/DSC02689.webp",
+      image: "/programs/Mech/DSC02689.webp",
       title: "Dynamics of Machinery",
       details: [
         "Static & Dynamic Balancing Apparatus",
@@ -150,7 +150,7 @@ export default function Mech() {
   {/* Background Image */}
   <div className="absolute inset-0">
     <Image
-      src="/Programs/AIDS2.jpg"
+      src="/programs/AIDS2.jpg"
       alt="Artificial Intelligence Program"
       fill
       className="
@@ -376,7 +376,7 @@ export default function Mech() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/Programs/Mech/mech1.webp"
+                  src="/programs/Mech/mech1.webp"
                   alt="Core & Specialized Knowledge"
                   fill
                   className="object-cover"
@@ -401,7 +401,7 @@ export default function Mech() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/Programs/Mech/mech2.webp"
+                  src="/programs/Mech/mech2.webp"
                   alt="Labs & Practical Exposure"
                   fill
                   className="object-cover"
@@ -426,7 +426,7 @@ export default function Mech() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/Programs/Mech/mech3.webp"
+                  src="/programs/Mech/mech3.webp"
                   alt="Industry Alignment"
                   fill
                   className="object-cover"
@@ -633,7 +633,7 @@ export default function Mech() {
           <div className="flex-1 w-full md:w-auto">
             <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] relative rounded-lg overflow-hidden">
               <Image
-                src="/Programs/2.webp"
+                src="/programs/2.webp"
                 alt="Career Opportunities in AI and Future Technologies"
                 fill
                 className="object-cover"

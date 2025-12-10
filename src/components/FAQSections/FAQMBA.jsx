@@ -8,7 +8,7 @@ const syllabusList = [
   {
     id: "sybtech",
     label: "MBA First Year and Second Year Course Structure 2024 Pattern",
-    pdf: "/Programs/MBA/SY.pdf",
+    pdf: "/programs/MBA/SY.pdf",
   },
 ];
 
@@ -49,12 +49,12 @@ export default function FAQENTC() {
     {
       id: "fee-structure",
       label: "Fee Structure (2025–26)",
-      pdf: "/Programs/Computer/Feestructure2526.pdf",
+      pdf: "/programs/Computer/Feestructure2526.pdf",
     },
     {
       id: "fee-fra",
       label: "FRA Document",
-      pdf: "/Programs/Computer/NewFRA.pdf",
+      pdf: "/programs/Computer/NewFRA.pdf",
     },
   ],
 },

@@ -4,27 +4,53 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Phone, Mail, MapPin, Clock, User } from "lucide-react"; // Using Lucide for cleaner, modern icons
 
-// --- Data ---
-const adminContacts = [
+// --- Admissions Contacts Data ---
+const admissionsContacts = [
   {
-    role: "Registrar",
-    name: "Mr. Ganesh Pokale",
-    email: "registrar@indiraicem.ac.in",
+    department: "First Year Engineering",
+    name: "Prof. Ashwin Dharme",
+    phones: ["7720010705", "7720010706"],
+    email: "ashwin.dharme@indiraicem.ac.in",
   },
   {
-    role: "Deputy CAFO - Finance & Accounts",
-    name: "Preeti Chandak",
-    email: "finance@indiraicem.ac.in",
+    department: "Direct Second Year Engineering",
+    name: "Dr. Manjusha Tatiya",
+    phones: ["8767684837"],
+    email: "hodai_ds@indiraicem.ac.in",
   },
   {
-    role: "Director of Admissions",
-    name: "Dr. Prakash Mainkar",
-    email: "director.admissions@indiraicem.ac.in",
+    department: "MCA",
+    name: "Dr. Darshana Desai",
+    phones: ["8637701203"],
+    landline: "02114-661560",
+    email: "hodmca@indiraicem.ac.in",
   },
   {
-    role: "Controller of Examination",
-    name: "Dr. Rahul Joshi",
-    email: "coe@indiraicem.ac.in",
+    department: "MBA",
+    name: "Dr. Archana Salve",
+    phones: ["8637701202"],
+    landline: "02114-661543",
+    email: "hodmba@indiraicem.ac.in",
+  },
+  {
+    department: "MTech",
+    name: "Prof. Hemant Darokar",
+    phones: ["9822515285"],
+    email: "hemant.darokar@indiraicem.ac.in",
+  },
+  {
+    department: "Integrated MCA (BCA+MCA)",
+    name: "Dr. Awantika Bijwe",
+    phones: ["9623441574"],
+    landline: "02114-661583",
+    email: "hodbca@indiraicem.ac.in",
+  },
+  {
+    department: "Integrated MBA (BBA+MBA)",
+    name: "Dr. Deepa Jamnik",
+    phones: ["7020512131"],
+    landline: "02114-661593",
+    email: "hodbba@indiraicem.ac.in",
   },
 ];
 
@@ -34,7 +60,7 @@ const ContactPage = () => {
   useEffect(() => {
     const updateHeight = () => {
       if (window.innerWidth < 768) {
-        setIframeHeight("420");
+        setIframeHeight("460");
       } else {
         setIframeHeight("600");
       }
@@ -82,12 +108,11 @@ const ContactPage = () => {
                     <span className="block font-semibold text-gray-700">
                       Call Us
                     </span>
-                    <a
-                      href="tel:+912066737800"
-                      className="text-gray-600 hover:text-secondary transition-colors block"
-                    >
-                      +91 20-6673 7800 / 7801
-                    </a>
+                    <div className="text-gray-600 space-y-1">
+                      <div>Office: <a href="tel:02114661500" className="hover:text-secondary transition-colors">02114 – 661500 / 666</a></div>
+                      <div>Registrar: <a href="tel:02114661521" className="hover:text-secondary transition-colors">02114 – 661521</a></div>
+                      <div>Library: <a href="tel:021146615550" className="hover:text-secondary transition-colors">02114 - 6615550</a></div>
+                    </div>
                   </div>
                 </div>
 
@@ -95,14 +120,22 @@ const ContactPage = () => {
                   <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 mt-1 shrink-0" />
                   <div>
                     <span className="block font-semibold text-gray-700">
-                      Email Admissions
+                      Email
                     </span>
-                    <a
-                      href="mailto:admissions@indiraicem.ac.in"
-                      className="text-secondary font-medium hover:underline"
-                    >
-                      admissions@indiraicem.ac.in
-                    </a>
+                    <div className="space-y-1">
+                      <a
+                        href="mailto:info@indiraicem.ac.in"
+                        className="text-secondary font-medium hover:underline block"
+                      >
+                        info@indiraicem.ac.in
+                      </a>
+                      <a
+                        href="mailto:admissions@indiraicem.ac.in"
+                        className="text-secondary font-medium hover:underline block"
+                      >
+                        admissions@indiraicem.ac.in
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -154,35 +187,89 @@ const ContactPage = () => {
           </div>
         </div>
 
-        {/* 3. Administrative Offices Grid */}
+        {/* 3. For Admissions */}
         <div>
           <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-8 border-l-4 border-secondary pl-2 sm:pl-4">
-            Administrative Offices
+            For Admissions
           </h2>
-          <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {adminContacts.map((contact, idx) => (
+
+          {/* Mobile: Cards */}
+          <div className="block lg:hidden space-y-4">
+            {admissionsContacts.map((contact, idx) => (
               <div
                 key={idx}
-                className="group bg-white rounded-xl p-4 sm:p-6 border border-gray-100 hover:border-secondary/30 hover:shadow-lg transition-all duration-300"
+                className="bg-white rounded-xl p-4 border border-gray-100 hover:border-secondary/30 hover:shadow-lg transition-all duration-300"
               >
-                <div className="mb-4">
-                  <User className="w-6 h-6 sm:w-8 sm:h-8 text-gray-300 group-hover:text-secondary transition-colors" />
-                </div>
-                <h3 className="text-xs sm:text-sm font-bold text-secondary uppercase tracking-wider mb-1 sm:mb-2">
-                  {contact.role}
+                <h3 className="font-bold text-secondary text-sm uppercase tracking-wider mb-2">
+                  {contact.department}
                 </h3>
-                <p className="font-semibold text-gray-900 text-base sm:text-lg mb-2 sm:mb-3">
+                <p className="font-semibold text-gray-900 text-base mb-2">
                   {contact.name}
                 </p>
-                <Link
-                  href={`mailto:${contact.email}`}
-                  className="inline-flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-gray-500 group-hover:text-secondary transition-colors"
-                >
-                  <Mail size={12} />
-                  {contact.email}
-                </Link>
+                <div className="space-y-1 text-sm">
+                  <div>
+                    <span className="font-medium text-gray-700">Contact: </span>
+                    {contact.phones.map((phone, i) => (
+                      <span key={i}>
+                        <a href={`tel:${phone}`} className="text-secondary hover:underline">
+                          {phone}
+                        </a>
+                        {i < contact.phones.length - 1 && " / "}
+                      </span>
+                    ))}
+                    {contact.landline && (
+                      <span> / {contact.landline}</span>
+                    )}
+                  </div>
+                  <div>
+                    <span className="font-medium text-gray-700">Email: </span>
+                    <a href={`mailto:${contact.email}`} className="text-secondary hover:underline">
+                      {contact.email}
+                    </a>
+                  </div>
+                </div>
               </div>
             ))}
+          </div>
+
+          {/* Desktop: Table */}
+          <div className="hidden lg:block bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th className="px-4 py-3 text-left font-semibold text-gray-900 border-b">Department</th>
+                    <th className="px-4 py-3 text-left font-semibold text-gray-900 border-b">Name of Staff</th>
+                    <th className="px-4 py-3 text-left font-semibold text-gray-900 border-b">Contact Number</th>
+                    <th className="px-4 py-3 text-left font-semibold text-gray-900 border-b">Email Id</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200">
+                  {admissionsContacts.map((contact, idx) => (
+                    <tr key={idx} className="hover:bg-gray-50">
+                      <td className="px-4 py-3 text-gray-900">{contact.department}</td>
+                      <td className="px-4 py-3 text-gray-900">{contact.name}</td>
+                      <td className="px-4 py-3 text-gray-900">
+                        {contact.phones.map((phone, i) => (
+                          <span key={i}>
+                            <a href={`tel:${phone}`} className="text-secondary hover:underline">
+                              {phone}
+                            </a>
+                            {i < contact.phones.length - 1 && " / "}
+                          </span>
+                        ))}
+                        {contact.landline && <span> / {contact.landline}</span>}
+                      </td>
+                      <td className="px-4 py-3 text-gray-900">
+                        <a href={`mailto:${contact.email}`} className="text-secondary hover:underline">
+                          {contact.email}
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
@@ -190,23 +277,36 @@ const ContactPage = () => {
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
           <div className="grid lg:grid-cols-5">
             {/* Form Left Side (Visual) */}
-            <div className="hidden lg:block lg:col-span-2 bg-secondary p-6 sm:p-12 text-white flex flex-col justify-between relative overflow-hidden">
-              <div className="relative z-10">
-                <h3 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4">Have Questions?</h3>
-                <p className="text-indigo-100 mb-4 sm:mb-8 leading-relaxed">
-                  Whether you're interested in our engineering programs,
-                  management courses, or just want to visit the campus, we'd
-                  love to hear from you.
+            <div className="hidden lg:block lg:col-span-2 bg-secondary p-8 text-white flex flex-col justify-center relative overflow-hidden min-h-[500px]">
+              <div className="relative z-10 text-center">
+                <h3 className="text-3xl font-bold mb-6">Have Questions?</h3>
+                <p className="text-indigo-100 mb-8 leading-relaxed text-lg">
+                  We're here to help with admissions, campus visits, placements, and more.
                 </p>
+                <div className="space-y-4">
+                  <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
+                    <h4 className="font-semibold mb-2">📞 Quick Contact</h4>
+                    <p className="text-sm text-indigo-200 mb-3">Office: 02114 – 661500</p>
+                    <div className="flex justify-center gap-4">
+                      <a href="tel:02114661500" className="bg-white text-secondary px-4 py-2 rounded-md font-medium hover:bg-gray-100 transition-colors text-sm">
+                        Call Now
+                      </a>
+                      <a href="mailto:info@indiraicem.ac.in" className="bg-white text-secondary px-4 py-2 rounded-md font-medium hover:bg-gray-100 transition-colors text-sm">
+                        Email Us
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-8">
+                  <p className="font-semibold text-lg">
+                    Indira College of Engineering & Management
+                  </p>
+                  <p className="text-indigo-200 mt-1">Parandwadi, Pune</p>
+                </div>
               </div>
-              <div className="relative z-10">
-                <p className="font-semibold">
-                  Indira College of Engineering & Management
-                </p>
-                <p className="text-xs sm:text-sm text-indigo-200 mt-0.5 sm:mt-1">Parandwadi, Pune</p>
-              </div>
-              {/* Decorative Circle */}
-              <div className="absolute -bottom-24 -right-24 w-32 h-32 sm:w-64 sm:h-64 bg-white/10 rounded-full blur-3xl"></div>
+              {/* Decorative Elements */}
+              <div className="absolute top-8 right-8 w-20 h-20 bg-white/10 rounded-full blur-xl"></div>
+              <div className="absolute bottom-8 left-8 w-16 h-16 bg-white/10 rounded-full blur-xl"></div>
             </div>
 
             {/* Form Right Side (Inputs) */}

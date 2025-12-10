@@ -30,7 +30,7 @@ function ContactUs() {
               </p>
 
               <p>
-                <strong>Phone:</strong> +91 20-6673 7800 / +91 20-6673 7801
+                <strong>Phone:</strong> 02114 – 661500 / 666
               </p>
 
               <p>
@@ -121,7 +121,7 @@ function ContactUs() {
               64, 65, Indira College Road, Parandvadi, Maharashtra 410506
             </p>
             <p>
-              <strong>Phone:</strong> +91 20-6673 7800 / +91 20-6673 7801
+              <strong>Phone:</strong> 02114 – 661500 / 666
             </p>
             <p>
               <strong>Email:</strong> admissions@indiraicem.ac.in

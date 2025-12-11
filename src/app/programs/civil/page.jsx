@@ -6,14 +6,18 @@ import Image from "next/image";
 import RecruitersSection from "@/components/home/RecruiterSection";
 import CTASection from "@/components/home/CTASection";
 import ApplyForm from "@/components/home/ApplyForm";
+import EnquireNowProgramModal from "@/components/EnquireNowProgramModal";
 import { Building2, Landmark, Rocket, GraduationCap } from "lucide-react";
 
 export default function Civil() {
   // const [activeFAQ, setActiveFAQ] = useState(null);
   // const [isModalOpen, setIsModalOpen] = useState(false);
   const [expanded, setExpanded] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const faqRef = useRef(null);
+
+  const toggleModal = () => setIsModalOpen(!isModalOpen);
 
   const handleBrochureDownload = () => {
     const link = document.createElement("a");
@@ -22,6 +26,10 @@ export default function Civil() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+  };
+
+  const scrollToFAQ = () => {
+    faqRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
@@ -104,6 +112,21 @@ export default function Civil() {
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 w-full sm:w-auto">
               <button
+                onClick={toggleModal}
+                className="
+                  bg-secondary text-white px-6 sm:px-8 py-3 rounded-lg font-semibold
+                  text-sm sm:text-base md:text-lg
+                  w-full sm:w-auto
+                  transition-all duration-300
+                  hover:bg-gray-200 hover:text-secondary
+                  border-2 border-transparent hover:border-secondary
+                  active:scale-95
+                "
+              >
+                Enquire Now
+              </button>
+
+              <button
                 onClick={handleBrochureDownload}
                 className="bg-secondary text-white px-6 sm:px-8 py-3 rounded-lg font-semibold text-sm sm:text-md w-full sm:w-auto"
               >
@@ -115,6 +138,41 @@ export default function Civil() {
 
         {/* Bottom Fade Mask */}
         <div className="absolute bottom-0 w-full h-20 bg-gradient-to-t from-black/50 to-transparent" />
+      </div>
+
+      {/* ===== PROGRAMME STRUCTURE SECTION ===== */}
+      <div className="w-full bg-white text-black py-16">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 px-4 sm:px-6 items-stretch">
+          {/* LEFT TEXT SECTION */}
+          <div className="bg-white p-6 rounded-lg shadow-sm flex flex-col justify-between border border-gray-100">
+            <div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-4 leading-snug">
+                BTech in Civil Engineering
+              </h2>
+
+              <p className="text-gray-700 mb-6 leading-relaxed text-sm sm:text-base">
+                This programme offers a comprehensive and robust foundation in the principles of civil engineering, from structural mechanics and material science to infrastructure design and project management. It integrates strong academic theory with hands-on field exposure, ensuring graduates are industry-prepared and equipped to lead sustainable and resilient infrastructure projects.
+              </p>
+
+              <h3 className="font-semibold text-lg sm:text-xl text-secondary mb-3">
+                Programme Structure
+              </h3>
+
+              <ul className="list-disc list-inside space-y-2 text-gray-800 text-sm sm:text-base">
+                <li>Engineering Mechanics and Strength of Materials</li>
+                <li>Structural Analysis and Design</li>
+                <li>Geotechnical Engineering and Foundation Design</li>
+                <li>Construction Technology and Project Management</li>
+                <li>Transportation Engineering, Hydrology, and Environmental Systems</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* RIGHT FORM SECTION */}
+          <div id="programme-structure" className="flex flex-col justify-between">
+            <ApplyForm />
+          </div>
+        </div>
       </div>
 
       {/* -------------------------------------- PROGRAM HIGHLIGHTS -------------------------------------- */}
@@ -430,7 +488,19 @@ export default function Civil() {
       </div>
 
       {/* -------------------------------------- OTHER SECTIONS -------------------------------------- */}
+      {/* ===== NEXT STEPS SECTION ===== */}
+      <div className="bg-white py-16">
+        <CTASection />
+      </div>
       <RecruitersSection />
+      {/* ===== DEPARTMENT INFO & STAFF SECTION ===== */}
+      <div className="w-full bg-white ">
+        {/* ===== FREQUENTLY ASKED QUESTIONS SECTION ===== */}
+        <div ref={faqRef}>
+          <FAQSection />
+        </div>
+      </div>
+      <EnquireNowProgramModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { HiMenuAlt2, HiX } from "react-icons/hi";
+import NavEnquireModal from "./NavEnquireModal";
 import { TbExternalLink } from "react-icons/tb";
 import { Mail } from "lucide-react";
 import {
@@ -39,7 +40,6 @@ const Navbar = () => {
   const [showDialog, setShowDialog] = useState(false);
   const [notify, setNotify] = useState(false);
   const tourRef = useRef(null);
-  const enquireFormRef = useRef(null);
 
   useEffect(() => {
     if (notify) {
@@ -47,44 +47,6 @@ const Navbar = () => {
       return () => clearTimeout(timer);
     }
   }, [notify]);
-
-  useEffect(() => {
-    if (isEnquireDrawerOpen) {
-      const script = document.createElement("script");
-      script.type = "text/javascript";
-      script.async = true;
-      script.src = "https://widgets.nopaperforms.com/emwgts.js";
-      document.body.appendChild(script);
-
-      const setFormHeight = () => {
-        if (enquireFormRef.current) {
-          const navbarHeight = window.innerHeight * 0.12;
-          const headerHeight = 64;
-          const padding = 48;
-          const availableHeight = window.innerHeight - navbarHeight - headerHeight - padding;
-          const height = Math.max(availableHeight, 300);
-          enquireFormRef.current.setAttribute('data-height', `${height}px`);
-        }
-      };
-
-      setFormHeight();
-
-      window.addEventListener('resize', setFormHeight);
-
-      // Disable global scrolling
-      document.body.style.overflow = 'hidden';
-
-      return () => {
-        if (document.body.contains(script)) document.body.removeChild(script);
-        window.removeEventListener('resize', setFormHeight);
-        // Re-enable global scrolling
-        document.body.style.overflow = '';
-      };
-    } else {
-      // Re-enable global scrolling when closed
-      document.body.style.overflow = '';
-    }
-  }, [isEnquireDrawerOpen]);
 
   // ✅ Refs to manage hover timers and outside clicks (no flicker)
   const dropdownTimeoutRef = useRef(null);
@@ -226,6 +188,10 @@ const Navbar = () => {
             {
               label: "M-Tech in Computer Science",
               link: "/programs/mtech-comp",
+            },
+            {
+              label: "M-Tech in Mechanical Engineering",
+              link: "/programs/mtech-mech",
             },
           ],
         },
@@ -737,33 +703,7 @@ const Navbar = () => {
         />
       )}
 
-      {/* ===== Enquire Drawer ===== */}
-      <div
-        className={`fixed top-0 right-0 h-full w-full md:w-[28rem] bg-white shadow-2xl transform transition-all duration-500 ease-in-out z-70 ${
-          isEnquireDrawerOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <div className="bg-secondary text-white p-4 flex justify-between items-center">
-          <h3 className="text-lg font-bold">Enquire Now</h3>
-          <button
-            onClick={toggleEnquireDrawer}
-            className="hover:scale-110 transition-transform duration-300 text-white hover:text-gray-200"
-          >
-            <HiX size={24} />
-          </button>
-        </div>
-
-        <div className="p-6 text-gray-800 h-full overflow-y-auto">
-          <div ref={enquireFormRef} className="npf_wgts w-full" data-height="1000px" data-w="9fa0f32fe4f405fa68dc3df39ef6a11b"></div>
-        </div>
-      </div>
-
-      {isEnquireDrawerOpen && (
-        <div
-          className="fixed inset-0 bg-transparent backdrop-blur-md bg-opacity-70 z-60 animate-in fade-in-0 duration-300"
-          onClick={toggleEnquireDrawer}
-        />
-      )}
+      <NavEnquireModal isOpen={isEnquireDrawerOpen} onClose={toggleEnquireDrawer} />
 
 
     </>

@@ -6,6 +6,7 @@ import RecruiterSection from "../../../components/home/RecruiterSection";
 import Image from "next/image";
 import CTASection from "@/components/home/CTASection";
 import ApplyForm from "@/components/home/ApplyForm";
+import EnquireNowProgramModal from "@/components/EnquireNowProgramModal";
 
 const CompBrochure = "/BEComp.pdf";
 
@@ -346,7 +347,7 @@ export default function Mech() {
           </div>
 
           {/* RIGHT FORM SECTION */}
-          <div className="flex flex-col justify-between">
+          <div id="programme-structure" className="flex flex-col justify-between">
             <ApplyForm />
           </div>
         </div>
@@ -659,19 +660,7 @@ export default function Mech() {
 </div>
 
 
-      {isModalOpen && (
-        <div
-          className="fixed inset-0 bg-black/30 backdrop-blur-sm flex justify-center items-center z-[60]"
-          onClick={() => setIsModalOpen(false)} // Close when clicking outside
-        >
-          <div
-            className="max-w-7xl"
-            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the form
-          >
-            <ApplyForm />
-          </div>
-        </div>
-      )}
+      <EnquireNowProgramModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 }

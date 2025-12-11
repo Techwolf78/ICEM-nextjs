@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useMemo } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 // ✅ Define text content for each route
@@ -58,12 +58,12 @@ const RecruitersSection = () => {
   const { headline, body } = pageContent[pathname] || pageContent["/"];
 
   // ✅ Logos (unchanged)
-  const allLogos = Array.from(
+  const allLogos = useMemo(() => Array.from(
     { length: 44 },
     (_, i) => `/logos/logo${i + 1}.webp`
-  ).filter((_, index) => ![35, 37].includes(index + 1));
-  const mainLogos = allLogos.filter((_, index) => ![17, 24].includes(index));
-  const reorderedLogos = [...mainLogos, allLogos[17], allLogos[24]];
+  ).filter((_, index) => ![35, 37].includes(index + 1)), []);
+  const mainLogos = useMemo(() => allLogos.filter((_, index) => ![17, 24].includes(index)), [allLogos]);
+  const reorderedLogos = useMemo(() => [...mainLogos, allLogos[17], allLogos[24]], [mainLogos, allLogos]);
 
   return (
     <div className="bg-gray-50 py-12  relative overflow-hidden">

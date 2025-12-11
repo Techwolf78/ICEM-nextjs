@@ -10,6 +10,7 @@ import Loader from "@/components/Loader";
 import LenisProvider from "@/components/LenisProvider";
 import { Scroll } from "lucide-react";
 import ScrollToTop from "@/components/ScrollToTop";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function RootLayout({ children }) {
   const [isLoading, setIsLoading] = useState(true);
@@ -99,6 +100,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <ScrollToTop />
         <FixedActionBar />
+        <WhatsAppButton />
         {/* <MobileNav /> */}
         {/* ✔ Wrap entire scrollable content with Lenis */}
         <LenisProvider>

@@ -1,11 +1,37 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BannerSlider from "./BannerSlider";
 import Image from "next/image";
 
 export default function Sports() {
   const [activeSection, setActiveSection] = useState("Sports");
   const [activeFAQ, setActiveFAQ] = useState(null);
+
+  // Image loading states
+  const [marqueeLoaded, setMarqueeLoaded] = useState(false);
+  const [achievementImagesLoaded, setAchievementImagesLoaded] = useState(Array(6).fill(false));
+  const [highlightLoaded, setHighlightLoaded] = useState(false);
+  const [transportImagesLoaded, setTransportImagesLoaded] = useState(Array(5).fill(false));
+  const [gymImagesLoaded, setGymImagesLoaded] = useState(Array(9).fill(false));
+  const [canteenImagesLoaded, setCanteenImagesLoaded] = useState(Array(6).fill(false));
+  const [healthImagesLoaded, setHealthImagesLoaded] = useState(Array(4).fill(false));
+
+  // Reset loading states when section changes
+  useEffect(() => {
+    if (activeSection === 'Sports') {
+      setMarqueeLoaded(false);
+      setAchievementImagesLoaded(Array(6).fill(false));
+      setHighlightLoaded(false);
+    } else if (activeSection === 'Transport') {
+      setTransportImagesLoaded(Array(5).fill(false));
+    } else if (activeSection === 'Gym') {
+      setGymImagesLoaded(Array(9).fill(false));
+    } else if (activeSection === 'Canteen') {
+      setCanteenImagesLoaded(Array(6).fill(false));
+    } else if (activeSection === 'Primary Health Centre') {
+      setHealthImagesLoaded(Array(4).fill(false));
+    }
+  }, [activeSection]);
 
   // Library staff data
   const libraryStaff = [
@@ -337,7 +363,7 @@ const highlight = {
        "In a moment of immense pride, our alumnus Mr. Sachin Khilari was honored with the prestigious Arjuna Award by the Honorable President of India, Smt. Droupadi Murmu.",
     description2:
       "The institute also proudly felicitated Mr. Sachin Khilari (Mechanical Engineering, Batch 2013), a Paralympic Silver Medallist in Men's Shot Put F46, during the Induction Programme 2024-25.",
-      img: "/sports/sachin.png",
+      img: "/sports/sachin.avif",
   };
 
  
@@ -347,7 +373,7 @@ const highlight = {
       <BannerSlider activeSection={activeSection}/>
       <div className="max-w-7xl mx-auto py-2 md:py-4 px-4 md:px-6 space-y-6 md:space-y-12">
         {/* Navigation Tabs */}
-        <div className="flex flex-wrap gap-2 justify-center mb-4 md:mb-8">
+        <div className="flex flex-wrap gap-2 justify-center mb-2 md:mb-4">
           {["Sports", "Library", "Transport", "Canteen", "Gym", "Hostel", "Primary Health Centre"].map((facility) => (
             <button
               key={facility}
@@ -355,7 +381,7 @@ const highlight = {
                 setActiveSection(facility);
                 setActiveFAQ(null);
               }}
-              className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+              className={`px-2 py-1 md:px-6 md:py-3 rounded-lg text-sm md:text-base font-semibold ${
                 activeSection === facility
                   ? "bg-secondary text-white shadow-lg transform scale-105"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200 hover:shadow-md"
@@ -369,10 +395,10 @@ const highlight = {
         {/* Content Section */}
         {activeSection === "Sports" ? (
           // Sports-specific content
-          <div className="max-w-full mx-auto px-4 md:px-6 py-5 md:py-10">
+          <div className="max-w-full mx-auto px-1 md:px-6 py-1 md:py-10">
             {/* Main Content */}
             <div className="w-full bg-white p-4 md:p-6 rounded-xl shadow-md">
-              <h2 className="text-4xl font-semibold text-secondary text-center mb-4 md:mb-6">
+              <h2 className="text-2xl md:text-4xl font-semibold text-secondary text-center mb-4 md:mb-6">
                  Sports & Recreation
               </h2>
 
@@ -388,7 +414,7 @@ const highlight = {
                 sports activities at university, state, and national levels.
               </p>
 
-              <h3 className="text-xl font-semibold text-secondary mb-2 md:mb-4">
+              <h3 className="text-lg md:text-xl font-semibold text-secondary mb-2 md:mb-4">
                 Sports Facilities
               </h3>
 
@@ -400,7 +426,7 @@ const highlight = {
               </ul>
 
               {/* Sports Infrastructure Marquee */}
-              <h2 className="text-2xl font-bold text-secondary mt-5 md:mt-10 mb-4 md:mb-6">
+              <h2 className="text-xl md:text-2xl font-bold text-secondary mt-5 md:mt-10 mb-4 md:mb-6">
                 Sports Infrastructure
               </h2>
 
@@ -409,32 +435,36 @@ const highlight = {
                 <div className="flex w-[200%] animate-smoothScroll h-full">
                   {/* Image 1 */}
                   <div className="relative w-full h-full flex-shrink-0">
+                    {!marqueeLoaded && <div className="absolute inset-0 shimmer z-10"></div>}
                     <Image
-                      src="/sportsmarque.jpg"
+                      src="/sports/sportsmarque.avif"
                       alt="Sports Infrastructure"
                       fill
                       className="object-cover"
                       unoptimized={true}
                       priority
+                      onLoad={() => setMarqueeLoaded(true)}
                     />
                   </div>
 
                   {/* Image 2 */}
                   <div className="relative w-full h-full flex-shrink-0">
+                    {!marqueeLoaded && <div className="absolute inset-0 shimmer z-10"></div>}
                     <Image
-                      src="/sportsmarque.jpg"
+                      src="/sports/sportsmarque.avif"
                       alt="Sports Infrastructure duplicate"
                       fill
                       className="object-cover"
                       unoptimized={true}
                       priority
+                      onLoad={() => setMarqueeLoaded(true)}
                     />
                   </div>
                 </div>
               </div>
 
               {/* Sports Achievements Section */}
-              <h3 className="text-2xl font-semibold text-secondary mb-4 md:mb-6">
+              <h3 className="text-lg md:text-2xl font-semibold text-secondary mb-4 md:mb-6">
                 Sports Achievements
               </h3>
 
@@ -446,17 +476,25 @@ const highlight = {
                   >
                     {/* Image Placeholder */}
                     <div className=" relative w-full h-40 bg-gray-200 rounded-sm flex items-center justify-center text-gray-500 text-sm mb-2 md:mb-4">
+                      {!achievementImagesLoaded[index] && <div className="absolute inset-0 shimmer rounded-sm z-10"></div>}
                       <Image
                         src={item.img || "/sports/tabletennis.jpg"}
                         alt="Achievement Icon"
                         fill
                         className="object-cover rounded-sm"
                         unoptimized={true}
+                        onLoad={() => {
+                          setAchievementImagesLoaded(prev => {
+                            const newArr = [...prev];
+                            newArr[index] = true;
+                            return newArr;
+                          });
+                        }}
                       />
                     </div>
 
                     {/* Text */}
-                    <h4 className="text-lg font-semibold text-secondary mb-1 md:mb-2">
+                    <h4 className="text-base md:text-lg font-semibold text-secondary mb-1 md:mb-2">
                       {item.title}
                     </h4>
 
@@ -473,31 +511,35 @@ const highlight = {
                 <div className="relative border-2 border-gray-200 rounded-2xl p-2 sm:p-8 sm:pl-120 shadow-md  flex flex-col sm:flex-row  items-center gap-3">
                   {/* Floating Image - Desktop */}
                   <div className="hidden sm:block absolute -left-3 top-1/3 -translate-y-1/2 z-20">
+                    {!highlightLoaded && <div className="absolute inset-0 shimmer z-10"></div>}
                     <Image
-                      src="/sports/sachin.png"
+                      src="/sports/sachin.avif"
                       alt="Arjuna Award Winner"
                       height={440}
                       width={460}
                       className="object-contain drop-shadow-2xl select-none"
                       unoptimized={true}
+                      onLoad={() => setHighlightLoaded(true)}
                     />
                   </div>
 
                   {/* Floating Image - Mobile (inline instead of absolute) */}
                   <div className="sm:hidden flex justify-center mb-4">
+                    {!highlightLoaded && <div className="absolute inset-0 shimmer z-10"></div>}
                     <Image
-                      src="/sports/sachin.png"
+                      src="/sports/sachin.avif"
                       alt="Arjuna Award Winner"
                       height={300}
                       width={300}
                       className="object-contain drop-shadow-2xl select-none"
                       unoptimized
+                      onLoad={() => setHighlightLoaded(true)}
                     />
                   </div>
 
                   {/* Text Section */}
                   <div className="flex-1 text-center sm:text-left">
-                    <h3 className="text-2xl font-bold text-secondary mb-3">
+                    <h3 className="text-lg md:text-2xl font-bold text-secondary mb-3">
                       {highlight.title}
                     </h3>
 
@@ -515,21 +557,21 @@ const highlight = {
           </div>
         ) : activeSection === "Library" ? (
           // Library-specific content
-          <div className="max-w-full mx-auto px-4 md:px-6 py-5 md:py-10 space-y-6 md:space-y-12">
+          <div className="max-w-full mx-auto px-1 md:px-6 py-1 md:py-10 space-y-6 md:space-y-12">
             {/* About Us Tab Content */}
             <div className="w-full bg-white p-4 md:p-8 rounded-xl shadow-md">
-              <h2 className="text-4xl font-bold text-secondary mb-4 md:mb-8 text-center">About Library</h2>
+              <h2 className="text-2xl md:text-4xl font-bold text-secondary mb-4 md:mb-8 text-center">About Library</h2>
               
               {/* Mission & Vision */}
               <div className="grid md:grid-cols-2 gap-4 md:gap-8 mb-6 md:mb-12">
                 <div className="bg-blue-50 p-4 md:p-6 rounded-lg border-l-4 border-blue-500">
-                  <h3 className="text-xl font-bold text-blue-800 mb-2 md:mb-4">Library Mission</h3>
+                  <h3 className="text-lg md:text-xl font-bold text-blue-800 mb-2 md:mb-4">Library Mission</h3>
                   <p className="text-gray-700 leading-relaxed">
                     To provide comprehensive resources and services in support of the research, teaching, and learning to its Faculty Members, Students, Researchers and Support Staff.
                   </p>
                 </div>
                 <div className="bg-green-50 p-4 md:p-6 rounded-lg border-l-4 border-green-500">
-                  <h3 className="text-xl font-bold text-green-800 mb-2 md:mb-4">Library Vision</h3>
+                  <h3 className="text-lg md:text-xl font-bold text-green-800 mb-2 md:mb-4">Library Vision</h3>
                   <p className="text-gray-700 leading-relaxed">
                     Mr. Shankar Rao Wakalkar Library (ICEM Central Library) will be recognized as leading library by informing and inspiring its user making them all more resilient, more knowledgeable, more connected and more successful.
                   </p>
@@ -541,7 +583,7 @@ const highlight = {
 
               {/* Introduction */}
               <div className="mb-6 md:mb-12">
-                <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Introduction</h3>
+                <h3 className="text-lg md:text-2xl font-bold text-secondary mb-4 md:mb-6">Introduction</h3>
                 <div className="bg-gray-50 p-4 md:p-6 rounded-lg">
                   <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
                     The college library is well equipped with large number of textbook, reference books, periodicals, journals and newspapers. The number of books in the library at present is about 32948. The library receives 30 journals and 10 magazines in specialized areas.
@@ -554,7 +596,7 @@ const highlight = {
 
               {/* Library Information */}
               <div className="mb-6 md:mb-12">
-                <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Library Information</h3>
+                <h3 className="text-lg md:text-2xl font-bold text-secondary mb-4 md:mb-6">Library Information</h3>
                 <div className="bg-gray-50 p-4 md:p-6 rounded-lg">
                   <p className="text-gray-700 leading-relaxed">
                     Mr. Shankar Rao Wakalkar Library, established in the year 2007, is an invaluable resource for students, researchers and faculties of management and engineering. The college library is well equipped with large number of textbook, reference books, periodicals, journals and newspapers. The number of books in the library at present is about 32948. The library receives 30 journals and 10 magazines in specialized areas. The library consists of reading hall, internet browsing center, reference section, open access periodical and research library. The library has introduced computerized PVC I- card system for the students as well as staff. The library is automated with Koha Library Software (Version-23.11.06) to ease its clientele at various levels while in the library.
@@ -564,7 +606,7 @@ const highlight = {
 
               {/* Staff Information */}
               <div>
-                <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Staff Information</h3>
+                <h3 className="text-lg md:text-2xl font-bold text-secondary mb-4 md:mb-6">Staff Information</h3>
                 <div className="bg-white border border-gray-200 rounded-lg overflow-x-auto">
                   <table className="w-full min-w-max">
                     <thead className="bg-secondary text-white">
@@ -590,18 +632,18 @@ const highlight = {
 
             {/* Library Resources Tab Content */}
             <div className="w-full bg-white p-4 md:p-8 rounded-xl shadow-md">
-              <h2 className="text-3xl font-bold text-secondary mb-4 md:mb-8 text-center">Library Resources</h2>
+              <h2 className="text-xl md:text-3xl font-bold text-secondary mb-4 md:mb-8 text-center">Library Resources</h2>
               
               {/* Collection Overview */}
               <div className="mb-6 md:mb-12">
-                <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Collection</h3>
+                <h3 className="text-lg md:text-2xl font-bold text-secondary mb-4 md:mb-6">Collection</h3>
                 <div className="bg-gray-50 p-4 md:p-6 rounded-lg mb-4 md:mb-6">
                   <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
                     The library has developed an unlikely collection of over 32196 books, 1300 CD's/ DVD's and over 87 hard copy journals and magazines in last five years. The same tends to grow at a very expediential rate in coming years.
                   </p>
                 </div>
 
-                <h4 className="text-xl font-bold text-secondary mb-2 md:mb-4">Library At A Glance</h4>
+                <h4 className="text-base md:text-xl font-bold text-secondary mb-2 md:mb-4">Library At A Glance</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 mb-4 md:mb-8">
                   {libraryCollection.overview.map((item, index) => (
                     <div key={index} className="bg-white border border-gray-200 rounded-lg p-2 md:p-4 shadow-sm">
@@ -613,7 +655,7 @@ const highlight = {
               </div>
 
               <div className="mb-6 md:mb-12">
-                <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Books Collection</h3>
+                <h3 className="text-lg md:text-2xl font-bold text-secondary mb-4 md:mb-6">Books Collection</h3>
                 <div className="bg-white border border-gray-200 rounded-lg overflow-x-auto">
                   <table className="w-full min-w-max">
                     <thead className="bg-secondary text-white">
@@ -640,7 +682,7 @@ const highlight = {
 
               {/* Other Reading Materials */}
               <div className="mb-6 md:mb-12">
-                <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Other Reading Materials</h3>
+                <h3 className="text-lg md:text-2xl font-bold text-secondary mb-4 md:mb-6">Other Reading Materials</h3>
                 <div className="bg-white border border-gray-200 rounded-lg overflow-x-auto mb-4 md:mb-6">
                   <table className="w-full min-w-max">
                     <thead className="bg-secondary text-white">
@@ -662,7 +704,7 @@ const highlight = {
                   </table>
                 </div>
 
-                <h4 className="text-xl font-bold text-secondary mb-4">Newspapers Breakdown</h4>
+                <h4 className="text-base md:text-xl font-bold text-secondary mb-4">Newspapers Breakdown</h4>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {libraryCollection.newspapers.map((paper, index) => (
                     <div key={index} className="bg-white border border-gray-200 rounded-lg p-2 md:p-4 shadow-sm">
@@ -676,12 +718,12 @@ const highlight = {
 
             {/* Timing Tab Content */}
             <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
-              <h2 className="text-3xl font-bold text-secondary mb-4 md:mb-8 text-center">Library Timing</h2>
+              <h2 className="text-xl md:text-3xl font-bold text-secondary mb-4 md:mb-8 text-center">Library Timing</h2>
               
               <div className="bg-gray-50 p-2 md:p-6 rounded-lg">
                 <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                   <div className="text-center">
-                    <h3 className="text-2xl font-bold text-green-600 mb-4">Working Hours</h3>
+                    <h3 className="text-lg md:text-2xl font-bold text-green-600 mb-4">Working Hours</h3>
                     <div className="space-y-4">
                       <div className="bg-white p-4 rounded-lg shadow-sm">
                         <p className="text-lg font-semibold text-gray-800">{libraryCollection.timing.regular}</p>
@@ -693,7 +735,7 @@ const highlight = {
                   </div>
                   
                   <div className="text-center">
-                    <h3 className="text-2xl font-bold text-red-600 mb-4">Library Closed On</h3>
+                    <h3 className="text-lg md:text-2xl font-bold text-red-600 mb-4">Library Closed On</h3>
                     <div className="bg-white p-6 rounded-lg shadow-sm">
                       <p className="text-lg font-semibold text-gray-800">{libraryCollection.timing.closed}</p>
                     </div>
@@ -704,11 +746,11 @@ const highlight = {
 
             {/* Services Tab Content */}
             <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
-              <h2 className="text-3xl font-bold text-secondary mb-4 md:mb-8 text-center">Library Services & Facilities</h2>
+              <h2 className="text-xl md:text-3xl font-bold text-secondary mb-4 md:mb-8 text-center">Library Services & Facilities</h2>
               
               <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                 <div>
-                  <h3 className="text-2xl font-bold text-secondary mb-2 md:mb-6">Library Services</h3>
+                  <h3 className="text-lg md:text-2xl font-bold text-secondary mb-2 md:mb-6">Library Services</h3>
                   <div className="bg-gray-50 p-2 md:p-6 rounded-lg">
                     <ul className="space-y-3">
                       {libraryCollection.services.map((service, index) => (
@@ -722,7 +764,7 @@ const highlight = {
                 </div>
                 
                 <div>
-                  <h3 className="text-2xl font-bold text-secondary mb-2 md:mb-6">Facilities</h3>
+                  <h3 className="text-lg md:text-2xl font-bold text-secondary mb-2 md:mb-6">Facilities</h3>
                   <div className="bg-gray-50 p-2 md:p-6 rounded-lg">
                     <ul className="space-y-3">
                       {libraryCollection.facilities.map((facility, index) => (
@@ -739,11 +781,11 @@ const highlight = {
 
             {/* Policies Tab Content */}
             <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
-              <h2 className="text-3xl font-bold text-secondary mb-4 md:mb-8 text-center">Library Policies</h2>
+              <h2 className="text-xl md:text-3xl font-bold text-secondary mb-4 md:mb-8 text-center">Library Policies</h2>
               
               <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                 <div>
-                  <h3 className="text-2xl font-bold text-secondary mb-2 md:mb-6">General Policies</h3>
+                  <h3 className="text-lg md:text-2xl font-bold text-secondary mb-2 md:mb-6">General Policies</h3>
                   <div className="bg-gray-50 p-2 md:p-6 rounded-lg">
                     <ul className="space-y-3">
                       {libraryCollection.policies.general.map((policy, index) => (
@@ -757,7 +799,7 @@ const highlight = {
                 </div>
                 
                 <div>
-                  <h3 className="text-2xl font-bold text-secondary mb-2 md:mb-6">Borrowing Policies</h3>
+                  <h3 className="text-lg md:text-2xl font-bold text-secondary mb-2 md:mb-6">Borrowing Policies</h3>
                   <div className="bg-gray-50 p-2 md:p-6 rounded-lg">
                     <ul className="space-y-3">
                       {libraryCollection.policies.borrowing.map((policy, index) => (
@@ -774,7 +816,7 @@ const highlight = {
 
             {/* E-Content Tab Content */}
             <div className="w-full bg-white p-4 md:p-8 rounded-xl shadow-md">
-              <h2 className="text-3xl font-bold text-secondary mb-4 md:mb-8 text-center">Electronic Databases</h2>
+              <h2 className="text-xl md:text-3xl font-bold text-secondary mb-4 md:mb-8 text-center">Electronic Databases</h2>
               
               <div className="bg-gray-50 p-4 md:p-6 rounded-lg mb-4 md:mb-6">
                 <p className="text-gray-700 leading-relaxed">
@@ -814,26 +856,34 @@ const highlight = {
           </div>
         ) : activeSection === "Transport" ? (
           // Transport-specific content
-          <div className="max-w-full mx-auto px-4 md:px-6 py-5 md:py-10">
+          <div className="max-w-full mx-auto px-1 md:px-6 py-1 md:py-10">
             <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
-              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Transport @ ICEM</h2>
+              <h2 className="text-xl md:text-3xl font-bold text-secondary mb-8 text-center">Transport @ ICEM</h2>
               
               {/* Route Layout Section */}
               <div className="mb-6 md:mb-12">
-                <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Route Layout</h3>
+                <h3 className="text-lg md:text-2xl font-bold text-secondary mb-4 md:mb-6">Route Layout</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-4 md:mb-8">
-                  {["Route-Layout-1","Route-Layout-2", "Route-Layout-3", "Route-Layout-4", "Route-Layout-5"].map((item) => (
+                  {["Route-Layout-1","Route-Layout-2", "Route-Layout-3", "Route-Layout-4", "Route-Layout-5"].map((item, index) => (
                     <div key={item} className=" rounded-lg overflow-hidden shadow-md">
                       <div className="relative h-106  flex items-center justify-center">
+                        {!transportImagesLoaded[index] && <div className="absolute inset-0 shimmer z-10"></div>}
                         <Image
                           src={`/Facilities/${item}.webp`}
                           alt={`Transport Route ${item}`}
                           fill
                           className="object-contain h-auto"
                           unoptimized={true}
+                          onLoad={() => {
+                            setTransportImagesLoaded(prev => {
+                              const newArr = [...prev];
+                              newArr[index] = true;
+                              return newArr;
+                            });
+                          }}
                         />
                         <div className="absolute inset-0  bg-opacity-30 flex items-center justify-center">
-                          <span className="text-white font-semibold text-lg">Route {item}</span>
+                          <span className="text-white font-semibold text-lg">Route {item.split('-')[2]}</span>
                         </div>
                       </div>
                     </div>
@@ -843,7 +893,7 @@ const highlight = {
 
               {/* Contact Details */}
               <div className="bg-secondary text-white p-4 md:p-8 rounded-lg">
-                <h3 className="text-2xl font-bold mb-4 md:mb-6 text-center">Contact Details</h3>
+                <h3 className="text-lg md:text-2xl font-bold mb-4 md:mb-6 text-center">Contact Details</h3>
                 <div className="grid md:grid-cols-2 gap-4 md:gap-6 text-center">
                   <div>
                     <h4 className="text-lg font-semibold mb-2">Telephone Number</h4>
@@ -859,23 +909,31 @@ const highlight = {
           </div>
         ) : activeSection === "Gym" ? (
           // Gym-specific content
-          <div className="max-w-full mx-auto px-4 md:px-6 py-5 md:py-10">
+          <div className="max-w-full mx-auto px-1 md:px-6 py-1 md:py-10">
             <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
-              <h2 className="text-3xl font-bold text-secondary mb-4 md:mb-8 text-center">Gymnasium @ ICEM</h2>
+              <h2 className="text-xl md:text-3xl font-bold text-secondary mb-4 md:mb-8 text-center">Gymnasium @ ICEM</h2>
               
               {/* Gym Images Grid */}
               <div className="mb-6 md:mb-12">
-                <h3 className="text-2xl font-bold text-secondary mb-2 md:mb-6">Our Gym Facilities</h3>
+                <h3 className="text-lg md:text-2xl font-bold text-secondary mb-2 md:mb-6">Our Gym Facilities</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-4 md:mb-8">
-                  {["Gym1","Gym2","Gym3","Gym4","Gym5","Gym6","Gym7","Gym8","Gym10"].map((item) => (
+                  {["Gym1","Gym2","Gym3","Gym4","Gym5","Gym6","Gym7","Gym8","Gym10"].map((item, index) => (
                     <div key={item} className="bg-gray-100 rounded-lg overflow-hidden shadow-md">
                       <div className="relative h-54 bg-gray-200 flex items-center justify-center">
+                        {!gymImagesLoaded[index] && <div className="absolute inset-0 shimmer z-10"></div>}
                         <Image
                           src={`/Facilities/${item}.webp`}
                           alt={`Gym Equipment ${item}`}
                           fill
                           className="object-cover"
                           unoptimized={true}
+                          onLoad={() => {
+                            setGymImagesLoaded(prev => {
+                              const newArr = [...prev];
+                              newArr[index] = true;
+                              return newArr;
+                            });
+                          }}
                         />
                         <div className="absolute inset-0  bg-opacity-30 flex items-center justify-center">
                          
@@ -888,7 +946,7 @@ const highlight = {
 
               {/* Equipment List */}
               <div className="mb-6 md:mb-12">
-                <h3 className="text-2xl font-bold text-secondary mb-2 md:mb-6">
+                <h3 className="text-lg md:text-2xl font-bold text-secondary mb-2 md:mb-6">
                   Fully Equipped and Specious Gym with following machines
                 </h3>
                 <div className="bg-gray-50 p-2 md:p-6 rounded-lg">
@@ -905,7 +963,7 @@ const highlight = {
 
               {/* Contact Details */}
               <div className="bg-secondary text-white p-4 md:p-8 rounded-lg">
-                <h3 className="text-2xl font-bold mb-4 md:mb-6 text-center">Contact Details</h3>
+                <h3 className="text-lg md:text-2xl font-bold mb-4 md:mb-6 text-center">Contact Details</h3>
                 <div className="text-center">
                   <p className="text-xl font-semibold mb-2">{gymData.contact.name}</p>
                   <p className="text-lg mb-2">{gymData.contact.designation}</p>
@@ -916,23 +974,31 @@ const highlight = {
           </div>
         ) : activeSection === "Canteen" ? (
           // Canteen-specific content
-          <div className="max-w-full mx-auto px-4 md:px-6 py-5 md:py-10">
+          <div className="max-w-full mx-auto px-1 md:px-6 py-1 md:py-10">
             <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
-              <h2 className="text-3xl font-bold text-secondary mb-4 md:mb-8 text-center">Canteen @ ICEM</h2>
+              <h2 className="text-xl md:text-3xl font-bold text-secondary mb-4 md:mb-8 text-center">Canteen @ ICEM</h2>
               
               {/* Canteen Images Grid */}
               <div className="mb-6 md:mb-12">
-                <h3 className="text-2xl font-bold text-secondary mb-2 md:mb-6">Our Canteen Facilities</h3>
+                <h3 className="text-lg md:text-2xl font-bold text-secondary mb-2 md:mb-6">Our Canteen Facilities</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                  {["Canteen1","Canteen2","Canteen3","Canteen4","Canteen5","Canteen6"].map((item) => (
+                  {["Canteen1","Canteen2","Canteen3","Canteen4","Canteen5","Canteen6"].map((item, index) => (
                     <div key={item} className="bg-gray-100 rounded-lg overflow-hidden shadow-md">
                       <div className="relative h-48 bg-gray-200 flex items-center justify-center">
+                        {!canteenImagesLoaded[index] && <div className="absolute inset-0 shimmer z-10"></div>}
                         <Image
-                          src={`/Facilities/${item}.jpg`}
+                          src={`/Facilities/${item}.avif`}
                           alt={`Canteen ${item}`}
                           fill
                           className="object-cover"
                           unoptimized={true}
+                          onLoad={() => {
+                            setCanteenImagesLoaded(prev => {
+                              const newArr = [...prev];
+                              newArr[index] = true;
+                              return newArr;
+                            });
+                          }}
                         />
                         <div className="absolute inset-0  bg-opacity-30 flex items-center justify-center">
                        
@@ -954,23 +1020,31 @@ const highlight = {
           </div>
         ) : activeSection === "Primary Health Centre" ? (
           // Primary Health Centre-specific content
-          <div className="max-w-full mx-auto px-4 md:px-6 py-5 md:py-10">
+          <div className="max-w-full mx-auto px-1 md:px-6 py-1 md:py-10">
             <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
-              <h2 className="text-3xl font-bold text-secondary mb-4 md:mb-8 text-center">Primary Health Centre @ ICEM</h2>
+              <h2 className="text-xl md:text-3xl font-bold text-secondary mb-4 md:mb-8 text-center">Primary Health Centre @ ICEM</h2>
               
               {/* Health Centre Images Grid */}
               <div className="mb-6 md:mb-12">
-                <h3 className="text-2xl font-bold text-secondary mb-2 md:mb-6">Our Medical Facilities</h3>
+                <h3 className="text-lg md:text-2xl font-bold text-secondary mb-2 md:mb-6">Our Medical Facilities</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-8">
-                  {["Indira_Primary_Health_Centre_1","Indira_Primary_Health_Centre_2","Indira_Primary_Health_Centre_3","Indira_Primary_Health_Centre_4"].map((item) => (
+                  {["Indira_Primary_Health_Centre_1","Indira_Primary_Health_Centre_2","Indira_Primary_Health_Centre_3","Indira_Primary_Health_Centre_4"].map((item, index) => (
                     <div key={item} className="bg-gray-100 rounded-lg overflow-hidden shadow-md">
                       <div className="relative h-64 bg-gray-200 flex items-center justify-center">
+                        {!healthImagesLoaded[index] && <div className="absolute inset-0 shimmer z-10"></div>}
                         <Image
-                          src={`/Facilities/${item}.webp`}
+                          src={`/Facilities/${item}.${item === "Indira_Primary_Health_Centre_2" ? "webp" : "avif"}`}
                           alt={`Health Centre ${item}`}
                           fill
                           className="object-cover"
                           unoptimized={true}
+                          onLoad={() => {
+                            setHealthImagesLoaded(prev => {
+                              const newArr = [...prev];
+                              newArr[index] = true;
+                              return newArr;
+                            });
+                          }}
                         />
                         <div className="absolute inset-0 bg-opacity-30 flex items-center justify-center">
                          
@@ -992,7 +1066,7 @@ const highlight = {
 
               {/* Services */}
               <div>
-                <h3 className="text-2xl font-bold text-secondary mb-2 md:mb-6">Services Provided</h3>
+                <h3 className="text-lg md:text-2xl font-bold text-secondary mb-2 md:mb-6">Services Provided</h3>
                 <div className="bg-gray-50 p-2 md:p-6 rounded-lg">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                     {healthCentreData.services.map((service, index) => (
@@ -1011,7 +1085,7 @@ const highlight = {
           <div className="max-w-full mx-auto px-6 py-10 space-y-12">
             {/* Overview Section */}
             <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
-              <h2 className="text-3xl font-bold text-secondary mb-4 md:mb-8 text-center">Hostel @ ICEM</h2>
+              <h2 className="text-xl md:text-3xl font-bold text-secondary mb-4 md:mb-8 text-center">Hostel @ ICEM</h2>
               
               <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-8">
                 <div className="bg-green-50 p-2 md:p-6 rounded-lg">
@@ -1043,7 +1117,7 @@ const highlight = {
 
             {/* Contact Details Section */}
             <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
-              <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Hostel Management Team</h3>
+              <h3 className="text-lg md:text-2xl font-bold text-secondary mb-4 md:mb-6">Hostel Management Team</h3>
               <div className="bg-white border border-gray-200 rounded-lg overflow-x-auto mb-8">
                 <table className="w-full min-w-max">
                   <thead className="bg-secondary text-white">
@@ -1067,7 +1141,7 @@ const highlight = {
                 </table>
               </div>
 
-              <h3 className="text-2xl font-bold text-secondary mb-6">Mess (Canteen) Team</h3>
+              <h3 className="text-lg md:text-2xl font-bold text-secondary mb-6">Mess (Canteen) Team</h3>
               <div className="bg-white border border-gray-200 rounded-lg overflow-x-auto">
                 <table className="w-full min-w-max">
                   <thead className="bg-secondary text-white">
@@ -1092,7 +1166,7 @@ const highlight = {
 
             {/* Facilities Section */}
             <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
-              <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Hostel Facilities</h3>
+              <h3 className="text-lg md:text-2xl font-bold text-secondary mb-4 md:mb-6">Hostel Facilities</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                 {hostelData.facilities.map((facility, index) => (
                   <div key={index} className="flex items-start">
@@ -1105,7 +1179,7 @@ const highlight = {
 
             {/* Timings Section */}
             <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
-              <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Hostel Timings</h3>
+              <h3 className="text-lg md:text-2xl font-bold text-secondary mb-4 md:mb-6">Hostel Timings</h3>
               <div className="bg-yellow-50 p-2 md:p-6 rounded-lg mb-4 md:mb-6">
                 <ul className="space-y-2 md:space-y-3">
                   {hostelData.timings.map((timing, index) => (
@@ -1117,7 +1191,7 @@ const highlight = {
                 </ul>
               </div>
 
-              <h4 className="text-xl font-bold text-secondary mb-4">Mess Timings</h4>
+              <h4 className="text-base md:text-xl font-bold text-secondary mb-4">Mess Timings</h4>
               <div className="bg-green-50 p-2 md:p-6 rounded-lg">
                 <div className="grid md:grid-cols-2 gap-2 md:gap-4">
                   {hostelData.messTimings.map((timing, index) => (
@@ -1131,7 +1205,7 @@ const highlight = {
 
             {/* Documents Section */}
             <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
-              <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Documents Required for Admission</h3>
+              <h3 className="text-lg md:text-2xl font-bold text-secondary mb-4 md:mb-6">Documents Required for Admission</h3>
               <div className="bg-gray-50 p-2 md:p-6 rounded-lg">
                 <ul className="space-y-2 md:space-y-3">
                   {hostelData.documents.map((doc, index) => (
@@ -1146,7 +1220,7 @@ const highlight = {
 
             {/* Cancellation Rules Section */}
             <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
-              <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Hostel Admission Cancellation Rules</h3>
+              <h3 className="text-lg md:text-2xl font-bold text-secondary mb-4 md:mb-6">Hostel Admission Cancellation Rules</h3>
               <div className="space-y-4 md:space-y-6">
                 {hostelData.cancellationRules.map((rule, index) => (
                   <div key={index} className="bg-red-50 p-2 md:p-6 rounded-lg border-l-4 border-red-500">
@@ -1178,7 +1252,7 @@ const highlight = {
 
             {/* Mess Instructions Section */}
             <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
-              <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Canteen (Mess) Instructions</h3>
+              <h3 className="text-lg md:text-2xl font-bold text-secondary mb-4 md:mb-6">Canteen (Mess) Instructions</h3>
               <div className="bg-orange-50 p-2 md:p-6 rounded-lg">
                 <ul className="space-y-2 md:space-y-3">
                   {hostelData.messInstructions.map((instruction, index) => (
@@ -1193,7 +1267,7 @@ const highlight = {
 
             {/* Medical Assistance Section */}
             <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
-              <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">Medical Assistance & Insurance</h3>
+              <h3 className="text-lg md:text-2xl font-bold text-secondary mb-4 md:mb-6">Medical Assistance & Insurance</h3>
               <div className="bg-blue-50 p-2 md:p-6 rounded-lg">
                 <ul className="space-y-2 md:space-y-3">
                   {hostelData.medicalAssistance.map((item, index) => (
@@ -1208,9 +1282,9 @@ const highlight = {
           </div>
         ) : (
           // Default content for other tabs
-          <div className="max-w-full mx-auto px-4 md:px-6 py-5 md:py-10">
+          <div className="max-w-full mx-auto px-1 md:px-6 py-1 md:py-10">
             <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md text-center">
-              <h2 className="text-3xl font-bold text-secondary mb-2 md:mb-6">{activeSection} @ ICEM</h2>
+              <h2 className="text-xl md:text-3xl font-bold text-secondary mb-2 md:mb-6">{activeSection} @ ICEM</h2>
               <div className="bg-gray-50 p-2 md:p-6 rounded-lg">
                 <p className="text-gray-700 text-lg leading-relaxed">
                   Content for {activeSection} section is being updated. Please check back later for detailed information about our {activeSection.toLowerCase()} facilities and services.
@@ -1237,6 +1311,21 @@ const highlight = {
 
         .animate-smoothScroll {
           animation: smoothScroll 60s linear infinite;
+        }
+
+        @keyframes shimmer {
+          0% {
+            background-position: -200% 0;
+          }
+          100% {
+            background-position: 200% 0;
+          }
+        }
+
+        .shimmer {
+          background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+          background-size: 200% 100%;
+          animation: shimmer 1.5s infinite;
         }
       `}</style>
     </div>

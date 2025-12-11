@@ -10,6 +10,7 @@ import {
   BrainCircuit,
   Radio,
   BookOpen,
+  Building,
   Building2,
   Laptop,
   Briefcase,
@@ -53,6 +54,7 @@ const ProgramList = () => {
       icon: Radio,
     },
     { name: "Information Technology", link: "/programs/it", icon: Laptop },
+    { name: "Civil Engineering", link: "/programs/civil", icon: Building },
     {
       name: "Integrated MBA (BBA + MBA)",
       link: "/programs/imba",

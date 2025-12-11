@@ -127,7 +127,7 @@ export default function SportsRecreation() {
               {/* Floating Image - Desktop */}
               <div className="hidden sm:block absolute -left-3 top-1/3 -translate-y-1/2 z-20">
                 <Image
-                  src="/sports/sachin.png"
+                  src="/sports/sachin.avif"
                   alt="Arjuna Award Winner"
                   height={440}
                   width={460}
@@ -139,7 +139,7 @@ export default function SportsRecreation() {
               {/* Floating Image - Mobile (inline instead of absolute) */}
               <div className="sm:hidden flex justify-center mb-4">
                 <Image
-                  src="/sports/sachin.png"
+                  src="/sports/sachin.avif"
                   alt="Arjuna Award Winner"
                   height={300}
                   width={300}

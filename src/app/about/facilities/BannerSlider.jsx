@@ -5,23 +5,23 @@ import Image from "next/image";
 export default function BannerSlider({ activeSection }) {
   // ✅ Static local images (object mapping)
   const desktopImages = {
-    Sports: "/Facilities/FacilitiesSports.jpg",
-    Transport: "/Facilities/Transport.jpg",
-    Canteen: "/Facilities/FacilitiesCanteen.jpg",
-    Hostel: "/Facilities/FacilitiesHostel.jpg",
-    Library: "/Facilities/FacilitiesLibrary.jpg",
+    Sports: "/Facilities/FacilitiesSports.avif",
+    Transport: "/Facilities/Transport.avif",
+    Canteen: "/Facilities/FacilitiesCanteen.avif",
+    Hostel: "/Facilities/FacilitiesHostel.avif",
+    Library: "/Facilities/FacilitiesLibrary.avif",
     Gym: "/Facilities/gymbannerfinal.webp",
-    "Primary Health Centre": "/Facilities/HealthCentreBanner.jpg",
+    "Primary Health Centre": "/Facilities/HealthCentreBanner.avif",
   };
 
   const mobileImages = {
-    Sports: "/Facilities/FacilitiesSports.jpg",
-    Transport: "/Facilities/Transport.jpg",
-    Canteen: "/Facilities/FacilitiesCanteen.jpg",
-    Hostel: "/Facilities/FacilitiesHostel.jpg",
-    Library: "/Facilities/FacilitiesLibrary.jpg",
+    Sports: "/Facilities/FacilitiesSports.avif",
+    Transport: "/Facilities/Transport.avif",
+    Canteen: "/Facilities/FacilitiesCanteen.avif",
+    Hostel: "/Facilities/FacilitiesHostel.avif",
+    Library: "/Facilities/FacilitiesLibrary.avif",
     Gym: "/Facilities/gymbannerfinal.webp",
-    "Primary Health Centre": "/Facilities/HealthCentreBanner.jpg",
+    "Primary Health Centre": "/Facilities/HealthCentreBanner.avif",
   };
 
   // ✅ Get correct image paths safely

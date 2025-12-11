@@ -30,7 +30,7 @@ export const culturalEvents = [
     title: "Teachers & Foundation Day",
     file: "/pdfs/cultural/Teachers&Foundation day.pdf",
     description: `On September 5, 2025, Indira College of Engineering & Management celebrated Teachers' Day and Foundation Day in a dignified ceremony at the Indira Chanakya Campus, graced by the presence of Honourable Dr. Tarita Shankar, Chairperson of Indira Group of Institutes. The event commenced with traditional rituals including a Saraswati prayer and ceremonial lamp lighting, followed by meaningful tributes through student speeches, poetic recitations, and a commemorative video. Dr. Shankar and Principal Dr. Nilesh Uke delivered inspiring addresses highlighting faculty dedication and institutional vision, while interactive segments like memory games created an atmosphere of joyful camaraderie. This dual celebration successfully honoured both the guiding mentors and the institution's legacy, reinforcing ICEM's commitment to academic excellence and holistic development through a perfect blend of reverence, reflection, and community spirit. `,
-    imageLink: "/cultural-events/Teachers.png",
+    imageLink: "/cultural-events/Teachers.webp",
   },
   {
     title: "Valentine Day 2025",
@@ -51,7 +51,6 @@ export const culturalEvents = [
           students with a platform to express their artistic talents and celebrate diversity. The 2025 edition
           focused on creativity, inclusivity, and entertainment — creating an unforgettable experience filled
           with music, colors, and fun.`,
-    imageLink: "/cultural-events/GustoMela.png",
   },
   {
     title: "International Yoga Day Celebration",

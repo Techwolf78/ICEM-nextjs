@@ -33,7 +33,25 @@ export default function CTASection() {
 
   // ✅ Scroll to Apply Form or Navigate to Contact
   const handleScrollToForm = () => {
-    router.push("/contact");
+    if (pathname === "/") {
+      // Scroll to Academic Year 2026 section on home page with offset for navbar
+      const target = document.getElementById("academic-year-2026");
+      if (target) {
+        const yOffset = -100; // Adjust this value to account for fixed navbar height
+        const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+    } else if (pathname.startsWith("/programs")) {
+      // Scroll to Programme Structure section on program pages
+      const target = document.getElementById("programme-structure");
+      if (target) {
+        const yOffset = -100; // Adjust this value to account for fixed navbar height
+        const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+    } else {
+      router.push("/contact");
+    }
   };
 
   // ✅ Headline & Body text per route

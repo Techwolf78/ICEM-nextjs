@@ -159,7 +159,7 @@ const HeroSlider = () => {
               width={600}
               height={800}
               quality={100}
-              unoptimized
+              priority
             />
           )}
         </>

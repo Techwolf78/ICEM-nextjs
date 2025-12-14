@@ -86,6 +86,10 @@ export default function RootLayout({ children }) {
         <link rel="icon" type="image/png" href="/shortLogo.png" />
         <link rel="apple-touch-icon" href="/shortLogo.png" />
 
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
         <meta name="language" content="English" />
         <meta name="country" content="IN" />
         <meta name="geo.region" content="IN-MH" />

@@ -378,7 +378,7 @@ const Navbar = () => {
         className="w-full h-[6vh] md:h-[12vh]  flex bg-white shadow-sm font-sans fixed top-0 left-0 right-0 z-50"
       >
         {/* Left: Logo */}
-        <div className="w-full md:w-[30%] h-full flex items-center justify-start md:pl-0 md:justify-center">
+        <div className="w-full md:w-[30%] h-full flex items-center justify-start md:pl-0 md:justify-center overflow-hidden">
           <Link href="/">
             <Image
               src="/Logo.png"

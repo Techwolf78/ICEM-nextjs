@@ -118,13 +118,14 @@ const HeroSlider = () => {
                   <Image
                     key={i}
                     src={img}
-                    alt="banner"
+                    alt={`ICEM Banner ${i + 1}`}
                     className="w-full h-auto object-cover flex-shrink-0"
                     width={1600}
                     height={700}
                     quality={80}
                     unoptimized
                     priority={i === 0}
+                    sizes="(max-width: 768px) 100vw, 1600px"
                   />
                 ))}
               </div>
@@ -154,12 +155,13 @@ const HeroSlider = () => {
           {isMobile && (
             <Image
               src="/Home/homemobile.avif"
-              alt="mobile banner"
+              alt="ICEM Mobile Banner"
               className="w-full object-contain"
               width={600}
               height={800}
               quality={80}
               unoptimized
+              sizes="100vw"
             />
           )}
         </>

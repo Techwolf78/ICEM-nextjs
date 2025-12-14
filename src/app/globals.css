@@ -179,6 +179,7 @@ body {
   background-color: #ffffff !important;
   color: var(--foreground);
   font-family: 'Helvetica Neue', 'Helvetica', 'Inter', sans-serif;
+  font-display: swap;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* ❌ REMOVE THIS:

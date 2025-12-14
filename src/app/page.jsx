@@ -8,11 +8,11 @@ import AcademicYearSection from "@/components/home/AcademicYearSection";
 import RecruitersSection from "@/components/home/RecruiterSection";
 import EnergyInnovation from "@/components/home/EnergyInnovation";
 import CollegeUnplugged from "@/components/home/CollegeUnplugged";
-import EventsSection from "@/components/home/EventSection";
+const EventsSection = dynamic(() => import("@/components/home/EventSection"));
+const Testimonials = dynamic(() => import("@/components/PlacementComponents/Testimonials"));
 import CTASection from "@/components/home/CTASection";
-import LazyInstagramMosaic from "@/components/home/LazyInstagramMosaic";
+const LazyInstagramMosaic = dynamic(() => import("@/components/home/LazyInstagramMosaic"));
 import CampusBeat from "@/components/home/CampusBeat";
-import Testimonials from "@/components/PlacementComponents/Testimonials";
 
 export default function HomePage() {
   return (

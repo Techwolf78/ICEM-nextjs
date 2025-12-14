@@ -50,13 +50,13 @@ export default function Computer() {
     <div className="w-full bg-white text-white">
       {/* ===== HERO SECTION ===== */}
       <div className="relative w-full overflow-hidden 
-  h-[75vh] sm:h-[65vh] md:h-[70vh] lg:h-[75vh] flex items-center">
+  h-[55vh] md:h-[70vh] lg:h-[75vh] flex items-center">
 
   {/* Background Image */}
   <div className="absolute inset-0">
     <Image
-      src="/programs/computer.webp"
-      alt="Artificial Intelligence Program"
+      src="/banners/ICEM - Computer Engineering.jpg"
+      alt="Computer Engineering Program"
       fill
       className="
         object-cover 
@@ -89,11 +89,11 @@ export default function Computer() {
     
     {/* Heading */}
     <h2 className="
-      text-2xl sm:text-2xl md:text-2xl lg:text-4xl 
+      text-xl sm:text-2xl md:text-3xl lg:text-4xl 
       font-bold leading-tight md:leading-snug
     ">
       4-Year B.Tech Computer Engineering Programme 
-      with specialisation in <br className="hidden sm:block" />
+      with specialisation in <br />
       <span  className="
         bg-gradient-to-br 
         from-cyan-400 
@@ -101,7 +101,7 @@ export default function Computer() {
         bg-clip-text 
         text-transparent 
         font-extrabold
-        text-2xl sm:text-2xl md:text-2xl lg:text-4xl
+        text-xl sm:text-2xl md:text-3xl lg:text-4xl
       ">
            Advanced Computing & Emerging Technologies
       </span>
@@ -127,13 +127,14 @@ export default function Computer() {
       <button
         onClick={toggleModal}
         className="
-          bg-secondary text-white px-6 sm:px-8 py-3 rounded-lg font-semibold
-          text-sm sm:text-base md:text-lg
+          bg-[#003c84] text-white px-4 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold
+          text-xs sm:text-base md:text-lg
           w-full sm:w-auto
           transition-all duration-300
-          hover:bg-gray-200 hover:text-secondary
+          hover:bg-[#43CBD0] hover:text-white
           border-2 border-transparent hover:border-secondary
           active:scale-95
+          hover:transform hover:-translate-y-1
         "
       >
         Enquire Now
@@ -142,13 +143,14 @@ export default function Computer() {
       <button
         onClick={handleBrochureDownload}
         className="
-          bg-secondary text-white px-6 sm:px-8 py-3 rounded-lg font-semibold
-          text-sm sm:text-base md:text-lg
+          bg-[#003c84] text-white px-4 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold
+          text-xs sm:text-base md:text-lg
           w-full sm:w-auto
           transition-all duration-300
-          hover:bg-white hover:text-secondary
+          hover:bg-[#43CBD0] hover:text-white
           border-2 border-transparent hover:border-secondary
           active:scale-95
+          hover:transform hover:-translate-y-1
         "
       >
         Download Brochure
@@ -211,16 +213,16 @@ export default function Computer() {
         </div>
       </div>
       {/* ===== PROGRAM STRUCTURE + APPLY FORM SECTION ===== */}
-      <div className="w-full bg-white text-black py-16">
+      <div className="w-full bg-white text-black py-4">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 px-4 sm:px-6 items-stretch">
           {/* LEFT TEXT SECTION */}
-          <div className="bg-white p-6 rounded-lg shadow-sm flex flex-col justify-between border border-gray-100">
+          <div className="bg-white p-4 rounded-lg shadow-sm flex flex-col justify-between border border-gray-100">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-4 leading-snug">
+              <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-2 leading-snug">
                 BTech in Computer Engineering
               </h2>
 
-              <p className="text-gray-700 mb-6 leading-relaxed text-sm sm:text-base">
+              <p className="text-gray-700 mb-4 leading-relaxed text-sm sm:text-base">
                 This programme provides a deep and rigorous foundation in the
                 principles of computing, from algorithmic thinking and software
                 development to computer architecture and network systems. It
@@ -229,11 +231,11 @@ export default function Computer() {
                 technological innovation.
               </p>
 
-              <h3 className="font-semibold text-lg sm:text-xl text-secondary mb-3">
+              <h3 className="font-semibold text-lg sm:text-xl text-secondary mb-2">
                 Programme Structure
               </h3>
 
-              <ul className="list-disc list-inside space-y-2 text-gray-800 text-sm sm:text-base">
+              <ul className="list-disc list-inside space-y-1 text-gray-800 text-sm sm:text-base">
                 <li>Programming Fundamentals & Object-Oriented Design</li>
                 <li>Data Structures, Algorithms, and Complexity Analysis</li>
                 <li>Computer Architecture and Organization</li>
@@ -244,7 +246,10 @@ export default function Computer() {
           </div>
 
           {/* RIGHT FORM SECTION */}
-          <div id="programme-structure" className="flex flex-col justify-between">
+          <div id="programme-structure" className="bg-white p-4 rounded-lg shadow-sm flex flex-col justify-between border border-gray-100">
+            <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-2 leading-snug text-center">
+              Enquire Now
+            </h2>
             <ApplyForm />
           </div>
         </div>

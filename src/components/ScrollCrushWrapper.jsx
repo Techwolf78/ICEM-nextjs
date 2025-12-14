@@ -55,7 +55,7 @@ export default function ScrollCrushWrapper({ Hero, children }) {
         {Hero}
       </div>
 
-      <div className="relative z-20 pt-5">{children}</div>
+      <div className="relative z-20 pt-0">{children}</div>
     </div>
   );
 }

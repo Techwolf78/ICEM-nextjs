@@ -1,4 +1,5 @@
 import ScrollCrushWrapper from "@/components/ScrollCrushWrapper";
+import dynamic from 'next/dynamic';
 
 import HeroSlider from "@/components/home/HeroSlider";
 import ExploreSection from "@/components/home/ExploreSection";
@@ -9,7 +10,7 @@ import EnergyInnovation from "@/components/home/EnergyInnovation";
 import CollegeUnplugged from "@/components/home/CollegeUnplugged";
 import EventsSection from "@/components/home/EventSection";
 import CTASection from "@/components/home/CTASection";
-import InstagramMosaic from "@/components/home/InstagramMosaic";
+import LazyInstagramMosaic from "@/components/home/LazyInstagramMosaic";
 import CampusBeat from "@/components/home/CampusBeat";
 import Testimonials from "@/components/PlacementComponents/Testimonials";
 
@@ -27,7 +28,7 @@ export default function HomePage() {
         <EventsSection />
         <Testimonials />
         <CTASection />
-        <InstagramMosaic />
+        <LazyInstagramMosaic />
       </ScrollCrushWrapper>
     </div>
   );

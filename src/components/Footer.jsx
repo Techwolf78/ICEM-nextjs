@@ -61,33 +61,45 @@ const Footer = () => {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-10">
-              {/* Phone */}
+            {/* Phones */}
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
               <p className="flex items-center gap-3 text-gray-600 font-semibold group">
                 <span className="p-2 bg-secondary/10 rounded-full text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
                   <FaPhoneAlt size={14} />
                 </span>
                 <a
-                  href="tel:+02114661500"
+                  href="tel:+917720010705"
                   className="hover:text-secondary transition-colors"
                 >
-                  02114 – 661500 / 666
+                  +91 77200 10705
                 </a>
               </p>
 
-              {/* Email */}
               <p className="flex items-center gap-3 text-gray-600 font-semibold group">
                 <span className="p-2 bg-secondary/10 rounded-full text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
-                  <FaEnvelope size={14} />
+                  <FaPhoneAlt size={14} />
                 </span>
                 <a
-                  href="mailto:info@indiraicem.ac.in"
+                  href="tel:+917720010706"
                   className="hover:text-secondary transition-colors"
                 >
-                  info@indiraicem.ac.in
+                  +91 77200 10706
                 </a>
               </p>
             </div>
+
+            {/* Email */}
+            <p className="flex items-center gap-3 text-gray-600 font-semibold group">
+              <span className="p-2 bg-secondary/10 rounded-full text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+                <FaEnvelope size={14} />
+              </span>
+              <a
+                href="mailto:info@indiraicem.ac.in"
+                className="hover:text-secondary transition-colors"
+              >
+                info@indiraicem.ac.in
+              </a>
+            </p>
           </div>
 
           {/* Social Icons */}

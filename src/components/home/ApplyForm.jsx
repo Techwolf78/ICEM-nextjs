@@ -36,8 +36,8 @@ export default function ApplyForm({ variant = "card" }) {
         setIframeHeight("500");
         setMinHeight("500px");
       } else {
-        setIframeHeight(isModal ? "500" : "600");
-        setMinHeight(isModal ? "500px" : "600px");
+        setIframeHeight(isModal ? "500" : "500");
+        setMinHeight(isModal ? "500px" : "500px");
       }
     };
 

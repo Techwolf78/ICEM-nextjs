@@ -49,7 +49,7 @@ export default function Computer() {
   return (
     <div className="w-full bg-white text-white">
       {/* ===== HERO SECTION ===== */}
-      <div className="relative w-full overflow-hidden h-[60vh] md:h-[75vh] flex items-center">
+      <div className="relative w-full overflow-hidden h-[55vh] md:h-[70vh] lg:h-[75vh] flex items-center">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -85,23 +85,40 @@ export default function Computer() {
 
             {/* Floating Stat Cards */}
 
-            {/* Buttons */}
-            <div className="flex gap-4 mt-6">
-              <button
-                onClick={toggleModal}
-                className="bg-secondary text-white px-8 py-3 rounded-lg font-semibold 
-                         "
-              >
-                Enquire Now
-              </button>
+    {/* Buttons - FIXED */}
+    <div className="flex  sm:flex-row gap-3 sm:gap-4 mt-6 ">
+      <button
+        onClick={toggleModal}
+        className="
+          bg-[#003c84] text-white px-4 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold
+          text-xs sm:text-base md:text-lg
+          w-full sm:w-auto
+          transition-all duration-300
+          hover:bg-[#43CBD0] hover:text-white
+          border-2 border-transparent hover:border-secondary
+          active:scale-95
+          hover:transform hover:-translate-y-1
+        "
+      >
+        Enquire Now
+      </button>
 
-              <button
-                onClick={handleBrochureDownload}
-                className="bg-secondary text-white px-8 py-3 rounded-lg"
-              >
-                Download Brochure
-              </button>
-            </div>
+      <button
+        onClick={handleBrochureDownload}
+        className="
+          bg-[#003c84] text-white px-4 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold
+          text-xs sm:text-base md:text-lg
+          w-full sm:w-auto
+          transition-all duration-300
+          hover:bg-[#43CBD0] hover:text-white
+          border-2 border-transparent hover:border-secondary
+          active:scale-95
+          hover:transform hover:-translate-y-1
+        "
+      >
+        Download Brochure
+      </button>
+    </div>
           </div>
         </div>
 

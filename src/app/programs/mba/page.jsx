@@ -227,7 +227,7 @@ export default function MBA() {
           HERO SECTION
       ======================= */}
       <div className="relative w-full overflow-hidden 
-  h-[55vh] sm:h-[65vh] md:h-[70vh] lg:h-[75vh] flex items-center">
+  h-[55vh] md:h-[70vh] lg:h-[75vh] flex items-center">
 
   {/* Background Image */}
   <div className="absolute inset-0">
@@ -269,7 +269,7 @@ export default function MBA() {
       {/* Heading */}
       <h2
         className="
-          text-2xl sm:text-2xl md:text-2xl lg:text-4xl
+          text-xl sm:text-2xl md:text-3xl lg:text-4xl
           font-bold leading-tight md:leading-snug
         "
       >
@@ -293,18 +293,19 @@ export default function MBA() {
         economy.
       </p>
 
-      {/* Buttons */}
-       <div className="flex  sm:flex-row gap-3 sm:gap-4 mt-6 ">
+    {/* Buttons - FIXED */}
+    <div className="flex  sm:flex-row gap-3 sm:gap-4 mt-6 ">
       <button
         onClick={toggleModal}
         className="
-          bg-secondary text-white px-6 sm:px-8 py-3 rounded-lg font-semibold
-          text-sm sm:text-base md:text-lg
+          bg-[#003c84] text-white px-4 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold
+          text-xs sm:text-base md:text-lg
           w-full sm:w-auto
           transition-all duration-300
-          hover:bg-gray-200 hover:text-secondary
+          hover:bg-[#43CBD0] hover:text-white
           border-2 border-transparent hover:border-secondary
           active:scale-95
+          hover:transform hover:-translate-y-1
         "
       >
         Enquire Now
@@ -313,13 +314,14 @@ export default function MBA() {
       <button
         onClick={handleBrochureDownload}
         className="
-          bg-secondary text-white px-6 sm:px-8 py-3 rounded-lg font-semibold
-          text-sm sm:text-base md:text-lg
+          bg-[#003c84] text-white px-4 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold
+          text-xs sm:text-base md:text-lg
           w-full sm:w-auto
           transition-all duration-300
-          hover:bg-white hover:text-secondary
+          hover:bg-[#43CBD0] hover:text-white
           border-2 border-transparent hover:border-secondary
           active:scale-95
+          hover:transform hover:-translate-y-1
         "
       >
         Download Brochure
@@ -337,7 +339,7 @@ export default function MBA() {
       {/* =======================
           WHITE INFO SECTION
       ======================= */}
-      <div className="w-full bg-[#f8f8f8] text-black py-12">
+      <div className="w-full bg-[#f8f8f8] text-black py-4 md:py-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 px-6">
           <div>
             <h4 className="font-semibold text-lg mb-2">🕓 Course Duration</h4>
@@ -373,26 +375,33 @@ export default function MBA() {
       {/* =======================
           MBA SPECIALIZATION TABS
       ======================= */}
-      <div className="w-full bg-white py-8">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:flex md:gap-4 md:flex-nowrap overflow-hidden gap-2">
-          {[
-            ["marketing", "MARKETING MANAGEMENT"],
-            ["finance", "FINANCIAL MANAGEMENT"],
-            ["hr", "HUMAN RESOURCES MANAGEMENT"],
-            ["operations", "OPERATIONS & SUPPLY CHAIN MANAGEMENT"],
-          ].map(([key, label]) => (
-            <button
-              key={key}
-              onClick={() => setSpecialization(key)}
-              className={`px-2 md:px-4 lg:px-6 h-12 md:h-14 max-w-[200px] md:max-w-[300px] flex items-center justify-center rounded-lg font-semibold text-[10px] md:text-sm lg:text-base text-center border border-gray-200 whitespace-normal leading-tight ${
-                specialization === key
-                  ? "bg-secondary text-white"
-                  : "bg-gray-100 text-gray-800"
-              }`}
-            >
-              {label}
-            </button>
-          ))}
+      <div className="w-full bg-white py-1 md:py-6">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-secondary text-center mb-2 md:mb-8 md:hidden">
+            MBA Specializations
+          </h2>
+          <div className="flex justify-center gap-2 overflow-x-auto md:flex-wrap md:justify-center md:gap-4">
+            {[
+              ["marketing", "Marketing", "Marketing Management"],
+              ["finance", "Finance", "Financial Management"],
+              ["hr", "HR", "Human Resources Management"],
+              ["operations", "Operations", "Operations & Supply Chain Management"],
+            ].map(([key, shortLabel, fullLabel]) => (
+              <button
+                key={key}
+                onClick={() => setSpecialization(key)}
+                aria-pressed={specialization === key}
+                className={`flex-shrink-0 px-3 py-1.5 md:px-6 md:py-4 rounded-full md:rounded-lg font-medium text-xs md:text-base transition-all duration-200 focus:outline-none  focus:ring-offset-2 ${
+                  specialization === key
+                    ? "bg-secondary text-white shadow-md"
+                    : "bg-white text-gray-700 border border-gray-300 hover:bg-gray-100 hover:border-secondary"
+                }`}
+              >
+                <span className="md:hidden">{shortLabel}</span>
+                <span className="hidden md:inline">{fullLabel}</span>
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -400,27 +409,33 @@ export default function MBA() {
           STRUCTURE + FORM
       ======================= */}
       <div className="w-full bg-white py-4 md:py-8 text-black">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-12">
           {/* LEFT */}
-          <div className="bg-white shadow-sm border border-gray-200 p-6 rounded-lg">
-            <h2 className="text-3xl font-bold text-secondary mb-4">
+          <div className="bg-white shadow-md border border-gray-200 p-3 md:p-8 rounded-lg">
+            <h2 className="text-xl md:text-3xl font-bold text-secondary mb-4 leading-snug">
               {s.title}
             </h2>
-            <p className="text-gray-700 mb-6">{s.overview}</p>
+            <p className="text-gray-700 mb-6 leading-relaxed text-base">{s.overview}</p>
 
-            <h3 className="text-xl font-semibold text-secondary mb-3">
+            <h3 className="text-xl font-semibold text-secondary mb-4">
               Programme Structure
             </h3>
 
-            <ul className="list-disc list-inside space-y-2 text-gray-800">
+            <ul className="space-y-2 text-gray-800">
               {s.structure.map((item, index) => (
-                <li key={index}>{item}</li>
+                <li key={index} className="flex items-start">
+                  <span className="text-secondary mr-3 mt-0.5">•</span>
+                  <span className="text-sm md:text-base">{item}</span>
+                </li>
               ))}
             </ul>
           </div>
 
           {/* RIGHT */}
-          <div id="programme-structure">
+          <div className="bg-white shadow-xl rounded-xl p-1 md:p-8 text-secondary">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-center leading-snug">
+              Enquire Now
+            </h2>
             <ApplyForm />
           </div>
         </div>

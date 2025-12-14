@@ -37,7 +37,7 @@ export default function Civil() {
       {/* -------------------------------------- HERO SECTION -------------------------------------- */}
       <div
         className="relative w-full overflow-hidden 
-  h-[55vh] sm:h-[65vh] md:h-[70vh] lg:h-[75vh] flex items-center"
+  h-[55vh] md:h-[70vh] lg:h-[75vh] flex items-center"
       >
         {/* Background Image */}
         <div className="absolute inset-0">
@@ -78,7 +78,7 @@ export default function Civil() {
             {/* Heading */}
             <h2
               className="
-          text-2xl sm:text-2xl md:text-2xl lg:text-4xl
+          text-xl sm:text-2xl md:text-3xl lg:text-4xl
           font-bold leading-tight md:leading-snug
         "
             >
@@ -109,30 +109,40 @@ export default function Civil() {
               Resources, and Environmental Engineering.
             </p>
 
-            {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 w-full sm:w-auto">
-              <button
-                onClick={toggleModal}
-                className="
-                  bg-secondary text-white px-6 sm:px-8 py-3 rounded-lg font-semibold
-                  text-sm sm:text-base md:text-lg
-                  w-full sm:w-auto
-                  transition-all duration-300
-                  hover:bg-gray-200 hover:text-secondary
-                  border-2 border-transparent hover:border-secondary
-                  active:scale-95
-                "
-              >
-                Enquire Now
-              </button>
+    {/* Buttons - FIXED */}
+    <div className="flex  sm:flex-row gap-3 sm:gap-4 mt-6 ">
+      <button
+        onClick={toggleModal}
+        className="
+          bg-[#003c84] text-white px-4 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold
+          text-xs sm:text-base md:text-lg
+          w-full sm:w-auto
+          transition-all duration-300
+          hover:bg-[#43CBD0] hover:text-white
+          border-2 border-transparent hover:border-secondary
+          active:scale-95
+          hover:transform hover:-translate-y-1
+        "
+      >
+        Enquire Now
+      </button>
 
-              <button
-                onClick={handleBrochureDownload}
-                className="bg-secondary text-white px-6 sm:px-8 py-3 rounded-lg font-semibold text-sm sm:text-md w-full sm:w-auto"
-              >
-                Download Brochure
-              </button>
-            </div>
+      <button
+        onClick={handleBrochureDownload}
+        className="
+          bg-[#003c84] text-white px-4 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold
+          text-xs sm:text-base md:text-lg
+          w-full sm:w-auto
+          transition-all duration-300
+          hover:bg-[#43CBD0] hover:text-white
+          border-2 border-transparent hover:border-secondary
+          active:scale-95
+          hover:transform hover:-translate-y-1
+        "
+      >
+        Download Brochure
+      </button>
+    </div>
           </div>
         </div>
 
@@ -144,13 +154,13 @@ export default function Civil() {
       <div className="w-full bg-white text-black py-16">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 px-4 sm:px-6 items-stretch">
           {/* LEFT TEXT SECTION */}
-          <div className="bg-white p-6 rounded-lg shadow-sm flex flex-col justify-between border border-gray-100">
+          <div className="bg-white p-4 rounded-lg shadow-sm flex flex-col justify-between border border-gray-100">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-4 leading-snug">
+              <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-2 leading-snug">
                 BTech in Civil Engineering
               </h2>
 
-              <p className="text-gray-700 mb-6 leading-relaxed text-sm sm:text-base">
+              <p className="text-gray-700 mb-4 leading-relaxed text-sm sm:text-base">
                 This programme offers a comprehensive and robust foundation in the principles of civil engineering, from structural mechanics and material science to infrastructure design and project management. It integrates strong academic theory with hands-on field exposure, ensuring graduates are industry-prepared and equipped to lead sustainable and resilient infrastructure projects.
               </p>
 
@@ -158,7 +168,7 @@ export default function Civil() {
                 Programme Structure
               </h3>
 
-              <ul className="list-disc list-inside space-y-2 text-gray-800 text-sm sm:text-base">
+              <ul className="list-disc list-inside space-y-1 text-gray-800 text-sm sm:text-base">
                 <li>Engineering Mechanics and Strength of Materials</li>
                 <li>Structural Analysis and Design</li>
                 <li>Geotechnical Engineering and Foundation Design</li>
@@ -169,7 +179,8 @@ export default function Civil() {
           </div>
 
           {/* RIGHT FORM SECTION */}
-          <div id="programme-structure" className="flex flex-col justify-between">
+          <div className="bg-white p-4 rounded-lg shadow-sm flex flex-col justify-between border border-gray-100">
+            <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-2 leading-snug text-center">Enquire Now</h2>
             <ApplyForm />
           </div>
         </div>

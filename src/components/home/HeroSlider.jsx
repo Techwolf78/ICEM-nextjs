@@ -9,7 +9,7 @@ const HeroSlider = () => {
   const desktopImages = [
     "/banners/HomeBanner1.webp",
     "/placement/PlacementBanner2.webp",
-    "/banners/HomeBanner2.webp",
+    "/banners/ICEM - Website Banner 2 5.avif",
     // "/banners/ICEMBANNERCLASS.webp",
     "/banners/ICEMBANNERMECH.webp",
     "/banners/ICEMBANNERCOMP.webp",
@@ -18,7 +18,7 @@ const HeroSlider = () => {
   const mobileImages = [
     "/banners/HomeBanner1.webp",
     "/placement/PlacementBanner2.webp",
-    "/banners/HomeBanner2.webp",
+    "/banners/ICEM - Website Banner 2 5.avif",
     // "/banners/ICEMBANNERCLASS.webp",
     "/banners/ICEMBANNERMECH.webp",
     "/banners/ICEMBANNERCOMP.webp",
@@ -26,11 +26,23 @@ const HeroSlider = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(true);
+  const [isMobile, setIsMobile] = useState(null); // null to prevent SSR mismatch
 
   useEffect(() => {
-    const interval = setInterval(() => handleNext(), 5000);
-    return () => clearInterval(interval);
-  }, [currentIndex]);
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768); // md breakpoint
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile && isMobile !== null) {
+      const interval = setInterval(() => handleNext(), 5000);
+      return () => clearInterval(interval);
+    }
+  }, [currentIndex, isMobile]);
 
   const handleNext = () => {
     const totalSlides = desktopImages.length;
@@ -57,45 +69,30 @@ const HeroSlider = () => {
   return (
     <div className="relative w-full overflow-hidden">
       {/* ---------------- TOP SPOTLIGHT SECTION ---------------- */}
-      <div className="w-full  sm:h-[4vh] bg-white border-b border-gray-200 flex items-center overflow-hidden relative">
-        <div className="relative flex items-center justify-center font-semibold text-xs sm:text-sm px-4 sm:px-8 py-2 clip-ribbon-left z-10 bg-secondary text-white">
+      <div className="w-full h-[3vh] sm:h-[4vh] bg-white border-b border-gray-200 flex items-center overflow-hidden relative ">
+        <div className="relative flex items-center justify-center font-semibold text-xs sm:text-sm px-2 sm:px-8 py-2 clip-ribbon-left z-10 bg-secondary text-white">
           SPOTLIGHT
         </div>
 
         <div className="flex-1 overflow-hidden whitespace-nowrap bg-white">
           <div className="flex animate-seamlessMarquee font-semibold text-xs sm:text-sm py-1 sm:py-2 text-secondary">
             <span className="mr-8">Public Advisory Notice</span>
-            <span className="mr-8">
-              All 4 PG Programs Computer Engineering
-            </span>
             <span className="mr-8">Placement Record 2025 Announced</span>
 
             {/* Duplicate for seamless loop */}
             <span className="mr-8">Public Advisory Notice</span>
-            <span className="mr-8">
-              All 4 PG Programs Computer Engineering
-            </span>
             <span className="mr-8">Placement Record 2025 Announced</span>
 
             {/* Duplicate for seamless loop */}
             <span className="mr-8">Public Advisory Notice</span>
-            <span className="mr-8">
-              All 4 PG Programs Computer Engineering
-            </span>
             <span className="mr-8">Placement Record 2025 Announced</span>
 
             {/* Duplicate for seamless loop */}
             <span className="mr-8">Public Advisory Notice</span>
-            <span className="mr-8">
-              All 4 PG Programs Computer Engineering
-            </span>
             <span className="mr-8">Placement Record 2025 Announced</span>
 
             {/* Duplicate for seamless loop */}
             <span className="mr-8">Public Advisory Notice</span>
-            <span className="mr-8">
-              All 4 PG Programs Computer Engineering
-            </span>
             <span className="mr-8">Placement Record 2025 Announced</span>
           </div>
         </div>
@@ -103,75 +100,70 @@ const HeroSlider = () => {
         <div className="absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-primary to-transparent"></div>
       </div>
 
-      {/* ---------------- DESKTOP SLIDER ---------------- */}
-      <div className="hidden md:block">
-        <div
-          className={`flex ${
-            isTransitioning
-              ? "transition-transform duration-700 ease-in-out"
-              : ""
-          }`}
-          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-        >
-          {[...desktopImages, desktopImages[0]].map((img, i) => (
-            <Image
-              key={i}
-              src={img}
-              alt="banner"
-              className="w-full h-auto object-cover flex-shrink-0"
-              width={1600}
-              height={700}
-              quality={100}
-              unoptimized
-              priority
-            />
-          ))}
-        </div>
+      {/* Render only after hydration */}
+      {isMobile !== null && (
+        <>
+          {/* ---------------- DESKTOP SLIDER ---------------- */}
+          {!isMobile && (
+            <div>
+              <div
+                className={`flex ${
+                  isTransitioning
+                    ? "transition-transform duration-700 ease-in-out"
+                    : ""
+                }`}
+                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+              >
+                {[...desktopImages, desktopImages[0]].map((img, i) => (
+                  <Image
+                    key={i}
+                    src={img}
+                    alt="banner"
+                    className="w-full h-auto object-cover flex-shrink-0"
+                    width={1600}
+                    height={700}
+                    quality={100}
+                    unoptimized
+                    priority
+                  />
+                ))}
+              </div>
 
-        {/* Dots */}
-        <div className="absolute bottom-6 right-6 flex gap-2">
-          {desktopImages.map((_, i) => (
-            <div
-              key={i}
-              onClick={() => handleDotClick(i)}
-              className={`relative h-2 rounded-full cursor-pointer overflow-hidden transition-all ${
-                currentIndex % desktopImages.length === i
-                  ? "w-8 bg-gray-300"
-                  : "w-2 bg-gray-500/60"
-              }`}
-            >
-              {currentIndex % desktopImages.length === i && (
-                <span className="absolute top-0 left-0 h-full w-0 bg-secondary animate-progressFill"></span>
-              )}
+              {/* Dots */}
+              <div className="absolute bottom-6 right-6 flex gap-2">
+                {desktopImages.map((_, i) => (
+                  <div
+                    key={i}
+                    onClick={() => handleDotClick(i)}
+                    className={`relative h-2 rounded-full cursor-pointer overflow-hidden transition-all ${
+                      currentIndex % desktopImages.length === i
+                        ? "w-8 bg-gray-300"
+                        : "w-2 bg-gray-500/60"
+                    }`}
+                  >
+                    {currentIndex % desktopImages.length === i && (
+                      <span className="absolute top-0 left-0 h-full w-0 bg-secondary animate-progressFill"></span>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
-        </div>
-      </div>
+          )}
 
-      {/* ---------------- MOBILE SLIDER ---------------- */}
-      <div className="block md:hidden">
-        <div
-          className={`flex ${
-            isTransitioning
-              ? "transition-transform duration-700 ease-in-out"
-              : ""
-          }`}
-          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-        >
-          {[...mobileImages, mobileImages[0]].map((img, i) => (
+          {/* ---------------- MOBILE SLIDER ---------------- */}
+          {isMobile && (
             <Image
-              key={i}
-              src={img}
+              src="/Home/homemobile.avif"
               alt="mobile banner"
-              className="w-full object-cover flex-shrink-0"
+              className="w-full object-contain"
               width={600}
-              height={400}
+              height={800}
               quality={100}
               unoptimized
             />
-          ))}
-        </div>
-      </div>
+          )}
+        </>
+      )}
 
       {/* ---------------- CSS ANIMATIONS ---------------- */}
       <style jsx>{`

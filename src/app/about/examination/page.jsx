@@ -102,13 +102,13 @@ export default function Examination() {
                   ),
                 },
                 {
-                  title: "Examination Fee Structure 2024-25",
+                  title: "Examination Fee Structure 2025-26",
                   pdf: ExamFees,
                   description:
                     "Complete fee structure for various examinations including regular, backlog, and improvement examinations.",
                 },
                 {
-                  title: "Examination Committee (2024-25)",
+                  title: "Examination Committee (2025-26)",
                   pdf: ExamCommittee,
                   description:
                     "The Examination Committee is responsible for coordinating all examination activities, ensuring proper conduct of theory and practical exams, maintaining confidentiality, and overseeing smooth execution of evaluation and result processes.",
@@ -206,6 +206,16 @@ export default function Examination() {
                         <ul className="list-decimal ml-6 space-y-2">
                           <li>
                             <a
+                              href="/exam/FY.MBA. _2024  PATTERN_ ENDSEM EXAM TIMETABLE FOR NOV-DEC-2025.pdf"
+                              target="_blank"
+                              className="text-secondary hover:underline"
+                            >
+                              FY MBA Endsemester Examination Timetable – Nov/Dec
+                              2025
+                            </a>
+                          </li>
+                          <li>
+                            <a
                               href="/exam/SYMBA25.pdf"
                               target="_blank"
                               className="text-secondary hover:underline"
@@ -238,6 +248,34 @@ export default function Examination() {
                           </li> */}
                         </ul>
                       </div>
+                    </div>
+                  ),
+                },
+                {
+                  title: "Notices",
+                  description: (
+                    <div className="text-gray-800 text-sm leading-relaxed space-y-6">
+                      <h4 className="font-semibold text-lg mb-2">Examination Notices</h4>
+                      <ul className="list-decimal ml-6 space-y-2">
+                        <li>
+                          <a
+                            href="/exam/21_EXAM Form Noties FY B.TECH_FY MCA_FY MBAINT_FYMCAINT 2024 pattern.pdf"
+                            target="_blank"
+                            className="text-secondary hover:underline"
+                          >
+                            FY B.TECH / FY MCA / FY MBA (INT) / FY MCA (INT) 2024 Pattern Exam Notice
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="/exam/22_EXAM Form Noties FY _MBA 2024 pattern.pdf"
+                            target="_blank"
+                            className="text-secondary hover:underline"
+                          >
+                            FY MBA 2024 Pattern Exam Notice
+                          </a>
+                        </li>
+                      </ul>
                     </div>
                   ),
                 },

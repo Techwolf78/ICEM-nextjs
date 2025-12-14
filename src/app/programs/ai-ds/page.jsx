@@ -61,7 +61,7 @@ export default function AIDS() {
     <div className="w-full bg-white text-white">
       {/* ===== HERO SECTION ===== */}
       <div className="relative w-full overflow-hidden 
-  h-[55vh] sm:h-[65vh] md:h-[70vh] lg:h-[75vh] flex items-center">
+  h-[55vh] md:h-[70vh] lg:h-[75vh] flex items-center">
 
   {/* Background Image */}
   <div className="absolute inset-0">
@@ -103,12 +103,12 @@ export default function AIDS() {
       {/* Heading */}
       <h2
         className="
-          text-2xl sm:text-2xl md:text-2xl lg:text-4xl 
+          text-xl sm:text-2xl md:text-3xl lg:text-4xl 
           font-bold leading-tight md:leading-snug
         "
       >
-        4-Year B.Tech AIDS Programme <br className="hidden sm:block" />
-        with specialisation in <br className="hidden sm:block" />
+        4-Year B.Tech AIDS Programme <br />
+        with specialisation in <br />
         <span
           className="
             bg-gradient-to-br 
@@ -117,10 +117,10 @@ export default function AIDS() {
             bg-clip-text 
             text-transparent 
             font-extrabold
-            text-3xl sm:text-2xl md:text-2xl lg:text-4xl
+            text-xl sm:text-2xl md:text-3xl lg:text-4xl
           "
         >
-          Artificial Intelligence & <br />Future Technologies
+           Artificial Intelligence & <br />Future Technologies
         </span>
       </h2>
 
@@ -140,18 +140,19 @@ export default function AIDS() {
         Intelligence and Data Science.
       </p>
 
-      {/* Buttons */}
-       <div className="flex  sm:flex-row gap-3 sm:gap-4 mt-6 ">
+    {/* Buttons - FIXED */}
+    <div className="flex  sm:flex-row gap-3 sm:gap-4 mt-6 ">
       <button
         onClick={toggleModal}
         className="
-          bg-secondary text-white px-6 sm:px-8 py-3 rounded-lg font-semibold
-          text-sm sm:text-base md:text-lg
+          bg-[#003c84] text-white px-4 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold
+          text-xs sm:text-base md:text-lg
           w-full sm:w-auto
           transition-all duration-300
-          hover:bg-gray-200 hover:text-secondary
+          hover:bg-[#43CBD0] hover:text-white
           border-2 border-transparent hover:border-secondary
           active:scale-95
+          hover:transform hover:-translate-y-1
         "
       >
         Enquire Now
@@ -160,13 +161,14 @@ export default function AIDS() {
       <button
         onClick={handleBrochureDownload}
         className="
-          bg-secondary text-white px-6 sm:px-8 py-3 rounded-lg font-semibold
-          text-sm sm:text-base md:text-lg
+          bg-[#003c84] text-white px-4 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold
+          text-xs sm:text-base md:text-lg
           w-full sm:w-auto
           transition-all duration-300
-          hover:bg-white hover:text-secondary
+          hover:bg-[#43CBD0] hover:text-white
           border-2 border-transparent hover:border-secondary
           active:scale-95
+          hover:transform hover:-translate-y-1
         "
       >
         Download Brochure
@@ -262,7 +264,10 @@ export default function AIDS() {
           </div>
 
           {/* RIGHT FORM SECTION */}
-          <div id="programme-structure" className="flex flex-col justify-between">
+          <div id="programme-structure" className="bg-white p-4 rounded-lg shadow-sm flex flex-col justify-between border border-gray-100">
+            <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-2 leading-snug text-center">
+              Enquire Now
+            </h2>
             <ApplyForm />
           </div>
         </div>

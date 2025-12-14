@@ -6,13 +6,13 @@ import React from "react";
 // Static data moved outside component
 const events = [
   {
-    img: "/events/ArshGoyal.webp",
+    img: "/events/ArshGoyal.avif",
     title: "Guest Lecture by Arsh Goyal",
     description:
       "An inspiring session with Arsh Goyal, sharing real-world tech insights.",
   },
   {
-    img: "/events/BParak.webp",
+    img: "/events/BParak.avif",
     title: "Bharat Parakrama",
     description:
       "A celebration of patriotism and valor with vibrant cultural performances.",
@@ -29,7 +29,7 @@ const events = [
     description: "A thrilling fest of technology, creativity, and innovation.",
   },
   {
-    img: "/events/IGIIRP.webp",
+    img: "/events/IGIIRP.avif",
     title: "Indira Global Industrial Research",
     description:
       "Encouraging collaboration between academia and industry for impactful research.",

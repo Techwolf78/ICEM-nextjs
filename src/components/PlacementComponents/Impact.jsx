@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { FaTrophy, FaChartLine, FaBuilding, FaUserCheck } from "react-icons/fa";
 
 export default function Impact() {
   const [counts, setCounts] = useState([0, 0, 0, 0]);
@@ -65,113 +66,79 @@ export default function Impact() {
     }
   }, [isVisible]);
 
+  const stats = [
+    {
+      icon: <FaTrophy className="text-2xl md:text-3xl text-secondary mb-2" />,
+      value: counts[0].toFixed(0),
+      suffix: " LPA",
+      label: "Highest Package",
+      bgColor: "#E2F4F6",
+    },
+    {
+      icon: <FaChartLine className="text-2xl md:text-3xl text-secondary mb-2" />,
+      value: counts[1].toFixed(2),
+      suffix: " LPA",
+      label: "Average Package",
+      bgColor: "#E2F4F6",
+    },
+    {
+      icon: <FaBuilding className="text-2xl md:text-3xl text-secondary mb-2" />,
+      value: Math.floor(counts[2]),
+      suffix: "+",
+      label: "Recruiting Companies",
+      bgColor: "#E2F4F6",
+    },
+    {
+      icon: <FaUserCheck className="text-2xl md:text-3xl text-secondary mb-2" />,
+      value: Math.floor(counts[3]),
+      suffix: "%",
+      label: "Placement Assistance",
+      bgColor: "#E2F4F6",
+    },
+  ];
+
   return (
-    <section ref={sectionRef} className="py-12 md:py-16 bg-white overflow-hidden">
+    <section ref={sectionRef} className="pb-4 md:pb-8 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
         {/* Section Heading */}
-        <h2 className="text-2xl md:text-4xl font-bold text-secondary mb-8 md:mb-12">
+        <h2 className="text-2xl md:text-4xl font-bold text-secondary mb-8 md:mb-12 leading-tight">
           Our Impact in Numbers
         </h2>
 
-        {/* RESPONSIVE GRID LOGIC:
-            - grid-cols-2: Two cards per row on mobile (looks like a dashboard)
-            - lg:grid-cols-4: Four cards in a row on laptops
-            - gap-3: Tighter spacing on mobile
-            - md:gap-8: Wider spacing on desktop
-        */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8">
-          
-          {/* Highest Package */}
-          <div
-            className={`
-            bg-white shadow-lg border border-blue-100 
-            p-4 md:p-8 rounded-xl 
-            transition-all duration-700 transform
-            flex flex-col justify-center items-center
-            ${
-              animated[0]
-                ? "translate-x-0 opacity-100 scale-100"
-                : "-translate-x-10 md:-translate-x-20 opacity-0 scale-90"
-            }
-            hover:scale-105 hover:shadow-xl
-          `}
-          >
-            <h3 className="text-2xl md:text-4xl font-bold text-secondary mb-1 md:mb-2">
-              ₹{counts[0].toFixed(0)} LPA
-            </h3>
-            <p className="text-xs md:text-lg font-bold text-secondary opacity-80">
-              Highest Package
-            </p>
-          </div>
-
-          {/* Average Package */}
-          <div
-            className={`
-            bg-white shadow-lg border border-blue-100 
-            p-4 md:p-8 rounded-xl 
-            transition-all duration-700 transform
-            flex flex-col justify-center items-center
-            ${
-              animated[1]
-                ? "translate-y-0 opacity-100 scale-100"
-                : "-translate-y-10 md:-translate-y-20 opacity-0 scale-90"
-            }
-            hover:scale-105 hover:shadow-xl
-          `}
-          >
-            <h3 className="text-2xl md:text-4xl font-bold text-secondary mb-1 md:mb-2">
-              ₹{counts[1].toFixed(2)} LPA
-            </h3>
-            <p className="text-xs md:text-lg font-bold text-secondary opacity-80">
-              Average Package
-            </p>
-          </div>
-
-          {/* Companies */}
-          <div
-            className={`
-            bg-white shadow-lg border border-blue-100 
-            p-4 md:p-8 rounded-xl 
-            transition-all duration-700 transform
-            flex flex-col justify-center items-center
-            ${
-              animated[2]
-                ? "translate-y-0 opacity-100 scale-100"
-                : "translate-y-10 md:translate-y-20 opacity-0 scale-90"
-            }
-            hover:scale-105 hover:shadow-xl
-          `}
-          >
-            <h3 className="text-2xl md:text-4xl font-bold text-secondary mb-1 md:mb-2">
-              {Math.floor(counts[2])}+
-            </h3>
-            <p className="text-xs md:text-lg font-bold text-secondary opacity-80">
-              Recruiting Companies
-            </p>
-          </div>
-
-          {/* Placement Assistance */}
-          <div
-            className={`
-            bg-white shadow-lg border border-blue-100 
-            p-4 md:p-8 rounded-xl 
-            transition-all duration-700 transform
-            flex flex-col justify-center items-center
-            ${
-              animated[3]
-                ? "translate-x-0 opacity-100 scale-100"
-                : "translate-x-10 md:translate-x-20 opacity-0 scale-90"
-            }
-            hover:scale-105 hover:shadow-xl
-          `}
-          >
-            <h3 className="text-2xl md:text-4xl font-bold text-secondary mb-1 md:mb-2">
-              {Math.floor(counts[3])}%
-            </h3>
-            <p className="text-xs md:text-lg font-bold text-secondary opacity-80">
-              Placement Assistance
-            </p>
-          </div>
+        {/* Stats Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          {stats.map((stat, index) => (
+            <div
+              key={index}
+              className={`
+                border border-gray-200/50
+                p-4 md:p-6 rounded-xl shadow-sm hover:shadow-lg
+                transition-all duration-500 transform hover:-translate-y-1
+                flex flex-col items-center justify-center text-center
+                ${index === 0 || index === 3 ? 'col-span-2 lg:col-span-1' : ''}
+                ${animated[index] ? "opacity-100 scale-100" : "opacity-0 scale-95"}
+              `}
+              style={{ 
+                backgroundColor: stat.bgColor,
+                transitionDelay: `${index * 150}ms` 
+              }}
+            >
+              <div className="mb-3 md:mb-4" aria-hidden="true">
+                {stat.icon}
+              </div>
+              <div className="mb-2">
+                <span className="text-3xl md:text-5xl font-bold text-gray-900 tabular-nums">
+                  {stat.value}
+                </span>
+                <span className="text-lg md:text-xl font-semibold text-gray-700 ml-1">
+                  {stat.suffix}
+                </span>
+              </div>
+              <p className="text-xs md:text-sm font-medium text-gray-600 uppercase tracking-wide">
+                {stat.label}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

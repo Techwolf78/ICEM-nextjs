@@ -69,7 +69,7 @@ export default function CTASection() {
   const { headline, body } = pageContent[pathname] || pageContent["/"];
 
   return (
-    <section className=" bg-secondary text-center text-white py-12 md:py-16 px-4 md:px-6   mx-auto  shadow-lg">
+    <section className=" bg-secondary text-center text-white py-4 md:py-8 px-4 md:px-6   mx-auto  shadow-lg">
       <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4">{headline}</h2>
       <p className="text-white/80 max-w-3xl mx-auto mb-6 md:mb-8 leading-relaxed text-xs md:text-sm lg:text-base">
         {body}
@@ -82,7 +82,7 @@ export default function CTASection() {
           className="
     bg-white text-[#002D72] font-semibold px-6 md:px-8 py-2.5 md:py-3 rounded-md 
     transition-all duration-300 
-    hover:bg-gray-100 
+    hover:bg-[#43CBD0] hover:text-white
     hover:shadow-lg 
     hover:-translate-y-1
   "
@@ -95,7 +95,7 @@ export default function CTASection() {
           className="
     bg-white text-[#002D72] font-semibold px-6 md:px-8 py-2.5 md:py-3 rounded-md 
     transition-all duration-300 
-    hover:bg-gray-100 
+    hover:bg-[#43CBD0] hover:text-white
     hover:shadow-lg 
     hover:-translate-y-1
   "

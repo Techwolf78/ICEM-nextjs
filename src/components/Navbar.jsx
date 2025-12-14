@@ -39,6 +39,7 @@ const Navbar = () => {
   const [mobileDropdown, setMobileDropdown] = useState(null);
   const [showDialog, setShowDialog] = useState(false);
   const [notify, setNotify] = useState(false);
+  const [isShaking, setIsShaking] = useState(false);
   const tourRef = useRef(null);
 
   useEffect(() => {
@@ -47,6 +48,15 @@ const Navbar = () => {
       return () => clearTimeout(timer);
     }
   }, [notify]);
+
+  // Shake effect every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsShaking(true);
+      setTimeout(() => setIsShaking(false), 1000);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   // ✅ Refs to manage hover timers and outside clicks (no flicker)
   const dropdownTimeoutRef = useRef(null);
@@ -225,6 +235,7 @@ const Navbar = () => {
               link: "https://lc-icem-sumedh.vercel.app",
             },
             { label: "Contact Us", link: "/contact" },
+            { label: "Merit Lists 25-26", link: "/merit-lists" },
           ],
         },
       ],
@@ -420,6 +431,15 @@ const Navbar = () => {
 
                 <span className="text-gray-400">|</span>
 
+                <Link
+                  href="/merit-lists"
+                  className="bg-secondary/80 hover:bg-secondary/90 text-secondary font-semibold px-2 py-1 rounded transition-colors duration-200 animate-pulse"
+                >
+                  Merit Lists 25-26
+                </Link>
+
+                <span className="text-gray-400">|</span>
+
                 {/* 🔔 Tooltip Trigger */}
                 <button
                   ref={tourRef}
@@ -442,7 +462,7 @@ const Navbar = () => {
               {/* CTA Button */}
               <button
                 onClick={toggleEnquireDrawer}
-                className="bg-secondary hover:scale-[1.03] text-white px-4 py-1 font-semibold transition-all duration-200"
+                className={`bg-[#003c84] text-white hover:bg-[#43ccd1] hover:text-white px-4 py-1 font-semibold transition-all duration-200 ${isShaking ? 'animate-shake' : ''}`}
               >
                 Enquire Now
               </button>

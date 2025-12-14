@@ -38,16 +38,20 @@ export default function Typingsection() {
 
   return (
     <>
-      {/* Typing Text Button Section */}
-      <div className="flex justify-center items-center pr-6 pt-14 md:-mt-12 relative z-10">
-        <button className="bg-secondary text-white px-6 py-3 rounded-full text-lg md:text-2xl font-semibold shadow-lg hover:bg-primary/90 transition-all duration-300 flex items-center gap-2">
-          Crafting Your{" "}
-          <span className="relative inline-block text-white font-bold">
-            {currentText}
-            <span className="ml-1 animate-blink">|</span>
-          </span>
-        </button>
-      </div>
+      {/* Typing Text Section */}
+      <section className=" bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+          <div className="mb-8 md:mb-12">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+              Crafting Your{" "}
+              <span className="text-secondary font-extrabold">
+                {currentText}
+                <span className="ml-2 animate-blink">|</span>
+              </span>
+            </h2>
+          </div>
+        </div>
+      </section>
 
       {/* Cursor Blink Animation */}
       <style>

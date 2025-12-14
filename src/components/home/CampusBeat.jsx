@@ -7,9 +7,9 @@ const CampusBeat = () => {
   const [paused, setPaused] = useState(false);
 
   const marqueeImages = [
-    "/marquee/Marquee1.webp",
-    "/marquee/Marquee2.webp",
-    "/marquee/Marquee3.webp",
+    "/marquee/Marquee1.avif",
+    "/marquee/Marquee2.avif",
+    "/marquee/Marquee3.avif",
     "/marquee/Marquee4.webp",
     "/marquee/Marquee5.webp",
     "/marquee/Marquee6.webp",

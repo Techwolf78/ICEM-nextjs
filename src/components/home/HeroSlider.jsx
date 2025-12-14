@@ -112,7 +112,7 @@ const HeroSlider = () => {
                     ? "transition-transform duration-700 ease-in-out"
                     : ""
                 }`}
-                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                style={{ transform: `translateX(-${currentIndex * 100}%)`, willChange: isTransitioning ? 'transform' : 'auto' }}
               >
                 {[...desktopImages, desktopImages[0]].map((img, i) => (
                   <Image
@@ -122,9 +122,9 @@ const HeroSlider = () => {
                     className="w-full h-auto object-cover flex-shrink-0"
                     width={1600}
                     height={700}
-                    quality={100}
+                    quality={80}
                     unoptimized
-                    priority
+                    priority={i === 0}
                   />
                 ))}
               </div>
@@ -158,7 +158,7 @@ const HeroSlider = () => {
               className="w-full object-contain"
               width={600}
               height={800}
-              quality={100}
+              quality={80}
               unoptimized
             />
           )}

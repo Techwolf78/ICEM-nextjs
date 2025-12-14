@@ -112,20 +112,19 @@ const HeroSlider = () => {
                     ? "transition-transform duration-700 ease-in-out"
                     : ""
                 }`}
-                style={{ transform: `translateX(-${currentIndex * 100}%)`, willChange: isTransitioning ? 'transform' : 'auto' }}
+                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
               >
                 {[...desktopImages, desktopImages[0]].map((img, i) => (
                   <Image
                     key={i}
                     src={img}
-                    alt={`ICEM Banner ${i + 1}`}
+                    alt="banner"
                     className="w-full h-auto object-cover flex-shrink-0"
                     width={1600}
                     height={700}
-                    quality={80}
+                    quality={100}
                     unoptimized
-                    priority={i === 0}
-                    sizes="(max-width: 768px) 100vw, 1600px"
+                    priority
                   />
                 ))}
               </div>
@@ -155,13 +154,12 @@ const HeroSlider = () => {
           {isMobile && (
             <Image
               src="/Home/homemobile.avif"
-              alt="ICEM Mobile Banner"
+              alt="mobile banner"
               className="w-full object-contain"
               width={600}
               height={800}
-              quality={80}
+              quality={100}
               unoptimized
-              sizes="100vw"
             />
           )}
         </>

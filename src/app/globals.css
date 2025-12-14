@@ -192,3 +192,16 @@ html,
 body {
   scroll-behavior: auto !important;
 }
+
+/* Override slick font to add font-display: swap */
+@font-face {
+  font-family: 'slick';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url('../../node_modules/slick-carousel/slick/fonts/slick.eot');
+  src: url('../../node_modules/slick-carousel/slick/fonts/slick.eot?#iefix') format('embedded-opentype'),
+       url('../../node_modules/slick-carousel/slick/fonts/slick.woff') format('woff'),
+       url('../../node_modules/slick-carousel/slick/fonts/slick.ttf') format('truetype'),
+       url('../../node_modules/slick-carousel/slick/fonts/slick.svg#slick') format('svg');
+}

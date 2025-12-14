@@ -141,6 +141,8 @@ const ProgramList = () => {
             src="/Home/academic.webp"
             alt="Academic"
             fill
+            sizes="100vw"
+            quality={80}
             className="object-cover rounded-lg"
             priority
           />

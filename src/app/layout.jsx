@@ -78,6 +78,8 @@ export default function RootLayout({ children }) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         <meta name="theme-color" content="#003c84" />
+
+        <link rel="preconnect" href="https://widgets.nopaperforms.com" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-title" content="ICEM Pune" />
@@ -87,7 +89,7 @@ export default function RootLayout({ children }) {
         <link rel="apple-touch-icon" href="/shortLogo.png" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
         <meta name="language" content="English" />

@@ -96,6 +96,8 @@ const RecruitersSection = () => {
         alt={`Recruiter Logo ${index + 1}`}
         width={100}
         height={60}
+        sizes="(max-width: 640px) 80px, (max-width: 768px) 96px, 112px"
+        quality={80}
         className="object-contain max-w-[75%] max-h-[50px] sm:max-w-[80%] 
         sm:max-h-[60px] hover:grayscale-0 transition duration-300"
         loading={index < 7 ? "eager" : "lazy"}

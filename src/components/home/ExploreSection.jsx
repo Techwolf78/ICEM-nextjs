@@ -148,6 +148,7 @@ const ExploreSection = () => {
                       alt={logo.title}
                       fill
                       sizes="(max-width: 768px) 50vw, 25vw"
+                      quality={80}
                       className="object-contain"
                     />
                   </div>

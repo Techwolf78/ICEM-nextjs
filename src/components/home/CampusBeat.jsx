@@ -59,8 +59,6 @@ const CampusBeat = () => {
                 src={src}
                 alt={`Campus Beat ${i + 1}`}
                 fill
-                sizes="100vw"
-                quality={80}
                 className="object-cover"
               />
             </div>

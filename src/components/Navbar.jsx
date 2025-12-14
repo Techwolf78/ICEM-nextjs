@@ -386,9 +386,8 @@ const Navbar = () => {
               height={240}
               width={240}
               className="h-40 w-[80%] md:h-24 md:w-full cursor-pointer object-contain transition-transform duration-300 "
-              sizes="(max-width: 768px) 80vw, 30vw"
-              quality={80}
               priority
+              unoptimized={true}
             />
           </Link>
         </div>
@@ -547,7 +546,6 @@ const Navbar = () => {
           <button
             onClick={toggleMobileMenu}
             className="text-gray-700 hover:text-primary transition-all duration-300 hover:scale-110"
-            aria-label="Open menu"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -606,7 +604,6 @@ const Navbar = () => {
               <button
                 onClick={toggleMobileMenu}
                 className="text-gray-500 hover:text-gray-700 transition-all duration-300 hover:scale-110"
-                aria-label="Close menu"
               >
                 <HiX size={22} />
               </button>

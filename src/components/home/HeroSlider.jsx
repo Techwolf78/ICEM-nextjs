@@ -122,8 +122,8 @@ const HeroSlider = () => {
                     className="w-full h-auto object-cover flex-shrink-0"
                     width={1600}
                     height={700}
-                    sizes="100vw"
-                    quality={80}
+                    quality={100}
+                    unoptimized
                     priority
                   />
                 ))}

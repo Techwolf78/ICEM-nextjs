@@ -78,8 +78,6 @@ export default function RootLayout({ children }) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         <meta name="theme-color" content="#003c84" />
-
-        <link rel="preconnect" href="https://widgets.nopaperforms.com" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-title" content="ICEM Pune" />

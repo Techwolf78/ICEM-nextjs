@@ -90,7 +90,7 @@ export default function NavEnquireModal({ isOpen, onClose }) {
               </div>
             </div>
           )}
-          <div ref={enquireFormRef} className="npf_wgts w-full" data-height="1000px" data-w="9fa0f32fe4f405fa68dc3df39ef6a11b"></div>
+          <div ref={enquireFormRef} className="npf_wgts w-full" data-height="1000px" data-w="9fa0f32fe4f405fa68dc3df39ef6a11b" data-r="/thank-you"></div>
         </div>
       </div>
 

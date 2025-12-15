@@ -67,7 +67,7 @@ export default function AcademicYearSectionForm() {
 
       {/* NPF Form */}
       <div className="h-full">
-        <div ref={formRef} className="npf_wgts w-full h-full" data-w="9fa0f32fe4f405fa68dc3df39ef6a11b"></div>
+        <div ref={formRef} className="npf_wgts w-full h-full" data-w="9fa0f32fe4f405fa68dc3df39ef6a11b" data-r="/thank-you"></div>
         {!isLoaded && !isError && (
           <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-75">
             <p>Loading form...</p>

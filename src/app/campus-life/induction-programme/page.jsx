@@ -42,19 +42,15 @@ function InductionProgramme() {
   return (
     <div className="w-full  bg-white text-gray-800">
       {/* Hero Banner */}
-      <div className="relative w-full h-[70vh]">
+      <div className="relative w-full">
         <Image
           src={bannerImg}
           alt="Induction Programme"
-          fill
-          style={{ objectFit: "cover" }}
+          layout="responsive"
+          width={1920}
+          height={600}
           priority
         />
-        {/* <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg text-center">
-            Induction Programme
-          </h1>
-        </div> */}
       </div>
 
       {/* Main Content */}

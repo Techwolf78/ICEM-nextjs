@@ -11,12 +11,12 @@ export default function StudentWelfarePage() {
   return (
     <div className="w-full mx-auto bg-white text-gray-800">
       {/* Banner */}
-      <div className="w-full h-[70vh] relative">
+      <div className="relative w-full h-48 md:h-[70vh]">
         <Image
           src="/campuslife/council.webp"
           alt="Student Development Cell"
           fill
-          style={{ objectFit: "cover" }}
+          className="object-cover"
           priority
         />
       </div>

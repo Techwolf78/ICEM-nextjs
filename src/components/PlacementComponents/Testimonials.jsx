@@ -9,6 +9,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 const testimonials = [
   {
+    image: "/logos/juspay.png",
+    quote:
+      "ICEM’s emphasis on both technical excellence and practical application prepares students exceptionally well. Their graduates bring not just skills, but a solution-oriented mindset to Juspay.",
+    name: "Dr. Shipra Pandit",
+    position: "Director - HR, Juspay"
+  },
+  {
     image: "/logos/logo30.webp",
     quote:
       "ICEM’s commitment to blending technical education with real-world readiness is evident in their students, who arrive well-prepared to contribute meaningfully from day one, making them a preferred choice for our campus recruitment.",

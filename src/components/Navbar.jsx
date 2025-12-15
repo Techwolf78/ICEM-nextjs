@@ -215,6 +215,10 @@ const Navbar = () => {
         {
           items: [
             {
+              label: "Fee",
+              link: "/fees",
+            },
+            {
               label: "Pay Fee",
               link: "https://rapid.grayquest.com/iudp-master",
             },
@@ -398,6 +402,15 @@ const Navbar = () => {
           <div className="flex justify-end w-full h-[45%] text-xs lg:text-sm text-black">
             <div className="flex gap-1">
               <div className="flex items-center font-semibold gap-1">
+                <Link
+                  href="/fees"
+                  className="hover:text-secondary transition-colors duration-200 px-1"
+                >
+                  Fee
+                </Link>
+
+                <span className="text-gray-400">|</span>
+
                 <Link
                   href="https://rapid.grayquest.com/iudp-master"
                   target="_blank"

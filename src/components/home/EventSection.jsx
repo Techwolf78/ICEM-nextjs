@@ -58,7 +58,7 @@ export default function EventsSection() {
   const marqueeList = [...events, ...events, ...events];
 
   return (
-    <section className="w-full bg-gray-50 py-4 md:py-8  overflow-hidden">
+    <section className="w-full bg-gray-50 py-6 md:py-8  overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-xl md:text-2xl lg:text-3xl font-extrabold text-center text-secondary">
           Academic Conferences & Campus Events
@@ -69,24 +69,24 @@ export default function EventsSection() {
       </div>
 
       <div className="relative w-full overflow-hidden group py-3 md:py-5">
-        <div className="flex animate-marquee space-x-4 md:space-x-6 w-max hover:[animation-play-state:paused] will-change-transform backface-invisible">
+        <div className="flex animate-marquee space-x-6 md:space-x-6 w-max hover:[animation-play-state:paused] will-change-transform backface-invisible">
           {marqueeList.map((event, index) => (
             <div
               key={index}
-              className="relative flex-shrink-0 w-[220px] md:w-[260px] lg:w-[320px] xl:w-[360px] bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 overflow-hidden"
+              className="relative flex-shrink-0 w-[260px] md:w-[260px] lg:w-[320px] xl:w-[360px] bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 overflow-hidden"
             >
-              <div className="relative w-full h-32 md:h-40 lg:h-48 xl:h-56">
+              <div className="relative w-full h-40 md:h-40 lg:h-48 xl:h-56">
                 <Image
                   src={event.img}
                   alt={event.title}
                   fill
-                  sizes="(max-width: 768px) 220px, (max-width: 1024px) 260px, (max-width: 1280px) 320px, 360px"
+                  sizes="(max-width: 768px) 260px, (max-width: 1024px) 260px, (max-width: 1280px) 320px, 360px"
                   className="object-cover"
                   priority={index < 5}
                 />
               </div>
 
-              <div className="p-3 md:p-4 lg:p-5">
+              <div className="p-4 md:p-4 lg:p-5">
                 <h3 className="font-bold text-gray-800 text-sm md:text-base mb-1 md:mb-2 line-clamp-1">
                   {event.title}
                 </h3>

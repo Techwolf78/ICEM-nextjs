@@ -216,7 +216,7 @@ const Navbar = () => {
           items: [
             {
               label: "Fee",
-              link: "/fees",
+              link: "/programs/computer-engineering#fee-structure",
             },
             {
               label: "Pay Fee",
@@ -403,7 +403,7 @@ const Navbar = () => {
             <div className="flex gap-1">
               <div className="flex items-center font-semibold gap-1">
                 <Link
-                  href="/fees"
+                  href="/programs/computer-engineering#fee-structure"
                   className="hover:text-secondary transition-colors duration-200 px-1"
                 >
                   Fee

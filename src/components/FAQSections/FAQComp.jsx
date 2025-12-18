@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 // ================== SYLLABUS DATA ==================
@@ -178,7 +178,22 @@ const facultyImages = Array.from({ length: 12 }, (_, i) => ({
 
 // ================== MAIN COMPONENT ==================
 export default function FAQSectionComputer() {
-  const [active, setActive] = useState("About Us");
+  const [active, setActive] = useState("Fee Structure");
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash.replace('#', '');
+      if (hash === 'fee-structure') {
+        setActive("Fee Structure");
+        setTimeout(() => {
+          const element = document.getElementById('fee-structure');
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 100);
+      }
+    }
+  }, []);
 
   const sectionContent = {
     "About Us": {
@@ -243,6 +258,16 @@ export default function FAQSectionComputer() {
       id: "fee-fra",
       label: "FRA Document",
       pdf: "/programs/Computer/NewFRA.pdf",
+    },
+    {
+      id: "fra-2025",
+      label: "FRA 2025-26",
+      pdf: "/fees/FRA 2025.pdf",
+    },
+    {
+      id: "institute-fra",
+      label: "Institute Level Admission FRA Fees",
+      pdf: "/fees/Insttitute level admission FRA FEEs.pdf",
     },
   ],
 },
@@ -496,6 +521,7 @@ export default function FAQSectionComputer() {
             {contentData.content.map((item) => (
               <div
                 key={item.id}
+                id={item.id}
                 className="flex flex-col md:flex-row md:items-center justify-between p-3 md:p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
               >
                 <div className="flex-1 mb-3 md:mb-0">

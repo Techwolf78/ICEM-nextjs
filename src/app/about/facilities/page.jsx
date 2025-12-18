@@ -36,7 +36,7 @@ export default function Sports() {
   // Library staff data
   const libraryStaff = [
     { name: "Dr. Darshna Desai", designation: "Coordinator", email: "desai.darshana@indiraicem.ac.in" },
-    { name: "Mr. Narayan Jundare", designation: "Librarian & Head", email: "library@indiraicem.ac.in" },
+    { name: "Mr. Narayan Jundre", designation: "Librarian & Head", email: "library@indiraicem.ac.in" },
     { name: "Mrs. Anita Chavan", designation: "Assistant Librarian", email: "anita.chavan@indiraicem.ac.in" },
     { name: "Mr. Sunil Phuge", designation: "Library Assistant", email: "sunil.phuge@indiraicem.ac.in" },
     { name: "Mr. Dinesh Deore", designation: "Library Assistant", email: "dinesh.deore@indiraicem.ac.in" },
@@ -67,7 +67,7 @@ export default function Sports() {
       { course: "IT", titles: "481", volumes: "1860" },
       { course: "MECH", titles: "995", volumes: "3741" },
       { course: "MECHANICAL SANDWICH", titles: "131", volumes: "425" },
-      { course: "AIDS", titles: "45", volumes: "188" },
+      { course: "AI & DS", titles: "45", volumes: "188" },
       { course: "GENERAL BOOKS", titles: "927", volumes: "1012" },
       { course: "CEXAM", titles: "169", volumes: "245" },
       { course: "M.TECH( MECH)", titles: "115", volumes: "381" },
@@ -92,7 +92,7 @@ export default function Sports() {
       { language: "Hindi", count: "1" }
     ],
     timing: {
-      regular: "Monday to Saturday: 09:00 am to 4:00 pm",
+      regular: "Monday to Saturday: 09:00 am to 4:30 pm",
       readingRoom: "Reading Room (Exam): 09:00 am to 9:00 pm",
       closed: "Every Sunday (1st & 3rd Saturday & Public Holiday)"
     },
@@ -143,8 +143,8 @@ export default function Sports() {
       { database: "FTP", url: "ftp://172.16.32.40" },
       { database: "NDL (National Digital Library of India)", url: "https://ndl.iitkgp.ac.in" },
       { database: "DELNET (Developing Library Network)", url: "http://www.delnet.in" },
-      { database: "J-gate", url: "https://www.jgateenext.com" },
-      { database: "Question Papers", url: "Autonomous ENDSEM Question Papers ICEM" }
+      { database: "J-gate", url: "https://www.jgatenext.com" },
+      { database: "Question Papers", url: "https://indiraicemac-my.sharepoint.com/personal/exam_indiraicem_ac_in/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fexam%5Findiraicem%5Fac%5Fin%2FDocuments%2FAutonomous%20ENDSEM%20Question%20papers%20ICEM&ga=1", displayText: "Autonomous ENDSEM Question Papers ICEM" }
     ]
   };
 
@@ -604,6 +604,16 @@ const highlight = {
                 </div>
               </div>
 
+              {/* ICEM LIBRARY OPAC */}
+              <div className="mb-6 md:mb-12">
+                <h3 className="text-lg md:text-2xl font-bold text-secondary mb-4 md:mb-6">ICEM Library OPAC</h3>
+                <div className="bg-gray-50 p-4 md:p-6 rounded-lg">
+                  <p className="text-gray-700 leading-relaxed">
+                    Access our Online Public Access Catalogue (OPAC) to search and browse our library resources: <a href="https://indiralibrary.ourlib.in" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline break-all">https://indiralibrary.ourlib.in</a>
+                  </p>
+                </div>
+              </div>
+
               {/* Staff Information */}
               <div>
                 <h3 className="text-lg md:text-2xl font-bold text-secondary mb-4 md:mb-6">Staff Information</h3>
@@ -841,7 +851,7 @@ const highlight = {
                         <td className="p-2 md:p-4 border-b border-gray-200 text-blue-600 break-all">
                           {content.url.startsWith('http') ? (
                             <a href={content.url} target="_blank" rel="noopener noreferrer" className="hover:underline">
-                              {content.url}
+                              {content.displayText || content.url}
                             </a>
                           ) : (
                             content.url

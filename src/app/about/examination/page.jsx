@@ -28,7 +28,7 @@ export default function Examination() {
 
       {/* ================= MAIN CONTENT (CENTERED WITH MAX WIDTH) ================= */}
       <div className="w-full flex justify-center">
-        <div className="w-full max-w-7xl px-4 py-6 md:px-6 md:py-12">
+        <div className="w-full max-w-7xl px-4 py-4 md:py-8">
           {/* ===== Examination System ===== */}
           <div className="bg-white p-4 md:p-6 rounded-xl shadow-md mb-6 md:mb-12">
             <h2 className="text-2xl font-semibold text-secondary mb-4 md:mb-6">
@@ -153,6 +153,39 @@ export default function Examination() {
                         <ul className="list-decimal ml-6 space-y-2">
                           <li>
                             <a
+                              href="/exam/FY.BTech._2025-PATTERN_ENDSEM EXAM-TIMETABLE-FOR-NOV_DEC 2025.pdf"
+                              target="_blank"
+                              className="text-secondary hover:underline"
+                            >
+                              FY B.Tech Endsemester Examination Timetable –
+                              Nov/Dec 2025
+                            </a>
+                          </li>
+
+                          <li>
+                            <a
+                              href="/exam/FY Integrated MBA _BBA2025 PATTERN_ ENDSEM EXAM TIMETABLE FOR NOV-DEC-2025.pdf"
+                              target="_blank"
+                              className="text-secondary hover:underline"
+                            >
+                              FY IMBA / BBA Endsemester Examination Timetable –
+                              Nov/Dec 2025
+                            </a>
+                          </li>
+
+                          <li>
+                            <a
+                              href="/exam/FY Integrated MCA _BCA _2025 PATTERN_ ENDSEM EXAM TIMETABLE FOR NOV-DEC-2025.pdf"
+                              target="_blank"
+                              className="text-secondary hover:underline"
+                            >
+                              FY IMCA / BCA Endsemester Examination Timetable –
+                              Nov/Dec 2025
+                            </a>
+                          </li>
+
+                          <li>
+                            <a
                               href="/exam/SYBTECH25.pdf"
                               target="_blank"
                               className="text-secondary hover:underline"
@@ -183,17 +216,6 @@ export default function Examination() {
                               Nov/Dec 2025
                             </a>
                           </li>
-
-                          <li>
-                            <a
-                              href="/exam/FYBTECH25.pdf"
-                              target="_blank"
-                              className="text-secondary hover:underline"
-                            >
-                              FY B.Tech Endsemester Examination Timetable –
-                              Nov/Dec 2025
-                            </a>
-                          </li>
                         </ul>
                       </div>
 
@@ -204,6 +226,26 @@ export default function Examination() {
                         </h4>
 
                         <ul className="list-decimal ml-6 space-y-2">
+                          <li>
+                            <a
+                              href="/exam/FY.MCA._2025-PATTERN_ENDSEM EXAM-TIMETABLE-FOR-NOV-DEC 2025.pdf"
+                              target="_blank"
+                              className="text-secondary hover:underline"
+                            >
+                              FY MCA Endsemester Examination Timetable – Nov/Dec
+                              2025
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="/exam/FY.MTech._2024-PATTERN_ENDSEM EXAM-TIMETABLE-FOR-NOV_DEC 2025.pdf"
+                              target="_blank"
+                              className="text-secondary hover:underline"
+                            >
+                              FY MTech Endsemester Examination Timetable –
+                              Nov/Dec 2025
+                            </a>
+                          </li>
                           <li>
                             <a
                               href="/exam/FY.MBA. _2024  PATTERN_ ENDSEM EXAM TIMETABLE FOR NOV-DEC-2025.pdf"
@@ -235,17 +277,6 @@ export default function Examination() {
                               2025
                             </a>
                           </li>
-{/* 
-                          <li>
-                            <a
-                              href="/pdfs/sample.pdf"
-                              target="_blank"
-                              className="text-secondary hover:underline"
-                            >
-                              FY MTech Endsemester Examination Timetable –
-                              Nov/Dec 2025
-                            </a>
-                          </li> */}
                         </ul>
                       </div>
                     </div>

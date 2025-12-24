@@ -36,28 +36,18 @@ const FAQSection = () => {
   const [activeFAQ, setActiveFAQ] = useState(null);
   const [activeSyllabus, setActiveSyllabus] = useState(null);
   const [activeStructure, setActiveStructure] = useState(null);
-  const [activeWhyIndira, setActiveWhyIndira] = useState(null);
-  const [activeFeatures, setActiveFeatures] = useState(null);
   const [activeAdmission, setActiveAdmission] = useState(null);
-  const [activeTab, setActiveTab] = useState("Overview"); // Default tab
+  const [activeAboutUs, setActiveAboutUs] = useState(null);
+  const [activeTab, setActiveTab] = useState("About Us"); // Default tab
 
   const faqCategories = [
-    "Overview",
-    "Sanction Intake",
-    "Eligibility Criteria",
+    "About Us",
     "Documents Required",
     "Admission Procedure",
     "Fee Structure",
-    "Admission Advertisement",
-    "IL & ACAP Merit List",
-    "NOTICE",
     "Scholarship",
-    "Syllabus",
     "Course Structure & Credits",
     "Facilities",
-    "Staff",
-    "Why Indira ICEM",
-    "Features",
   ];
 
   // ✅ Scholarship Table Data
@@ -271,85 +261,6 @@ To nurture and nourish effective communication, interpersonal skills, and create
     ],
   };
 
-  // ✅ Notice Data
-  const noticeData = [
-    {
-      title: "Admission Notice 2024-25",
-      date: "March 15, 2024",
-      content:
-        "Admissions for Academic Year 2024-25 are now open. Interested candidates can apply through the official website.",
-    },
-    {
-      title: "Last Date for Application Submission",
-      date: "June 30, 2024",
-      content:
-        "Last date for submission of application forms for B.Tech and M.Tech programs is June 30, 2024.",
-    },
-    {
-      title: "Document Verification Schedule",
-      date: "July 15-20, 2024",
-      content:
-        "Document verification for admitted candidates will be conducted from July 15 to July 20, 2024.",
-    },
-  ];
-
-  // ✅ Why Indira ICEM Section
-  const whyIndiraData = [
-    {
-      question: "About Indira College of Engineering & Management",
-      answer: `Indira College of Engineering and Management (ICEM), Pune is an AICTE approved engineering college in Pune, established in 2007 under the umbrella of Indira Group of Institutes. The institute is approved by All India Council of Technical Education (AICTE), New Delhi, recognized by the Government of Maharashtra, and is affiliated to Savitribai Phule, Pune University. 
-
-ICEM, one of the best NAAC accredited engineering colleges in Pune, has laid its foundation in the serene and picturesque settings of Parandwadi Village of Maval Taluka, which was then dried in terms of educational and infrastructural facilities. With the untiring efforts of the management, this college has been successful in creating educational and economic possibilities in the adjacent rural areas. 
-
-The college offers a stress-free process for Engineering Admission 2024 with reasonable Engineering Admission 2024 fees, thus helping the locals. It has also made possible positive results in empowering people from surrounding rural communities and has been a torch-bearer in providing the refined education system.
-
-Indira College of Engineering Management, Pune has maintained a perfect balance between the theory and the practical aspects of the learning process, with the theoretical inputs being adequately supplemented by functional components as case studies, fieldwork, industry visits, interaction with professionals, and project study. 
-
-Several industrial tours organized by the institute help the students get exposed to industry practices, skills demanded, management practices, industry expectations, and market opportunities. Such Industry–Institute Interaction keeps the students abreast with the latest technology to help them meet the competitive standards of the industry. ICEM is thus the best engineering college in Pune, empowering students for life.`,
-    },
-    {
-      question: "Three Decade Legacy",
-      answer: `The legacy of three decades is a reflection of its highly qualified resource teams which structure advanced teaching methodologies to create a quality industry-ready force year after year.`,
-    },
-    {
-      question: "Fully Equipped World Class Campus",
-      answer: `Our commitment to excellence extends to the facilities, infrastructure, sports, library, secure and safe hostels, and classrooms equipped with modern education technology.`,
-    },
-    {
-      question: "Global Learning Platform",
-      answer: `The advanced global learning exposure is offered to students via numerous international programs and tie-ups with foreign universities and industries in Singapore, Dubai, Malaysia, and other countries.`,
-    },
-  ];
-
-  // ✅ Features Section
-  const featuresData = [
-    {
-      question:
-        "Distinct Features at Indira College of Engineering & Management",
-      answer: `• Highly qualified and skilled teaching staff with industry experience.
-• MoU with the University of Nottingham, Malaysia.
-• Strong Industry-Institute Interaction & MoU with many industries.
-• Domain-oriented international technical certifications.
-• Scholar club for students' career elevation and academic enrichment.
-• Well-equipped workshop & sophisticated laboratories.
-• Well-stocked library with many online & digital journals.
-• Care club to counsel & mentor students for personal and academic growth.
-• Computer Laboratory with 100 Mbps internet facility and Wi-Fi connectivity.
-• Separate Boys and Girls hostel with mess facility.
-• Excellent and hygienic canteen facility, recreation hall, sports, and gym.
-• Efficient transport system connecting the campus with various hubs of Pune.
-• Classrooms with advanced training pedagogies.
-• Regular industrial visits and educational tours.`,
-    },
-    {
-      question: "Accreditations & Recognitions",
-      answer: `• Approved by All India Council of Technical Education (AICTE), New Delhi
-• Recognized by Government of Maharashtra
-• Affiliated to Savitribai Phule Pune University
-• NAAC Accredited Institution`,
-    },
-  ];
-
   // ✅ Syllabus Data
   const syllabusData = [
     {
@@ -387,6 +298,30 @@ Several industrial tours organized by the institute help the students get expose
           pdf: MTech_Syllabus,
         },
       ],
+    },
+  ];
+
+  // ✅ Fee Structure Data
+  const feeStructureData = [
+    {
+      id: "fee-structure",
+      label: "Fee Structure (2025–26)",
+      pdf: "/programs/Computer/Feestructure2526.pdf",
+    },
+    {
+      id: "fee-fra",
+      label: "FRA Document",
+      pdf: "/programs/Computer/NewFRA.pdf",
+    },
+    {
+      id: "fra-2025",
+      label: "FRA 2025-26",
+      pdf: "/fees/FRA 2025.pdf",
+    },
+    {
+      id: "institute-fra",
+      label: "Institute Level Admission FRA Fees",
+      pdf: "/fees/Insttitute level admission FRA FEEs.pdf",
     },
   ];
 
@@ -473,15 +408,15 @@ Several industrial tours organized by the institute help the students get expose
   ];
 
   return (
-    <div className="w-full bg-[#f7f7f7] text-black py-8 sm:py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <h2 className="text-3xl font-bold text-secondary mb-6 sm:mb-10">
-          Department Information
+    <div className="w-full bg-[#f7f7f7] text-black py-4 sm:py-8 md:py-16">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6">
+        <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-4 sm:mb-6 md:mb-10 text-center">
+          Department of First Year Engineering
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
           {/* LEFT MENU */}
-          <div className="bg-white rounded-lg shadow-sm p-3 sm:p-4 space-y-1 sm:space-y-2 text-sm font-medium text-gray-700">
+          <div className="bg-white rounded-lg shadow-sm p-2 sm:p-3 md:p-4 space-y-1 text-xs sm:text-sm font-medium text-gray-700">
             {faqCategories.map((tab, i) => (
               <div
                 key={i}
@@ -489,9 +424,8 @@ Several industrial tours organized by the institute help the students get expose
                   setActiveTab(tab);
                   setActiveSyllabus(null);
                   setActiveStructure(null);
-                  setActiveWhyIndira(null);
-                  setActiveFeatures(null);
                   setActiveAdmission(null);
+                  setActiveAboutUs(null);
                 }}
                 className={`px-2 sm:px-3 py-2 rounded cursor-pointer hover:bg-gray-100 transition-all ${
                   activeTab === tab
@@ -505,79 +439,35 @@ Several industrial tours organized by the institute help the students get expose
           </div>
 
           {/* RIGHT SECTION */}
-          <div className="md:col-span-2 bg-white rounded-lg shadow-sm p-4 sm:p-6 space-y-4 sm:space-y-6">
-            {/* ✅ Sanction Intake */}
-            {activeTab === "Sanction Intake" && (
+          <div className="md:col-span-2 bg-white rounded-lg shadow-sm p-3 sm:p-4 md:p-6 space-y-3 sm:space-y-4 md:space-y-6">
+            {/* ✅ About Us */}
+            {activeTab === "About Us" && (
               <div>
-                <h3 className="text-lg font-semibold text-secondary mb-3 sm:mb-4">
-                  Sanctioned Intake
-                </h3>
-                <div className="overflow-x-auto">
-                  <table className="w-full border border-gray-300 text-sm">
-                    <thead className="bg-gray-100">
-                      <tr>
-                        <th className="border p-2 sm:p-3 text-left">Program</th>
-                        <th className="border p-2 sm:p-3 text-left">Intake</th>
-                        <th className="border p-2 sm:p-3 text-left">Duration</th>
-                        <th className="border p-2 sm:p-3 text-left">Type</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {admissionData.sanctionIntake.map((program, index) => (
-                        <tr key={index} className="hover:bg-gray-50">
-                          <td className="border p-2 sm:p-3 font-medium">
-                            {program.program}
-                          </td>
-                          <td className="border p-2 sm:p-3">{program.intake}</td>
-                          <td className="border p-2 sm:p-3">{program.duration}</td>
-                          <td className="border p-2 sm:p-3">{program.type}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                <div
+                  onClick={() =>
+                    setActiveAboutUs(activeAboutUs === "about" ? null : "about")
+                  }
+                  className="flex justify-between items-center px-2 sm:px-3 md:px-4 py-2 cursor-pointer bg-gray-50 hover:bg-gray-100 rounded-md"
+                >
+                  <span className="font-semibold text-secondary">
+                    About First Year Engineering
+                  </span>
+                  <span className="text-xl font-bold text-secondary">
+                    {activeAboutUs === "about" ? "−" : "+"}
+                  </span>
                 </div>
-              </div>
-            )}
-
-            {/* ✅ Eligibility Criteria */}
-            {activeTab === "Eligibility Criteria" && (
-              <div>
-                <h3 className="text-lg font-semibold text-secondary mb-3 sm:mb-4">
-                  Eligibility Criteria
-                </h3>
-                {admissionData.eligibilityCriteria.map((program, index) => (
-                  <div key={index} className="border rounded-md mb-3 sm:mb-4">
-                    <div
-                      onClick={() =>
-                        setActiveAdmission(
-                          activeAdmission === `eligibility-${index}`
-                            ? null
-                            : `eligibility-${index}`
-                        )
-                      }
-                      className="flex justify-between items-center px-3 sm:px-4 py-2 sm:py-3 cursor-pointer bg-gray-50 hover:bg-gray-100"
-                    >
-                      <span className="font-semibold text-secondary">
-                        {program.program}
-                      </span>
-                      <span className="text-xl font-bold text-secondary">
-                        {activeAdmission === `eligibility-${index}` ? "−" : "+"}
-                      </span>
-                    </div>
-                    {activeAdmission === `eligibility-${index}` && (
-                      <div className="p-3 sm:p-4 bg-white whitespace-pre-line">
-                        {program.criteria}
-                      </div>
-                    )}
+                {activeAboutUs === "about" && (
+                  <div className="p-2 sm:p-3 md:p-4 bg-white whitespace-pre-line">
+                    The First Year Engineering program at Indira College of Engineering and Management is the foundational cornerstone of your engineering journey. Designed to build a robust base in core scientific and engineering principles, this year focuses on subjects like Physics, Chemistry, Mathematics, Programming, and Engineering Graphics.
                   </div>
-                ))}
+                )}
               </div>
             )}
 
             {/* ✅ Documents Required */}
             {activeTab === "Documents Required" && (
               <div>
-                <h3 className="text-lg font-semibold text-secondary mb-3 sm:mb-4">
+                <h3 className="text-lg font-semibold text-secondary mb-2 sm:mb-3 md:mb-4">
                   Documents Required for Admission
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3">
@@ -597,7 +487,7 @@ Several industrial tours organized by the institute help the students get expose
             {/* ✅ Admission Procedure */}
             {activeTab === "Admission Procedure" && (
               <div>
-                <h3 className="text-lg font-semibold text-secondary mb-3 sm:mb-4">
+                <h3 className="text-lg font-semibold text-secondary mb-2 sm:mb-3 md:mb-4">
                   Admission Procedure
                 </h3>
                 <div className="space-y-2 sm:space-y-3">
@@ -619,161 +509,27 @@ Several industrial tours organized by the institute help the students get expose
             {/* ✅ Fee Structure */}
             {activeTab === "Fee Structure" && (
               <div>
-                <h3 className="text-lg font-semibold text-secondary mb-3 sm:mb-4">
+                <h3 className="text-lg font-semibold text-secondary mb-2 sm:mb-3 md:mb-4">
                   Fee Structure
                 </h3>
-                <div className="text-center py-6 sm:py-8 bg-gray-50 rounded-lg">
-                  <p className="text-gray-600 mb-3 sm:mb-4">
-                    Fee structure for Academic Year 2024-25 will be updated
-                    soon.
-                  </p>
-                  <p className="text-sm text-gray-500">
-                    Please contact the admission office for detailed fee
-                    information.
-                  </p>
-                </div>
-              </div>
-            )}
-
-            {/* ✅ Admission Advertisement - Updated with PDF Accordions */}
-            {activeTab === "Admission Advertisement" && (
-              <div>
-                <h3 className="text-lg font-semibold text-secondary mb-3 sm:mb-4">
-                  Admission Advertisement 2024-25
-                </h3>
-
-                {/* PDF Accordions */}
-                <div className="mb-4 sm:mb-6">
-                  {admissionAdvertisementData.map((item) => (
-                    <div key={item.id} className="border rounded-md mb-2">
-                      <div
-                        onClick={() =>
-                          setActiveAdmission(
-                            activeAdmission === item.id ? null : item.id
-                          )
-                        }
-                        className="flex justify-between items-center px-3 sm:px-4 py-2 cursor-pointer hover:bg-gray-100"
-                      >
-                        <span>{item.name}</span>
-                        <span className="text-xl font-bold text-secondary">
-                          {activeAdmission === item.id ? "−" : "+"}
-                        </span>
-                      </div>
-                      {activeAdmission === item.id && (
-                        <div className="p-2 sm:p-3 bg-gray-50">
-                          <iframe
-                            src={item.pdf}
-                            title={item.name}
-                            className="w-full h-[500px] sm:h-[600px] border rounded-md"
-                          ></iframe>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-
-                {/* Additional Admission Info */}
-                <div className="bg-primary/10 border border-primary/20 rounded-lg p-3 sm:p-6">
-                  <h4 className="font-bold text-lg text-secondary mb-2 sm:mb-3">
-                    Admissions Open for Academic Year 2024-25
-                  </h4>
-                  <div className="space-y-2 text-secondary">
-                    <p>• B.Tech Computer Engineering - 180 Seats</p>
-                    <p>• M.Tech Computer Engineering - 24 Seats</p>
-                    <p>• Apply through Maharashtra CAP Process</p>
-                    <p>• Last Date for Application: June 30, 2024</p>
-                  </div>
-                  <div className="mt-3 sm:mt-4 p-3 sm:p-4 bg-white rounded border">
-                    <p className="font-semibold text-secondary">
-                      Contact Admission Office:
-                    </p>
-                    <p>Phone: 020-XXXX-XXXX</p>
-                    <p>Email: admissions@icem.ac.in</p>
-                    <p>Website: www.icem.ac.in</p>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* ✅ IL & ACAP Merit List - Updated with PDF Accordions */}
-            {activeTab === "IL & ACAP Merit List" && (
-              <div>
-                <h3 className="text-lg font-semibold text-secondary mb-3 sm:mb-4">
-                  Institute Level & ACAP Merit Lists
-                </h3>
-
-                {/* PDF Accordions */}
-                <div className="mb-4 sm:mb-6">
-                  {meritListData.map((item) => (
-                    <div key={item.id} className="border rounded-md mb-2">
-                      <div
-                        onClick={() =>
-                          setActiveAdmission(
-                            activeAdmission === item.id ? null : item.id
-                          )
-                        }
-                        className="flex justify-between items-center px-3 sm:px-4 py-2 cursor-pointer hover:bg-gray-100"
-                      >
-                        <span>{item.name}</span>
-                        <span className="text-xl font-bold text-secondary">
-                          {activeAdmission === item.id ? "−" : "+"}
-                        </span>
-                      </div>
-                      {activeAdmission === item.id && (
-                        <div className="p-2 sm:p-3 bg-gray-50">
-                          <iframe
-                            src={item.pdf}
-                            title={item.name}
-                            className="w-full h-[500px] sm:h-[600px] border rounded-md"
-                          ></iframe>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-
-                {/* Additional Information */}
-                <div className="space-y-3 sm:space-y-4">
-                  <div className="border rounded-lg p-3 sm:p-4 bg-primary/10">
-                    <h4 className="font-bold text-secondary mb-2">
-                      Institute Level Merit List
-                    </h4>
-                    <p className="text-secondary">
-                      Institute level merit lists for vacant seats will be
-                      displayed on the college notice board and official
-                      website.
-                    </p>
-                  </div>
-                  <div className="text-center py-3 sm:py-4 bg-gray-50 rounded">
-                    <p className="text-gray-600">
-                      Merit lists will be updated as per the admission schedule.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* ✅ NOTICE */}
-            {activeTab === "NOTICE" && (
-              <div>
-                <h3 className="text-lg font-semibold text-secondary mb-3 sm:mb-4">
-                  Important Notices
-                </h3>
-                <div className="space-y-3 sm:space-y-4">
-                  {noticeData.map((notice, index) => (
+                <div className="space-y-3 md:space-y-4">
+                  {feeStructureData.map((item) => (
                     <div
-                      key={index}
-                      className="border-l-4 border-secondary bg-gray-50 p-3 sm:p-4 rounded-r"
+                      key={item.id}
+                      id={item.id}
+                      className="flex flex-col md:flex-row md:items-center justify-between p-3 md:p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
                     >
-                      <div className="flex justify-between items-start mb-2">
-                        <h4 className="font-bold text-lg text-secondary">
-                          {notice.title}
-                        </h4>
-                        <span className="bg-secondary text-white px-2 py-1 rounded text-sm">
-                          {notice.date}
-                        </span>
+                      <div className="flex-1 mb-3 md:mb-0">
+                        <h5 className="font-semibold text-gray-800">{item.label}</h5>
                       </div>
-                      <p className="text-gray-700">{notice.content}</p>
+                      <a
+                        href={item.pdf}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 bg-secondary text-white rounded-md hover:bg-secondary/90 transition-colors text-sm font-medium text-center"
+                      >
+                        View / Download
+                      </a>
                     </div>
                   ))}
                 </div>
@@ -783,13 +539,13 @@ Several industrial tours organized by the institute help the students get expose
             {/* ✅ Scholarship - Updated with Table */}
             {activeTab === "Scholarship" && (
               <div>
-                <h3 className="text-lg font-semibold text-secondary mb-3 sm:mb-4">
+                <h3 className="text-lg font-semibold text-secondary mb-2 sm:mb-3 md:mb-4">
                   Scholarship Schemes
                 </h3>
 
                 {/* Scholarship Table */}
-                <div className="mb-4 sm:mb-6">
-                  <h4 className="font-semibold mb-2 sm:mb-3 text-secondary">
+                <div className="mb-3 sm:mb-4 md:mb-6">
+                  <h4 className="font-semibold mb-1 sm:mb-2 md:mb-3 text-secondary">
                     Scholarship Details
                   </h4>
                   <div className="overflow-x-auto">
@@ -827,7 +583,7 @@ Several industrial tours organized by the institute help the students get expose
                 </div>
 
                 {/* Additional Information */}
-                <div className="bg-primary/10 border border-primary/20 rounded-lg p-3 sm:p-4">
+                <div className="bg-primary/10 border border-primary/20 rounded-lg p-2 sm:p-3 md:p-4">
                   <p className="text-sm text-secondary mb-2">
                     <strong>Note:</strong> Above information is for basic
                     understanding.
@@ -853,7 +609,7 @@ Several industrial tours organized by the institute help the students get expose
 
                 {/* Existing Scholarship Accordions */}
                 {admissionData.scholarship.map((scheme, index) => (
-                  <div key={index} className="border rounded-md mb-3 sm:mb-4 mt-3 sm:mt-4">
+                  <div key={index} className="border rounded-md mb-2 sm:mb-3 md:mb-4 mt-2 sm:mt-3 md:mt-4">
                     <div
                       onClick={() =>
                         setActiveAdmission(
@@ -872,90 +628,8 @@ Several industrial tours organized by the institute help the students get expose
                       </span>
                     </div>
                     {activeAdmission === `scholarship-${index}` && (
-                      <div className="p-3 sm:p-4 bg-white whitespace-pre-line">
+                      <div className="p-2 sm:p-3 md:p-4 bg-white whitespace-pre-line">
                         {scheme.details}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {/* ✅ Staff Tab - Empty for now */}
-            {activeTab === "Staff" && (
-              <div>
-                <h3 className="text-lg font-semibold text-secondary mb-3 sm:mb-4">
-                  Staff Information
-                </h3>
-                <div className="text-gray-700 text-center py-6 sm:py-8">
-                  <p>Staff information will be added soon.</p>
-                </div>
-              </div>
-            )}
-
-            {/* ✅ Why Indira ICEM Tab */}
-            {activeTab === "Why Indira ICEM" && (
-              <div>
-                <h3 className="text-lg font-semibold text-secondary mb-3 sm:mb-4">
-                  Why Choose Indira ICEM
-                </h3>
-                {whyIndiraData.map((item, i) => (
-                  <div key={i} className="border rounded-md mb-2">
-                    <div
-                      onClick={() =>
-                        setActiveWhyIndira(activeWhyIndira === i ? null : i)
-                      }
-                      className={`flex justify-between items-center px-3 sm:px-4 py-2 cursor-pointer ${
-                        activeWhyIndira === i
-                          ? "bg-secondary text-white"
-                          : "hover:bg-gray-100"
-                      }`}
-                    >
-                      <span>
-                        {i + 1}. {item.question}
-                      </span>
-                      <span className="text-xl font-bold">
-                        {activeWhyIndira === i ? "−" : "+"}
-                      </span>
-                    </div>
-                    {activeWhyIndira === i && (
-                      <div className="p-3 sm:p-4 text-sm bg-gray-50 text-gray-700 whitespace-pre-line">
-                        {item.answer}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {/* ✅ Features Tab */}
-            {activeTab === "Features" && (
-              <div>
-                <h3 className="text-lg font-semibold text-secondary mb-3 sm:mb-4">
-                  Key Features & Accreditations
-                </h3>
-                {featuresData.map((item, i) => (
-                  <div key={i} className="border rounded-md mb-2">
-                    <div
-                      onClick={() =>
-                        setActiveFeatures(activeFeatures === i ? null : i)
-                      }
-                      className={`flex justify-between items-center px-3 sm:px-4 py-2 cursor-pointer ${
-                        activeFeatures === i
-                          ? "bg-secondary text-white"
-                          : "hover:bg-gray-100"
-                      }`}
-                    >
-                      <span>
-                        {i + 1}. {item.question}
-                      </span>
-                      <span className="text-xl font-bold">
-                        {activeFeatures === i ? "−" : "+"}
-                      </span>
-                    </div>
-                    {activeFeatures === i && (
-                      <div className="p-3 sm:p-4 text-sm bg-gray-50 text-gray-700 whitespace-pre-line">
-                        {item.answer}
                       </div>
                     )}
                   </div>
@@ -966,7 +640,7 @@ Several industrial tours organized by the institute help the students get expose
             {/* ✅ Facilities */}
             {activeTab === "Facilities" && (
               <div>
-                <h3 className="text-lg font-semibold text-secondary mb-3 sm:mb-4">
+                <h3 className="text-lg font-semibold text-secondary mb-2 sm:mb-3 md:mb-4">
                   Department of Computer Engineering Laboratories
                 </h3>
                 <div className="overflow-x-auto">
@@ -1015,49 +689,10 @@ Several industrial tours organized by the institute help the students get expose
               </div>
             )}
 
-            {/* ✅ Syllabus */}
-            {activeTab === "Syllabus" && (
-              <div>
-                {syllabusData.map((section) => (
-                  <div key={section.category} className="mb-4 sm:mb-6">
-                    <h3 className="text-lg font-semibold text-secondary mb-2">
-                      {section.category}
-                    </h3>
-                    {section.items.map((item) => (
-                      <div key={item.id} className="border rounded-md mb-2">
-                        <div
-                          onClick={() =>
-                            setActiveSyllabus(
-                              activeSyllabus === item.id ? null : item.id
-                            )
-                          }
-                          className="flex justify-between items-center px-3 sm:px-4 py-2 cursor-pointer hover:bg-gray-100"
-                        >
-                          <span className="text-secondary">{item.name}</span>
-                          <span className="text-xl font-bold text-secondary">
-                            {activeSyllabus === item.id ? "−" : "+"}
-                          </span>
-                        </div>
-                        {activeSyllabus === item.id && (
-                          <div className="p-2 sm:p-3 bg-gray-50">
-                            <iframe
-                              src={item.pdf}
-                              title={item.name}
-                              className="w-full h-[500px] sm:h-[600px] border rounded-md"
-                            ></iframe>
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            )}
-
             {/* ✅ Course Structure */}
             {activeTab === "Course Structure & Credits" && (
               <div>
-                <h3 className="text-lg font-semibold text-secondary mb-3 sm:mb-4">
+                <h3 className="text-lg font-semibold text-secondary mb-2 sm:mb-3 md:mb-4">
                   Course Structure & Credit Details
                 </h3>
                 {courseStructure.map((item) => (
@@ -1094,38 +729,6 @@ Several industrial tours organized by the institute help the students get expose
               </div>
             )}
 
-            {/* ✅ Overview */}
-            {activeTab === "Overview" && (
-              <>
-                {faqData.map((faq, i) => (
-                  <div
-                    key={i}
-                    className="border rounded-md bg-white overflow-hidden transition-all duration-300"
-                  >
-                    <div
-                      onClick={() => setActiveFAQ(activeFAQ === i ? null : i)}
-                      className={`flex justify-between items-center p-3 cursor-pointer font-medium transition-colors ${
-                        activeFAQ === i
-                          ? "bg-secondary text-white"
-                          : "text-black"
-                      }`}
-                    >
-                      <span>
-                        {i + 1}. {faq.question}
-                      </span>
-                      <span className="text-xl font-bold">
-                        {activeFAQ === i ? "−" : "+"}
-                      </span>
-                    </div>
-                    {activeFAQ === i && (
-                      <div className="p-3 sm:p-4 text-sm bg-gray-50 text-gray-700 whitespace-pre-line">
-                        {faq.answer}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </>
-            )}
           </div>
         </div>
       </div>

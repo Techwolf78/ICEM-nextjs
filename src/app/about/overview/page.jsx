@@ -12,36 +12,42 @@ export default function Overview() {
     {
       name: "Dr. Soumitra S Das",
       designation: "Vice-Principal",
-      image: "/faculty/soumitra_das.webp",
+      image: "/faculty/das-sir.avif",
     },
     {
       name: "Dr. Saurabh Harishchand Gupta",
       designation: "Dean Academics",
-      image: "/faculty/SaurabhGupta.webp",
+      image: "/faculty/gupta-sir.avif",
     },
   ];
 
   const hods = [
+        {
+      name: "Dr. Soumitra S Das",
+      designation: "HoD Computer Engineering.",
+      image: "/faculty/SoumitraDas.webp",
+    },
     {
       name: "Dr. Mahesh G. Bhong",
       designation: "HoD Mechanical Engineering.",
       image: "/faculty/MaheshBhong.webp",
+    },
+        {
+      name: "Prof. Dhiraj S. Bhagwate",
+      designation: "HoD Electronics and Telecommunication Engineering.",
+      image: "/faculty/DhirajBhagwate.webp",
+    },
+        {
+      name: "Dr. Poorna Shankar",
+      designation: "HoD First Year Engineering.",
+      image: "/faculty/PoornaShankar.webp",
     },
     {
       name: "Prof. Savita Jangale",
       designation: "I/C HoD Civil Engineering.",
       image: "/faculty/SavitaJangale.webp",
     },
-    {
-      name: "Dr. Soumitra S Das",
-      designation: "HoD Computer Engineering.",
-      image: "/faculty/SoumitraDas.webp",
-    },
-    {
-      name: "Dr. Poorna Shankar",
-      designation: "HoD First Year Engineering.",
-      image: "/faculty/PoornaShankar.webp",
-    },
+
     {
       name: "Dr. Manjusha Tatiya",
       designation: "HoD Artificial Intelligence and Data Science.",
@@ -53,15 +59,11 @@ export default function Overview() {
       image: "/faculty/ArchanaSalve.webp",
     },
     {
-      name: "Dr. Darshana Desai",
+      name: "Dr. Sanjay Mathapati",
       designation: "HoD Master of Computer Applications.",
-      image: "/faculty/DarshanaDesai.webp",
+      image: "/faculty/hod_mca.JPG",
     },
-    {
-      name: "Prof. Dhiraj S. Bhagwate",
-      designation: "HoD Electronics and Telecommunication Engineering.",
-      image: "/faculty/DhirajBhagwate.webp",
-    },
+
     {
       name: "Dr. Awantika Bijwe",
       designation: "HoD Bachelor of Computer Applications.",
@@ -92,329 +94,339 @@ export default function Overview() {
   ];
 
   return (
-    <div className="w-full bg-white text-gray-800">
+    <div className="w-full bg-gradient-to-b from-white to-gray-50 text-gray-800 min-h-screen">
       {/* Hero Banner */}
-      <div className="w-full h-auto relative">
+      <div className="w-full h-auto relative overflow-hidden">
         <Image
           src="/Facilities/BannerOverviewPage.webp"
-          alt="ICEM Campus"
-          className="w-full h-full object-cover"
+          alt="ICEM Campus Overview"
+          className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
           height={600}
           width={1700}
         />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
       </div>
 
       {/* Content Section */}
-      <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row">
-        {/* Left Section */}
-        <div className="md:w-full space-y-6 md:space-y-12">
+      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6 md:py-12">
+        <div className="space-y-8 md:space-y-16">
           {/* Main About Content */}
-          <div className="bg-white p-4 md:p-6 rounded-xl shadow-md mt-4 md:mt-8">
-            <h2 className="text-4xl font-semibold text-secondary mb-4 md:mb-6">
+          <section className="bg-white p-4 md:p-10 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+            <h2 className="text-2xl md:text-4xl font-bold text-secondary mb-4 md:mb-8 leading-tight">
               About Us
             </h2>
 
-            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4 text-justify">
-              Indira College of Engineering and Management (ICEM), Pune,
-              established in 2007 under the esteemed Indira Group of Institutes,
-              is a premier autonomous institution recognized for its commitment
-              to academic excellence, innovation, and holistic student
-              development. The college is approved by the All India Council for
-              Technical Education (AICTE), New Delhi, affiliated to Savitribai
-              Phule Pune University, and conferred autonomous status by the UGC.
-              ICEM is also proudly NAAC-accredited, reaffirming its position as
-              one of the top engineering and management institutes in Pune.
-            </p>
+            <div className="space-y-4 md:space-y-6 text-gray-700 leading-relaxed">
+              <p className="text-justify text-sm md:text-base">
+                Indira College of Engineering and Management (ICEM), Pune,
+                established in 2007 under the esteemed Indira Group of Institutes,
+                is a premier autonomous institution recognized for its commitment
+                to academic excellence, innovation, and holistic student
+                development. The college is approved by the All India Council for
+                Technical Education (AICTE), New Delhi, affiliated to Savitribai
+                Phule Pune University, and conferred autonomous status by the UGC.
+                ICEM is also proudly NAAC-accredited, reaffirming its position as
+                one of the top engineering and management institutes in Pune.
+              </p>
 
-            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4 text-justify">
-              Situated in the scenic surroundings of Parandwadi Village, Maval
-              Taluka, ICEM has made a significant impact on the educational and
-              infrastructural development of the region, especially in rural
-              communities. With a mission to make quality technical and
-              management education accessible, the institute serves as a
-              catalyst for academic, economic, and social empowerment.ICEM hosts
-              a diverse student body of over 1500 learners, offering a broad
-              spectrum of undergraduate, postgraduate, and integrated programs.
-            </p>
+              <p className="text-justify text-sm md:text-base">
+                Situated in the scenic surroundings of Parandwadi Village, Maval
+                Taluka, ICEM has made a significant impact on the educational and
+                infrastructural development of the region, especially in rural
+                communities. With a mission to make quality technical and
+                management education accessible, the institute serves as a
+                catalyst for academic, economic, and social empowerment.ICEM hosts
+                a diverse student body of over 1500 learners, offering a broad
+                spectrum of undergraduate, postgraduate, and integrated programs.
+              </p>
 
-            <h3 className="text-xl font-semibold text-secondary text-justify mt-4 md:mt-6 mb-2 md:mb-3">
-              Vision
-            </h3>
+              <div className="bg-gradient-to-r from-secondary/5 to-primary/5 rounded-xl">
+                <h3 className="text-lg md:text-2xl font-semibold text-secondary mb-3 md:mb-4 text-left">
+                  Vision
+                </h3>
+                <p className="text-justify italic text-sm md:text-base">
+                  The institute envisions to develop itself into a centre of
+                  academic excellence in the field of Engineering and Management
+                  education in order to develop future technocrats and managers with
+                  right knowledge, skill and attitude to serve the society and
+                  industries to fulfil their ever-changing requirements.
+                </p>
+              </div>
 
-            <p>
-              The institute envisions to develop itself into a centre of
-              academic excellence in the field of Engineering and Management
-              education in order to develop future technocrats and managers with
-              right knowledge, skill and attitude to serve the society and
-              industries to fulfil their ever-changing requirements.{" "}
-            </p>
+              <div>
+                <h3 className="text-lg md:text-2xl font-semibold text-secondary mb-3 md:mb-4">
+                  Mission:
+                </h3>
+                <ul className="list-disc list-inside space-y-1 md:space-y-2 text-justify text-sm md:text-base">
+                  <li>
+                    To train our students to become the best Engineering
+                    Entrepreneurs today, who will lead the organizations
+                    successfully whether it's locally, nationally or globally.
+                  </li>
+                  <li>
+                    To provide an environment which fosters continuous improvement &
+                    innovation with related technical support & facilities to
+                    enhance student and faculty effectiveness.
+                  </li>
+                  <li>
+                    To provide programmes focusing on the holistic development of
+                    the individual with the emphasis on personality grooming,
+                    physical fitness and a strong sense of social and environmental
+                    responsibility.
+                  </li>
+                  <li>
+                    To improve along with scientific reasoning and to develop global
+                    mindset amongst the students to prepare them for working in
+                    heterogeneous environment.
+                  </li>
+                </ul>
+              </div>
 
-            <h3 className="text-xl font-semibold text-secondary mt-4 md:mt-6 mb-2 md:mb-3">
-              Mission:
-            </h3>
+              <div>
+                <h3 className="text-lg md:text-2xl font-semibold text-secondary mb-4 md:mb-6">
+                  Our Programs:
+                </h3>
 
-            <ul className="list-disc list-inside text-gray-700 mb-2 md:mb-4 text-justify">
-              <li>
-                To train our students to become the best Engineering
-                Entrepreneurs today, who will lead the organizations
-                successfully whether it's locally, nationally or globally.
-              </li>
-              <li>
-                To provide an environment which fosters continuous improvement &
-                innovation with related technical support & facilities to
-                enhance student and faculty effectiveness.{" "}
-              </li>
-
-              <li>
-                To provide programmes focusing on the holistic development of
-                the individual with the emphasis on personality grooming,
-                physical fitness and a strong sense of social and environmental
-                responsibility.
-              </li>
-              <li>
-                To improve along with scientific reasoning and to develop global
-                mindset amongst the students to prepare them for working in
-                heterogeneous environment.{" "}
-              </li>
-            </ul>
-
-            <h3 className="text-xl font-semibold text-secondary mt-4 md:mt-6 mb-2 md:mb-3">
-              Our Programs:
-            </h3>
-
-            {/* UNDERGRADUATE */}
-            <p className="text-gray-700 mb-2 font-bold italic">
-              Undergraduate Engineering Programs:
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 mb-4 md:mb-6">
-              {[
-                "Artificial Intelligence & Data Science",
-                "Information Technology",
-                "Computer Engineering",
-                "Electronics & Telecommunication Engineering",
-                "Mechanical Engineering",
-              ].map((program, idx) => (
-                <div
-                  key={idx}
-                  className="p-2 md:p-4 rounded-xl bg-gray-100 text-gray-800 font-medium
-                 border border-gray-200 shadow-sm
-                 transition-all duration-300  hover:shadow-md cursor-pointer"
-                >
-                  {program}
-                </div>
-              ))}
-            </div>
-
-            {/* POSTGRADUATE */}
-            <p className="text-gray-700 mb-2 font-bold italic">
-              Postgraduate Programs:
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 mb-4 md:mb-6">
-              {[
-                "MTech Computer Engineering",
-                "Mtech Mechanical Engineering",
-                "MBA",
-                "MCA",
-              ].map((program, idx) => (
-                <div
-                  key={idx}
-                  className="p-2 md:p-4 rounded-xl bg-gray-100 text-gray-800 font-medium
-                 border border-gray-200 shadow-sm
-                 transition-all duration-300  hover:shadow-md cursor-pointer"
-                >
-                  {program}
-                </div>
-              ))}
-            </div>
-
-            {/* INTEGRATED PROGRAMS */}
-            <p className="text-gray-700 mb-2 font-bold italic">
-              Integrated Programs:
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 mb-4 md:mb-6">
-              {["Integrated MBA (BBA + MBA)", "Integrated MCA (BCA + MCA)"].map(
-                (program, idx) => (
-                  <div
-                    key={idx}
-                    className="p-2 md:p-4 rounded-xl bg-gray-100 text-gray-800 font-medium
-                 border border-gray-200 shadow-sm
-                 transition-all duration-300  hover:shadow-md cursor-pointer"
-                  >
-                    {program}
+                {/* UNDERGRADUATE */}
+                <div className="mb-6 md:mb-8">
+                  <p className="text-gray-700 mb-3 md:mb-4 font-semibold italic text-base md:text-lg">
+                    Undergraduate Engineering Programs:
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
+                    {[
+                      "Artificial Intelligence & Data Science",
+                      "Information Technology",
+                      "Computer Engineering",
+                      "Electronics & Telecommunication Engineering",
+                      "Mechanical Engineering",
+                    ].map((program, idx) => (
+                      <div
+                        key={idx}
+                        className="p-3 md:p-6 rounded-xl bg-[#E2F4F6] text-gray-800 font-medium
+                       border border-gray-200 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 cursor-pointer text-sm md:text-base"
+                      >
+                        {program}
+                      </div>
+                    ))}
                   </div>
-                )
-              )}
+                </div>
+
+                {/* POSTGRADUATE */}
+                <div className="mb-6 md:mb-8">
+                  <p className="text-gray-700 mb-3 md:mb-4 font-semibold italic text-base md:text-lg">
+                    Postgraduate Programs:
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
+                    {[
+                      "MTech Computer Engineering",
+                      "Mtech Mechanical Engineering",
+                      "MBA",
+                      "MCA",
+                    ].map((program, idx) => (
+                      <div
+                        key={idx}
+                        className="p-3 md:p-6 rounded-xl bg-[#E2F4F6] text-gray-800 font-medium
+                       border border-gray-200 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 cursor-pointer text-sm md:text-base"
+                      >
+                        {program}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* INTEGRATED PROGRAMS */}
+                <div className="mb-6 md:mb-8">
+                  <p className="text-gray-700 mb-3 md:mb-4 font-semibold italic text-base md:text-lg">
+                    Integrated Programs:
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
+                    {["Integrated MBA (BBA + MBA)", "Integrated MCA (BCA + MCA)"].map(
+                      (program, idx) => (
+                        <div
+                          key={idx}
+                          className="p-3 md:p-6 rounded-xl bg-[#E2F4F6] text-gray-800 font-medium
+                       border border-gray-200 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 cursor-pointer text-sm md:text-base"
+                        >
+                          {program}
+                        </div>
+                      )
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              <p className="text-justify text-sm md:text-base">
+                Through a well-balanced academic structure, ICEM blends
+                theoretical learning with practical application. Our students gain
+                hands-on exposure through industry-relevant projects, expert-led
+                workshops, field visits, and case studies, ensuring they are
+                industry-ready from day one.
+              </p>
+
+              <p className="text-justify text-sm md:text-base">
+                A standout feature of ICEM is its strong industry-academia
+                interface, supported by collaborations and MoUs with prominent
+                organizations and international institutions, including a key
+                partnership with the University of Nottingham, Malaysia. These
+                collaborations enable us to offer value-added programs conducted
+                by industry experts, such as:
+              </p>
+
+              <ul className="list-disc list-inside space-y-1 md:space-y-2 text-sm md:text-base">
+                <li>Workshops on emerging technologies</li>
+                <li>Career-readiness and placement preparation bootcamps</li>
+                <li>Advanced domain-specific certifications</li>
+                <li>Entrepreneurship and innovation programs</li>
+                <li>Professional skill development and etiquette training</li>
+                <li>
+                  Mentorship and guest lectures by leading industry professionals
+                </li>
+              </ul>
+
+              <p className="text-justify text-sm md:text-base">
+                Our Scholar Clubs further enrich the student experience by
+                recognizing and supporting academic talent through personalized
+                mentoring in leadership, communication, ethics, and presentation
+                skills.
+              </p>
+
+              <p className="text-justify text-sm md:text-base">
+                Our ultra-modern classrooms and labs, equipped with ICT panels,
+                are renovated to meet global standards, providing a future-ready
+                learning environment. With a highly qualified faculty, robust
+                industry connections, and a student-centric approach, ICEM equips
+                future engineers and managers to thrive in a dynamic, global
+                environment.
+              </p>
+
+              <p className="text-justify text-sm md:text-base">
+                ICEM boasts an impressive placement record, with students securing
+                opportunities in leading national and international companies
+                across various industries. Our strong industry connections and
+                career readiness programs ensure successful placements in top-tier
+                organizations worldwide.
+              </p>
+
+              <p className="text-justify font-medium text-secondary text-sm md:text-base">
+                We are proud to nurture the innovators, leaders, and change-makers
+                of tomorrow.
+              </p>
             </div>
-
-            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
-              Through a well-balanced academic structure, ICEM blends
-              theoretical learning with practical application. Our students gain
-              hands-on exposure through industry-relevant projects, expert-led
-              workshops, field visits, and case studies, ensuring they are
-              industry-ready from day one.
-            </p>
-
-            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
-              A standout feature of ICEM is its strong industry-academia
-              interface, supported by collaborations and MoUs with prominent
-              organizations and international institutions, including a key
-              partnership with the University of Nottingham, Malaysia. These
-              collaborations enable us to offer value-added programs conducted
-              by industry experts, such as:
-            </p>
-
-            <ul className="list-disc list-inside text-gray-700 mb-2 md:mb-4">
-              <li>Workshops on emerging technologies</li>
-              <li>Career-readiness and placement preparation bootcamps</li>
-              <li>Advanced domain-specific certifications</li>
-              <li>Entrepreneurship and innovation programs</li>
-              <li>Professional skill development and etiquette training</li>
-              <li>
-                Mentorship and guest lectures by leading industry professionals
-              </li>
-            </ul>
-
-            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
-              Our Scholar Clubs further enrich the student experience by
-              recognizing and supporting academic talent through personalized
-              mentoring in leadership, communication, ethics, and presentation
-              skills.
-            </p>
-
-            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
-              Our ultra-modern classrooms and labs, equipped with ICT panels,
-              are renovated to meet global standards, providing a future-ready
-              learning environment. With a highly qualified faculty, robust
-              industry connections, and a student-centric approach, ICEM equips
-              future engineers and managers to thrive in a dynamic, global
-              environment.
-            </p>
-
-            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
-              ICEM boasts an impressive placement record, with students securing
-              opportunities in leading national and international companies
-              across various industries. Our strong industry connections and
-              career readiness programs ensure successful placements in top-tier
-              organizations worldwide.
-            </p>
-
-            <p className="text-gray-700 leading-relaxed font-medium">
-              We are proud to nurture the innovators, leaders, and change-makers
-              of tomorrow.
-            </p>
-          </div>
+          </section>
 
           {/* Shree Chanakya Education Society Section */}
-          <div className="bg-white p-4 md:p-6 rounded-xl shadow-md">
-            <h2 className="text-2xl font-semibold text-secondary mb-4 md:mb-6">
+          <section className="bg-white p-4 md:p-10 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+            <h2 className="text-xl md:text-3xl font-bold text-secondary mb-4 md:mb-6 leading-tight">
               Shree Chanakya Education Society (SCES)
             </h2>
 
-            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
-              The <strong>Shree Chanakya Education Society (SCES)</strong> was
-              established in February 1994 under the visionary leadership of{" "}
-              <strong>Dr. Tarita Shankar</strong>, with the mission to provide
-              high-quality postgraduate education in{" "}
-              <strong>Business Management, International Business,</strong> and{" "}
-              <strong> Information Technology</strong>. What began with just 60
-              students and a single program has evolved into a thriving academic
-              ecosystem under the brand of <strong>Indira University</strong>,
-              attracting over 8000 students from across India.
-            </p>
+            <div className="space-y-4 md:space-y-6 text-gray-700 leading-relaxed">
+              <p className="text-justify text-sm md:text-base">
+                The <strong>Shree Chanakya Education Society (SCES)</strong> was
+                established in February 1994 under the visionary leadership of{" "}
+                <strong>Dr. Tarita Shankar</strong>, with the mission to provide
+                high-quality postgraduate education in{" "}
+                <strong>Business Management, International Business,</strong> and{" "}
+                <strong> Information Technology</strong>. What began with just 60
+                students and a single program has evolved into a thriving academic
+                ecosystem under the brand of <strong>Indira University</strong>,
+                attracting over 8000 students from across India.
+              </p>
 
-            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
-              During a period of significant economic transition in India,{" "}
-              <strong>Dr. Tarita Shankar</strong> recognized the need for an
-              education system that was practical, industry-aligned, and
-              globally competitive. Her foresight laid the groundwork for an
-              institution committed to delivering future-focused, value-driven
-              education that continues to evolve with the demands of a dynamic
-              world.
-            </p>
+              <p className="text-justify text-sm md:text-base">
+                During a period of significant economic transition in India,{" "}
+                <strong>Dr. Tarita Shankar</strong> recognized the need for an
+                education system that was practical, industry-aligned, and
+                globally competitive. Her foresight laid the groundwork for an
+                institution committed to delivering future-focused, value-driven
+                education that continues to evolve with the demands of a dynamic
+                world.
+              </p>
 
-            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
-              Today, <strong>Indira University</strong> stands as a symbol of
-              excellence in higher education, offering a wide array of
-              undergraduate and postgraduate programs across disciplines. A key
-              part of this academic journey is the{" "}
-              <strong>Chanakya Campus</strong> located at Parandwadi, which
-              offers premier <strong>Engineering</strong> and
-              <strong> Management</strong> programs through state-of-the-art
-              infrastructure, experienced faculty, and strong industry
-              integration.
-            </p>
+              <p className="text-justify text-sm md:text-base">
+                Today, <strong>Indira University</strong> stands as a symbol of
+                excellence in higher education, offering a wide array of
+                undergraduate and postgraduate programs across disciplines. A key
+                part of this academic journey is the{" "}
+                <strong>Chanakya Campus</strong> located at Parandwadi, which
+                offers premier <strong>Engineering</strong> and
+                <strong> Management</strong> programs through state-of-the-art
+                infrastructure, experienced faculty, and strong industry
+                integration.
+              </p>
 
-            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
-              SCES has always upheld high academic standards and has been
-              instrumental in providing skilled talent to India's industrial and
-              service sectors. Guided by the core philosophy of offering
-              <strong>
-                {" "}
-                "Management education in a corporate environment,"
-              </strong>{" "}
-              the institution seamlessly blends academic learning with
-              real-world exposure.
-            </p>
+              <p className="text-justify text-sm md:text-base">
+                SCES has always upheld high academic standards and has been
+                instrumental in providing skilled talent to India's industrial and
+                service sectors. Guided by the core philosophy of offering
+                <strong>
+                  {" "}
+                  "Management education in a corporate environment,"
+                </strong>{" "}
+                the institution seamlessly blends academic learning with
+                real-world exposure.
+              </p>
 
-            <p className="text-gray-700 leading-relaxed">
-              Backed by a committed team with deep expertise across academia,
-              industry, and public service, SCES continues to shape
-              professionals who are ethically grounded, technically proficient,
-              and globally competitive.
-            </p>
-          </div>
+              <p className="text-justify text-sm md:text-base">
+                Backed by a committed team with deep expertise across academia,
+                industry, and public service, SCES continues to shape
+                professionals who are ethically grounded, technically proficient,
+                and globally competitive.
+              </p>
+            </div>
+          </section>
 
           {/* Chairperson's Message Section */}
-          <div className="bg-white p-4 md:p-6 rounded-xl shadow-md">
-            <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-6">
+          <section className="bg-white p-4 md:p-10 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+            <h3 className="text-xl md:text-3xl font-bold text-secondary mb-6 md:mb-8 leading-tight">
               Chairperson & Chief Mentor's - IGI Message
             </h3>
-            <div className="flex flex-col md:flex-row gap-4 md:gap-8 bg-gray-50 rounded-xl p-4 md:p-6">
+            <div className="flex flex-col lg:flex-row gap-6 md:gap-8 bg-gradient-to-br from-gray-50 to-white rounded-xl p-4 md:p-8 shadow-inner">
               {/* Left Side - Image + Socials */}
-              <div className="md:w-1/3">
-                <div className="w-full h-[380px] relative rounded-lg overflow-hidden">
+              <div className="lg:w-1/3">
+                <div className="w-full h-[280px] md:h-[380px] relative rounded-lg overflow-hidden shadow-md">
                   <Image
                     src="/faculty/tarita_shankar.webp"
-                    alt="Dr. Tarita Shankar"
+                    alt="Dr. Tarita Shankar, Chairperson & Chief Mentor"
                     fill
-                    className="object-contain"
+                    className="object-contain hover:scale-105 transition-transform duration-300"
                   />
                 </div>
 
-                {/* SOCIAL LINKS ADDED HERE */}
-                <div className="flex justify-center gap-4 mt-3 text-gray-700 text-lg">
+                {/* SOCIAL LINKS */}
+                <div className="flex justify-center gap-4 md:gap-6 mt-3 md:mt-4 text-gray-600 text-lg md:text-xl">
                   <a
                     href={tarita_socials[0]}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Facebook"
+                    aria-label="Visit Dr. Tarita Shankar's Facebook"
+                    className="hover:text-secondary transition-colors duration-200"
                   >
-                    <FaFacebookF className="hover:text-primary transition-colors cursor-pointer" />
+                    <FaFacebookF />
                   </a>
                   <a
                     href={tarita_socials[1]}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="LinkedIn"
+                    aria-label="Visit Dr. Tarita Shankar's LinkedIn"
+                    className="hover:text-secondary transition-colors duration-200"
                   >
-                    <FaLinkedinIn className="hover:text-primary transition-colors cursor-pointer" />
+                    <FaLinkedinIn />
                   </a>
                   <a
                     href={tarita_socials[2]}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Instagram"
+                    aria-label="Visit Dr. Tarita Shankar's Instagram"
+                    className="hover:text-secondary transition-colors duration-200"
                   >
-                    <FaInstagram className="hover:text-primary transition-colors cursor-pointer" />
+                    <FaInstagram />
                   </a>
                 </div>
 
-                <div className="mt-3 text-center">
-                  <h4 className="font-semibold text-lg">DR. TARITA SHANKAR</h4>
-                  <p className="text-sm text-gray-600">
+                <div className="mt-3 md:mt-4 text-center">
+                  <h4 className="font-bold text-base md:text-lg text-gray-800">DR. TARITA SHANKAR</h4>
+                  <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
                     CHAIRPERSON & CHIEF MENTOR
                     <br />
                     INDIRA GROUP OF INSTITUTES, PUNE
@@ -423,134 +435,133 @@ export default function Overview() {
               </div>
 
               {/* Right Side - Message Content */}
-              <div className="md:w-2/3 text-gray-700 leading-relaxed">
-                <blockquote className="border-l-4 border-secondary pl-4 mb-4 md:mb-6 italic text-gray-600">
+              <div className="lg:w-2/3 text-gray-700 leading-relaxed space-y-3 md:space-y-4">
+                <blockquote className="border-l-4 border-secondary pl-4 md:pl-6 italic text-gray-600 text-base md:text-lg">
                   "Education is not just about learning facts; it is about
                   igniting curiosity, nurturing innovation, and shaping leaders
                   who can create a meaningful impact in the world."
                   <br />
-                  <span className="font-semibold">— Dr. Tarita Shankar</span>
+                  <span className="font-semibold text-secondary">— Dr. Tarita Shankar</span>
                 </blockquote>
 
-                <p className="mb-2 md:mb-4 font-semibold">Dear Students,</p>
-
-                <p className="mb-2 md:mb-4">
-                  Welcome to Indira College of Engineering and Management
-                  (ICEM), a place where innovation meets excellence.
-                </p>
-
-                <p className="mb-2 md:mb-4">
-                  At ICEM, we are committed to providing a transformative
-                  educational experience that goes beyond traditional learning.
-                  Our mission is to nurture students into competent
-                  professionals who are equipped to lead in the ever-evolving
-                  technological landscape.
-                </p>
-
-                <p className="mb-2 md:mb-4">
-                  We believe in fostering an environment that encourages
-                  creativity, critical thinking, and ethical practices. Our
-                  state-of-the-art infrastructure, experienced faculty, and
-                  industry collaborations ensure that our students receive a
-                  comprehensive education that prepares them for the challenges
-                  of tomorrow.
-                </p>
-
-                <p className="mb-2 md:mb-4">
-                  As you embark on this journey, remember that success is not
-                  just about acquiring knowledge but also about developing the
-                  right attitude and values. At ICEM, we strive to instil a
-                  sense of responsibility, integrity, and a passion for
-                  continuous learning in every student.
-                </p>
-
-                <p>
-                  We are here to support you at every step, guiding you towards
-                  achieving your goals and realizing your full potential.
-                </p>
+                <div className="space-y-3 md:space-y-4">
+                  <p className="font-semibold text-sm md:text-base">Dear Students,</p>
+                  <p className="text-sm md:text-base">
+                    Welcome to Indira College of Engineering and Management
+                    (ICEM), a place where innovation meets excellence.
+                  </p>
+                  <p className="text-sm md:text-base">
+                    At ICEM, we are committed to providing a transformative
+                    educational experience that goes beyond traditional learning.
+                    Our mission is to nurture students into competent
+                    professionals who are equipped to lead in the ever-evolving
+                    technological landscape.
+                  </p>
+                  <p className="text-sm md:text-base">
+                    We believe in fostering an environment that encourages
+                    creativity, critical thinking, and ethical practices. Our
+                    state-of-the-art infrastructure, experienced faculty, and
+                    industry collaborations ensure that our students receive a
+                    comprehensive education that prepares them for the challenges
+                    of tomorrow.
+                  </p>
+                  <p className="text-sm md:text-base">
+                    As you embark on this journey, remember that success is not
+                    just about acquiring knowledge but also about developing the
+                    right attitude and values. At ICEM, we strive to instil a
+                    sense of responsibility, integrity, and a passion for
+                    continuous learning in every student.
+                  </p>
+                  <p className="text-sm md:text-base">
+                    We are here to support you at every step, guiding you towards
+                    achieving your goals and realizing your full potential.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          </section>
 
           {/* IGI Section */}
-          <div className="bg-white p-4 md:p-6 rounded-xl shadow-md">
-            <h2 className="text-3xl font-semibold text-secondary mb-4 md:mb-6">
+          <section className="bg-white p-4 md:p-10 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+            <h2 className="text-xl md:text-3xl font-bold text-secondary mb-4 md:mb-6 leading-tight">
               About Indira Group of Institutes (IGI)
             </h2>
 
-            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
-              Established in 1994 under the visionary guidance of{" "}
-              <strong>Dr. Tarita Shankar</strong>, the{" "}
-              <strong>Indira Group of Institutes (IGI)</strong> in Pune has
-              emerged as a premier educational institution dedicated to shaping
-              future-ready professionals. Founded by the{" "}
-              <strong>Shree Chanakya Education Society (SCES)</strong>, IGI was
-              envisioned as a platform to nurture talent, foster innovation, and
-              empower students with the knowledge and skills necessary to
-              succeed in a rapidly evolving world.
-            </p>
+            <div className="space-y-4 md:space-y-6 text-gray-700 leading-relaxed">
+              <p className="text-justify text-sm md:text-base">
+                Established in 1994 under the visionary guidance of{" "}
+                <strong>Dr. Tarita Shankar</strong>, the{" "}
+                <strong>Indira Group of Institutes (IGI)</strong> in Pune has
+                emerged as a premier educational institution dedicated to shaping
+                future-ready professionals. Founded by the{" "}
+                <strong>Shree Chanakya Education Society (SCES)</strong>, IGI was
+                envisioned as a platform to nurture talent, foster innovation, and
+                empower students with the knowledge and skills necessary to
+                succeed in a rapidly evolving world.
+              </p>
 
-            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
-              With a strong legacy spanning over three decades, IGI has
-              consistently pursued academic excellence while promoting holistic
-              development. The group has expanded its footprint to include{" "}
-              <strong>12 distinguished institutes</strong>
-              offering a wide array of programs across Management, Engineering,
-              Information Technology, Pharmacy, Commerce, Science, and Mass
-              Communication. This multi-disciplinary approach enables IGI to
-              provide a seamless educational journey from
-              <strong> Kindergarten to Doctorate</strong>, preparing students to
-              excel at every stage of their academic and professional careers.
-            </p>
+              <p className="text-justify text-sm md:text-base">
+                With a strong legacy spanning over three decades, IGI has
+                consistently pursued academic excellence while promoting holistic
+                development. The group has expanded its footprint to include{" "}
+                <strong>12 distinguished institutes</strong>
+                offering a wide array of programs across Management, Engineering,
+                Information Technology, Pharmacy, Commerce, Science, and Mass
+                Communication. This multi-disciplinary approach enables IGI to
+                provide a seamless educational journey from
+                <strong> Kindergarten to Doctorate</strong>, preparing students to
+                excel at every stage of their academic and professional careers.
+              </p>
 
-            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
-              At the heart of IGI's philosophy is a commitment to{" "}
-              <strong>student empowerment</strong>. The institutes focus not
-              only on delivering high-quality education but also on developing
-              critical thinking, leadership, and entrepreneurial skills.
-              Students are encouraged to engage in practical learning
-              experiences, research initiatives, industry collaborations, and
-              community service, fostering an environment that promotes
-              innovation, ethical values, and social responsibility.
-            </p>
+              <p className="text-justify text-sm md:text-base">
+                At the heart of IGI's philosophy is a commitment to{" "}
+                <strong>student empowerment</strong>. The institutes focus not
+                only on delivering high-quality education but also on developing
+                critical thinking, leadership, and entrepreneurial skills.
+                Students are encouraged to engage in practical learning
+                experiences, research initiatives, industry collaborations, and
+                community service, fostering an environment that promotes
+                innovation, ethical values, and social responsibility.
+              </p>
 
-            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
-              IGI takes pride in its{" "}
-              <strong>state-of-the-art infrastructure</strong>, experienced
-              faculty, and a supportive learning environment that encourages
-              curiosity, creativity, and self-confidence. The campus culture is
-              designed to inspire students to explore their potential fully,
-              embrace challenges, and emerge as competent, confident, and
-              socially conscious professionals.
-            </p>
+              <p className="text-justify text-sm md:text-base">
+                IGI takes pride in its{" "}
+                <strong>state-of-the-art infrastructure</strong>, experienced
+                faculty, and a supportive learning environment that encourages
+                curiosity, creativity, and self-confidence. The campus culture is
+                designed to inspire students to explore their potential fully,
+                embrace challenges, and emerge as competent, confident, and
+                socially conscious professionals.
+              </p>
 
-            <p className="text-gray-700 leading-relaxed mb-2 md:mb-4">
-              Over the years, IGI has built a strong network of alumni who have
-              made significant contributions across industries, demonstrating
-              the institute's commitment to nurturing talent and leadership. By
-              combining academic rigor with experiential learning and industry
-              exposure, IGI equips its students to thrive in diverse
-              professional landscapes, adapt to emerging trends, and lead with
-              vision and integrity.
-            </p>
+              <p className="text-justify text-sm md:text-base">
+                Over the years, IGI has built a strong network of alumni who have
+                made significant contributions across industries, demonstrating
+                the institute's commitment to nurturing talent and leadership. By
+                combining academic rigor with experiential learning and industry
+                exposure, IGI equips its students to thrive in diverse
+                professional landscapes, adapt to emerging trends, and lead with
+                vision and integrity.
+              </p>
 
-            <p className="text-gray-700 leading-relaxed font-medium">
-              As a beacon of educational excellence in Pune, the Indira Group of
-              Institutes continues to innovate, inspire, and lead. With a
-              forward-looking approach and a student-centric ethos, IGI remains
-              dedicated to creating opportunities for growth, fostering lifelong
-              learning, and preparing a generation of leaders who are ready to
-              make a meaningful impact in the world.
-            </p>
-          </div>
+              <p className="text-justify font-medium text-secondary text-sm md:text-base">
+                As a beacon of educational excellence in Pune, the Indira Group of
+                Institutes continues to innovate, inspire, and lead. With a
+                forward-looking approach and a student-centric ethos, IGI remains
+                dedicated to creating opportunities for growth, fostering lifelong
+                learning, and preparing a generation of leaders who are ready to
+                make a meaningful impact in the world.
+              </p>
+            </div>
+          </section>
 
           {/* Institutes Section */}
-          <div className="bg-white p-4 md:p-6 rounded-xl shadow-md">
-            <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-8">
+          <section className="bg-white p-4 md:p-10 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+            <h3 className="text-xl md:text-3xl font-bold text-secondary mb-6 md:mb-8 leading-tight">
               Institutes under Indira Group (IGI)
             </h3>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
               {institutes.map((inst, index) => {
                 const imageSrc = inst.name.includes("Global Business School")
                   ? "/IGSB.jpg"
@@ -561,23 +572,23 @@ export default function Overview() {
                 return (
                   <div
                     key={index}
-                    className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100"
+                    className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 overflow-hidden group"
                   >
-                    <div className="w-full h-64 relative rounded-t-xl overflow-hidden bg-gray-200">
+                    <div className="w-full h-48 md:h-64 relative bg-gray-200 group-hover:scale-105 transition-transform duration-300">
                       <Image
                         src={imageSrc}
-                        alt={inst.name}
+                        alt={`Campus view of ${inst.name}`}
                         fill
                         className="object-cover"
                       />
                     </div>
 
-                    <div className="p-2 md:p-4 text-center">
+                    <div className="p-4 md:p-6 text-center">
                       <a
                         href={inst.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-semibold text-gray-800 text-base hover:text-secondary transition-colors duration-200"
+                        className="font-semibold text-gray-800 text-base md:text-lg hover:text-secondary transition-colors duration-200"
                       >
                         {inst.name}
                       </a>
@@ -586,75 +597,68 @@ export default function Overview() {
                 );
               })}
             </div>
-          </div>
+          </section>
 
           {/* Leader's Desk */}
-          <div className="bg-white p-4 md:p-6 rounded-xl shadow-md">
-            <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-8">
+          <section className="bg-white p-4 md:p-10 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+            <h3 className="text-xl md:text-3xl font-bold text-secondary mb-6 md:mb-8 leading-tight">
               Leader's Desk
             </h3>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
               {leaders.map((leader, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center p-2 md:p-4 border border-gray-100"
+                  className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center p-4 md:p-6 border border-gray-200 group"
                 >
-                  <div className="w-full h-68 relative bg-gray-100 rounded-t-xl overflow-hidden">
+                  <div className="w-full h-60 md:h-72 relative bg-white rounded-t-xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
                     <Image
                       src={leader.image}
-                      alt={leader.name}
+                      alt={`Portrait of ${leader.name}, ${leader.designation}`}
                       fill
                       className="object-cover object-top"
                     />
                   </div>
 
-                  <div className="mt-4">
-                    <h4 className="font-semibold text-gray-800">
-                      {leader.name}
-                    </h4>
-                    <p className="text-sm text-gray-600">
-                      {leader.designation}
-                    </p>
-                    <p className="text-sm text-gray-600">
+                  <div className="mt-4 md:mt-6 space-y-1 md:space-y-2">
+                    <h4 className="font-bold text-gray-800 text-base md:text-lg">{leader.name}</h4>
+                    <p className="text-xs md:text-sm text-gray-600">{leader.designation}</p>
+                    <p className="text-xs md:text-sm text-gray-600">
                       Indira College of Engineering and Management
                     </p>
                   </div>
                 </div>
               ))}
             </div>
-          </div>
+          </section>
 
           {/* HOD Section */}
-          <div className="bg-white p-4 md:p-6 rounded-xl shadow-md mb-8 md:mb-15">
-            <h3 className="text-2xl font-bold text-secondary mb-4 md:mb-8">
+          <section className="bg-white p-4 md:p-10 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+            <h3 className="text-xl md:text-3xl font-bold text-secondary mb-6 md:mb-8 leading-tight">
               Head of Departments (HoDs)
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
               {hods.map((hod, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center p-2 md:p-4 border border-gray-100"
+                  className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center p-3 md:p-4 border border-gray-200 group"
                 >
-                  <div className="w-full bg-gray-100 rounded-t-xl overflow-hidden">
+                  <div className="w-full h-44 md:h-56 relative bg-white rounded-t-xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
                     <Image
                       src={hod.image}
-                      alt={hod.name}
-                      width={0}
-                      height={0}
-                      sizes="100vw"
-                      style={{ width: "100%", height: "auto" }}
-                      className="object-top"
+                      alt={`Portrait of ${hod.name}, ${hod.designation}`}
+                      fill
+                      className="object-contain object-top"
                     />
                   </div>
-                  <div className="mt-4">
-                    <h4 className="font-semibold text-gray-800">{hod.name}</h4>
-                    <p className="text-sm text-gray-600">{hod.designation}</p>
+                  <div className="mt-3 md:mt-4 space-y-1">
+                    <h4 className="font-bold text-gray-800 text-xs md:text-sm">{hod.name}</h4>
+                    <p className="text-xs text-gray-600 leading-tight">{hod.designation}</p>
                   </div>
                 </div>
               ))}
             </div>
-          </div>
+          </section>
         </div>
       </div>
     </div>

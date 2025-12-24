@@ -50,7 +50,7 @@ const DiscoverPaths = () => {
   const [showAll, setShowAll] = useState(false);
 
   return (
-    <div className="bg-gray-50 py-4 sm:py-16 lg:py-8 px-4 sm:px-6 lg:px-8">
+    <div className="bg-gray-50 py-4 md:py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-left mb-10 sm:mb-14 lg:mb-8">

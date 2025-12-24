@@ -45,7 +45,8 @@ export default function CTASection() {
       // Scroll to Programme Structure section on program pages
       const target = document.getElementById("programme-structure");
       if (target) {
-        const yOffset = -100; // Adjust this value to account for fixed navbar height
+        const isMobile = window.innerWidth < 768;
+        const yOffset = isMobile ? 0 : -100; // No offset on mobile to scroll to top of section
         const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
         window.scrollTo({ top: y, behavior: "smooth" });
       }

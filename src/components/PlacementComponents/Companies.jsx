@@ -45,9 +45,9 @@ const Companies = () => {
           {reorderedLogos.map((logo, index) => (
             <div
               key={index}
-              className={`group flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-xl shadow-sm hover:shadow-xl hover:scale-105 transition-all duration-300 ease-out border border-gray-200 hover:border-primary ${
-                // 🟢 Logos 18 & 25 visible on mobile, hidden only on sm+
-                [17, 24].includes(index) ? "sm:invisible" : ""
+              className={`group flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-xl shadow-sm hover:shadow-xl hover:scale-105 transition-all duration-300 ease-out border border-gray-200 hover:border-primary sm:px-1 ${
+                // Hide the last two logos on mobile
+                [40, 41].includes(index) ? "hidden sm:flex" : ""
               }`}
               role="img"
               aria-label={`Partner company logo ${index + 1}`}

@@ -1,12 +1,7 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
-import Slider from "react-slick";
 import Image from "next/image";
-
-// Import slick carousel CSS
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 const testimonials = [
   {
     image: "/logos/juspay.png",
@@ -67,17 +62,34 @@ const testimonials = [
   },
 ];
 export default function Testimonials() {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 700,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 4500,
-    arrows: false,
-    pauseOnHover: true,
-    adaptiveHeight: true,
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => handleNext(), 4500);
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
+  const handleNext = () => {
+    const totalSlides = testimonials.length;
+
+    if (currentIndex === totalSlides - 1) {
+      setIsTransitioning(true);
+      setCurrentIndex(totalSlides);
+
+      setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentIndex(0);
+      }, 700);
+    } else {
+      setIsTransitioning(true);
+      setCurrentIndex((prev) => prev + 1);
+    }
+  };
+
+  const handleDotClick = (index) => {
+    setIsTransitioning(true);
+    setCurrentIndex(index);
   };
 
   return (
@@ -94,86 +106,91 @@ export default function Testimonials() {
 
           {/* Testimonials Carousel */}
           <div className="lg:w-4/5 w-full mx-auto">
-            <Slider {...settings}>
-              {testimonials.map((item, index) => (
-                <div key={index} className="px-2">
-                  <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 md:p-8 h-auto min-h-[280px] md:min-h-[320px] flex flex-col md:flex-row gap-6 border border-gray-100">
-                    {/* Content Section - Left Side */}
-                    <div className="flex-1 flex flex-col justify-center">
-                      {/* Quote Box */}
-                      <div className="flex-1 flex flex-col justify-center mb-6">
-                        <div className="relative">
-                          <FaQuoteLeft className="text-primary/20 text-2xl md:text-3xl absolute -top-2 -left-2" />
-                          <p className="text-gray-700 text-base md:text-lg leading-relaxed px-6 md:px-8 italic">
-                            {item.quote}
+            <div className="relative overflow-hidden">
+              <div
+                className={`flex ${
+                  isTransitioning
+                    ? "transition-transform duration-700 ease-in-out"
+                    : ""
+                }`}
+                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+              >
+                {[...testimonials, testimonials[0]].map((item, index) => (
+                  <div key={index} className="w-full flex-shrink-0 px-2">
+                    <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 md:p-8 h-auto min-h-[280px] md:min-h-[320px] flex flex-col md:flex-row gap-6 border border-gray-100">
+                      {/* Content Section - Left Side */}
+                      <div className="flex-1 flex flex-col justify-center">
+                        {/* Quote Box */}
+                        <div className="flex-1 flex flex-col justify-center mb-6">
+                          <div className="relative">
+                            <FaQuoteLeft className="text-primary/20 text-2xl md:text-3xl absolute -top-2 -left-2" />
+                            <p className="text-gray-700 text-base md:text-lg leading-relaxed px-6 md:px-8 italic">
+                              {item.quote}
+                            </p>
+                            <FaQuoteRight className="text-primary/20 text-2xl md:text-3xl absolute -bottom-2 -right-2" />
+                          </div>
+                        </div>
+
+                        {/* Name and Position */}
+                        <div className="border-t border-gray-100 pt-4">
+                          <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-1">
+                            {item.name}
+                          </h3>
+                          <p className="text-sm md:text-base text-gray-600 leading-tight">
+                            {item.position}
                           </p>
-                          <FaQuoteRight className="text-primary/20 text-2xl md:text-3xl absolute -bottom-2 -right-2" />
                         </div>
                       </div>
 
-                      {/* Name and Position */}
-                      <div className="border-t border-gray-100 pt-4">
-                        <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-1">
-                          {item.name}
-                        </h3>
-                        <p className="text-sm md:text-base text-gray-600 leading-tight">
-                          {item.position}
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Logo Section - Right Side */}
-                    <div className="flex-shrink-0 flex items-center justify-center">
-                      <div className="w-24 h-24 md:w-32 md:h-32 relative rounded-xl shadow-sm border bg-white border-gray-200 flex items-center justify-center p-3">
-                        <Image
-                          src={item.image}
-                          alt={`${item.name} logo`}
-                          fill
-                          className="object-contain"
-                          sizes="(max-width: 768px) 96px, 128px"
-                        />
+                      {/* Logo Section - Right Side */}
+                      <div className="flex-shrink-0 flex items-center justify-center">
+                        <div className="w-24 h-24 md:w-32 md:h-32 relative rounded-xl shadow-sm border bg-white border-gray-200 flex items-center justify-center p-3">
+                          <Image
+                            src={item.image}
+                            alt={`${item.name} logo`}
+                            fill
+                            className="object-contain"
+                            sizes="(max-width: 768px) 96px, 128px"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </Slider>
+                ))}
+              </div>
+
+              {/* Dots */}
+              <div className="flex justify-center gap-2 mt-12">
+                {testimonials.map((_, i) => (
+                  <div
+                    key={i}
+                    onClick={() => handleDotClick(i)}
+                    className={`relative h-3 rounded-full cursor-pointer overflow-hidden transition-all ${
+                      currentIndex % testimonials.length === i
+                        ? "w-8 bg-blue-200"
+                        : "w-3 bg-gray-300"
+                    }`}
+                  >
+                    {currentIndex % testimonials.length === i && (
+                      <span className="absolute top-0 left-0 h-full w-0 bg-blue-600 animate-progressFill"></span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
 
             {/* Custom dot styling */}
             <style jsx>{`
-              :global(.slick-dots) {
-                bottom: -40px !important;
-              }
-              :global(.slick-dots li) {
-                margin: 0 4px;
-              }
-              :global(.slick-dots li button:before) {
-                width: 12px !important;
-                height: 12px !important;
-                border-radius: 50% !important;
-                background: #e5e7eb !important;
-                border: 2px solid #e5e7eb !important;
-                opacity: 1 !important;
-                transition: all 0.3s ease !important;
-                content: '' !important;
-              }
-              :global(.slick-dots li.slick-active button:before) {
-                background: #3b82f6 !important;
-                border-color: #3b82f6 !important;
-                transform: scale(1.2);
-              }
-              :global(.slick-dots li button:hover:before) {
-                background: #60a5fa !important;
-                border-color: #60a5fa !important;
-              }
-              @media (min-width: 768px) {
-                :global(.slick-dots) {
-                  bottom: -50px !important;
+              @keyframes progressFill {
+                from {
+                  width: 0%;
                 }
-                :global(.slick-dots li button:before) {
-                  width: 14px !important;
-                  height: 14px !important;
+                to {
+                  width: 100%;
                 }
+              }
+              .animate-progressFill {
+                animation: progressFill 4.5s linear forwards;
               }
             `}</style>
           </div>

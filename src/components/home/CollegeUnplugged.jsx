@@ -40,7 +40,7 @@ export default function CollegeUnplugged() {
   };
 
   return (
-    <div className="bg-white py-8 md:py-12 px-4 md:px-6">
+    <div className="bg-white py-4 md:py-8 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-secondary mb-6 md:mb-10 text-center md:text-left">
           Indira College Unplugged

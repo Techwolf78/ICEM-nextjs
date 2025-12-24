@@ -432,7 +432,7 @@ export default function MBA() {
           </div>
 
           {/* RIGHT */}
-          <div className="bg-white shadow-xl rounded-xl p-1 md:p-8 text-secondary">
+          <div id="programme-structure" className="bg-white shadow-xl rounded-xl p-1 md:p-8 text-secondary">
             <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-center leading-snug">
               Enquire Now
             </h2>

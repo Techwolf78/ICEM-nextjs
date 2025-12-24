@@ -37,17 +37,9 @@ const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState(null);
-  const [showDialog, setShowDialog] = useState(false);
-  const [notify, setNotify] = useState(false);
   const [isShaking, setIsShaking] = useState(false);
-  const tourRef = useRef(null);
-
-  useEffect(() => {
-    if (notify) {
-      const timer = setTimeout(() => setNotify(false), 2500);
-      return () => clearTimeout(timer);
-    }
-  }, [notify]);
+  const [notify, setNotify] = useState(false);
+  const [mobileNotify, setMobileNotify] = useState(false);
 
   // Shake effect every 3 seconds
   useEffect(() => {
@@ -57,6 +49,20 @@ const Navbar = () => {
     }, 3000);
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    if (notify) {
+      const timer = setTimeout(() => setNotify(false), 2500);
+      return () => clearTimeout(timer);
+    }
+  }, [notify]);
+
+  useEffect(() => {
+    if (mobileNotify) {
+      const timer = setTimeout(() => setMobileNotify(false), 2500);
+      return () => clearTimeout(timer);
+    }
+  }, [mobileNotify]);
 
   // ✅ Refs to manage hover timers and outside clicks (no flicker)
   const dropdownTimeoutRef = useRef(null);
@@ -167,6 +173,10 @@ const Navbar = () => {
           title: "Undergraduate Programs",
           items: [
             {
+              label: "First Year Engineering",
+              link: "/programs/fye",
+            },
+            {
               label: "Computer Engineering",
               link: "/programs/computer-engineering",
             },
@@ -232,7 +242,7 @@ const Navbar = () => {
             },
             {
               label: "360° Tour",
-              link: "https://indiraicem.ac.in/ICEM-360-degree-virtual-tour/",
+              // link: "https://indiraicem.ac.in/ICEM-360-degree-virtual-tour/",
             },
             {
               label: "Leaving Certificate",
@@ -348,24 +358,34 @@ const Navbar = () => {
                 className="**animate-in fade-in-0 slide-in-from-left-2 duration-300**"
                 style={{ animationDelay: `${itemIndex * 50}ms` }}
               >
-                <Link
-                  href={item.link || "#"}
-                  target={
-                    item.link && item.link.startsWith("http")
-                      ? "_blank"
-                      : "_self"
-                  }
-                  rel={
-                    item.link && item.link.startsWith("http")
-                      ? "noopener noreferrer"
-                      : ""
-                  }
-                  className="flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-all duration-200 hover:translate-x-1"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <span>{item.label || item}</span>
-                  <TbExternalLink className="text-gray-500 text-xs transition-transform duration-200 hover:scale-110" />
-                </Link>
+                {item.link ? (
+                  <Link
+                    href={item.link}
+                    target={
+                      item.link && item.link.startsWith("http")
+                        ? "_blank"
+                        : "_self"
+                    }
+                    rel={
+                      item.link && item.link.startsWith("http")
+                        ? "noopener noreferrer"
+                        : ""
+                    }
+                    className="flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-all duration-200 hover:translate-x-1"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <span>{item.label || item}</span>
+                    <TbExternalLink className="text-gray-500 text-xs transition-transform duration-200 hover:scale-110" />
+                  </Link>
+                ) : (
+                  <button
+                    onClick={() => setMobileNotify(true)}
+                    className="flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-all duration-200 hover:translate-x-1 w-full text-left"
+                  >
+                    <span>{item.label || item}</span>
+                    <TbExternalLink className="text-gray-500 text-xs transition-transform duration-200 hover:scale-110" />
+                  </button>
+                )}
               </li>
             ))}
           </ul>
@@ -389,6 +409,7 @@ const Navbar = () => {
               alt="Logo"
               height={240}
               width={240}
+              sizes="(max-width: 767px) 80vw, 30vw"
               className="h-40 w-[80%] md:h-24 md:w-full cursor-pointer object-contain transition-transform duration-300 "
               priority
               unoptimized={true}
@@ -453,9 +474,7 @@ const Navbar = () => {
 
                 <span className="text-gray-400">|</span>
 
-                {/* 🔔 Tooltip Trigger */}
                 <button
-                  ref={tourRef}
                   onClick={() => setNotify(true)}
                   className="relative hover:text-secondary transition-colors duration-200 px-1 lg:px-2"
                 >
@@ -621,6 +640,13 @@ const Navbar = () => {
                 <HiX size={22} />
               </button>
             </div>
+
+            {/* Mobile Notification */}
+            {mobileNotify && (
+              <div className="bg-gray-900 text-white text-xs px-3 py-2 mx-4 mt-2 rounded-md shadow-md animate-fadeIn">
+                🚧 Virtual Tour Coming Soon!
+              </div>
+            )}
 
             {/* Scrollable Content */}
             <div

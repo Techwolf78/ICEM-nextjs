@@ -255,6 +255,11 @@ export default function FAQSectionComputer() {
       pdf: "/programs/Computer/Feestructure2526.pdf",
     },
     {
+      id: "fra-proposal-2026",
+      label: "FRA Fees Approval proposal 2026-27",
+      pdf: "/pdfs/FRA%20Proposal%202026-27.pdf",
+    },
+    {
       id: "fee-fra",
       label: "FRA Document",
       pdf: "/programs/Computer/NewFRA.pdf",
@@ -268,11 +273,6 @@ export default function FAQSectionComputer() {
       id: "institute-fra",
       label: "Institute Level Admission FRA Fees",
       pdf: "/fees/Insttitute%20level%20admission%20FRA%20FEEs.pdf",
-    },
-    {
-      id: "fra-proposal-2026",
-      label: "FRA Fees Approval proposal 2026-27",
-      pdf: "/pdfs/FRA%20Proposal%202026-27.pdf",
     },
   ],
 },

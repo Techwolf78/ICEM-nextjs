@@ -7,9 +7,9 @@ import Image from "next/image";
 const syllabusList = [
   
   {
-    id: "sybtech",
-    label: "First Year (I-MBA) Integrated- Masters of Business Management Syllabus",
-    pdf: "/programs/IBCAMBA/IMBASY.pdf",
+    id: "mba-syllabus-structure",
+    label: "MBA Syllabus structure",
+    pdf: "/pdfs/MBA Syllabus structure scan_001.pdf",
   },  
 ];
 

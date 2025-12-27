@@ -8,8 +8,13 @@ const syllabusList = [
   
   {
     id: "mba-syllabus-structure",
-    label: "MBA Syllabus structure",
+    label: "MBA Syllabus Structure",
     pdf: "/pdfs/MBA Syllabus structure scan_001.pdf",
+  },
+  {
+    id: "nep-syllabus",
+    label: "NEP Syllabus (Sem I-IV)",
+    pdf: "/pdfs/NEP Syllabus  Sem-I II III IV  MBA 24-26.pdf",
   },  
 ];
 

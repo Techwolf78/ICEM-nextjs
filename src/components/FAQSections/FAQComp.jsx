@@ -262,12 +262,17 @@ export default function FAQSectionComputer() {
     {
       id: "fra-2025",
       label: "FRA 2025-26",
-      pdf: "/fees/FRA 2025.pdf",
+      pdf: "/fees/FRA%202025.pdf",
     },
     {
       id: "institute-fra",
       label: "Institute Level Admission FRA Fees",
-      pdf: "/fees/Insttitute level admission FRA FEEs.pdf",
+      pdf: "/fees/Insttitute%20level%20admission%20FRA%20FEEs.pdf",
+    },
+    {
+      id: "fra-proposal-2026",
+      label: "FRA Fees Approval proposal 2026-27",
+      pdf: "/pdfs/FRA%20Proposal%202026-27.pdf",
     },
   ],
 },

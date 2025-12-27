@@ -13,7 +13,7 @@ const syllabusList = [
   {
     id: "nep-syllabus",
     label: "NEP Syllabus Sem-I II III IV MBA 24-26",
-    pdf: "/pdfs/NEP Syllabus Sem-I II III IV MBA 24-26.pdf",
+    pdf: "/pdfs/NEP Syllabus  Sem-I II III IV  MBA 24-26.pdf",
   },
 ];
 

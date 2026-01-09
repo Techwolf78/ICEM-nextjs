@@ -166,7 +166,7 @@ export default function FAQSectionAIDS() {
               "Sanction Intake",
               "Eligibility Criteria",
               "Admission Procedure",
-              "Fee Structure",
+              "FRA - Fee Structure",
               "Syllabus & Course Structure",
             ].map((tab) => (
               <button
@@ -303,8 +303,8 @@ export default function FAQSectionAIDS() {
               </div>
             )}
 
-            {/* ================= FEE STRUCTURE ================= */}
-            {active === "Fee Structure" && (
+            {/* ================= FRA - FEE STRUCTURE ================= */}
+            {active === "FRA - Fee Structure" && (
   <div className="space-y-3 md:space-y-4">
     {/* Fee Structure 25–26 */}
     <div className="flex flex-col sm:flex-row sm:items-center justify-between p-3 md:p-4 border border-gray-200 rounded-lg hover:bg-gray-50">

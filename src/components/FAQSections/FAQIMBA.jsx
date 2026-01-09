@@ -6,13 +6,13 @@ import React, { useState } from "react";
 const syllabusList = [
   
   {
-    id: "mba-syllabus-structure",
-    label: "MBA Syllabus Structure",
+    id: "mba-syllabus-scan",
+    label: "MBA Syllabus structure scan_001",
     pdf: "/pdfs/MBA Syllabus structure scan_001.pdf",
   },
   {
     id: "nep-syllabus",
-    label: "NEP Syllabus (Sem I-IV)",
+    label: "NEP Syllabus Sem-I II III IV MBA 24-26",
     pdf: "/pdfs/NEP Syllabus  Sem-I II III IV  MBA 24-26.pdf",
   },  
 ];
@@ -46,7 +46,7 @@ export default function FAQENTC() {
     },
     // ================= NEW SECTIONS FOR BBA / IT =================
 
-    "Fee Structure": {
+    "FRA - Fee Structure": {
   type: "syllabus",
   content: [
     {

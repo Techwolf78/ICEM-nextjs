@@ -7,12 +7,12 @@ import Image from "next/image";
 const syllabusList = [
   {
     id: "mba-syllabus-scan",
-    label: "MBA Syllabus structure scan_001",
+    label: "MBA Syllabus Structure",
     pdf: "/pdfs/MBA Syllabus structure scan_001.pdf",
   },
   {
     id: "nep-syllabus",
-    label: "NEP Syllabus Sem-I II III IV MBA 24-26",
+    label: "NEP Syllabus (Sem I-IV)",
     pdf: "/pdfs/NEP Syllabus  Sem-I II III IV  MBA 24-26.pdf",
   },
 ];
@@ -48,7 +48,7 @@ export default function FAQENTC() {
     },
     // ================= NEW SECTIONS FOR IMCA =================
 
-    "Fee Structure": {
+    "FRA - Fee Structure": {
   type: "syllabus",
   content: [
     {

@@ -61,7 +61,7 @@ export default function FAQENTC() {
     },
     // ================= NEW SECTIONS FOR ENTC =================
 
-    "Fee Structure": {
+    "FRA - Fee Structure": {
   type: "syllabus",
   content: [
     {

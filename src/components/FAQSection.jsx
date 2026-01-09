@@ -44,7 +44,7 @@ const FAQSection = () => {
     "About Us",
     "Documents Required",
     "Admission Procedure",
-    "Fee Structure",
+    "FRA - Fee Structure",
     "Scholarship",
     "Course Structure & Credits",
     "Facilities",
@@ -506,11 +506,11 @@ To nurture and nourish effective communication, interpersonal skills, and create
               </div>
             )}
 
-            {/* ✅ Fee Structure */}
-            {activeTab === "Fee Structure" && (
+            {/* ✅ FRA - Fee Structure */}
+            {activeTab === "FRA - Fee Structure" && (
               <div>
                 <h3 className="text-lg font-semibold text-secondary mb-2 sm:mb-3 md:mb-4">
-                  Fee Structure
+                  FRA - Fee Structure
                 </h3>
                 <div className="space-y-3 md:space-y-4">
                   {feeStructureData.map((item) => (

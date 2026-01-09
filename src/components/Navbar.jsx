@@ -225,7 +225,7 @@ const Navbar = () => {
         {
           items: [
             {
-              label: "Fee",
+              label: "College Fee",
               link: "/programs/computer-engineering#fee-structure",
             },
             {
@@ -427,7 +427,7 @@ const Navbar = () => {
                   href="/programs/computer-engineering#fee-structure"
                   className="hover:text-secondary transition-colors duration-200 px-1"
                 >
-                  Fee
+                  College Fee
                 </Link>
 
                 <span className="text-gray-400">|</span>

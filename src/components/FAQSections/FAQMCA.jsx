@@ -99,7 +99,7 @@ export default function FAQENTC() {
     },
     // ================= NEW SECTIONS FOR IMCA =================
 
-    "Fee Structure": {
+    "FRA - Fee Structure": {
   type: "syllabus",
   content: [
     {

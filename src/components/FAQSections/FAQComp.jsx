@@ -178,13 +178,13 @@ const facultyImages = Array.from({ length: 12 }, (_, i) => ({
 
 // ================== MAIN COMPONENT ==================
 export default function FAQSectionComputer() {
-  const [active, setActive] = useState("Fee Structure");
+  const [active, setActive] = useState("FRA - Fee Structure");
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const hash = window.location.hash.replace('#', '');
       if (hash === 'fee-structure') {
-        setActive("Fee Structure");
+        setActive("FRA - Fee Structure");
         setTimeout(() => {
           const element = document.getElementById('fee-structure');
           if (element) {
@@ -246,7 +246,7 @@ export default function FAQSectionComputer() {
       },
     },
 
-    "Fee Structure": {
+    "FRA - Fee Structure": {
   type: "syllabus",
   content: [
     {

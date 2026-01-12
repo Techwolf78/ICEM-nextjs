@@ -20,8 +20,8 @@ function Placement() {
     <div className="w-full bg-white">
       <div className="w-full">
         <Image
-          src="/placement/PlacementBanner2.webp"
-          alt="Placement Banner"
+          src="/assets/images/banner/icem_placed_student.jpg"
+          alt="ICEM Placed Student Banner"
           width={1920}
           height={600}
           className="object-cover w-full h-auto"

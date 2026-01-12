@@ -91,6 +91,8 @@ const RecruitersSection = () => {
           [17, 24].includes(index) ? "lg:invisible" : ""
         } ${
           [40, 41].includes(index) ? "hidden lg:flex" : ""
+        } ${
+          index === 41 ? "hidden" : ""
         }`}
     >
       <Image

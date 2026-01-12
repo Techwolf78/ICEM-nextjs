@@ -23,7 +23,7 @@ export default function ResearchLab() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[600px]">
             
             {/* Content Section */}
-            <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center space-y-8">
+            <div className="p-4 md:p-8 flex flex-col justify-center space-y-8">
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary leading-tight">
                   Research Labs & Facilities
@@ -39,7 +39,7 @@ export default function ResearchLab() {
                   {facilities.map((facility, index) => (
                     <div key={index} className="flex items-center">
                       <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-                      <span className="text-gray-700 text-sm md:text-base">{facility}</span>
+                      <span className="text-gray-700 text-sm md:text-md">{facility}</span>
                     </div>
                   ))}
                 </div>

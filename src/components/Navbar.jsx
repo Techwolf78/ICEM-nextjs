@@ -420,9 +420,9 @@ const Navbar = () => {
         {/* Right Section - Desktop */}
         <div className="hidden md:flex sm:w-[70%] h-full flex-col ">
           {/* Top Bar */}
-          <div className="flex justify-end w-full h-[45%] text-xs lg:text-sm text-black">
-            <div className="flex gap-1">
-              <div className="flex items-center font-semibold gap-1">
+          <div className="flex justify-end w-full h-[45%] navbar-text text-black">
+            <div className="flex gap-0.5">
+              <div className="flex items-center font-semibold gap-0.5">
                 <Link
                   href="/programs/computer-engineering#fee-structure"
                   className="hover:text-secondary transition-colors duration-200 px-1"
@@ -447,9 +447,9 @@ const Navbar = () => {
                   href="https://indira.edupluscampus.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-secondary transition-colors duration-200 px-1 lg:px-2"
+                  className="hover:text-secondary transition-colors duration-200 px-1"
                 >
-                  ERP Login Staff
+                  ERP Staff
                 </Link>
 
                 <span className="text-gray-400">|</span>
@@ -458,16 +458,16 @@ const Navbar = () => {
                   href="https://myindira.edupluscampus.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-secondary transition-colors duration-200 px-1 lg:px-2"
+                  className="hover:text-secondary transition-colors duration-200 px-1"
                 >
-                  ERP Login Student
+                  ERP Student
                 </Link>
 
                 <span className="text-gray-400">|</span>
 
                 <Link
                   href="/merit-lists"
-                  className="bg-secondary/80 hover:bg-secondary/90 text-secondary font-semibold px-2 py-1 rounded transition-colors duration-200 animate-pulse"
+                  className="bg-secondary/80 hover:bg-secondary/90 text-secondary font-semibold px-1.5 py-1 rounded transition-colors duration-200 animate-pulse"
                 >
                   Merit Lists 25-26
                 </Link>
@@ -476,7 +476,7 @@ const Navbar = () => {
 
                 <button
                   onClick={() => setNotify(true)}
-                  className="relative hover:text-secondary transition-colors duration-200 px-1 lg:px-2"
+                  className="relative hover:text-secondary transition-colors duration-200 px-1"
                 >
                   360<sup>°</sup> Tour
                 </button>
@@ -485,7 +485,7 @@ const Navbar = () => {
 
                 <Link
                   href="/contact"
-                  className="hover:text-secondary transition-colors duration-200 px-1 lg:px-2"
+                  className="hover:text-secondary transition-colors duration-200 px-1"
                 >
                   Contact Us
                 </Link>
@@ -494,7 +494,7 @@ const Navbar = () => {
               {/* CTA Button */}
               <button
                 onClick={toggleEnquireDrawer}
-                className={`bg-[#003c84] text-white hover:bg-[#43ccd1] hover:text-white px-4 py-1 font-semibold transition-all duration-200 ${isShaking ? 'animate-shake' : ''}`}
+                className={`bg-[#003c84] text-white hover:bg-[#43ccd1] hover:text-white px-3.5 py-1 lg:py-0.5 font-semibold transition-all duration-200 ${isShaking ? 'animate-shake' : ''}`}
               >
                 Enquire Now
               </button>
@@ -610,6 +610,17 @@ const Navbar = () => {
         )}
       </nav>
 
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          .navbar-text { font-size: 1.05rem; }
+          @media (min-width: 601px) and (max-width: 768px) { .navbar-text { font-size: 1rem; } }
+          @media (min-width: 769px) and (max-width: 1024px) { .navbar-text { font-size: 0.75rem; } }
+          @media (min-width: 1025px) and (max-width: 1280px) { .navbar-text { font-size: 0.85rem; } }
+          @media (min-width: 1281px) and (max-width: 1440px) { .navbar-text { font-size: 0.85rem; } }
+          @media (min-width: 1441px) { .navbar-text { font-size: 0.8rem; } }
+        `
+      }} />
+
       {/* Add padding to main content to account for fixed navbar */}
       <div className="pt-[6vh] md:pt-[12vh]"></div>
 
@@ -715,7 +726,7 @@ const Navbar = () => {
                     toggleEnquireDrawer();
                     setIsMobileMenuOpen(false);
                   }}
-                  className="w-full bg-gradient-to-r from-[#278da4] to-[#003c84] text-white py-2 text-sm font-semibold rounded-md hover:from-[#278da4]/90 hover:to-[#003c84]/90 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                  className="w-full bg-gradient-to-r from-[#278da4] to-[#003c84] text-white py-1 text-sm font-semibold rounded-md hover:from-[#278da4]/90 hover:to-[#003c84]/90 transition-all duration-300 hover:scale-105 hover:shadow-lg"
                 >
                   Enquire Now
                 </button>

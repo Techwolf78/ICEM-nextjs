@@ -153,6 +153,15 @@ export default function Examination() {
                         <ul className="list-decimal ml-6 space-y-2">
                           <li>
                             <a
+                              href="/exam/SY_FY_Vacation_Exam_Timetable_Jan_2026.pdf"
+                              target="_blank"
+                              className="text-secondary hover:underline"
+                            >
+                              All SY B.Tech / SY MBA / SY MCA (INT) / SY MBA (INT) / SY MBA / SY MCA / FY MBA (2024 Pattern – Regular) VACATION Examination Timetable for JAN 2026
+                            </a>
+                          </li>
+                          <li>
+                            <a
                               href="/exam/FY.BTech._2025-PATTERN_ENDSEM EXAM-TIMETABLE-FOR-NOV_DEC 2025.pdf"
                               target="_blank"
                               className="text-secondary hover:underline"

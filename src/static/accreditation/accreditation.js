@@ -1653,4 +1653,32 @@ export const sections = {
       },
     ],
   },
+  aicte: {
+    title: "AICTE Approvals",
+    accordions: [
+      {
+        heading: "AICTE Approval Letters",
+        pdfs: [
+          { name: "EOA Report 2025-26", url: "/assets/pdf/AICTE_APPROVALS/EOA Report_2025-26.PDF" },
+          { name: "Corrigendum Report 2024-25", url: "/assets/pdf/AICTE_APPROVALS/Corrigendum Report 2024-25-1.PDF" },
+          { name: "EOA Report 2023-24", url: "/assets/pdf/AICTE_APPROVALS/EOA-Report_2023-24.PDF" },
+          { name: "EOA Report 2022-23", url: "/assets/pdf/AICTE_APPROVALS/EOA Report_2022-23.PDF" },
+          { name: "EOA Report 2021-22", url: "/assets/pdf/AICTE_APPROVALS/EOA_Report_2021-22.PDF" },
+          { name: "EOA Report 2020-21", url: "/assets/pdf/AICTE_APPROVALS/EOA_Report_2020-21.PDF" },
+          { name: "EOA Report 2019-20", url: "/assets/pdf/AICTE_APPROVALS/EOA_Report_2019-20.PDF" },
+          { name: "EOA Report 2018-19", url: "/assets/pdf/AICTE_APPROVALS/EOA Report_2018-19.PDF" },
+          { name: "Corrigendum Report for EOA 2017-2018", url: "/assets/pdf/AICTE_APPROVALS/Corrigendum_Report_for_EOA_2017-2018.PDF" },
+          { name: "Corrigendum Report for EOA 2016-2017", url: "/assets/pdf/AICTE_APPROVALS/Corrigendum_Report_for_EOA_2016-2017.PDF" },
+          { name: "AICTE Report 2015-16", url: "/assets/pdf/AICTE_APPROVALS/AICTE Report 2015-16.pdf" },
+          { name: "AICTE Report 2014-15", url: "/assets/pdf/AICTE_APPROVALS/AICTE Report 2014-15.pdf" },
+          { name: "AICTE Report 2013-14", url: "/assets/pdf/AICTE_APPROVALS/AICTE Report 2013-14.pdf" },
+          { name: "AICTE Report 2012-13", url: "/assets/pdf/AICTE_APPROVALS/AICTE Report 2012-13.pdf" },
+          { name: "AICTE REPORT 2011-12", url: "/assets/pdf/AICTE_APPROVALS/AICTE REPORT 2011-12.pdf" },
+          { name: "AICTE 2009-10", url: "/assets/pdf/AICTE_APPROVALS/AICTE 2009-10.pdf" },
+          { name: "AICTE 2008-09", url: "/assets/pdf/AICTE_APPROVALS/AICTE 2008-09.pdf" },
+          { name: "AICTE Report 2007-08", url: "/assets/pdf/AICTE_APPROVALS/AICTE Report  2007-08.pdf" },
+        ],
+      },
+    ],
+  },
 };

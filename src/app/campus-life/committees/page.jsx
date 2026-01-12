@@ -95,36 +95,14 @@ const Statutory = () => {
     {
       title: "2. Anti-Ragging Committee",
       content: (
-        <div className="overflow-x-auto">
-          <table className="w-full border border-gray-200 rounded-lg shadow-sm mt-3">
-            <thead className="bg-secondary text-white">
-              <tr>
-                <th className="border-b border-gray-200 p-2 md:p-3 text-center font-semibold text-sm md:text-base">Sr. No.</th>
-                <th className="border-b border-gray-200 p-2 md:p-3 text-left font-semibold text-sm md:text-base">Name</th>
-                <th className="border-b border-gray-200 p-2 md:p-3 text-left font-semibold text-sm md:text-base">Designation</th>
-              </tr>
-            </thead>
-            <tbody>
-              {[
-                ["1", "Dr. Pravin Ghanegaonkar", "Chairman"],
-                ["2", "Prof. Shubhangi Manvatkar", "Secretary*"],
-                ["3", "Prof. Bhushan Nikam", "Faculty Member"],
-                ["4", "Prof. Nitin Khandait", "Non-teaching staff member"],
-                ["5", "Mr. Samadhan Fadtare", "Police Administration"],
-                ["6", "Mr. Mahadeo Waghmare", "Local Media"],
-                ["7", "Mr. Vasant Papal", "NGO (Youth Activities)"],
-                ["8", "Mr. Vilas Waman", "Parent"],
-                ["9", "Mr. Omkar Vilas Waman", "Student"],
-                ["10", "Mr. Harshal Kakre", "Student"],
-              ].map(([sno, name, desig]) => (
-                <tr key={sno} className="odd:bg-primary/10 even:bg-white hover:bg-primary/20">
-                  <td className="border-b border-gray-200 p-2 md:p-3 text-center text-sm md:text-base">{sno}</td>
-                  <td className="border-b border-gray-200 p-2 md:p-3 text-sm md:text-base">{name}</td>
-                  <td className="border-b border-gray-200 p-2 md:p-3 text-sm md:text-base">{desig}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="mt-4">
+          <iframe
+            src="/assets/pdf/Anti-Ragging Committee Members list.pdf"
+            width="100%"
+            height="600px"
+            style={{ border: 'none' }}
+            title="Anti-Ragging Committee Members List"
+          ></iframe>
         </div>
       ),
     },

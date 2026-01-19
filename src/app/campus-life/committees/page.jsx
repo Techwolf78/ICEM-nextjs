@@ -143,71 +143,33 @@ const Statutory = () => {
     {
       title: "4. Grievance Redressal Committee (Staff)",
       content: (
-        <div className="overflow-x-auto">
-          <table className="w-full border border-gray-200 rounded-lg shadow-sm mt-3">
-            <thead className="bg-secondary text-white">
-              <tr>
-                <th className="border-b border-gray-200 p-2 md:p-3 text-center font-semibold text-sm md:text-base">Sr. No.</th>
-                <th className="border-b border-gray-200 p-2 md:p-3 text-left font-semibold text-sm md:text-base">Name</th>
-                <th className="border-b border-gray-200 p-2 md:p-3 text-left font-semibold text-sm md:text-base">Designation</th>
-              </tr>
-            </thead>
-            <tbody>
-              {[
-                ["1", "Dr. Pravin Ghanegaonkar", "Chairperson"],
-                ["2", "Dr. Saumitra Das", "Secretary*"],
-                [
-                  "3",
-                  "Dr. Dadas Anand (Novel Wadia Institute of Mgmt.)",
-                  "University Nominee",
-                ],
-                ["4", "Dr. Avinash Bansode", "Member (SC)"],
-                ["5", "Dr. Priya Pise", "Member (Senior Staff)"],
-              ].map(([sno, name, desig]) => (
-                <tr key={sno} className="odd:bg-primary/10 even:bg-white hover:bg-primary/20">
-                  <td className="border-b border-gray-200 p-2 md:p-3 text-center text-sm md:text-base">{sno}</td>
-                  <td className="border-b border-gray-200 p-2 md:p-3 text-sm md:text-base">{name}</td>
-                  <td className="border-b border-gray-200 p-2 md:p-3 text-sm md:text-base">{desig}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="mt-4">
+          <iframe
+            src="/assets/pdf/griuevance redressal staff.pdf"
+            width="100%"
+            height="600px"
+            style={{ border: 'none' }}
+            title="Grievance Redressal Committee (Staff)"
+          ></iframe>
         </div>
       ),
     },
     {
       title: "5. Grievance Redressal Committee (Students)",
       content: (
-        <div className="overflow-x-auto">
-          <table className="w-full border border-gray-200 rounded-lg shadow-sm mt-3">
-            <thead className="bg-secondary text-white">
-              <tr>
-                <th className="border-b border-gray-200 p-2 md:p-3 text-center font-semibold text-sm md:text-base">Sr. No.</th>
-                <th className="border-b border-gray-200 p-2 md:p-3 text-left font-semibold text-sm md:text-base">Name</th>
-                <th className="border-b border-gray-200 p-2 md:p-3 text-left font-semibold text-sm md:text-base">Designation</th>
-              </tr>
-            </thead>
-            <tbody>
-              {[
-                ["1", "Dr. Pravin Ghanegaonkar", "Chairperson"],
-                ["2", "Dr. Archana Salve", "Secretary*"],
-                ["3", "Prof. Shelly Sinha", "Member (Women)"],
-                ["4", "Prof. Deepali Dhanwad", "Member (ST)"],
-                ["5", "Mr. Omkar Vilas Waman", "Member (Senior Student)"],
-              ].map(([sno, name, desig]) => (
-                <tr key={sno} className="odd:bg-primary/10 even:bg-white hover:bg-primary/20">
-                  <td className="border-b border-gray-200 p-2 md:p-3 text-center text-sm md:text-base">{sno}</td>
-                  <td className="border-b border-gray-200 p-2 md:p-3 text-sm md:text-base">{name}</td>
-                  <td className="border-b border-gray-200 p-2 md:p-3 text-sm md:text-base">{desig}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="mt-4">
+          <iframe
+            src="/assets/pdf/Grievance redressal student.pdf"
+            width="100%"
+            height="600px"
+            style={{ border: 'none' }}
+            title="Grievance Redressal Committee (Students)"
+          ></iframe>
         </div>
       ),
     },
     {
-      title: "5. Internal Compliance Committee / ICC / Women Cell",
+      title: "6. Internal Compliance Committee / ICC / Women Cell",
       content: (
         <>
           <h3 className="font-semibold mt-2 mb-4">
@@ -269,91 +231,29 @@ const Statutory = () => {
     {
       title: "7. IQAC Committee",
       content: (
-        <>
-          <div className="overflow-x-auto">
-            <table className="w-full border border-gray-200 rounded-lg shadow-sm mt-3">
-              <thead className="bg-secondary text-white">
-                <tr>
-                  <th className="border-b border-gray-200 p-2 md:p-3 text-center font-semibold text-sm md:text-base">Sr. No.</th>
-                  <th className="border-b border-gray-200 p-2 md:p-3 text-left font-semibold text-sm md:text-base">Name of the Member</th>
-                  <th className="border-b border-gray-200 p-2 md:p-3 text-left font-semibold text-sm md:text-base">Designation</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  [
-                    "1",
-                    "Mr. Sandeep Gaekwad",
-                    "Member (Management Representative)",
-                  ],
-                  ["2", "Dr. R. K. Jain", "Ext. Experts (Local Society)"],
-                  ["3", "Dr. Pravin Ghanegaonkar", "Principal - Chairman - IQAC"],
-                  ["4", "Dr. Sunil Ingole", "Dy. Chairman — IQAC"],
-                  [
-                    "5",
-                    "Dr. Rupa Hiremath",
-                    "Dean Member Secretary (Sr. Teacher) *",
-                  ],
-                  ["6", "Dr. Kiran Devade", "Coordinator Member (Jr. Secretary)"],
-                  ["7", "Mr. Varun Rathod", "Member (Alumni Nominee)"],
-                  ["8", "Mr. Omkar Vilas Waman", "Member (Student Nominee)"],
-                  ["9", "Dr. Poornashankar", "Member (Admin. Nominee)"],
-                  ["10", "Mr. Atul Gore", "Member (Admin. Nominee)"],
-                  ["11", "Mr. J S Sidhu", "Member (Admin. Nominee)"],
-                  ["12", "Mr. Anita Surve", "Member (Admin. Nominee)"],
-                  ["13", "Dr. Priyanka Pawar", "Member (Teacher's Nominee)"],
-                  ["14", "Mrs. Manjusha Tatiya", "Member (Teacher's Nominee)"],
-                  ["15", "Dr. Archana Salve", "Member (Teacher's Nominee)"],
-                  ["16", "Dr. Darshana Desai", "Member (Teacher's Nominee)"],
-                  ["17", "Dr. Soumitra Das", "Member (Teacher's Nominee)"],
-                  ["18", "Dr. Priya Pise", "Member (Teacher's Nominee)"],
-                  ["19", "Mr. VijayKumar Saini", "Member (Teacher's Nominee)"],
-                ].map(([sno, name, desig]) => (
-                  <tr key={sno} className="odd:bg-primary/10 even:bg-white hover:bg-primary/20">
-                    <td className="border-b border-gray-200 p-2 md:p-3 text-center text-sm md:text-base">{sno}</td>
-                    <td className="border-b border-gray-200 p-2 md:p-3 text-sm md:text-base">{name}</td>
-                    <td className="border-b border-gray-200 p-2 md:p-3 text-sm md:text-base">{desig}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </>
+        <div className="mt-4">
+          <iframe
+            src="/assets/pdf/IQAC 2025-26.pdf"
+            width="100%"
+            height="600px"
+            style={{ border: 'none' }}
+            title="IQAC Committee"
+          ></iframe>
+        </div>
       ),
     },
     {
       title: "8. SC / ST Committee",
       content: (
-        <>
-          <h3 className="font-semibold mt-2 mb-4">SC / ST COMMITTEE</h3>
-
-          <div className="overflow-x-auto">
-            <table className="w-full border border-gray-200 rounded-lg shadow-sm mt-3">
-              <thead className="bg-secondary text-white">
-                <tr>
-                  <th className="border-b border-gray-200 p-2 md:p-3 text-center font-semibold text-sm md:text-base">Sr. No.</th>
-                  <th className="border-b border-gray-200 p-2 md:p-3 text-left font-semibold text-sm md:text-base">Name of the staff</th>
-                  <th className="border-b border-gray-200 p-2 md:p-3 text-left font-semibold text-sm md:text-base">Designation</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  ["1", "Prof. Pratima Gaikwad", "Chairman"],
-                  ["2", "Prof. Sachin Ingle", "Secretary *"],
-                  ["3", "Dr. Avinash Bansode", "Member"],
-                  ["4", "Prof. Pragati Malusare", "Member"],
-                  ["5", "Prof. Pranali Khatke", "Member"],
-                ].map(([sno, name, desig]) => (
-                  <tr key={sno} className="odd:bg-primary/10 even:bg-white hover:bg-primary/20">
-                    <td className="border-b border-gray-200 p-2 md:p-3 text-center text-sm md:text-base">{sno}</td>
-                    <td className="border-b border-gray-200 p-2 md:p-3 text-sm md:text-base">{name}</td>
-                    <td className="border-b border-gray-200 p-2 md:p-3 text-sm md:text-base">{desig}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </>
+        <div className="mt-4">
+          <iframe
+            src="/assets/pdf/SCST Committee.pdf"
+            width="100%"
+            height="600px"
+            style={{ border: 'none' }}
+            title="SC/ST Committee"
+          ></iframe>
+        </div>
       ),
     },
     {

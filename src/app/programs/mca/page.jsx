@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useRef } from "react";
-import FAQSection from "@/components/FAQSections/FAQMCA";
+import FAQMCA from "@/components/FAQSections/FAQMCA";
 import Link from "next/link";
 import Image from "next/image";
 import RecruitersSection from "@/components/home/RecruiterSection";
@@ -439,7 +439,7 @@ export default function Computer() {
 
       {/* ===== FREQUENTLY ASKED QUESTIONS SECTION ===== */}
       <div ref={faqRef}>
-        <FAQSection />
+        <FAQMCA />
       </div>
 
       <EnquireNowProgramModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

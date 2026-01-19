@@ -168,24 +168,16 @@ export default function StudentWelfare() {
           ].map((initiative, index) => (
             <div
               key={index}
-              className="flex flex-col sm:flex-row gap-3 md:gap-4 bg-white p-3 md:p-4 rounded-lg border border-gray-300 hover:shadow-md transition-shadow"
+              className="bg-white p-3 md:p-4 rounded-lg border border-gray-300 hover:shadow-md transition-shadow"
             >
               {/* Text Content */}
-              <div className="flex-1">
+              <div>
                 <h3 className="font-semibold text-secondary mb-2 text-sm md:text-base">
                   {initiative.title}
                 </h3>
                 <p className="text-gray-700 leading-relaxed text-xs md:text-sm">
                   {initiative.description}
                 </p>
-              </div>
-              {/* Image Placeholder */}
-              <div className="flex-shrink-0 w-full sm:w-24 h-24 bg-gray-200 rounded-lg flex items-center justify-center">
-                <span className="text-gray-500 text-xs text-center">
-                  Image
-                  <br />
-                  Placeholder
-                </span>
               </div>
             </div>
           ))}

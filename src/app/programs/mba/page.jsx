@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef } from "react";
-import FAQSection from "@/components/FAQSections/FAQMBA";
+import FAQMBA from "@/components/FAQSections/FAQMBA";
 import Image from "next/image";
 import RecruitersSection from "@/components/home/RecruiterSection";
 import CTASection from "@/components/home/CTASection";
@@ -520,7 +520,7 @@ export default function MBA() {
       <CTASection />
 
       <div ref={faqRef}>
-        <FAQSection />
+        <FAQMBA />
       </div>
 
       <EnquireNowProgramModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

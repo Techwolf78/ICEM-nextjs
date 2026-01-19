@@ -6,8 +6,9 @@ import Image from "next/image";
 const HeroSlider = () => {
   // 👉 Load banners directly from /public/banners
   const desktopImages = [
+    "/banners/mhcet-home.avif",
     "/banners/HomeBanner1.webp",
-    "/placement/PlacementBanner2.webp",
+    "/placement/PlacementBanner.avif",
     "/banners/ICEM - Website Banner 2 5.avif",
     // "/banners/ICEMBANNERCLASS.webp",
     "/banners/ICEMBANNERMECH.webp",

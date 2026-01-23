@@ -17,6 +17,7 @@ import {
   Code2,
   Wrench,
   BadgeCheck,
+  Monitor,
 } from "lucide-react";
 
 const ProgramList = () => {
@@ -60,9 +61,9 @@ const ProgramList = () => {
       link: "/programs/imba",
       icon: Building2,
     },
-    { name: "Integrated MCA (BCA + MCA)", link: "/programs/imca", icon: Code2 },
+    { name: "Integrated MCA (BCA + MCA)", link: "/programs/imca", icon: BookOpen },
     { name: "MBA", link: "/programs/mba", icon: Briefcase },
-    { name: "MCA", link: "/programs/mca", icon: Code2 },
+    { name: "MCA", link: "/programs/mca", icon: Monitor },
     {
       name: "M-Tech in Mechanical Engineering",
       link: "/programs/mtech-mech",
@@ -71,7 +72,7 @@ const ProgramList = () => {
     {
       name: "M-Tech in Computer Science",
       link: "/programs/mtech-comp",
-      icon: BadgeCheck,
+      icon: GraduationCap,
     },
   ];
 

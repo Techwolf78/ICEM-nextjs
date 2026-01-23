@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 // ✅ Define text content for each route
 const pageContent = {
   "/": {
-    headline: "Doors Open, Futures Begin, ICEM.",
+    headline: "Continue Your Path With Leading Organizations",
     body: "At Indira College of Engineering & Management, there is a strong focus on preparing every student to be industry ready. With numerous recruiters visiting our campus each year, our graduates gain access to a network of opportunities, resources, and the support needed to excel in a rapidly evolving job market.",
   },
   "/programs/computer-engineering": {
@@ -66,28 +66,28 @@ const RecruitersSection = () => {
   const reorderedLogos = useMemo(() => [...mainLogos, allLogos[17], allLogos[24]], [mainLogos, allLogos]);
 
   return (
-    <div className="bg-gray-50 py-4 md:py-8 relative overflow-hidden">
+    <div className="bg-gray-50 py-2 md:py-6 relative overflow-hidden">
       <div className="max-w-7xl mx-auto text-center">
         {/* ✅ Dynamic Section Heading */}
-        <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-4 sm:mb-6">
+        <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-3 sm:mb-5">
           {headline}
         </h2>
 
         {/* ✅ Dynamic Description */}
-        <p className="text-gray-700 text-sm sm:text-sm max-w-5xl mx-auto leading-relaxed mb-10 sm:mb-12 px-4 md:px-0">
+        <p className="text-gray-700 text-sm sm:text-sm max-w-5xl mx-auto leading-relaxed mb-8 sm:mb-10 px-4 md:px-0">
           {body}
         </p>
 
         {/* ✅ Recruiter Logos Grid */}
         <div className="grid px-4 md:px-0 grid-cols-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 
-     gap-x-2 sm:gap-x-3 gap-y-5 sm:gap-y-7 place-items-center relative">
+     gap-x-1 sm:gap-x-2 gap-y-3 sm:gap-y-5 place-items-center relative">
 
   {reorderedLogos.map((logo, index) => (
     <div
       key={index}
       className={`flex items-center justify-center w-20 sm:w-24 md:w-28 
         h-14 sm:h-16 bg-white rounded-md shadow-sm hover:shadow-md 
-        transition-all duration-300 sm:px-1 ${
+        transition-all duration-300  ${
           [17, 24].includes(index) ? "lg:invisible" : ""
         } ${
           [40, 41].includes(index) ? "hidden lg:flex" : ""
@@ -100,8 +100,7 @@ const RecruitersSection = () => {
         alt={`Recruiter Logo ${index + 1}`}
         width={100}
         height={60}
-        className="object-contain max-w-[75%] max-h-[50px] sm:max-w-[80%] 
-        sm:max-h-[60px] hover:grayscale-0 transition duration-300"
+        className="object-cover hover:grayscale-0 transition duration-300"
         loading={"lazy"}
       />
     </div>

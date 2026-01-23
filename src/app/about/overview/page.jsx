@@ -14,11 +14,6 @@ export default function Overview() {
       designation: "Vice-Principal",
       image: "/faculty/das-sir.avif",
     },
-    {
-      name: "Dr. Saurabh Harishchand Gupta",
-      designation: "Dean Academics",
-      image: "/faculty/gupta-sir.avif",
-    },
   ];
 
   const hods = [
@@ -74,6 +69,38 @@ export default function Overview() {
       designation: "HoD Bachelor of Business Administration.",
       image: "/faculty/DeepaJamnik.webp",
     },
+  ];
+
+  const deans = [
+    { name: "Dr. Soumitra Das", designation: "Dean (Academics) & Head of Deans", image: "/assets/images/icemFaculty/Soumitra-Das.png" },
+    { name: "Dr. Poornashankar", designation: "Dean (Artificial Intelligence) & HoD (Computer Engineering)", image: "/assets/images/icemFaculty/Dr-Poorna-Shankar.jpg" },
+    { name: "Dr. Archana Salve", designation: "Dean (Entrepreneurship Development)", image: "/assets/images/icemFaculty/Archana.jpg" },
+    { name: "Dr. Darshana Desai", designation: "Dean (Quality Assurance & Accreditation)", image: "/assets/images/icemFaculty/Dr-Darshana-Desai.jpg" },
+    { name: "Dr. Mahesh Bhong", designation: "Dean (Research & Development)", image: "/faculty/MaheshBhong.webp" },
+    { name: "Mr. Sushil Chopade", designation: "Dean (Industry Institute Cell)", image: "/assets/images/icemFaculty/Sushil Chopade.jpg" },
+    { name: "Dr. Priyanka Pawar", designation: "Dean (Learning & Development)", image: "/assets/images/icemFaculty/Priyanka.jpg" },
+    { name: "Mr. Ashwin Dharme", designation: "Dean (Admissions)", image: "/assets/images/icemFaculty/Ashwin_Dharme.jpg" },
+    { name: "Dr. Deepa Jamnik", designation: "Dean (Events & Branding)", image: "/assets/images/icemFaculty/Dr. Deepa Jamnik.jpg" },
+  ];
+
+  const heads = [
+    { name: "Dr. Kiran Devade", designation: "HoD (Engineering Science)", image: "/assets/images/icemFaculty/Dr_Kiran_Devade.jpg" },
+    { name: "Dr. Saurabh Gupta", designation: "HoD (Mechanical Engineering)", image: "/assets/images/icemFaculty/Saurabh Gupta.jpg" },
+    { name: "Dr. Vikas Nandgaonkar", designation: "HoD (Information Technology)", image: "/assets/images/icemFaculty/Vikas_Nandgaonkar.jpg" },
+    { name: "Dr. Manjusha Tatiya", designation: "HoD (AI & Data Science)", image: "/assets/images/icemFaculty/Dr _Manjusha_Tomar.jpg" },
+    { name: "Mr. Meenakshi Patil", designation: "HoD (E&TC) – In-charge", image: "/assets/images/icemFaculty/MeenakshiPatil.jpg" },
+    { name: "Dr. Aatish Zagade", designation: "HoD (MBA)", image: "/assets/images/icemFaculty/aatish_zagade.webp" },
+    { name: "Dr. Avantika Bijwe", designation: "HoD (MCA)", image: "/assets/images/icemFaculty/Dr. Awantika Bijwe.jpg" },
+  ];
+
+  const ceos = [
+    { name: "Mr. Meenakshi Patil", designation: "CEO (Examinations & Evaluation) – Autonomy", image: "/assets/images/icemFaculty/MeenakshiPatil.jpg" },
+    { name: "Mr. Hemant Darokar", designation: "CEO (Examinations & Evaluation) – SPPU", image: "/assets/images/icemFaculty/Hemant Darokar.jpg" },
+  ];
+
+  const assistants = [
+    { name: "Dr. Priyanka Shinde", designation: "Assistant TPO", image: "/assets/images/icemFaculty/PriyankaS.jpg" },
+    { name: "Mr. Vishal Meshram", designation: "Assistant TPO", image: "/assets/images/icemFaculty/Vishal Meshram.jpg" },
   ];
 
   const institutes = [
@@ -605,7 +632,7 @@ export default function Overview() {
               Leader's Desk
             </h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
               {leaders.map((leader, index) => (
                 <div
                   key={index}
@@ -635,28 +662,118 @@ export default function Overview() {
           {/* HOD Section */}
           <section className="bg-white p-4 md:p-10 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
             <h3 className="text-xl md:text-3xl font-bold text-secondary mb-6 md:mb-8 leading-tight">
-              Head of Departments (HoDs)
+              Deans, Heads of Departments & Key Academic Officers
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
-              {hods.map((hod, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center p-3 md:p-4 border border-gray-200 group"
-                >
-                  <div className="w-full h-44 md:h-56 relative bg-white rounded-t-xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
-                    <Image
-                      src={hod.image}
-                      alt={`Portrait of ${hod.name}, ${hod.designation}`}
-                      fill
-                      className="object-contain object-top"
-                    />
+            <div className="space-y-6 md:space-y-8">
+              <div>
+                <h4 className="text-lg md:text-xl font-semibold text-secondary mb-4">Deans</h4>
+                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4">
+                  {deans.map((person, index) => (
+                    <div
+                      key={index}
+                      className="bg-white rounded-xl shadow-sm text-center"
+                    >
+                      {person.image && (
+                        <div className="w-full h-52 md:h-60 relative bg-white rounded-t-xl overflow-hidden">
+                          <Image
+                            src={person.image}
+                            alt={`Portrait of ${person.name}`}
+                            fill
+                            className={`object-cover ${person.name.includes("Ashwin Dharme") ? "object-top" : "object-center"}`}
+                          />
+                        </div>
+                      )}
+                      <div className="p-2 md:p-4 space-y-2">
+                        <h5 className="font-bold text-gray-800 text-sm md:text-base">{person.name}</h5>
+                        <p className="text-sm text-gray-600 leading-tight">{person.designation}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h4 className="text-lg md:text-xl font-semibold text-secondary mb-4">Heads of Departments (HoD)</h4>
+                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4">
+                  {heads.map((person, index) => (
+                    <div
+                      key={index}
+                      className="bg-white rounded-xl shadow-sm text-center"
+                    >
+                      {person.image && (
+                        <div className="w-full h-52 md:h-60 relative bg-white rounded-t-xl overflow-hidden">
+                          <Image
+                            src={person.image}
+                            alt={`Portrait of ${person.name}`}
+                            fill
+                            className={`object-cover ${person.name.includes("Aatish Zagade") ? "object-top" : "object-center"}`}
+                          />
+                        </div>
+                      )}
+                      <div className="p-2 md:p-4 space-y-2">
+                        <h5 className="font-bold text-gray-800 text-sm md:text-base">{person.name}</h5>
+                        <p className="text-sm text-gray-600 leading-tight">{person.designation}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h4 className="text-lg md:text-xl font-semibold text-secondary mb-4">Examination & Evaluation and TPO</h4>
+                <div className="space-y-4">
+                  <div>
+                    <h5 className="text-base md:text-lg font-medium text-secondary mb-3">CEO (Examinations & Evaluation)</h5>
+                    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4">
+                      {ceos.map((person, index) => (
+                        <div
+                          key={index}
+                          className="bg-white rounded-xl shadow-sm text-center"
+                        >
+                          {person.image && (
+                            <div className="w-full h-52 md:h-60 relative bg-white rounded-t-xl overflow-hidden">
+                              <Image
+                                src={person.image}
+                                alt={`Portrait of ${person.name}`}
+                                fill
+                                className="object-cover object-center"
+                              />
+                            </div>
+                          )}
+                          <div className="p-2 md:p-4 space-y-2">
+                            <h6 className="font-bold text-gray-800 text-sm md:text-base">{person.name}</h6>
+                            <p className="text-sm text-gray-600 leading-tight">{person.designation}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <div className="mt-3 md:mt-4 space-y-1">
-                    <h4 className="font-bold text-gray-800 text-xs md:text-sm">{hod.name}</h4>
-                    <p className="text-xs text-gray-600 leading-tight">{hod.designation}</p>
+                  <div>
+                    <h5 className="text-base md:text-lg font-medium text-secondary mb-3">Assistant TPO</h5>
+                    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4">
+                      {assistants.map((person, index) => (
+                        <div
+                          key={index}
+                          className="bg-white rounded-xl shadow-sm text-center"
+                        >
+                          {person.image && (
+                            <div className="w-full h-52 md:h-60 relative bg-white rounded-t-xl overflow-hidden">
+                              <Image
+                                src={person.image}
+                                alt={`Portrait of ${person.name}`}
+                                fill
+                                className="object-cover object-center"
+                              />
+                            </div>
+                          )}
+                          <div className="p-2 md:p-4 space-y-2">
+                            <h6 className="font-bold text-gray-800 text-sm md:text-base">{person.name}</h6>
+                            <p className="text-sm text-gray-600 leading-tight">{person.designation}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
           </section>
         </div>

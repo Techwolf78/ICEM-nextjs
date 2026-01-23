@@ -106,8 +106,8 @@ export default function PlacementInformation() {
         {Object.entries(contentData).map(([year, programs]) => (
           <div key={year} className="bg-gray-50/50 rounded-xl border border-gray-100 overflow-hidden">
             <details className="group">
-              <summary className="flex justify-between items-center p-6 cursor-pointer hover:bg-gray-50/80 transition-colors duration-200">
-                <h4 className="font-semibold text-gray-900 text-xl flex items-center gap-3">
+              <summary className="flex justify-between items-center p-2 cursor-pointer hover:bg-gray-50/80 transition-colors duration-200">
+                <h4 className="font-semibold text-gray-900 text-lg flex items-center gap-3">
                   <div className="w-10 h-10 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-xl flex items-center justify-center">
                     <Calendar className="w-5 h-5 text-secondary" />
                   </div>
@@ -116,10 +116,10 @@ export default function PlacementInformation() {
                 <ChevronDown className="w-6 h-6 text-gray-500 transition-transform duration-200 group-open:rotate-180" />
               </summary>
 
-              <div className="p-6 space-y-8">
+              <div className="p-4 space-y-6">
                 {/* Engineering Students */}
                 <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                  <div className="bg-gradient-to-r from-secondary/5 to-secondary/10 px-6 py-4 border-b border-gray-100">
+                  <div className="bg-gradient-to-r from-secondary/5 to-secondary/10 px-4 py-3 border-b border-gray-100">
                     <h5 className="font-semibold text-gray-900 text-lg flex items-center gap-2">
                       <Building className="w-5 h-5 text-secondary" />
                       Engineering Students
@@ -129,27 +129,27 @@ export default function PlacementInformation() {
                     <table className="w-full">
                       <thead className="bg-gray-50">
                         <tr>
-                          <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">#</th>
-                          <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Student Name</th>
-                          <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Company</th>
-                          <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Stream</th>
-                          <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Year</th>
-                          <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Package</th>
+                          <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">#</th>
+                          <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Student Name</th>
+                          <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Company</th>
+                          <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Stream</th>
+                          <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Year</th>
+                          <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Package</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-gray-100">
                         {programs.engineering.map((student, index) => (
                           <tr key={student.srNo} className="hover:bg-gray-50 transition-colors duration-150">
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{student.srNo}</td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{student.studentName}</td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">{student.companyName}</td>
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-500">{student.srNo}</td>
+                            <td className="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-900">{student.studentName}</td>
+                            <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-700">{student.companyName}</td>
+                            <td className="px-4 py-3 whitespace-nowrap">
                               <span className="inline-flex px-2 py-1 text-xs font-medium bg-secondary/10 text-secondary rounded-full">
                                 {student.stream}
                               </span>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{student.yearOfPassing}</td>
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-500">{student.yearOfPassing}</td>
+                            <td className="px-4 py-3 whitespace-nowrap">
                               <span className="inline-flex items-center px-3 py-1 text-sm font-semibold bg-green-100 text-green-800 rounded-full">
                                 <TrendingUp className="w-4 h-4 mr-1" />
                                 {student.package}
@@ -164,7 +164,7 @@ export default function PlacementInformation() {
 
                 {/* MBA Students */}
                 <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                  <div className="bg-gradient-to-r from-secondary/5 to-secondary/10 px-6 py-4 border-b border-gray-100">
+                  <div className="bg-gradient-to-r from-secondary/5 to-secondary/10 px-4 py-3 border-b border-gray-100">
                     <h5 className="font-semibold text-gray-900 text-lg flex items-center gap-2">
                       <Star className="w-5 h-5 text-secondary" />
                       MBA Students
@@ -174,27 +174,27 @@ export default function PlacementInformation() {
                     <table className="w-full">
                       <thead className="bg-gray-50">
                         <tr>
-                          <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">#</th>
-                          <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Student Name</th>
-                          <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Company</th>
-                          <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Stream</th>
-                          <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Year</th>
-                          <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Package</th>
+                          <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">#</th>
+                          <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Student Name</th>
+                          <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Company</th>
+                          <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Stream</th>
+                          <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Year</th>
+                          <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Package</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-gray-100">
                         {programs.mba.map((student, index) => (
                           <tr key={student.srNo} className="hover:bg-gray-50 transition-colors duration-150">
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{student.srNo}</td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{student.studentName}</td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">{student.companyName}</td>
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-500">{student.srNo}</td>
+                            <td className="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-900">{student.studentName}</td>
+                            <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-700">{student.companyName}</td>
+                            <td className="px-4 py-3 whitespace-nowrap">
                               <span className="inline-flex px-2 py-1 text-xs font-medium bg-secondary/10 text-secondary rounded-full">
                                 {student.stream}
                               </span>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{student.yearOfPassing}</td>
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-500">{student.yearOfPassing}</td>
+                            <td className="px-4 py-3 whitespace-nowrap">
                               <span className="inline-flex items-center px-3 py-1 text-sm font-semibold bg-green-100 text-green-800 rounded-full">
                                 <TrendingUp className="w-4 h-4 mr-1" />
                                 {student.package}
@@ -209,7 +209,7 @@ export default function PlacementInformation() {
 
                 {/* MCA Students */}
                 <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                  <div className="bg-gradient-to-r from-secondary/5 to-secondary/10 px-6 py-4 border-b border-gray-100">
+                  <div className="bg-gradient-to-r from-secondary/5 to-secondary/10 px-4 py-3 border-b border-gray-100">
                     <h5 className="font-semibold text-gray-900 text-lg flex items-center gap-2">
                       <Building className="w-5 h-5 text-secondary" />
                       MCA Students
@@ -219,27 +219,27 @@ export default function PlacementInformation() {
                     <table className="w-full">
                       <thead className="bg-gray-50">
                         <tr>
-                          <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">#</th>
-                          <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Student Name</th>
-                          <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Company</th>
-                          <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Stream</th>
-                          <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Year</th>
-                          <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Package</th>
+                          <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">#</th>
+                          <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Student Name</th>
+                          <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Company</th>
+                          <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Stream</th>
+                          <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Year</th>
+                          <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Package</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-gray-100">
                         {programs.mca.map((student, index) => (
                           <tr key={student.srNo} className="hover:bg-gray-50 transition-colors duration-150">
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{student.srNo}</td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{student.studentName}</td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">{student.companyName}</td>
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-500">{student.srNo}</td>
+                            <td className="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-900">{student.studentName}</td>
+                            <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-700">{student.companyName}</td>
+                            <td className="px-4 py-3 whitespace-nowrap">
                               <span className="inline-flex px-2 py-1 text-xs font-medium bg-secondary/10 text-secondary rounded-full">
                                 {student.stream}
                               </span>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{student.yearOfPassing}</td>
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-500">{student.yearOfPassing}</td>
+                            <td className="px-4 py-3 whitespace-nowrap">
                               <span className="inline-flex items-center px-3 py-1 text-sm font-semibold bg-green-100 text-green-800 rounded-full">
                                 <TrendingUp className="w-4 h-4 mr-1" />
                                 {student.package}
@@ -270,7 +270,7 @@ export default function PlacementInformation() {
         {Object.entries(contentData.content).map(([title, items]) => (
           <div key={title} className="bg-gray-50/50 rounded-xl border border-gray-100 overflow-hidden">
             <details className="group">
-              <summary className="flex justify-between items-center p-6 cursor-pointer hover:bg-gray-50/80 transition-colors duration-200">
+              <summary className="flex justify-between items-center p-4 cursor-pointer hover:bg-gray-50/80 transition-colors duration-200">
                 <h4 className="font-semibold text-gray-900 text-lg flex items-center gap-3">
                   <div className="w-8 h-8 bg-secondary/10 rounded-lg flex items-center justify-center">
                     <FileText className="w-4 h-4 text-secondary" />
@@ -280,7 +280,7 @@ export default function PlacementInformation() {
                 <ChevronDown className="w-5 h-5 text-gray-500 transition-transform duration-200 group-open:rotate-180" />
               </summary>
 
-              <div className="px-6 pb-6 space-y-4">
+              <div className="px-4 pb-4 space-y-3">
                 {items.map((item, index) => {
                   // PDF LINK
                   if (item.pdf) {
@@ -354,29 +354,29 @@ export default function PlacementInformation() {
   };
 
   return (
-    <section className="w-full bg-gradient-to-br from-slate-50 via-white to-slate-50 py-4 md:py-8" aria-labelledby="placement-info-title">
+    <section className="w-full bg-gradient-to-br from-slate-50 via-white to-slate-50 py-2 md:py-4" aria-labelledby="placement-info-title">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div className="text-center mb-2 md:mb-8">
-          <h2 id="placement-info-title" className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary mb-4 leading-tight">
+        <div className="text-center mb-1 md:mb-4">
+          <h2 id="placement-info-title" className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary mb-4 leading-tight">
             Placement Information
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Empowering students with comprehensive training and placement opportunities for successful careers
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-6">
           {/* Navigation Sidebar */}
           <nav className="lg:col-span-1" role="navigation" aria-label="Placement information navigation">
-            <div className="bg-white rounded-2xl shadow-xl border border-gray-100/50 backdrop-blur-sm sticky top-8">
-              <div className="p-6 border-b border-gray-100">
+            <div className="bg-white rounded-2xl shadow-xl border border-gray-100/50 backdrop-blur-sm sticky top-4">
+              <div className="p-4 border-b border-gray-100">
                 <h3 className="font-semibold text-gray-900 text-lg flex items-center gap-2">
                   <FileText className="w-5 h-5 text-secondary" />
                   Quick Links
                 </h3>
               </div>
-              <div className="p-4 space-y-2">
+              <div className="p-2 space-y-2">
                 {tabs.map((tab, index) => {
                   const icons = [<Users className="w-4 h-4" />, <FileText className="w-4 h-4" />, <Info className="w-4 h-4" />];
                   const isActive = active === tab;
@@ -408,18 +408,18 @@ export default function PlacementInformation() {
           {/* Main Content Area */}
           <div className="lg:col-span-3">
             <div className="bg-white rounded-2xl shadow-xl border border-gray-100/50 backdrop-blur-sm overflow-hidden">
-              <div className="bg-secondary p-4 md:p-6">
+              <div className="bg-secondary p-1 md:p-2">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-white/20 rounded-lg backdrop-blur-sm">
-                    {active === "Placement Team" && <Users className="w-6 h-6 text-white" />}
-                    {active === "Top Placed Students" && <Star className="w-6 h-6 text-white" />}
-                    {active === "Placement Policy" && <FileText className="w-6 h-6 text-white" />}
+                  <div className="p-1 bg-white/20 rounded-lg backdrop-blur-sm">
+                    {active === "Placement Team" && <Users className="w-5 h-5 text-white" />}
+                    {active === "Top Placed Students" && <Star className="w-5 h-5 text-white" />}
+                    {active === "Placement Policy" && <FileText className="w-5 h-5 text-white" />}
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-white">{active}</h3>
+                  <h3 className="text-lg md:text-xl font-bold text-white">{active}</h3>
                 </div>
               </div>
 
-              <div className="p-6 md:p-8">
+              <div className="p-2 md:p-4">
                 <div className="content-area">
                   {renderContent(sectionContent[active])}
                 </div>

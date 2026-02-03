@@ -88,13 +88,13 @@ export default function Overview() {
     { name: "Dr. Saurabh Gupta", designation: "HoD (Mechanical Engineering)", image: "/assets/images/icemFaculty/Saurabh Gupta.jpg" },
     { name: "Dr. Vikas Nandgaonkar", designation: "HoD (Information Technology)", image: "/assets/images/icemFaculty/Vikas_Nandgaonkar.jpg" },
     { name: "Dr. Manjusha Tatiya", designation: "HoD (AI & Data Science)", image: "/assets/images/icemFaculty/Dr _Manjusha_Tomar.jpg" },
-    { name: "Mr. Meenakshi Patil", designation: "HoD (E&TC) – In-charge", image: "/assets/images/icemFaculty/MeenakshiPatil.jpg" },
+    { name: "Mrs. Meenakshi Patil", designation: "HoD (E&TC)", image: "/assets/images/icemFaculty/MeenakshiPatil.jpg" },
     { name: "Dr. Aatish Zagade", designation: "HoD (MBA)", image: "/assets/images/icemFaculty/aatish_zagade.webp" },
     { name: "Dr. Avantika Bijwe", designation: "HoD (MCA)", image: "/assets/images/icemFaculty/Dr. Awantika Bijwe.jpg" },
   ];
 
   const ceos = [
-    { name: "Mr. Meenakshi Patil", designation: "CEO (Examinations & Evaluation) – Autonomy", image: "/assets/images/icemFaculty/MeenakshiPatil.jpg" },
+    { name: "Mrs. Meenakshi Patil", designation: "CEO (Examinations & Evaluation) – Autonomy", image: "/assets/images/icemFaculty/MeenakshiPatil.jpg" },
     { name: "Mr. Hemant Darokar", designation: "CEO (Examinations & Evaluation) – SPPU", image: "/assets/images/icemFaculty/Hemant Darokar.jpg" },
   ];
 

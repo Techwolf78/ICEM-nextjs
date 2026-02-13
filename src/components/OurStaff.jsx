@@ -32,7 +32,7 @@ const staffData = [
     "Qualification": "M.P.Ed., NET",
     "DOJ": "26.10.2015",
     "DOB": "24.08.1980",
-    "imagePath": "/Final_Icem_branding/fe/Dr. Atul Gore.jpg"
+    "imagePath": "/Final_Icem_branding/fe/Dr. Atul Gore.webp"
   },
   {
     "Sr.No.": "4",
@@ -43,7 +43,7 @@ const staffData = [
     "Qualification": "Ph.D., ME",
     "DOJ": "02.11.2020",
     "DOB": "09.08.1980",
-    "imagePath": "/Final_Icem_branding/fe/Dr. Kiran Devade.jpg"
+    "imagePath": "/Final_Icem_branding/fe/Dr. Kiran Devade.webp"
   },
   {
     "Sr.No.": "5",
@@ -54,7 +54,7 @@ const staffData = [
     "Qualification": "Ph.D, M.Sc",
     "DOJ": "26.09.2012",
     "DOB": "25.06.1973",
-    "imagePath": "/Final_Icem_branding/fe/Dr. Manjusha Tomar.jpg"
+    "imagePath": "/Final_Icem_branding/fe/Dr. Manjusha Tomar.webp"
   },
   {
     "Sr.No.": "6",
@@ -65,7 +65,7 @@ const staffData = [
     "Qualification": "Ph.D.M.Phil, M.Sc, B.Sc",
     "DOJ": "24.01.2017",
     "DOB": "13.03.1980",
-    "imagePath": "/Final_Icem_branding/fe/Dr. Avinash Bansode.jpg"
+    "imagePath": "/Final_Icem_branding/fe/Dr. Avinash Bansode.webp"
   },
   {
     "Sr.No.": "7",
@@ -76,7 +76,7 @@ const staffData = [
     "Qualification": "ME",
     "DOJ": "29.08.2009",
     "DOB": "06.05.1985",
-    "imagePath": "/Final_Icem_branding/fe/Mrs. Pratima Gaikwad.jpg"
+    "imagePath": "/Final_Icem_branding/fe/Mrs. Pratima Gaikwad.webp"
   },
   {
     "Sr.No.": "8",
@@ -86,7 +86,7 @@ const staffData = [
     "Department": "FE",
     "Qualification": "ME",
     "DOJ": "03.09.2010",
-    "imagePath": "/Final_Icem_branding/fe/Mrs. Supriya Kumbhar.jpg",
+    "imagePath": "/Final_Icem_branding/fe/Mrs. Supriya Kumbhar.webp",
     "DOB": "30.06.1983"
   },
   {
@@ -96,7 +96,7 @@ const staffData = [
     "Designation": "Assistant Professor & Dean Admissions",
     "Department": "FE",
     "Qualification": "MBA, ME",
-    "imagePath": "/Final_Icem_branding/fe/Ashwin Dharme.jpg",
+    "imagePath": "/Final_Icem_branding/fe/Ashwin Dharme.webp",
     "DOJ": "15.06.2015",
     "DOB": "11.05.1986"
   },
@@ -106,7 +106,7 @@ const staffData = [
     "Name of the staff ": "Dr. Mandakini Sanjay Dahiwade",
     "Designation": "Assistant Professor",
     "Department": "FE",
-    "imagePath": "/Final_Icem_branding/fe/Dr. Mandakini Dahiwade.JPG",
+    "imagePath": "/Final_Icem_branding/fe/Dr. Mandakini Dahiwade.webp",
     "Qualification": "B.Sc.,M.Sc,M.Phil,Ph.D",
     "DOJ": "7/1/2024",
     "DOB": "02.05.1988"
@@ -117,7 +117,7 @@ const staffData = [
     "Name of the staff ": "Mrs. Priyanka Harshal Mahajan",
     "Designation": "Assistant Professor",
     "Department": "FE",
-    "imagePath": "/Final_Icem_branding/fe/Prof. Priyanka Mahajan.jpg",
+    "imagePath": "/Final_Icem_branding/fe/Prof. Priyanka Mahajan.webp",
     "Qualification": "ME",
     "DOJ": "8/12/2024",
     "DOB": "07.01.1992"
@@ -127,7 +127,7 @@ const staffData = [
     "ID No": "3116",
     "Name of the staff ": "Ms. Trupti Nandkumar Kathale",
     "Designation": "Assistant Professor",
-    "imagePath": "/Final_Icem_branding/fe/Trupti Kathale.jpg",
+    "imagePath": "/Final_Icem_branding/fe/Trupti Kathale.webp",
     "Department": "FE",
     "Qualification": "B.Sc.,M.Sc.",
     "DOJ": "10/1/2024",
@@ -137,7 +137,7 @@ const staffData = [
     "Sr.No.": "13",
     "ID No": "3117",
     "Name of the staff ": "Mr. Raghunandan Vinayakrao Kale",
-    "imagePath": "/Final_Icem_branding/fe/Raghunandan sir photo.jpg",
+    "imagePath": "/Final_Icem_branding/fe/Raghunandan sir photo.webp",
     "Designation": "Assistant Professor",
     "Department": "FE",
     "Qualification": "B.Sc, M.Sc.",

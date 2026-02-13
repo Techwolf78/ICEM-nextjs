@@ -37,7 +37,7 @@ const facultyImages = Array.from({ length: 12 }, (_, i) => ({
 }));
 
 // ================== MAIN COMPONENT ==================
-export default function FAQENTC() {
+export default function FAQSection() {
   const [active, setActive] = useState("About Us");
 
   const sectionContent = {
@@ -450,4 +450,4 @@ export default function FAQENTC() {
       </div>
     </section>
   );
-}
+};

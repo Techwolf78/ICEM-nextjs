@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import OurStaff from "@/components/OurStaff";
 
 export default function Overview() {
   const leaders = [
@@ -776,6 +777,9 @@ export default function Overview() {
               </div>
             </div>
           </section>
+
+          {/* Our Staff Section */}
+          <OurStaff />
         </div>
       </div>
     </div>

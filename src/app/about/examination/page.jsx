@@ -153,7 +153,7 @@ export default function Examination() {
                         <ul className="list-decimal ml-6 space-y-2">
                           <li>
                             <a
-                              href="/exam/SY_FY_Vacation_Exam_Timetable_Jan_2026.pdf"
+                              href="/exam/VACATION_EXAMINATION _Time Table_JAN 2026.pdf"
                               target="_blank"
                               className="text-secondary hover:underline"
                             >

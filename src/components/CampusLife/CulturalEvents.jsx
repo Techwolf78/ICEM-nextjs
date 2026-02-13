@@ -1,11 +1,18 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { culturalEvents } from "@/static/campuslife/cultural-events";
 
 export default function CulturalEvents() {
   const [openIndex, setOpenIndex] = useState(0);
   const [expanded, setExpanded] = useState(null);
+  const [origin, setOrigin] = useState('');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setOrigin(window.location.origin);
+    }
+  }, []);
 
   const toggleAccordion = (index) =>
     setOpenIndex(openIndex === index ? null : index);
@@ -93,8 +100,16 @@ export default function CulturalEvents() {
                     {/* View Document (only if file exists) */}
                     {event.file && (
                       <a
-                        href={event.file}
-                        target="_blank"
+                        href={
+                          event.file.endsWith('.docx') && !origin.includes('localhost') && !origin.includes('127.0.0.1')
+                            ? `https://docs.google.com/gview?url=${origin}${event.file}`
+                            : event.file
+                        }
+                        target={
+                          event.file.endsWith('.docx') && !origin.includes('localhost') && !origin.includes('127.0.0.1')
+                            ? '_self'
+                            : '_blank'
+                        }
                         rel="noopener noreferrer"
                         className="inline-flex items-center px-4 py-2 bg-secondary text-white rounded-md hover:bg-tertiary transition-all duration-300 ease-out transform hover:scale-105 font-medium text-sm"
                       >

@@ -153,6 +153,15 @@ export default function Examination() {
                         <ul className="list-decimal ml-6 space-y-2">
                           <li>
                             <a
+                              href="/assets/pdf/Examination/FY_BTECH _FY_MCAINT_FY_MBAINT_FY_MCA_ VacationExamTimeTable_(Re-EXAM).pdf"
+                              target="_blank"
+                              className="text-secondary hover:underline"
+                            >
+                              FY B.Tech / FY IMBA / FY IMCA / FY MCA Vacation Examination Timetable – Nov/Dec 2025 (Feb 2026)
+                            </a>
+                          </li>
+                          <li>
+                            <a
                               href="/exam/VACATION_EXAMINATION _Time Table_JAN 2026.pdf"
                               target="_blank"
                               className="text-secondary hover:underline"

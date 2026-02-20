@@ -148,7 +148,7 @@ const staffData = [
     "Sr.No.": "14",
     "ID No": "3118",
     "Name of the staff ": "Mr. Swapnil Machhindra Chaudhari",
-    "imagePath": "/Final_Icem_branding/fe/Swapnil choudhary.jpg",
+    "imagePath": "/Final_Icem_branding/fe/Swapnil choudhary.webp",
     "Designation": "Assistant Professor",
     "Department": "FE",
     "Qualification": "B.Sc, M.Tech.",
@@ -158,7 +158,7 @@ const staffData = [
   {
     "Sr.No.": "15",
     "ID No": "3220",
-    "imagePath": "/Final_Icem_branding/fe/Dr. Dayanand Kamble.JPG",
+    "imagePath": "/Final_Icem_branding/fe/Dr. Dayanand Kamble.webp",
     "Name of the staff ": "Dr. Dyanand Ambadas Kamble",
     "Designation": "Assistant Professor",
     "Department": "FE",
@@ -169,7 +169,7 @@ const staffData = [
   {
     "Sr.No.": "16",
     "ID No": "3224",
-    "imagePath": "/Final_Icem_branding/fe/Mr. Shubham Rathod.JPG",
+    "imagePath": "/Final_Icem_branding/fe/Mr. Shubham Rathod.webp",
     "Name of the staff ": "Mr. Rathod Shubham Shrikant",
     "Designation": "Assistant Professor",
     "Department": "FE",
@@ -180,7 +180,7 @@ const staffData = [
   {
     "Sr.No.": "17",
     "ID No": "3225",
-    "imagePath": "/Final_Icem_branding/fe/Mr. Rishikesh Sonawane.JPG",
+    "imagePath": "/Final_Icem_branding/fe/Mr. Rishikesh Sonawane.webp",
     "Name of the staff ": "Mr. Rishikesh Devendra Sonawane",
     "Designation": "Assistant Professor",
     "Department": "FE",

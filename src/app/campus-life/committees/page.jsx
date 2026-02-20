@@ -168,68 +168,9 @@ const Statutory = () => {
         </div>
       ),
     },
-    {
-      title: "6. Internal Compliance Committee / ICC / Women Cell",
-      content: (
-        <>
-          <h3 className="font-semibold mt-2 mb-4">
-            INTERNAL COMPLIANCE COMMITTEE / ICC / WOMEN CELL
-          </h3>
 
-          <div className="overflow-x-auto">
-            <table className="w-full border border-gray-200 rounded-lg shadow-sm mt-3">
-              <thead className="bg-secondary text-white">
-                <tr>
-                  <th className="border-b border-gray-200 p-2 md:p-3 text-center font-semibold text-sm md:text-base">Sr. No.</th>
-                  <th className="border-b border-gray-200 p-2 md:p-3 text-left font-semibold text-sm md:text-base">Name of the staff</th>
-                  <th className="border-b border-gray-200 p-2 md:p-3 text-left font-semibold text-sm md:text-base">Designation</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  ["1", "Dr. Manjusha Tomar", "Presiding Officer"],
-                  ["2", "Prof. Manjusha Tatiya", "Secretary *"],
-                  ["3", "Prof. Ashwin Dharme", "Faculty"],
-                  ["4", "Mrs. Anita Surve", "Non Teaching Staff Member"],
-                  ["5", "Mrs. Sonali Pradhan", "Non Teaching Staff Member"],
-                  ["6", "Mr. Omkar Waman", "Student"],
-                  ["7", "Mr. Harshal Kakre", "Student"],
-                  ["8", "Ms. Pallavi Patil", "Student (Girl)"],
-                  ["9", "Mr. Vasant Papal", "Civilian / NGO"],
-                ].map(([sno, name, desig]) => (
-                  <tr key={sno} className="odd:bg-primary/10 even:bg-white hover:bg-primary/20">
-                    <td className="border-b border-gray-200 p-2 md:p-3 text-center text-sm md:text-base">{sno}</td>
-                    <td className="border-b border-gray-200 p-2 md:p-3 text-sm md:text-base">{name}</td>
-                    <td className="border-b border-gray-200 p-2 md:p-3 text-sm md:text-base">{desig}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <div className="mt-4 text-sm text-gray-700">
-            <ul className="list-disc pl-6 space-y-1">
-              <li>
-                For any assistance / complaint call{" "}
-                <strong>02114 661666</strong> or mail:{" "}
-                <a
-                  href="mailto:manjusha.tomar@indiraicem.ac.in"
-                  className="text-blue-600 underline"
-                >
-                  manjusha.tomar@indiraicem.ac.in
-                </a>
-              </li>
-              <li>
-                24 hours' helpline no. is{" "}
-                <strong className="text-blue-600">7720010705</strong>
-              </li>
-            </ul>
-          </div>
-        </>
-      ),
-    },
     {
-      title: "7. IQAC Committee",
+      title: "6. IQAC Committee",
       content: (
         <div className="mt-4">
           <iframe
@@ -243,7 +184,7 @@ const Statutory = () => {
       ),
     },
     {
-      title: "8. SC / ST Committee",
+      title: "7. SC / ST Committee",
       content: (
         <div className="mt-4">
           <iframe
@@ -257,7 +198,7 @@ const Statutory = () => {
       ),
     },
     {
-      title: "9. Student Counsellor",
+      title: "8. Student Counsellor",
       content: (
         <>
           <h3 className="font-semibold mt-2 mb-4">STUDENT COUNSELLOR</h3>
@@ -290,7 +231,7 @@ const Statutory = () => {
       ),
     },
     {
-      title: "10. Student Development Cell",
+      title: "9. Student Development Cell",
       content: (
         <>
           <h3 className="font-semibold mt-2 mb-4">STUDENT DEVELOPMENT CELL</h3>

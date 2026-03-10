@@ -126,13 +126,6 @@ export default function Examination() {
 
                       <div>
                         <h4 className="font-semibold text-gray-900">
-                          Prof. Mani Shankar Pandey
-                        </h4>
-                        <p>Deputy Controller of Examination</p>
-                      </div>
-
-                      <div>
-                        <h4 className="font-semibold text-gray-900">
                           Mr. Somnath Bhote
                         </h4>
                         <p>Examination Officer</p>

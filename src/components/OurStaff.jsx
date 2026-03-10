@@ -11,7 +11,8 @@ const staffData = [
     "Department": "ICEM",
     "Qualification": "B.E,ME,Ph.D",
     "DOJ": "7/10/2024",
-    "DOB": "25.12.1973"
+    "DOB": "25.12.1973",
+    "imagePath": "/faculty/NileshUke.webp"
   },
   {
     "Sr.No.": "2",
@@ -197,7 +198,7 @@ const staffData = [
     "Qualification": "Ph.D,ME",
     "DOJ": "01.07.2009",
     "DOB": "30.01.1983",
-    "imagePath": "/Final_Icem_branding/aids/Dr. Manjusha Tatiya.jpg"
+    "imagePath": "/Final_Icem_branding/aids/Dr. Manjusha Tatiya.webp"
   },
   {
     "Sr.No.": "19",
@@ -208,7 +209,7 @@ const staffData = [
     "Qualification": "B.E.,ME",
     "DOJ": "7/1/2024",
     "DOB": "09.02.1992",
-    "imagePath": "/Final_Icem_branding/aids/Mrs. Deepa KadamPadwal.jpg"
+    "imagePath": "/Final_Icem_branding/aids/Mrs. Deepa KadamPadwal.webp"
   },
   {
     "Sr.No.": "20",
@@ -219,7 +220,7 @@ const staffData = [
     "Qualification": "B.Tech, M.Tech.",
     "DOJ": "7/1/2024",
     "DOB": "17.09.1996",
-    "imagePath": "/Final_Icem_branding/aids/Pallavi Chavan.jpg"
+    "imagePath": "/Final_Icem_branding/aids/Pallavi Chavan.webp"
   },
   {
     "Sr.No.": "21",
@@ -230,7 +231,7 @@ const staffData = [
     "Qualification": "Dip,BE, ME",
     "DOJ": "1/7/2025",
     "DOB": "5/10/1992",
-    "imagePath": "/Final_Icem_branding/aids/Mrs. Monika Patil.JPG"
+    "imagePath": "/Final_Icem_branding/aids/Mrs. Monika Patil.webp"
   },
   {
     "Sr.No.": "22",
@@ -240,7 +241,7 @@ const staffData = [
     "Department": "AIDS",
     "Qualification": "M. Tech, Msc. Post Graduation in Computer Application",
     "DOJ": "1/14/2026",
-    "imagePath": "/Final_Icem_branding/aids/Mrs. Kavita Sharma.JPG",
+    "imagePath": "/Final_Icem_branding/aids/Mrs. Kavita Sharma.webp",
     "DOB": "10.07.1982"
   },
   {
@@ -250,7 +251,7 @@ const staffData = [
     "Designation": "Assistant Professor",
     "Department": "AIDS",
     "Qualification": "B.E., M. Tech in Computer Science",
-    "imagePath": "/Final_Icem_branding/aids/Vivek Sohagora.JPG",
+    "imagePath": "/Final_Icem_branding/aids/Vivek Sohagora.webp",
     "DOJ": "1/23/2026",
     "DOB": "18.12.1990"
   },
@@ -263,7 +264,7 @@ const staffData = [
     "Qualification": "Ph.D, BBA,MBA,NET,",
     "DOJ": "7/1/2024",
     "DOB": "18.05.1984",
-    "imagePath": "/Final_Icem_branding/bba_bca/Dr. Deepa Jamnik.jpg"
+    "imagePath": "/Final_Icem_branding/bba_bca/Dr. Deepa Jamnik.webp"
   },
   {
     "Sr.No.": "25",
@@ -273,7 +274,8 @@ const staffData = [
     "Department": "BBA",
     "Qualification": "B.E, MBA",
     "DOJ": "11/13/2024",
-    "DOB": "11.09.1981"
+    "DOB": "11.09.1981",
+    "imagePath": "/Final_Icem_branding/bba_bca/Ashwini-Wankhade.JPG"
   },
   {
     "Sr.No.": "26",
@@ -284,7 +286,7 @@ const staffData = [
     "Qualification": "B. Sc, MBA",
     "DOJ": "1/6/2025",
     "DOB": "6/9/1987",
-    "imagePath": "/Final_Icem_branding/bba_bca/Mrs. Dipali Nimbalkar.JPG"
+    "imagePath": "/Final_Icem_branding/bba_bca/Mrs. Dipali Nimbalkar.webp"
   },
   {
     "Sr.No.": "27",
@@ -295,7 +297,7 @@ const staffData = [
     "Qualification": "Ph.D, BSc,MCA,ME",
     "DOJ": "7/1/2024",
     "DOB": "26.05.1982",
-    "imagePath": "/Final_Icem_branding/bba_bca/Dr. Awantika Bijwe.jpg"
+    "imagePath": "/Final_Icem_branding/bba_bca/Dr. Awantika Bijwe.webp"
   },
   {
     "Sr.No.": "28",
@@ -306,7 +308,7 @@ const staffData = [
     "Qualification": "B.Sc., MCA",
     "DOJ": "9/24/2024",
     "DOB": "11.07.1999",
-    "imagePath": "/Final_Icem_branding/bba_bca/Ms. Shraddha Murade.JPG"
+    "imagePath": "/Final_Icem_branding/bba_bca/Ms. Shraddha Murade.webp"
   },
   {
     "Sr.No.": "29",
@@ -317,7 +319,7 @@ const staffData = [
     "Qualification": "B.C.S,M.Sc",
     "DOJ": "9/22/2025",
     "DOB": "4/5/1983",
-    "imagePath": "/Final_Icem_branding/bba_bca/Mr. Prakash Bhusari.JPG"
+    "imagePath": "/Final_Icem_branding/bba_bca/Mr. Prakash Bhusari.webp"
   },
   {
     "Sr.No.": "30",
@@ -328,7 +330,7 @@ const staffData = [
     "Qualification": "ME",
     "DOJ": "18.09.2014",
     "DOB": "31.01.1982",
-    "imagePath": "/Final_Icem_branding/civil/Mrs. Savita Jangale.jpg"
+    "imagePath": "/Final_Icem_branding/civil/Mrs. Savita Jangale.webp"
   },
   {
     "Sr.No.": "31",
@@ -339,7 +341,7 @@ const staffData = [
     "Qualification": "M.Tech",
     "DOJ": "14.07.2015",
     "DOB": "24.08.1990",
-    "imagePath": "/Final_Icem_branding/civil/Mr. Vijaykumar Saini.jpg"
+    "imagePath": "/Final_Icem_branding/civil/Mr. Vijaykumar Saini.webp"
   },
   {
     "Sr.No.": "32",
@@ -350,7 +352,7 @@ const staffData = [
     "Qualification": "ME",
     "DOJ": "7/1/2024",
     "DOB": "11.11.1990",
-    "imagePath": "/Final_Icem_branding/civil/Mr. Shreyas Satpute.jpg"
+    "imagePath": "/Final_Icem_branding/civil/Mr. Shreyas Satpute.webp"
   },
   {
     "Sr.No.": "33",
@@ -370,7 +372,8 @@ const staffData = [
     "Department": "Computer",
     "Qualification": "ME",
     "DOJ": "27.07.2009",
-    "DOB": "25.04.1986"
+    "DOB": "25.04.1986",
+    "imagePath": "/Final_Icem_branding/comp/Mrs. Deepali Dhadwad.webp"
   },
   {
     "Sr.No.": "35",
@@ -380,7 +383,8 @@ const staffData = [
     "Department": "Computer",
     "Qualification": "ME, Ph.D.",
     "DOJ": "01.07.2023",
-    "DOB": "9.8.1983"
+    "DOB": "9.8.1983",
+    "imagePath": "/Final_Icem_branding/comp/Dr. Shwetkranti Taware.webp"
   },
   {
     "Sr.No.": "36",
@@ -390,7 +394,8 @@ const staffData = [
     "Department": "Computer",
     "Qualification": "BE ME Ph.D",
     "DOJ": "28.09.2021",
-    "DOB": "31.10.1974"
+    "DOB": "31.10.1974",
+    "imagePath": "/assets/images/icemFaculty/Soumitra-Das.png"
   },
   {
     "Sr.No.": "37",
@@ -400,7 +405,8 @@ const staffData = [
     "Department": "Computer",
     "Qualification": "ME",
     "DOJ": "01.07.2024",
-    "DOB": "25.12.1994"
+    "DOB": "25.12.1994",
+    "imagePath": "/Final_Icem_branding/comp/Mrs. Anita Patil.webp"
   },
   {
     "Sr.No.": "38",
@@ -410,7 +416,8 @@ const staffData = [
     "Department": "Computer",
     "Qualification": "BE, M. Tech",
     "DOJ": "01.07.2024",
-    "DOB": "01.10.1997"
+    "DOB": "01.10.1997",
+    "imagePath": "/Final_Icem_branding/comp/Mrs. Pragati Malusare.webp"
   },
   {
     "Sr.No.": "39",
@@ -420,7 +427,8 @@ const staffData = [
     "Department": "Computer",
     "Qualification": "B.E.,M.E",
     "DOJ": "01.11.2022",
-    "DOB": "14.04.1980"
+    "DOB": "14.04.1980",
+    "imagePath": "/Final_Icem_branding/comp/Mrs. Dipali Junankar.webp"
   },
   {
     "Sr.No.": "40",
@@ -430,7 +438,8 @@ const staffData = [
     "Department": "Computer",
     "Qualification": "B.E,ME,Ph.D",
     "DOJ": "01.02.2023",
-    "DOB": "18.10.1970"
+    "DOB": "18.10.1970",
+    "imagePath": "/Final_Icem_branding/comp/Dr. Sunil Rathod.webp"
   },
   {
     "Sr.No.": "41",
@@ -440,7 +449,8 @@ const staffData = [
     "Department": "Computer",
     "Qualification": "B.E,M.Tech.",
     "DOJ": "7/1/2024",
-    "DOB": "02.06.1990"
+    "DOB": "02.06.1990",
+    "imagePath": "/Final_Icem_branding/comp/Mrs. Savitri Pawar.webp"
   },
   {
     "Sr.No.": "42",
@@ -450,7 +460,8 @@ const staffData = [
     "Department": "Computer",
     "Qualification": "B.E.,ME",
     "DOJ": "7/1/2024",
-    "DOB": "25.06.1988"
+    "DOB": "25.06.1988",
+    "imagePath": "/Final_Icem_branding/comp/Mrs. Rupali Adhau.webp"
   },
   {
     "Sr.No.": "43",
@@ -460,7 +471,8 @@ const staffData = [
     "Department": "Computer",
     "Qualification": "B.E.,ME",
     "DOJ": "7/1/2024",
-    "DOB": "05.06.1996"
+    "DOB": "05.06.1996",
+    "imagePath": "/Final_Icem_branding/comp/Mrs. Shraddha Suryawanshi.webp"
   },
   {
     "Sr.No.": "44",
@@ -470,7 +482,8 @@ const staffData = [
     "Department": "Computer",
     "Qualification": "BE, M.Tech, Ph.D.",
     "DOJ": "8/26/2024",
-    "DOB": "01.08.1985"
+    "DOB": "01.08.1985",
+    "imagePath": "/Final_Icem_branding/comp/Malayaj-Kumar.webp"
   },
   {
     "Sr.No.": "45",
@@ -480,7 +493,8 @@ const staffData = [
     "Department": "Computer",
     "Qualification": "Dip, B.E, ME",
     "DOJ": "8/29/2024",
-    "DOB": "13.01.1989"
+    "DOB": "13.01.1989",
+    "imagePath": "/Final_Icem_branding/comp/Mrs. Minal Patil.webp"
   },
   {
     "Sr.No.": "46",
@@ -500,7 +514,8 @@ const staffData = [
     "Department": "Computer",
     "Qualification": "BE IT, M.Tech Computer",
     "DOJ": "1/5/2026",
-    "DOB": "02.04.1991"
+    "DOB": "02.04.1991",
+    "imagePath": "/Final_Icem_branding/comp/Ms. Vidya Ritesh Dhoke.webp"
   },
   {
     "Sr.No.": "48",
@@ -510,7 +525,8 @@ const staffData = [
     "Department": "Computer",
     "Qualification": "B. E. Computer Engineering, Mastere in Computer Science & Engineering appeared",
     "DOJ": "1/14/2026",
-    "DOB": "21.12.2000"
+    "DOB": "21.12.2000",
+    "imagePath": "/Final_Icem_branding/comp/Ms. Tanuja Dhumal.webp"
   },
   {
     "Sr.No.": "49",
@@ -520,7 +536,8 @@ const staffData = [
     "Department": "E&TC",
     "Qualification": "ME",
     "DOJ": "22.01.2008",
-    "DOB": "02.10.1982"
+    "DOB": "02.10.1982",
+    "imagePath": "/Final_Icem_branding/entc/mrs_meenakshi_patil.webp"
   },
   {
     "Sr.No.": "50",
@@ -530,17 +547,8 @@ const staffData = [
     "Department": "E&TC",
     "Qualification": "ME",
     "DOJ": "04.08.2008",
-    "DOB": "26.11.1971"
-  },
-  {
-    "Sr.No.": "51",
-    "ID No": "372",
-    "Name of the staff ": "Mrs. Rupali Vilas Salunke",
-    "Designation": "Assistant Professor",
-    "Department": "E&TC",
-    "Qualification": "ME",
-    "DOJ": "01.07.2010",
-    "DOB": "10.10.1981"
+    "DOB": "26.11.1971",
+    "imagePath": "/Final_Icem_branding/entc/mr_dhiraj_bhagwate.webp"
   },
   {
     "Sr.No.": "52",
@@ -550,7 +558,8 @@ const staffData = [
     "Department": "E&TC",
     "Qualification": "Dip,BE,ME",
     "DOJ": "7/3/2024",
-    "DOB": "12.10.1981"
+    "DOB": "12.10.1981",
+    "imagePath": "/Final_Icem_branding/entc/mrsudhirsawarkar.webp"
   },
   {
     "Sr.No.": "53",
@@ -560,7 +569,8 @@ const staffData = [
     "Department": "E&TC",
     "Qualification": "BE, ME",
     "DOJ": "8/12/2024",
-    "DOB": "07.06.1990"
+    "DOB": "07.06.1990",
+    "imagePath": "/Final_Icem_branding/entc/mrspriyankapatil.webp"
   },
   {
     "Sr.No.": "54",
@@ -570,7 +580,8 @@ const staffData = [
     "Department": "E&TC",
     "Qualification": "BE, ME",
     "DOJ": "12/23/2024",
-    "DOB": "09.09.1991"
+    "DOB": "09.09.1991",
+    "imagePath": ""
   },
   {
     "Sr.No.": "55",
@@ -580,7 +591,8 @@ const staffData = [
     "Department": "Mechanical",
     "Qualification": "BE.ME.Ph.D ",
     "DOJ": "11.12.2023",
-    "DOB": "25.12.1977"
+    "DOB": "25.12.1977",
+    "imagePath": "/Final_Icem_branding/mech/Dr. Saurabh Gupta.webp"
   },
   {
     "Sr.No.": "56",
@@ -590,7 +602,8 @@ const staffData = [
     "Department": "IT",
     "Qualification": "BE, ME, Ph.D.",
     "DOJ": "10.12.2021",
-    "DOB": "06.12.1978"
+    "DOB": "06.12.1978",
+    "imagePath": "/Final_Icem_branding/it/Dr. Vikas Nandgaonkar.webp"
   },
   {
     "Sr.No.": "57",
@@ -600,7 +613,8 @@ const staffData = [
     "Department": "IT",
     "Qualification": "BE.ME",
     "DOJ": "9/15/2025",
-    "DOB": "2/20/1991"
+    "DOB": "2/20/1991",
+    "imagePath": "/Final_Icem_branding/it/Mrs Mrunal Vaidya.webp"
   },
   {
     "Sr.No.": "58",
@@ -620,7 +634,8 @@ const staffData = [
     "Department": "Mechanical",
     "Qualification": "ME,Ph.D",
     "DOJ": "14.05.2007",
-    "DOB": "24.08.1982"
+    "DOB": "24.08.1982",
+    "imagePath": "/Final_Icem_branding/mech/Dr. Mahesh Bhong.webp"
   },
   {
     "Sr.No.": "60",
@@ -630,7 +645,8 @@ const staffData = [
     "Department": "Mechanical",
     "Qualification": "ME",
     "DOJ": "01.12.2008",
-    "DOB": "12.04.1979"
+    "DOB": "12.04.1979",
+    "imagePath": "/Final_Icem_branding/mech/Mr. Hemant Darokar.webp"
   },
   {
     "Sr.No.": "61",
@@ -640,7 +656,8 @@ const staffData = [
     "Department": "Mechanical",
     "Qualification": "ME",
     "DOJ": "21.12.2009",
-    "DOB": "27.08.1985"
+    "DOB": "27.08.1985",
+    "imagePath": "/Final_Icem_branding/mech/Mr. Sushil Chopade.webp"
   },
   {
     "Sr.No.": "62",
@@ -650,7 +667,8 @@ const staffData = [
     "Department": "Mechanical",
     "Qualification": "ME",
     "DOJ": "02.07.2010",
-    "DOB": "17.03.1983"
+    "DOB": "17.03.1983",
+    "imagePath": "/Final_Icem_branding/mech/Mrs. Shubhangi Manwatkar.webp"
   },
   {
     "Sr.No.": "63",
@@ -660,7 +678,8 @@ const staffData = [
     "Department": "Mechanical",
     "Qualification": "ME",
     "DOJ": "03.09.2010",
-    "DOB": "19.09.1983"
+    "DOB": "19.09.1983",
+    "imagePath": "/Final_Icem_branding/mech/Mr. Siddheshwar Shirbhate.webp"
   },
   {
     "Sr.No.": "64",
@@ -670,7 +689,8 @@ const staffData = [
     "Department": "Mechanical",
     "Qualification": "ME",
     "DOJ": "01.12.2010",
-    "DOB": "15.08.1985"
+    "DOB": "15.08.1985",
+    "imagePath": "/Final_Icem_branding/mech/Mr. Vishal Meshram.webp"
   },
   {
     "Sr.No.": "65",
@@ -680,7 +700,8 @@ const staffData = [
     "Department": "Mechanical",
     "Qualification": "ME",
     "DOJ": "30.07.2012",
-    "DOB": "21.03.1985"
+    "DOB": "21.03.1985",
+    "imagePath": "/Final_Icem_branding/mech/Mrs. Ashwini Admane.webp"
   },
   {
     "Sr.No.": "66",
@@ -690,7 +711,8 @@ const staffData = [
     "Department": "Mechanical",
     "Qualification": "ME",
     "DOJ": "15.06.2015",
-    "DOB": "29.05.1985"
+    "DOB": "29.05.1985",
+    "imagePath": "/Final_Icem_branding/mech/Mrs. Pranali Khatake.webp"
   },
   {
     "Sr.No.": "67",
@@ -700,7 +722,8 @@ const staffData = [
     "Department": "Mechanical",
     "Qualification": "M.Tech",
     "DOJ": "11.07.2016",
-    "DOB": "23.02.1990"
+    "DOB": "23.02.1990",
+    "imagePath": "/Final_Icem_branding/mech/Mrs. Ashwini Gaikwad.webp"
   },
   {
     "Sr.No.": "68",
@@ -710,7 +733,8 @@ const staffData = [
     "Department": "Mechanical",
     "Qualification": "M.Tech",
     "DOJ": "23.01.2017",
-    "DOB": "10.12.1990"
+    "DOB": "10.12.1990",
+    "imagePath": "/Final_Icem_branding/mech/Mr. Amit Narwade.webp"
   },
   {
     "Sr.No.": "69",
@@ -720,7 +744,8 @@ const staffData = [
     "Department": "Mechanical",
     "Qualification": "ME",
     "DOJ": "23.01.2017",
-    "DOB": "10.12.1984"
+    "DOB": "10.12.1984",
+    "imagePath": "/Final_Icem_branding/mech/Mr. Sagar Chirade.webp"
   },
   {
     "Sr.No.": "70",
@@ -730,7 +755,8 @@ const staffData = [
     "Department": "MBA",
     "Qualification": "BAMS, MBA, NET, Ph.D",
     "DOJ": "30.01.2017",
-    "DOB": "13.9.1976"
+    "DOB": "13.9.1976",
+    "imagePath": "/Final_Icem_branding/mba/Dr. Archana Salave.webp"
   },
   {
     "Sr.No.": "71",
@@ -740,7 +766,8 @@ const staffData = [
     "Department": "MBA",
     "Qualification": "B.Sc., M.B.A , Ph.D.",
     "DOJ": "17.09.2012",
-    "DOB": "22.09.1986"
+    "DOB": "22.09.1986",
+    "imagePath": "/Final_Icem_branding/mba/Dr. Priyanka Pawar.webp"
   },
   {
     "Sr.No.": "72",
@@ -750,7 +777,8 @@ const staffData = [
     "Department": "MBA",
     "Qualification": "BE, MBA, NET SET, Ph.D",
     "DOJ": "01.07.2024",
-    "DOB": "23.08.1982"
+    "DOB": "23.08.1982",
+    "imagePath": "/Final_Icem_branding/mba/Dr. Pravin Thorat.webp"
   },
   {
     "Sr.No.": "73",
@@ -760,7 +788,8 @@ const staffData = [
     "Department": "MBA",
     "Qualification": "M.Com, MBA",
     "DOJ": "7/1/2024",
-    "DOB": "05.07.1985"
+    "DOB": "05.07.1985",
+    "imagePath": "/Final_Icem_branding/mba/Mrs. Adittee Huparikar.webp"
   },
   {
     "Sr.No.": "74",
@@ -770,7 +799,8 @@ const staffData = [
     "Department": "MBA",
     "Qualification": "Ph.D MBA .M.Phil",
     "DOJ": "7/1/2024",
-    "DOB": "14.05.1986"
+    "DOB": "14.05.1986",
+    "imagePath": "/Final_Icem_branding/mba/Dr. Priyanka Shinde.webp"
   },
   {
     "Sr.No.": "75",
@@ -780,7 +810,8 @@ const staffData = [
     "Department": "MBA",
     "Qualification": "BBA,  PGDM",
     "DOJ": "9/6/2024",
-    "DOB": "08.07.1990"
+    "DOB": "08.07.1990",
+    "imagePath": "/Final_Icem_branding/mba/Mr. Mani Shankar Pandey.webp"
   },
   {
     "Sr.No.": "76",
@@ -790,7 +821,8 @@ const staffData = [
     "Department": "Computer",
     "Qualification": "M.Tech, MCA, D.C.S.E, B.Sc, M. Phil., Ph.D.",
     "DOJ": "01.12.2021",
-    "DOB": "12.06.1973"
+    "DOB": "12.06.1973",
+    "imagePath": "/faculty/newFaculty/PoornaShankar.webp"
   },
   {
     "Sr.No.": "77",
@@ -800,7 +832,8 @@ const staffData = [
     "Department": "MCA",
     "Qualification": "MCA, Ph.D",
     "DOJ": "02.01.2013",
-    "DOB": "21.05.1979"
+    "DOB": "21.05.1979",
+    "imagePath": "/Final_Icem_branding/mca/Dr. Darshana Desai.webp"
   },
   {
     "Sr.No.": "78",
@@ -810,7 +843,8 @@ const staffData = [
     "Department": "MCA",
     "Qualification": "BCA,MCA",
     "DOJ": "06.01.2023",
-    "DOB": "08.03.1989"
+    "DOB": "08.03.1989",
+    "imagePath": "/Final_Icem_branding/mca/Dr. Dhanashree Pisal.webp"
   },
   {
     "Sr.No.": "79",
@@ -820,7 +854,8 @@ const staffData = [
     "Department": "MCA",
     "Qualification": "B.Sc.MCA",
     "DOJ": "7/1/2024",
-    "DOB": "02.07.1982"
+    "DOB": "02.07.1982",
+    "imagePath": "/Final_Icem_branding/mca/Mrs. Shreya Shenai.webp"
   },
   {
     "Sr.No.": "80",
@@ -830,7 +865,8 @@ const staffData = [
     "Department": "MCA",
     "Qualification": "BSc, MCA",
     "DOJ": "8/16/2024",
-    "DOB": "27.11.1980"
+    "DOB": "27.11.1980",
+    "imagePath": "/Final_Icem_branding/mca/Mrs. Hetal Thakar.webp"
   },
   {
     "Sr.No.": "81",
@@ -840,7 +876,8 @@ const staffData = [
     "Department": "MCA",
     "Qualification": "ADCA,MCM,MCA",
     "DOJ": "9/22/2025",
-    "DOB": "22.01.1975"
+    "DOB": "22.01.1975",
+    "imagePath": "/Final_Icem_branding/mca/Mr. Sanjay Mathapati.webp"
   },
   {
     "Sr.No.": "82",
@@ -850,7 +887,8 @@ const staffData = [
     "Department": "MCA",
     "Qualification": "B.Sc., M.Sc., MCA, Ph.D. ,NET",
     "DOJ": "1/8/2026",
-    "DOB": "23.04.1973"
+    "DOB": "23.04.1973",
+    "imagePath": "/Final_Icem_branding/mca/Dr. Bhushan Nikam.webp"
   },
   {
     "Sr.No.": "83",
@@ -860,7 +898,8 @@ const staffData = [
     "Department": "MCA",
     "Qualification": "BCA, MCA",
     "DOJ": "2/3/2026",
-    "DOB": "28.10.1998"
+    "DOB": "28.10.1998",
+    "imagePath": "/Final_Icem_branding/mca/Mrs. Vaishali Hatkar.webp"
   }
 ]
 
@@ -868,6 +907,7 @@ const staffData = [
 export default function OurStaff() {
   // State to track which departments are expanded
   const [expandedDepts, setExpandedDepts] = useState({});
+  const [brokenImageStaffIds, setBrokenImageStaffIds] = useState({});
 
   const toggleDepartment = (dept) => {
     setExpandedDepts(prev => ({
@@ -876,8 +916,14 @@ export default function OurStaff() {
     }));
   };
 
-  // Group staff by department
-  const groupedStaff = staffData.reduce((acc, staff) => {
+  // Keep rows only when image path exists and the image is successfully loaded.
+  const visibleStaffData = staffData.filter((staff) => {
+    const hasImagePath = typeof staff.imagePath === "string" && staff.imagePath.trim() !== "";
+    return hasImagePath && !brokenImageStaffIds[staff["ID No"]];
+  });
+
+  // Group visible staff by department
+  const groupedStaff = visibleStaffData.reduce((acc, staff) => {
     const dept = staff.Department.trim();
     if (!acc[dept]) {
       acc[dept] = [];
@@ -946,7 +992,17 @@ export default function OurStaff() {
                         <tr key={staff["ID No"]} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
                           <td className="border border-gray-300 p-2">
                             {staff.imagePath ? (
-                              <img src={staff.imagePath} alt={staff["Name of the staff "]} className="w-12 h-12 rounded-full object-cover" />
+                              <img
+                                src={staff.imagePath}
+                                alt={staff["Name of the staff "]}
+                                className="w-12 h-12 rounded-full object-cover"
+                                onError={() => {
+                                  setBrokenImageStaffIds((prev) => ({
+                                    ...prev,
+                                    [staff["ID No"]]: true,
+                                  }));
+                                }}
+                              />
                             ) : (
                               <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
                                 <span className="text-xs text-gray-600">

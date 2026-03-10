@@ -39,6 +39,8 @@ const facultyImages = Array.from({ length: 12 }, (_, i) => ({
 // ================== MAIN COMPONENT ==================
 export default function FAQSection() {
   const [active, setActive] = useState("About Us");
+  // track visibility of staff cards when image fails
+  const [staffVisible, setStaffVisible] = useState({});
 
   const sectionContent = {
     "About Us": {
@@ -185,15 +187,6 @@ export default function FAQSection() {
           experience: "18 Years",
           areaOfInterest: "Image Processing, IoT",
           researchPapers: "Scopus indexed: 1, Journal papers: 3, Conference papers: 5"
-        },
-        {
-          image: "/assets/images/icemFaculty/RupaliSalunke.jpg",
-          name: "Mrs. Roopali Vilas Salunke",
-          designation: "Assistant Professor & Industry Institute Partnership Cell",
-          qualification: "Ph.D. Pursuing",
-          experience: "17 Years, Industry: 03, Research: 07",
-          areaOfInterest: "Digital Twin, Automation",
-          researchPapers: "Scopus indexed: 01, Journal papers: 02, Conference papers: 04"
         },
         {
           image: "/assets/images/icemFaculty/Sudhir-Sawarkar.jpg",
@@ -351,27 +344,34 @@ export default function FAQSection() {
       case "staff-cards":
         return (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {data.content.map((staff, index) => (
-              <div key={index} className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 p-4">
-                <div className="flex flex-col items-center text-center">
-                  <Image
-                    src={staff.image}
-                    alt={staff.name}
-                    width={80}
-                    height={80}
-                    className="rounded-full mb-3 border-2 border-gray-200"
-                  />
-                  <h4 className="text-base font-semibold text-gray-800 mb-1">{staff.name}</h4>
-                  <p className="text-secondary font-medium text-sm mb-2">{staff.designation}</p>
-                  <div className="space-y-1 text-xs text-gray-600 text-left">
-                    <p><strong>Qualification:</strong> {staff.qualification}</p>
-                    <p><strong>Experience:</strong> {staff.experience}</p>
-                    <p><strong>Area of Interest:</strong> {staff.areaOfInterest}</p>
-                    <p><strong>Research Papers:</strong> {staff.researchPapers}</p>
+            {data.content.map((staff, index) => {
+              // hide card if we previously detected an error loading its image
+              if (staffVisible[index] === false) return null;
+              return (
+                <div key={index} className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 p-4">
+                  <div className="flex flex-col items-center text-center">
+                    <Image
+                      src={staff.image}
+                      alt={staff.name}
+                      width={80}
+                      height={80}
+                      className="rounded-full mb-3 border-2 border-gray-200"
+                      onError={() => {
+                        setStaffVisible((prev) => ({ ...prev, [index]: false }));
+                      }}
+                    />
+                    <h4 className="text-base font-semibold text-gray-800 mb-1">{staff.name}</h4>
+                    <p className="text-secondary font-medium text-sm mb-2">{staff.designation}</p>
+                    <div className="space-y-1 text-xs text-gray-600 text-left">
+                      <p><strong>Qualification:</strong> {staff.qualification}</p>
+                      <p><strong>Experience:</strong> {staff.experience}</p>
+                      <p><strong>Area of Interest:</strong> {staff.areaOfInterest}</p>
+                      <p><strong>Research Papers:</strong> {staff.researchPapers}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         );
 

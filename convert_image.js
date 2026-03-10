@@ -2,7 +2,12 @@ const sharp = require("sharp");
 const fs = require("fs");
 const path = require("path");
  
-const targetDir = "public/Final_Icem_branding/fe";
+// Directory containing images to process. You can pass it as the first
+// argument when running the script; if omitted we default to the root of
+// the Final_Icem_branding folder so all subfolders (comp, entc, etc.) are
+// scanned. This makes it easier to convert any set of images by supplying a
+// specific path or just running with no args.
+const targetDir = process.argv[2] || "public/Final_Icem_branding";
  
 console.log(`Scanning ${targetDir}...`);
  

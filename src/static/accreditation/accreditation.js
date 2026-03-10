@@ -1528,6 +1528,22 @@ export const sections = {
         heading: "NIRF",
         pdfs: [
           {
+            name: "NIRF 2026 Overall",
+            url: "/pdfs/accreditation/NIRF_Overall_ 2026.pdf",
+          },
+          {
+            name: "NIRF 2026 Management",
+            url: "/pdfs/accreditation/NIRF_Management_2026.pdf",
+          },
+          {
+            name: "NIRF 2026 Engineering",
+            url: "/pdfs/accreditation/NIRF_Engineering_2026.pdf",
+          },
+          {
+            name: "NIRF 2026 Innovation",
+            url: "/pdfs/accreditation/NIRF_Innovation 2026.pdf",
+          },
+          {
             name: "NIRF 2025 Overall",
             url: "/pdfs/accreditation/NIRF_Overall-25.pdf",
           },

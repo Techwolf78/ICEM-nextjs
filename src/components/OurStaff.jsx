@@ -916,14 +916,8 @@ export default function OurStaff() {
     }));
   };
 
-  // Keep rows only when image path exists and the image is successfully loaded.
-  const visibleStaffData = staffData.filter((staff) => {
-    const hasImagePath = typeof staff.imagePath === "string" && staff.imagePath.trim() !== "";
-    return hasImagePath && !brokenImageStaffIds[staff["ID No"]];
-  });
-
   // Group visible staff by department
-  const groupedStaff = visibleStaffData.reduce((acc, staff) => {
+  const groupedStaff = staffData.reduce((acc, staff) => {
     const dept = staff.Department.trim();
     if (!acc[dept]) {
       acc[dept] = [];

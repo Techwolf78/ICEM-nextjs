@@ -90,7 +90,7 @@ const ExploreSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-white relative z-30 pb-4 md:py-8 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="w-full bg-white relative z-30 py-4 md:py-8 px-4 sm:px-6 lg:px-8 overflow-hidden"
       aria-labelledby="explore-heading"
     >
       <div className="max-w-7xl mx-auto">

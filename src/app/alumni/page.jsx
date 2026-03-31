@@ -3,9 +3,6 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 const alumniProfiles = [
   {
@@ -235,17 +232,34 @@ export default function Alumni() {
     },
   ];
 
-  const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 700,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    arrows: false,
-    pauseOnHover: true,
-    adaptiveHeight: true,
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+
+  React.useEffect(() => {
+    const interval = setInterval(() => handleNext(), 2500);
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
+  const handleNext = () => {
+    const totalSlides = testimonials.length;
+
+    if (currentIndex === totalSlides - 1) {
+      setIsTransitioning(true);
+      setCurrentIndex(totalSlides);
+
+      setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentIndex(0);
+      }, 600);
+    } else {
+      setIsTransitioning(true);
+      setCurrentIndex((prev) => prev + 1);
+    }
+  };
+
+  const handleDotClick = (index) => {
+    setIsTransitioning(true);
+    setCurrentIndex(index);
   };
 
   return (
@@ -355,78 +369,74 @@ export default function Alumni() {
               </p>
             </div>
 
-            <Slider
-              {...{
-                dots: true,
-                infinite: true,
-                speed: 600,
-                autoplay: true,
-                autoplaySpeed: 2500,
-                arrows: false,
-                pauseOnHover: true,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                cssEase: "ease-in-out",
-                adaptiveHeight: false,
-                dotsClass: "slick-dots custom-dots",
-              }}
-            >
-              {testimonials.map((item, index) => (
-                <div key={index} className="px-3 md:px-6">
-                  <div className="bg-gradient-to-br from-white to-blue-50/60 border border-gray-200 rounded-2xl shadow-md p-6 md:p-10 h-[355px] md:h-[320px] lg:h-[290px] flex flex-col justify-between transition-all duration-300 hover:shadow-xl">
-                    {/* Alumni Info - NOW AT TOP */}
-                    <div className="border-b border-gray-300 pb-4 mb-6">
-                      <h3 className="text-xl font-bold text-secondary mb-1">
-                        {item.name}
-                      </h3>
-                      <p className="text-sm text-primary font-semibold mb-1">
-                        {item.branch}
-                      </p>
-                      <p className="text-sm text-gray-600 font-medium">
-                        Batch: {item.year}
-                      </p>
-                    </div>
+            <div className="relative overflow-hidden">
+              <div
+                className={`flex ${
+                  isTransitioning
+                    ? "transition-transform duration-600 ease-in-out"
+                    : ""
+                }`}
+                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+              >
+                {[...testimonials, testimonials[0]].map((item, index) => (
+                  <div key={index} className="w-full flex-shrink-0 px-3 md:px-6">
+                    <div className="bg-gradient-to-br from-white to-blue-50/60 border border-gray-200 rounded-2xl shadow-md p-6 md:p-10 h-[355px] md:h-[320px] lg:h-[290px] flex flex-col justify-between transition-all duration-300 hover:shadow-xl">
+                      {/* Alumni Info - NOW AT TOP */}
+                      <div className="border-b border-gray-300 pb-4 mb-6">
+                        <h3 className="text-xl font-bold text-secondary mb-1">
+                          {item.name}
+                        </h3>
+                        <p className="text-sm text-primary font-semibold mb-1">
+                          {item.branch}
+                        </p>
+                        <p className="text-sm text-gray-600 font-medium">
+                          Batch: {item.year}
+                        </p>
+                      </div>
 
-                    {/* Story - NOW BELOW */}
-                    <div>
-                      <p className="text-gray-700 leading-relaxed text-base md:text-lg italic">
-                        “{item.story}”
-                      </p>
+                      {/* Story - NOW BELOW */}
+                      <div>
+                        <p className="text-gray-700 leading-relaxed text-base md:text-lg italic">
+                          "{item.story}"
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </Slider>
+                ))}
+              </div>
+
+              {/* Dots */}
+              <div className="flex justify-center gap-2 mt-8">
+                {testimonials.map((_, i) => (
+                  <div
+                    key={i}
+                    onClick={() => handleDotClick(i)}
+                    className={`relative h-2 rounded-full cursor-pointer overflow-hidden transition-all ${
+                      currentIndex % testimonials.length === i
+                        ? "w-8 bg-gray-300"
+                        : "w-2 bg-gray-500/60"
+                    }`}
+                  >
+                    {currentIndex % testimonials.length === i && (
+                      <span className="absolute top-0 left-0 h-full w-0 bg-secondary animate-progressFill"></span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
 
             {/* Custom Slider Styling */}
             <style jsx>{`
-              /* Default (desktop/tablet) */
-              :global(.custom-dots) {
-                bottom: -45px !important;
-              }
-
-              :global(.custom-dots li button:before) {
-                color: #1d4ed8 !important;
-                opacity: 0.4 !important;
-                font-size: 10px !important;
-                transition: all 0.3s ease;
-              }
-
-              :global(.custom-dots li.slick-active button:before) {
-                opacity: 1 !important;
-                color: #1d4ed8 !important;
-                transform: scale(1.2);
-              }
-
-              /* Mobile (adjust dots lower on small screens) */
-              @media (max-width: 640px) {
-                :global(.custom-dots) {
-                  bottom: -60px !important; /* Adjust as needed */
+              @keyframes progressFill {
+                from {
+                  width: 0%;
                 }
-
-                :global(.custom-dots li button:before) {
-                  font-size: 9px !important;
+                to {
+                  width: 100%;
                 }
+              }
+              .animate-progressFill {
+                animation: progressFill 2.5s linear forwards;
               }
             `}</style>
           </section>

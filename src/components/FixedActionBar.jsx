@@ -93,7 +93,7 @@ const FixedActionBar = () => {
             <button
               title="Social Media"
               onClick={() => setIsOpenMobile(!isOpenMobile)}
-              className="relative flex items-center justify-center bg-secondary text-white p-2 shadow-lg hover:brightness-110 transition-all duration-300"
+              className="relative flex items-center justify-center bg-secondary text-white p-2 shadow-lg hover:brightness-110 transition-all duration-300 rounded-full"
             >
               {isOpenMobile ? <PanelRightOpen size={18} /> : <PanelLeftOpen size={18} />}
             </button>

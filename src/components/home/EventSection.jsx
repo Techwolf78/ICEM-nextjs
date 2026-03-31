@@ -58,7 +58,7 @@ export default function EventsSection() {
   const marqueeList = [...events, ...events, ...events];
 
   return (
-    <section className="w-full bg-gray-50 py-6 md:py-8  overflow-hidden">
+    <section className="w-full bg-gray-50 py-4 md:py-8  overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-xl md:text-2xl lg:text-3xl font-extrabold text-center text-secondary">
           Academic Conferences & Campus Events

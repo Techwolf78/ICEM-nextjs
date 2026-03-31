@@ -30,7 +30,7 @@ const cards = [
 
 const DiscoverSection = () => {
   return (
-    <section className="relative bg-[#003366] py-4 md:py-12 px-6 lg:px-8 overflow-hidden">
+    <section className="relative bg-[#003366] py-4 md:py-8 px-6 lg:px-8 overflow-hidden">
       {/* BACKGROUND LAYERS */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#003366] via-[#004080] to-[#002b55] opacity-90 pointer-events-none"></div>
 

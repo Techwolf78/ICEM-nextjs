@@ -37,17 +37,9 @@ const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState(null);
-  const [showDialog, setShowDialog] = useState(false);
-  const [notify, setNotify] = useState(false);
   const [isShaking, setIsShaking] = useState(false);
-  const tourRef = useRef(null);
-
-  useEffect(() => {
-    if (notify) {
-      const timer = setTimeout(() => setNotify(false), 2500);
-      return () => clearTimeout(timer);
-    }
-  }, [notify]);
+  const [notify, setNotify] = useState(false);
+  const [mobileNotify, setMobileNotify] = useState(false);
 
   // Shake effect every 3 seconds
   useEffect(() => {
@@ -57,6 +49,20 @@ const Navbar = () => {
     }, 3000);
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    if (notify) {
+      const timer = setTimeout(() => setNotify(false), 2500);
+      return () => clearTimeout(timer);
+    }
+  }, [notify]);
+
+  useEffect(() => {
+    if (mobileNotify) {
+      const timer = setTimeout(() => setMobileNotify(false), 2500);
+      return () => clearTimeout(timer);
+    }
+  }, [mobileNotify]);
 
   // ✅ Refs to manage hover timers and outside clicks (no flicker)
   const dropdownTimeoutRef = useRef(null);
@@ -167,6 +173,10 @@ const Navbar = () => {
           title: "Undergraduate Programs",
           items: [
             {
+              label: "First Year Engineering",
+              link: "/programs/fye",
+            },
+            {
               label: "Computer Engineering",
               link: "/programs/computer-engineering",
             },
@@ -215,7 +225,7 @@ const Navbar = () => {
         {
           items: [
             {
-              label: "Fee",
+              label: "FRA Fee Structure",
               link: "/programs/computer-engineering#fee-structure",
             },
             {
@@ -232,7 +242,7 @@ const Navbar = () => {
             },
             {
               label: "360° Tour",
-              link: "https://indiraicem.ac.in/ICEM-360-degree-virtual-tour/",
+              // link: "https://indiraicem.ac.in/ICEM-360-degree-virtual-tour/",
             },
             {
               label: "Leaving Certificate",
@@ -348,24 +358,34 @@ const Navbar = () => {
                 className="**animate-in fade-in-0 slide-in-from-left-2 duration-300**"
                 style={{ animationDelay: `${itemIndex * 50}ms` }}
               >
-                <Link
-                  href={item.link || "#"}
-                  target={
-                    item.link && item.link.startsWith("http")
-                      ? "_blank"
-                      : "_self"
-                  }
-                  rel={
-                    item.link && item.link.startsWith("http")
-                      ? "noopener noreferrer"
-                      : ""
-                  }
-                  className="flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-all duration-200 hover:translate-x-1"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <span>{item.label || item}</span>
-                  <TbExternalLink className="text-gray-500 text-xs transition-transform duration-200 hover:scale-110" />
-                </Link>
+                {item.link ? (
+                  <Link
+                    href={item.link}
+                    target={
+                      item.link && item.link.startsWith("http")
+                        ? "_blank"
+                        : "_self"
+                    }
+                    rel={
+                      item.link && item.link.startsWith("http")
+                        ? "noopener noreferrer"
+                        : ""
+                    }
+                    className="flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-all duration-200 hover:translate-x-1"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <span>{item.label || item}</span>
+                    <TbExternalLink className="text-gray-500 text-xs transition-transform duration-200 hover:scale-110" />
+                  </Link>
+                ) : (
+                  <button
+                    onClick={() => setMobileNotify(true)}
+                    className="flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-all duration-200 hover:translate-x-1 w-full text-left"
+                  >
+                    <span>{item.label || item}</span>
+                    <TbExternalLink className="text-gray-500 text-xs transition-transform duration-200 hover:scale-110" />
+                  </button>
+                )}
               </li>
             ))}
           </ul>
@@ -389,6 +409,7 @@ const Navbar = () => {
               alt="Logo"
               height={240}
               width={240}
+              sizes="(max-width: 767px) 80vw, 30vw"
               className="h-40 w-[80%] md:h-24 md:w-full cursor-pointer object-contain transition-transform duration-300 "
               priority
               unoptimized={true}
@@ -399,14 +420,14 @@ const Navbar = () => {
         {/* Right Section - Desktop */}
         <div className="hidden md:flex sm:w-[70%] h-full flex-col ">
           {/* Top Bar */}
-          <div className="flex justify-end w-full h-[45%] text-xs lg:text-sm text-black">
-            <div className="flex gap-1">
-              <div className="flex items-center font-semibold gap-1">
+          <div className="flex justify-end w-full h-[45%] navbar-text text-black">
+            <div className="flex gap-0.5">
+              <div className="flex items-center font-semibold gap-0.5">
                 <Link
                   href="/programs/computer-engineering#fee-structure"
                   className="hover:text-secondary transition-colors duration-200 px-1"
                 >
-                  Fee
+                  FRA Fee Structure
                 </Link>
 
                 <span className="text-gray-400">|</span>
@@ -426,9 +447,9 @@ const Navbar = () => {
                   href="https://indira.edupluscampus.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-secondary transition-colors duration-200 px-1 lg:px-2"
+                  className="hover:text-secondary transition-colors duration-200 px-1"
                 >
-                  ERP Login Staff
+                  ERP Staff
                 </Link>
 
                 <span className="text-gray-400">|</span>
@@ -437,27 +458,25 @@ const Navbar = () => {
                   href="https://myindira.edupluscampus.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-secondary transition-colors duration-200 px-1 lg:px-2"
+                  className="hover:text-secondary transition-colors duration-200 px-1"
                 >
-                  ERP Login Student
+                  ERP Student
                 </Link>
 
                 <span className="text-gray-400">|</span>
 
                 <Link
                   href="/merit-lists"
-                  className="bg-secondary/80 hover:bg-secondary/90 text-secondary font-semibold px-2 py-1 rounded transition-colors duration-200 animate-pulse"
+                  className="bg-secondary/80 hover:bg-secondary/90 text-secondary font-semibold px-1.5 py-1 rounded transition-colors duration-200 animate-pulse"
                 >
                   Merit Lists 25-26
                 </Link>
 
                 <span className="text-gray-400">|</span>
 
-                {/* 🔔 Tooltip Trigger */}
                 <button
-                  ref={tourRef}
                   onClick={() => setNotify(true)}
-                  className="relative hover:text-secondary transition-colors duration-200 px-1 lg:px-2"
+                  className="relative hover:text-secondary transition-colors duration-200 px-1"
                 >
                   360<sup>°</sup> Tour
                 </button>
@@ -466,7 +485,7 @@ const Navbar = () => {
 
                 <Link
                   href="/contact"
-                  className="hover:text-secondary transition-colors duration-200 px-1 lg:px-2"
+                  className="hover:text-secondary transition-colors duration-200 px-1"
                 >
                   Contact Us
                 </Link>
@@ -475,7 +494,7 @@ const Navbar = () => {
               {/* CTA Button */}
               <button
                 onClick={toggleEnquireDrawer}
-                className={`bg-[#003c84] text-white hover:bg-[#43ccd1] hover:text-white px-4 py-1 font-semibold transition-all duration-200 ${isShaking ? 'animate-shake' : ''}`}
+                className={`bg-[#003c84] text-white hover:bg-[#43ccd1] hover:text-white px-3.5 py-1 lg:py-0.5 font-semibold transition-all duration-200 ${isShaking ? 'animate-shake' : ''}`}
               >
                 Enquire Now
               </button>
@@ -591,6 +610,17 @@ const Navbar = () => {
         )}
       </nav>
 
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          .navbar-text { font-size: 1.05rem; }
+          @media (min-width: 601px) and (max-width: 768px) { .navbar-text { font-size: 1rem; } }
+          @media (min-width: 769px) and (max-width: 1024px) { .navbar-text { font-size: 0.75rem; } }
+          @media (min-width: 1025px) and (max-width: 1280px) { .navbar-text { font-size: 0.85rem; } }
+          @media (min-width: 1281px) and (max-width: 1440px) { .navbar-text { font-size: 0.85rem; } }
+          @media (min-width: 1441px) { .navbar-text { font-size: 0.8rem; } }
+        `
+      }} />
+
       {/* Add padding to main content to account for fixed navbar */}
       <div className="pt-[6vh] md:pt-[12vh]"></div>
 
@@ -621,6 +651,13 @@ const Navbar = () => {
                 <HiX size={22} />
               </button>
             </div>
+
+            {/* Mobile Notification */}
+            {mobileNotify && (
+              <div className="bg-gray-900 text-white text-xs px-3 py-2 mx-4 mt-2 rounded-md shadow-md animate-fadeIn">
+                🚧 Virtual Tour Coming Soon!
+              </div>
+            )}
 
             {/* Scrollable Content */}
             <div
@@ -689,7 +726,7 @@ const Navbar = () => {
                     toggleEnquireDrawer();
                     setIsMobileMenuOpen(false);
                   }}
-                  className="w-full bg-gradient-to-r from-[#278da4] to-[#003c84] text-white py-2 text-sm font-semibold rounded-md hover:from-[#278da4]/90 hover:to-[#003c84]/90 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                  className="w-full bg-gradient-to-r from-[#278da4] to-[#003c84] text-white py-1 text-sm font-semibold rounded-md hover:from-[#278da4]/90 hover:to-[#003c84]/90 transition-all duration-300 hover:scale-105 hover:shadow-lg"
                 >
                   Enquire Now
                 </button>

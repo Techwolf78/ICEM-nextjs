@@ -99,6 +99,16 @@ export default function RootLayout({ children }) {
       </head>
 
       <body className="min-h-screen bg-white" suppressHydrationWarning={true}>
+        <script type="text/javascript">
+          var npf_d='https://ICEM.nopaperforms.com';
+          var npf_c='4090';
+          var npf_m='1';
+          var s=document.createElement("script");
+          s.type="text/javascript";
+          s.async=true;
+          s.src="https://track.nopaperforms.com/js/track.js";
+          document.body.appendChild(s);
+        </script>
         <Loader isLoading={isLoading} />
 
         <Navbar />

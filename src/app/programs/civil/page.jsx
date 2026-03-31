@@ -179,7 +179,7 @@ export default function Civil() {
           </div>
 
           {/* RIGHT FORM SECTION */}
-          <div className="bg-white p-4 rounded-lg shadow-sm flex flex-col justify-between border border-gray-100">
+          <div id="programme-structure" className="bg-white p-4 rounded-lg shadow-sm flex flex-col justify-between border border-gray-100">
             <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-2 leading-snug text-center">Enquire Now</h2>
             <ApplyForm />
           </div>

@@ -37,8 +37,10 @@ const facultyImages = Array.from({ length: 12 }, (_, i) => ({
 }));
 
 // ================== MAIN COMPONENT ==================
-export default function FAQENTC() {
+export default function FAQSection() {
   const [active, setActive] = useState("About Us");
+  // track visibility of staff cards when image fails
+  const [staffVisible, setStaffVisible] = useState({});
 
   const sectionContent = {
     "About Us": {
@@ -61,7 +63,7 @@ export default function FAQENTC() {
     },
     // ================= NEW SECTIONS FOR ENTC =================
 
-    "Fee Structure": {
+    "FRA - Fee Structure": {
   type: "syllabus",
   content: [
     {
@@ -148,14 +150,82 @@ export default function FAQENTC() {
     },
 
     "Laboratories": {
-      type: "table",
+      type: "labs-with-images",
+      content: {
+        labs: [
+          { srNo: 1, labName: "Software Lab" },
+          { srNo: 2, labName: "Microcontroller Lab" },
+          { srNo: 3, labName: "Digital Electronics Lab" },
+          { srNo: 4, labName: "Electronic circuit" },
+          { srNo: 5, labName: "Embedded & VLSI Lab" },
+          { srNo: 6, labName: "Communication Lab" },
+        ],
+        images: [
+          "/programs/ENTC/entc_lab1.avif",
+          "/programs/ENTC/entc_lab2.avif",
+        ],
+      },
+    },
+
+    "Staff": {
+      type: "staff-cards",
       content: [
-        { srNo: 1, labName: "Software Lab" },
-        { srNo: 2, labName: "Microcontroller Lab" },
-        { srNo: 3, labName: "Digital Electronics Lab" },
-        { srNo: 4, labName: "Electronic circuit" },
-        { srNo: 5, labName: "Embedded & VLSI Lab" },
-        { srNo: 6, labName: "Communication Lab" },
+        {
+          image: "/assets/images/icemFaculty/Bhagwate_Dhiraj.jpg",
+          name: "Bhagwate Dhiraj Shashikant",
+          designation: "Assistant Professor",
+          qualification: "M.E. E&TC Engineering with 1st Class, PhD Pursuing",
+          experience: "15 Years, Research: 02",
+          areaOfInterest: "Power Electronics",
+          researchPapers: "Scopus indexed: Journal papers: 4, Conference papers: 6"
+        },
+        {
+          image: "/assets/images/icemFaculty/MeenakshiPatil.jpg",
+          name: "Mrs. Meenakshi Patil",
+          designation: "In-Charge HOD ENTC Dept, Assistant Professor & Controller of Examination",
+          qualification: "Ph.D. (Pursuing), M.E. Electronics, B.E. E&TC",
+          experience: "18 Years",
+          areaOfInterest: "Image Processing, IoT",
+          researchPapers: "Scopus indexed: 1, Journal papers: 3, Conference papers: 5"
+        },
+        {
+          image: "/assets/images/icemFaculty/Sudhir-Sawarkar.jpg",
+          name: "Mr. Sudhir Sawarkar",
+          designation: "Assistant Professor",
+          qualification: "M.E. (Digital Tech. & Instrumentation)",
+          experience: "13 Years",
+          areaOfInterest: "ML",
+          researchPapers: "Scopus indexed: 0, Journal papers: 0, Conference papers: 4"
+        },
+        {
+          image: "/assets/images/icemFaculty/Priyanka-R-Patil.jpg",
+          name: "Mrs. Priyanka R. Patil",
+          designation: "Assistant Professor",
+          qualification: "M.E. (Embedded System & VLSI) with 1st Class SPPU",
+          experience: "1.5 Years",
+          areaOfInterest: "IoT, Sensor, Computer Network",
+          researchPapers: "Scopus indexed: 0, Journal papers: 2, Conference papers: 1"
+        },
+        {
+          image: "/assets/images/icemFaculty/Balu-Chatrbhuj-Tandale-New.png",
+          name: "Prof. Tandale Balu Chatrbhuj",
+          designation: "Assistant Professor",
+          qualification: "M.E. ENTC, B.E. ENTC",
+          experience: "11 Years, Research: 0",
+          areaOfInterest: "Image Processing",
+          researchPapers: "Scopus indexed: 0, Journal papers: 0, Conference papers: 7"
+        }
+      ],
+    },
+
+    "Newsletter": {
+      type: "syllabus",
+      content: [
+        {
+          id: "newsletter",
+          label: "ENTC Newsletter",
+          pdf: "/programs/ENTC/entc_newsletter.pdf",
+        },
       ],
     },
   };
@@ -238,31 +308,70 @@ export default function FAQENTC() {
 
       case "notice":
         return <p className="text-gray-600 text-lg">{data.content}</p>;
-      case "table":
-        const headers = Object.keys(data.content[0] || {});
+      case "labs-with-images":
         return (
-          <div className="overflow-x-auto border border-gray-200 rounded-lg shadow-sm">
-            <table className="w-full text-sm text-left">
-              <thead className="bg-secondary text-white">
-                <tr>
-                  {headers.map((header) => (
-                    <th key={header} className="p-3 md:p-4 font-semibold text-left">
-                      {header.replace(/([A-Z])/g, ' $1').trim().toUpperCase()}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-
-              <tbody>
-                {data.content.map((row, index) => (
-                  <tr key={index} className={`border-b border-gray-100 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-blue-50 transition-colors`}>
-                    {headers.map((header) => (
-                      <td key={header} className="p-2 md:p-3 text-gray-800">{row[header]}</td>
-                    ))}
-                  </tr>
+          <div className="space-y-6">
+            <div>
+              <h4 className="text-lg font-semibold text-gray-800 mb-4">Our Laboratories</h4>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {data.content.labs.map((lab, index) => (
+                  <li key={index} className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                    <span className="bg-secondary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">{lab.srNo}</span>
+                    <span className="text-gray-800 font-medium">{lab.labName}</span>
+                  </li>
                 ))}
-              </tbody>
-            </table>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold text-gray-800 mb-4">Laboratory Facilities</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {data.content.images.map((imgSrc, index) => (
+                  <div key={index} className="rounded-lg overflow-hidden shadow-md">
+                    <Image
+                      src={imgSrc}
+                      alt={`Laboratory Facility ${index + 1}`}
+                      width={500}
+                      height={300}
+                      className="w-full h-48 object-cover hover:scale-105 transition-transform duration-200"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+
+      case "staff-cards":
+        return (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {data.content.map((staff, index) => {
+              // hide card if we previously detected an error loading its image
+              if (staffVisible[index] === false) return null;
+              return (
+                <div key={index} className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 p-4">
+                  <div className="flex flex-col items-center text-center">
+                    <Image
+                      src={staff.image}
+                      alt={staff.name}
+                      width={80}
+                      height={80}
+                      className="rounded-full mb-3 border-2 border-gray-200"
+                      onError={() => {
+                        setStaffVisible((prev) => ({ ...prev, [index]: false }));
+                      }}
+                    />
+                    <h4 className="text-base font-semibold text-gray-800 mb-1">{staff.name}</h4>
+                    <p className="text-secondary font-medium text-sm mb-2">{staff.designation}</p>
+                    <div className="space-y-1 text-xs text-gray-600 text-left">
+                      <p><strong>Qualification:</strong> {staff.qualification}</p>
+                      <p><strong>Experience:</strong> {staff.experience}</p>
+                      <p><strong>Area of Interest:</strong> {staff.areaOfInterest}</p>
+                      <p><strong>Research Papers:</strong> {staff.researchPapers}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         );
 
@@ -341,4 +450,4 @@ export default function FAQENTC() {
       </div>
     </section>
   );
-}
+};

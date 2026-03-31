@@ -3,7 +3,7 @@ import React from "react";
 export default function GrievanceRedressal() {
   
   return (
-    <div className=" bg-white text-gray-800 py-16 px-6">
+    <div className=" bg-white text-gray-800 py-16 px-4 md:px-6">
       {/* Content Section */}
      
         {/* Left Section */}

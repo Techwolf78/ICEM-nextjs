@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef } from "react";
-import FAQSection from "@/components/FAQSections/FAQMBA";
+import FAQMBA from "@/components/FAQSections/FAQMBA";
 import Image from "next/image";
 import RecruitersSection from "@/components/home/RecruiterSection";
 import CTASection from "@/components/home/CTASection";
@@ -432,7 +432,7 @@ export default function MBA() {
           </div>
 
           {/* RIGHT */}
-          <div className="bg-white shadow-xl rounded-xl p-1 md:p-8 text-secondary">
+          <div id="programme-structure" className="bg-white shadow-xl rounded-xl p-1 md:p-8 text-secondary">
             <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-center leading-snug">
               Enquire Now
             </h2>
@@ -520,7 +520,7 @@ export default function MBA() {
       <CTASection />
 
       <div ref={faqRef}>
-        <FAQSection />
+        <FAQMBA />
       </div>
 
       <EnquireNowProgramModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

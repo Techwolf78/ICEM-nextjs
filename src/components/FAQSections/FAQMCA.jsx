@@ -81,7 +81,7 @@ const facultyImages = Array.from({ length: 12 }, (_, i) => ({
 }));
 
 // ================== MAIN COMPONENT ==================
-export default function FAQENTC() {
+export default function FAQMCA() {
   const [active, setActive] = useState("About Us");
 
   const sectionContent = {
@@ -99,7 +99,7 @@ export default function FAQENTC() {
     },
     // ================= NEW SECTIONS FOR IMCA =================
 
-    "Fee Structure": {
+    "FRA - Fee Structure": {
   type: "syllabus",
   content: [
     {

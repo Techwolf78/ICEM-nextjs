@@ -1,15 +1,19 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 
 // ================== SYLLABUS DATA ==================
 const syllabusList = [
   
   {
-    id: "sybtech",
-    label: "First Year (I-MBA) Integrated- Masters of Business Management Syllabus",
-    pdf: "/programs/IBCAMBA/IMBASY.pdf",
+    id: "mba-syllabus-scan",
+    label: "MBA Syllabus structure scan_001",
+    pdf: "/pdfs/MBA Syllabus structure scan_001.pdf",
+  },
+  {
+    id: "nep-syllabus",
+    label: "NEP Syllabus Sem-I II III IV MBA 24-26",
+    pdf: "/pdfs/NEP Syllabus  Sem-I II III IV  MBA 24-26.pdf",
   },  
 ];
 
@@ -42,7 +46,7 @@ export default function FAQENTC() {
     },
     // ================= NEW SECTIONS FOR BBA / IT =================
 
-    "Fee Structure": {
+    "FRA - Fee Structure": {
   type: "syllabus",
   content: [
     {

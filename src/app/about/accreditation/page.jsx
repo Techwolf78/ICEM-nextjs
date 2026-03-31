@@ -9,6 +9,7 @@ export default function Accreditation() {
     naac: null,
     iqac: null,
     extended: null,
+    aicte: null,
     bottom: null,
   });
 

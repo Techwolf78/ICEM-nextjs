@@ -6,9 +6,14 @@ import Image from "next/image";
 // ================== SYLLABUS DATA ==================
 const syllabusList = [
   {
-    id: "sybtech",
-    label: "MBA First Year and Second Year Course Structure 2024 Pattern",
-    pdf: "/programs/MBA/SY.pdf",
+    id: "mba-syllabus-scan",
+    label: "MBA Syllabus Structure",
+    pdf: "/pdfs/MBA Syllabus structure scan_001.pdf",
+  },
+  {
+    id: "nep-syllabus",
+    label: "NEP Syllabus (Sem I-IV)",
+    pdf: "/pdfs/NEP Syllabus  Sem-I II III IV  MBA 24-26.pdf",
   },
 ];
 
@@ -20,7 +25,7 @@ const facultyImages = Array.from({ length: 12 }, (_, i) => ({
 }));
 
 // ================== MAIN COMPONENT ==================
-export default function FAQENTC() {
+export default function FAQMBA() {
   const [active, setActive] = useState("About Us");
 
   const sectionContent = {
@@ -43,7 +48,7 @@ export default function FAQENTC() {
     },
     // ================= NEW SECTIONS FOR IMCA =================
 
-    "Fee Structure": {
+    "FRA - Fee Structure": {
   type: "syllabus",
   content: [
     {

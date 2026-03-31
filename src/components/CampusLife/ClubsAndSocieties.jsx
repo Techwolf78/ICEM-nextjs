@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { clubsAndSocieties } from "@/static/campuslife/clubs-and-societies";
 
 export default function ClubsAndSocietiesold() {
@@ -13,15 +14,23 @@ export default function ClubsAndSocietiesold() {
           className="bg-white shadow-md rounded-2xl p-8 border border-gray-200"
         >
           {/* Header */}
-          <div className="flex flex-col md:flex-row gap-8 items-start">
+          <div className={`flex gap-8 items-start ${club.image ? 'flex-col md:flex-row' : 'flex-col'}`}>
             
-            {/* Club Photo */}
-            <div className="w-full md:w-1/3 h-56 bg-gray-200 rounded-xl flex items-center justify-center text-gray-500 text-sm">
-              <span>[ Club Photo Placeholder ]</span>
-            </div>
+            {/* Club Photo - only if image exists */}
+            {club.image && (
+              <div className="w-full md:w-1/3 h-56 bg-gray-200 rounded-xl overflow-hidden">
+                <Image
+                  src={club.image}
+                  alt={`${club.name} Club`}
+                  width={400}
+                  height={224}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            )}
 
             {/* Club Basic Info */}
-            <div className="flex-1 space-y-3">
+            <div className={`${club.image ? 'flex-1' : ''} space-y-3`}>
               <h2 className="text-2xl font-bold text-secondary">{club.name}</h2>
               <p className="text-gray-600"><b>Department:</b> {club.department}</p>
               <p className="text-gray-600"><b>Faculty Coordinator:</b> {club.facultyCoordinator}</p>

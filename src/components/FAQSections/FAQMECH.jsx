@@ -233,7 +233,7 @@ export default function FAQMECH() {
     },
     // ================= NEW SECTIONS (MECHANICAL) =================
 
-    "Fee Structure": {
+    "FRA - Fee Structure": {
       type: "syllabus",
       content: [
         {

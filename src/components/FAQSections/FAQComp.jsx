@@ -178,13 +178,13 @@ const facultyImages = Array.from({ length: 12 }, (_, i) => ({
 
 // ================== MAIN COMPONENT ==================
 export default function FAQSectionComputer() {
-  const [active, setActive] = useState("Fee Structure");
+  const [active, setActive] = useState("FRA - Fee Structure");
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const hash = window.location.hash.replace('#', '');
       if (hash === 'fee-structure') {
-        setActive("Fee Structure");
+        setActive("FRA - Fee Structure");
         setTimeout(() => {
           const element = document.getElementById('fee-structure');
           if (element) {
@@ -246,13 +246,18 @@ export default function FAQSectionComputer() {
       },
     },
 
-    "Fee Structure": {
+    "FRA - Fee Structure": {
   type: "syllabus",
   content: [
     {
       id: "fee-structure",
       label: "Fee Structure (2025–26)",
       pdf: "/programs/Computer/Feestructure2526.pdf",
+    },
+    {
+      id: "fra-proposal-2026",
+      label: "FRA Fees Approval proposal 2026-27",
+      pdf: "/pdfs/FRA%20Proposal%202026-27.pdf",
     },
     {
       id: "fee-fra",
@@ -262,12 +267,12 @@ export default function FAQSectionComputer() {
     {
       id: "fra-2025",
       label: "FRA 2025-26",
-      pdf: "/fees/FRA 2025.pdf",
+      pdf: "/fees/FRA%202025.pdf",
     },
     {
       id: "institute-fra",
       label: "Institute Level Admission FRA Fees",
-      pdf: "/fees/Insttitute level admission FRA FEEs.pdf",
+      pdf: "/fees/Insttitute%20level%20admission%20FRA%20FEEs.pdf",
     },
   ],
 },

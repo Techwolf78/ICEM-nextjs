@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useRef } from "react";
-import FAQSection from "@/components/FAQSections/FAQMCA";
+import FAQMCA from "@/components/FAQSections/FAQMCA";
 import Link from "next/link";
 import Image from "next/image";
 import RecruitersSection from "@/components/home/RecruiterSection";
@@ -257,7 +257,7 @@ export default function Computer() {
           </div>
 
           {/* RIGHT FORM SECTION */}
-          <div className="bg-white p-4 rounded-lg shadow-sm flex flex-col justify-between border border-gray-100">
+          <div id="programme-structure" className="bg-white p-4 rounded-lg shadow-sm flex flex-col justify-between border border-gray-100">
             <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-2 leading-snug text-center">Enquire Now</h2>
             <ApplyForm />
           </div>
@@ -439,7 +439,7 @@ export default function Computer() {
 
       {/* ===== FREQUENTLY ASKED QUESTIONS SECTION ===== */}
       <div ref={faqRef}>
-        <FAQSection />
+        <FAQMCA />
       </div>
 
       <EnquireNowProgramModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

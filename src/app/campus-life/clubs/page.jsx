@@ -241,17 +241,19 @@ function ClubSection({
           </h2>
         </div>
 
-        {/* IMAGE */}
-        <div className="relative rounded-xl overflow-hidden shadow-md mb-6 group-hover:shadow-lg transition-shadow">
-          <Image
-            src={image}
-            alt={`${title} Club`}
-            width={1200}
-            height={600}
-            className="object-cover w-full h-48 md:h-64 lg:h-80"
-            unoptimized
-          />
-        </div>
+        {/* IMAGE - only show if not placeholder */}
+        {image !== "/placeholder.webp" && (
+          <div className="relative rounded-xl overflow-hidden shadow-md mb-6 group-hover:shadow-lg transition-shadow">
+            <Image
+              src={image}
+              alt={`${title} Club`}
+              width={1200}
+              height={600}
+              className="object-cover w-full h-48 md:h-64 lg:h-80"
+              unoptimized
+            />
+          </div>
+        )}
 
         {/* INTRO */}
         <p className="text-gray-700 leading-relaxed mb-6 text-base md:text-lg">

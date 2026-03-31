@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useRef } from "react";
+import { Clock, Briefcase, Users, GraduationCap, CheckCircle } from "lucide-react";
 import FAQSection from "@/components/FAQSections/FAQComp";
 import Link from "next/link";
 import Image from "next/image";
@@ -169,7 +170,7 @@ export default function Computer() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 px-6">
           <div>
             <h4 className="font-semibold text-lg flex items-center gap-2 mb-2">
-              🕓 Course Duration
+              <Clock className="w-5 h-5 text-secondary" /> Course Duration
             </h4>
             <p className="text-gray-700">
               A rigorous 4-year programme structured to build deep expertise in
@@ -179,7 +180,7 @@ export default function Computer() {
 
           <div>
             <h4 className="font-semibold text-lg flex items-center gap-2 mb-2">
-              💼 Internship Opportunity
+              <Briefcase className="w-5 h-5 text-secondary" /> Internship Opportunity
             </h4>
             <p className="text-gray-700">
               Mandatory industry internships with leading tech firms provide
@@ -189,7 +190,7 @@ export default function Computer() {
 
           <div>
             <h4 className="font-semibold text-lg flex items-center gap-2 mb-2">
-              🏫 Campus Recruitment
+              <Users className="w-5 h-5 text-secondary" /> Campus Recruitment
             </h4>
             <p className="text-gray-700">
               Exceptional placement record with top-tier IT product companies,
@@ -200,7 +201,7 @@ export default function Computer() {
           {/* ✅ Updated Eligibility section with scroll functionality */}
           <div>
             <h4 className="font-semibold text-lg flex items-center gap-2 mb-2">
-              🎓 Eligibility
+              <GraduationCap className="w-5 h-5 text-secondary" /> Eligibility
             </h4>
             <p
               onClick={scrollToFAQ}
@@ -359,35 +360,35 @@ export default function Computer() {
 
             <ul className="space-y-2 text-gray-800">
               <li className="flex items-center">
-                <span className="text-secondary mr-2">✓</span>
+                <CheckCircle className="w-4 h-4 text-secondary mr-2" />
                 Software Development Engineer
               </li>
               <li className="flex items-center">
-                <span className="text-secondary mr-2">✓</span>
+                <CheckCircle className="w-4 h-4 text-secondary mr-2" />
                 Systems Architect
               </li>
               <li className="flex items-center">
-                <span className="text-secondary mr-2">✓</span>
+                <CheckCircle className="w-4 h-4 text-secondary mr-2" />
                 DevOps Engineer
               </li>
               <li className="flex items-center">
-                <span className="text-secondary mr-2">✓</span>
+                <CheckCircle className="w-4 h-4 text-secondary mr-2" />
                 Database Administrator
               </li>
               <li className="flex items-center">
-                <span className="text-secondary mr-2">✓</span>
+                <CheckCircle className="w-4 h-4 text-secondary mr-2" />
                 Network Engineer
               </li>
               <li className="flex items-center">
-                <span className="text-secondary mr-2">✓</span>
+                <CheckCircle className="w-4 h-4 text-secondary mr-2" />
                 Full-Stack Developer
               </li>
               <li className="flex items-center">
-                <span className="text-secondary mr-2">✓</span>
+                <CheckCircle className="w-4 h-4 text-secondary mr-2" />
                 Embedded Systems Engineer
               </li>
               <li className="flex items-center">
-                <span className="text-secondary mr-2">✓</span>
+                <CheckCircle className="w-4 h-4 text-secondary mr-2" />
                 IT Project Manager
               </li>
             </ul>

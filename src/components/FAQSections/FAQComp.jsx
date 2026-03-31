@@ -2,6 +2,176 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import ProgramStaff from "../ProgramStaff";
+
+// ================== STAFF DATA ==================
+const staffData = [
+  {
+    sn: 1,
+    id: "496",
+    name: "Mrs. Deepali Shashikant Dhadwad",
+    designation: "Assistant Professor",
+    department: "Computer",
+    qualification: "ME",
+    doj: "27/07/2009",
+    dob: "25/04/1986",
+    image: "/faculty/final_icem_branding/comp/Mrs. Deepali Dhadwad.webp",
+  },
+  {
+    sn: 2,
+    id: "2448",
+    name: "Dr. Shwetkranti Nanasaheb Taware",
+    designation: "Assistant Professor",
+    department: "Computer",
+    qualification: "ME Ph.D",
+    doj: "01/07/2023",
+    dob: "09/08/1983",
+    image: "/faculty/final_icem_branding/comp/Dr. Shwetkranti Taware.webp",
+  },
+  {
+    sn: 3,
+    id: "2032",
+    name: "Dr. Soumitra Shibshankar Das",
+    designation: "Dean Academics VP",
+    department: "Computer",
+    qualification: "BE ME Ph.D",
+    doj: "28/09/2021",
+    dob: "31/10/1974",
+    image: "/faculty/final_icem_branding/comp/soumitra_das.webp",
+  },
+  {
+    sn: 4,
+    id: "3088",
+    name: "Mrs. Anita Atul Patil",
+    designation: "Assistant Professor",
+    department: "Computer",
+    qualification: "ME",
+    doj: "01/07/2024",
+    dob: "25/12/1994",
+    image: "/faculty/final_icem_branding/comp/Mrs. Anita Patil.webp",
+  },
+  {
+    sn: 5,
+    id: "3089",
+    name: "Miss Pragati Sambhaji Malusare",
+    designation: "Assistant Professor",
+    department: "Computer",
+    qualification: "BE M.Tech",
+    doj: "01/07/2024",
+    dob: "01/10/1997",
+    image: "/faculty/final_icem_branding/comp/Mrs. Pragati Malusare.webp",
+  },
+  {
+    sn: 6,
+    id: "2288",
+    name: "Mrs. Dipali Nikhil Junankar",
+    designation: "Assistant Professor",
+    department: "Computer",
+    qualification: "B.E ME",
+    doj: "01/11/2022",
+    dob: "14/04/1980",
+    image: "/faculty/final_icem_branding/comp/Mrs. Dipali Junankar.webp",
+  },
+  {
+    sn: 7,
+    id: "2366",
+    name: "Dr. Sunil Damodar Rathod",
+    designation: "Associate Professor",
+    department: "Computer",
+    qualification: "BE ME Ph.D",
+    doj: "01/02/2023",
+    dob: "18/10/1970",
+    image: "/faculty/final_icem_branding/comp/Dr. Sunil Rathod.webp",
+  },
+  {
+    sn: 8,
+    id: "3095",
+    name: "Mrs. Savitri Ashok Mote",
+    designation: "Assistant Professor",
+    department: "Computer",
+    qualification: "B.E M.Tech",
+    doj: "01/07/2024",
+    dob: "02/06/1990",
+    image: "/faculty/final_icem_branding/comp/Mrs. Savitri Pawar.webp",
+  },
+  {
+    sn: 9,
+    id: "3097",
+    name: "Ms. Rupali Pravin Adhau",
+    designation: "Assistant Professor",
+    department: "Computer",
+    qualification: "B.E ME",
+    doj: "01/07/2024",
+    dob: "25/06/1988",
+    image: "/faculty/final_icem_branding/comp/Mrs. Rupali Adhau.webp",
+  },
+  {
+    sn: 10,
+    id: "3098",
+    name: "Mrs. Shraddha Sandip Suryawanshi",
+    designation: "Assistant Professor",
+    department: "Computer",
+    qualification: "B.E ME",
+    doj: "01/07/2024",
+    dob: "05/06/1996",
+    image: "/faculty/final_icem_branding/comp/Mrs. Shraddha Suryawanshi.webp",
+  },
+  {
+    sn: 11,
+    id: "3111",
+    name: "Dr. Malayaj Kumar",
+    designation: "Assistant Professor",
+    department: "Computer",
+    qualification: "BE M.Tech Ph.D",
+    doj: "26/08/2024",
+    dob: "01/08/1985",
+    image: "/faculty/final_icem_branding/comp/malayaj.webp",
+  },
+  {
+    sn: 12,
+    id: "3112",
+    name: "Mrs. Minal Sunil Patil",
+    designation: "Assistant Professor",
+    department: "Computer",
+    qualification: "Dip B.E ME",
+    doj: "29/08/2024",
+    dob: "13/01/1989",
+    image: "/faculty/final_icem_branding/comp/Mrs. Minal Patil.webp",
+  },
+  {
+    sn: 13,
+    id: "3214",
+    name: "Mr. Abhijit Hanumantrao Khadke",
+    designation: "Assistant Professor",
+    department: "Computer",
+    qualification: "BE ME",
+    doj: "09/08/2025",
+    dob: "03/10/1973",
+    image: "/faculty/final_icem_branding/comp/Abhijit Khadke.webp",
+  },
+  {
+    sn: 14,
+    id: "3265",
+    name: "Ms. Vidya Ritesh Dhoke",
+    designation: "Assistant Professor",
+    department: "Computer",
+    qualification: "BE IT M.Tech Computer",
+    doj: "05/01/2026",
+    dob: "02/04/1991",
+    image: "/faculty/final_icem_branding/comp/Ms. Vidya Ritesh Dhoke.webp",
+  },
+  {
+    sn: 15,
+    id: "3262",
+    name: "Ms. Tanuja Balkrishna Dhumal",
+    designation: "Teaching Assistant",
+    department: "Computer",
+    qualification: "BE Computer Engg MSc Appeared",
+    doj: "14/01/2026",
+    dob: "21/12/2000",
+    image: "/faculty/final_icem_branding/comp/Ms. Tanuja Dhumal.webp",
+  },
+];
 
 // ================== SYLLABUS DATA ==================
 const syllabusList = [
@@ -405,6 +575,10 @@ export default function FAQSectionComputer() {
     //   content:
     //     "Achievements information is currently under development and will be available soon.",
     // },
+    "Staff": {
+      type: "staff",
+      content: staffData,
+    },
   };
 
   const tabs = Object.keys(sectionContent);
@@ -595,6 +769,96 @@ export default function FAQSectionComputer() {
         return (
           <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
             <p className="text-yellow-800">{contentData.content}</p>
+          </div>
+        );
+      case "staff":
+        const StaffPhoto = ({ src, alt }) => {
+          const [currentSrc, setCurrentSrc] = useState(src || "/faculty/newFaculty/placeholder.avif");
+          const [hasError, setHasError] = useState(false);
+
+          return hasError ? (
+            <div className="w-32 h-40 flex items-center justify-center rounded-lg mb-4 bg-gray-100 shadow-sm border border-gray-100">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-full h-full p-2 text-gray-300"
+                aria-hidden="true"
+              >
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" />
+                <path d="M18.36 16.46a7 7 0 00-12.72 0c-.35.58.1 1.28.77 1.28h11.38c.66 0 1.12-.7.57-1.28z" />
+              </svg>
+            </div>
+          ) : (
+            <div className="w-32 h-40 overflow-hidden rounded-lg mb-4 bg-gray-100 shadow-sm border border-gray-100">
+              <Image
+                src={currentSrc}
+                alt={alt}
+                width={128}
+                height={160}
+                className="w-full h-full object-cover object-top"
+                onError={() => {
+                  setHasError(true);
+                }}
+              />
+            </div>
+          );
+        };
+
+        return (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-4">
+            {contentData.content.map((staff, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-xl shadow-md border border-gray-200 flex flex-col items-center text-center p-5 hover:shadow-lg transition-all duration-300"
+              >
+                <StaffPhoto src={staff.image} alt={staff.name} />
+
+                <div className="w-full flex-1 flex flex-col">
+                  <h4 className="font-bold text-gray-900 mb-1 leading-snug">
+                    {staff.name}
+                  </h4>
+                  <p className="text-blue-700 font-semibold text-xs mb-4 uppercase tracking-wider">
+                    {staff.designation}
+                  </p>
+
+                  <div className="mt-auto pt-4 border-t border-gray-100 space-y-2 text-left">
+                    <div className="text-[11px]">
+                      <span className="text-gray-400 font-bold uppercase mr-1">
+                        Department:
+                      </span>
+                      <span className="text-gray-700 font-medium">
+                        {staff.department}
+                      </span>
+                    </div>
+                    <div className="text-[11px]">
+                      <span className="text-gray-400 font-bold uppercase mr-1">
+                        Qualification:
+                      </span>
+                      <span className="text-gray-700 font-medium">
+                        {staff.qualification}
+                      </span>
+                    </div>
+                    <div className="text-[11px]">
+                      <span className="text-gray-400 font-bold uppercase mr-1">
+                        Joining Date:
+                      </span>
+                      <span className="text-gray-700 font-medium">{staff.doj}</span>
+                    </div>
+                    <div className="text-[11px]">
+                      <span className="text-gray-400 font-bold uppercase mr-1">
+                        Birth Date:
+                      </span>
+                      <span className="text-gray-700 font-medium">{staff.dob}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         );
     }

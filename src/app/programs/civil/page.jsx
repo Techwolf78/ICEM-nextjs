@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useRef } from "react";
-import FAQSection from "@/components/FAQSections/FAQComp";
+import FAQSection from "@/components/FAQSections/FAQCivil";
 import Link from "next/link";
 import Image from "next/image";
 import RecruitersSection from "@/components/home/RecruiterSection";

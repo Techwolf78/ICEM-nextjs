@@ -1,0 +1,141 @@
+Date,Change Request Title,Description,Type,Priority,Hours Spent,Status
+2026-03-10,Staff Directory Data Update,Removed staff member from ENTC department listing and refined staff record management system,Data Update,High,1.5,Completed
+2026-02-20,Academic Calendar and Governance Updates,Added vacation timetables for degree programs to examination page; removed duplicate committee references; clarified timetable navigation labels,Content Update,High,2.5,Completed
+2026-02-13,Brand Media Optimization - First Year Engineering,Converted all First Year Engineering program images to WebP format for improved website performance and updated all image references,Performance,Medium,2,Completed
+2026-02-13,Faculty Database Integration,Added staff member profile images to faculty directory system for improved staff visibility,Content Update,Medium,1,Completed
+2026-02-03,ENTC Program Page Restructuring,Migrated FAQ section content to main program page; improved staff details alignment; added laboratory images and program newsletter,Enhancement,Medium,3.5,Completed
+2026-02-03,ENTC Department Content Enhancement,Updated staff details layout for readability; added laboratory facility images; integrated program newsletter into department page,Content Update,Medium,2,Completed
+2026-01-23,Leadership and Faculty Showcase,Redesigned leadership section layout on About Us page; added faculty member portraits; enhanced faculty gallery presentation,UI Change,Medium,3,Completed
+2026-01-23,Hero Banner Image Update,Updated feature banner image on home page to reflect latest institutional branding,Content Update,Low,0.5,Completed
+2026-01-20,Marketing Banner Enhancement,Updated MHCET entrance exam promotional banner in hero section,Content Update,Low,0.5,Completed
+2026-01-19,Hero Section Refinement,Improved home page hero slider transitions and visual presentation,UI Change,Low,1.5,Completed
+2026-01-12,Navigation and UI Typography,Optimized navbar font sizes for responsive design; updated placement banner; refined research lab section typography,UI Change,Medium,1.5,Completed
+2026-01-12,Navigation Menu Label Update,Renamed fee structure menu item from generic name to FRA-specific terminology for clarity,UI Change,Low,0.5,Completed
+2026-01-12,Regulatory and Academic Content,Added AICTE approval certification section; updated anti-ragging committee documentation; integrated examination vacation timetable,Content Update,High,2.5,Completed
+2025-12-27,MBA Program Syllabus Content Management,Consolidated and simplified MBA syllabus presentation with NEP and traditional structure options; updated PDF file paths and corrected document references,Content Update,High,3,Completed
+2025-12-27,Fee Structure Document Updates,Reorganized fee proposal display priority; updated FRA submission documents; fixed PDF paths and corrected file naming issues,Content Update,Medium,2.5,Completed
+2025-12-24,Examination Schedule Publication,Added and organized vacation timetables for all degree programs; updated examination page hierarchy; added faculty and student guide documents,Content Update,High,4,Completed
+2025-12-24,Document Management System Setup,Configured Git LFS for PDF and media file version control,Configuration,Medium,2,Completed
+2025-12-18,Library Page Updates,Updated library and resource center information,Content Update,Low,1,Completed
+2025-12-11,Website Performance Optimization,Converted facility and sports images to AVIF format; optimized canteen photos; added loading UI skeletons; removed redundant image files,Performance,High,4,Completed
+2025-12-10,Program Page URL Structure Fix,Fixed program page routing; corrected image path references from /Programs/ to /programs/; removed broken code from hero slider,Bug Fix,High,2.5,Completed
+2025-12-10,Contact Page UI Redesign,Completely redesigned contact page layout; added responsive scroll-to-top functionality; integrated mobile social media bar,UI Change,Medium,3,Completed
+2025-12-10,Admissions Contact Information,Replaced generic office listing with dedicated admissions contact cards; updated phone numbers and email addresses; improved form layout,Content Update,Medium,2,Completed
+2025-12-09,Mobile Responsiveness Campaign - Phase 1,Improved mobile layouts for college life section; event displays; testimonials; call-to-action sections; ensured contact button navigation consistency,UI Change,High,4,Completed
+2025-12-09,Code Quality - FAQMCA Component,Fixed component rendering errors; removed duplicate element identifiers,Bug Fix,Low,1,Completed
+2025-12-09,Mobile UI Optimization - Phase 2,Unified mobile social media bar; optimized form heights; standardized component sizing; removed unnecessary styling,UI Change,High,3.5,Completed
+2025-12-09,Social Media Integration - Unified Component,Consolidated desktop and mobile social media bars into single reusable component system,Enhancement,Medium,2.5,Completed
+2025-12-08,Website Security Enhancement - Content Policy,Added Content Security Policy headers to security configuration; configured allowlist for form scripts and embedded content,Security,High,2,Completed
+2025-12-08,Enquiry Form Enhancement,Updated enquiry form drawer to occupy full mobile width; added form scrolling capability; prevented page scroll when form is open,Enhancement,Medium,2,Completed
+2025-12-08,Sports Section Updates,Updated sports and athletics content and imagery,Content Update,Low,1,Completed
+2025-12-08,Mechanical Engineering Department,Updated mechanical engineering program content and images,Content Update,Low,1.5,Completed
+2025-12-05,Institutional Leadership Updates,Updated institutional leadership and leadership team information,Content Update,Medium,1.5,Completed
+2025-12-05,Accreditation Documentation,Added and organized accreditation certificates and validation documents for academic years 2021-2024,Content Update,High,2.5,Completed
+2025-12-05,Institutional Leadership Redesign,Updated about page leadership section with institutional head profiles and biographical information,Content Update,Medium,2,Completed
+2025-12-05,Placement Department page Update,Updated placement and career services content and statistics,Content Update,Low,1,Completed
+2025-12-05,Homepage Updates and Restructuring,Updated home page sections and content organization,UI Change,Medium,1.5,Completed
+2025-12-04,Homepage and About Us Refinement,Enhanced about page imagery and layout; improved homepage visual consistency,UI Change,Medium,2,Completed
+2025-12-04,Navigation Bar Improvements,Added 360-degree campus tour link back to navbar; fixed Mac browser compatibility issues,Enhancement,Medium,1.5,Completed
+2025-12-04,Banner and Visual Assets,Updated promotional banners and visual branding assets across website,Content Update,Low,1,Completed
+2025-12-04,Image Gallery Updates,Added Indira Global Business School (IGBS) image to about us section,Content Update,Low,0.5,Completed
+2025-12-04,Navigation Element Updates,Fixed Enquire Now button functionality in navigation; improved button visibility and responsiveness,Bug Fix,Medium,1,Completed
+2025-12-04,Logo and Branding Refresh,Updated institutional logos and branding assets across pages,Content Update,Low,1,Completed
+2025-12-04,Admission Website Announcements,Removed 2025-2026 admissions announcement banner,Content Update,Low,0.5,Completed
+2025-12-04,Alumni Section Enhancements,Updated alumni page with new alumni network information and achievements,Content Update,Low,1,Completed
+2025-12-04,Campus Animation Enhancement,Added Chanakya campus animated walkthrough video; improved visual storytelling,Enhancement,Medium,2,Completed
+2025-12-04,Testimonials and Social Proof,Added student testimonials section to home page with quotes and success stories,New Feature,Medium,2.5,Completed
+2025-12-03,Configuration and Build Optimization,Updated GSAP animation library configuration for better performance,Configuration,Low,1,Completed
+2025-12-03,Banner Asset Updates,Added new promotional banners and updated banner rotation system,Content Update,Low,1,Completed
+2025-12-03,Visual Design Improvements,Updated banner imagery and program promotional photos,Content Update,Low,1,Completed
+2025-12-01,Domain Configuration Update,Changed image loader from domain-based whitelist to remote pattern matching,Configuration,Low,1,Completed
+2025-12-01,Navigation Enhancements,Updated navbar styling and component structure,UI Change,Low,1,Completed
+2025-12-01,Placement and Career Services,Updated placement company listings and career opportunities content,Content Update,Low,1,Completed
+2025-12-01,Accreditation Documents - Phase 2,Added accreditation and recognition PDF documents for regulatory compliance,Content Update,Medium,1.5,Completed
+2025-11-29,Image Format Migration - Programs Section,Converted program page images to WebP format; updated all image paths; optimized media assets,Performance,Medium,3,Completed
+2025-11-29,Upskilling Programs Directory,Updated upskilling and professional development program listings,Content Update,Low,1,Completed
+2025-11-29,Integrated MBA and MCA Program Updates,Updated I-MBA and I-MCA program pages with new content and branding,Content Update,Medium,2,Completed
+2025-11-29,Code Quality Improvement,Added automated docstring generation and code documentation,Enhancement,Low,1.5,Completed
+2025-11-28,Marquee Text Enhancement,Updated marquee (scrolling text) content and messaging,Content Update,Low,0.5,Completed
+2025-11-28,Campus Life Page Updates,Improved campus life and student activities page layout and content,UI Change,Medium,1,Completed
+2025-11-28,Code Documentation - Phase 1,Configured automated documentation system for codebase,Configuration,Medium,1.5,Completed
+2025-11-26,Logo Directory Updates,Added and organized logos for partner institutions and accrediting bodies,Content Update,Low,1,Completed
+2025-11-25,Sports and Athletics Showcase,Updated sports page with team information and athletic facilities; improved sports gallery,Content Update,Medium,1.5,Completed
+2025-11-25,Campus Life Section,Added campus life section with student activities and facilities information,New Feature,Medium,2,Completed
+2025-11-25,Student Clubs Directory,Added student clubs and organizations directory with descriptions and contact information,New Feature,Low,1.5,Completed
+2025-11-24,Annual Fest and Events,Updated annual festival page with event information and schedule; enhanced event gallery,Content Update,Medium,1.5,Completed
+2025-11-24,About Us Faculty Gallery,Updated faculty and staff photos on about us page,Content Update,Low,1,Completed
+2025-11-20,Research Facilities Showcase,Updated research laboratory pages with new equipment images and facility descriptions,Content Update,Medium,1.5,Completed
+2025-11-20,Awards and Recognition,Updated awards and recognition page with latest institutional achievements,Content Update,Low,1,Completed
+2025-11-20,Partner Institution Logos,Updated logos for accrediting and partnering institutions,Content Update,Low,0.5,Completed
+2025-11-20,Accreditation Page Updates,Updated accreditation and certification information with latest credentials,Content Update,Medium,1.5,Completed
+2025-11-20,Cultural Events and Programs,Updated cultural events and special programs calendar with new event information,Content Update,Low,1,Completed
+2025-11-19,Civil Engineering Program,Updated civil engineering program page with new content and images,Content Update,Medium,1.5,Completed
+2025-11-19,Placement Updates and Achievements,Updated placement success stories and company statistics,Content Update,Low,1,Completed
+2025-11-18,Program Banner Updates,Updated program-specific promotional banners; enhanced visual consistency,Content Update,Low,1,Completed
+2025-11-18,Large-Scale Content Updates,Comprehensive update to multiple website sections and components,Content Update,High,3,Completed
+2025-11-18,Governance and Examination Page,Updated governance structure; added examination guidelines and procedures,Content Update,Medium,1.5,Completed
+2025-11-18,Research Images and Gallery,Added research laboratory and facility images to showcase quality infrastructure,Content Update,Low,1,Completed
+2025-11-15,FAQ and Help Documentation,Updated frequently asked questions sections across all program pages,Content Update,Medium,1.5,Completed
+2025-11-15,Annual Fest Slider Enhancement,Enhanced annual festival page with carousel/slider for event imagery,UI Change,Low,1,Completed
+2025-11-15,Cultural Events and Clubs,Updated cultural events calendar and student club listings,Content Update,Medium,1.5,Completed
+2025-11-15,Academic Programs Directory,Updated program descriptions and academic offerings across all departments,Content Update,Medium,2,Completed
+2025-11-15,Student Induction Process,Added student induction program information and orientation guide,Content Update,Low,1,Completed
+2025-11-15,Research Page Enhancement,Updated research initiatives and faculty research projects showcase,Content Update,Medium,1.5,Completed
+2025-11-13,NSS and Community Service,Added NSS (National Service Scheme) activities and community service programs section,New Feature,Medium,2,Completed
+2025-11-13,Campus Life Portal,Launched comprehensive campus life section with student facilities and activities,New Feature,High,3,Completed
+2025-11-13,Student Welfare Services,Added student welfare and support services information,Content Update,Medium,1,Completed
+2025-11-13,Navbar Enhancement - Phase 1,Improved navigation menu structure and responsive design for all devices,Enhancement,Medium,2,Completed
+2025-11-13,Global Design System,Updated global CSS styles and design tokens for consistency,Enhancement,Low,1.5,Completed
+2025-11-13,Marquee Component Updates,Enhanced scrolling text component with new messages and styling,UI Change,Low,1,Completed
+2025-11-12,Navigation Redesign,Completely redesigned navbar with improved structure and responsiveness,UI Change,High,4,Completed
+2025-11-12,Computer and Mechanical Engineering,Updated computer and mechanical engineering program pages,Content Update,Medium,1.5,Completed
+2025-11-12,Recruiter and Career Pages,Updated recruiters listing page and enhanced call-to-action sections,Content Update,Medium,2,Completed
+2025-11-12,Admissions and Program Pages - Phase 1,Comprehensive update to admissions and program listing pages; improved layout and information architecture,UI Change,High,3.5,Completed
+2025-11-12,Accreditation Information,Updated accreditation credentials and institutional certifications,Content Update,Medium,1,Completed
+2025-11-12,Footer Illustration,Added decorative footer illustration for improved visual design,UI Change,Low,1,Completed
+2025-11-07,Admissions Section Redesign,Updated admissions application process and requirements information,Content Update,Medium,2,Completed
+2025-11-07,Program Pages Update,Enhanced program listing pages with better organization and descriptions,UI Change,Medium,1.5,Completed
+2025-11-07,Facilities Page Enhancement,Fixed and improved facilities section with updated information,Bug Fix,Low,1,Completed
+2025-11-07,Code Refactoring for Quality,Improved code structure and organization for maintainability,Enhancement,Low,2,Completed
+2025-10-30,Sidebar Component Fixes,Fixed sidebar navigation functionality and responsiveness,Bug Fix,Low,1,Completed
+2025-10-30,Document Library,Added documents and resources section for institutional materials,New Feature,Medium,1.5,Completed
+2025-10-30,Program Media Assets,Updated program images and promotional media across all pages,Content Update,Low,1.5,Completed
+2025-10-30,Promotional Banners,Updated and refined promotional banner images and messaging,Content Update,Low,1,Completed
+2025-10-30,Image Gallery Enhancements,Added new campus facility photos and updated photo gallery,Content Update,Low,1,Completed
+2025-10-30,Campus Life Hero Section,Developed campus life gallery section with facility showcase,UI Change,Medium,2,Completed
+2025-10-30,Hero Slider Fixes,Fixed hero image carousel functionality and transitions,Bug Fix,Low,1.5,Completed
+2025-10-29,ENTC Program Page,Updated Electronics & Telecommunication Engineering program content,Content Update,Medium,1.5,Completed
+2025-10-29,Homepage and Content,Updated homepage layout and core messaging,Content Update,Medium,1.5,Completed
+2025-10-29,Color Scheme Refinement,Updated color codes and design system for brand consistency,Enhancement,Low,1,Completed
+2025-10-28,AIDS Program Page,Updated Artificial Intelligence and Data Science program information,Content Update,Medium,1.5,Completed
+2025-10-28,Program Imagery,Updated and added program-specific images and visual assets,Content Update,Low,1,Completed
+2025-10-28,Energy and Innovation Initiative,Added energy innovation and sustainability initiative information,Content Update,Low,1,Completed
+2025-10-28,Testimonials Component Enhancement,Added carousel functionality to testimonials section; new company logos,Enhancement,Medium,2.5,Completed
+2025-10-28,Placement Companies Directory,Updated placement companies list and recruiter information,Content Update,Low,1,Completed
+2025-10-28,Page Loader Animation,Updated page loading animation and transitions,UI Change,Low,1,Completed
+2025-10-28,Navigation and Homepage,Updated navbar structure and homepage layout,UI Change,Medium,1.5,Completed
+2025-10-27,Homepage Redesign - Phase 1,Major redesign of homepage with improved layout and visual hierarchy,UI Change,High,3,Completed
+2025-10-27,Hero Section Redesign,Redesigned hero banner section with new visual approach,UI Change,Medium,2,Completed
+2025-10-27,Slider Component Updates,Enhanced image sliders and carousel components,Enhancement,Medium,1.5,Completed
+2025-10-25,Mobile Responsiveness Campaign - General,Improved mobile responsiveness across website sections,UI Change,High,3,Completed
+2025-10-25,Hero Section Mobile Optimization,Optimized hero section for mobile devices,UI Change,Medium,2,Completed
+2025-10-25,Chanakya Campus Animation - Phase 1,Added animated campus tour of Chanakya Educational Campus,New Feature,High,4,Completed
+2025-10-25,Chanakya Campus Animation - Phase 2,Enhanced campus tour animations and transitions,Enhancement,Medium,2,Completed
+2025-10-24,Chanakya Campus Walkthrough - Final,Completed and refined campus tour animation and interactions,Enhancement,Medium,2,Completed
+2025-10-24,Campus Tour Animations,Improved animations and transitions for campus tour video,UI Change,Medium,1.5,Completed
+2025-10-24,News Section Updates,Updated news and announcements section on homepage,Content Update,Low,1,Completed
+2025-10-24,Hero Slider Responsive Design,Made hero slider responsive across all device sizes,UI Change,Medium,1.5,Completed
+2025-10-24,Navigation Link Optimization,Converted anchor links to Next.js Link component for better performance,Enhancement,Low,1,Completed
+2025-10-23,Image Gallery Enhancements - General,Added and organized program-specific images,Content Update,Low,1,Completed
+2025-10-23,AIDS Program Redesign,Comprehensive redesign of Artificial Intelligence and Data Science program page,UI Change,Medium,2,Completed
+2025-10-23,Homepage and About Us Sections,Major updates to homepage and about us sections,Content Update,Medium,2,Completed
+2025-10-18,About Us Section Redesign,Major redesign of about us page with new layout and visual approach,UI Change,High,3.5,Completed
+2025-10-18,Company Logos and Upskilling,Added company logos and professional development program information,Content Update,Medium,1.5,Completed
+2025-10-18,Homepage Enhancement - Final,Final refinements to homepage layout and content,Content Update,Medium,1,Completed
+2025-10-18,Placement Page Carousel,Added carousel/slider component to placement page for company showcase,New Feature,Medium,2.5,Completed
+2025-10-17,Instagram Content Integration,Integrated Instagram feed and social media content,Integration,Low,1,Completed
+2025-10-17,Placement Success Stories,Updated placement testimonials and success stories,Content Update,Low,1,Completed
+2025-10-17,Campus Tour Media,Added Chanakya campus video walkthrough to media gallery,Content Update,Low,1.5,Completed
+2025-10-17,Code Quality Improvements - Phase 1,Fixed code issues and improved maintainability,Bug Fix,Low,1.5,Completed
+2025-10-17,Next.js Framework Migration - Phase 2,Converted additional pages to Next.js framework,Enhancement,Medium,2,Completed
+2025-10-16,About Us Pages Implementation,Created and implemented about us section pages,New Feature,High,3,Completed

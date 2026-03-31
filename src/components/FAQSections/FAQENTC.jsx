@@ -2,6 +2,72 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
+const convertImageToWebp = (src) => {
+  if (!src) return src;
+  return src.replace(/\.(jpe?g|png|avif|jpg|JPG)$/i, '.webp');
+};
+
+// ================== STAFF DATA ==================
+const staffData = [
+  {
+    sn: 1,
+    id: "312",
+    name: "Mrs. Meenakshi Somnath Patil",
+    designation: "Assistant Professor & HOD",
+    department: "E&TC",
+    qualification: "ME",
+    doj: "22/01/2008",
+    dob: "02/10/1982",
+    image: "/faculty/final_icem_branding/entc/Mrs. Meenakshi Patil.webp",
+  },
+  {
+    sn: 2,
+    id: "393",
+    name: "Mr. Dhiraj Shashikant Bhagwate",
+    designation: "Assistant Professor",
+    department: "E&TC",
+    qualification: "ME",
+    doj: "04/08/2008",
+    dob: "26/11/1971",
+    image: "/faculty/final_icem_branding/entc/Mr. Dhiraj Bhagwate.webp",
+  },
+
+  {
+    sn: 4,
+    id: "3106",
+    name: "Mr. Sudhir Kumar Sawarkar",
+    designation: "Assistant Professor",
+    department: "E&TC",
+    qualification: "Dip BE ME",
+    doj: "03/07/2024",
+    dob: "12/10/1981",
+    image: "/faculty/final_icem_branding/entc/Mr. sudhir Sawarkar.webp",
+  },
+  {
+    sn: 5,
+    id: "3107",
+    name: "Ms. Priyanka Ramesh Patil",
+    designation: "Assistant Professor",
+    department: "E&TC",
+    qualification: "BE ME",
+    doj: "12/08/2024",
+    dob: "07/06/1990",
+    image: "/faculty/final_icem_branding/entc/Mrs. Priyanka Patil.webp",
+  },
+  {
+    sn: 6,
+    id: "3120",
+    name: "Mr. Balu Chatrbhuj Tandale",
+    designation: "Assistant Professor",
+    department: "E&TC",
+    qualification: "BE ME",
+    doj: "23/12/2024",
+    dob: "09/09/1991",
+    image: "/faculty/final_icem_branding/entc/Mr. Balu Tandale.webp",
+  },
+];
 
 // ================== SYLLABUS DATA ==================
 const syllabusList = [
@@ -168,54 +234,8 @@ export default function FAQSection() {
     },
 
     "Staff": {
-      type: "staff-cards",
-      content: [
-        {
-          image: "/assets/images/icemFaculty/Bhagwate_Dhiraj.jpg",
-          name: "Bhagwate Dhiraj Shashikant",
-          designation: "Assistant Professor",
-          qualification: "M.E. E&TC Engineering with 1st Class, PhD Pursuing",
-          experience: "15 Years, Research: 02",
-          areaOfInterest: "Power Electronics",
-          researchPapers: "Scopus indexed: Journal papers: 4, Conference papers: 6"
-        },
-        {
-          image: "/assets/images/icemFaculty/MeenakshiPatil.jpg",
-          name: "Mrs. Meenakshi Patil",
-          designation: "In-Charge HOD ENTC Dept, Assistant Professor & Controller of Examination",
-          qualification: "Ph.D. (Pursuing), M.E. Electronics, B.E. E&TC",
-          experience: "18 Years",
-          areaOfInterest: "Image Processing, IoT",
-          researchPapers: "Scopus indexed: 1, Journal papers: 3, Conference papers: 5"
-        },
-        {
-          image: "/assets/images/icemFaculty/Sudhir-Sawarkar.jpg",
-          name: "Mr. Sudhir Sawarkar",
-          designation: "Assistant Professor",
-          qualification: "M.E. (Digital Tech. & Instrumentation)",
-          experience: "13 Years",
-          areaOfInterest: "ML",
-          researchPapers: "Scopus indexed: 0, Journal papers: 0, Conference papers: 4"
-        },
-        {
-          image: "/assets/images/icemFaculty/Priyanka-R-Patil.jpg",
-          name: "Mrs. Priyanka R. Patil",
-          designation: "Assistant Professor",
-          qualification: "M.E. (Embedded System & VLSI) with 1st Class SPPU",
-          experience: "1.5 Years",
-          areaOfInterest: "IoT, Sensor, Computer Network",
-          researchPapers: "Scopus indexed: 0, Journal papers: 2, Conference papers: 1"
-        },
-        {
-          image: "/assets/images/icemFaculty/Balu-Chatrbhuj-Tandale-New.png",
-          name: "Prof. Tandale Balu Chatrbhuj",
-          designation: "Assistant Professor",
-          qualification: "M.E. ENTC, B.E. ENTC",
-          experience: "11 Years, Research: 0",
-          areaOfInterest: "Image Processing",
-          researchPapers: "Scopus indexed: 0, Journal papers: 0, Conference papers: 7"
-        }
-      ],
+      type: "staff",
+      content: staffData,
     },
 
     "Newsletter": {
@@ -341,37 +361,101 @@ export default function FAQSection() {
           </div>
         );
 
-      case "staff-cards":
+      case "staff":
+        const StaffPhoto = ({ src, alt }) => {
+          const [currentSrc, setCurrentSrc] = useState(src || "/faculty/newFaculty/placeholder.avif");
+          const [hasError, setHasError] = useState(false);
+
+          return hasError ? (
+            <div className="w-32 h-40 flex items-center justify-center rounded-lg mb-4 bg-gray-100 shadow-sm border border-gray-100">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-full h-full p-2 text-gray-300"
+                aria-hidden="true"
+              >
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" />
+                <path d="M18.36 16.46a7 7 0 00-12.72 0c-.35.58.1 1.28.77 1.28h11.38c.66 0 1.12-.7.57-1.28z" />
+              </svg>
+            </div>
+          ) : (
+            <div className="w-32 h-40 overflow-hidden rounded-lg mb-4 bg-gray-100 shadow-sm border border-gray-100">
+              <Image
+                src={convertImageToWebp(currentSrc)}
+                alt={alt}
+                width={128}
+                height={160}
+                className="w-full h-full object-cover object-top"
+                onError={() => {
+                  setHasError(true);
+                }}
+              />
+            </div>
+          );
+        };
+
         return (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {data.content.map((staff, index) => {
-              // hide card if we previously detected an error loading its image
-              if (staffVisible[index] === false) return null;
-              return (
-                <div key={index} className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 p-4">
-                  <div className="flex flex-col items-center text-center">
-                    <Image
-                      src={staff.image}
-                      alt={staff.name}
-                      width={80}
-                      height={80}
-                      className="rounded-full mb-3 border-2 border-gray-200"
-                      onError={() => {
-                        setStaffVisible((prev) => ({ ...prev, [index]: false }));
-                      }}
-                    />
-                    <h4 className="text-base font-semibold text-gray-800 mb-1">{staff.name}</h4>
-                    <p className="text-secondary font-medium text-sm mb-2">{staff.designation}</p>
-                    <div className="space-y-1 text-xs text-gray-600 text-left">
-                      <p><strong>Qualification:</strong> {staff.qualification}</p>
-                      <p><strong>Experience:</strong> {staff.experience}</p>
-                      <p><strong>Area of Interest:</strong> {staff.areaOfInterest}</p>
-                      <p><strong>Research Papers:</strong> {staff.researchPapers}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-4">
+            {data.content.map((staff, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.05, duration: 0.3 }}
+                className="bg-white rounded-xl shadow-md border border-gray-200 flex flex-col items-center text-center p-5 hover:shadow-lg transition-all duration-300"
+              >
+                <StaffPhoto src={staff.image} alt={staff.name} />
+
+                <div className="w-full flex-1 flex flex-col">
+                  <h4 className="font-bold text-gray-900 mb-1 leading-snug">
+                    {staff.name}
+                  </h4>
+                  <p className="text-blue-700 font-semibold text-xs mb-4 uppercase tracking-wider">
+                    {staff.designation}
+                  </p>
+
+                  <div className="mt-auto pt-4 border-t border-gray-100 space-y-2 text-left">
+                    <div className="text-[11px]">
+                      <span className="text-gray-400 font-bold uppercase mr-1">
+                        ID NO:
+                      </span>
+                      <span className="text-gray-700 font-medium">
+                        {staff.id}
+                      </span>
+                    </div>
+                    <div className="text-[11px]">
+                      <span className="text-gray-400 font-bold uppercase mr-1">
+                        Qualification:
+                      </span>
+                      <span className="text-gray-700 font-medium">
+                        {staff.qualification}
+                      </span>
+                    </div>
+                    <div className="text-[11px]">
+                      <span className="text-gray-400 font-bold uppercase mr-1">
+                        Joining Date:
+                      </span>
+                      <span className="text-gray-700 font-medium">
+                        {staff.doj}
+                      </span>
+                    </div>
+                    <div className="text-[11px]">
+                      <span className="text-gray-400 font-bold uppercase mr-1">
+                        Birth Date:
+                      </span>
+                      <span className="text-gray-700 font-medium">
+                        {staff.dob}
+                      </span>
                     </div>
                   </div>
                 </div>
-              );
-            })}
+              </motion.div>
+            ))}
           </div>
         );
 

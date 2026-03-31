@@ -1,6 +1,111 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+
+// ================== DATA SECTION ==================
+const staffData = [
+  {
+    sn: 1,
+    id: "1680",
+    name: "Dr. Deepa Nitin Jamnik",
+    designation: "Assistant Professor & HOD Dean (Events & Branding)",
+    department: "BBA",
+    qualification: "Ph.D BBA MBA NET",
+    doj: "01/07/2024",
+    dob: "18/05/1984",
+    image: "/faculty/final_Icem_branding/mba/deepajamnik.webp",
+  },
+  {
+    sn: 2,
+    id: "3119",
+    name: "Mrs. Ashwini Dewanand Wankhade",
+    designation: "Assistant Professor",
+    department: "BBA",
+    qualification: "B.E MBA",
+    doj: "13/11/2024",
+    dob: "11/09/1981",
+    image: "/faculty/final_Icem_branding/mba/ashwiniwankhade.webp",
+  },
+  {
+    sn: 3,
+    id: "3154",
+    name: "Mrs. Dipali Rahul Nimbalkar",
+    designation: "Assistant Professor",
+    department: "BBA",
+    qualification: "B.Sc MBA",
+    doj: "06/01/2025",
+    dob: "06/09/1987",
+    image: "/faculty/final_Icem_branding/mba/dipalinimbalkar.webp",
+  },
+  {
+    sn: 4,
+    id: "1521",
+    name: "Dr. Archana Ravindra Salve",
+    designation: "Professor & Dean",
+    department: "MBA",
+    qualification: "BAMS MBA NET Ph.D",
+    doj: "30/01/2017",
+    dob: "13/09/1976",
+    image: "/faculty/final_Icem_branding/mba/archanasalve.webp",
+  },
+  {
+    sn: 5,
+    id: "987",
+    name: "Dr. Priyanka Amol Pawar",
+    designation: "Associate Professor Dean (L&D)",
+    department: "MBA",
+    qualification: "B.Sc MBA Ph.D",
+    doj: "17/09/2012",
+    dob: "22/09/1986",
+    image: "/faculty/final_Icem_branding/mba/Dr. Priyanka Pawar.webp",
+  },
+  {
+    sn: 6,
+    id: "3087",
+    name: "Dr. Pravin Namdeo Thorat",
+    designation: "Assistant Professor",
+    department: "MBA",
+    qualification: "BE MBA NET SET Ph.D",
+    doj: "01/07/2024",
+    dob: "23/08/1982",
+    image: "/faculty/final_Icem_branding/mba/Dr. Pravin Thorat.webp",
+  },
+  {
+    sn: 7,
+    id: "3090",
+    name: "Mrs. Aditee Hrishikesh Huparikar",
+    designation: "Assistant Professor",
+    department: "MBA",
+    qualification: "M.Com MBA",
+    doj: "01/07/2024",
+    dob: "05/07/1985",
+    image: "/faculty/final_Icem_branding/mba/Mrs. Adittee Huparikar.webp",
+  },
+  {
+    sn: 8,
+    id: "3093",
+    name: "Dr. Priyanka Shirish Shinde",
+    designation: "Assistant Professor & TPO",
+    department: "MBA",
+    qualification: "Ph.D MBA M.Phil",
+    doj: "01/07/2024",
+    dob: "14/05/1986",
+    image: "/faculty/final_Icem_branding/mba/Dr. Priyanka Shinde.webp",
+  },
+  {
+    sn: 9,
+    id: "3113",
+    name: "Mr. Mani Shankar Pandey",
+    designation: "Assistant Professor",
+    department: "MBA",
+    qualification: "BBA PGDM",
+    doj: "06/09/2024",
+    dob: "08/07/1990",
+    image: "/faculty/final_Icem_branding/mba/Mr. Mani Shankar Pandey.webp",
+  },
+];
 
 // ================== SYLLABUS DATA ==================
 const syllabusList = [
@@ -131,6 +236,11 @@ export default function FAQENTC() {
       type: "syllabus",
       content: syllabusList,
     },
+
+    "Staff": {
+      type: "staff",
+      content: staffData,
+    },
   };
 
   const tabs = Object.keys(sectionContent);
@@ -233,12 +343,103 @@ case "table":
           </div>
         );
 
-  
-  
+      case "staff":
+        const StaffPhoto = ({ src, alt }) => {
+          const [currentSrc, setCurrentSrc] = useState(src || "/faculty/newFaculty/placeholder.avif");
+          const [hasError, setHasError] = useState(false);
 
+          return hasError ? (
+            <div className="w-32 h-40 flex items-center justify-center rounded-lg mb-4 bg-gray-100 shadow-sm border border-gray-100">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-full h-full p-2 text-gray-300"
+                aria-hidden="true"
+              >
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" />
+                <path d="M18.36 16.46a7 7 0 00-12.72 0c-.35.58.1 1.28.77 1.28h11.38c.66 0 1.12-.7.57-1.28z" />
+              </svg>
+            </div>
+          ) : (
+            <div className="w-32 h-40 overflow-hidden rounded-lg mb-4 bg-gray-100 shadow-sm border border-gray-100">
+              <Image
+                src={currentSrc}
+                alt={alt}
+                width={128}
+                height={160}
+                className="w-full h-full object-cover object-top"
+                onError={() => {
+                  setHasError(true);
+                }}
+              />
+            </div>
+          );
+        };
 
-      // ========== UPDATED MECHANICAL LAB TABLE (2 COLUMNS) ==========
+        return (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-4">
+            {data.content.map((staff, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.05, duration: 0.3 }}
+                className="bg-white rounded-xl shadow-md border border-gray-200 flex flex-col items-center text-center p-5 hover:shadow-lg transition-all duration-300"
+              >
+                <StaffPhoto src={staff.image} alt={staff.name} />
 
+                <div className="w-full flex-1 flex flex-col">
+                  <h4 className="font-bold text-gray-900 mb-1 leading-snug">
+                    {staff.name}
+                  </h4>
+                  <p className="text-blue-700 font-semibold text-xs mb-4 uppercase tracking-wider">
+                    {staff.designation}
+                  </p>
+
+                  <div className="mt-auto pt-4 border-t border-gray-100 space-y-2 text-left">
+                    <div className="text-[11px]">
+                      <span className="text-gray-400 font-bold uppercase mr-1">
+                        ID NO:
+                      </span>
+                      <span className="text-gray-700 font-medium font-mono">
+                        {staff.id}
+                      </span>
+                    </div>
+                    <div className="text-[11px]">
+                      <span className="text-gray-400 font-bold uppercase mr-1">
+                        Qualification:
+                      </span>
+                      <span className="text-gray-700 font-medium">
+                        {staff.qualification}
+                      </span>
+                    </div>
+                    <div className="text-[11px]">
+                      <span className="text-gray-400 font-bold uppercase mr-1">
+                        Joining Date:
+                      </span>
+                      <span className="text-gray-700 font-medium font-mono">
+                        {staff.doj}
+                      </span>
+                    </div>
+                    <div className="text-[11px]">
+                      <span className="text-gray-400 font-bold uppercase mr-1">
+                        Birth Date:
+                      </span>
+                      <span className="text-gray-700 font-medium font-mono">
+                        {staff.dob}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        );
 
       default:
         return null;
@@ -252,10 +453,10 @@ case "table":
     {/* Header */}
     <div className="text-center mb-6 md:mb-12">
       <h2 className="text-4xl font-bold text-secondary mb-3 md:mb-4">
-        Department of MBA
+        Integrated MBA (BBA + MBA)
       </h2>
       <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-        Empowering future innovators with cutting-edge education and research in MBA
+        Developing future leaders with cross-disciplinary management expertise
       </p>
     </div>
 

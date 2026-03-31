@@ -2,6 +2,44 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+
+// ================== STAFF DATA ==================
+const staffData = [
+  {
+    sn: 1,
+    id: "3105",
+    name: "Dr. Awantika Narendra Bijwe",
+    designation: "Assistant Professor & HOD",
+    department: "BCA & MCA",
+    qualification: "Ph.D B.Sc MCA ME",
+    doj: "01/07/2024",
+    dob: "26/05/1982",
+    image: "/faculty/final_Icem_branding/bba_bca/Dr. Awantika Bijwe.webp",
+  },
+  {
+    sn: 2,
+    id: "3115",
+    name: "Ms. Shraddha Vishnu Murade",
+    designation: "Assistant Professor",
+    department: "BCA",
+    qualification: "B.Sc MCA",
+    doj: "24/09/2024",
+    dob: "11/07/1999",
+    image: "/faculty/final_Icem_branding/mba/shraddhamurade.webp",
+  },
+  {
+    sn: 3,
+    id: "3217",
+    name: "Mr. Prakash Shamrao Bhusari",
+    designation: "Assistant Professor",
+    department: "BCA",
+    qualification: "BCS MSc",
+    doj: "22/09/2025",
+    dob: "04/05/1983",
+    image: "/faculty/final_Icem_branding/mba/prakashbhusari.webp",
+  },
+];
 
 // ================== SYLLABUS DATA ==================
 const syllabusList = [
@@ -129,6 +167,10 @@ export default function FAQENTC() {
       type: "syllabus",
       content: syllabusList,
     },
+    "Staff": {
+      type: "staff",
+      content: staffData,
+    },
   };
 
   const tabs = Object.keys(sectionContent);
@@ -229,13 +271,103 @@ case "table":
             ))}
           </div>
         );
+      case "staff":
+        const StaffPhoto = ({ src, alt }) => {
+          const [currentSrc, setCurrentSrc] = useState(src || "/faculty/newFaculty/placeholder.avif");
+          const [hasError, setHasError] = useState(false);
 
-  
-  
+          return hasError ? (
+            <div className="w-32 h-40 flex items-center justify-center rounded-lg mb-4 bg-gray-100 shadow-sm border border-gray-100">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-full h-full p-2 text-gray-300"
+                aria-hidden="true"
+              >
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" />
+                <path d="M18.36 16.46a7 7 0 00-12.72 0c-.35.58.1 1.28.77 1.28h11.38c.66 0 1.12-.7.57-1.28z" />
+              </svg>
+            </div>
+          ) : (
+            <div className="w-32 h-40 overflow-hidden rounded-lg mb-4 bg-gray-100 shadow-sm border border-gray-100">
+              <Image
+                src={currentSrc}
+                alt={alt}
+                width={128}
+                height={160}
+                className="w-full h-full object-cover object-top"
+                onError={() => {
+                  setHasError(true);
+                }}
+              />
+            </div>
+          );
+        };
 
+        return (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-4">
+            {data.content.map((staff, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.05, duration: 0.3 }}
+                className="bg-white rounded-xl shadow-md border border-gray-200 flex flex-col items-center text-center p-5 hover:shadow-lg transition-all duration-300"
+              >
+                <StaffPhoto src={staff.image} alt={staff.name} />
 
-      // ========== UPDATED MECHANICAL LAB TABLE (2 COLUMNS) ==========
+                <div className="w-full flex-1 flex flex-col">
+                  <h4 className="font-bold text-gray-900 mb-1 leading-snug">
+                    {staff.name}
+                  </h4>
+                  <p className="text-blue-700 font-semibold text-xs mb-4 uppercase tracking-wider">
+                    {staff.designation}
+                  </p>
 
+                  <div className="mt-auto pt-4 border-t border-gray-100 space-y-2 text-left">
+                    <div className="text-[11px]">
+                      <span className="text-gray-400 font-bold uppercase mr-1">
+                        ID NO:
+                      </span>
+                      <span className="text-gray-700 font-medium font-mono">
+                        {staff.id}
+                      </span>
+                    </div>
+                    <div className="text-[11px]">
+                      <span className="text-gray-400 font-bold uppercase mr-1">
+                        Qualification:
+                      </span>
+                      <span className="text-gray-700 font-medium">
+                        {staff.qualification}
+                      </span>
+                    </div>
+                    <div className="text-[11px]">
+                      <span className="text-gray-400 font-bold uppercase mr-1">
+                        Joining Date:
+                      </span>
+                      <span className="text-gray-700 font-medium font-mono">
+                        {staff.doj}
+                      </span>
+                    </div>
+                    <div className="text-[11px]">
+                      <span className="text-gray-400 font-bold uppercase mr-1">
+                        Birth Date:
+                      </span>
+                      <span className="text-gray-700 font-medium font-mono">
+                        {staff.dob}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        );
 
       default:
         return null;
@@ -249,10 +381,10 @@ case "table":
     {/* Header */}
     <div className="text-center mb-6 md:mb-12">
       <h2 className="text-4xl font-bold text-secondary mb-4">
-        Department of MCA
+        Integrated MCA (BCA + MCA)
       </h2>
       <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-        Empowering future innovators with cutting-edge education and research in computer science
+        Empowering future technology leaders with integrated expertise in computer applications
       </p>
     </div>
 

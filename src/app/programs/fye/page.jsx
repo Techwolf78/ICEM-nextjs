@@ -27,6 +27,11 @@ import CTASection from "@/components/home/CTASection";
 import EnquireNowProgramModal from "@/components/EnquireNowProgramModal";
 import ApplyForm from "@/components/home/ApplyForm";
 
+const convertImageToWebp = (src) => {
+  if (!src) return src;
+  return src.replace(/\.(jpe?g|png|avif|jpg|JPG)$/i, '.webp');
+};
+
 export default function FirstYearEngineering() {
   const [activeTab, setActiveTab] = useState("Overview");
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -81,207 +86,158 @@ export default function FirstYearEngineering() {
 
   const staffData = [
     {
-      name: "Dr. Poorna Shankar",
-      designation: "HOD- Basic Engineering Department & Dean R&D",
-      department: "Basic Engineering Department",
-      qualification:
-        "MCA, M.Phil(Gold Medalist), M.Tech, Ph.D (Computer Science)",
-      subject: "Artificial Intelligence, Machine Learning",
-      areaOfInterest:
-        "Artificial Intelligence, Machine Learning, Data Analytics, Big Data, Deep Learning",
-      email: "poornashankar@indiraicem.ac.in",
-      experience: "29 Years",
-      image: "/assets/images/icem/Poorna_Shankar.jpg",
+      sn: 1,
+      id: "1883",
+      name: "Dr. Kiran Dattatray Devade",
+      designation: "Professor & HOD",
+      department: "FE",
+      qualification: "Ph.D ME",
+      doj: "02/11/2020",
+      dob: "09/08/1980",
+      image: "/faculty/final_icem_branding/fe/Dr. Kiran Devade.webp",
     },
     {
-      name: "Dr. Manjusha Tomar",
+      sn: 2,
+      id: "984",
+      name: "Dr. Manjusha Ashwin Tomar",
       designation: "Associate Professor",
-      department: "Basic Engineering Department",
-      qualification: "Ph.D",
-      subject: "Mathematics",
-      areaOfInterest: "Optimization Techniques",
-      email: "manjusha.tomar@indiraicem.ac.in",
-      experience: "20 Years",
-      image: "/assets/images/icemFaculty/Dr _Manjusha_Tomar.jpg",
+      department: "FE",
+      qualification: "Ph.D M.Sc",
+      doj: "26/09/2012",
+      dob: "25/06/1973",
+      image: "/faculty/final_icem_branding/fe/Dr. Manjusha Tomar.webp",
     },
     {
-      name: "Prof. Pratima Gaikwad",
+      sn: 3,
+      id: "1516",
+      name: "Dr. Avinash Santaram Bansode",
       designation: "Assistant Professor",
-      department: "Basic Engineering Department",
-      qualification: "ME (Phd Pursuing)",
-      subject: "Power Electronics And Drives",
-      areaOfInterest: "Power Electronics And Drives",
-      email: "pratima.uploankar@indiraicem.ac.in",
-      experience: "14 Years",
-      image: "/assets/images/icemFaculty/Pratima_Gaikwad.jpg",
+      department: "FE",
+      qualification: "Ph.D M.Phil M.Sc B.Sc",
+      doj: "24/01/2017",
+      dob: "13/03/1980",
+      image: "/faculty/final_icem_branding/fe/Dr. Avinash Bansode.webp",
     },
     {
-      name: "Dr. Avinash Bansode",
+      sn: 4,
+      id: "465",
+      name: "Mrs. Pratima Amrut Gaikwad",
       designation: "Assistant Professor",
-      department: "Basic Engineering Department",
-      qualification: "Ph. D. (Physics)",
-      subject: "Physics",
-      areaOfInterest: "Teaching And Learning",
-      email: "avinash.bansode@indiraicem.ac.in",
-      experience: "8 Years",
-      image: "/assets/images/icemFaculty/Dr_Avinash_Bansode.jpg",
+      department: "FE",
+      qualification: "ME",
+      doj: "29/08/2009",
+      dob: "06/05/1985",
+      image: "/faculty/final_icem_branding/fe/Mrs. Pratima Gaikwad.webp",
     },
     {
-      name: "Prof. Supriya Kumbhar",
+      sn: 5,
+      id: "645",
+      name: "Mrs. Supriya Deepak Kumbhar",
       designation: "Assistant Professor",
-      department: "Basic Engineering Department",
-      qualification: "ME Mechanical",
-      subject: "MDCG, Engg Drawing, Autocad, Design, NMO",
-      areaOfInterest: "Design Engineering",
-      email: "supriya.kumbhar@indiraicem.ac.in",
-      experience: "18 Years",
-      image: "/assets/images/icemFaculty/Mrs. Supriya_Kumbhar.jpg",
+      department: "FE",
+      qualification: "ME",
+      doj: "03/09/2010",
+      dob: "30/06/1983",
+      image: "/faculty/final_icem_branding/fe/Mrs. Supriya Kumbhar.webp",
     },
     {
-      name: "Mr. Ashwin Dharme",
-      designation: "Dean Admissions",
-      department: "Basic Engineering Department",
-      qualification: "ME,MBA",
-      subject: "Mechanical",
-      areaOfInterest: "Mechanical",
-      email: "ashwin.dharme@indiraicem.ac.in",
-      experience: "14 Years",
-      image: "/assets/images/icemFaculty/Ashwin_Dharme.jpg",
+      sn: 6,
+      id: "1290",
+      name: "Mr. Ashwin Shriram Dharme",
+      designation: "Assistant Professor & Dean Admissions",
+      department: "FE",
+      qualification: "MBA ME",
+      doj: "15/06/2015",
+      dob: "11/05/1986",
+      image: "/faculty/final_icem_branding/fe/Ashwin Dharme.webp",
     },
     {
-      name: "Mr. Gore Atul Kundlik",
-      designation: "Director Of Physical Education & Sports",
-      department: "Basic Engineering Department",
-      qualification: "M.P.Ed. (NET)",
-      subject: "Physical Education & Sports",
-      areaOfInterest: "Sports",
-      email: "gore.atul@indiraicem.ac.in",
-      experience: "15 Years",
-      image: "/assets/images/icemFaculty/Gore_Atul.jpg",
-    },
-    {
-      name: "Prof. Mandakini Sanjay Dahiwade",
+      sn: 7,
+      id: "3094",
+      name: "Dr. Mandakini Sanjay Dahiwade",
       designation: "Assistant Professor",
-      department: "Basic Engineering Department",
-      qualification: "Ph.D",
-      subject: "Chemistry",
-      areaOfInterest: "Spectroscopy, Analysis",
-      email: "mandakini.dahiwade@indiraicem.ac.in",
-      experience: "2 Years",
-      image: "/assets/images/icemFaculty/Mandakini_Dahiwade.jpg",
+      department: "FE",
+      qualification: "B.Sc M.Sc M.Phil Ph.D",
+      doj: "07/01/2024",
+      dob: "02/05/1988",
+      image: "/faculty/final_icem_branding/fe/Dr. Mandakini Dahiwade.webp",
     },
     {
-      name: "Prof. Priyanka Harashal Mahajan",
-      designation: "Assistant professor",
-      department: "First year Engineering",
-      qualification: "M.E (Electrical Power System)",
-      subject:
-        "Basic Electrical Engineering, Electrical and electronics Engineering",
-      areaOfInterest: "Power System",
-      email: "priyanka.mahajan@indiraicem.ac.in",
-      experience: "1 Years",
-      image: "/assets/images/icemFaculty/Prof_Priyanka-Mahajan.png",
+      sn: 8,
+      id: "3108",
+      name: "Mrs. Priyanka Harshal Mahajan",
+      designation: "Assistant Professor",
+      department: "FE",
+      qualification: "ME",
+      doj: "08/12/2024",
+      dob: "07/01/1992",
+      image: "/faculty/final_icem_branding/fe/Prof. Priyanka Mahajan.webp",
     },
     {
-      name: "Dr. Dinkar Kisan Choudhari",
-      designation: "Assistant professor",
-      department: "First year Engineering",
-      qualification: "PhD",
-      subject: "Chemistry",
-      areaOfInterest:
-        "Synthesis of biological activity molecules and intermolecular interactions by single crystal X ray difference studies",
-      email: "dinkar.choudhari@indiraicem.ac.in",
-      experience: "9 Years",
-      image: "/assets/images/icemFaculty/Dr_Dinkar-Chaudhari.png",
+      sn: 9,
+      id: "3116",
+      name: "Ms. Trupti Nandkumar Kathale",
+      designation: "Assistant Professor",
+      department: "FE",
+      qualification: "B.Sc M.Sc",
+      doj: "10/01/2024",
+      dob: "01/06/1985",
+      image: "/faculty/final_icem_branding/fe/Trupti Kathale.webp",
     },
     {
-      name: "Prof. Pragati Yuvraj Kharbade",
-      designation: "Assistant professor",
-      department: "First year Engineering",
-      qualification: "M.Sc",
-      subject: "Physics",
-      areaOfInterest: "Modern physics",
-      email: "Pragati.kharbade@indiraicem.ac.in",
-      experience: "3 Years",
-      image: "/assets/images/icemFaculty/Prof_Pragati-Kharbade.png",
+      sn: 10,
+      id: "3117",
+      name: "Mr. Raghunandan Vinayakrao Kale",
+      designation: "Assistant Professor",
+      department: "FE",
+      qualification: "B.Sc M.Sc",
+      doj: "10/03/2024",
+      dob: "28/03/1998",
+      image: "/faculty/final_icem_branding/fe/Raghunandan sir photo.webp",
     },
     {
-      name: "Prof. Suresh Mohanrao Renge",
-      designation: "Assistant professor",
-      department: "First year Engineering",
-      qualification: "MSc(Math),GATE, MH SET",
-      subject: "Mathematics",
-      areaOfInterest: "Complex Analysis",
-      email: "Suresh.renge@indiraicem.ac.in",
-      experience: "2 Years",
-      image: "/assets/images/icemFaculty/Prof_Suresh-Renge.png",
+      sn: 11,
+      id: "3118",
+      name: "Mr. Swapnil Machhindra Chaudhari",
+      designation: "Assistant Professor",
+      department: "FE",
+      qualification: "B.Sc M.Tech",
+      doj: "10/07/2024",
+      dob: "02/06/1993",
+      image: "/faculty/final_icem_branding/fe/Swapnil choudhary.webp",
     },
     {
-      name: "Swapnil Machindra Chaudhari",
-      designation: "Assistant professor",
-      department: "Basic Engineering Science",
-      qualification:
-        "B.SC(Mathematics), B.ED, M.TECH(IMWCA), SET(Mathematical Science)",
-      subject: "Mathematics",
-      areaOfInterest: "Applied Mathematics",
-      email: "swapnil.chaudhari@indiraicem.ac.in",
-      experience: "7 Years",
-      image: "/assets/images/icemFaculty/Swapnil-choudhary-Img.png",
+      sn: 12,
+      id: "3220",
+      name: "Dr. Dyanand Ambadas Kamble",
+      designation: "Assistant Professor",
+      department: "FE",
+      qualification: "Ph.D B.Sc M.Sc Post Doctorate",
+      doj: "22/09/2025",
+      dob: "23/10/1982",
+      image: "/faculty/final_icem_branding/fe/Dr. Dayanand Kamble.webp",
     },
     {
-      name: "Raghunandan Vinayakrao Kale",
-      designation: "Assistant professor",
-      department: "Basic Engineering Science",
-      qualification: "M.SC Mathematics",
-      subject: "Mathematics",
-      areaOfInterest: "Calculus",
-      email: "raghunandan.kale@indiraicem.ac.in",
-      experience: "1 Years",
-      image: "/assets/images/icemFaculty/Raghunandan-Kale-Img.png",
+      sn: 13,
+      id: "3224",
+      name: "Mr. Rathod Shubham Shrikant",
+      designation: "Assistant Professor",
+      department: "FE",
+      qualification: "B.Sc M.Sc",
+      doj: "01/10/2025",
+      dob: "03/01/1995",
+      image: "/faculty/final_icem_branding/fe/Mr. Shubham Rathod.webp",
     },
     {
-      name: "Kathale Trupti N.",
-      designation: "Assistant professor",
-      department: "Basic Engineering Science",
-      qualification: "M.Sc.",
-      subject: "Mathematics",
-      areaOfInterest: "Applied Mathematics",
-      email: "trupti.kathale@indiraicem.ac.in",
-      experience: "17 Years",
-      image: "/assets/images/icemFaculty/Kathale-Trupti-Img.png",
-    },
-    {
-      name: "Mr.Bashir Rajasab Sumbad",
-      designation: "Lab Assistant",
-      department: "Basic Engineering Department",
-      qualification: "ITI Nctvt",
-      subject: "Basic Electrical Engineering",
-      areaOfInterest: "Basic Electrical Engineering",
-      email: "bashir.sombad@indiraicem.ac.in",
-      experience: "17 Years",
-      image: "/assets/images/icemFaculty/Bashir_Sumbad.jpg",
-    },
-    {
-      name: "Mr. Nitin Hindurao Khandait",
-      designation: "Lab Assistant",
-      department: "Basic Engineering Department",
-      qualification: "MBA, Bsc (Chem), PGDHM",
-      subject: "Chemistry",
-      areaOfInterest: "Chemistry",
-      email: "nitin.khandait@indiraicem.ac.in",
-      experience: "19 Years",
-      image: "/assets/images/icemFaculty/Nitin_Khandait.jpg",
-    },
-    {
-      name: "Mr. Kishor Haribhau Chavan",
-      designation: "Lab Assistant",
-      department: "Basic engineering and science",
-      qualification: "B Sc. & DMLT",
-      subject: "Physics",
-      areaOfInterest: "Reading, playing cricket",
-      email: "kishor.chavan@indiraicem.ac.in",
-      experience: "20+ Years",
-      image: "/assets/images/icemFaculty/Mr_Kishor-Chavan.png",
+      sn: 14,
+      id: "3225",
+      name: "Mr. Rishikesh Devendra Sonawane",
+      designation: "Assistant Professor",
+      department: "FE",
+      qualification: "BE Mech",
+      doj: "10/06/2025",
+      dob: "05/10/1998",
+      image: "/faculty/final_icem_branding/fe/Mr. Rishikesh Sonawane.webp",
     },
   ];
 
@@ -534,7 +490,7 @@ export default function FirstYearEngineering() {
       name: "Santanu Brahme",
       role: "Pre and post Sales Engineer",
       company: "Hettich India Pvt. Ltd",
-      image: "/assets/images/icem/SantanuBrahme.png",
+      image: "/assets/images/icem/SantanuBrahme.webp",
       testimonial:
         "ICEM has a wonderful group of faculties who have a great bonding with students and parents. Various good companies come to college for campus interview, placement is also good. College has very nice environment. Thanks ICEM for the great opportunity. There's a lot that I learned when I was working in the placement cell.",
     },
@@ -542,7 +498,7 @@ export default function FirstYearEngineering() {
       name: "Vidya Nair",
       role: "Analyst IT Audit",
       company: "KPMG",
-      image: "/assets/images/icem/VidyaNair.png",
+      image: "/assets/images/icem/VidyaNair.webp",
       testimonial:
         "Role of placement cell in my campus selection: First of all, I must thank one of the most active & helpful groups of ICEM - Placement cell. Placement cell played vital role in our preparation for the interviews, GDs & soft skills development. Interviews are to be faced with full confidence & that key to the success is taught through various activities held by placement cell in ICEM.",
     },
@@ -578,60 +534,52 @@ export default function FirstYearEngineering() {
         );
       case "Staff":
         return (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-4">
             {staffData.map((staff, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.3 }}
-                className="bg-gradient-to-br from-white to-slate-50 rounded-2xl shadow-xl p-4 border border-slate-200 hover:shadow-2xl transition-shadow duration-300"
+                transition={{ delay: index * 0.05, duration: 0.3 }}
+                className="bg-white rounded-xl shadow-md border border-gray-200 flex flex-col items-center text-center p-5 hover:shadow-lg transition-all duration-300"
               >
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0">
-                    <div className="w-20 h-28 overflow-hidden rounded-lg shadow-md">
-                      <Image
-                        src={staff.image}
-                        alt={staff.name}
-                        width={80}
-                        height={112}
-                        className="w-full h-full object-cover object-top"
-                      />
+                <div className="w-32 h-40 overflow-hidden rounded-lg mb-4 bg-gray-100 shadow-sm border border-gray-100">
+                  <Image
+                    src={convertImageToWebp(staff.image)}
+                    alt={staff.name}
+                    width={128}
+                    height={160}
+                    className="w-full h-full object-cover object-top"
+                    onError={(error) => {
+                      error.currentTarget.src = staff.image;
+                    }}
+                  />
+                </div>
+
+                <div className="w-full flex-1 flex flex-col">
+                  <h4 className="font-bold text-gray-900 mb-1 leading-snug">
+                    {staff.name}
+                  </h4>
+                  <p className="text-blue-700 font-semibold text-xs mb-4 uppercase tracking-wider">
+                    {staff.designation}
+                  </p>
+
+                  <div className="mt-auto pt-4 border-t border-gray-100 space-y-2 text-left">
+                    <div className="text-[11px]">
+                      <span className="text-gray-400 font-bold uppercase mr-1">ID NO:</span>
+                      <span className="text-gray-700 font-medium">{staff.id}</span>
                     </div>
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h4 className="font-bold text-lg text-slate-800 mb-1">
-                      {staff.name}
-                    </h4>
-                    <p className="text-primary font-semibold text-sm mb-2">
-                      {staff.designation}
-                    </p>
-                    <div className="space-y-1 text-xs text-gray-700">
-                      <p>
-                        <strong>Department:</strong> {staff.department}
-                      </p>
-                      <p>
-                        <strong>Qualification:</strong> {staff.qualification}
-                      </p>
-                      <p>
-                        <strong>Subject:</strong> {staff.subject}
-                      </p>
-                      <p>
-                        <strong>Area of Interest:</strong>{" "}
-                        {staff.areaOfInterest}
-                      </p>
-                      <p>
-                        <strong>Experience:</strong> {staff.experience}
-                      </p>
-                      <p>
-                        <strong>Email:</strong>{" "}
-                        <a
-                          href={`mailto:${staff.email}`}
-                          className="text-blue-600 hover:underline break-all"
-                        >
-                          {staff.email}
-                        </a>
-                      </p>
+                    <div className="text-[11px]">
+                      <span className="text-gray-400 font-bold uppercase mr-1">Qualification:</span>
+                      <span className="text-gray-700 font-medium">{staff.qualification}</span>
+                    </div>
+                    <div className="text-[11px]">
+                      <span className="text-gray-400 font-bold uppercase mr-1">Joining Date:</span>
+                      <span className="text-gray-700 font-medium">{staff.doj}</span>
+                    </div>
+                    <div className="text-[11px]">
+                      <span className="text-gray-400 font-bold uppercase mr-1">Birth Date:</span>
+                      <span className="text-gray-700 font-medium">{staff.dob}</span>
                     </div>
                   </div>
                 </div>

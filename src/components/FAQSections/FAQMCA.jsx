@@ -2,6 +2,88 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+
+// ================== STAFF DATA ==================
+const staffData = [
+  {
+    sn: 1,
+    id: "1011",
+    name: "Dr. Darshana Jignesh Desai",
+    designation: "Professor & Dean QA",
+    department: "MCA",
+    qualification: "MCA Ph.D",
+    doj: "02/01/2013",
+    dob: "21/05/1979",
+    image: "/faculty/final_Icem_branding/mca/Dr. Darshana Desai.webp",
+  },
+  {
+    sn: 2,
+    id: "2343",
+    name: "Dr. Dhanashree Vishal Pisal",
+    designation: "Assistant Professor",
+    department: "MCA",
+    qualification: "BCA MCA",
+    doj: "06/01/2023",
+    dob: "08/03/1989",
+    image: "/faculty/final_Icem_branding/mca/Dr. Dhanashree Pisal.webp",
+  },
+  {
+    sn: 3,
+    id: "3103",
+    name: "Mrs. Shreya Sohan Shenai",
+    designation: "Assistant Professor",
+    department: "MCA",
+    qualification: "B.Sc MCA",
+    doj: "01/07/2024",
+    dob: "02/07/1982",
+    image: "/faculty/final_Icem_branding/mca/Mrs. Shreya Shenai.webp",
+  },
+  {
+    sn: 4,
+    id: "3110",
+    name: "Mrs. Hetal Hardik Thaker",
+    designation: "Assistant Professor",
+    department: "MCA",
+    qualification: "B.Sc MCA",
+    doj: "16/08/2024",
+    dob: "27/11/1980",
+    image: "/faculty/final_Icem_branding/mca/Mrs. Hetal Thakar.webp",
+  },
+  {
+    sn: 5,
+    id: "3219",
+    name: "Mr. Sanjay Mathapati",
+    designation: "Assistant Professor",
+    department: "MCA",
+    qualification: "ADCA MCM MCA",
+    doj: "22/09/2025",
+    dob: "22/01/1975",
+    image: "/faculty/final_Icem_branding/mca/Mr. Sanjay Mathapati.webp",
+  },
+  {
+    sn: 6,
+    id: "3264",
+    name: "Dr. Bhushan Ashokrao Nikam",
+    designation: "Assistant Professor",
+    department: "MCA",
+    qualification: "B.Sc M.Sc MCA Ph.D NET",
+    doj: "08/01/2026",
+    dob: "23/04/1973",
+    image: "/faculty/final_Icem_branding/mca/Dr. Bhushan Nikam.webp",
+  },
+  {
+    sn: 7,
+    id: "3274",
+    name: "Mrs. Vaishali Sachin Hatkar",
+    designation: "Assistant Professor",
+    department: "MCA",
+    qualification: "BCA MCA",
+    doj: "03/02/2026",
+    dob: "28/10/1998",
+    image: "/faculty/final_Icem_branding/mca/Mrs. Vaishali Hatkar.webp",
+  },
+];
 
 // ================== SYLLABUS DATA ==================
 const syllabusList = [
@@ -199,6 +281,10 @@ export default function FAQMCA() {
       type: "syllabus",
       content: syllabusList,
     },
+    "Staff": {
+      type: "staff",
+      content: staffData,
+    },
     Activities: {
       type: "activities",
       content: activitiesList,
@@ -331,6 +417,103 @@ export default function FAQMCA() {
                   View / Download
                 </a>
               </div>
+            ))}
+          </div>
+        );
+      case "staff":
+        const StaffPhoto = ({ src, alt }) => {
+          const [currentSrc, setCurrentSrc] = useState(src || "/faculty/newFaculty/placeholder.avif");
+          const [hasError, setHasError] = useState(false);
+
+          return hasError ? (
+            <div className="w-32 h-40 flex items-center justify-center rounded-lg mb-4 bg-gray-100 shadow-sm border border-gray-100">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-full h-full p-2 text-gray-300"
+                aria-hidden="true"
+              >
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" />
+                <path d="M18.36 16.46a7 7 0 00-12.72 0c-.35.58.1 1.28.77 1.28h11.38c.66 0 1.12-.7.57-1.28z" />
+              </svg>
+            </div>
+          ) : (
+            <div className="w-32 h-40 overflow-hidden rounded-lg mb-4 bg-gray-100 shadow-sm border border-gray-100">
+              <Image
+                src={currentSrc}
+                alt={alt}
+                width={128}
+                height={160}
+                className="w-full h-full object-cover object-top"
+                onError={() => {
+                  setHasError(true);
+                }}
+              />
+            </div>
+          );
+        };
+
+        return (
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 px-4">
+            {data.content.map((staff, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.05, duration: 0.3 }}
+                className="bg-white rounded-xl shadow-md border border-gray-200 flex flex-col items-center text-center p-5 hover:shadow-lg transition-all duration-300"
+              >
+                <StaffPhoto src={staff.image} alt={staff.name} />
+
+                <div className="w-full flex-1 flex flex-col">
+                  <h4 className="font-bold text-gray-900 mb-1 leading-snug">
+                    {staff.name}
+                  </h4>
+                  <p className="text-blue-700 font-semibold text-xs mb-4 uppercase tracking-wider">
+                    {staff.designation}
+                  </p>
+
+                  <div className="mt-auto pt-4 border-t border-gray-100 space-y-2 text-left">
+                    <div className="text-[11px]">
+                      <span className="text-gray-400 font-bold uppercase mr-1">
+                        ID NO:
+                      </span>
+                      <span className="text-gray-700 font-medium font-mono">
+                        {staff.id}
+                      </span>
+                    </div>
+                    <div className="text-[11px]">
+                      <span className="text-gray-400 font-bold uppercase mr-1">
+                        Qualification:
+                      </span>
+                      <span className="text-gray-700 font-medium">
+                        {staff.qualification}
+                      </span>
+                    </div>
+                    <div className="text-[11px]">
+                      <span className="text-gray-400 font-bold uppercase mr-1">
+                        Joining Date:
+                      </span>
+                      <span className="text-gray-700 font-medium font-mono">
+                        {staff.doj}
+                      </span>
+                    </div>
+                    <div className="text-[11px]">
+                      <span className="text-gray-400 font-bold uppercase mr-1">
+                        Birth Date:
+                      </span>
+                      <span className="text-gray-700 font-medium font-mono">
+                        {staff.dob}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
             ))}
           </div>
         );

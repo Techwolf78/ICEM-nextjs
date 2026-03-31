@@ -2,6 +2,143 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import ProgramStaff from "../ProgramStaff";
+
+// ================== STAFF DATA ==================
+const staffData = [
+  {
+    sn: 1,
+    id: "2606",
+    name: "Dr. Saurabh Harishchand Gupta",
+    designation: "HOD",
+    department: "Mechanical",
+    qualification: "BE ME Ph.D",
+    doj: "11/12/2023",
+    dob: "25/12/1977",
+    image: "/faculty/final_icem_branding/mech/Dr. Saurabh Gupta.webp",
+  },
+  {
+    sn: 2,
+    id: "215",
+    name: "Dr. Mahesh Ganpat Bhong",
+    designation: "Associate Professor Dean (R&D)",
+    department: "Mechanical",
+    qualification: "ME Ph.D",
+    doj: "14/05/2007",
+    dob: "24/08/1982",
+    image: "/faculty/final_icem_branding/mech/Dr. Mahesh Bhong.webp",
+  },
+  {
+    sn: 3,
+    id: "422",
+    name: "Mr. Hemant Vasant Darokar",
+    designation: "Assistant Professor CEO (Exam)",
+    department: "Mechanical",
+    qualification: "ME",
+    doj: "01/12/2008",
+    dob: "12/04/1979",
+    image: "/faculty/final_icem_branding/mech/Mr. Hemant Darokar.webp",
+  },
+  {
+    sn: 4,
+    id: "594",
+    name: "Mr. Sushil Bhaskarrao Chopade",
+    designation: "Assistant Professor Dean (IIC)",
+    department: "Mechanical",
+    qualification: "ME",
+    doj: "21/12/2009",
+    dob: "27/08/1985",
+    image: "/faculty/final_icem_branding/mech/Mr. Sushil Chopade.webp",
+  },
+  {
+    sn: 5,
+    id: "624",
+    name: "Ms. Shubhangi Ashish Manwatkar",
+    designation: "Assistant Professor",
+    department: "Mechanical",
+    qualification: "ME",
+    doj: "02/07/2010",
+    dob: "17/03/1983",
+    image: "/faculty/final_icem_branding/mech/Mrs. Shubhangi Manwatkar.webp",
+  },
+  {
+    sn: 6,
+    id: "643",
+    name: "Mr. Siddheshwar Suresh Shirbhate",
+    designation: "Assistant Professor",
+    department: "Mechanical",
+    qualification: "ME",
+    doj: "03/09/2010",
+    dob: "19/09/1983",
+    image: "/faculty/final_icem_branding/mech/Mr. Siddheshwar Shirbhate.webp",
+  },
+  {
+    sn: 7,
+    id: "739",
+    name: "Mr. Vishal Abhiman Meshram",
+    designation: "Assistant Professor & TPO",
+    department: "Mechanical",
+    qualification: "ME",
+    doj: "01/12/2010",
+    dob: "15/08/1985",
+    image: "/faculty/final_icem_branding/mech/Mr. Vishal Meshram.webp",
+  },
+  {
+    sn: 8,
+    id: "964",
+    name: "Mrs. Ashwini Atul Admane",
+    designation: "Assistant Professor",
+    department: "Mechanical",
+    qualification: "ME",
+    doj: "30/07/2012",
+    dob: "21/03/1985",
+    image: "/faculty/final_icem_branding/mech/Mrs. Ashwini Admane.webp",
+  },
+  {
+    sn: 9,
+    id: "1288",
+    name: "Mrs. Pranali Balasaheb Khatake",
+    designation: "Assistant Professor",
+    department: "Mechanical",
+    qualification: "ME",
+    doj: "15/06/2015",
+    dob: "29/05/1985",
+    image: "/faculty/final_icem_branding/mech/Mrs. Pranali Khatake.webp",
+  },
+  {
+    sn: 10,
+    id: "1456",
+    name: "Ms. Ashwini Sadashiv Gaikwad",
+    designation: "Assistant Professor",
+    department: "Mechanical",
+    qualification: "M.Tech",
+    doj: "11/07/2016",
+    dob: "23/02/1990",
+    image: "/faculty/final_icem_branding/mech/Mrs. Ashwini Gaikwad.webp",
+  },
+  {
+    sn: 11,
+    id: "1519",
+    name: "Mr. Amit Gangadhar Narwade",
+    designation: "Assistant Professor",
+    department: "Mechanical",
+    qualification: "M.Tech",
+    doj: "23/01/2017",
+    dob: "10/12/1990",
+    image: "/faculty/final_icem_branding/mech/Mr. Amit Narwade.webp",
+  },
+  {
+    sn: 12,
+    id: "1520",
+    name: "Mr. Sagar Uttamrao Chirade",
+    designation: "Assistant Professor",
+    department: "Mechanical",
+    qualification: "ME",
+    doj: "23/01/2017",
+    dob: "10/12/1984",
+    image: "/faculty/final_icem_branding/mech/Mr. Sagar Chirade.webp",
+  },
+];
 
 // ================== SYLLABUS DATA ==================
 const syllabusList = [
@@ -335,6 +472,10 @@ export default function FAQMECH() {
     //   type: "mechLabs",
     //   content: mechanicalLabs,
     // },
+    "Staff": {
+      type: "staff",
+      content: staffData,
+    },
   };
 
   const tabs = Object.keys(sectionContent);
@@ -424,6 +565,96 @@ export default function FAQMECH() {
 
       case "notice":
         return <p className="text-gray-600 text-lg">{data.content}</p>;
+      case "staff":
+        const StaffPhoto = ({ src, alt }) => {
+          const [currentSrc, setCurrentSrc] = useState(src || "/faculty/newFaculty/placeholder.avif");
+          const [hasError, setHasError] = useState(false);
+
+          return hasError ? (
+            <div className="w-32 h-40 flex items-center justify-center rounded-lg mb-4 bg-gray-100 shadow-sm border border-gray-100">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-full h-full p-2 text-gray-300"
+                aria-hidden="true"
+              >
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" />
+                <path d="M18.36 16.46a7 7 0 00-12.72 0c-.35.58.1 1.28.77 1.28h11.38c.66 0 1.12-.7.57-1.28z" />
+              </svg>
+            </div>
+          ) : (
+            <div className="w-32 h-40 overflow-hidden rounded-lg mb-4 bg-gray-100 shadow-sm border border-gray-100">
+              <Image
+                src={currentSrc}
+                alt={alt}
+                width={128}
+                height={160}
+                className="w-full h-full object-cover object-top"
+                onError={() => {
+                  setHasError(true);
+                }}
+              />
+            </div>
+          );
+        };
+
+        return (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-4">
+            {data.content.map((staff, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-xl shadow-md border border-gray-200 flex flex-col items-center text-center p-5 hover:shadow-lg transition-all duration-300"
+              >
+                <StaffPhoto src={staff.image} alt={staff.name} />
+
+                <div className="w-full flex-1 flex flex-col">
+                  <h4 className="font-bold text-gray-900 mb-1 leading-snug">
+                    {staff.name}
+                  </h4>
+                  <p className="text-blue-700 font-semibold text-xs mb-4 uppercase tracking-wider">
+                    {staff.designation}
+                  </p>
+
+                  <div className="mt-auto pt-4 border-t border-gray-100 space-y-2 text-left">
+                    <div className="text-[11px]">
+                      <span className="text-gray-400 font-bold uppercase mr-1">
+                        Department:
+                      </span>
+                      <span className="text-gray-700 font-medium">
+                        {staff.department}
+                      </span>
+                    </div>
+                    <div className="text-[11px]">
+                      <span className="text-gray-400 font-bold uppercase mr-1">
+                        Qualification:
+                      </span>
+                      <span className="text-gray-700 font-medium">
+                        {staff.qualification}
+                      </span>
+                    </div>
+                    <div className="text-[11px]">
+                      <span className="text-gray-400 font-bold uppercase mr-1">
+                        Joining Date:
+                      </span>
+                      <span className="text-gray-700 font-medium">{staff.doj}</span>
+                    </div>
+                    <div className="text-[11px]">
+                      <span className="text-gray-400 font-bold uppercase mr-1">
+                        Birth Date:
+                      </span>
+                      <span className="text-gray-700 font-medium">{staff.dob}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        );
       case "table":
         return (
           <div className="overflow-x-auto border border-gray-200 rounded-lg">
@@ -485,6 +716,8 @@ export default function FAQMECH() {
 
       default:
         return null;
+      case "staff":
+        return <ProgramStaff staffData={data.content} />;
     }
   };
 

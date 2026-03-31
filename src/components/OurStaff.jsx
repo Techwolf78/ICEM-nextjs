@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
@@ -36,158 +36,158 @@ const staffData = [
     "imagePath": "/Final_Icem_branding/fe/Dr. Atul Gore.webp"
   },
   {
-    "Sr.No.": "4",
-    "ID No": "1883",
-    "Name of the staff ": "Dr. Kiran Dattatray Devade",
-    "Designation": "Professor & HOD",
-    "Department": "FE",
-    "Qualification": "Ph.D., ME",
-    "DOJ": "02.11.2020",
-    "DOB": "09.08.1980",
-    "imagePath": "/Final_Icem_branding/fe/Dr. Kiran Devade.webp"
+    sn: 4,
+    id: "1883",
+    name: "Dr. Kiran Dattatray Devade",
+    designation: "Professor & HOD",
+    department: "FE",
+    qualification: "Ph.D ME",
+    doj: "02/11/2020",
+    dob: "09/08/1980",
+    image: "/faculty/final_icem_branding/fe/Dr. Kiran Devade.jpg"
   },
   {
-    "Sr.No.": "5",
-    "ID No": "984",
-    "Name of the staff ": "Dr. Manjusha Ashwin Tomar",
-    "Designation": "Associate Professor",
-    "Department": "FE",
-    "Qualification": "Ph.D, M.Sc",
-    "DOJ": "26.09.2012",
-    "DOB": "25.06.1973",
-    "imagePath": "/Final_Icem_branding/fe/Dr. Manjusha Tomar.webp"
+    sn: 5,
+    id: "984",
+    name: "Dr. Manjusha Ashwin Tomar",
+    designation: "Associate Professor",
+    department: "FE",
+    qualification: "Ph.D M.Sc",
+    doj: "26/09/2012",
+    dob: "25/06/1973",
+    image: "/faculty/final_icem_branding/fe/Dr. Manjusha Tomar.jpg"
   },
   {
-    "Sr.No.": "6",
-    "ID No": "1516",
-    "Name of the staff ": "Dr. Avinash Santaram Bansode",
-    "Designation": "Assistant Professor",
-    "Department": "FE",
-    "Qualification": "Ph.D.M.Phil, M.Sc, B.Sc",
-    "DOJ": "24.01.2017",
-    "DOB": "13.03.1980",
-    "imagePath": "/Final_Icem_branding/fe/Dr. Avinash Bansode.webp"
+    sn: 6,
+    id: "1516",
+    name: "Dr. Avinash Santaram Bansode",
+    designation: "Assistant Professor",
+    department: "FE",
+    qualification: "Ph.D M.Phil M.Sc B.Sc",
+    doj: "24/01/2017",
+    dob: "13/03/1980",
+    image: "/faculty/final_icem_branding/fe/Dr. Avinash Bansode.jpg"
   },
   {
-    "Sr.No.": "7",
-    "ID No": "465",
-    "Name of the staff ": "Mrs. Pratima Amrut Gaikwad",
-    "Designation": "Assistant Professor",
-    "Department": "FE",
-    "Qualification": "ME",
-    "DOJ": "29.08.2009",
-    "DOB": "06.05.1985",
-    "imagePath": "/Final_Icem_branding/fe/Mrs. Pratima Gaikwad.webp"
+    sn: 7,
+    id: "465",
+    name: "Mrs. Pratima Amrut Gaikwad",
+    designation: "Assistant Professor",
+    department: "FE",
+    qualification: "ME",
+    doj: "29/08/2009",
+    dob: "06/05/1985",
+    image: "/faculty/final_icem_branding/fe/Mrs. Pratima Gaikwad.jpg"
   },
   {
-    "Sr.No.": "8",
-    "ID No": "645",
-    "Name of the staff ": "Mrs. Supriya Deepak Kumbhar",
-    "Designation": "Assistant Professor",
-    "Department": "FE",
-    "Qualification": "ME",
-    "DOJ": "03.09.2010",
-    "imagePath": "/Final_Icem_branding/fe/Mrs. Supriya Kumbhar.webp",
-    "DOB": "30.06.1983"
+    sn: 8,
+    id: "645",
+    name: "Mrs. Supriya Deepak Kumbhar",
+    designation: "Assistant Professor",
+    department: "FE",
+    qualification: "ME",
+    doj: "03/09/2010",
+    dob: "30/06/1983",
+    image: "/faculty/final_icem_branding/fe/Mrs. Supriya Kumbhar.jpg"
   },
   {
-    "Sr.No.": "9",
-    "ID No": "1290",
-    "Name of the staff ": "Mr. Ashwin Shriram Dharme",
-    "Designation": "Assistant Professor & Dean Admissions",
-    "Department": "FE",
-    "Qualification": "MBA, ME",
-    "imagePath": "/Final_Icem_branding/fe/Ashwin Dharme.webp",
-    "DOJ": "15.06.2015",
-    "DOB": "11.05.1986"
+    sn: 9,
+    id: "1290",
+    name: "Mr. Ashwin Shriram Dharme",
+    designation: "Assistant Professor & Dean Admissions",
+    department: "FE",
+    qualification: "MBA ME",
+    doj: "15/06/2015",
+    dob: "11/05/1986",
+    image: "/faculty/final_icem_branding/fe/Ashwin Dharme.jpg"
   },
   {
-    "Sr.No.": "10",
-    "ID No": "3094",
-    "Name of the staff ": "Dr. Mandakini Sanjay Dahiwade",
-    "Designation": "Assistant Professor",
-    "Department": "FE",
-    "imagePath": "/Final_Icem_branding/fe/Dr. Mandakini Dahiwade.webp",
-    "Qualification": "B.Sc.,M.Sc,M.Phil,Ph.D",
-    "DOJ": "7/1/2024",
-    "DOB": "02.05.1988"
+    sn: 10,
+    id: "3094",
+    name: "Dr. Mandakini Sanjay Dahiwade",
+    designation: "Assistant Professor",
+    department: "FE",
+    qualification: "B.Sc M.Sc M.Phil Ph.D",
+    doj: "07/01/2024",
+    dob: "02/05/1988",
+    image: "/faculty/final_icem_branding/fe/Dr. Mandakini Dahiwade.JPG"
   },
   {
-    "Sr.No.": "11",
-    "ID No": "3108",
-    "Name of the staff ": "Mrs. Priyanka Harshal Mahajan",
-    "Designation": "Assistant Professor",
-    "Department": "FE",
-    "imagePath": "/Final_Icem_branding/fe/Prof. Priyanka Mahajan.webp",
-    "Qualification": "ME",
-    "DOJ": "8/12/2024",
-    "DOB": "07.01.1992"
+    sn: 11,
+    id: "3108",
+    name: "Mrs. Priyanka Harshal Mahajan",
+    designation: "Assistant Professor",
+    department: "FE",
+    qualification: "ME",
+    doj: "08/12/2024",
+    dob: "07/01/1992",
+    image: "/faculty/final_icem_branding/fe/Prof. Priyanka Mahajan.jpg"
   },
   {
-    "Sr.No.": "12",
-    "ID No": "3116",
-    "Name of the staff ": "Ms. Trupti Nandkumar Kathale",
-    "Designation": "Assistant Professor",
-    "imagePath": "/Final_Icem_branding/fe/Trupti Kathale.webp",
-    "Department": "FE",
-    "Qualification": "B.Sc.,M.Sc.",
-    "DOJ": "10/1/2024",
-    "DOB": "01.06.1985"
+    sn: 12,
+    id: "3116",
+    name: "Ms. Trupti Nandkumar Kathale",
+    designation: "Assistant Professor",
+    department: "FE",
+    qualification: "B.Sc M.Sc",
+    doj: "10/01/2024",
+    dob: "01/06/1985",
+    image: "/faculty/final_icem_branding/fe/Trupti Kathale.jpg"
   },
   {
-    "Sr.No.": "13",
-    "ID No": "3117",
-    "Name of the staff ": "Mr. Raghunandan Vinayakrao Kale",
-    "imagePath": "/Final_Icem_branding/fe/Raghunandan sir photo.webp",
-    "Designation": "Assistant Professor",
-    "Department": "FE",
-    "Qualification": "B.Sc, M.Sc.",
-    "DOJ": "10/3/2024",
-    "DOB": "28.03.1998"
+    sn: 13,
+    id: "3117",
+    name: "Mr. Raghunandan Vinayakrao Kale",
+    designation: "Assistant Professor",
+    department: "FE",
+    qualification: "B.Sc M.Sc",
+    doj: "10/03/2024",
+    dob: "28/03/1998",
+    image: "/faculty/final_icem_branding/fe/Raghunandan sir photo.jpg"
   },
   {
-    "Sr.No.": "14",
-    "ID No": "3118",
-    "Name of the staff ": "Mr. Swapnil Machhindra Chaudhari",
-    "imagePath": "/Final_Icem_branding/fe/Swapnil choudhary.webp",
-    "Designation": "Assistant Professor",
-    "Department": "FE",
-    "Qualification": "B.Sc, M.Tech.",
-    "DOJ": "10/7/2024",
-    "DOB": "02.06.1993"
+    sn: 14,
+    id: "3118",
+    name: "Mr. Swapnil Machhindra Chaudhari",
+    designation: "Assistant Professor",
+    department: "FE",
+    qualification: "B.Sc M.Tech",
+    doj: "10/07/2024",
+    dob: "02/06/1993",
+    image: "/faculty/final_icem_branding/fe/Swapnil choudhary.jpg"
   },
   {
-    "Sr.No.": "15",
-    "ID No": "3220",
-    "imagePath": "/Final_Icem_branding/fe/Dr. Dayanand Kamble.webp",
-    "Name of the staff ": "Dr. Dyanand Ambadas Kamble",
-    "Designation": "Assistant Professor",
-    "Department": "FE",
-    "Qualification": "Ph.D BSC ,MSC,,POST DOCTRATE",
-    "DOJ": "9/22/2025",
-    "DOB": "23.10.1982"
+    sn: 15,
+    id: "3220",
+    name: "Dr. Dyanand Ambadas Kamble",
+    designation: "Assistant Professor",
+    department: "FE",
+    qualification: "Ph.D B.Sc M.Sc Post Doctorate",
+    doj: "22/09/2025",
+    dob: "23/10/1982",
+    image: "/faculty/final_icem_branding/fe/Dr. Dayanand Kamble.JPG"
   },
   {
-    "Sr.No.": "16",
-    "ID No": "3224",
-    "imagePath": "/Final_Icem_branding/fe/Mr. Shubham Rathod.webp",
-    "Name of the staff ": "Mr. Rathod Shubham Shrikant",
-    "Designation": "Assistant Professor",
-    "Department": "FE",
-    "Qualification": "B.Sc, M.Sc.",
-    "DOJ": "10/1/2025",
-    "DOB": "03.01.1995"
+    sn: 16,
+    id: "3224",
+    name: "Mr. Rathod Shubham Shrikant",
+    designation: "Assistant Professor",
+    department: "FE",
+    qualification: "B.Sc M.Sc",
+    doj: "01/10/2025",
+    dob: "03/01/1995",
+    image: "/faculty/final_icem_branding/fe/Mr. Shubham Rathod.JPG"
   },
   {
-    "Sr.No.": "17",
-    "ID No": "3225",
-    "imagePath": "/Final_Icem_branding/fe/Mr. Rishikesh Sonawane.webp",
-    "Name of the staff ": "Mr. Rishikesh Devendra Sonawane",
-    "Designation": "Assistant Professor",
-    "Department": "FE",
-    "Qualification": "BE Mech",
-    "DOJ": "6/10/2025",
-    "DOB": "05.10.1998"
+    sn: 17,
+    id: "3225",
+    name: "Mr. Rishikesh Devendra Sonawane",
+    designation: "Assistant Professor",
+    department: "FE",
+    qualification: "BE Mech",
+    doj: "10/06/2025",
+    dob: "05/10/1998",
+    image: "/faculty/final_icem_branding/fe/Mr. Rishikesh Sonawane.JPG"
   },
   {
     "Sr.No.": "18",
@@ -918,7 +918,8 @@ export default function OurStaff() {
 
   // Group visible staff by department
   const groupedStaff = staffData.reduce((acc, staff) => {
-    const dept = staff.Department.trim();
+    const rawDept = staff.Department || staff.department;
+    const dept = rawDept ? rawDept.trim() : "Other";
     if (!acc[dept]) {
       acc[dept] = [];
     }
@@ -982,43 +983,52 @@ export default function OurStaff() {
                       </tr>
                     </thead>
                     <tbody>
-                      {staffList.map((staff, index) => (
-                        <tr key={staff["ID No"]} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                          <td className="border border-gray-300 p-2">
-                            {staff.imagePath ? (
-                              <img
-                                src={staff.imagePath}
-                                alt={staff["Name of the staff "]}
-                                className="w-12 h-12 rounded-full object-cover"
-                                onError={() => {
-                                  setBrokenImageStaffIds((prev) => ({
-                                    ...prev,
-                                    [staff["ID No"]]: true,
-                                  }));
-                                }}
-                              />
-                            ) : (
-                              <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
-                                <span className="text-xs text-gray-600">
-                                  {staff["Name of the staff "].split(" ").map(n => n[0]).join("").toUpperCase()}
-                                </span>
-                              </div>
-                            )}
-                          </td>
-                          <td className="border border-gray-300 p-2 font-medium">
-                            {staff["Name of the staff "]}
-                          </td>
-                          <td className="border border-gray-300 p-2">
-                            {staff.Designation}
-                          </td>
-                          <td className="border border-gray-300 p-2">
-                            {staff.Qualification}
-                          </td>
-                          <td className="border border-gray-300 p-2">
-                            {staff.DOJ}
-                          </td>
-                        </tr>
-                      ))}
+                      {staffList.map((staff, index) => {
+                        const id = staff["ID No"] || staff.id;
+                        const name = staff["Name of the staff "] || staff.name;
+                        const designation = staff.Designation || staff.designation;
+                        const qualification = staff.Qualification || staff.qualification;
+                        const doj = staff.DOJ || staff.doj;
+                        const imageSource = staff.imagePath || staff.image;
+
+                        return (
+                          <tr key={id} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                            <td className="border border-gray-300 p-2">
+                              {imageSource ? (
+                                <img
+                                  src={imageSource}
+                                  alt={name}
+                                  className="w-12 h-12 rounded-full object-cover"
+                                  onError={() => {
+                                    setBrokenImageStaffIds((prev) => ({
+                                      ...prev,
+                                      [id]: true,
+                                    }));
+                                  }}
+                                />
+                              ) : (
+                                <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
+                                  <span className="text-xs text-gray-600">
+                                    {name ? name.split(" ").map(n => n[0]).join("").toUpperCase() : "NA"}
+                                  </span>
+                                </div>
+                              )}
+                            </td>
+                            <td className="border border-gray-300 p-2 font-medium">
+                              {name}
+                            </td>
+                            <td className="border border-gray-300 p-2">
+                              {designation}
+                            </td>
+                            <td className="border border-gray-300 p-2">
+                              {qualification}
+                            </td>
+                            <td className="border border-gray-300 p-2">
+                              {doj}
+                            </td>
+                          </tr>
+                        );
+                      })}
                     </tbody>
                   </table>
                 </div>

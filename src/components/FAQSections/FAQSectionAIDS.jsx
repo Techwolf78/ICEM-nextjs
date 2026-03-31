@@ -2,8 +2,78 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 // ================== DATA SECTION ==================
+const staffData = [
+  {
+    sn: 1,
+    id: "472",
+    name: "Dr. Manjusha Rahul Tatiya",
+    designation: "Associate Professor & HOD",
+    department: "AIDS",
+    qualification: "Ph.D ME",
+    doj: "01/07/2009",
+    dob: "30/01/1983",
+    image: "/faculty/final_icem_branding/aids/Dr. Manjusha Tatiya.webp",
+  },
+  {
+    sn: 2,
+    id: "3096",
+    name: "Mrs. Deepa Vishal Padwal",
+    designation: "Assistant Professor",
+    department: "AIDS",
+    qualification: "B.E ME",
+    doj: "01/07/2024",
+    dob: "09/02/1992",
+    image: "/faculty/final_icem_branding/aids/Mrs. Deepa KadamPadwal.webp",
+  },
+  {
+    sn: 3,
+    id: "3101",
+    name: "Ms. Pallavi Laxmikant Chavan",
+    designation: "Assistant Professor",
+    department: "AIDS",
+    qualification: "B.Tech M.Tech",
+    doj: "01/07/2024",
+    dob: "17/09/1996",
+    image: "/faculty/final_icem_branding/aids/Pallavi Chavan.webp",
+  },
+  {
+    sn: 4,
+    id: "3170",
+    name: "Mrs. Monika Amol Patil",
+    designation: "Assistant Professor",
+    department: "AIDS",
+    qualification: "Dip BE ME",
+    doj: "07/01/2025",
+    dob: "05/10/1992",
+    image: "/faculty/final_icem_branding/aids/Mrs. Monika Patil.webp",
+  },
+  {
+    sn: 5,
+    id: "3263",
+    name: "Mrs. Kavita Sharma",
+    designation: "Assistant Professor",
+    department: "AIDS",
+    qualification: "M.Tech MSc PG Computer Application",
+    doj: "14/01/2026",
+    dob: "10/07/1982",
+    image: "/faculty/final_icem_branding/aids/Mrs. Kavita Sharma.webp",
+  },
+  {
+    sn: 6,
+    id: "3267",
+    name: "Mr. Vivek Kumar Sohagaura",
+    designation: "Assistant Professor",
+    department: "AIDS",
+    qualification: "B.E M.Tech Computer Science",
+    doj: "23/01/2026",
+    dob: "18/12/1990",
+    image: "/faculty/final_icem_branding/aids/Vivek Sohagora.webp",
+  },
+];
+
 const sanctionIntake = [
   {
     program: "B.Tech AIDS Engineering",
@@ -163,6 +233,7 @@ export default function FAQSectionAIDS() {
 
             {[
               "Overview",
+              "Staff",
               "Sanction Intake",
               "Eligibility Criteria",
               "Admission Procedure",
@@ -240,6 +311,106 @@ export default function FAQSectionAIDS() {
                 ))}
               </div>
             )}
+
+            {/* ================= STAFF ================= */}
+            {active === "Staff" && (() => {
+              const StaffPhoto = ({ src, alt }) => {
+                const [currentSrc, setCurrentSrc] = useState(src || "/faculty/newFaculty/placeholder.avif");
+                const [hasError, setHasError] = useState(false);
+
+                return hasError ? (
+                  <div className="w-32 h-40 flex items-center justify-center rounded-lg mb-4 bg-gray-100 shadow-sm border border-gray-100">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="w-full h-full p-2 text-gray-300"
+                      aria-hidden="true"
+                    >
+                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" />
+                      <path d="M18.36 16.46a7 7 0 00-12.72 0c-.35.58.1 1.28.77 1.28h11.38c.66 0 1.12-.7.57-1.28z" />
+                    </svg>
+                  </div>
+                ) : (
+                  <div className="w-32 h-40 overflow-hidden rounded-lg mb-4 bg-gray-100 shadow-sm border border-gray-100">
+                    <Image
+                      src={currentSrc}
+                      alt={alt}
+                      width={128}
+                      height={160}
+                      className="w-full h-full object-cover object-top"
+                      onError={() => {
+                        setHasError(true);
+                      }}
+                    />
+                  </div>
+                );
+              };
+
+              return (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-4">
+                  {staffData.map((staff, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.05, duration: 0.3 }}
+                      className="bg-white rounded-xl shadow-md border border-gray-200 flex flex-col items-center text-center p-5 hover:shadow-lg transition-all duration-300"
+                    >
+                      <StaffPhoto src={staff.image} alt={staff.name} />
+
+                      <div className="w-full flex-1 flex flex-col">
+                        <h4 className="font-bold text-gray-900 mb-1 leading-snug">
+                          {staff.name}
+                        </h4>
+                        <p className="text-blue-700 font-semibold text-xs mb-4 uppercase tracking-wider">
+                          {staff.designation}
+                        </p>
+
+                        <div className="mt-auto pt-4 border-t border-gray-100 space-y-2 text-left">
+                          <div className="text-[11px]">
+                            <span className="text-gray-400 font-bold uppercase mr-1">
+                              ID NO:
+                            </span>
+                            <span className="text-gray-700 font-medium">
+                              {staff.id}
+                            </span>
+                          </div>
+                          <div className="text-[11px]">
+                            <span className="text-gray-400 font-bold uppercase mr-1">
+                              Qualification:
+                            </span>
+                            <span className="text-gray-700 font-medium">
+                              {staff.qualification}
+                            </span>
+                          </div>
+                          <div className="text-[11px]">
+                            <span className="text-gray-400 font-bold uppercase mr-1">
+                              Joining Date:
+                            </span>
+                            <span className="text-gray-700 font-medium">
+                              {staff.doj}
+                            </span>
+                          </div>
+                          <div className="text-[11px]">
+                            <span className="text-gray-400 font-bold uppercase mr-1">
+                              Birth Date:
+                            </span>
+                            <span className="text-gray-700 font-medium">
+                              {staff.dob}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              );
+            })()}
 
             {/* ================= SANCTION INTAKE ================= */}
             {active === "Sanction Intake" && (

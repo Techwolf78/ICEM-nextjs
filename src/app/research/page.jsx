@@ -6,7 +6,7 @@ import { useState } from "react";
 import PhdGuidesTable2223 from "@/components/research/PhdGuidesTable2223";
 import PhdGuidesTable2425 from "@/components/research/PhdGuidesTable2425";
 import ExpandableTableSection from "@/components/research/ExpandableSection";
-import PhdGuidesTable2324 from "@/components/research/PhdGuidesTable2223";
+import PhdGuidesTable2324 from "@/components/research/PhdGuidesTable2324";
 import RDCommitteeTable2425 from "@/components/research/RDCommitteeTable2425";
 import RDCommitteeTableGeneral from "@/components/research/RDCommitteeTableGeneral";
 import RDCommitteeTable2324 from "@/components/research/RDCommitteeTable2324";
@@ -27,8 +27,15 @@ import {
 } from "lucide-react";
 
 const Research = () => {
-  const [activeAccordion, setActiveAccordion] = useState(null);
   const [activeTab, setActiveTab] = useState("Overview");
+  const [activeAccordion, setActiveAccordion] = useState(0);
+  const [showBrochureModal, setShowBrochureModal] = useState(false);
+
+  // Reset accordion when tab changes
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    setActiveAccordion(0);
+  };
 
   const stats = [
     { number: "5", label: "UGC Care Group 1", icon: FileCheck },
@@ -379,10 +386,11 @@ const Research = () => {
                   "Research Activities",
                   "Research Policy",
                   "Research Committee",
+                  "Conferences",
                 ].map((tab, i) => (
                   <li
                     key={i}
-                    onClick={() => setActiveTab(tab)}
+                    onClick={() => handleTabChange(tab)}
                     className={`p-3 rounded-md cursor-pointer font-medium text-sm md:text-base ${
                       activeTab === tab
                         ? "bg-tertiary border-l-4 border-secondary text-secondary"
@@ -397,205 +405,81 @@ const Research = () => {
 
             {/* Right Accordion */}
             <div className="lg:w-3/4 bg-white shadow-md border border-gray-200 rounded-lg">
-              {/* Overview Accordion */}
+              {/* Overview Section */}
               {activeTab === "Overview" && (
-                <>
-                  {[
-                    {
-                      title: "1. About the R&D Cell",
-                      content: (
-                        <>
-                          <p className="text-secondary text-sm md:text-base">
-                            Indira College of Engineering and Management is
-                            committed to inculcate research culture among
-                            faculty, researchers and students. The R&D Cell aims
-                            to develop and promote research and development
-                            activities to realize the vision and mission of the
-                            college. The research areas of academic, practical
-                            and social significance will be identified and thus
-                            contributing to the nation development.
-                          </p>
-                          <p className="mt-3 text-secondary text-sm md:text-base">
-                            The research policy defines the applicable rules and
-                            regulations to be adhered while carrying out various
-                            research activities and norms related to safe and
-                            ethical conduct of research. The R&D Cell provides
-                            guidance to faculty members and students
-                            consistently to write research papers, research
-                            projects and IPR activities. The management
-                            encourages all faculty members and students by
-                            providing financial assistance for research paper
-                            presentation, attending national/international
-                            conferences, publishing books and filing copyrights
-                            and patents. To encourage innovative ideas and
-                            competitive projects, the Institute provides Seed
-                            funding to the research projects to develop
-                            prototype and testing.
-                          </p>
-                        </>
-                      ),
-                    },
-                    {
-                      title: "2. Objectives",
-                      content: (
-                        <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
-                          <li>
-                            To identify and inform all researchers about the
-                            research opportunities available in academic,
-                            industry, government and research organizations.
-                          </li>
-                          <li>
-                            To provide a conducive environment and motivation
-                            for undertaking interdisciplinary projects and
-                            research.
-                          </li>
-                          <li>
-                            To facilitate the presentation of research work in
-                            national/international conferences and enhance
-                            publication standards.
-                          </li>
-                          <li>
-                            To establish centers of excellence in association
-                            with industries and undertake joint research
-                            projects.
-                          </li>
-                          <li>
-                            To establish long-term relationships with research
-                            organizations to widen funding and research scope.
-                          </li>
-                          <li>
-                            To encourage participative research and promote
-                            internal funded projects and consultancy services.
-                          </li>
-                          <li>
-                            To acquire membership of renowned professional
-                            bodies and build global institutional linkages.
-                          </li>
-                          <li>
-                            To ensure quality and uphold high standards of
-                            ethics and integrity in all research activities.
-                          </li>
-                        </ul>
-                      ),
-                    },
-                    {
-                      title: "3. Memorandums of Understanding (MoUs)",
-                      content: (
-                        <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
-                          <li>
-                            MoU with Consortium of Technical Education for
-                            innovative programs and research initiatives.
-                          </li>
-                          <li>
-                            MoU with Shashitek Company, Bangalore for
-                            internships and real-time tech projects.
-                          </li>
-                          <li>
-                            MoU with Cyber Secured India for cyber security and
-                            digital forensics training.
-                          </li>
-                          <li>
-                            MoU with RWTH Aachen University, Germany for
-                            collaborative research projects.
-                          </li>
-                          <li>
-                            MoU with Sahyadri Pratishthan Gad Samvardhan Samiti
-                            for environmental and heritage awareness.
-                          </li>
-                          <li>
-                            MoU with India First Robotics Innovation and
-                            Research LLP for robotics training.
-                          </li>
-                          <li>
-                            MoU with IQAC Cluster India to support NAAC
-                            accreditation improvement.
-                          </li>
-                          <li>
-                            MoU with Gryphon Consultancy for training and
-                            placement opportunities.
-                          </li>
-                          <li>
-                            MoU with Edukerron to develop and monitor academic
-                            work plans and projects.
-                          </li>
-                          <li>
-                            MoU with Global Reach for international study tours,
-                            lectures, and workshops.
-                          </li>
-                          <li>
-                            MoU with MIT-ADT Incubator Forum for startup
-                            mentoring programs under NITI Aayog.
-                          </li>
-                        </ul>
-                      ),
-                    },
-                    {
-                      title: "4. Research & Development Documents",
-                      content: (
-                        <div className="space-y-4">
-                          <ExpandableTableSection
-                            title="Registered Ph.D Guides"
-                            tables={[
-                              {
-                                title: "AY [2024-2025]",
-                                component: <PhdGuidesTable2425 />,
-                              },
-                              {
-                                title: "AY [2023-2024]",
-                                component: <PhdGuidesTable2324 />,
-                              },
-                              {
-                                title: "AY [2022-2023]",
-                                component: <PhdGuidesTable2223 />,
-                              },
-                            ]}
-                          />
+                <div className="p-4 md:p-6">
+                  <h3 className="text-lg md:text-xl font-bold text-secondary mb-4">1. About the R&D Cell</h3>
+                  <p className="text-secondary text-sm md:text-base mb-4">
+                    Indira College of Engineering and Management is committed to inculcate research culture among faculty, researchers and students. The R&D Cell aims to develop and promote research and development activities to realize the vision and mission of the college. The research areas of academic, practical and social significance will be identified and thus contributing to the nation development.
+                  </p>
+                  <p className="text-secondary text-sm md:text-base mb-6">
+                    The research policy defines the applicable rules and regulations to be adhered while carrying out various research activities and norms related to safe and ethical conduct of research. The R&D Cell provides guidance to faculty members and students consistently to write research papers, research projects and IPR activities. The management encourages all faculty members and students by providing financial assistance for research paper presentation, attending national/international conferences, publishing books and filing copyrights and patents. To encourage innovative ideas and competitive projects, the Institute provides Seed funding to the research projects to develop prototype and testing.
+                  </p>
 
-                          <ExpandableTableSection
-                            title="Research & Development Committee"
-                            tables={[
-                              {
-                                title: "AY [2024-2025]",
-                                component: <RDCommitteeTable2425 />,
-                              },
-                              {
-                                title: "AY [2023-2024]",
-                                component: <RDCommitteeTable2324 />,
-                              },
-                              {
-                                title: "Committee Members",
-                                component: <RDCommitteeTableGeneral />,
-                              },
-                            ]}
-                          />
-                        </div>
-                      ),
-                    },
-                  ].map((section, i) => (
-                    <div key={i} className="border-b border-gray-200">
-                      <button
-                        onClick={() =>
-                          setActiveAccordion(activeAccordion === i ? null : i)
-                        }
-                        className={`w-full flex justify-between items-center p-3 md:p-4 text-left font-medium text-sm md:text-base ${
-                          activeAccordion === i
-                            ? "bg-secondary text-white"
-                            : "text-secondary hover:bg-tertiary"
-                        }`}
-                      >
-                        {section.title}
-                        <span className="text-xl font-bold">
-                          {activeAccordion === i ? "−" : "+"}
-                        </span>
-                      </button>
-                      {activeAccordion === i && (
-                        <div className="p-3 md:p-4 bg-tertiary text-secondary">
-                          {section.content}
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </>
+                  <h3 className="text-lg md:text-xl font-bold text-secondary mb-4">2. Objectives</h3>
+                  <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base mb-6">
+                    <li>To identify and inform all researchers about the research opportunities available in academic, industry, government and research organizations.</li>
+                    <li>To provide a conducive environment and motivation for undertaking interdisciplinary projects and research.</li>
+                    <li>To facilitate the presentation of research work in national/international conferences and enhance publication standards.</li>
+                    <li>To establish centers of excellence in association with industries and undertake joint research projects.</li>
+                    <li>To establish long-term relationships with research organizations to widen funding and research scope.</li>
+                    <li>To encourage participative research and promote internal funded projects and consultancy services.</li>
+                    <li>To acquire membership of renowned professional bodies and build global institutional linkages.</li>
+                    <li>To ensure quality and uphold high standards of ethics and integrity in all research activities.</li>
+                  </ul>
+
+                  <h3 className="text-lg md:text-xl font-bold text-secondary mb-4">3. Memorandums of Understanding (MoUs)</h3>
+                  <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base mb-6">
+                    <li>MoU with Consortium of Technical Education for innovative programs and research initiatives.</li>
+                    <li>MoU with Shashitek Company, Bangalore for internships and real-time tech projects.</li>
+                    <li>MoU with Cyber Secured India for cyber security and digital forensics training.</li>
+                    <li>MoU with RWTH Aachen University, Germany for collaborative research projects.</li>
+                    <li>MoU with Sahyadri Pratishthan Gad Samvardhan Samiti for environmental and heritage awareness.</li>
+                    <li>MoU with India First Robotics Innovation and Research LLP for robotics training.</li>
+                    <li>MoU with IQAC Cluster India to support NAAC accreditation improvement.</li>
+                    <li>MoU with Gryphon Consultancy for training and placement opportunities.</li>
+                    <li>MoU with Edukerron to develop and monitor academic work plans and projects.</li>
+                    <li>MoU with Global Reach for international study tours, lectures, and workshops.</li>
+                    <li>MoU with MIT-ADT Incubator Forum for startup mentoring programs under NITI Aayog.</li>
+                  </ul>
+
+                  <h3 className="text-lg md:text-xl font-bold text-secondary mb-4">4. Research & Development Documents</h3>
+                  <ExpandableTableSection
+                    title="Registered Ph.D Guides"
+                    tables={[
+                      {
+                        title: "AY [2024-2025]",
+                        component: <PhdGuidesTable2425 />,
+                      },
+                      {
+                        title: "AY [2023-2024]",
+                        component: <PhdGuidesTable2324 />,
+                      },
+                      {
+                        title: "AY [2022-2023]",
+                        component: <PhdGuidesTable2223 />,
+                      },
+                    ]}
+                  />
+
+                  <ExpandableTableSection
+                    title="Research & Development Committee"
+                    tables={[
+                      {
+                        title: "AY [2024-2025]",
+                        component: <RDCommitteeTable2425 />,
+                      },
+                      {
+                        title: "AY [2023-2024]",
+                        component: <RDCommitteeTable2324 />,
+                      },
+                      {
+                        title: "Committee Members",
+                        component: <RDCommitteeTableGeneral />,
+                      },
+                    ]}
+                  />
+                </div>
               )}
 
               {/* Publication Accordion */}
@@ -1163,10 +1047,147 @@ const Research = () => {
                   ))}
                 </div>
               )}
+
+              {/* Conferences Accordion */}
+              {activeTab === "Conferences" && (
+                <div className="bg-tertiary p-3 md:p-4 text-secondary">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-xs md:text-sm text-left">
+                      <thead className="bg-secondary text-white">
+                        <tr>
+                          <th className="p-2 border border-gray-300">Sr.No</th>
+                          <th className="p-2 border border-gray-300">Conference Name</th>
+                          <th className="p-2 border border-gray-300">Department</th>
+                          <th className="p-2 border border-gray-300">Date</th>
+                          <th className="p-2 border border-gray-300">Brochure</th>
+                          <th className="p-2 border border-gray-300">Website</th>
+                        </tr>
+                      </thead>
+                      <tbody className="bg-white divide-y divide-gray-200">
+                        <tr className="hover:bg-gray-50">
+                          <td className="p-2 border border-gray-300">1</td>
+                          <td className="p-2 border border-gray-300 font-medium">National Conference on Designing the Future: NCDFTS-2026</td>
+                          <td className="p-2 border border-gray-300">MBA</td>
+                          <td className="p-2 border border-gray-300">16th-17th April 2026</td>
+                          <td className="p-2 border border-gray-300 text-center">
+                            <button
+                              onClick={() => setShowBrochureModal(true)}
+                              className="text-blue-600 hover:underline font-medium"
+                            >
+                              View
+                            </button>
+                          </td>
+                          <td className="p-2 border border-gray-300 text-center">
+                            <a
+                              href="https://conferenceworld.in/conference.php?cID=1561"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-600 hover:underline font-medium"
+                            >
+                              Link
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Infinite Marquee Section - Balanced Professional Design */}
+        <div className="mt-8 md:mt-12 relative py-3 md:py-5 bg-white border-y border-gray-100 overflow-hidden shadow-sm">
+          <div className="marquee-mask">
+            <div className="animate-infinite-scroll flex items-center whitespace-nowrap gap-6 md:gap-12">
+              {[1, 2, 3, 4, 5, 6].map((_, i) => (
+                <div key={i} className="flex items-center gap-6 md:gap-12 flex-shrink-0">
+                  {/* ICEM MBA Branding */}
+                  <div className="flex items-center gap-2 md:gap-3">
+                    <span className=" text-[#00A2A5] font-black text-xl md:text-2xl tracking-tighter opacity-70">ICEM</span>
+                    <span className="text-gray-900 font-extrabold text-xs md:text-xl tracking-tight uppercase">MBA DEPARTMENT</span>
+                  </div>
+
+                  {/* Date Badge - Balanced */}
+                  <div className="flex items-center gap-2 md:gap-3 bg-secondary/5 text-secondary px-2 md:px-4 py-1 md:py-2 rounded md:rounded-lg font-bold text-[10px] md:text-base border border-secondary/10">
+                    <span className="w-1.5 md:w-2 h-1.5 md:h-2 rounded-full bg-red-500 animate-pulse"></span>
+                    <span className="uppercase tracking-wide">16-17 APR 2026</span>
+                  </div>
+
+                  {/* Conference Identity */}
+                  <div className="flex flex-col">
+                    <span className="text-[8px] md:text-[10px] font-bold text-blue-600 uppercase tracking-[0.1em] md:tracking-[0.2em] mb-0">National Conference</span>
+                    <span className="text-xs md:text-xl font-black text-secondary leading-none">NCDFTS-2026</span>
+                  </div>
+
+                  {/* Brochure Action Button */}
+                  <button 
+                    onClick={() => setShowBrochureModal(true)}
+                    className="flex items-center gap-2 md:gap-3 group bg-white border md:border-2 border-secondary/20 hover:border-secondary px-3 md:px-5 py-1 md:py-2 rounded-full transition-all duration-300 hover:shadow-md"
+                  >
+                    <span className="font-extrabold text-secondary text-[10px] md:text-sm uppercase tracking-wider">Brochure</span>
+                    <div className="w-4 md:w-6 h-4 md:h-6 bg-secondary text-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" className="md:w-3 md:h-3"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    </div>
+                  </button>
+
+                  {/* DETAILS Link with Hyperlink */}
+                  <a 
+                    href="https://conferenceworld.in/conference.php?cID=1561" 
+                    target="_blank"
+                    className="flex items-center gap-1.5 group bg-secondary/10 hover:bg-secondary px-3 py-1 md:px-4 md:py-1.5 rounded-full transition-all duration-300"
+                  >
+                    <span className="text-[10px] md:text-sm font-black text-secondary group-hover:text-white uppercase tracking-widest italic flex items-center gap-1">
+                      DETAILS
+                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="opacity-70 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    </span>
+                  </a>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
+
+      {/* Brochure Modal */}
+      {showBrochureModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
+            <div className="flex justify-between items-center p-4 border-b">
+              <h3 className="text-lg font-bold text-secondary">National Conference Brochure</h3>
+              <button
+                onClick={() => setShowBrochureModal(false)}
+                className="text-gray-500 hover:text-gray-700 text-2xl font-bold"
+              >
+                ×
+              </button>
+            </div>
+            <div className="p-4">
+              <iframe
+                src="/assets/pdf/National Conference_pdf.pdf"
+                className="w-full h-[70vh] border-0"
+                title="National Conference Brochure"
+              />
+            </div>
+            <div className="flex justify-end gap-4 p-4 border-t">
+              <button
+                onClick={() => setShowBrochureModal(false)}
+                className="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300"
+              >
+                Close
+              </button>
+              <a
+                href="/assets/pdf/National Conference_pdf.pdf"
+                download="National_Conference_Brochure.pdf"
+                className="px-4 py-2 bg-secondary text-white rounded hover:bg-secondary/90"
+              >
+                Download
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

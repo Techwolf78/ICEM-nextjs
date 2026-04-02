@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "baseline-browser-mapping": "^2.10.12",
     "concurrently": "^9.2.1",
     "tailwindcss": "^4"
   }

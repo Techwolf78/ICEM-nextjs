@@ -45,8 +45,8 @@ const staffData = [
 const syllabusList = [
   {
     id: "sybtech",
-    label: "B.Tech (2025 Pattern) Syllabus",
-    pdf: "/programs/IT/SE.pdf",
+    label: "B.Tech. (2024 Pattern) Syllabus",
+    pdf: "/programs/IT/SY_IT_Syllabus_2024_Course.pdf",
   },
 ];
 

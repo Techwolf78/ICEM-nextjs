@@ -190,6 +190,16 @@ const syllabusList = [
     label: "BE Computer Engineering (2019 Pattern) Syllabus",
     pdf: "/programs/Computer/BE.pdf",
   },
+  {
+    id: "ty-structure",
+    label: "TE B.Tech (Structure)",
+    pdf: "/programs/Computer/TY_BTech_Structure.pdf",
+  },
+  {
+    id: "fy-structure",
+    label: "BE B.Tech (Structure)",
+    pdf: "/programs/Computer/Fourth_Year_BTech_Structure.pdf",
+  },
 ];
 
 // ================== ACADEMIC CALENDAR DATA ==================

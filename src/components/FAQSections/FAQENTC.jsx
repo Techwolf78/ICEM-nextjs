@@ -79,17 +79,17 @@ const syllabusList = [
   {
     id: "sybtech",
     label: "SY B.Tech (2025 Pattern) Syllabus",
-    pdf: "/programs/ENTC/SE.pdf",
+    pdf: "/programs/ENTC/se_btech.pdf",
   },
   {
     id: "te",
     label: "TE ENTC Engineering (2019 Pattern) Syllabus",
-    pdf: "/programs/ENTC/TE.pdf",
+    pdf: "/programs/ENTC/te_btech.pdf",
   },
   {
     id: "be",
     label: "BE ENTC (2019 Pattern) Syllabus",
-    pdf: "/programs/ENTC/BE.pdf",
+    pdf: "/programs/ENTC/be_btech.pdf",
   },
 ];
 

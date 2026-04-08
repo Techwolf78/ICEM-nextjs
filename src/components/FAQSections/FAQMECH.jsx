@@ -138,6 +138,77 @@ const staffData = [
     dob: "10/12/1984",
     image: "/faculty/final_icem_branding/mech/Mr. Sagar Chirade.webp",
   },
+  {
+    sn: 13,
+    id: "N/A",
+    name: "Dr. Kiran D. Devade",
+    designation: "Professor",
+    department: "Mechanical Engineering",
+    qualification: "PhD (Mechanical)",
+    experience: {
+      teaching: "22 Years",
+      industrial: "1 Year",
+      research: "4 Years",
+    },
+    areaOfInterest: [
+      "Engineering Graphics",
+      "Thermodynamics",
+      "Refrigeration",
+      "Strength of Materials",
+      "Fluid Machinery",
+    ],
+    researchPapers: {
+      wosScopus: "10",
+      journal: "27",
+      conference: "24+",
+    },
+    image: "/faculty/final_icem_branding/mech/kiran_devade.png",
+  },
+  {
+    sn: 14,
+    id: "N/A",
+    name: "Pravin Devidas Charde",
+    designation: "Assistant Professor",
+    department: "Mechanical Engineering",
+    qualification: "ME (Mechanical), BE (Mechanical Sandwich Engineering), DME (Mechanical)",
+    experience: {
+      total: "18 Years",
+      industrial: "3 Years",
+    },
+    areaOfInterest: [
+      "Manufacturing Process",
+      "Workshop Technology",
+    ],
+    image: "/faculty/final_icem_branding/mech/pravin_devidas charde.jpeg",
+  },
+  {
+    sn: 15,
+    id: "N/A",
+    name: "Raj Uttam Gajarmal",
+    designation: "Workshop Instructor (Fitting Shop)",
+    department: "Mechanical Engineering",
+    qualification: "ITI (Fitting), NCTVT",
+    experience: {
+      total: "14 Years",
+      industrial: "3 Years",
+    },
+    areaOfInterest: ["Workshop Technology"],
+    image: "/faculty/final_icem_branding/mech/raj_uttam_gajarmal.jpeg",
+  },
+  {
+    sn: 16,
+    id: "N/A",
+    name: "Manoj Laxman Sutar",
+    designation: "Workshop Instructor (Welding)",
+    department: "Mechanical Engineering",
+    qualification: "ITI (Welding), NCTVT",
+    experience: {
+      total: "13 Years",
+      industrial: "6 Years",
+    },
+    areaOfInterest: ["Workshop Technology"],
+    image: "/faculty/final_icem_branding/mech/manoj_laxman_sutar.jpeg",
+  },
 ];
 
 // ================== SYLLABUS DATA ==================
@@ -620,7 +691,7 @@ export default function FAQMECH() {
                     {staff.designation}
                   </p>
 
-                  <div className="mt-auto pt-4 border-t border-gray-100 space-y-2 text-left">
+                  <div className="pt-4 border-t border-gray-100 space-y-2 text-left">
                     <div className="text-[11px]">
                       <span className="text-gray-400 font-bold uppercase mr-1">
                         Department:
@@ -637,18 +708,62 @@ export default function FAQMECH() {
                         {staff.qualification}
                       </span>
                     </div>
-                    <div className="text-[11px]">
-                      <span className="text-gray-400 font-bold uppercase mr-1">
-                        Joining Date:
-                      </span>
-                      <span className="text-gray-700 font-medium">{staff.doj}</span>
-                    </div>
-                    <div className="text-[11px]">
-                      <span className="text-gray-400 font-bold uppercase mr-1">
-                        Birth Date:
-                      </span>
-                      <span className="text-gray-700 font-medium">{staff.dob}</span>
-                    </div>
+                    {staff.experience ? (
+                      <div className="text-[11px]">
+                        <span className="text-gray-400 font-bold uppercase mr-1">
+                          Experience:
+                        </span>
+                        <span className="text-gray-700 font-medium">
+                          {[
+                            staff.experience.total,
+                            staff.experience.teaching ? `Teaching: ${staff.experience.teaching}` : null,
+                            staff.experience.industrial ? `Industrial: ${staff.experience.industrial}` : null,
+                            staff.experience.research ? `Research: ${staff.experience.research}` : null,
+                          ]
+                            .filter(Boolean)
+                            .join(" • ")}
+                        </span>
+                      </div>
+                    ) : (
+                      <>
+                        <div className="text-[11px]">
+                          <span className="text-gray-400 font-bold uppercase mr-1">
+                            Joining Date:
+                          </span>
+                          <span className="text-gray-700 font-medium">{staff.doj}</span>
+                        </div>
+                        <div className="text-[11px]">
+                          <span className="text-gray-400 font-bold uppercase mr-1">
+                            Birth Date:
+                          </span>
+                          <span className="text-gray-700 font-medium">{staff.dob}</span>
+                        </div>
+                      </>
+                    )}
+                    {staff.areaOfInterest && (
+                      <div className="text-[11px]">
+                        <span className="text-gray-400 font-bold uppercase mr-1">
+                          Area of Interest:
+                        </span>
+                        <span className="text-gray-700 font-medium">
+                          {Array.isArray(staff.areaOfInterest)
+                            ? staff.areaOfInterest.join(", ")
+                            : staff.areaOfInterest}
+                        </span>
+                      </div>
+                    )}
+                    {staff.researchPapers && (
+                      <div className="text-[11px]">
+                        <span className="text-gray-400 font-bold uppercase mr-1">
+                          Research Papers:
+                        </span>
+                        <span className="text-gray-700 font-medium block">
+                          {staff.researchPapers.wosScopus ? `WOS/Scopus: ${staff.researchPapers.wosScopus}` : ""}
+                          {staff.researchPapers.journal ? ` • Journal: ${staff.researchPapers.journal}` : ""}
+                          {staff.researchPapers.conference ? ` • Conference: ${staff.researchPapers.conference}` : ""}
+                        </span>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -716,8 +831,6 @@ export default function FAQMECH() {
 
       default:
         return null;
-      case "staff":
-        return <ProgramStaff staffData={data.content} />;
     }
   };
 

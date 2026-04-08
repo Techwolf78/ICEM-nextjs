@@ -7,6 +7,17 @@ import ProgramStaff from "../ProgramStaff";
 // ================== STAFF DATA ==================
 const staffData = [
   {
+    sn: 0,
+    id: "3266",
+    name: "Dr. Poorna Shankar",
+    designation: "Dean AI & HoD Computer Engineering",
+    department: "Computer",
+    qualification: "MCA, M.Phil, Ph.D, M.Tech",
+    doj: "01/12/2021",
+    dob: "12/06/1973",
+    image: "/faculty/final_icem_branding/comp/poorna_shankar.avif",
+  },
+  {
     sn: 1,
     id: "496",
     name: "Mrs. Deepali Shashikant Dhadwad",
@@ -173,32 +184,36 @@ const staffData = [
   },
 ];
 
-// ================== SYLLABUS DATA ==================
-const syllabusList = [
+// ================== AUTONOMY SYLLABUS DATA ==================
+const autonomySyllabusList = [
   {
     id: "sybtech",
     label: "SY B.Tech (2025 Pattern) Syllabus",
-    pdf: "/programs/Computer/SE.pdf",
+    pdf: "/programs/Computer/se_2019.pdf",
   },
+  {
+    id: "ty-structure",
+    label: "TY B.Tech (2025 Pattern) Structure",
+    pdf: "/programs/Computer/ty_bTech_structure.pdf",
+  },
+  {
+    id: "fy-structure",
+    label: "Fourth Year B.Tech (2025 Pattern) Structure",
+    pdf: "/programs/Computer/fourth_year_btech_structure.pdf",
+  },
+];
+
+// ================== SPPU SYLLABUS DATA ==================
+const sppuSyllabusList = [
   {
     id: "te",
     label: "TE Computer Engineering (2019 Pattern) Syllabus",
-    pdf: "/programs/Computer/TE.pdf",
+    pdf: "/programs/Computer/te_2019.pdf",
   },
   {
     id: "be",
     label: "BE Computer Engineering (2019 Pattern) Syllabus",
-    pdf: "/programs/Computer/BE.pdf",
-  },
-  {
-    id: "ty-structure",
-    label: "TE B.Tech (Structure)",
-    pdf: "/programs/Computer/TY_BTech_Structure.pdf",
-  },
-  {
-    id: "fy-structure",
-    label: "BE B.Tech (Structure)",
-    pdf: "/programs/Computer/Fourth_Year_BTech_Structure.pdf",
+    pdf: "/programs/Computer/be_2019.pdf",
   },
 ];
 
@@ -359,6 +374,7 @@ const facultyImages = Array.from({ length: 12 }, (_, i) => ({
 // ================== MAIN COMPONENT ==================
 export default function FAQSectionComputer() {
   const [active, setActive] = useState("FRA - Fee Structure");
+  const [syllabusTab, setSyllabusTab] = useState("autonomy");
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -399,29 +415,29 @@ export default function FAQSectionComputer() {
       type: "accordion",
       content: {
         "Programme Outcomes (POs)": [
-          "Apply Knowledge of Mathematics, Science and Engineering: Relate & apply fundamental knowledge of mathematics, science and engineering paradigm to real world problems.",
-          "Problem Analysis: Analyze, identify and formulate tangible products/services/solutions/applications with computing requirements.",
-          "Design and Development of algorithms : Design, implement, and evaluate a computer – based solution applicable to public health, ecological safety, human resource management and economical sustainability, cultural, societal and environmental considerations.",
-          "Analysis design and modeling of complex problems: Understand management and engineering principles meets need of atomization of industry.",
-          "Usage of latest open source tools and technologies: Select & use current techniques, skills, and tools to solve societal, health, safety, cultural issues by analyzing the local and global impact of engineering on individuals or society.",
-          "Social contribution of Engineers: Distinguish a problem; design a solution for the needs of the society in health, safety, public, private sectors applying relevant engineering practices.",
-          "Environment and Sustainability: Understand the affecting factors thru' various fields of engineering to the environment context, develop the solutions which would support green Environment initiative.",
-          "Professional Development and Ethics: Inculcate ethical values amongst students to develop best engineering practices.",
-          "Commitment at Individual level and as a team: Work effectively in multidisciplinary environment as individual & diverse team structure too.",
-          "Communication skills: Learn an emphatic communication to function effective on teams, including diversified and multidisciplinary goal.",
-          "Project Planning & Management for Complex Solutions: Use of modeling techniques to design experiments, by analyzing and interpreting data",
-          "Self-learning: Recognize the need of continuous expertized development through lifelong learning.",
+          "Apply Knowledge of Mathematics, Science and Engineering: Relate & apply fundamental\nknowledge of mathematics, science and engineering paradigm to real world problems.",
+          "Problem Analysis: Analyze, identify and formulate tangible products/services/solutions/\napplications with computing requirements.",
+          "Design and Development of algorithms : Design, implement, and evaluate a computer – based\nsolution applicable to public health, ecological safety, human resource management.",
+          "Analysis design and modeling of complex problems: Understand management and engineering\nprinciples meets need of atomization of industry.",
+          "Usage of latest open source tools and technologies: Select & use current techniques, skills, and\ntools to solve societal, health, safety, cultural issues by analyzing the local and global impact.",
+          "Social contribution of Engineers: Distinguish a problem; design a solution for the needs of the\nsociety in health, safety, public, private sectors applying relevant engineering practices.",
+          "Environment and Sustainability: Understand the affecting factors thru' various fields of engineering\nto the environment context, develop the solutions which would support green Environment initiative.",
+          "Professional Development and Ethics: Inculcate ethical values amongst students to develop best\nengineering practices.",
+          "Commitment at Individual level and as a team: Work effectively in multidisciplinary environment\nas individual & diverse team structure too.",
+          "Communication skills: Learn an emphatic communication to function effective on teams,\nincluding diversified and multidisciplinary goal.",
+          "Project Planning & Management for Complex Solutions: Use of modeling techniques to design\nexperiments, by analyzing and interpreting data",
+          "Self-learning: Recognize the need of continuous expertized development through\nlifelong learning.",
         ],
         "Programme Specific Outcomes (PSOs)": [
-          "Professional Skills: The ability to understand, analyze and develop high-end applications to meet the current industrial requirements using varied algorithmic strategies, system software, multimedia, web design, database management, hardware troubleshooting, and network administration.",
-          "Problem-Solving Skills: The ability to apply standard practices and strategies in software project development using open-ended programming environments to deliver a quality product for business success",
-          "Successful Career and Entrepreneurship: The ability to employ modern computer languages, environments, and platforms in creating innovative career paths to be an entrepreneur and create employability for nation building, and a zest for higher studies.",
+          "Professional Skills: The ability to understand, analyze and develop high-end applications to meet\nthe current industrial requirements using varied algorithmic strategies and system software.",
+          "Problem-Solving Skills: The ability to apply standard practices and strategies in software project\ndevelopment using open-ended programming environments to deliver a quality product.",
+          "Successful Career and Entrepreneurship: The ability to employ modern computer languages,\nenvironments, and platforms in creating innovative career paths to be an entrepreneur.",
         ],
         "Programme Educational Objectives (PEOs)": [
-          "To build graduates for successful careers in Computer Engineering those are able to serve state and regional industries, government agencies, or national and international industries.",
-          "To build graduates that identifies the underlying scientific foundation of Computer Aided Innovation and also to evaluate their effectiveness and efficiency",
-          "To build graduates who engage in self-development activities through further professional studies and personal research that will allow them to adapt technological challenges in many frames like computer hardware and software design, embedded systems, computer network design, system integration, electronic design automation etc.",
-          "To build graduates in computer engineering who are acquiring knowledge of the discipline, teamwork, communication skills and an ability to work with a diverse set of constraints.",
+          "To build graduates for successful careers in Computer Engineering those are able to serve state\nand regional industries, government agencies, or national and international industries.",
+          "To build graduates that identifies the underlying scientific foundation of Computer Aided\nInnovation and also to evaluate their effectiveness and efficiency",
+          "To build graduates who engage in self-development activities through further professional studies\nand personal research that will allow them to adapt technological challenges.",
+          "To build graduates in computer engineering who are acquiring knowledge of the discipline,\nteamwork, communication skills and an ability to work with a diverse set of constraints.",
         ],
       },
     },
@@ -560,7 +576,20 @@ export default function FAQSectionComputer() {
 
     "Syllabus & Course Structure": {
       type: "syllabus",
-      content: syllabusList,
+      content: {
+        tabs: [
+          {
+            id: "autonomy",
+            label: "Autonomy Structure and Syllabus",
+            list: autonomySyllabusList,
+          },
+          {
+            id: "sppu",
+            label: "SPPU Syllabus",
+            list: sppuSyllabusList,
+          },
+        ],
+      },
     },
 
     Laboratories: {
@@ -660,10 +689,10 @@ export default function FAQSectionComputer() {
                       ) : (
                         <p
                           key={index}
-                          className="flex items-start text-gray-700"
+                          className="flex items-start text-gray-700 text-justify [text-align-last:left] [hyphens:auto] tracking-tight leading-relaxed whitespace-pre-line"
                         >
-                          <span className="text-secondary mr-2 mt-1">•</span>
-                          {item}
+                          <span className="text-secondary mr-2 mt-1 shrink-0">•</span>
+                          <span>{item}</span>
                         </p>
                       )
                     )}
@@ -705,6 +734,54 @@ export default function FAQSectionComputer() {
         );
 
       case "syllabus":
+        if (contentData.content && contentData.content.tabs) {
+          const activeTab = contentData.content.tabs.find(
+            (tab) => tab.id === syllabusTab
+          ) || contentData.content.tabs[0];
+
+          return (
+            <div className="space-y-6">
+              <div className="flex flex-col sm:flex-row gap-3 bg-gray-50 p-3 rounded-xl border border-gray-200">
+                {contentData.content.tabs.map((tab) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setSyllabusTab(tab.id)}
+                    className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                      syllabusTab === tab.id
+                        ? "bg-secondary text-white"
+                        : "bg-white text-gray-700 border border-gray-200 hover:bg-gray-100"
+                    }`}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+
+              <div className="space-y-3 md:space-y-4">
+                {activeTab.list.map((item) => (
+                  <div
+                    key={item.id}
+                    id={item.id}
+                    className="flex flex-col md:flex-row md:items-center justify-between p-3 md:p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+                  >
+                    <div className="flex-1 mb-3 md:mb-0">
+                      <h5 className="font-semibold text-gray-800">{item.label}</h5>
+                    </div>
+                    <a
+                      href={item.pdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 bg-secondary text-white rounded-md hover:bg-secondary/90 transition-colors text-sm font-medium text-center"
+                    >
+                      View / Download
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        }
+
         return (
           <div className="space-y-3 md:space-y-4">
             {contentData.content.map((item) => (

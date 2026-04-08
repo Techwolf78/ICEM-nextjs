@@ -198,7 +198,7 @@ const staffData = [
     "Qualification": "Ph.D,ME",
     "DOJ": "01.07.2009",
     "DOB": "30.01.1983",
-    "imagePath": "/Final_Icem_branding/aids/Dr. Manjusha Tatiya.webp"
+    "imagePath": "/Final_Icem_branding/aids/dr_manjusha.webp"
   },
   {
     "Sr.No.": "19",

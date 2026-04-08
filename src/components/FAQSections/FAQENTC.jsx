@@ -72,9 +72,19 @@ const staffData = [
 // ================== SYLLABUS DATA ==================
 const syllabusList = [
   {
-    id: "fe",
-    label: "FY B.Tech (2025 Pattern) Syllabus",
-    pdf: "/programs/ENTC/FE.pdf",
+    id: "fe-2025",
+    label: "FY BTech (2025 Course) Pattern Syllabus",
+    pdf: "/assets/pdf/syllabus/Updated-Syllabus-new-Authenticated-by-VC-Nominee.pdf",
+  },
+  {
+    id: "fe-2024",
+    label: "FY BTech (2024 Course) Pattern Syllabus",
+    pdf: "/assets/pdf/syllabus/New_Syllabus_2024-25_Updated_(28-10-2024).pdf",
+  },
+  {
+    id: "fe-2019",
+    label: "First Year Engineering (2019 Course) Pattern Syllabus",
+    pdf: "/assets/pdf/syllabus/First_Year_Engineering_2019_Patt_Syllabus.pdf",
   },
   {
     id: "sybtech",
@@ -82,13 +92,23 @@ const syllabusList = [
     pdf: "/programs/ENTC/se_btech.pdf",
   },
   {
-    id: "te",
-    label: "TE ENTC Engineering (2019 Pattern) Syllabus",
+    id: "ty-2024",
+    label: "TY B.Tech (2024 Pattern) Structure",
     pdf: "/programs/ENTC/te_btech.pdf",
   },
   {
+    id: "te",
+    label: "TY B.Tech (2019 Pattern) Syllabus",
+    pdf: "/programs/ENTC/te_entc_2019.pdf",
+  },
+  {
     id: "be",
-    label: "BE ENTC (2019 Pattern) Syllabus",
+    label: "Final Year B.Tech (2019 Pattern) Syllabus",
+    pdf: "/programs/ENTC/be_entc_2019.pdf",
+  },
+  {
+    id: "be-2024",
+    label: "Final Year B.Tech (2024 Pattern) Structure",
     pdf: "/programs/ENTC/be_btech.pdf",
   },
 ];

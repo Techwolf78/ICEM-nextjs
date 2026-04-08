@@ -45,7 +45,7 @@ export default function Overview() {
     },
 
     {
-      name: "Dr. Manjusha Tatiya",
+      name: "Dr. Manjusha Rahul Tatiya",
       designation: "HoD Artificial Intelligence and Data Science.",
       image: "/faculty/Manjusha2.webp",
     },
@@ -88,10 +88,10 @@ export default function Overview() {
     { name: "Dr. Kiran Devade", designation: "HoD (Engineering Science)", image: "/assets/images/icemFaculty/Dr_Kiran_Devade.jpg" },
     { name: "Dr. Saurabh Gupta", designation: "HoD (Mechanical Engineering)", image: "/assets/images/icemFaculty/Saurabh Gupta.jpg" },
     { name: "Dr. Vikas Nandgaonkar", designation: "HoD (Information Technology)", image: "/assets/images/icemFaculty/Vikas_Nandgaonkar.jpg" },
-    { name: "Dr. Manjusha Tatiya", designation: "HoD (AI & Data Science)", image: "/assets/images/icemFaculty/Dr _Manjusha_Tomar.jpg" },
+    { name: "Dr. Manjusha Rahul Tatiya", designation: "HoD (AI & Data Science)", image: "/faculty/Manjusha2.webp" },
     { name: "Mrs. Meenakshi Patil", designation: "HoD (E&TC)", image: "/assets/images/icemFaculty/MeenakshiPatil.jpg" },
     { name: "Dr. Aatish Zagade", designation: "HoD (MBA)", image: "/assets/images/icemFaculty/aatish_zagade.webp" },
-    { name: "Dr. Avantika Bijwe", designation: "HoD (MCA)", image: "/assets/images/icemFaculty/Dr. Awantika Bijwe.jpg" },
+    { name: "Dr. Awantika Bijwe", designation: "HoD (MCA)", image: "/assets/images/icemFaculty/Dr. Awantika Bijwe.jpg" },
   ];
 
   const ceos = [

@@ -83,6 +83,28 @@ const staffData = [
     dob: "28/10/1998",
     image: "/faculty/final_Icem_branding/mca/Mrs. Vaishali Hatkar.webp",
   },
+  {
+    sn: 8,
+    id: "3105",
+    name: "Dr. Awantika Bijwe",
+    designation: "Assistant Professor & HOD",
+    department: "MCA",
+    qualification: "Ph.D. MCA ME(Comp. Eng.)",
+    doj: "01/07/2024",
+    dob: "26/05/1982",
+    image: "/faculty/final_Icem_branding/mca/dr_awantika.avif",
+  },
+  {
+    sn: 9,
+    id: "3285",
+    name: "Dr. Namita Chawla",
+    designation: "Assistant Professor",
+    department: "MCA",
+    qualification: "MCA, Ph.D.; PostDoc (Pursuing)",
+    doj: "23/02/2026",
+    dob: "23/03/1985",
+    image: "/faculty/final_Icem_branding/mca/Dr. Namita Chawla.webp",
+  },
 ];
 
 // ================== SYLLABUS DATA ==================
@@ -95,7 +117,7 @@ const syllabusList = [
   {
     id: "sybtech2025",
     label: "MCA-(2025-27) Syllabus",
-    pdf: "/programs/MCA/SY2527.pdf",
+    pdf: "/programs/MCA/mca-25-27.pdf",
   },
 ];
 
@@ -244,26 +266,23 @@ export default function FAQMCA() {
     "Eligibility Criteria": {
       type: "accordion",
       content: {
-        "Eligibility Criteria for Admission to First Year Engineering 2024-25": [
-          "For details about First Year Engineering Admission and Eligibility Criteria, refer https://cetcell.mahacet.org/",
-        ],
-        "Maharashtra State Candidature Candidates": [
-          "The Candidate should be an Indian National.",
-          "Passed HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State), in the above subjects taken together; and the Candidate should have appeared in all the subjects in CET and should obtain non zero score in CET conducted by the Competent Authority.",
-          "Or",
-          "Passed Diploma in Engineering and Technology and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State).",
-        ],
-        "All India Candidature Candidates, Union Territory of Jammu and Kashmir and Union Territory of Ladakh Migrant Candidature Candidates": [
-          "The Candidate should be an Indian National.",
-          "Passed HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State) in the above subjects taken together; and should obtain non zero positive score in JEE (Main) B.E./B.Tech or the candidate should have appeared in all the subjects in CET and should obtain non zero score in CET conducted by the Competent Authority. However, preference shall be given to the candidate obtaining non zero positive score in JEE (Main) B.E./B.Tech over the candidates who obtained non zero score in CET.",
-          "Or",
-          "Passed Diploma in Engineering and Technology and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State).",
-        ],
-        "NRI / OCI / PIO, Children of Indian workers in the Gulf countries and Foreign National Candidature Candidates": [
-          "The candidate should have passed the HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies, and obtained at least 45 % marks in the above subjects taken together.",
-        ],
-        "Additional Information": [
-          "Any other criterion declared from time to time by the appropriate authority as defined under the Act.",
+        "Eligibility Criteria for Admission to MCA 2025-26": [
+          "(A) First Year Admission",
+          "(1)",
+          "For Maharashtra State Candidature Candidates, All India Candidature Candidates, Union Territory of Jammu and Kashmir and Union Territory of Ladakh Migrant Candidature Candidates",
+          "The candidate,-",
+          "(i) should be a citizen of India;",
+          "(ii) should have passed any graduation degree (e.g.: B.E. or B.Tech. or B.Sc or B.Com. or B.A. or B. Voc. or BCA etc.,) preferably with Mathematics at 10+2 level or at Graduation level and obtained at least fifty per cent. marks (at least forty five per cent. in case of candidates of Reserved Categories, Economically Weaker Section and Persons with Disability category belonging to the Maharashtra State) in the qualifying examination;",
+          "(iii) should have obtained non zero score in MAH-MCA CET 2025 conducted by the Competent Authority.",
+          "(2)",
+          "Non Resident Indian (NRI) or Overseas Citizen of India (OCI) or Person of Indian Origin (PIO), Children of Indian workers in the Gulf countries, Foreign National Candidature Candidates",
+          "(i) The candidate should have passed any graduation degree (e.g.: B.E. or B.Tech. or B.Sc or B.Com. or B.A. or B. Voc. or BCA etc.,) preferably with Mathematics at 10+2 level or at Graduation level and obtained at least fifty per cent. marks in the qualifying examination;",
+          "(ii) Any other eligibility criteria and requirement declared from time to time by the appropriate authority as defined under the Act.",
+          "(B) Second Year (Lateral Entry) Admission",
+          "Maharashtra State Candidature Candidates and All India Candidature Candidates",
+          "(i) The candidate should be a citizen of India;",
+          "(ii) The candidate should have passed B.Tech. (Computer Science and Engineering (CSE) or Information Technology (IT)) or B.E. (Computer Science and Engineering (CSE) or Information Technology (IT)) or Bachelor of Computer Applications (BCA) (4 years);",
+          "(iii) Any other eligibility criteria and requirement declared from time to time by the appropriate authority as defined under the Act.",
         ],
         // "Information Technology Eligibility": [
         //   "Eligibility for admission to the Integrated MCA program requires candidates to have passed 10+2 from any recognized board with Mathematics or Statistics.Admission is based on merit and institutional selection guidelines. No entrance exam required.",
@@ -312,22 +331,40 @@ export default function FAQMCA() {
                   </summary>
 
                   <div className="p-3 md:p-4 pt-2 space-y-3">
-                    {items.map((item, i) =>
-                      typeof item === "object" && item.pdf ? (
-                        <a
-                          key={i}
-                          href={item.pdf}
-                          target="_blank"
-                          className="text-secondary underline font-medium hover:text-secondary/80"
-                        >
-                          {item.label}
-                        </a>
-                      ) : (
-                        <p key={i} className="text-gray-700">
-                          {item}
+                    {items.map((item, i) => {
+                      if (typeof item === "object" && item.pdf) {
+                        return (
+                          <a
+                            key={i}
+                            href={item.pdf}
+                            target="_blank"
+                            className="text-secondary underline font-medium hover:text-secondary/80"
+                          >
+                            {item.label}
+                          </a>
+                        );
+                      }
+
+                      const trimmed = item.trim();
+                      const isSection = /^\([A-Z]\)$/.test(trimmed);
+                      const isSubpoint = /^\(i{1,3}\)/.test(trimmed);
+
+                      let className = "text-gray-700";
+                      if (isSection) {
+                        className = "text-gray-800 font-semibold";
+                      }
+
+                      let style = {};
+                      if (isSubpoint) {
+                        style = { paddingLeft: "1.25rem" };
+                      }
+
+                      return (
+                        <p key={i} className={className} style={style}>
+                          {trimmed}
                         </p>
-                      )
-                    )}
+                      );
+                    })}
                   </div>
                 </details>
               </div>

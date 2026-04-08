@@ -5,17 +5,17 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 // ================== DATA SECTION ==================
-const staffData = [
+const teachingStaff = [
   {
     sn: 1,
     id: "472",
     name: "Dr. Manjusha Rahul Tatiya",
-    designation: "Associate Professor & HOD",
+    designation: "HoD (AI & Data Science)",
     department: "AIDS",
     qualification: "Ph.D ME",
     doj: "01/07/2009",
     dob: "30/01/1983",
-    image: "/faculty/final_icem_branding/aids/Dr. Manjusha Tatiya.webp",
+    image: "/faculty/final_icem_branding/aids/dr_manjusha.webp",
   },
   {
     sn: 2,
@@ -47,7 +47,7 @@ const staffData = [
     department: "AIDS",
     qualification: "Dip BE ME",
     doj: "07/01/2025",
-    dob: "05/10/1992",
+    dob: "10/05/1992",
     image: "/faculty/final_icem_branding/aids/Mrs. Monika Patil.webp",
   },
   {
@@ -58,7 +58,7 @@ const staffData = [
     department: "AIDS",
     qualification: "M.Tech MSc PG Computer Application",
     doj: "14/01/2026",
-    dob: "10/07/1982",
+    dob: "10/07/1992",
     image: "/faculty/final_icem_branding/aids/Mrs. Kavita Sharma.webp",
   },
   {
@@ -72,6 +72,73 @@ const staffData = [
     dob: "18/12/1990",
     image: "/faculty/final_icem_branding/aids/Vivek Sohagora.webp",
   },
+];
+
+const newDetailedStaff = [
+  {
+    sn: 7,
+    id: "TBD1",
+    name: "Mrs. Vidya R. Dhoke",
+    designation: "Assistant Professor",
+    department: "Artificial Intelligence and Data Science",
+    qualification: "MTech(CSE)",
+    experience: "8+",
+    interest: "Generative AI and Machine Learning, Big data",
+    research: "• Scopus Indexed Papers: 02\n• Scopus Indexed Papers: 04",
+    image: "/faculty/final_icem_branding/aids/vidya_dhoke.webp",
+  },
+  {
+    sn: 8,
+    id: "TBD2",
+    name: "Mr. Tushar R. Mahore",
+    designation: "Assistant Professor",
+    department: "Artificial Intelligence & Data Science",
+    qualification: "• Pursuing PhD, Symbiosis Institute of Technology, Pune\n• M.Tech (CSE), GCOEA, Distinction\n• B.Tech (CSE), PRPCE, First Class",
+    experience: "08",
+    interest: "1. Natural Language Processing\n2. Data Science & Analytics\n3. Programming Languages & Paradigms",
+    research: "Total: 16\nScopus Indexed: 10\nJournals: 02\nInternational Conferences / Proceedings: 07\nBook Chapters: 02\nOthers (Preprints / Review Papers): 05",
+    image: "/faculty/final_icem_branding/aids/tushar_mahore.webp",
+  },
+  {
+    sn: 9,
+    id: "TBD3",
+    name: "Mrs. Tanuja Pande",
+    designation: "Assistant Professor",
+    department: "AI & DS",
+    qualification: "• Pursuing PhD, Symbiosis Institute of Technology, Pune\n• M. Tech( CSE) RTM University Nagpur(Gold Medal)\n• B. tech (CSE) RTM University Nagpur (Distinction)",
+    experience: "2.9 Yrs",
+    interest: "AI & ML , Image processing, Biomedical Programming Languages",
+    research: "• Scopus Indexed Papers: 04",
+    image: "/faculty/final_icem_branding/aids/tanuja_pande.webp",
+  },
+];
+
+const newDetailedLabStaff = [
+    {
+    sn: 1,
+    id: "TBD5",
+    name: "Mr. Prasad Jadhav",
+    designation: "Lab Assistant",
+    department: "Artificial Intelligence And Data Science",
+    qualification: "Bachelor Of Computer Applications",
+    experience: "3 yrs (Industrial: 0.2, Research: 0.1)",
+    interest: "Hardware, Networking, Tech Blogging",
+    research: "-",
+    image: "/faculty/final_icem_branding/aids/Mr. Prasad Jadhav.webp",
+  },
+  {
+    sn: 2,
+    id: "TBD4",
+    name: "Ms. Apeksha S. Giri",
+    designation: "Tech. Assistant",
+    department: "Artificial Intelligence And Data Science",
+    qualification: "M.E (E&TC)",
+    experience: "8 years (Industrial: 0, Research: 0)",
+    interest: "Hardware, Networking",
+    research: "-",
+    image: "/faculty/final_icem_branding/aids/apeksha_giri.webp",
+  },
+
 ];
 
 const sanctionIntake = [
@@ -352,62 +419,199 @@ export default function FAQSectionAIDS() {
               };
 
               return (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-4">
-                  {staffData.map((staff, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.05, duration: 0.3 }}
-                      className="bg-white rounded-xl shadow-md border border-gray-200 flex flex-col items-center text-center p-5 hover:shadow-lg transition-all duration-300"
-                    >
-                      <StaffPhoto src={staff.image} alt={staff.name} />
+                <div className="space-y-12">
+                  {/* Teaching Staff Section */}
+                  <div>
+                    <h3 className="text-xl font-bold text-secondary mb-6 border-l-4 border-secondary pl-4">
+                      Teaching Staff
+                    </h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 px-4">
+                      {teachingStaff.map((staff, index) => (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: index * 0.05, duration: 0.3 }}
+                          className="bg-white rounded-xl shadow-md border border-gray-200 flex flex-col items-center text-center p-5 hover:shadow-lg transition-all duration-300"
+                        >
+                          <StaffPhoto src={staff.image} alt={staff.name} />
 
-                      <div className="w-full flex-1 flex flex-col">
-                        <h4 className="font-bold text-gray-900 mb-1 leading-snug">
-                          {staff.name}
-                        </h4>
-                        <p className="text-blue-700 font-semibold text-xs mb-4 uppercase tracking-wider">
-                          {staff.designation}
-                        </p>
+                          <div className="w-full flex-1 flex flex-col pt-4">
+                            <h4 className="font-bold text-gray-900 mb-1 leading-snug">
+                              {staff.name}
+                            </h4>
+                            <p className="text-blue-700 font-semibold text-xs mb-4 uppercase tracking-wider">
+                              {staff.designation}
+                            </p>
 
-                        <div className="mt-auto pt-4 border-t border-gray-100 space-y-2 text-left">
-                          <div className="text-[11px]">
-                            <span className="text-gray-400 font-bold uppercase mr-1">
-                              ID NO:
-                            </span>
-                            <span className="text-gray-700 font-medium">
-                              {staff.id}
-                            </span>
+                            <div className="space-y-4 text-left pt-4 border-t border-gray-100">
+                              <div className="text-[14px]">
+                                <span className="text-gray-400 font-bold uppercase mr-1">
+                                  ID NO:
+                                </span>
+                                <span className="text-gray-700 font-medium">
+                                  {staff.id}
+                                </span>
+                              </div>
+                              <div className="text-[14px]">
+                                <span className="text-gray-400 font-bold uppercase mr-1">
+                                  Qualification:
+                                </span>
+                                <span className="text-gray-700 font-medium">
+                                  {staff.qualification}
+                                </span>
+                              </div>
+                              <div className="text-[14px]">
+                                <span className="text-gray-400 font-bold uppercase mr-1">
+                                  Joining Date:
+                                </span>
+                                <span className="text-gray-700 font-medium">
+                                  {staff.doj}
+                                </span>
+                              </div>
+                              <div className="text-[14px]">
+                                <span className="text-gray-400 font-bold uppercase mr-1">
+                                  Birth Date:
+                                </span>
+                                <span className="text-gray-700 font-medium">
+                                  {staff.dob}
+                                </span>
+                              </div>
+                            </div>
                           </div>
-                          <div className="text-[11px]">
-                            <span className="text-gray-400 font-bold uppercase mr-1">
-                              Qualification:
-                            </span>
-                            <span className="text-gray-700 font-medium">
-                              {staff.qualification}
-                            </span>
+                        </motion.div>
+                      ))}
+
+                      {/* New Detailed Teaching Staff */}
+                      {newDetailedStaff.map((staff, index) => (
+                        <motion.div
+                          key={`detailed-${index}`}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: (index + teachingStaff.length) * 0.05, duration: 0.3 }}
+                          className="bg-white rounded-xl shadow-md border border-gray-200 flex flex-col items-center text-center p-5 hover:shadow-lg transition-all duration-300"
+                        >
+                          <StaffPhoto src={staff.image} alt={staff.name} />
+
+                          <div className="w-full flex-1 flex flex-col pt-4">
+                            <h4 className="font-bold text-gray-900 mb-1 leading-snug">
+                              {staff.name}
+                            </h4>
+                            <p className="text-blue-700 font-semibold text-xs mb-4 uppercase tracking-wider">
+                              {staff.designation}
+                            </p>
+
+                            <div className="space-y-4 text-left pt-4 border-t border-gray-100">
+                              <div className="text-[14px]">
+                                <span className="text-gray-400 font-bold uppercase mr-1">
+                                  ID NO:
+                                </span>
+                                <span className="text-gray-700 font-medium">
+                                  {staff.id}
+                                </span>
+                              </div>
+                              <div className="text-[14px]">
+                                <span className="text-gray-400 font-bold uppercase mr-1">
+                                  Qualification:
+                                </span>
+                                <span className="text-gray-700 font-medium whitespace-pre-line text-[13px] leading-tight block mt-1">
+                                  {staff.qualification}
+                                </span>
+                              </div>
+                              <div className="text-[14px]">
+                                <span className="text-gray-400 font-bold uppercase mr-1">
+                                  Exp (Years):
+                                </span>
+                                <span className="text-gray-700 font-medium">
+                                  {staff.experience}
+                                </span>
+                              </div>
+                              <div className="text-[14px]">
+                                <span className="text-gray-400 font-bold uppercase mr-1">
+                                  Interest:
+                                </span>
+                                <span className="text-gray-700 font-medium text-[13px] leading-tight block">
+                                  {staff.interest}
+                                </span>
+                              </div>
+                              <div className="text-[14px]">
+                                <span className="text-gray-400 font-bold uppercase mr-1">
+                                  Research:
+                                </span>
+                                <span className="text-gray-700 font-medium text-[12px] leading-snug whitespace-pre-line block mt-1">
+                                  {staff.research}
+                                </span>
+                              </div>
+                            </div>
                           </div>
-                          <div className="text-[11px]">
-                            <span className="text-gray-400 font-bold uppercase mr-1">
-                              Joining Date:
-                            </span>
-                            <span className="text-gray-700 font-medium">
-                              {staff.doj}
-                            </span>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Lab Assistant Staff Section */}
+                  <div>
+                    <h3 className="text-xl font-bold text-secondary mb-6 border-l-4 border-secondary pl-4">
+                      Lab Assistant
+                    </h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 px-4">
+                      {newDetailedLabStaff.map((staff, index) => (
+                        <motion.div
+                          key={`lab-${index}`}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: index * 0.05, duration: 0.3 }}
+                          className="bg-white rounded-xl shadow-md border border-gray-200 flex flex-col items-center text-center p-5 hover:shadow-lg transition-all duration-300"
+                        >
+                          <StaffPhoto src={staff.image} alt={staff.name} />
+
+                          <div className="w-full flex-1 flex flex-col pt-4">
+                            <h4 className="font-bold text-gray-900 mb-1 leading-snug">
+                              {staff.name}
+                            </h4>
+                            <p className="text-blue-700 font-semibold text-xs mb-4 uppercase tracking-wider">
+                              {staff.designation}
+                            </p>
+
+                            <div className="space-y-4 text-left pt-4 border-t border-gray-100">
+                              <div className="text-[14px]">
+                                <span className="text-gray-400 font-bold uppercase mr-1">
+                                  ID NO:
+                                </span>
+                                <span className="text-gray-700 font-medium">
+                                  {staff.id}
+                                </span>
+                              </div>
+                              <div className="text-[14px]">
+                                <span className="text-gray-400 font-bold uppercase mr-1">
+                                  Qualification:
+                                </span>
+                                <span className="text-gray-700 font-medium whitespace-pre-line text-[13px] leading-tight block mt-1">
+                                  {staff.qualification}
+                                </span>
+                              </div>
+                              <div className="text-[14px]">
+                                <span className="text-gray-400 font-bold uppercase mr-1">
+                                  Exp (Years):
+                                </span>
+                                <span className="text-gray-700 font-medium">
+                                  {staff.experience}
+                                </span>
+                              </div>
+                              <div className="text-[14px]">
+                                <span className="text-gray-400 font-bold uppercase mr-1">
+                                  Interest:
+                                </span>
+                                <span className="text-gray-700 font-medium text-[13px] leading-tight block">
+                                  {staff.interest}
+                                </span>
+                              </div>
+                            </div>
                           </div>
-                          <div className="text-[11px]">
-                            <span className="text-gray-400 font-bold uppercase mr-1">
-                              Birth Date:
-                            </span>
-                            <span className="text-gray-700 font-medium">
-                              {staff.dob}
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
-                  ))}
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               );
             })()}

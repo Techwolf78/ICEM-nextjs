@@ -143,8 +143,8 @@ export default function Examination() {
                           Undergraduate Programs
                         </h4>
 
-                        <ul className="list-decimal ml-6 space-y-2">
-                          <li>
+                        <ul className="list-decimal list-inside ml-6 space-y-2">
+                          <li className="list-item">
                             <a
                               href="/assets/pdf/Examination/FY_BTECH _FY_MCAINT_FY_MBAINT_FY_MCA_ VacationExamTimeTable_(Re-EXAM).pdf"
                               target="_blank"
@@ -236,7 +236,27 @@ export default function Examination() {
                           Postgraduate Programs
                         </h4>
 
-                        <ul className="list-decimal ml-6 space-y-2">
+                        <ul className="list-decimal list-inside ml-6 space-y-2">
+                          <li className="list-item">
+                            <a
+                              href="/assets/pdf/Examination/fy_mba_may_2026.PDF"
+                              target="_blank"
+                              className="text-secondary hover:underline break-words"
+                            >
+                              FY MBA Endsemester Examination Timetable – Apr/May
+                              2026
+                            </a>
+                          </li>
+                          <li className="list-item">
+                            <a
+                              href="/assets/pdf/Examination/sy_mba_may_2026.PDF"
+                              target="_blank"
+                              className="text-secondary hover:underline break-words"
+                            >
+                              SY MBA Endsemester Examination Timetable – Apr/May
+                              2026
+                            </a>
+                          </li>
                           <li>
                             <a
                               href="/exam/FY.MCA._2025-PATTERN_ENDSEM EXAM-TIMETABLE-FOR-NOV-DEC 2025.pdf"
@@ -277,7 +297,6 @@ export default function Examination() {
                               2025
                             </a>
                           </li>
-
                           <li>
                             <a
                               href="/exam/SYMCA25.pdf"

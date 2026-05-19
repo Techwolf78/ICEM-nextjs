@@ -455,44 +455,15 @@ const HackathonTimeline = () => {
             <p className="mt-3 md:mt-4 text-center text-gray-700 text-xs md:text-sm italic">
               Celebrating the winners of MSME IDEA Hackathon 5.0 – where bold ideas become impactful solutions for India's future.{" "}
               <span 
-                className="relative inline-block cursor-pointer group font-bold text-yellow-600 transition-all duration-300"
+                className="font-bold text-yellow-600"
                 style={{
                   textShadow: '0 0 8px rgba(217, 119, 6, 0.6), 0 0 12px rgba(251, 191, 36, 0.4)'
                 }}
               >
                 Congratulations
-                {/* Confetti particles on hover */}
-                <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  {[...Array(12)].map((_, i) => (
-                    <span
-                      key={i}
-                      className="absolute text-lg animate-pulse"
-                      style={{
-                        left: `${Math.random() * 100}%`,
-                        top: `${Math.random() * 100}%`,
-                        animation: `confetti-fall ${1 + Math.random() * 0.5}s ease-out forwards`,
-                        animationDelay: `${Math.random() * 0.2}s`,
-                      }}
-                    >
-                      ✨
-                    </span>
-                  ))}
-                </span>
               </span>
               {" "}to all the Winners!
             </p>
-            <style jsx>{`
-              @keyframes confetti-fall {
-                0% {
-                  opacity: 1;
-                  transform: translateY(-20px) rotate(0deg) scale(1);
-                }
-                100% {
-                  opacity: 0;
-                  transform: translateY(20px) rotate(360deg) scale(0.3);
-                }
-              }
-            `}</style>
           </div>
         </div>
       </section>

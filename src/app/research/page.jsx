@@ -10,6 +10,7 @@ import PhdGuidesTable2324 from "@/components/research/PhdGuidesTable2324";
 import RDCommitteeTable2425 from "@/components/research/RDCommitteeTable2425";
 import RDCommitteeTableGeneral from "@/components/research/RDCommitteeTableGeneral";
 import RDCommitteeTable2324 from "@/components/research/RDCommitteeTable2324";
+import HackathonTimeline from "@/components/research/HackathonTimeline";
 import { publicationsData } from "@/static/research/publicationsData";
 import { iprData } from "@/static/research/publicationsData";
 import { researchData } from "@/static/research/researchdata";
@@ -266,107 +267,8 @@ const Research = () => {
         </div>
       </section>
 
-      {/* MSME Hackathon Section */}
-      <section className="py-8 md:py-10 bg-white">
-        <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-center text-secondary mb-4 md:mb-6">
-            MSME Hackathon 4.0
-          </h2>
-          <p className="text-gray-700 text-center max-w-4xl mx-auto mb-6 md:mb-8 leading-relaxed text-sm md:text-base">
-            The MSME Idea Hackathon 4.0 is a premier national-level innovation
-            initiative by the Ministry of Micro, Small & Medium Enterprises
-            (MSME), Government of India, under its MSME Innovative Scheme.
-            Designed to empower India's youth, the hackathon solicits
-            cutting-edge ideas from individuals aged 18–35 to solve real-world
-            challenges across diverse sectors—fueling the vision of a "Viksit
-            Bharat @2047".
-          </p>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-6 md:mb-8">
-            <div className="bg-gray-50 p-4 md:p-6 rounded-lg border border-gray-200">
-              <h3 className="text-lg md:text-xl font-bold text-secondary mb-3 md:mb-4">
-                Selection & Support Process
-              </h3>
-              <ol className="list-decimal list-inside space-y-2 md:space-y-3 text-gray-700 text-sm md:text-base">
-                <li>
-                  <strong>Host Institute Evaluation:</strong> Each HI assembles
-                  expert panels to shortlist promising ideas.
-                </li>
-                <li>
-                  <strong>Ministry Screening:</strong> Shortlisted ideas undergo
-                  further evaluation by the Ministry of MSME.
-                </li>
-                <li>
-                  <strong>Funding & Incubation:</strong> Selected ideas receive
-                  up to ₹15 lakhs for development support.
-                </li>
-              </ol>
-            </div>
-
-            <div className="bg-gray-50 p-4 md:p-6 rounded-lg border border-gray-200">
-              <h3 className="text-lg md:text-xl font-bold text-secondary mb-3 md:mb-4">
-                Impact & Achievements
-              </h3>
-              <ul className="list-disc list-inside space-y-2 md:space-y-2 text-gray-700 text-sm md:text-base">
-                <li>
-                  <strong>Massive Reach:</strong> 29,000+ submissions, 400 ideas
-                  awarded funding
-                </li>
-                <li>
-                  <strong>National Recognition:</strong> Results announced by
-                  Hon'ble President of India
-                </li>
-                <li>
-                  <strong>ICEM Success:</strong> Three innovative proposals
-                  secured funding
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-gray-50 p-4 md:p-6 rounded-lg border border-gray-200">
-              <h3 className="text-lg md:text-xl font-bold text-secondary mb-3 md:mb-4">
-                ICEM Funded Projects
-              </h3>
-              <div className="space-y-3 md:space-y-4">
-                <div className="border-l-4 border-secondary pl-3 md:pl-4">
-                  <h4 className="font-bold text-secondary text-sm md:text-base">
-                    Utilization of Images for Monitoring Construction Progress
-                  </h4>
-                  <p className="text-xs md:text-sm text-gray-600">
-                    Gajendra Thakur - AI&DS Branch
-                  </p>
-                  <p className="text-secondary font-semibold text-sm md:text-base">
-                    ₹13.5 Lakhs
-                  </p>
-                </div>
-                <div className="border-l-4 border-secondary pl-3 md:pl-4">
-                  <h4 className="font-bold text-secondary text-sm md:text-base">
-                    Emotion Detector
-                  </h4>
-                  <p className="text-xs md:text-sm text-gray-600">
-                    Sumit Kumbhar - Alard College of Pharmacy
-                  </p>
-                  <p className="text-secondary font-semibold text-sm md:text-base">
-                    ₹13.5 Lakhs
-                  </p>
-                </div>
-                <div className="border-l-4 border-secondary pl-3 md:pl-4">
-                  <h4 className="font-bold text-secondary text-sm md:text-base">
-                    Hydrobot
-                  </h4>
-                  <p className="text-xs md:text-sm text-gray-600">
-                    Shon Rakesh Gaikwad - Trinity College of Engineering &
-                    Research
-                  </p>
-                  <p className="text-secondary font-semibold text-sm md:text-base">
-                    ₹14 Lakhs
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hackathon Timeline Section - Including 5.0 and 4.0 */}
+      <HackathonTimeline />
 
       {/* Department Information Section */}
       <section className="py-8 md:py-12 lg:py-16 bg-gray-50">

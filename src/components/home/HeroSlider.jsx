@@ -8,7 +8,7 @@ const HeroSlider = () => {
   const desktopImages = [
     "/assets/images/banner/icem_banner_team_gemini.avif",
     "/assets/images/banner/cet_banner.avif",
-    "/banners/HomeBanner1.webp",
+    "/assets/images/banner/finalplacedstd.avif",
     "/placement/PlacementBanner.avif",
     "/banners/ICEM - Website Banner 2 5.avif",
     // "/banners/ICEMBANNERCLASS.webp",

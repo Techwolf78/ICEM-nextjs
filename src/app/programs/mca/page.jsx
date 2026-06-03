@@ -96,7 +96,7 @@ export default function Computer() {
           font-bold leading-tight md:leading-snug
         "
       >
-        2-Year Master of Computer Applications (MCA) Programme
+        2-Year MASTERS IN COMPUTER APPLICATIONS
         <br className="hidden sm:block" />
         <span
           className="
@@ -230,7 +230,7 @@ export default function Computer() {
           <div className="bg-white p-4 rounded-lg shadow-sm flex flex-col justify-between border border-gray-100">
             <div>
               <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-2 leading-snug">
-                Master of Computer Applications (MCA)
+                MASTERS IN COMPUTER APPLICATIONS
               </h2>
 
               <p className="text-gray-700 mb-4 leading-relaxed text-sm sm:text-base">

@@ -117,14 +117,14 @@ const syllabusList = [
   {
     id: "sybtech2025",
     label: "MCA-(2025-27) Syllabus",
-    pdf: "/programs/MCA/mca-25-27.pdf",
+    pdf: "/assets/pdf/syllabus/mca-25-27-new.pdf",
   },
 ];
 
 const activitiesList = [
   {
     heading: "1. Session “Innovation/Start up Eco System”",
-    desc: `The Department of Master of Computer Applications (MCA) at Imperial College of Engineering and Management (ICEM) organized an insightful session on the topic "Innovation/Start-Up Ecosystem" under the banner of the Institution’s Innovation Council (IIC) on 23rd July 2025.
+    desc: `The Department of MASTERS IN COMPUTER APPLICATIONS at Imperial College of Engineering and Management (ICEM) organized an insightful session on the topic "Innovation/Start-Up Ecosystem" under the banner of the Institution’s Innovation Council (IIC) on 23rd July 2025.
 
 The session was coordinated by Prof. Dhanashree Pisal, who took the initiative to facilitate this enriching experience for the students. The session was delivered by Prof. Aditi Huparikar, a knowledgeable and experienced speaker in the domain of entrepreneurship and innovation.`,
   },
@@ -199,6 +199,18 @@ export default function FAQMCA() {
 
           "The department of MCA is affiliated to Savitribai Phule Pune University (SPPU) and approved by All India Council for Technical Education (AICTE), New-Delhi at Indira College of Engineering & Management with intake of 60 students.",
         ],
+        "Vision": [
+          "To offer a well-balanced program of instructions, practical experience and to provide opportunities for overall development, groom the students in excellent professionals, knowledge seekers and good human being."
+        ],
+        "Mission": [
+          "To prepare learner-sensitive educators with the knowledge, skills, and dispositions to contribute to a better society.",
+          "To ensure quality learning & teaching take place in the classroom every day.",
+          "To provide equitable access to quality education for the students.",
+          "Teacher facilitate learning & constantly nature every learner.",
+          "Our Mission is to foster the success of our students and their communities through innovative, flexible learning opportunities for people of all ages, backgrounds, and aspirations resulting in self-fulfillment and competitiveness in an increasingly global society.",
+          "To strive for excellence in development and deployment of computer applications by empowering students.",
+          "To impart quality and value based education to raise satisfaction level of all stakeholders and enhancing sense of social responsibility."
+        ]
       },
     },
     // ================= NEW SECTIONS FOR IMCA =================
@@ -331,7 +343,16 @@ export default function FAQMCA() {
                   </summary>
 
                   <div className="p-3 md:p-4 pt-2 space-y-3">
-                    {items.map((item, i) => {
+                    {title === "Vision" || title === "Mission" ? (
+                      <ul className="list-disc pl-5 space-y-2 text-gray-700">
+                        {items.map((item, i) => (
+                          <li key={i} className="text-gray-700 leading-relaxed">
+                            {item.trim()}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      items.map((item, i) => {
                       if (typeof item === "object" && item.pdf) {
                         return (
                           <a
@@ -364,7 +385,7 @@ export default function FAQMCA() {
                           {trimmed}
                         </p>
                       );
-                    })}
+                    }))}
                   </div>
                 </details>
               </div>

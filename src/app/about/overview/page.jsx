@@ -56,7 +56,7 @@ export default function Overview() {
     },
     {
       name: "Dr. Sanjay Mathapati",
-      designation: "HoD Master of Computer Applications.",
+      designation: "HoD MASTERS IN COMPUTER APPLICATIONS.",
       image: "/faculty/hod_mca.JPG",
     },
 

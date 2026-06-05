@@ -1,21 +1,23 @@
-# Deployment script for ICEM Next.js site to cPanel
+# Deployment script for ICEM Next.js site to cPanel using tar.exe (super fast!)
 # Run this after 'npm run build' to create ZIPs for upload
 
-Write-Host "Creating deployment ZIPs..."
-
-# Clean up old ZIPs
+Write-Host "Cleaning up old ZIPs..."
 Remove-Item .\*.zip -Force -ErrorAction SilentlyContinue
 
+Write-Host "Creating deployment ZIPs with tar.exe..."
+
 # Create ZIPs for large folders
-Compress-Archive -Path .\out\_next -DestinationPath .\next.zip
-Compress-Archive -Path .\out\assets -DestinationPath .\assets.zip
-Compress-Archive -Path .\out\pdfs -DestinationPath .\pdfs.zip
-Compress-Archive -Path .\out\programs -DestinationPath .\programs.zip
+tar -a -cf next.zip -C .\out _next
+tar -a -cf assets.zip -C .\out assets
+tar -a -cf pdfs.zip -C .\out pdfs
+tar -a -cf programs.zip -C .\out programs
 
 # ZIP the rest
-Get-ChildItem .\out -Exclude _next,assets,pdfs,programs | Compress-Archive -DestinationPath .\rest.zip
+$excludeList = @('_next', 'assets', 'pdfs', 'programs')
+$files = Get-ChildItem .\out | Where-Object { $excludeList -notcontains $_.Name } | Select-Object -ExpandProperty Name
+tar -a -cf rest.zip -C .\out $files
 
 # Check sizes
 Get-Item .\next.zip, .\assets.zip, .\pdfs.zip, .\programs.zip, .\rest.zip | Select-Object Name, @{Name="SizeMB";Expression={[math]::Round($_.Length / 1MB, 2)}}
 
-Write-Host "ZIPs created. Upload next.zip, assets.zip, pdfs.zip, programs.zip, rest.zip to cPanel public_html and extract each."
+Write-Host "ZIPs created successfully! Upload next.zip, assets.zip, pdfs.zip, programs.zip, rest.zip to cPanel public_html and extract each."

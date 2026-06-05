@@ -112,7 +112,7 @@ const syllabusList = [
   {
     id: "sybtech",
     label: "MCA-(2024-26) Syllabus",
-    pdf: "/programs/MCA/SY2426.pdf",
+    pdf: "/programs/mca/SY2426.pdf",
   },
   {
     id: "sybtech2025",

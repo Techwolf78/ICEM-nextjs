@@ -424,13 +424,6 @@ export default function FAQMECH() {
 
           "From 2025–26, the department is proud to launch B.Tech Mechanical Engineering with Specialization in Electric Vehicle Technology, aligning our curriculum with the rapidly growing EV industry and future mobility solutions.",
         ],
-        // Vision: [
-        //   "Be a nationally recognized Mechanical Engineering Department that provides right academic ambience and nurtures innate talent of students"
-        // ],
-        // Mission: [
-        //   "Prepare engineering students for successful career in Mechanical Engineering by imparting knowledge, skills and attitude."
-        // ],
-        // Values: ["Integrity, Innovation, Excellence, Collaboration."],
         "Programs Offered": [
           "Department of Mechanical Engineering was established in 2007 by offering undergraduate and Post Graduate program in Mechanical Engineering. The program is affiliated to University of Pune, recognized by Govt. of Maharashtra & All India Council of Technical Education (AICTE) New Delhi.",
           "B.E. in Mechanical Engineering (SPPU) – Intake: 60",
@@ -438,6 +431,31 @@ export default function FAQMECH() {
           "B. Tech (Mechanical - EV Specialization) – Newly introduced",
         ],
       },
+    },
+
+    "Vision, Mission, PEOs & PSOs": {
+      type: "accordion",
+      content: {
+        "Department Vision": [
+          "Be a Nationally recognized Mechanical Engineering Department that provides right academic ambience and nurtures innate talent of students."
+        ],
+        "Department Mission": [
+          "M1: Provide strong fundamental and advanced knowledge in Mechanical Engineering.",
+          "M2: Develop technical and practical skills through hands-on learning and modern engineering tools.",
+          "M3: Build positive professional attitudes, including ethics, teamwork, and responsibility.",
+          "M4: Prepare students for engineering careers through industry exposure and continuous learning."
+        ],
+        "Programme Educational Objectives (PEOs)": [
+          "PEO 1: Graduates will apply knowledge gained in engineering and science to improve lives and livelihoods through a successful career in Mechanical Engineering and other related fields.",
+          "PEO 2: Graduates will become innovators, entrepreneurs to address social, technical and business challenges.",
+          "PEO 3: Graduates will engage in lifelong learning such as higher studies, research and other Continuous professional development activities."
+        ],
+        "Programme Specific Outcomes (PSOs)": [
+          "PSO 1: Career Readiness - Graduates will be ready for successful careers in mechanical industries using modern engineering skills.",
+          "PSO 2: Higher Education & Research - Graduates will be prepared to pursue higher studies and take up research in advanced areas of mechanical engineering.",
+          "PSO 3: Service to Society & Nation - Graduates will apply mechanical engineering knowledge to create solutions useful for society and national development."
+        ]
+      }
     },
     // ================= NEW SECTIONS (MECHANICAL) =================
 

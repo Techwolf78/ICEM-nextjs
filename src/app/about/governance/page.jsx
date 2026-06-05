@@ -23,10 +23,10 @@ export default function Governance() {
       </div>
 
       {/* ===== Main Section ===== */}
-      <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row py-4 mt-5 md:py-6 md:mt-10">
+      <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row px-4 py-2 mt-2 md:py-6 md:mt-10">
         {/* LEFT SECTION */}
         <div className="md:w-full bg-white p-4 md:p-6 rounded-xl shadow-md">
-          <h2 className="text-4xl font-semibold text-secondary mb-4 md:mb-6 ">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary mb-4 md:mb-6 leading-tight">
             Institutional Governance and Leadership
           </h2>
 
@@ -91,29 +91,60 @@ export default function Governance() {
 
                 table: [
                   [
-                    "Dr. Tarita Shankar, Chair Person & Chief Mentor-IGI",
-                    "Management members",
+                    "Dr. Tarita Shankar",
+                    "Chairperson & Chief Mentor",
+                    "Chairperson",
                   ],
-                  ["Mr. Rajiv Bansal, COO", "Management members"],
-                  ["Mr. Sanjul Bhakri, CTIO", "Management members"],
                   [
-                    "Mr. Shardul Gangal, Director Business Development",
-                    "Management members",
+                    "Mr. Shardul Gangal",
+                    "Director, Business Development",
+                    "Management Representative",
                   ],
-                  ["Dr. Poornashankar, Dean (R&D)", "Management members"],
                   [
-                    "Dr. Manjusha Tatiya, HoD (AI & DS).",
-                    "Teachers of College",
+                    "Mr. Anup Vaidya",
+                    "Campus Director – Chanakya Campus",
+                    "Management Representative",
                   ],
-                  ["Dr. Saurabh Gupta, Dean-Academics", "Teachers of College"],
-                  ["Mrs. Anita Surve, Registrar", "Administrative Staff"],
-                  ["Prof. Chetan Wakalkar, Academic Advisor", "Educationist"],
-                  ["Vacant", "State Government Nominee"],
                   [
-                    "Dr. Suresh Shirbahadurkar, D Y Patil Technical Campus, Talegaon Dabhade Pune",
-                    "SPPU Pune Nominee",
+                    "Mr.Vivek Ganmukhi",
+                    "Director - IT",
+                    "Management Representative",
                   ],
-                  ["Dr. Nilesh Uke, Principal", "Member Secretary"],
+                  [
+                    "Dr. Soumitra Das",
+                    "Dean Academics & Vice Principal",
+                    "Faculty Representative",
+                  ],
+                  [
+                    "Dr. Poorna Shankar",
+                    "HOD- Computer",
+                    "Faculty Representative",
+                  ],
+                  [
+                    "Prof. Chetan Wakalkar",
+                    "Academic Advisor",
+                    "Educationist",
+                  ],
+                  [
+                    "Mr. Shashi Bhat",
+                    "Founder & Director, Gryphon Academy",
+                    "Industrialist",
+                  ],
+                  [
+                    "Dr. Suresh Shirbahadurkar",
+                    "D Y Patil Technical Campus, Talegaon Dabhade Pune",
+                    "University Nominee",
+                  ],
+                  [
+                    "",
+                    "Name awaited",
+                    "State Government Nominee",
+                  ],
+                  [
+                    "Dr. Nilesh Uke",
+                    "Principal",
+                    "Member Secretary",
+                  ],
                 ],
               },
               {
@@ -241,65 +272,91 @@ export default function Governance() {
 
                     {item.table && (
                       <div className="overflow-x-auto mb-4 ">
-                        <table className="min-w-full border text-center border-gray-300 text-sm">
-                          <thead>
-                            <tr className="bg-gray-200">
-                              <th className="border px-3 py-2  w-16">Sr No.</th>
-                              <th className="border px-3 py-2 ">
-                                Name of Member with Designation
-                              </th>
-                              <th className="border px-3 py-2  w-48">
-                                Category
-                              </th>
-                            </tr>
-                          </thead>
+                        {(() => {
+                          const isThreeCols = item.table.some(row => row.length === 3);
+                          return (
+                            <table className="min-w-full border border-gray-300 text-sm">
+                              <thead>
+                                <tr className="bg-gray-200 text-gray-800">
+                                  <th className="border px-3 py-2 w-16 text-center">Sr No.</th>
+                                  {isThreeCols ? (
+                                    <>
+                                      <th className="border px-3 py-2 text-left">Name & Designation</th>
+                                      <th className="border px-3 py-2 text-left">Designation</th>
+                                      <th className="border px-3 py-2 text-left w-64">Position in Governing Body</th>
+                                    </>
+                                  ) : (
+                                    <>
+                                      <th className="border px-3 py-2 text-center">
+                                        Name of Member with Designation
+                                      </th>
+                                      <th className="border px-3 py-2 text-center w-48">
+                                        Category
+                                      </th>
+                                    </>
+                                  )}
+                                </tr>
+                              </thead>
 
-                          <tbody>
-                            {(() => {
-                              // ===========================
-                              // GROUP ROWSPAN BY CATEGORY
-                              // ===========================
-                              const grouped = {};
-                              item.table.forEach((row) => {
-                                const category = row[1];
-                                if (!grouped[category]) grouped[category] = [];
-                                grouped[category].push(row);
-                              });
+                              <tbody>
+                                {isThreeCols ? (
+                                  item.table.map((row, index) => (
+                                    <tr
+                                      key={index}
+                                      className="odd:bg-white even:bg-gray-50 hover:bg-gray-50/80 transition-colors"
+                                    >
+                                      <td className="border px-3 py-2 text-center">{index + 1}</td>
+                                      <td className="border px-3 py-2 text-left font-medium text-gray-900">{row[0]}</td>
+                                      <td className="border px-3 py-2 text-left text-gray-700">{row[1]}</td>
+                                      <td className="border px-3 py-2 text-left text-gray-700 bg-gray-50/30">{row[2]}</td>
+                                    </tr>
+                                  ))
+                                ) : (
+                                  (() => {
+                                    const grouped = {};
+                                    item.table.forEach((row) => {
+                                      const category = row[1];
+                                      if (!grouped[category]) grouped[category] = [];
+                                      grouped[category].push(row);
+                                    });
 
-                              let sr = 1;
+                                    let sr = 1;
 
-                              return Object.keys(grouped).map((category) => {
-                                const rows = grouped[category];
-                                const rowspan = rows.length;
+                                    return Object.keys(grouped).map((category) => {
+                                      const rows = grouped[category];
+                                      const rowspan = rows.length;
 
-                                return rows.map((row, idx) => (
-                                  <tr
-                                    key={sr}
-                                    className="odd:bg-white even:bg-gray-50"
-                                  >
-                                    {/* S. No. */}
-                                    <td className="border px-3 py-2">{sr++}</td>
+                                      return rows.map((row, idx) => (
+                                        <tr
+                                          key={sr}
+                                          className="odd:bg-white even:bg-gray-50 text-center"
+                                        >
+                                          {/* S. No. */}
+                                          <td className="border px-3 py-2">{sr++}</td>
 
-                                    {/* Name */}
-                                    <td className="border px-3 py-2">
-                                      {row[0]}
-                                    </td>
+                                          {/* Name */}
+                                          <td className="border px-3 py-2">
+                                            {row[0]}
+                                          </td>
 
-                                    {/* Category - only render on first row (merged) */}
-                                    {idx === 0 && (
-                                      <td
-                                        rowSpan={rowspan}
-                                        className="border px-3 py-2 align-top bg-gray-100 font-medium"
-                                      >
-                                        {category}
-                                      </td>
-                                    )}
-                                  </tr>
-                                ));
-                              });
-                            })()}
-                          </tbody>
-                        </table>
+                                          {/* Category - only render on first row (merged) */}
+                                          {idx === 0 && (
+                                            <td
+                                              rowSpan={rowspan}
+                                              className="border px-3 py-2 align-top bg-gray-100 font-medium"
+                                            >
+                                              {category}
+                                            </td>
+                                          )}
+                                        </tr>
+                                      ));
+                                    });
+                                  })()
+                                )}
+                              </tbody>
+                            </table>
+                          );
+                        })()}
                       </div>
                     )}
 

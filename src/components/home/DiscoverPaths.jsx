@@ -41,7 +41,7 @@ const courses = [
   },
   {
     name: "Integrated MCA (BCA + MCA)",
-    img: "/programs/MCA/MCA.webp",
+    img: "/programs/mca/MCA.webp",
     link: "/programs/imca",
   },
 ];

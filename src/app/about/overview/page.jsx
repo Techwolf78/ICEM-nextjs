@@ -18,7 +18,7 @@ export default function Overview() {
   ];
 
   const hods = [
-        {
+    {
       name: "Dr. Soumitra S Das",
       designation: "HoD Computer Engineering.",
       image: "/faculty/SoumitraDas.webp",
@@ -28,12 +28,12 @@ export default function Overview() {
       designation: "HoD Mechanical Engineering.",
       image: "/faculty/MaheshBhong.webp",
     },
-        {
+    {
       name: "Prof. Dhiraj S. Bhagwate",
       designation: "HoD Electronics and Telecommunication Engineering.",
       image: "/faculty/DhirajBhagwate.webp",
     },
-        {
+    {
       name: "Dr. Poorna Shankar",
       designation: "HoD First Year Engineering.",
       image: "/faculty/PoornaShankar.webp",
@@ -73,35 +73,116 @@ export default function Overview() {
   ];
 
   const deans = [
-    { name: "Dr. Soumitra Das", designation: "Dean (Academics) & Head of Deans", image: "/assets/images/icemFaculty/Soumitra-Das.png" },
-    { name: "Dr. Poornashankar", designation: "Dean (Artificial Intelligence) & HoD (Computer Engineering)", image: "/assets/images/icemFaculty/Dr-Poorna-Shankar.jpg" },
-    { name: "Dr. Archana Salve", designation: "Dean (Entrepreneurship Development)", image: "/assets/images/icemFaculty/Archana.jpg" },
-    { name: "Dr. Darshana Desai", designation: "Dean (Quality Assurance & Accreditation)", image: "/assets/images/icemFaculty/Dr-Darshana-Desai.jpg" },
-    { name: "Dr. Mahesh Bhong", designation: "Dean (Research & Development)", image: "/faculty/MaheshBhong.webp" },
-    { name: "Mr. Sushil Chopade", designation: "Dean (Industry Institute Cell)", image: "/assets/images/icemFaculty/Sushil Chopade.jpg" },
-    { name: "Dr. Priyanka Pawar", designation: "Dean (Learning & Development)", image: "/assets/images/icemFaculty/Priyanka.jpg" },
-    { name: "Mr. Ashwin Dharme", designation: "Dean (Admissions)", image: "/assets/images/icemFaculty/Ashwin_Dharme.jpg" },
-    { name: "Dr. Deepa Jamnik", designation: "Dean (Events & Branding)", image: "/assets/images/icemFaculty/Dr. Deepa Jamnik.jpg" },
+    {
+      name: "Dr. Soumitra Das",
+      designation: "Dean (Academics) & Head of Deans",
+      image: "/assets/images/icemFaculty/Soumitra-Das.png",
+    },
+    {
+      name: "Dr. Poornashankar",
+      designation:
+        "Dean (Artificial Intelligence) & HoD (Computer Engineering)",
+      image: "/assets/images/icemFaculty/Dr-Poorna-Shankar.jpg",
+    },
+    {
+      name: "Dr. Archana Salve",
+      designation: "Dean (Entrepreneurship Development)",
+      image: "/assets/images/icemFaculty/Archana.jpg",
+    },
+    {
+      name: "Dr. Darshana Desai",
+      designation: "Dean (Quality Assurance & Accreditation)",
+      image: "/assets/images/icemFaculty/Dr-Darshana-Desai.jpg",
+    },
+    {
+      name: "Dr. Mahesh Bhong",
+      designation: "Dean (Research & Development)",
+      image: "/faculty/MaheshBhong.webp",
+    },
+    {
+      name: "Mr. Sushil Chopade",
+      designation: "Dean (Industry Institute Cell)",
+      image: "/assets/images/icemFaculty/Sushil Chopade.jpg",
+    },
+    {
+      name: "Dr. Priyanka Pawar",
+      designation: "Dean (Learning & Development)",
+      image: "/assets/images/icemFaculty/Priyanka.jpg",
+    },
+    {
+      name: "Mr. Ashwin Dharme",
+      designation: "Dean (Admissions)",
+      image: "/assets/images/icemFaculty/Ashwin_Dharme.jpg",
+    },
+    {
+      name: "Dr. Deepa Jamnik",
+      designation: "Dean (Events & Branding)",
+      image: "/assets/images/icemFaculty/Dr. Deepa Jamnik.jpg",
+    },
   ];
 
   const heads = [
-    { name: "Dr. Kiran Devade", designation: "HoD (Engineering Science)", image: "/assets/images/icemFaculty/Dr_Kiran_Devade.jpg" },
-    { name: "Dr. Saurabh Gupta", designation: "HoD (Mechanical Engineering)", image: "/assets/images/icemFaculty/Saurabh Gupta.jpg" },
-    { name: "Dr. Vikas Nandgaonkar", designation: "HoD (Information Technology)", image: "/assets/images/icemFaculty/Vikas_Nandgaonkar.jpg" },
-    { name: "Dr. Manjusha Rahul Tatiya", designation: "HoD (AI & Data Science)", image: "/faculty/Manjusha2.webp" },
-    { name: "Mrs. Meenakshi Patil", designation: "HoD (E&TC)", image: "/assets/images/icemFaculty/MeenakshiPatil.jpg" },
-    { name: "Dr. Aatish Zagade", designation: "HoD (MBA)", image: "/assets/images/icemFaculty/aatish_zagade.webp" },
-    { name: "Dr. Awantika Bijwe", designation: "HoD (MCA)", image: "/assets/images/icemFaculty/Dr. Awantika Bijwe.jpg" },
+    {
+      name: "Dr. Kiran Devade",
+      designation: "HoD (Engineering Science)",
+      image: "/assets/images/icemFaculty/Dr_Kiran_Devade.jpg",
+    },
+    {
+      name: "Dr. Saurabh Gupta",
+      designation: "HoD (Mechanical Engineering)",
+      image: "/assets/images/icemFaculty/Saurabh Gupta.jpg",
+    },
+    {
+      name: "Dr. Vikas Nandgaonkar",
+      designation: "HoD (Information Technology)",
+      image: "/assets/images/icemFaculty/Vikas_Nandgaonkar.jpg",
+    },
+    {
+      name: "Dr. Manjusha Rahul Tatiya",
+      designation: "HoD (AI & Data Science)",
+      image: "/faculty/Manjusha2.webp",
+    },
+    {
+      name: "Mrs. Meenakshi Patil",
+      designation: "HoD (E&TC)",
+      image: "/assets/images/icemFaculty/MeenakshiPatil.jpg",
+    },
+    {
+      name: "Dr. Aatish Zagade",
+      designation: "HoD (MBA)",
+      image: "/assets/images/icemFaculty/aatish_zagade.webp",
+    },
+    {
+      name: "Dr. Awantika Bijwe",
+      designation: "HoD (MCA)",
+      image: "/assets/images/icemFaculty/Dr. Awantika Bijwe.jpg",
+    },
   ];
 
   const ceos = [
-    { name: "Mrs. Meenakshi Patil", designation: "CEO (Examinations & Evaluation) – Autonomy", image: "/assets/images/icemFaculty/MeenakshiPatil.jpg" },
-    { name: "Mr. Hemant Darokar", designation: "CEO (Examinations & Evaluation) – SPPU", image: "/assets/images/icemFaculty/Hemant Darokar.jpg" },
+    {
+      name: "Mrs. Meenakshi Patil",
+      designation: "CEO (Examinations & Evaluation) – Autonomy",
+      image: "/assets/images/icemFaculty/MeenakshiPatil.jpg",
+    },
+    {
+      name: "Mr. Hemant Darokar",
+      designation: "CEO (Examinations & Evaluation) – SPPU",
+      image: "/assets/images/icemFaculty/Hemant Darokar.jpg",
+    },
   ];
 
   const assistants = [
-    { name: "Dr. Priyanka Shinde", designation: "Assistant TPO", image: "/assets/images/icemFaculty/PriyankaS.jpg" },
-    { name: "Mr. Vishal Meshram", designation: "Assistant TPO", image: "/assets/images/icemFaculty/Vishal Meshram.jpg" },
+    {
+      name: "Dr. Priyanka Shinde",
+      designation: "Assistant TPO",
+      image: "/assets/images/icemFaculty/PriyankaS.jpg",
+    },
+    {
+      name: "Mr. Vishal Meshram",
+      designation: "Assistant TPO",
+      image: "/assets/images/icemFaculty/Vishal Meshram.jpg",
+    },
   ];
 
   const institutes = [
@@ -147,25 +228,27 @@ export default function Overview() {
             <div className="space-y-4 md:space-y-6 text-gray-700 leading-relaxed">
               <p className="text-justify text-sm md:text-base">
                 Indira College of Engineering and Management (ICEM), Pune,
-                established in 2007 under the esteemed Indira Group of Institutes,
-                is a premier autonomous institution recognized for its commitment
-                to academic excellence, innovation, and holistic student
-                development. The college is approved by the All India Council for
-                Technical Education (AICTE), New Delhi, affiliated to Savitribai
-                Phule Pune University, and conferred autonomous status by the UGC.
-                ICEM is also proudly NAAC-accredited, reaffirming its position as
-                one of the top engineering and management institutes in Pune.
+                established in 2007 under the esteemed Indira Group of
+                Institutes, is a premier autonomous institution recognized for
+                its commitment to academic excellence, innovation, and holistic
+                student development. The college is approved by the All India
+                Council for Technical Education (AICTE), New Delhi, affiliated
+                to Savitribai Phule Pune University, and conferred autonomous
+                status by the UGC. ICEM is also proudly NAAC-accredited,
+                reaffirming its position as one of the top engineering and
+                management institutes in Pune.
               </p>
 
               <p className="text-justify text-sm md:text-base">
                 Situated in the scenic surroundings of Parandwadi Village, Maval
-                Taluka, ICEM has made a significant impact on the educational and
-                infrastructural development of the region, especially in rural
-                communities. With a mission to make quality technical and
+                Taluka, ICEM has made a significant impact on the educational
+                and infrastructural development of the region, especially in
+                rural communities. With a mission to make quality technical and
                 management education accessible, the institute serves as a
-                catalyst for academic, economic, and social empowerment.ICEM hosts
-                a diverse student body of over 1500 learners, offering a broad
-                spectrum of undergraduate, postgraduate, and integrated programs.
+                catalyst for academic, economic, and social empowerment.ICEM
+                hosts a diverse student body of over 1500 learners, offering a
+                broad spectrum of undergraduate, postgraduate, and integrated
+                programs.
               </p>
 
               <div className="bg-gradient-to-r from-secondary/5 to-primary/5 rounded-xl">
@@ -175,9 +258,9 @@ export default function Overview() {
                 <p className="text-justify italic text-sm md:text-base">
                   The institute envisions to develop itself into a centre of
                   academic excellence in the field of Engineering and Management
-                  education in order to develop future technocrats and managers with
-                  right knowledge, skill and attitude to serve the society and
-                  industries to fulfil their ever-changing requirements.
+                  education in order to develop future technocrats and managers
+                  with right knowledge, skill and attitude to serve the society
+                  and industries to fulfil their ever-changing requirements.
                 </p>
               </div>
 
@@ -192,20 +275,20 @@ export default function Overview() {
                     successfully whether it's locally, nationally or globally.
                   </li>
                   <li>
-                    To provide an environment which fosters continuous improvement &
-                    innovation with related technical support & facilities to
-                    enhance student and faculty effectiveness.
+                    To provide an environment which fosters continuous
+                    improvement & innovation with related technical support &
+                    facilities to enhance student and faculty effectiveness.
                   </li>
                   <li>
-                    To provide programmes focusing on the holistic development of
-                    the individual with the emphasis on personality grooming,
-                    physical fitness and a strong sense of social and environmental
-                    responsibility.
+                    To provide programmes focusing on the holistic development
+                    of the individual with the emphasis on personality grooming,
+                    physical fitness and a strong sense of social and
+                    environmental responsibility.
                   </li>
                   <li>
-                    To improve along with scientific reasoning and to develop global
-                    mindset amongst the students to prepare them for working in
-                    heterogeneous environment.
+                    To improve along with scientific reasoning and to develop
+                    global mindset amongst the students to prepare them for
+                    working in heterogeneous environment.
                   </li>
                 </ul>
               </div>
@@ -268,27 +351,28 @@ export default function Overview() {
                     Integrated Programs:
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
-                    {["Integrated MBA (BBA + MBA)", "Integrated MCA (BCA + MCA)"].map(
-                      (program, idx) => (
-                        <div
-                          key={idx}
-                          className="p-3 md:p-6 rounded-xl bg-[#E2F4F6] text-gray-800 font-medium
+                    {[
+                      "Integrated MBA (BBA + MBA)",
+                      "Integrated MCA (BCA + MCA)",
+                    ].map((program, idx) => (
+                      <div
+                        key={idx}
+                        className="p-3 md:p-6 rounded-xl bg-[#E2F4F6] text-gray-800 font-medium
                        border border-gray-200 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 cursor-pointer text-sm md:text-base"
-                        >
-                          {program}
-                        </div>
-                      )
-                    )}
+                      >
+                        {program}
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
 
               <p className="text-justify text-sm md:text-base">
                 Through a well-balanced academic structure, ICEM blends
-                theoretical learning with practical application. Our students gain
-                hands-on exposure through industry-relevant projects, expert-led
-                workshops, field visits, and case studies, ensuring they are
-                industry-ready from day one.
+                theoretical learning with practical application. Our students
+                gain hands-on exposure through industry-relevant projects,
+                expert-led workshops, field visits, and case studies, ensuring
+                they are industry-ready from day one.
               </p>
 
               <p className="text-justify text-sm md:text-base">
@@ -307,7 +391,8 @@ export default function Overview() {
                 <li>Entrepreneurship and innovation programs</li>
                 <li>Professional skill development and etiquette training</li>
                 <li>
-                  Mentorship and guest lectures by leading industry professionals
+                  Mentorship and guest lectures by leading industry
+                  professionals
                 </li>
               </ul>
 
@@ -322,22 +407,22 @@ export default function Overview() {
                 Our ultra-modern classrooms and labs, equipped with ICT panels,
                 are renovated to meet global standards, providing a future-ready
                 learning environment. With a highly qualified faculty, robust
-                industry connections, and a student-centric approach, ICEM equips
-                future engineers and managers to thrive in a dynamic, global
-                environment.
+                industry connections, and a student-centric approach, ICEM
+                equips future engineers and managers to thrive in a dynamic,
+                global environment.
               </p>
 
               <p className="text-justify text-sm md:text-base">
-                ICEM boasts an impressive placement record, with students securing
-                opportunities in leading national and international companies
-                across various industries. Our strong industry connections and
-                career readiness programs ensure successful placements in top-tier
-                organizations worldwide.
+                ICEM boasts an impressive placement record, with students
+                securing opportunities in leading national and international
+                companies across various industries. Our strong industry
+                connections and career readiness programs ensure successful
+                placements in top-tier organizations worldwide.
               </p>
 
               <p className="text-justify font-medium text-secondary text-sm md:text-base">
-                We are proud to nurture the innovators, leaders, and change-makers
-                of tomorrow.
+                We are proud to nurture the innovators, leaders, and
+                change-makers of tomorrow.
               </p>
             </div>
           </section>
@@ -354,11 +439,12 @@ export default function Overview() {
                 established in February 1994 under the visionary leadership of{" "}
                 <strong>Dr. Tarita Shankar</strong>, with the mission to provide
                 high-quality postgraduate education in{" "}
-                <strong>Business Management, International Business,</strong> and{" "}
-                <strong> Information Technology</strong>. What began with just 60
-                students and a single program has evolved into a thriving academic
-                ecosystem under the brand of <strong>Indira University</strong>,
-                attracting over 8000 students from across India.
+                <strong>Business Management, International Business,</strong>{" "}
+                and <strong> Information Technology</strong>. What began with
+                just 60 students and a single program has evolved into a
+                thriving academic ecosystem under the brand of{" "}
+                <strong>Indira University</strong>, attracting over 8000
+                students from across India.
               </p>
 
               <p className="text-justify text-sm md:text-base">
@@ -374,8 +460,8 @@ export default function Overview() {
               <p className="text-justify text-sm md:text-base">
                 Today, <strong>Indira University</strong> stands as a symbol of
                 excellence in higher education, offering a wide array of
-                undergraduate and postgraduate programs across disciplines. A key
-                part of this academic journey is the{" "}
+                undergraduate and postgraduate programs across disciplines. A
+                key part of this academic journey is the{" "}
                 <strong>Chanakya Campus</strong> located at Parandwadi, which
                 offers premier <strong>Engineering</strong> and
                 <strong> Management</strong> programs through state-of-the-art
@@ -385,8 +471,8 @@ export default function Overview() {
 
               <p className="text-justify text-sm md:text-base">
                 SCES has always upheld high academic standards and has been
-                instrumental in providing skilled talent to India's industrial and
-                service sectors. Guided by the core philosophy of offering
+                instrumental in providing skilled talent to India's industrial
+                and service sectors. Guided by the core philosophy of offering
                 <strong>
                   {" "}
                   "Management education in a corporate environment,"
@@ -398,8 +484,8 @@ export default function Overview() {
               <p className="text-justify text-sm md:text-base">
                 Backed by a committed team with deep expertise across academia,
                 industry, and public service, SCES continues to shape
-                professionals who are ethically grounded, technically proficient,
-                and globally competitive.
+                professionals who are ethically grounded, technically
+                proficient, and globally competitive.
               </p>
             </div>
           </section>
@@ -453,7 +539,9 @@ export default function Overview() {
                 </div>
 
                 <div className="mt-3 md:mt-4 text-center">
-                  <h4 className="font-bold text-base md:text-lg text-gray-800">DR. TARITA SHANKAR</h4>
+                  <h4 className="font-bold text-base md:text-lg text-gray-800">
+                    DR. TARITA SHANKAR
+                  </h4>
                   <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
                     CHAIRPERSON & CHIEF MENTOR
                     <br />
@@ -469,19 +557,23 @@ export default function Overview() {
                   igniting curiosity, nurturing innovation, and shaping leaders
                   who can create a meaningful impact in the world."
                   <br />
-                  <span className="font-semibold text-secondary">— Dr. Tarita Shankar</span>
+                  <span className="font-semibold text-secondary">
+                    — Dr. Tarita Shankar
+                  </span>
                 </blockquote>
 
                 <div className="space-y-3 md:space-y-4">
-                  <p className="font-semibold text-sm md:text-base">Dear Students,</p>
+                  <p className="font-semibold text-sm md:text-base">
+                    Dear Students,
+                  </p>
                   <p className="text-sm md:text-base">
                     Welcome to Indira College of Engineering and Management
                     (ICEM), a place where innovation meets excellence.
                   </p>
                   <p className="text-sm md:text-base">
                     At ICEM, we are committed to providing a transformative
-                    educational experience that goes beyond traditional learning.
-                    Our mission is to nurture students into competent
+                    educational experience that goes beyond traditional
+                    learning. Our mission is to nurture students into competent
                     professionals who are equipped to lead in the ever-evolving
                     technological landscape.
                   </p>
@@ -490,8 +582,8 @@ export default function Overview() {
                     creativity, critical thinking, and ethical practices. Our
                     state-of-the-art infrastructure, experienced faculty, and
                     industry collaborations ensure that our students receive a
-                    comprehensive education that prepares them for the challenges
-                    of tomorrow.
+                    comprehensive education that prepares them for the
+                    challenges of tomorrow.
                   </p>
                   <p className="text-sm md:text-base">
                     As you embark on this journey, remember that success is not
@@ -501,8 +593,9 @@ export default function Overview() {
                     continuous learning in every student.
                   </p>
                   <p className="text-sm md:text-base">
-                    We are here to support you at every step, guiding you towards
-                    achieving your goals and realizing your full potential.
+                    We are here to support you at every step, guiding you
+                    towards achieving your goals and realizing your full
+                    potential.
                   </p>
                 </div>
               </div>
@@ -520,25 +613,27 @@ export default function Overview() {
                 Established in 1994 under the visionary guidance of{" "}
                 <strong>Dr. Tarita Shankar</strong>, the{" "}
                 <strong>Indira Group of Institutes (IGI)</strong> in Pune has
-                emerged as a premier educational institution dedicated to shaping
-                future-ready professionals. Founded by the{" "}
-                <strong>Shree Chanakya Education Society (SCES)</strong>, IGI was
-                envisioned as a platform to nurture talent, foster innovation, and
-                empower students with the knowledge and skills necessary to
-                succeed in a rapidly evolving world.
+                emerged as a premier educational institution dedicated to
+                shaping future-ready professionals. Founded by the{" "}
+                <strong>Shree Chanakya Education Society (SCES)</strong>, IGI
+                was envisioned as a platform to nurture talent, foster
+                innovation, and empower students with the knowledge and skills
+                necessary to succeed in a rapidly evolving world.
               </p>
 
               <p className="text-justify text-sm md:text-base">
                 With a strong legacy spanning over three decades, IGI has
-                consistently pursued academic excellence while promoting holistic
-                development. The group has expanded its footprint to include{" "}
-                <strong>12 distinguished institutes</strong>
-                offering a wide array of programs across Management, Engineering,
-                Information Technology, Pharmacy, Commerce, Science, and Mass
-                Communication. This multi-disciplinary approach enables IGI to
-                provide a seamless educational journey from
-                <strong> Kindergarten to Doctorate</strong>, preparing students to
-                excel at every stage of their academic and professional careers.
+                consistently pursued academic excellence while promoting
+                holistic development. The group has expanded its footprint to
+                include <strong>12 distinguished institutes</strong>
+                offering a wide array of programs across Management,
+                Engineering, Information Technology, Pharmacy, Commerce,
+                Science, and Mass Communication. This multi-disciplinary
+                approach enables IGI to provide a seamless educational journey
+                from
+                <strong> Kindergarten to Doctorate</strong>, preparing students
+                to excel at every stage of their academic and professional
+                careers.
               </p>
 
               <p className="text-justify text-sm md:text-base">
@@ -556,29 +651,29 @@ export default function Overview() {
                 IGI takes pride in its{" "}
                 <strong>state-of-the-art infrastructure</strong>, experienced
                 faculty, and a supportive learning environment that encourages
-                curiosity, creativity, and self-confidence. The campus culture is
-                designed to inspire students to explore their potential fully,
-                embrace challenges, and emerge as competent, confident, and
-                socially conscious professionals.
+                curiosity, creativity, and self-confidence. The campus culture
+                is designed to inspire students to explore their potential
+                fully, embrace challenges, and emerge as competent, confident,
+                and socially conscious professionals.
               </p>
 
               <p className="text-justify text-sm md:text-base">
-                Over the years, IGI has built a strong network of alumni who have
-                made significant contributions across industries, demonstrating
-                the institute's commitment to nurturing talent and leadership. By
-                combining academic rigor with experiential learning and industry
-                exposure, IGI equips its students to thrive in diverse
-                professional landscapes, adapt to emerging trends, and lead with
-                vision and integrity.
+                Over the years, IGI has built a strong network of alumni who
+                have made significant contributions across industries,
+                demonstrating the institute's commitment to nurturing talent and
+                leadership. By combining academic rigor with experiential
+                learning and industry exposure, IGI equips its students to
+                thrive in diverse professional landscapes, adapt to emerging
+                trends, and lead with vision and integrity.
               </p>
 
               <p className="text-justify font-medium text-secondary text-sm md:text-base">
-                As a beacon of educational excellence in Pune, the Indira Group of
-                Institutes continues to innovate, inspire, and lead. With a
-                forward-looking approach and a student-centric ethos, IGI remains
-                dedicated to creating opportunities for growth, fostering lifelong
-                learning, and preparing a generation of leaders who are ready to
-                make a meaningful impact in the world.
+                As a beacon of educational excellence in Pune, the Indira Group
+                of Institutes continues to innovate, inspire, and lead. With a
+                forward-looking approach and a student-centric ethos, IGI
+                remains dedicated to creating opportunities for growth,
+                fostering lifelong learning, and preparing a generation of
+                leaders who are ready to make a meaningful impact in the world.
               </p>
             </div>
           </section>
@@ -594,8 +689,8 @@ export default function Overview() {
                 const imageSrc = inst.name.includes("Global Business School")
                   ? "/IGSB.jpg"
                   : inst.name.includes("Engineering & Management")
-                  ? "/Facilities/BannerOverviewPage.webp"
-                  : "/placeholder.webp";
+                    ? "/Facilities/BannerOverviewPage.webp"
+                    : "/placeholder.webp";
 
                 return (
                   <div
@@ -649,8 +744,12 @@ export default function Overview() {
                   </div>
 
                   <div className="mt-4 md:mt-6 space-y-1 md:space-y-2">
-                    <h4 className="font-bold text-gray-800 text-base md:text-lg">{leader.name}</h4>
-                    <p className="text-xs md:text-sm text-gray-600">{leader.designation}</p>
+                    <h4 className="font-bold text-gray-800 text-base md:text-lg">
+                      {leader.name}
+                    </h4>
+                    <p className="text-xs md:text-sm text-gray-600">
+                      {leader.designation}
+                    </p>
                     <p className="text-xs md:text-sm text-gray-600">
                       Indira College of Engineering and Management
                     </p>
@@ -667,7 +766,9 @@ export default function Overview() {
             </h3>
             <div className="space-y-6 md:space-y-8">
               <div>
-                <h4 className="text-lg md:text-xl font-semibold text-secondary mb-4">Deans</h4>
+                <h4 className="text-lg md:text-xl font-semibold text-secondary mb-4">
+                  Deans
+                </h4>
                 <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4">
                   {deans.map((person, index) => (
                     <div
@@ -685,15 +786,21 @@ export default function Overview() {
                         </div>
                       )}
                       <div className="p-2 md:p-4 space-y-2">
-                        <h5 className="font-bold text-gray-800 text-sm md:text-base">{person.name}</h5>
-                        <p className="text-sm text-gray-600 leading-tight">{person.designation}</p>
+                        <h5 className="font-bold text-gray-800 text-sm md:text-base">
+                          {person.name}
+                        </h5>
+                        <p className="text-sm text-gray-600 leading-tight">
+                          {person.designation}
+                        </p>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
               <div>
-                <h4 className="text-lg md:text-xl font-semibold text-secondary mb-4">Heads of Departments (HoD)</h4>
+                <h4 className="text-lg md:text-xl font-semibold text-secondary mb-4">
+                  Heads of Departments (HoD)
+                </h4>
                 <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4">
                   {heads.map((person, index) => (
                     <div
@@ -711,18 +818,26 @@ export default function Overview() {
                         </div>
                       )}
                       <div className="p-2 md:p-4 space-y-2">
-                        <h5 className="font-bold text-gray-800 text-sm md:text-base">{person.name}</h5>
-                        <p className="text-sm text-gray-600 leading-tight">{person.designation}</p>
+                        <h5 className="font-bold text-gray-800 text-sm md:text-base">
+                          {person.name}
+                        </h5>
+                        <p className="text-sm text-gray-600 leading-tight">
+                          {person.designation}
+                        </p>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
               <div>
-                <h4 className="text-lg md:text-xl font-semibold text-secondary mb-4">Examination & Evaluation and TPO</h4>
+                <h4 className="text-lg md:text-xl font-semibold text-secondary mb-4">
+                  Examination & Evaluation and TPO
+                </h4>
                 <div className="space-y-4">
                   <div>
-                    <h5 className="text-base md:text-lg font-medium text-secondary mb-3">CEO (Examinations & Evaluation)</h5>
+                    <h5 className="text-base md:text-lg font-medium text-secondary mb-3">
+                      CEO (Examinations & Evaluation)
+                    </h5>
                     <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4">
                       {ceos.map((person, index) => (
                         <div
@@ -740,15 +855,21 @@ export default function Overview() {
                             </div>
                           )}
                           <div className="p-2 md:p-4 space-y-2">
-                            <h6 className="font-bold text-gray-800 text-sm md:text-base">{person.name}</h6>
-                            <p className="text-sm text-gray-600 leading-tight">{person.designation}</p>
+                            <h6 className="font-bold text-gray-800 text-sm md:text-base">
+                              {person.name}
+                            </h6>
+                            <p className="text-sm text-gray-600 leading-tight">
+                              {person.designation}
+                            </p>
                           </div>
                         </div>
                       ))}
                     </div>
                   </div>
                   <div>
-                    <h5 className="text-base md:text-lg font-medium text-secondary mb-3">Assistant TPO</h5>
+                    <h5 className="text-base md:text-lg font-medium text-secondary mb-3">
+                      Assistant TPO
+                    </h5>
                     <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4">
                       {assistants.map((person, index) => (
                         <div
@@ -766,8 +887,12 @@ export default function Overview() {
                             </div>
                           )}
                           <div className="p-2 md:p-4 space-y-2">
-                            <h6 className="font-bold text-gray-800 text-sm md:text-base">{person.name}</h6>
-                            <p className="text-sm text-gray-600 leading-tight">{person.designation}</p>
+                            <h6 className="font-bold text-gray-800 text-sm md:text-base">
+                              {person.name}
+                            </h6>
+                            <p className="text-sm text-gray-600 leading-tight">
+                              {person.designation}
+                            </p>
                           </div>
                         </div>
                       ))}

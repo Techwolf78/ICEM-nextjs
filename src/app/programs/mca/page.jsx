@@ -88,30 +88,14 @@ export default function Computer() {
   {/* Content Wrapper */}
   <div className="relative max-w-[1400px] px-4 sm:px-6 md:px-10 lg:px-20 z-20">
     <div className="max-w-2xl md:max-w-xl lg:max-w-3xl text-white">
-
-      {/* Heading */}
-      <h2
-        className="
-          text-lg sm:text-2xl md:text-3xl lg:text-4xl
-          font-bold leading-tight md:leading-snug
-        "
-      >
-        2-Year MASTERS IN COMPUTER APPLICATIONS
-        <br className="hidden sm:block" />
-        <span
-          className="
-            bg-gradient-to-br 
-            from-cyan-400 
-            to-sky-400 
-            bg-clip-text 
-            text-transparent 
-            font-extrabold
-            text-lg sm:text-2xl md:text-3xl lg:text-4xl
-          "
-        >
-           Advancing Expertise in Software Development and Systems Architecture
-        </span>
-      </h2>
+{/* Heading */}
+<h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight md:leading-snug">
+  2-Year MASTERS IN COMPUTER APPLICATIONS
+  <br className="hidden sm:block" />
+  <span className="bg-gradient-to-br from-cyan-400 to-sky-400 bg-clip-text text-transparent font-extrabold block mt-2 sm:mt-3 text-sm sm:text-xl md:text-2xl lg:text-3xl">
+    Advancing Expertise in Software Development and Systems Architecture
+  </span>
+</h2>
 
       {/* Description */}
       <p
@@ -283,7 +267,7 @@ export default function Computer() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/programs/MCA/MCA1.webp"
+                  src="/programs/mca/MCA1.webp"
                   alt="Interdisciplinary Expertise"
                   fill
                   className="object-cover"
@@ -310,7 +294,7 @@ export default function Computer() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/programs/MCA/MCA2.webp"
+                  src="/programs/mca/MCA2.webp"
                   alt="Cutting-Edge Laboratories"
                   fill
                   className="object-cover"
@@ -337,7 +321,7 @@ export default function Computer() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="w-full h-48 relative">
                 <Image
-                  src="/programs/MCA/MCA3.webp"
+                  src="/programs/mca/MCA3.webp"
                   alt="Industry-Relevant Skills"
                   fill
                   className="object-cover"

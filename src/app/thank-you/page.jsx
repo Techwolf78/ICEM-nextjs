@@ -2,11 +2,20 @@
 
 import React, { useEffect, useState } from "react";
 import Script from "next/script";
+import { consumeValidNpfThankYouVisit } from "@/lib/npfThankYouGuard";
 
 export default function ThankYouPage() {
   const [countdown, setCountdown] = useState(6);
+  const [isVerified, setIsVerified] = useState(null);
 
   useEffect(() => {
+    if (!consumeValidNpfThankYouVisit()) {
+      window.location.replace("/");
+      return;
+    }
+
+    setIsVerified(true);
+
     const timer = setTimeout(() => {
       window.location.href = '/';
     }, 6000);
@@ -20,6 +29,11 @@ export default function ThankYouPage() {
       clearInterval(interval);
     };
   }, []);
+
+  if (!isVerified) {
+    return null;
+  }
+
   return (
     <>
       {/* Google Tag Manager */}

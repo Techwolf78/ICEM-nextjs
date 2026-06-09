@@ -1,13 +1,21 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
+import { createNpfThankYouUrl } from "@/lib/npfThankYouGuard";
 
 export default function AcademicYearSectionForm() {
   const formRef = useRef(null);
   const timeoutRef = useRef(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [redirectUrl, setRedirectUrl] = useState(null);
 
   useEffect(() => {
+    setRedirectUrl(createNpfThankYouUrl());
+  }, []);
+
+  useEffect(() => {
+    if (!redirectUrl) return;
+
     const script = document.createElement("script");
     script.type = "text/javascript";
     script.async = true;
@@ -56,7 +64,7 @@ export default function AcademicYearSectionForm() {
       observer.disconnect();
       clearTimeout(timeoutRef.current);
     };
-  }, []);
+  }, [redirectUrl]);
 
   return (
     <div className="p-3 md:p-6 h-full relative">
@@ -67,7 +75,9 @@ export default function AcademicYearSectionForm() {
 
       {/* NPF Form */}
       <div className="h-full">
-        <div ref={formRef} className="npf_wgts w-full h-full" data-w="9fa0f32fe4f405fa68dc3df39ef6a11b" data-r="/thank-you"></div>
+        {redirectUrl && (
+          <div ref={formRef} className="npf_wgts w-full h-full" data-w="9fa0f32fe4f405fa68dc3df39ef6a11b" data-r={redirectUrl}></div>
+        )}
         {!isLoaded && !isError && (
           <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-75">
             <p>Loading form...</p>

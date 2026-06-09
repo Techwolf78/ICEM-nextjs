@@ -1,22 +1,26 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { HiX } from "react-icons/hi";
+import { createNpfThankYouUrl } from "@/lib/npfThankYouGuard";
 
 export default function NavEnquireModal({ isOpen, onClose }) {
   const enquireFormRef = useRef(null);
   const [showEnquireSkeleton, setShowEnquireSkeleton] = useState(true);
   const [enquireMessage, setEnquireMessage] = useState("Loading form...");
+  const [redirectUrl, setRedirectUrl] = useState(null);
 
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
+      setRedirectUrl(createNpfThankYouUrl());
     } else {
       document.body.style.overflow = '';
+      setRedirectUrl(null);
     }
   }, [isOpen]);
 
   useEffect(() => {
-    if (isOpen) {
+    if (isOpen && redirectUrl) {
       setShowEnquireSkeleton(true); // Reset skeleton on open
       setEnquireMessage("Loading form..."); // Reset message
       const script = document.createElement("script");
@@ -52,7 +56,7 @@ export default function NavEnquireModal({ isOpen, onClose }) {
         document.body.style.overflow = '';
       };
     }
-  }, [isOpen]);
+  }, [isOpen, redirectUrl]);
 
   if (!isOpen) return null;
 
@@ -90,7 +94,9 @@ export default function NavEnquireModal({ isOpen, onClose }) {
               </div>
             </div>
           )}
-          <div ref={enquireFormRef} className="npf_wgts w-full" data-height="1000px" data-w="9fa0f32fe4f405fa68dc3df39ef6a11b" data-r="/thank-you"></div>
+          {redirectUrl && (
+            <div ref={enquireFormRef} className="npf_wgts w-full" data-height="1000px" data-w="9fa0f32fe4f405fa68dc3df39ef6a11b" data-r={redirectUrl}></div>
+          )}
         </div>
       </div>
 

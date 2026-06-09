@@ -1,9 +1,11 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
+import { createNpfThankYouUrl } from "@/lib/npfThankYouGuard";
 
 export default function EnquireNowProgramModal({ isOpen, onClose }) {
   const [showSkeleton, setShowSkeleton] = useState(true);
   const [message, setMessage] = useState("Loading form...");
+  const [redirectUrl, setRedirectUrl] = useState(null);
   const timerRef = useRef(null);
 
   const handleIframeLoad = () => {
@@ -15,6 +17,7 @@ export default function EnquireNowProgramModal({ isOpen, onClose }) {
 
   useEffect(() => {
     if (isOpen) {
+      setRedirectUrl(createNpfThankYouUrl());
       setShowSkeleton(true);
       setMessage("Loading form...");
       timerRef.current = setTimeout(() => {
@@ -29,8 +32,6 @@ export default function EnquireNowProgramModal({ isOpen, onClose }) {
   }, [isOpen]);
 
   if (!isOpen) return null;
-
-  const redirectUrl = '/thank-you';
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-md flex justify-center items-center z-[999] p-4">
@@ -69,16 +70,18 @@ export default function EnquireNowProgramModal({ isOpen, onClose }) {
               </div>
             </div>
           )}
-          <iframe
-            src={`https://widgets.nopaperforms.com/register?&r=${redirectUrl}&w=9fa0f32fe4f405fa68dc3df39ef6a11b`}
-            width="100%"
-            height="100%"
-            frameBorder="0"
-            allowFullScreen
-            title="NPF Enquiry Form"
-            className="rounded-lg"
-            onLoad={handleIframeLoad}
-          ></iframe>
+          {redirectUrl && (
+            <iframe
+              src={`https://widgets.nopaperforms.com/register?&r=${encodeURIComponent(redirectUrl)}&w=9fa0f32fe4f405fa68dc3df39ef6a11b`}
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              allowFullScreen
+              title="NPF Enquiry Form"
+              className="rounded-lg"
+              onLoad={handleIframeLoad}
+            ></iframe>
+          )}
         </div>
       </div>
     </div>

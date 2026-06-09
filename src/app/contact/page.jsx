@@ -3,8 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Phone, Mail, MapPin, Clock, User } from "lucide-react"; // Using Lucide for cleaner, modern icons
-
-const redirectUrl = '/thank-you';
+import { createNpfThankYouUrl } from "@/lib/npfThankYouGuard";
 
 // --- Admissions Contacts Data ---
 const admissionsContacts = [
@@ -60,6 +59,7 @@ const ContactPage = () => {
   const [iframeHeight, setIframeHeight] = useState("600");
   const [showSkeleton, setShowSkeleton] = useState(true);
   const [message, setMessage] = useState("Loading form...");
+  const [redirectUrl, setRedirectUrl] = useState(null);
   const timerRef = useRef(null);
 
   const handleIframeLoad = () => {
@@ -70,6 +70,8 @@ const ContactPage = () => {
   };
 
   useEffect(() => {
+    setRedirectUrl(createNpfThankYouUrl());
+
     timerRef.current = setTimeout(() => {
       if (showSkeleton) {
         setMessage("NPF form not supported on this domain");
@@ -193,15 +195,17 @@ const ContactPage = () => {
                   </div>
                 </div>
               )}
-              <iframe
-                src={`https://widgets.nopaperforms.com/register?&r=${redirectUrl}&w=9fa0f32fe4f405fa68dc3df39ef6a11b`}
-                width="100%"
-                height="490"
-                frameBorder="0"
-                allowFullScreen
-                title="NPF Enquiry Form"
-                onLoad={handleIframeLoad}
-              ></iframe>
+              {redirectUrl && (
+                <iframe
+                  src={`https://widgets.nopaperforms.com/register?&r=${encodeURIComponent(redirectUrl)}&w=9fa0f32fe4f405fa68dc3df39ef6a11b`}
+                  width="100%"
+                  height="490"
+                  frameBorder="0"
+                  allowFullScreen
+                  title="NPF Enquiry Form"
+                  onLoad={handleIframeLoad}
+                ></iframe>
+              )}
             </div>
           </div>
         </div>

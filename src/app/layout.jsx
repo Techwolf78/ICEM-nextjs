@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import "./globals.css";
 
 import Navbar from "@/components/Navbar";
@@ -14,6 +15,8 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function RootLayout({ children }) {
   const [isLoading, setIsLoading] = useState(true);
+  const pathname = usePathname();
+  const shouldLoadNpfTracker = !pathname?.startsWith("/thank-you");
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 1000);
@@ -99,16 +102,18 @@ export default function RootLayout({ children }) {
       </head>
 
       <body className="min-h-screen bg-white" suppressHydrationWarning={true}>
-        <script type="text/javascript">
-          var npf_d='https://ICEM.nopaperforms.com';
-          var npf_c='4090';
-          var npf_m='1';
-          var s=document.createElement("script");
-          s.type="text/javascript";
-          s.async=true;
-          s.src="https://track.nopaperforms.com/js/track.js";
-          document.body.appendChild(s);
-        </script>
+        {shouldLoadNpfTracker && (
+          <script type="text/javascript">
+            var npf_d='https://ICEM.nopaperforms.com';
+            var npf_c='4090';
+            var npf_m='1';
+            var s=document.createElement("script");
+            s.type="text/javascript";
+            s.async=true;
+            s.src="https://track.nopaperforms.com/js/track.js";
+            document.body.appendChild(s);
+          </script>
+        )}
         <Loader isLoading={isLoading} />
 
         <Navbar />

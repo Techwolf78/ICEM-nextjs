@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import BannerSlider from "./BannerSlider";
 import Image from "next/image";
+import { AlertTriangle, Bus, Clock, MapPin, Phone } from "lucide-react";
 
 export default function Sports() {
   const [activeSection, setActiveSection] = useState("Sports");
@@ -11,7 +12,6 @@ export default function Sports() {
   const [marqueeLoaded, setMarqueeLoaded] = useState(false);
   const [achievementImagesLoaded, setAchievementImagesLoaded] = useState(Array(6).fill(false));
   const [highlightLoaded, setHighlightLoaded] = useState(false);
-  const [transportImagesLoaded, setTransportImagesLoaded] = useState(Array(5).fill(false));
   const [gymImagesLoaded, setGymImagesLoaded] = useState(Array(9).fill(false));
   const [canteenImagesLoaded, setCanteenImagesLoaded] = useState(Array(6).fill(false));
   const [healthImagesLoaded, setHealthImagesLoaded] = useState(Array(4).fill(false));
@@ -22,8 +22,6 @@ export default function Sports() {
       setMarqueeLoaded(false);
       setAchievementImagesLoaded(Array(6).fill(false));
       setHighlightLoaded(false);
-    } else if (activeSection === 'Transport') {
-      setTransportImagesLoaded(Array(5).fill(false));
     } else if (activeSection === 'Gym') {
       setGymImagesLoaded(Array(9).fill(false));
     } else if (activeSection === 'Canteen') {
@@ -153,7 +151,185 @@ export default function Sports() {
     contact: {
       telephone: "02114-661661",
       mobile: "+91 9158302525"
-    }
+    },
+    notice:
+      "All are informed to reach the bus top 5 min prior to scheduled time, Bus will not stop for any late comers",
+    routes: [
+      {
+        routeNo: "Route No-1",
+        title: "Dighi Bhosari to ICEM",
+        stops: [
+          { srNo: "1", seatingPoint: "Datta Nagar Chowk Dhigi", timing: "7:35.am" },
+          { srNo: "2", seatingPoint: "Magzin Chowk", timing: "7:37.am" },
+          { srNo: "3", seatingPoint: "Shashtri Chowk", timing: "7:41.am" },
+          { srNo: "4", seatingPoint: "PMT Bus Stop Bhosari", timing: "7:44.am" },
+          { srNo: "5", seatingPoint: "Dhawade Wasti Chowk", timing: "7:46.am" },
+          { srNo: "6", seatingPoint: "Panjar Pol", timing: "7:48.am" },
+          { srNo: "7", seatingPoint: "Godown Chowk", timing: "7:49.am" },
+          { srNo: "8", seatingPoint: "Vikas Sawant Chowk", timing: "7:50.am" },
+          { srNo: "9", seatingPoint: "Spicen City Mall Chook", timing: "7:51.am" },
+          { srNo: "10", seatingPoint: "Kranti Chowk (Jaguar Co. Bridge)", timing: "7:53.am" },
+          { srNo: "11", seatingPoint: "Jadhavi Wadi Chowk", timing: "7:54.am" },
+          { srNo: "12", seatingPoint: "Old RTO Chowk (HP Petrol Pump)", timing: "7:57.am" },
+          { srNo: "13", seatingPoint: "Gharkul Chowk", timing: "8:00.am" },
+          { srNo: "14", seatingPoint: "Sane Chowk", timing: "8:03.am" },
+          { srNo: "15", seatingPoint: "Kasturi Market", timing: "8:04.am" },
+          { srNo: "16", seatingPoint: "Thermax Chowk", timing: "8:10.am" },
+          { srNo: "17", seatingPoint: "Bajaj Gate Chowk ( Gopinath Munde Chowk)", timing: "8:13.am" },
+          { srNo: "18", seatingPoint: "Triveni Chowk", timing: "8:15.am" },
+          { srNo: "19", seatingPoint: "Ankush Chowk", timing: "8:18.am" },
+          { srNo: "20", seatingPoint: "Bhakti Shakti Chowk", timing: "8:25.am" },
+          { srNo: "21", seatingPoint: "Dehugaon Phata", timing: "8:30.am" },
+          { srNo: "22", seatingPoint: "Dehuraod Birdge", timing: "8:35.am" },
+          { srNo: "23", seatingPoint: "Dehuraod Police Station", timing: "8:40.am" },
+          { srNo: "24", seatingPoint: "Somatnephata", timing: "8:45.am" },
+          { srNo: "", seatingPoint: "ICEM", timing: "9:00.am" },
+        ],
+      },
+      {
+        routeNo: "Route No-2",
+        title: "Khadki to ICEM",
+        stops: [
+          { srNo: "1", seatingPoint: "Khadki Police Station", timing: "7:35.am" },
+          { srNo: "2", seatingPoint: "Khadki  Railway Station", timing: "7:43.am" },
+          { srNo: "3", seatingPoint: "Bopadi", timing: "7:45.am" },
+          { srNo: "4", seatingPoint: "Dapodi", timing: "7:50.am" },
+          { srNo: "5", seatingPoint: "Fugewadi", timing: "7:51.am" },
+          { srNo: "6", seatingPoint: "Kasarwadi", timing: "7:55.am" },
+          { srNo: "7", seatingPoint: "Nashik Phata", timing: "7:57.am" },
+          { srNo: "8", seatingPoint: "Vallabh Nagar", timing: "8:00.am" },
+          { srNo: "9", seatingPoint: "Sant Tukaram Nagar", timing: "8:05.am" },
+          { srNo: "10", seatingPoint: "Kharalwadi", timing: "8:10.am" },
+          { srNo: "11", seatingPoint: "Pimpri Chowk", timing: "8:11.am" },
+          { srNo: "12", seatingPoint: "Finolex Chowk", timing: "8:12.am" },
+          { srNo: "13", seatingPoint: "Empire Estate", timing: "8:13.am" },
+          { srNo: "14", seatingPoint: "Chinchwad Chowk", timing: "8:15.am" },
+          { srNo: "15", seatingPoint: "Kalbhor Nagar", timing: "8:17.am" },
+          { srNo: "16", seatingPoint: "Khandoba Mandir", timing: "8:19.am" },
+          { srNo: "17", seatingPoint: "Bajai Company", timing: "8:23.am" },
+          { srNo: "18", seatingPoint: "Nigdi", timing: "8:25.am" },
+          { srNo: "19", seatingPoint: "Bhakti Shakti Chowk", timing: "8:30.am" },
+          { srNo: "20", seatingPoint: "Dehugaon Phata", timing: "8:40.am" },
+          { srNo: "21", seatingPoint: "Dehuraod Birdge", timing: "8:42.am" },
+          { srNo: "22", seatingPoint: "Dehuraod Police Station", timing: "8:45.am" },
+          { srNo: "23", seatingPoint: "Somatnephata", timing: "8:50.am" },
+          { srNo: "", seatingPoint: "ICEM", timing: "9:00.am" },
+        ],
+      },
+      {
+        routeNo: "Route No-3",
+        title: "Old Sangvi to ICEM",
+        stops: [
+          { srNo: "1", seatingPoint: "Old Sangvi Bus Stop", timing: "7:40.am" },
+          { srNo: "2", seatingPoint: "Bank of Maharashtra", timing: "7:41.am" },
+          { srNo: "3", seatingPoint: "Sai Chowk", timing: "7:42.am" },
+          { srNo: "4", seatingPoint: "Krushna Chowk", timing: "7:43.am" },
+          { srNo: "5", seatingPoint: "Katepuram Chowk", timing: "7:44.am" },
+          { srNo: "6", seatingPoint: "Daynasor Garden", timing: "7:45.am" },
+          { srNo: "7", seatingPoint: "Shrushtri Chowk", timing: "7:46.am" },
+          { srNo: "8", seatingPoint: "Kalpatru Estate Chowk", timing: "7:48.am" },
+          { srNo: "9", seatingPoint: "Sudarshan Chowk", timing: "7:49.am" },
+          { srNo: "10", seatingPoint: "Swaraj Hotel", timing: "7:50.am" },
+          { srNo: "11", seatingPoint: "Kate Petrol Pump", timing: "7:51.am" },
+          { srNo: "12", seatingPoint: "Mahadev Mindar", timing: "7:53.am" },
+          { srNo: "13", seatingPoint: "Rahatanigaon Chowk", timing: "7:55.am" },
+          { srNo: "14", seatingPoint: "Godambe Chowk", timing: "7:56.am" },
+          { srNo: "15", seatingPoint: "Nakhate Chowk", timing: "7:57.am" },
+          { srNo: "16", seatingPoint: "Rahatani Phata", timing: "7:58.am" },
+          { srNo: "17", seatingPoint: "Kunal Hotel Chowk", timing: "8:00.am" },
+          { srNo: "18", seatingPoint: "MM College", timing: "8:03.am" },
+          { srNo: "19", seatingPoint: "Sukhi Bhavan", timing: "8:04.am" },
+          { srNo: "20", seatingPoint: "Morya Hospital", timing: "8:05.am" },
+          { srNo: "21", seatingPoint: "Chafekar Chowk", timing: "8:07.am" },
+          { srNo: "22", seatingPoint: "Chinchwade Nagar Corner", timing: "8:08.am" },
+          { srNo: "23", seatingPoint: "Triveni Hospital", timing: "8:10.am" },
+          { srNo: "24", seatingPoint: "Chintamani Chowk", timing: "8:11.am" },
+          { srNo: "25", seatingPoint: "Bijali Nagar Bridge", timing: "8:12.am" },
+          { srNo: "26", seatingPoint: "Sambhaji Chowk", timing: "8:14.am" },
+          { srNo: "27", seatingPoint: "Bhel Chowk", timing: "8:15.am" },
+          { srNo: "28", seatingPoint: "Kach Ghar Chowk", timing: "8:16.am" },
+          { srNo: "29", seatingPoint: "Bhakti Shakti Chowk", timing: "8:18.am" },
+          { srNo: "30", seatingPoint: "Dehugaon Phata", timing: "8:40.am" },
+          { srNo: "31", seatingPoint: "Dehuraod Birdge", timing: "8:42.am" },
+          { srNo: "32", seatingPoint: "Dehuraod Police Station", timing: "8:45.am" },
+          { srNo: "33", seatingPoint: "Somatnephata", timing: "8:50.am" },
+          { srNo: "", seatingPoint: "ICEM", timing: "9:00.am" },
+        ],
+      },
+      {
+        routeNo: "Route No-4",
+        title: "Shivajinagar to ICEM",
+        stops: [
+          { srNo: "1", seatingPoint: "Shivajinagar", timing: "7:35am" },
+          { srNo: "2", seatingPoint: "Renghill Corner", timing: "7:43.am" },
+          { srNo: "3", seatingPoint: "University Chowk", timing: "7:45.am" },
+          { srNo: "4", seatingPoint: "Breman Chowk", timing: "7:50.am" },
+          { srNo: "5", seatingPoint: "Aundh", timing: "7:51.am" },
+          { srNo: "6", seatingPoint: "Sangvi Phata", timing: "7:55.am" },
+          { srNo: "7", seatingPoint: "Rakshak Society", timing: "7:57.am" },
+          { srNo: "8", seatingPoint: "Vishal Nagar", timing: "8:00.am" },
+          { srNo: "9", seatingPoint: "Kaspate Chowk", timing: "8:05.am" },
+          { srNo: "10", seatingPoint: "Jajtap dairy", timing: "8:10.am" },
+          { srNo: "11", seatingPoint: "Park Street", timing: "8:11.am" },
+          { srNo: "12", seatingPoint: "Kalewadi Phata", timing: "8:12.am" },
+          { srNo: "13", seatingPoint: "16 No Bus Stop", timing: "8:13.am" },
+          { srNo: "14", seatingPoint: "Dange Chowk", timing: "8:15.am" },
+          { srNo: "15", seatingPoint: "Tathwade", timing: "8:17.am" },
+          { srNo: "16", seatingPoint: "Punawale", timing: "8:19.am" },
+          { srNo: "17", seatingPoint: "Ravet Pumping Station", timing: "8:23.am" },
+          { srNo: "18", seatingPoint: "Ravet CNG Pump", timing: "8:25.am" },
+          { srNo: "19", seatingPoint: "Kiwale Bus Turminal", timing: "8:30.am" },
+          { srNo: "20", seatingPoint: "Shinde Petrol Pump", timing: "8:40.am" },
+          { srNo: "21", seatingPoint: "Mamuradai", timing: "8:42.am" },
+          { srNo: "22", seatingPoint: "Dehuraod Police Station", timing: "8:45.am" },
+          { srNo: "23", seatingPoint: "Somatnephata", timing: "8:50.am" },
+          { srNo: "", seatingPoint: "ICEM", timing: "9:00.am" },
+        ],
+      },
+      {
+        routeNo: "Route No-5",
+        title: "Katraj to ICEM",
+        stops: [
+          { srNo: "1", seatingPoint: "Katraj Chowk", timing: "7:30.am" },
+          { srNo: "2", seatingPoint: "Ambegaon", timing: "7:35.am" },
+          { srNo: "3", seatingPoint: "Navale  Bridge", timing: "7:38.am" },
+          { srNo: "4", seatingPoint: "Vadgaon Bridge", timing: "7:40.am" },
+          { srNo: "5", seatingPoint: "Warje Bridge", timing: "7:45.am" },
+          { srNo: "6", seatingPoint: "Chandani Chowk", timing: "7:50.am" },
+          { srNo: "7", seatingPoint: "Bavdhan", timing: "7:55.am" },
+          { srNo: "8", seatingPoint: "Pashan - Sus Bridge", timing: "8:00.am" },
+          { srNo: "9", seatingPoint: "Balewadi -Orchard Hotel", timing: "8:15.am" },
+          { srNo: "10", seatingPoint: "Bhujabal Chowk", timing: "8:20.am" },
+          { srNo: "11", seatingPoint: "Indira College Wakad", timing: "8:25.am" },
+          { srNo: "12", seatingPoint: "Tathwade", timing: "8:27.am" },
+          { srNo: "13", seatingPoint: "Punawale", timing: "8:29.am" },
+          { srNo: "14", seatingPoint: "Ravet", timing: "8:30.am" },
+          { srNo: "15", seatingPoint: "Shinde Petrol Pump", timing: "8:35.am" },
+          { srNo: "16", seatingPoint: "Mamurdi", timing: "8:37.am" },
+          { srNo: "17", seatingPoint: "Dehuraod Police Station", timing: "8:40.am" },
+          { srNo: "18", seatingPoint: "Somatnephata", timing: "8:50.am" },
+          { srNo: "", seatingPoint: "ICEM", timing: "9:00.am" },
+        ],
+      },
+      {
+        routeNo: "Route No-6",
+        title: "Talegaon to ICEM",
+        stops: [
+          { srNo: "1", seatingPoint: "CRP Camp", timing: "8:00.am" },
+          { srNo: "2", seatingPoint: "Vadgaon Phata", timing: "8:05.am" },
+          { srNo: "3", seatingPoint: "Paisa Fund", timing: "8:08.am" },
+          { srNo: "4", seatingPoint: "Indrayni College", timing: "8:15.am" },
+          { srNo: "5", seatingPoint: "Talegaon station", timing: "8:20.am" },
+          { srNo: "6", seatingPoint: "BSNL", timing: "8:33.am" },
+          { srNo: "7", seatingPoint: "Nagar Parishad", timing: "8:35.am" },
+          { srNo: "8", seatingPoint: "Jijamata Chowk", timing: "8:37.am" },
+          { srNo: "9", seatingPoint: "Bhandari Hospital", timing: "8:40.am" },
+          { srNo: "10", seatingPoint: "Limb Phata", timing: "8:45.am" },
+          { srNo: "11", seatingPoint: "Somatnephata", timing: "8:50.am" },
+          { srNo: "", seatingPoint: "ICEM", timing: "9:00.am" },
+        ],
+      },
+    ],
   };
 
   // Gym data
@@ -866,52 +1042,133 @@ const highlight = {
           </div>
         ) : activeSection === "Transport" ? (
           // Transport-specific content
-          <div className="max-w-full mx-auto px-1 md:px-6 py-1 md:py-10">
-            <div className="w-full bg-white p-2 md:p-6 rounded-xl shadow-md">
-              <h2 className="text-xl md:text-3xl font-bold text-secondary mb-8 text-center">Transport @ ICEM</h2>
+          <div className="max-w-full mx-auto px-0 md:px-6 py-0 md:py-10">
+            <div className="w-full bg-white p-2 md:p-6 rounded-lg md:rounded-xl shadow-md border border-gray-100">
+              <div className="mb-4 md:mb-8 rounded-md md:rounded-lg bg-secondary text-white p-3 md:p-6">
+                <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-2 md:gap-4">
+                  <div>
+                    <div className="flex items-center gap-1.5 md:gap-2 mb-1 md:mb-2 text-white/90">
+                      <Bus className="w-4 h-4 md:w-5 md:h-5" />
+                      <span className="text-[11px] md:text-sm font-semibold uppercase tracking-wide">
+                        ICEM Transport
+                      </span>
+                    </div>
+                    <h2 className="text-xl md:text-4xl font-bold leading-tight">
+                      Bus Route Timings
+                    </h2>
+                  </div>
+                  <div className="flex items-center gap-1.5 md:gap-2 rounded-md bg-white/10 px-2.5 md:px-3 py-1.5 md:py-2 text-xs md:text-sm font-medium">
+                    <Clock className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                    <span>All routes arrive at ICEM by 9:00.am</span>
+                  </div>
+                </div>
+              </div>
               
-              {/* Route Layout Section */}
-              <div className="mb-6 md:mb-12">
-                <h3 className="text-lg md:text-2xl font-bold text-secondary mb-4 md:mb-6">Route Layout</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-4 md:mb-8">
-                  {["Route-Layout-1","Route-Layout-2", "Route-Layout-3", "Route-Layout-4", "Route-Layout-5"].map((item, index) => (
-                    <div key={item} className=" rounded-lg overflow-hidden shadow-md">
-                      <div className="relative h-106  flex items-center justify-center">
-                        {!transportImagesLoaded[index] && <div className="absolute inset-0 shimmer z-10"></div>}
-                        <Image
-                          src={`/Facilities/${item}.webp`}
-                          alt={`Transport Route ${item}`}
-                          fill
-                          className="object-contain h-auto"
-                          unoptimized={true}
-                          onLoad={() => {
-                            setTransportImagesLoaded(prev => {
-                              const newArr = [...prev];
-                              newArr[index] = true;
-                              return newArr;
-                            });
-                          }}
-                        />
-                        <div className="absolute inset-0  bg-opacity-30 flex items-center justify-center">
-                          <span className="text-white font-semibold text-lg">Route {item.split('-')[2]}</span>
+              {/* Bus Route Timings */}
+              <div className="mb-4 md:mb-12">
+                <div className="grid grid-cols-1 xl:grid-cols-2 gap-3 md:gap-6">
+                  {transportData.routes.map((route) => (
+                    <div
+                      key={route.routeNo}
+                      className="border border-gray-200 rounded-md md:rounded-lg overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow duration-200"
+                    >
+                      <div className="bg-gray-50 border-b border-gray-200 p-2.5 md:p-4">
+                        <div className="flex items-start justify-between gap-2 md:gap-3">
+                          <div>
+                            <p className="text-[10px] md:text-xs font-bold uppercase tracking-wide text-primary">
+                              {route.routeNo}
+                            </p>
+                            <h4 className="text-sm md:text-xl font-bold text-secondary leading-tight">
+                              {route.title}
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="p-2 md:p-4 bg-slate-50/60">
+                        <div className="space-y-1.5 md:space-y-2">
+                          {route.stops.map((stop, index) => {
+                            const isArrival = stop.seatingPoint === "ICEM";
+                            const isLast = index === route.stops.length - 1;
+
+                            return (
+                              <div
+                                key={`${route.routeNo}-${stop.seatingPoint}-${index}`}
+                                className="relative grid grid-cols-[24px_1fr] md:grid-cols-[32px_1fr] gap-2 md:gap-3"
+                              >
+                                {!isLast && (
+                                  <span className="absolute left-3 md:left-4 top-6 md:top-8 bottom-[-8px] md:bottom-[-10px] w-px bg-slate-300" />
+                                )}
+                                <div
+                                  className={`relative z-10 flex h-6 w-6 md:h-8 md:w-8 items-center justify-center rounded-full text-[10px] md:text-xs font-bold shadow-sm ${
+                                    isArrival
+                                      ? "bg-secondary text-white"
+                                      : "bg-white text-secondary border border-secondary/25"
+                                  }`}
+                                >
+                                  {isArrival ? <MapPin className="h-3.5 w-3.5 md:h-4 md:w-4" /> : stop.srNo}
+                                </div>
+                                <div
+                                  className={`flex items-center justify-between gap-2 md:gap-3 rounded-md md:rounded-lg border px-2 md:px-3 py-1.5 md:py-2.5 shadow-sm ${
+                                    isArrival
+                                      ? "border-secondary/25 bg-secondary/10"
+                                      : "border-slate-200 bg-white"
+                                  }`}
+                                >
+                                  <p
+                                    className={`text-xs md:text-sm font-semibold leading-snug ${
+                                      isArrival ? "text-secondary" : "text-slate-800"
+                                    }`}
+                                  >
+                                    {stop.seatingPoint}
+                                  </p>
+                                  <span
+                                    className={`flex-shrink-0 rounded px-2 md:px-2.5 py-0.5 md:py-1 text-[11px] md:text-xs font-bold ${
+                                      isArrival
+                                        ? "bg-secondary text-white"
+                                        : "bg-slate-100 text-slate-700"
+                                    }`}
+                                  >
+                                    {stop.timing}
+                                  </span>
+                                </div>
+                              </div>
+                            );
+                          })}
                         </div>
                       </div>
                     </div>
                   ))}
                 </div>
+                <div className="mt-3 md:mt-5 flex items-start gap-2 md:gap-3 rounded-md md:rounded-lg bg-amber-50 border border-amber-200 p-2.5 md:p-4 text-amber-900 text-xs md:text-base">
+                  <AlertTriangle className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0 mt-0.5" />
+                  <p className="font-medium">{transportData.notice}</p>
+                </div>
               </div>
 
               {/* Contact Details */}
-              <div className="bg-secondary text-white p-4 md:p-8 rounded-lg">
-                <h3 className="text-lg md:text-2xl font-bold mb-4 md:mb-6 text-center">Contact Details</h3>
-                <div className="grid md:grid-cols-2 gap-4 md:gap-6 text-center">
-                  <div>
-                    <h4 className="text-lg font-semibold mb-2">Telephone Number</h4>
-                    <p className="text-xl">{transportData.contact.telephone}</p>
+              <div className="rounded-md md:rounded-lg border border-gray-200 bg-gray-50 p-3 md:p-6">
+                <div className="flex items-center gap-2 mb-3 md:mb-4">
+                  <Phone className="w-4 h-4 md:w-5 md:h-5 text-secondary" />
+                  <h3 className="text-base md:text-2xl font-bold text-secondary">
+                    Contact Details
+                  </h3>
+                </div>
+                <div className="grid md:grid-cols-2 gap-2 md:gap-4">
+                  <div className="rounded-md md:rounded-lg bg-white border border-gray-200 p-3 md:p-4">
+                    <h4 className="text-[11px] md:text-sm font-bold uppercase tracking-wide text-gray-500 mb-1">
+                      Telephone Number
+                    </h4>
+                    <p className="text-base md:text-xl font-bold text-gray-900">
+                      {transportData.contact.telephone}
+                    </p>
                   </div>
-                  <div>
-                    <h4 className="text-lg font-semibold mb-2">Mobile Number</h4>
-                    <p className="text-xl">{transportData.contact.mobile}</p>
+                  <div className="rounded-md md:rounded-lg bg-white border border-gray-200 p-3 md:p-4">
+                    <h4 className="text-[11px] md:text-sm font-bold uppercase tracking-wide text-gray-500 mb-1">
+                      Mobile Number
+                    </h4>
+                    <p className="text-base md:text-xl font-bold text-gray-900">
+                      {transportData.contact.mobile}
+                    </p>
                   </div>
                 </div>
               </div>

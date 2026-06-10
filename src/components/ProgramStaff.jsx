@@ -3,9 +3,15 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const convertImageToWebp = (src) => {
-  if (!src) return src;
-  return src.replace(/\.(jpe?g|png|avif|jpg|JPG)$/i, '.webp');
+const formatStaffValue = (value) => {
+  if (!value) return "";
+  if (Array.isArray(value)) return value.join(", ");
+  if (typeof value === "object") {
+    return Object.entries(value)
+      .map(([key, item]) => `${key}: ${item}`)
+      .join(", ");
+  }
+  return value;
 };
 
 export default function ProgramStaff({ staffData }) {
@@ -32,15 +38,11 @@ export default function ProgramStaff({ staffData }) {
               <div className="w-20 h-28 overflow-hidden rounded-lg shadow-sm bg-gray-100">
                 {staff.image ? (
                   <Image
-                    src={convertImageToWebp(staff.image)}
+                    src={staff.image}
                     alt={staff.name}
                     width={80}
                     height={112}
                     className="w-full h-full object-cover object-top"
-                    onError={(error) => {
-                      // Fallback to original source if .webp not available
-                      error.currentTarget.src = staff.image;
-                    }}
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center bg-secondary/10 text-secondary">
@@ -73,12 +75,19 @@ export default function ProgramStaff({ staffData }) {
                 {staff.areaOfInterest && (
                   <p>
                     <strong className="text-slate-900">Area of Interest:</strong>{" "}
-                    {staff.areaOfInterest}
+                    {formatStaffValue(staff.areaOfInterest)}
                   </p>
                 )}
                 {staff.experience && (
                   <p>
-                    <strong className="text-slate-900">Experience:</strong> {staff.experience}
+                    <strong className="text-slate-900">Experience:</strong>{" "}
+                    {formatStaffValue(staff.experience)}
+                  </p>
+                )}
+                {staff.researchPapers && (
+                  <p>
+                    <strong className="text-slate-900">Research Papers:</strong>{" "}
+                    {formatStaffValue(staff.researchPapers)}
                   </p>
                 )}
                 {staff.doj && (

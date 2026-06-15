@@ -481,9 +481,348 @@ const facultyImages = Array.from({ length: 12 }, (_, i) => ({
   alt: `Faculty Member ${i + 1}`,
 }));
 
+// ================== MENTOR-MENTEE DATA ==================
+const mentorMenteeData = [
+  {
+    mentor: "Prof. Ashwini Admane (TY)",
+    students: [
+      "BAISANE KRISHNA SHARAD",
+      "JADHAV SAMRUDDHI SACHIN",
+      "SHINDE VAISHNAV ASHOK",
+      "BHADRE SHWETA RATNASHIL",
+      "MANE CHETAN SAYAJI",
+      "VAYDANDE JANHAVI VIJAY",
+      "KALORE SHITAL GANESH",
+      "POL AASHISH CHANDRASHEKHAR",
+      "BHAMARE ROHIT RAJENDRA",
+      "KADAM ATHARV SANDEEP",
+      "KASKAR PRATHAMESH SAKHARAM",
+      "SALUNKE MAYURESH RAJESH",
+      "RAUT NEHA PRASHANT",
+      "GHOTKULE SIDDHI SHAHAJI",
+      "JADHAV UDDHAV VIJAY",
+      "GUPTA ADARSH SANJAY",
+      "SAWANT OMKAR DHANANJAY",
+      "HULE SARTHAK BALU",
+      "KAVITAKE SOHAM BALASO",
+      "SONDARE MAHARUDRA SATISH",
+    ],
+  },
+  {
+    mentor: "Prof. Ashwini Gaikwad (TY)",
+    students: [
+      "KAKAD SHUBHAM VITTHAL",
+      "BALA MEGHA",
+      "JAGDALE RAJ NANDKUMAR",
+      "SAWANT SIDDESH DATTATRAY",
+      "TALWAR GANESH BASAVRAJ",
+      "DESHMUKH SAI AMBARISH",
+      "KALE SHUBHAM NAVNATH",
+      "SAWANT SHREYA JALINDAR",
+      "LAVATE VAISHNAVI SANJAY",
+      "GOWARDIPE ROSHAN SHIVAJI",
+      "KAWALE HEMANT SADASHIV",
+      "RATHOD YUVRAJ DINKAR",
+      "GUPTA ADITYA SANJAY",
+      "GAWADE YASH RAMKRISHNA",
+      "CHAVAN MAYUR PRASHANTKUMAR",
+      "SONAR RUCHA JAYANT",
+      "SHETE SHLOK SACHIN",
+      "GURAV RASHMITA MARUTI",
+      "DHAGADI TINAL RAMESH",
+      "MIRAJKAR MITHILESH SANJAY",
+    ],
+  },
+  {
+    mentor: "Prof. Vishal Meshram (TY)",
+    students: [
+      "NISHCHAY DHIRAJ GAIKWAD",
+      "GARJE ARVIND VASANT",
+      "SHINDE PRATIK RAMDAS",
+      "GHODKE PRANAV PRADIP",
+      "UDACHANAKAR SHRIKRISHANA KHAJAPPA",
+      "BHAMARE APARNA SURESH",
+      "KAMBLE VIVEK ANKUSH",
+      "MURKAL TANISHQ SURESH",
+      "PAWAR OM ANANTRAO",
+      "RAUT NIKHIL DHANANJAY",
+      "SALSKAR SMARTH SURAJ",
+      "CHANDANE CHETANA RUPESH",
+      "KHULAPE GAYATRI DNYANESHWAR",
+      "KESKAR GANESH MAHADEV",
+      "GOSAVI SIDDHARTH RAVINDRA",
+      "BADGUJAR VARUNKUMAR AMOL",
+      "NIMBORE SANIKA LAXMAN",
+      "PATIL BHAVESH EKNATH",
+      "PATIL VAISHNAVI SUDHAKAR",
+      "VISHAL NITIN PATIL",
+    ],
+  },
+  {
+    mentor: "Prof. Pravin Charde (TY)",
+    students: [
+      "SOHAM SANDIP BHOJANE",
+      "TAMBOLI RIJAVAN IQBAL",
+      "VEDSHRI SHAILESH RAJURKAR",
+      "SHRUSHTI SANTOSH BHOSALE",
+      "MAHESH GANESH TAKALE",
+      "JOSHI CHINMAY MANGESH",
+      "CHAVAN SUBHANRAO BHANUDAS",
+      "BALIKAI SAEEL SWAPNIL",
+      "ADARSH KUMAR",
+      "BIRADAR SHIVAM KAILAS",
+      "DETHE ASHISH VIJAY",
+      "KAMBLE SIDDHARTH SHYAM",
+      "ALTE AMIT DILIP",
+      "PATIL TANISHQ NITIN",
+      "KADAM AADESH SANDEEP",
+      "JADHAV SAHIL BALU",
+      "KATORE SANDESH VIJAY",
+      "PADWAL ATHARVA HANAMANT",
+      "KADAM VIJAY SAMBHAJI",
+    ],
+  },
+  {
+    mentor: "Prof. Shubhangi Manvatkar (BE)",
+    students: [
+      "Athare Adesh Rajendra",
+      "Alhat Prathemesh Sanjay",
+      "Bandgar Sahil Ravindra",
+      "Benne Sanju Manik",
+      "Dhatore Shrawani Mangesh",
+      "Ganvir Harsha Bhayya",
+      "Gawali Om Pankaj",
+      "Giri Tanuhri Deepak",
+      "Jadhav Kirti Dnyaneshwar",
+      "Kadam Vedant Pravin",
+      "Kedari Akshay Anil",
+      "Kedari Atharv Sandip",
+      "Konde Pranjal Prakash",
+      "Kule Abhishek Rajaram",
+      "Kunal Raj",
+      "Mhaskar Omkar Rajendra",
+      "Patil Rajwardhan Rajendra",
+      "BANDGAR SAHIL RAVINDRA",
+      "Patrikar Priti Dilip",
+    ],
+  },
+  {
+    mentor: "Prof. Amit Narwade (BE)",
+    students: [
+      "Pawar Ashwini Vilas",
+      "Purbiya Nilesh Madhav Lal",
+      "Sabne Nitesh Anil",
+      "Salunkhe Keval Santosh",
+      "Sutar Sameer Naamdev",
+      "Shinde Mayur Arjun",
+      "Nair Siddharth Sudheerkumar",
+      "Singh Satyamkumar Sanjay",
+      "Attarde Soham Vivek",
+      "Sonar Lokesh Jitendra",
+      "Sonawane Vinod Bharat",
+      "Muli Sumit Sanjayrao",
+      "Supekar Ritesh Nilesh",
+      "Surwase Om Haribhau",
+      "Vaswani Devesh Vijay",
+      "Veer Siddhesh Ramdas",
+      "Warute Tanay Vinay",
+      "Yelwande Utkarsh Tanaji",
+    ],
+  },
+  {
+    mentor: "Prof. Pranali Khatake (BE)",
+    students: [
+      "Dhotre Rohit Uttam",
+      "Gaikwad Chetan Ramesh",
+      "Gaikwad Madhav Pandurang",
+      "Gaikwad Vishwajeet Udhavrao",
+      "Giri Bramhanand Jalindar",
+      "Jadhav Abhishek Satish",
+      "Jadhav Yogesh Kashinath",
+      "Kadam Amol Jagannath",
+      "Patil Satishkumar Annasaheb",
+      "Mengane Shital Sunil",
+      "Sutar Mrunal Santosh",
+      "Ingale Sonali Vijaykumar",
+      "Mahadar Varsha Pandurang",
+      "Bhosale Vedant Maruti",
+      "Chaurasiya Aadarsh",
+      "Anand Yadav",
+      "SHRIKANT SANTOSH SHINDE",
+      "Yadav Sunny Jiyalal",
+    ],
+  },
+];
+
 // ================== MAIN COMPONENT ==================
 export default function FAQMECH() {
   const [active, setActive] = useState("About Us");
+  const [academicSubTab, setAcademicSubTab] = useState("Time Table");
+  const [mentorSearchQuery, setMentorSearchQuery] = useState("");
+  const [selectedTrainingImage, setSelectedTrainingImage] = useState(null);
+
+  const academicSubTabs = [
+    "Time Table",
+    "TG (Mentor-Mentee)",
+    "Student Training and Skill Development Activities",
+    "Mechanical Engineering Students Association (MESA) Activities",
+    "Exam",
+    "Placement Highlights 2025-26",
+    "Alumni Engagement Activities",
+  ];
+
+  const renderSubTabIcon = (subTab) => {
+    switch (subTab) {
+      case "Time Table":
+        return (
+          <svg
+            className="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+            ></path>
+          </svg>
+        );
+      case "TG (Mentor-Mentee)":
+        return (
+          <svg
+            className="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+            ></path>
+          </svg>
+        );
+      case "Student Training and Skill Development Activities":
+        return (
+          <svg
+            className="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+            ></path>
+          </svg>
+        );
+      case "Mechanical Engineering Students Association (MESA) Activities":
+        return (
+          <svg
+            className="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+            ></path>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+            ></path>
+          </svg>
+        );
+      case "Exam":
+        return (
+          <svg
+            className="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+            ></path>
+          </svg>
+        );
+      case "Placement Highlights 2025-26":
+        return (
+          <svg
+            className="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+            ></path>
+          </svg>
+        );
+      case "Alumni Engagement Activities":
+        return (
+          <svg
+            className="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+            ></path>
+          </svg>
+        );
+      default:
+        return null;
+    }
+  };
+
+  const getSubTabDescription = (subTab) => {
+    switch (subTab) {
+      case "Time Table":
+        return "Time Table AY 2026-27 Sem I (Theory) download below.";
+      case "TG (Mentor-Mentee)":
+        return "Teacher Guardian (TG) allocation, mentoring schedules, and support group details will be listed here.";
+      case "Student Training and Skill Development Activities":
+        return "";
+      case "Mechanical Engineering Students Association (MESA) Activities":
+        return "Co-curricular events, student chapters, workshops, and MESA committee activities list.";
+      case "Exam":
+        return "Internal examination schedules and university circulars will be posted here.";
+      case "Placement Highlights 2025-26":
+        return "Placement records, top recruiters, and selection statistics report for the academic cohort is available below.";
+      case "Alumni Engagement Activities":
+        return "";
+      default:
+        return "";
+    }
+  };
 
   const sectionContent = {
     "About Us": {
@@ -507,25 +846,25 @@ export default function FAQMECH() {
       type: "accordion",
       content: {
         "Department Vision": [
-          "Be a Nationally recognized Mechanical Engineering Department that provides right academic ambience and nurtures innate talent of students."
+          "Be a Nationally recognized Mechanical Engineering Department that provides right academic ambience and nurtures innate talent of students.",
         ],
         "Department Mission": [
           "M1: Provide strong fundamental and advanced knowledge in Mechanical Engineering.",
           "M2: Develop technical and practical skills through hands-on learning and modern engineering tools.",
           "M3: Build positive professional attitudes, including ethics, teamwork, and responsibility.",
-          "M4: Prepare students for engineering careers through industry exposure and continuous learning."
+          "M4: Prepare students for engineering careers through industry exposure and continuous learning.",
         ],
         "Programme Educational Objectives (PEOs)": [
           "PEO 1: Graduates will apply knowledge gained in engineering and science to improve lives and livelihoods through a successful career in Mechanical Engineering and other related fields.",
           "PEO 2: Graduates will become innovators, entrepreneurs to address social, technical and business challenges.",
-          "PEO 3: Graduates will engage in lifelong learning such as higher studies, research and other Continuous professional development activities."
+          "PEO 3: Graduates will engage in lifelong learning such as higher studies, research and other Continuous professional development activities.",
         ],
         "Programme Specific Outcomes (PSOs)": [
           "PSO 1: Career Readiness - Graduates will be ready for successful careers in mechanical industries using modern engineering skills.",
           "PSO 2: Higher Education & Research - Graduates will be prepared to pursue higher studies and take up research in advanced areas of mechanical engineering.",
-          "PSO 3: Service to Society & Nation - Graduates will apply mechanical engineering knowledge to create solutions useful for society and national development."
-        ]
-      }
+          "PSO 3: Service to Society & Nation - Graduates will apply mechanical engineering knowledge to create solutions useful for society and national development.",
+        ],
+      },
     },
     // ================= NEW SECTIONS (MECHANICAL) =================
 
@@ -540,7 +879,22 @@ export default function FAQMECH() {
         {
           id: "fee-fra",
           label: "FRA Document",
-          pdf: "/programs/Computer/NewFRA.pdf",
+          pdf: "/programs/Mech/NewFRA.pdf",
+        },
+        {
+          id: "fee-proposal-26-27",
+          label: "FRA Proposal 26-27",
+          pdf: "/programs/Mech/FRA_Proposal_2026-27.pdf",
+        },
+        {
+          id: "new-fra",
+          label: "New FRA",
+          pdf: "/programs/Mech/NewFRA.pdf",
+        },
+        {
+          id: "institute-level-admission-fra-fees",
+          label: "Institute Level Admission FRA Fees",
+          pdf: "/programs/Mech/Insttitute_level_admission_FRA_FEEs.pdf",
         },
       ],
     },
@@ -573,13 +927,6 @@ export default function FAQMECH() {
         },
       ],
     },
-
-    //     "Eligibility Criteria": {
-    //   type: "text",
-    //   content: [
-    //     ""
-    //   ]
-    // },
 
     "Eligibility Criteria": {
       type: "accordion",
@@ -616,22 +963,20 @@ export default function FAQMECH() {
       },
     },
 
-    // Faculty: {
-    //   type: "gallery",
-    //   content: facultyImages,
-    //   title: "Faculty Members",
-    // },
-
     "Syllabus & Course Structure": {
       type: "syllabus",
       content: syllabusList,
+    },
+
+    "Academic Performance": {
+      type: "academicPerformance",
     },
 
     // Laboratories: {
     //   type: "mechLabs",
     //   content: mechanicalLabs,
     // },
-    "Staff": {
+    Staff: {
       type: "staff",
       content: staffData,
     },
@@ -698,7 +1043,7 @@ export default function FAQMECH() {
                           <p key={i} className="text-gray-700 leading-relaxed">
                             {item}
                           </p>
-                        )
+                        ),
                       )}
                     </div>
                   </details>
@@ -726,7 +1071,9 @@ export default function FAQMECH() {
         return <p className="text-gray-600 text-lg">{data.content}</p>;
       case "staff":
         const StaffPhoto = ({ src, alt }) => {
-          const [currentSrc, setCurrentSrc] = useState(src || "/faculty/newFaculty/placeholder.avif");
+          const [currentSrc, setCurrentSrc] = useState(
+            src || "/faculty/newFaculty/placeholder.avif",
+          );
           const [hasError, setHasError] = useState(false);
 
           return hasError ? (
@@ -804,9 +1151,15 @@ export default function FAQMECH() {
                         <span className="text-gray-700 font-medium">
                           {[
                             staff.experience.total,
-                            staff.experience.teaching ? `Teaching: ${staff.experience.teaching}` : null,
-                            staff.experience.industrial ? `Industrial: ${staff.experience.industrial}` : null,
-                            staff.experience.research ? `Research: ${staff.experience.research}` : null,
+                            staff.experience.teaching
+                              ? `Teaching: ${staff.experience.teaching}`
+                              : null,
+                            staff.experience.industrial
+                              ? `Industrial: ${staff.experience.industrial}`
+                              : null,
+                            staff.experience.research
+                              ? `Research: ${staff.experience.research}`
+                              : null,
                           ]
                             .filter(Boolean)
                             .join(" • ")}
@@ -818,13 +1171,17 @@ export default function FAQMECH() {
                           <span className="text-gray-400 font-bold uppercase mr-1">
                             Joining Date:
                           </span>
-                          <span className="text-gray-700 font-medium">{staff.doj}</span>
+                          <span className="text-gray-700 font-medium">
+                            {staff.doj}
+                          </span>
                         </div>
                         <div className="text-[11px]">
                           <span className="text-gray-400 font-bold uppercase mr-1">
                             Birth Date:
                           </span>
-                          <span className="text-gray-700 font-medium">{staff.dob}</span>
+                          <span className="text-gray-700 font-medium">
+                            {staff.dob}
+                          </span>
                         </div>
                       </>
                     )}
@@ -846,9 +1203,17 @@ export default function FAQMECH() {
                           Research Papers:
                         </span>
                         <span className="text-gray-700 font-medium block">
-                          {typeof staff.researchPapers === "string" ? staff.researchPapers : staff.researchPapers.wosScopus ? `WOS/Scopus: ${staff.researchPapers.wosScopus}` : ""}
-                          {staff.researchPapers.journal ? ` • Journal: ${staff.researchPapers.journal}` : ""}
-                          {staff.researchPapers.conference ? ` • Conference: ${staff.researchPapers.conference}` : ""}
+                          {typeof staff.researchPapers === "string"
+                            ? staff.researchPapers
+                            : staff.researchPapers.wosScopus
+                              ? `WOS/Scopus: ${staff.researchPapers.wosScopus}`
+                              : ""}
+                          {staff.researchPapers.journal
+                            ? ` • Journal: ${staff.researchPapers.journal}`
+                            : ""}
+                          {staff.researchPapers.conference
+                            ? ` • Conference: ${staff.researchPapers.conference}`
+                            : ""}
                         </span>
                       </div>
                     )}
@@ -866,7 +1231,9 @@ export default function FAQMECH() {
                 <tr>
                   <th className="p-2 md:p-3 border-b font-semibold">Program</th>
                   <th className="p-2 md:p-3 border-b font-semibold">Intake</th>
-                  <th className="p-2 md:p-3 border-b font-semibold">Duration</th>
+                  <th className="p-2 md:p-3 border-b font-semibold">
+                    Duration
+                  </th>
                   <th className="p-2 md:p-3 border-b font-semibold">Type</th>
                 </tr>
               </thead>
@@ -914,6 +1281,464 @@ export default function FAQMECH() {
                 </tbody>
               </table>
             </div>
+          </div>
+        );
+
+      case "academicPerformance":
+        return (
+          <div className="space-y-6">
+            {/* Subtabs Navigation */}
+            <div className="flex flex-wrap gap-2 bg-gray-50 p-2.5 rounded-xl border border-gray-200">
+              {academicSubTabs.map((subTab) => (
+                <button
+                  key={subTab}
+                  onClick={() => setAcademicSubTab(subTab)}
+                  className={`rounded-lg px-4 py-2.5 text-xs md:text-sm font-semibold transition-all duration-200 ${
+                    academicSubTab === subTab
+                      ? "bg-secondary text-white shadow-sm"
+                      : "bg-white text-gray-700 border border-gray-200 hover:bg-gray-100 hover:text-secondary"
+                  }`}
+                >
+                  {subTab}
+                </button>
+              ))}
+            </div>
+
+            {/* Subtab Content */}
+            {academicSubTab === "TG (Mentor-Mentee)" ? (
+              <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm min-h-[220px]">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 pb-4 border-b border-gray-100">
+                  <div className="text-left">
+                    <h4 className="text-xl font-bold text-gray-900 mb-1">
+                      Mentor-Mentee List - 2026_27
+                    </h4>
+                    <p className="text-sm text-gray-500">
+                      Tentative Mentor-Mentee List for A.Y 26-27
+                    </p>
+                  </div>
+                  <div className="relative w-full sm:w-72">
+                    <input
+                      type="text"
+                      placeholder="Search student or mentor name..."
+                      value={mentorSearchQuery}
+                      onChange={(e) => setMentorSearchQuery(e.target.value)}
+                      className="w-full pl-9 pr-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition-all"
+                    />
+                    <svg
+                      className="absolute left-3 top-2.5 w-4 h-4 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+
+                <div className="space-y-4 text-left">
+                  {mentorMenteeData
+                    .map((item) => {
+                      const matchesMentor = item.mentor
+                        .toLowerCase()
+                        .includes(mentorSearchQuery.toLowerCase());
+                      const filteredStudents = item.students.filter((student) =>
+                        student
+                          .toLowerCase()
+                          .includes(mentorSearchQuery.toLowerCase()),
+                      );
+
+                      if (!matchesMentor && filteredStudents.length === 0)
+                        return null;
+
+                      return {
+                        ...item,
+                        filteredStudents,
+                        showAll: matchesMentor || mentorSearchQuery === "",
+                      };
+                    })
+                    .filter(Boolean)
+                    .map((item, index) => (
+                      <div
+                        key={index}
+                        className="border border-gray-200 rounded-lg overflow-hidden shadow-sm"
+                      >
+                        <details
+                          className="group"
+                          open={mentorSearchQuery !== ""}
+                        >
+                          <summary className="flex justify-between items-center p-4 cursor-pointer bg-gray-50 hover:bg-gray-100/80 transition-colors">
+                            <div className="flex items-center gap-2">
+                              <span className="font-semibold text-secondary text-base">
+                                {item.mentor}
+                              </span>
+                              <span className="text-xs bg-blue-50 text-blue-700 font-semibold px-2 py-0.5 rounded-full border border-blue-100">
+                                {item.showAll
+                                  ? `${item.students.length} Mentees`
+                                  : `${item.filteredStudents.length} Matches`}
+                              </span>
+                            </div>
+                            <span className="text-gray-400 transition-transform group-open:rotate-180">
+                              ▼
+                            </span>
+                          </summary>
+                          <div className="p-4 bg-white border-t border-gray-100">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+                              {(item.showAll
+                                ? item.students
+                                : item.filteredStudents
+                              ).map((student, idx) => {
+                                const isMatched =
+                                  mentorSearchQuery !== "" &&
+                                  student
+                                    .toLowerCase()
+                                    .includes(mentorSearchQuery.toLowerCase());
+                                return (
+                                  <div
+                                    key={idx}
+                                    className={`p-2.5 rounded-lg border text-sm transition-all ${
+                                      isMatched
+                                        ? "bg-blue-50 border-blue-200 font-semibold text-blue-900 shadow-sm"
+                                        : "bg-gray-50/50 border-gray-100 text-gray-700 hover:bg-gray-50"
+                                    }`}
+                                  >
+                                    <span className="text-xs text-gray-400 font-bold mr-1.5">
+                                      {idx + 1}.
+                                    </span>
+                                    {student}
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        </details>
+                      </div>
+                    ))}
+                </div>
+              </div>
+            ) : academicSubTab ===
+                "Mechanical Engineering Students Association (MESA) Activities" ||
+              academicSubTab === "Placement Highlights 2025-26" ? (
+              <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm flex flex-col text-left">
+                <div className="mb-4 pb-4 border-b border-gray-100">
+                  <h4 className="text-xl font-bold text-gray-900 mb-1">
+                    {academicSubTab}
+                  </h4>
+                  <p className="text-sm text-gray-500">
+                    {getSubTabDescription(academicSubTab)}
+                  </p>
+                </div>
+                <div className="w-full h-[650px] border border-gray-200 rounded-lg overflow-hidden bg-gray-50 relative">
+                  <iframe
+                    src={
+                      academicSubTab ===
+                      "Mechanical Engineering Students Association (MESA) Activities"
+                        ? "/programs/Mech/mesa_2526_semii.pdf#toolbar=1"
+                        : "/programs/Mech/placement_mech.pdf#toolbar=1"
+                    }
+                    className="w-full h-full border-0"
+                    title={academicSubTab}
+                  />
+                </div>
+              </div>
+            ) : academicSubTab ===
+              "Student Training and Skill Development Activities" ? (
+              <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm text-left">
+                <div className="mb-6 pb-4 border-b border-gray-100">
+                  <h4 className="text-xl font-bold text-gray-900">
+                    Student Training and Skill Development Activities
+                  </h4>
+                </div>
+                <div className="space-y-8 text-gray-700 leading-relaxed text-base">
+                  <p className="text-gray-800 font-medium">
+                    The Department of Mechanical Engineering, in association
+                    with Gryphon Academy Pvt. Ltd., organized two comprehensive
+                    company-specific technical training programs for Mechanical
+                    Engineering students.
+                  </p>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="p-5 bg-blue-50/50 border border-blue-100 rounded-xl">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="px-2.5 py-1 text-xs font-bold bg-secondary text-white rounded-md uppercase tracking-wider">
+                          Training Program I
+                        </span>
+                        <span className="text-sm font-semibold text-gray-500">
+                          (27 January – 2 February 2026)
+                        </span>
+                      </div>
+                      <h5 className="font-bold text-gray-900 text-base mb-3">
+                        Automation and Industrial Awareness
+                      </h5>
+                      <ul className="space-y-2 text-sm text-gray-600">
+                        <li className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 bg-secondary rounded-full" />
+                          Advanced AutoCAD
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 bg-secondary rounded-full" />
+                          Advanced SolidWorks
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div className="p-5 bg-blue-50/50 border border-blue-100 rounded-xl">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="px-2.5 py-1 text-xs font-bold bg-secondary text-white rounded-md uppercase tracking-wider">
+                          Training Program II
+                        </span>
+                        <span className="text-sm font-semibold text-gray-500">
+                          (31 March – 10 April 2026)
+                        </span>
+                      </div>
+                      <h5 className="font-bold text-gray-900 text-base mb-3">
+                        Aptitude Development
+                      </h5>
+                      <ul className="space-y-2 text-sm text-gray-600">
+                        <li className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 bg-secondary rounded-full" />
+                          Communication and Professional Skills
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 bg-secondary rounded-full" />
+                          Problem-Solving and Analytical Thinking
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="p-5 bg-gray-50/50 border border-gray-100 rounded-xl flex items-start gap-3">
+                    <div className="p-2 bg-white border border-gray-100 rounded-lg text-secondary shadow-sm">
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-700 font-medium">
+                        Additionally, students participated in a Technical
+                        Conference in Mumbai, where they interacted with
+                        industry experts and explored emerging technologies and
+                        industrial trends.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Photo Gallery */}
+                  <div>
+                    <h5 className="font-bold text-gray-900 text-lg mb-4 flex items-center gap-2">
+                      <span className="w-1.5 h-3 bg-secondary rounded-full" />
+                      Training & Activities Gallery
+                    </h5>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                      {[
+                        "20260127_114304AMByGPSMapCamera.webp",
+                        "20260201_100621AMByGPSMapCamera.webp",
+                        "20260202_113018AMByGPSMapCamera.webp",
+                        "20260223_14104PMByGPSMapCamera 1.webp",
+                        "20260223_14125PMByGPSMapCamera 1.webp",
+                        "20260224_114357AMByGPSMapCamera 1.webp",
+                        "20260403_115535AMByGPSMapCamera 1.webp",
+                        "20260404_103022AMByGPSMapCamera 1.webp",
+                        "20260406_110859AMByGPSMapCamera 1.webp",
+                        "20260410_21224PMByGPSMapCamera.webp",
+                        "3455.webp",
+                      ].map((imgName, index) => (
+                        <div
+                          key={index}
+                          className="group relative aspect-video rounded-lg overflow-hidden border border-gray-200 bg-gray-100 shadow-sm cursor-pointer"
+                          onClick={() =>
+                            setSelectedTrainingImage(
+                              `/programs/Mech/std_train_skill_dev/${imgName}`,
+                            )
+                          }
+                        >
+                          <img
+                            src={`/programs/Mech/std_train_skill_dev/${imgName}`}
+                            alt={`Training session ${index + 1}`}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            loading="lazy"
+                          />
+                          <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
+                            <span className="px-3 py-1 bg-white/90 text-gray-900 text-xs font-semibold rounded-full shadow-sm">
+                              View Image
+                            </span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : academicSubTab === "Alumni Engagement Activities" ? (
+              <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm text-left">
+                <div className="mb-6 pb-4 border-b border-gray-100">
+                  <h4 className="text-xl font-bold text-gray-900">
+                    Alumni Engagement Activities
+                  </h4>
+                </div>
+                <div className="space-y-6 text-gray-700 leading-relaxed text-base">
+                  <p>
+                    The Department of Mechanical Engineering successfully
+                    organized a series of Alumni Expert Talks aimed at bridging
+                    the gap between academia and industry. Distinguished alumni
+                    from various professional domains interacted with students
+                    and shared their industry experiences, entrepreneurial
+                    journeys, and technological insights.
+                  </p>
+                  <div>
+                    <h5 className="font-bold text-gray-900 mb-4 text-lg">
+                      Highlights:
+                    </h5>
+                    <ul className="space-y-4">
+                      <li className="flex items-start gap-2.5">
+                        <span className="text-secondary font-bold text-lg mt-0.5">
+                          •
+                        </span>
+                        <span>
+                          <strong className="text-gray-900">
+                            Mr. Shreyash Awate (Managing Director, Awate Auto
+                            Wakad)
+                          </strong>
+                          <br />
+                          delivered a session on &ldquo;Entrepreneurship Beyond
+                          the Classroom&rdquo;
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-2.5">
+                        <span className="text-secondary font-bold text-lg mt-0.5">
+                          •
+                        </span>
+                        <span>
+                          <strong className="text-gray-900">
+                            Mr. Yogesh Patil (Engineer, Fluid Control R&D Lab)
+                          </strong>
+                          <br />
+                          conducted an expert talk on &ldquo;From Spark to
+                          Torque: Real-World Engine Design Insights&rdquo;.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-2.5">
+                        <span className="text-secondary font-bold text-lg mt-0.5">
+                          •
+                        </span>
+                        <span>
+                          <strong className="text-gray-900">
+                            Mr. Bharat Thorat (Production Engineer, Tata Motors)
+                          </strong>
+                          <br />
+                          guided students on &ldquo;Industry 4.0 and Smart
+                          Manufacturing&rdquo;.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-2.5">
+                        <span className="text-secondary font-bold text-lg mt-0.5">
+                          •
+                        </span>
+                        <span>
+                          <strong className="text-gray-900">
+                            Mr. Sahil Sonigara (Director, Parshwanath Sales by
+                            Nilkamal Homes)
+                          </strong>
+                          <br />
+                          shared entrepreneurial experiences through his session
+                          on &ldquo;Engineering Entrepreneurship&rdquo;.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-2.5">
+                        <span className="text-secondary font-bold text-lg mt-0.5">
+                          •
+                        </span>
+                        <span>
+                          <strong className="text-gray-900">
+                            Mr. Suraj Raipure (Deputy Manager, JSW Genentech
+                            Ltd.)
+                          </strong>
+                          <br />
+                          delivered expert talks on &ldquo;Product Design and
+                          Development&rdquo; and &ldquo;Future of Vehicle
+                          Industry&rdquo;.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-2.5">
+                        <span className="text-secondary font-bold text-lg mt-0.5">
+                          •
+                        </span>
+                        <span>
+                          <strong className="text-gray-900">
+                            Mr. Aniket Shende (CEO, Cutting Edge Technology) and
+                            Mr. Rohan Deshpande (Senior Purchasing Specialist,
+                            SLB OneSubsea)
+                          </strong>
+                          <br />
+                          addressed students on the &ldquo;Impact of Technical
+                          Events on Student Learning and Professional
+                          Development&rdquo;
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm min-h-[220px] flex flex-col justify-center items-center text-center">
+                <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-4 text-secondary">
+                  {renderSubTabIcon(academicSubTab)}
+                </div>
+                <h4 className="text-xl font-bold text-gray-900 mb-2">
+                  {academicSubTab}
+                </h4>
+                <p className="text-gray-500 max-w-md">
+                  {getSubTabDescription(academicSubTab)}
+                </p>
+                {academicSubTab === "Time Table" ? (
+                  <div className="mt-6">
+                    <a
+                      href="/programs/Mech/new_time_table.xlsx"
+                      download
+                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-secondary text-white font-semibold rounded-lg shadow-md hover:bg-secondary/90 transition-colors duration-200"
+                    >
+                      <span>Download Time Table AY 2026-27 Sem I (Theory)</span>
+                      <svg
+                        className="w-4.5 h-4.5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                        ></path>
+                      </svg>
+                    </a>
+                  </div>
+                ) : (
+                  <div className="mt-6">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-100">
+                      <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+                      Details Coming Soon
+                    </span>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         );
 
@@ -990,6 +1815,41 @@ export default function FAQMECH() {
           </div>
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      {selectedTrainingImage && (
+        <div
+          className="fixed inset-0 bg-black/80 z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-all duration-300"
+          onClick={() => setSelectedTrainingImage(null)}
+        >
+          <div className="relative max-w-5xl max-h-[90vh] w-full flex items-center justify-center">
+            <button
+              onClick={() => setSelectedTrainingImage(null)}
+              className="absolute -top-12 right-0 text-white bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors focus:outline-none"
+              title="Close"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <img
+              src={selectedTrainingImage}
+              alt="Expanded training session"
+              className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl border border-white/10"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

@@ -264,7 +264,7 @@
     "ID No": "3105",
     "Name of the staff ": "Dr. Awantika Narendra Bijwe",
     "Designation": "Assistant Professor & HOD",
-    "Department": "BCA & MCA",
+    "Department": "MCA",
     "Qualification": "Ph.D, BSc,MCA,ME",
     "DOJ": "7/1/2024",
     "DOB": "26.05.1982"
@@ -274,20 +274,10 @@
     "ID No": "3115",
     "Name of the staff ": "Ms.Shraddha Vishnu Murade",
     "Designation": "Assistant Professor",
-    "Department": "BCA",
+    "Department": "MCA",
     "Qualification": "B.Sc., MCA",
     "DOJ": "9/24/2024",
     "DOB": "11.07.1999"
-  },
-  {
-    "Sr.No.": "29",
-    "ID No": "3217",
-    "Name of the staff ": "Mr. Prakash Shamrao Bhusari",
-    "Designation": "Assistant Professor",
-    "Department": "BCA",
-    "Qualification": "B.C.S,M.Sc",
-    "DOJ": "9/22/2025",
-    "DOB": "4/5/1983"
   },
   {
     "Sr.No.": "30",
@@ -760,16 +750,6 @@
     "DOB": "12.06.1973"
   },
   {
-    "Sr.No.": "77",
-    "ID No": "1011",
-    "Name of the staff ": "Dr. Darshana Jignesh Desai",
-    "Designation": "Professor & Dean (Quality Assurance and Accreditation)",
-    "Department": "MCA",
-    "Qualification": "MCA, Ph.D",
-    "DOJ": "02.01.2013",
-    "DOB": "21.05.1979"
-  },
-  {
     "Sr.No.": "78",
     "ID No": "2343",
     "Name of the staff ": "Dr. Dhanashree Vishal Pisal",
@@ -778,26 +758,6 @@
     "Qualification": "BCA,MCA",
     "DOJ": "06.01.2023",
     "DOB": "08.03.1989"
-  },
-  {
-    "Sr.No.": "79",
-    "ID No": "3103",
-    "Name of the staff ": "Mrs.Shreya Sohan Shenai",
-    "Designation": "Assistant Professor",
-    "Department": "MCA",
-    "Qualification": "B.Sc.MCA",
-    "DOJ": "7/1/2024",
-    "DOB": "02.07.1982"
-  },
-  {
-    "Sr.No.": "80",
-    "ID No": "3110",
-    "Name of the staff ": "Mrs. Hetal Hardik Thaker",
-    "Designation": "Assistant Professor",
-    "Department": "MCA",
-    "Qualification": "BSc, MCA",
-    "DOJ": "8/16/2024",
-    "DOB": "27.11.1980"
   },
   {
     "Sr.No.": "81",
@@ -821,12 +781,12 @@
   },
   {
     "Sr.No.": "83",
-    "ID No": "3274",
-    "Name of the staff ": "Mrs. Vaishali Sachin Hatkar",
+    "ID No": "3285",
+    "Name of the staff ": "Dr. Namita Chawla",
     "Designation": "Assistant Professor",
     "Department": "MCA",
-    "Qualification": "BCA, MCA",
-    "DOJ": "2/3/2026",
-    "DOB": "28.10.1998"
+    "Qualification": "MCA, Ph.D.; PostDoc (Pursuing)",
+    "DOJ": "2/23/2026",
+    "DOB": "23.03.1985"
   }
 ]

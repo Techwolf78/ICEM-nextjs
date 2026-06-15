@@ -19,17 +19,6 @@ const staffData = [
   },
   {
     sn: 2,
-    id: "3115",
-    name: "Ms. Shraddha Vishnu Murade",
-    designation: "Assistant Professor",
-    department: "BCA",
-    qualification: "B.Sc MCA",
-    doj: "24/09/2024",
-    dob: "11/07/1999",
-    image: "/faculty/final_Icem_branding/mba/shraddhamurade.webp",
-  },
-  {
-    sn: 3,
     id: "3217",
     name: "Mr. Prakash Shamrao Bhusari",
     designation: "Assistant Professor",
@@ -38,6 +27,17 @@ const staffData = [
     doj: "22/09/2025",
     dob: "04/05/1983",
     image: "/faculty/final_Icem_branding/mba/prakashbhusari.webp",
+  },
+  {
+    sn: 3,
+    id: "3274",
+    name: "Mrs. Vaishali Sachin Hatkar",
+    designation: "Assistant Professor",
+    department: "BCA",
+    qualification: "BCA MCA",
+    doj: "03/02/2026",
+    dob: "28/10/1998",
+    image: "/faculty/final_Icem_branding/mca/Mrs. Vaishali Hatkar.webp",
   },
 ];
 

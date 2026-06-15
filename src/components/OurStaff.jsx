@@ -293,7 +293,7 @@ const staffData = [
     "ID No": "3105",
     "Name of the staff ": "Dr. Awantika Narendra Bijwe",
     Designation: "Assistant Professor & HOD",
-    Department: "BCA & MCA",
+    Department: "MCA",
     Qualification: "Ph.D, BSc,MCA,ME",
     DOJ: "7/1/2024",
     DOB: "26.05.1982",
@@ -304,23 +304,13 @@ const staffData = [
     "ID No": "3115",
     "Name of the staff ": "Ms.Shraddha Vishnu Murade",
     Designation: "Assistant Professor",
-    Department: "BCA",
+    Department: "MCA",
     Qualification: "B.Sc., MCA",
     DOJ: "9/24/2024",
     DOB: "11.07.1999",
     imagePath: "/Final_Icem_branding/bba_bca/Ms. Shraddha Murade.webp",
   },
-  {
-    "Sr.No.": "29",
-    "ID No": "3217",
-    "Name of the staff ": "Mr. Prakash Shamrao Bhusari",
-    Designation: "Assistant Professor",
-    Department: "BCA",
-    Qualification: "B.C.S,M.Sc",
-    DOJ: "9/22/2025",
-    DOB: "4/5/1983",
-    imagePath: "/Final_Icem_branding/bba_bca/Mr. Prakash Bhusari.webp",
-  },
+
   {
     "Sr.No.": "30",
     "ID No": "1200",
@@ -827,48 +817,15 @@ const staffData = [
     imagePath: "/faculty/newFaculty/PoornaShankar.webp",
   },
   {
-    "Sr.No.": "77",
-    "ID No": "1011",
-    "Name of the staff ": "Dr. Darshana Jignesh Desai",
-    Designation: "Professor & Dean (Quality Assurance and Accreditation)",
-    Department: "MCA",
-    Qualification: "MCA, Ph.D",
-    DOJ: "02.01.2013",
-    DOB: "21.05.1979",
-    imagePath: "/Final_Icem_branding/mca/Dr. Darshana Desai.webp",
-  },
-  {
     "Sr.No.": "78",
     "ID No": "2343",
     "Name of the staff ": "Dr. Dhanashree Vishal Pisal",
     Designation: "Assistant Professor",
     Department: "MCA",
     Qualification: "BCA,MCA",
-    DOJ: "06.01.2023",
-    DOB: "08.03.1989",
+    DOJ: "06/01/2023",
+    DOB: "08/03/1989",
     imagePath: "/Final_Icem_branding/mca/Dr. Dhanashree Pisal.webp",
-  },
-  {
-    "Sr.No.": "79",
-    "ID No": "3103",
-    "Name of the staff ": "Mrs.Shreya Sohan Shenai",
-    Designation: "Assistant Professor",
-    Department: "MCA",
-    Qualification: "B.Sc.MCA",
-    DOJ: "7/1/2024",
-    DOB: "02.07.1982",
-    imagePath: "/Final_Icem_branding/mca/Mrs. Shreya Shenai.webp",
-  },
-  {
-    "Sr.No.": "80",
-    "ID No": "3110",
-    "Name of the staff ": "Mrs. Hetal Hardik Thaker",
-    Designation: "Assistant Professor",
-    Department: "MCA",
-    Qualification: "BSc, MCA",
-    DOJ: "8/16/2024",
-    DOB: "27.11.1980",
-    imagePath: "/Final_Icem_branding/mca/Mrs. Hetal Thakar.webp",
   },
   {
     "Sr.No.": "81",
@@ -894,14 +851,14 @@ const staffData = [
   },
   {
     "Sr.No.": "83",
-    "ID No": "3274",
-    "Name of the staff ": "Mrs. Vaishali Sachin Hatkar",
+    "ID No": "3285",
+    "Name of the staff ": "Dr. Namita Chawla",
     Designation: "Assistant Professor",
     Department: "MCA",
-    Qualification: "BCA, MCA",
-    DOJ: "2/3/2026",
-    DOB: "28.10.1998",
-    imagePath: "/Final_Icem_branding/mca/Mrs. Vaishali Hatkar.webp",
+    Qualification: "MCA, Ph.D.; PostDoc (Pursuing)",
+    DOJ: "2/23/2026",
+    DOB: "23.03.1985",
+    imagePath: "",
   },
 ];
 
@@ -938,6 +895,8 @@ export default function OurStaff() {
     BBA: "Bachelor of Business Administration",
     "BCA & MCA": "Computer Applications",
     BCA: "Bachelor of Computer Applications",
+    IMCA: "Integrated MCA",
+    IMBA: "Integrated MBA",
     Civil: "Civil Engineering",
     Computer: "Computer Engineering",
     "E&TC": "Electronics & Telecommunication Engineering",
@@ -1015,7 +974,7 @@ export default function OurStaff() {
                             }
                           >
                             <td className="border border-gray-300 p-2">
-                              {imageSource ? (
+                              {imageSource && !brokenImageStaffIds[id] ? (
                                 <img
                                   src={imageSource}
                                   alt={name}
@@ -1028,16 +987,21 @@ export default function OurStaff() {
                                   }}
                                 />
                               ) : (
-                                <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
-                                  <span className="text-xs text-gray-600">
-                                    {name
-                                      ? name
-                                          .split(" ")
-                                          .map((n) => n[0])
-                                          .join("")
-                                          .toUpperCase()
-                                      : "NA"}
-                                  </span>
+                                <div className="w-12 h-12 bg-gray-100 rounded-full border border-gray-200 flex items-center justify-center overflow-hidden">
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="1.5"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    className="w-8 h-8 text-gray-400"
+                                    aria-hidden="true"
+                                  >
+                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" />
+                                    <path d="M18.36 16.46a7 7 0 00-12.72 0c-.35.58.1 1.28.77 1.28h11.38c.66 0 1.12-.7.57-1.28z" />
+                                  </svg>
                                 </div>
                               )}
                             </td>

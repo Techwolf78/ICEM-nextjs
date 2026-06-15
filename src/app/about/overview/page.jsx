@@ -55,14 +55,8 @@ export default function Overview() {
       image: "/faculty/ArchanaSalve.webp",
     },
     {
-      name: "Dr. Sanjay Mathapati",
-      designation: "HoD MASTERS IN COMPUTER APPLICATIONS.",
-      image: "/faculty/hod_mca.JPG",
-    },
-
-    {
       name: "Dr. Awantika Bijwe",
-      designation: "HoD Bachelor of Computer Applications.",
+      designation: "HoD MCA & BCA.",
       image: "/faculty/AwantikaBijwe.webp",
     },
     {
@@ -345,26 +339,7 @@ export default function Overview() {
                   </div>
                 </div>
 
-                {/* INTEGRATED PROGRAMS */}
-                <div className="mb-6 md:mb-8">
-                  <p className="text-gray-700 mb-3 md:mb-4 font-semibold italic text-base md:text-lg">
-                    Integrated Programs:
-                  </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
-                    {[
-                      "Integrated MBA (BBA + MBA)",
-                      "Integrated MCA (BCA + MCA)",
-                    ].map((program, idx) => (
-                      <div
-                        key={idx}
-                        className="p-3 md:p-6 rounded-xl bg-[#E2F4F6] text-gray-800 font-medium
-                       border border-gray-200 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 cursor-pointer text-sm md:text-base"
-                      >
-                        {program}
-                      </div>
-                    ))}
-                  </div>
-                </div>
+
               </div>
 
               <p className="text-justify text-sm md:text-base">

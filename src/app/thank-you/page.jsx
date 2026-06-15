@@ -2,11 +2,10 @@
 
 import React, { useEffect, useState } from "react";
 import Script from "next/script";
-import { consumeValidNpfThankYouVisit } from "@/lib/npfThankYouGuard";
 
 export default function ThankYouPage() {
-  const [countdown, setCountdown] = useState(6);
-  const [isVerified, setIsVerified] = useState(null);
+  const [countdown, setCountdown] = useState(10);
+  const [shouldTrack, setShouldTrack] = useState(false);
 
   useEffect(() => {
     // 1. If loaded inside an iframe (from NPF widget redirect), break out and load on parent window.
@@ -15,16 +14,23 @@ export default function ThankYouPage() {
       return;
     }
 
-    if (!consumeValidNpfThankYouVisit()) {
-      window.location.replace("/");
-      return;
-    }
+    // 2. Track successful form submission once per browser session/tab to avoid duplicate counts on refresh
+    const hasTracked = sessionStorage.getItem("icem_conversion_tracked");
+    if (!hasTracked) {
+      setShouldTrack(true);
+      sessionStorage.setItem("icem_conversion_tracked", "true");
 
-    setIsVerified(true);
+      // Push event to GTM dataLayer
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "form_submission_success",
+        page_path: "/thank-you",
+      });
+    }
 
     const timer = setTimeout(() => {
       window.location.href = '/';
-    }, 6000);
+    }, 10000);
 
     const interval = setInterval(() => {
       setCountdown((prev) => prev - 1);
@@ -36,46 +42,27 @@ export default function ThankYouPage() {
     };
   }, []);
 
-  if (!isVerified) {
-    return null;
+  if (typeof window !== "undefined" && window.self !== window.top) {
+    return null; // Keep screen clean while breaking out of iframe
   }
 
   return (
     <>
-      {/* Google Tag Manager */}
-      <Script
-        id="gtm-script"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-PZNKKDM');
-          `,
-        }}
-      />
       <div className="min-h-screen bg-secondary/10 flex items-center justify-center px-4">
-        {/* Google Ads Global Site Tag (gtag.js) */}
-        <Script
-          id="google-ads-tag"
-          strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=AW-16606532987"
-        />
-        <Script
-          id="google-ads-config"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){window.dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-16606532987');
-              gtag('event', 'conversion', {'send_to': 'AW-16606532987/IVt0COaGu7kZEPuqzu49'});
-            `,
-          }}
-        />
+        {/* Google Ads Conversion Event - only tracked once per session */}
+        {shouldTrack && (
+          <Script
+            id="google-ads-conversion"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){window.dataLayer.push(arguments);}
+                gtag('event', 'conversion', {'send_to': 'AW-16606532987/IVt0COaGu7kZEPuqzu49'});
+              `,
+            }}
+          />
+        )}
         <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8 text-center">
           <div className="mb-6">
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -119,16 +106,6 @@ export default function ThankYouPage() {
           </div>
         </div>
       </div>
-      {/* Google Tag Manager (noscript) */}
-      <noscript>
-        <iframe
-          src="https://www.googletagmanager.com/ns.html?id=GTM-PZNKKDM"
-          height="0"
-          width="0"
-          style={{ display: 'none', visibility: 'hidden' }}
-        ></iframe>
-      </noscript>
-      {/* End Google Tag Manager (noscript) */}
     </>
   );
 }

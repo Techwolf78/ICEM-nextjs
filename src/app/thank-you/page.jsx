@@ -9,6 +9,12 @@ export default function ThankYouPage() {
   const [isVerified, setIsVerified] = useState(null);
 
   useEffect(() => {
+    // 1. If loaded inside an iframe (from NPF widget redirect), break out and load on parent window.
+    if (window.self !== window.top) {
+      window.top.location.href = window.location.href;
+      return;
+    }
+
     if (!consumeValidNpfThankYouVisit()) {
       window.location.replace("/");
       return;
@@ -51,6 +57,25 @@ export default function ThankYouPage() {
         }}
       />
       <div className="min-h-screen bg-secondary/10 flex items-center justify-center px-4">
+        {/* Google Ads Global Site Tag (gtag.js) */}
+        <Script
+          id="google-ads-tag"
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-16606532987"
+        />
+        <Script
+          id="google-ads-config"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){window.dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-16606532987');
+              gtag('event', 'conversion', {'send_to': 'AW-16606532987/IVt0COaGu7kZEPuqzu49'});
+            `,
+          }}
+        />
         <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8 text-center">
           <div className="mb-6">
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">

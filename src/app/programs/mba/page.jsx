@@ -1,6 +1,14 @@
 "use client";
 
 import React, { useState, useRef } from "react";
+import {
+  FiEye,
+  FiFlag,
+  FiUsers,
+  FiGlobe,
+  FiBriefcase,
+  FiBook,
+} from "react-icons/fi";
 import FAQMBA from "@/components/FAQSections/FAQMBA";
 import Image from "next/image";
 import RecruitersSection from "@/components/home/RecruiterSection";
@@ -33,7 +41,7 @@ export default function MBA() {
   // Array of MBA highlight images
   // const mbaHighlightImages = [
   //   "/programs/MBA/MBA1.jpg",
-  //   "/programs/MBA/MBA2.jpg", 
+  //   "/programs/MBA/MBA2.jpg",
   //   "/programs/MBA/MBA3.jpg"
   // ];
 
@@ -226,16 +234,17 @@ export default function MBA() {
       {/* =======================
           HERO SECTION
       ======================= */}
-      <div className="relative w-full overflow-hidden 
-  h-[55vh] md:h-[70vh] lg:h-[75vh] flex items-center">
-
-  {/* Background Image */}
-  <div className="absolute inset-0">
-    <Image
-      src="/programs/MBA1.webp"
-      alt="Artificial Intelligence Program"
-      fill
-      className="
+      <div
+        className="relative w-full overflow-hidden 
+  h-[55vh] md:h-[70vh] lg:h-[75vh] flex items-center"
+      >
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/programs/MBA1.webp"
+            alt="Artificial Intelligence Program"
+            fill
+            className="
         object-cover 
         object-center 
         md:object-[60%]     /* fixes cropping on small desktop */
@@ -244,13 +253,13 @@ export default function MBA() {
         lg:scale-110 
         opacity-90
       "
-      priority
-    />
-  </div>
+            priority
+          />
+        </div>
 
-  {/* Dark Gradient Overlay */}
-  <div
-    className="
+        {/* Dark Gradient Overlay */}
+        <div
+          className="
       absolute inset-0 
       bg-gradient-to-r 
       from-black/85 
@@ -260,44 +269,43 @@ export default function MBA() {
       lg:via-black/40 
       z-10
     "
-  />
+        />
 
-  {/* Content Wrapper */}
-  <div className="relative max-w-[1400px] px-4 sm:px-6 md:px-10 lg:px-20 z-20">
-    <div className="max-w-2xl md:max-w-xl lg:max-w-3xl text-white">
-
-      {/* Heading */}
-      <h2
-        className="
+        {/* Content Wrapper */}
+        <div className="relative max-w-[1400px] px-4 sm:px-6 md:px-10 lg:px-20 z-20">
+          <div className="max-w-2xl md:max-w-xl lg:max-w-3xl text-white">
+            {/* Heading */}
+            <h2
+              className="
           text-xl sm:text-2xl md:text-3xl lg:text-4xl
           font-bold leading-tight md:leading-snug
         "
-      >
-        2-Year Master of Business Administration (MBA) Programme
-      </h2>
+            >
+              2-Year Master of Business Administration (MBA) Programme
+            </h2>
 
-      {/* Description */}
-      <p
-        className="
+            {/* Description */}
+            <p
+              className="
           mt-3 sm:mt-4 
           text-white/80 
           leading-relaxed
           max-w-xl md:max-w-md lg:max-w-xl
           text-xs sm:text-sm md:text-base text-justify
         "
-      >
-        This rigorous programme is designed to develop strategic thinkers and
-        future business leaders. It combines core management principles with deep
-        specialization, fostering analytical prowess, leadership qualities, and an
-        ethical mindset to drive organizational success in a complex global
-        economy.
-      </p>
+            >
+              This rigorous programme is designed to develop strategic thinkers
+              and future business leaders. It combines core management
+              principles with deep specialization, fostering analytical prowess,
+              leadership qualities, and an ethical mindset to drive
+              organizational success in a complex global economy.
+            </p>
 
-    {/* Buttons - FIXED */}
-    <div className="flex  sm:flex-row gap-3 sm:gap-4 mt-6 ">
-      <button
-        onClick={toggleModal}
-        className="
+            {/* Buttons - FIXED */}
+            <div className="flex  sm:flex-row gap-3 sm:gap-4 mt-6 ">
+              <button
+                onClick={toggleModal}
+                className="
           bg-[#003c84] text-white px-4 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold
           text-xs sm:text-base md:text-lg
           w-full sm:w-auto
@@ -307,13 +315,13 @@ export default function MBA() {
           active:scale-95
           hover:transform hover:-translate-y-1
         "
-      >
-        Enquire Now
-      </button>
+              >
+                Enquire Now
+              </button>
 
-      <button
-        onClick={handleBrochureDownload}
-        className="
+              <button
+                onClick={handleBrochureDownload}
+                className="
           bg-[#003c84] text-white px-4 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold
           text-xs sm:text-base md:text-lg
           w-full sm:w-auto
@@ -323,18 +331,16 @@ export default function MBA() {
           active:scale-95
           hover:transform hover:-translate-y-1
         "
-      >
-        Download Brochure
-      </button>
-    </div>
+              >
+                Download Brochure
+              </button>
+            </div>
+          </div>
+        </div>
 
-    </div>
-  </div>
-
-  {/* Bottom Fade Mask */}
-  <div className="absolute bottom-0 w-full h-20 bg-gradient-to-t from-black/50 to-transparent" />
-</div>
-
+        {/* Bottom Fade Mask */}
+        <div className="absolute bottom-0 w-full h-20 bg-gradient-to-t from-black/50 to-transparent" />
+      </div>
 
       {/* =======================
           WHITE INFO SECTION
@@ -379,9 +385,6 @@ export default function MBA() {
         <div className="max-w-7xl mx-auto px-6">
           {/* Section Header */}
           <div className="text-center mb-10 md:mb-14">
-            <span className="inline-block bg-secondary/10 text-secondary text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">
-              NBA Accreditation
-            </span>
             <h2 className="text-3xl md:text-4xl font-bold text-secondary">
               Vision &amp; Mission
             </h2>
@@ -397,15 +400,18 @@ export default function MBA() {
             <div className="absolute -bottom-12 -left-12 w-64 h-64 rounded-full bg-white/5 pointer-events-none" />
 
             <div className="relative z-10 flex items-start gap-5">
-              <div className="hidden md:flex items-center justify-center w-14 h-14 flex-shrink-0 rounded-full bg-white/15 text-3xl">
-                🎯
+              <div className="hidden md:flex items-center justify-center w-14 h-14 flex-shrink-0 rounded-full bg-white/20">
+                <FiEye className="w-7 h-7 text-white" />
               </div>
               <div>
                 <h3 className="text-xl md:text-2xl font-bold mb-3 tracking-wide uppercase text-white/90">
                   Our Vision
                 </h3>
                 <p className="text-white/85 leading-relaxed text-sm md:text-base">
-                  To sustain excellence in management education by nurturing competent, socially responsible, and visionary business leaders through a holistic approach to academic, professional, and personal development.
+                  To sustain excellence in management education by nurturing
+                  competent, socially responsible, and visionary business
+                  leaders through a holistic approach to academic, professional,
+                  and personal development.
                 </p>
               </div>
             </div>
@@ -414,38 +420,60 @@ export default function MBA() {
           {/* Mission Cards */}
           <div>
             <h3 className="text-xl md:text-2xl font-bold text-secondary mb-6 flex items-center gap-3">
-              <span className="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-secondary/10 text-xl">🚀</span>
+              <span className="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-secondary/10">
+                <FiFlag className="w-5  h-5 md:w-8 md:h-8 text-secondary" />
+              </span>
               Our Mission
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {[
                 {
                   code: "M1",
+                  icon: <FiUsers className="w-5 h-5" />,
+                  label: "Community & Knowledge",
                   text: "To serve our diverse student and alumni population, our multicultural business community, and the global community of scholars by advancing business knowledge and sharing expertise.",
                 },
                 {
                   code: "M2",
+                  icon: <FiGlobe className="w-5 h-5" />,
+                  label: "Global Citizenship",
                   text: "To prepare our students to succeed as responsible global citizens in a dynamic, technology-driven business climate — creating a growing legacy for our alumni.",
                 },
                 {
                   code: "M3",
+                  icon: <FiBriefcase className="w-5 h-5" />,
+                  label: "Industry Partnership",
                   text: "To serve the business community through professional education, collaboration, and research – strengthening regional and local industries while providing qualified graduates who can tackle the demands of today's complex business environment.",
                 },
                 {
                   code: "M4",
+                  icon: <FiBook className="w-5 h-5" />,
+                  label: "Research & Innovation",
                   text: "To conduct innovative research — nurturing our faculty's intellectual growth and developing the talents of future scholars.",
                 },
               ].map((m) => (
                 <div
                   key={m.code}
-                  className="flex gap-4 bg-gray-50 border border-gray-200 rounded-xl p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+                  className="flex gap-4 bg-white border border-gray-200 border-l-4 border-l-secondary rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
                 >
-                  <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-secondary text-white font-bold text-sm">
-                    {m.code}
+                  {/* Icon badge */}
+                  <div className="flex-shrink-0 flex flex-col items-center gap-2">
+                    <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-secondary/10 text-secondary group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                      {m.icon}
+                    </div>
+                    <span className="text-xs font-bold text-secondary/60 tracking-widest">
+                      {m.code}
+                    </span>
                   </div>
-                  <p className="text-gray-700 text-sm md:text-base leading-relaxed">
-                    {m.text}
-                  </p>
+                  {/* Text */}
+                  <div>
+                    <p className="text-xs font-semibold text-secondary uppercase tracking-wider mb-1">
+                      {m.label}
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {m.text}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -466,7 +494,11 @@ export default function MBA() {
               ["marketing", "Marketing", "Marketing Management"],
               ["finance", "Finance", "Financial Management"],
               ["hr", "HR", "Human Resources Management"],
-              ["operations", "Operations", "Operations & Supply Chain Management"],
+              [
+                "operations",
+                "Operations",
+                "Operations & Supply Chain Management",
+              ],
             ].map(([key, shortLabel, fullLabel]) => (
               <button
                 key={key}
@@ -496,7 +528,9 @@ export default function MBA() {
             <h2 className="text-xl md:text-3xl font-bold text-secondary mb-4 leading-snug">
               {s.title}
             </h2>
-            <p className="text-gray-700 mb-6 leading-relaxed text-base">{s.overview}</p>
+            <p className="text-gray-700 mb-6 leading-relaxed text-base">
+              {s.overview}
+            </p>
 
             <h3 className="text-xl font-semibold text-secondary mb-4">
               Programme Structure
@@ -513,7 +547,10 @@ export default function MBA() {
           </div>
 
           {/* RIGHT */}
-          <div id="programme-structure" className="bg-white shadow-xl rounded-xl p-1 md:p-8 text-secondary">
+          <div
+            id="programme-structure"
+            className="bg-white shadow-xl rounded-xl p-1 md:p-8 text-secondary"
+          >
             <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-center leading-snug">
               Enquire Now
             </h2>
@@ -545,7 +582,6 @@ export default function MBA() {
                     className="object-cover"
                   />
                 </div>
-
 
                 <div className="p-6 text-left">
                   <h3 className="text-lg font-semibold text-secondary mb-2">
@@ -604,7 +640,10 @@ export default function MBA() {
         <FAQMBA />
       </div>
 
-      <EnquireNowProgramModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <EnquireNowProgramModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 }

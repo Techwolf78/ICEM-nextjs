@@ -373,6 +373,87 @@ export default function MBA() {
       </div>
 
       {/* =======================
+          VISION & MISSION SECTION
+      ======================= */}
+      <div className="w-full bg-white py-10 md:py-16 text-black">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Section Header */}
+          <div className="text-center mb-10 md:mb-14">
+            <span className="inline-block bg-secondary/10 text-secondary text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">
+              NBA Accreditation
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-secondary">
+              Vision &amp; Mission
+            </h2>
+            <p className="text-gray-500 mt-2 max-w-xl mx-auto text-sm md:text-base">
+              Department of MBA — Indira College of Engineering and Management
+            </p>
+          </div>
+
+          {/* Vision Card */}
+          <div className="relative bg-gradient-to-br from-[#003c84] to-[#0a5cbf] text-white rounded-2xl shadow-xl p-8 md:p-12 mb-8 overflow-hidden">
+            {/* Decorative circle */}
+            <div className="absolute -top-10 -right-10 w-48 h-48 rounded-full bg-white/5 pointer-events-none" />
+            <div className="absolute -bottom-12 -left-12 w-64 h-64 rounded-full bg-white/5 pointer-events-none" />
+
+            <div className="relative z-10 flex items-start gap-5">
+              <div className="hidden md:flex items-center justify-center w-14 h-14 flex-shrink-0 rounded-full bg-white/15 text-3xl">
+                🎯
+              </div>
+              <div>
+                <h3 className="text-xl md:text-2xl font-bold mb-3 tracking-wide uppercase text-white/90">
+                  Our Vision
+                </h3>
+                <p className="text-white/85 leading-relaxed text-sm md:text-base">
+                  To sustain excellence in management education by nurturing competent, socially responsible, and visionary business leaders through a holistic approach to academic, professional, and personal development.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Mission Cards */}
+          <div>
+            <h3 className="text-xl md:text-2xl font-bold text-secondary mb-6 flex items-center gap-3">
+              <span className="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-secondary/10 text-xl">🚀</span>
+              Our Mission
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {[
+                {
+                  code: "M1",
+                  text: "To serve our diverse student and alumni population, our multicultural business community, and the global community of scholars by advancing business knowledge and sharing expertise.",
+                },
+                {
+                  code: "M2",
+                  text: "To prepare our students to succeed as responsible global citizens in a dynamic, technology-driven business climate — creating a growing legacy for our alumni.",
+                },
+                {
+                  code: "M3",
+                  text: "To serve the business community through professional education, collaboration, and research – strengthening regional and local industries while providing qualified graduates who can tackle the demands of today's complex business environment.",
+                },
+                {
+                  code: "M4",
+                  text: "To conduct innovative research — nurturing our faculty's intellectual growth and developing the talents of future scholars.",
+                },
+              ].map((m) => (
+                <div
+                  key={m.code}
+                  className="flex gap-4 bg-gray-50 border border-gray-200 rounded-xl p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+                >
+                  <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-secondary text-white font-bold text-sm">
+                    {m.code}
+                  </div>
+                  <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+                    {m.text}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* =======================
           MBA SPECIALIZATION TABS
       ======================= */}
       <div className="w-full bg-white py-1 md:py-6">

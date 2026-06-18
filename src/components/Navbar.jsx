@@ -229,10 +229,6 @@ const Navbar = () => {
               link: "/programs/computer-engineering#fee-structure",
             },
             {
-              label: "Pay Fee",
-              link: "https://rapid.grayquest.com/iudp-master",
-            },
-            {
               label: "ERP Staff",
               link: "https://indira.edupluscampus.com/",
             },
@@ -428,17 +424,6 @@ const Navbar = () => {
                   className="hover:text-secondary transition-colors duration-200 px-1"
                 >
                   FRA Fee Structure
-                </Link>
-
-                <span className="text-gray-400">|</span>
-
-                <Link
-                  href="https://rapid.grayquest.com/iudp-master"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-secondary transition-colors duration-200 px-1"
-                >
-                  Pay Fee
                 </Link>
 
                 <span className="text-gray-400">|</span>

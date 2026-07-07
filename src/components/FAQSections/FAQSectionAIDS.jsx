@@ -9,72 +9,107 @@ const teachingStaff = [
   {
     sn: 1,
     id: "472",
-    name: "Dr. Manjusha Rahul Tatiya",
-    designation: "HoD (AI & Data Science)",
+    name: "Dr. Manjusha Tatiya",
+    designation: "Head of Department",
     department: "AIDS",
-    qualification: "Ph.D ME",
+    qualification: "Ph.D., M.E",
     doj: "01/07/2009",
     dob: "30/01/1983",
     image: "/faculty/final_icem_branding/aids/dr_manjusha.webp",
   },
   {
     sn: 2,
+    id: "TBD",
+    name: "Dr. Sachin Babar",
+    designation: "Professor",
+    department: "AIDS",
+    qualification: "Ph.D., M.E",
+    doj: "12/05/2026",
+    dob: "06/03/1980",
+    image: "/programs/AIDS/sachin_babar.webp",
+  },
+  {
+    sn: 3,
     id: "3096",
-    name: "Mrs. Deepa Vishal Padwal",
+    name: "Prof. Deepa Padwal",
     designation: "Assistant Professor",
     department: "AIDS",
-    qualification: "B.E ME",
-    doj: "01/07/2024",
+    qualification: "M.E, B.E",
+    doj: "01/07/2023",
     dob: "09/02/1992",
     image: "/faculty/final_icem_branding/aids/Mrs. Deepa KadamPadwal.webp",
   },
   {
-    sn: 3,
+    sn: 4,
     id: "3101",
-    name: "Ms. Pallavi Laxmikant Chavan",
+    name: "Prof. Pallavi Chavan",
     designation: "Assistant Professor",
     department: "AIDS",
-    qualification: "B.Tech M.Tech",
-    doj: "01/07/2024",
+    qualification: "Pursuing Ph.D., M.Tech",
+    doj: "17/07/2023",
     dob: "17/09/1996",
     image: "/faculty/final_icem_branding/aids/Pallavi Chavan.webp",
   },
   {
-    sn: 4,
+    sn: 5,
     id: "3170",
-    name: "Mrs. Monika Amol Patil",
+    name: "Prof. Monika Patil",
     designation: "Assistant Professor",
     department: "AIDS",
-    qualification: "Dip BE ME",
-    doj: "07/01/2025",
+    qualification: "Pursuing Ph.D., M.E",
+    doj: "01/07/2025",
     dob: "10/05/1992",
     image: "/faculty/final_icem_branding/aids/Mrs. Monika Patil.webp",
   },
   {
-    sn: 5,
-    id: "3263",
-    name: "Mrs. Kavita Sharma",
+    sn: 6,
+    id: "TBD",
+    name: "Prof. Tushar Mahore",
     designation: "Assistant Professor",
     department: "AIDS",
-    qualification: "M.Tech MSc PG Computer Application",
-    doj: "14/01/2026",
-    dob: "10/07/1992",
-    image: "/faculty/final_icem_branding/aids/Mrs. Kavita Sharma.webp",
+    qualification: "Pursuing Ph.D., M.Tech",
+    doj: "16/02/2026",
+    dob: "03/05/1991",
+    image: "/faculty/final_icem_branding/aids/tushar_mahore.webp",
   },
   {
-    sn: 6,
-    id: "3267",
-    name: "Mr. Vivek Kumar Sohagaura",
+    sn: 7,
+    id: "TBD",
+    name: "Prof. Tanuja Pade",
     designation: "Assistant Professor",
     department: "AIDS",
-    qualification: "B.E M.Tech Computer Science",
+    qualification: "Pursuing Ph.D., M.Tech",
+    doj: "13/02/2026",
+    dob: "16/03/1993",
+    image: "/faculty/final_icem_branding/aids/tanuja_pande.webp",
+  },
+  {
+    sn: 8,
+    id: "TBD",
+    name: "Prof. Vidya Dhoke",
+    designation: "Assistant Professor",
+    department: "AIDS",
+    qualification: "M.Tech, B.E",
+    doj: "05/01/2026",
+    dob: "02/04/1991",
+    image: "/faculty/final_icem_branding/aids/vidya_dhoke.webp",
+  },
+  {
+    sn: 9,
+    id: "3267",
+    name: "Prof. Vivek Sahaguara",
+    designation: "Assistant Professor",
+    department: "AIDS",
+    qualification: "M.Tech, B.E",
     doj: "23/01/2026",
     dob: "18/12/1990",
     image: "/faculty/final_icem_branding/aids/Vivek Sohagora.webp",
   },
 ];
 
-const newDetailedStaff = [
+const newDetailedStaff = [];
+
+const oldDetailedStaff = [
   {
     sn: 7,
     id: "TBD1",
@@ -114,31 +149,28 @@ const newDetailedStaff = [
 ];
 
 const newDetailedLabStaff = [
-    {
-    sn: 1,
-    id: "TBD5",
-    name: "Mr. Prasad Jadhav",
-    designation: "Lab Assistant",
-    department: "Artificial Intelligence And Data Science",
-    qualification: "Bachelor Of Computer Applications",
-    experience: "3 yrs (Industrial: 0.2, Research: 0.1)",
-    interest: "Hardware, Networking, Tech Blogging",
-    research: "-",
-    image: "/faculty/final_icem_branding/aids/Mr. Prasad Jadhav.webp",
+  {
+    sn: 10,
+    id: "TBD",
+    name: "Ms. Apeksha Giri",
+    designation: "Tech. Assistant",
+    department: "AIDS",
+    qualification: "M.E (E&TC)",
+    doj: "01/07/2024",
+    dob: "27/04/1983",
+    image: "/programs/AIDS/apeksha_giri.webp",
   },
   {
-    sn: 2,
-    id: "TBD4",
-    name: "Ms. Apeksha S. Giri",
-    designation: "Tech. Assistant",
-    department: "Artificial Intelligence And Data Science",
-    qualification: "M.E (E&TC)",
-    experience: "8 years (Industrial: 0, Research: 0)",
-    interest: "Hardware, Networking",
-    research: "-",
-    image: "/faculty/final_icem_branding/aids/apeksha_giri.webp",
+    sn: 11,
+    id: "TBD",
+    name: "Mr. Prasad Jadhav",
+    designation: "Lab Assistant",
+    department: "AIDS",
+    qualification: "Bachelor Of Computer Applications",
+    doj: "01/07/2024",
+    dob: "10/08/2000",
+    image: "/faculty/final_icem_branding/aids/Mr. Prasad Jadhav.webp",
   },
-
 ];
 
 const sanctionIntake = [
@@ -208,16 +240,6 @@ Please contact the admission office for the latest and exact fee details.`;
 
 const syllabusList = [
   {
-    id: "sybtech",
-    label: "SY B.Tech (2025 Pattern) Syllabus",
-    pdf: "/programs/AIDS/SESyllabus.pdf",
-  },
-  {
-    id: "te",
-    label: "TE AIDS Engineering (2019 Pattern) Syllabus",
-    pdf: "/programs/AIDS/TEsyllabus.pdf",
-  },
-  {
     id: "be",
     label: "BE AIDS Engineering (2019 Pattern) Syllabus",
     pdf: "/programs/AIDS/BESyllabus.pdf",
@@ -267,10 +289,295 @@ const courseStructureImages = [
   },
 ];
 
+const laboratories = [
+  {
+    srNo: 1,
+    labNo: "A-413",
+    labName: "Programming Lab",
+    totalPcs: 25,
+    configuration:
+      "AMD Ryzen 5 8500G w/Radeon 740M Graphics (3.55 GHz), Installed RAM - 16.0 GB (15.1 usable), 64-bit Operating System, x64-based Processor",
+    software:
+      "Ubuntu OS: Python, g++, Lamp Server, jdk, flex, yacc, sbcl, nasm, TASM, samba, wireshark",
+  },
+  {
+    srNo: 2,
+    labNo: "A-414",
+    labName: "Artificial Intelligence and Research Lab",
+    totalPcs: 25,
+    configuration:
+      "Lenovo V520-15IKL, RAM - 8 GB, Intel Core-i7 07700x8, Graphics - NV106, Hard Disk - 1TB, OS Type - 64-bit",
+    software:
+      "Ubuntu OS: Python, g++, Lamp Server, jdk, flex, yacc, sbcl, nasm, TASM, samba, wireshark",
+  },
+  {
+    srNo: 3,
+    labNo: "A-415",
+    labName: "Operating System & Networking Lab",
+    totalPcs: 25,
+    configuration:
+      "Processor - 12th Gen Intel(R) Core(TM) i5-12500 (3.00 GHz), Installed RAM - 8.00 GB (7.69 GB usable), System type - 64-bit operating system, x64-based processor",
+    software:
+      "Ubuntu OS: Python, g++, Lamp Server, jdk, flex, yacc, sbcl, nasm, TASM, samba, wireshark, packet tracer",
+  },
+  {
+    srNo: 4,
+    labNo: "A-416",
+    labName: "Project Lab",
+    totalPcs: 25,
+    configuration:
+      "Processor - 12th Gen Intel(R) Core(TM) i5-12500 (3.00 GHz), Installed RAM - 8.00 GB (7.69 GB usable), System type - 64-bit operating system, x64-based processor",
+    software:
+      "Ubuntu OS: Python, g++, Lamp Server, jdk, flex, yacc, sbcl, nasm, TASM, samba, wireshark, packet tracer",
+  },
+];
+
+const academicPerformance = [
+  {
+    year: "2024-2025",
+    semester: "Sem I",
+    results: [
+      {
+        label: "SE Result Analysis",
+        href: "/programs/AIDS/SE AI and DS sem I 24-25 (1).pdf",
+      },
+      {
+        label: "TE Result Analysis",
+        href: "/programs/AIDS/TE AI and DS sem I 24-25.pdf",
+      },
+    ],
+  },
+  {
+    year: "2024-2025",
+    semester: "Sem II",
+    results: [
+      {
+        label: "SE Result Analysis",
+        href: "/programs/AIDS/SE Result Analysis-2024-25-SEM II_Final.pdf",
+      },
+      {
+        label: "TE Result Analysis",
+        href: "/programs/AIDS/TE Result Analysis-2024-25-SEM II -Final.pdf",
+      },
+    ],
+  },
+  {
+    year: "2025-2026",
+    semester: "Sem I",
+    results: [
+      {
+        label: "SY Result Analysis",
+        href: "/programs/AIDS/SY Result Analysis-2025-26-SEM I .pdf",
+      },
+      {
+        label: "TE Result Analysis",
+        href: "/programs/AIDS/TE Result Analysis-2025-26-SEM I.pdf",
+      },
+      {
+        label: "BE Result Analysis",
+        href: "/programs/AIDS/BE Result Analysis-2025-26-SEM I.pdf",
+      },
+    ],
+  },
+];
+
 const overviewData = [
   {
     title: "About Department",
-    content: `The Department of Artificial Intelligence and Data Science at ICEM aims to be one of the leading programs to provide value-added quality education in Computer Science and Engineering with specialization in Artificial Intelligence and Data Science.`,
+    content: (
+      <div className="space-y-4">
+        <p>
+          Welcome to the{" "}
+          <strong>Department of Artificial Intelligence and Data Science (AIDS)</strong>{" "}
+          at <strong>Indira College of Engineering and Management (ICEM)</strong>,
+          a dynamic center of innovation, research, and technological advancement.
+          As a part of an <strong>Autonomous Institute</strong>, the department
+          enjoys the flexibility to design and continuously update its curriculum
+          in line with the latest industry trends, emerging technologies, and
+          global academic standards. This autonomy enables the department to
+          introduce{" "}
+          <strong>
+            industry-oriented courses, value-added certifications, project-based
+            learning, and multidisciplinary electives
+          </strong>
+          , ensuring that students are well-prepared for the ever-evolving
+          technological landscape.
+        </p>
+
+        <p>
+          The department is dedicated to nurturing skilled professionals and
+          future leaders in the rapidly growing domains of{" "}
+          <strong>Artificial Intelligence and Data Science</strong>. With a strong
+          emphasis on both theoretical foundations and practical applications, the
+          curriculum encompasses areas such as{" "}
+          <strong>
+            Machine Learning, Deep Learning, Data Analytics, Big Data
+            Technologies, Computer Vision, Natural Language Processing, Cloud
+            Computing, Data Engineering, and Business Intelligence
+          </strong>
+          .
+        </p>
+
+        <p>
+          Our faculty team comprises experienced academicians, researchers, and
+          industry experts who mentor students through innovative teaching
+          methodologies, experiential learning, and interdisciplinary research
+          activities. The department is equipped with{" "}
+          <strong>
+            state-of-the-art computing laboratories, AI and Data Analytics labs,
+            high-performance computing resources, and IOT Lab
+          </strong>
+          , creating a vibrant and technology-driven learning environment.
+        </p>
+
+        <p>
+          Beyond academics, the department strongly encourages holistic
+          development through active participation in professional bodies and
+          student chapters such as <strong>CSI, ISTE, IEEE</strong>. Students
+          actively participate in{" "}
+          <strong>
+            hackathons, coding competitions, data science challenges, research
+            conferences, workshops, technical festivals, and innovation
+            competitions at state, national, and international levels
+          </strong>
+          , consistently bringing laurels to the institution.
+        </p>
+
+        <p>
+          To enhance employability and professional competence, the department
+          offers specialized training in{" "}
+          <strong>
+            programming, aptitude development, soft skills, cloud technologies,
+            data visualization tools, competitive coding, placement preparation,
+            higher education guidance, and GATE coaching
+          </strong>
+          . The autonomous curriculum further facilitates{" "}
+          <strong>
+            industry internships, mini and major projects, research-based
+            learning, and outcome-based education
+          </strong>
+          , enabling students to acquire both technical expertise and
+          problem-solving abilities.
+        </p>
+
+        <p>
+          With an excellent placement record and strong industry connect, our
+          graduates have secured positions in leading{" "}
+          <strong>
+            multinational companies, AI startups, analytics firms, and research
+            organizations
+          </strong>
+          , while many pursue higher studies and research at reputed universities
+          across the world. The{" "}
+          <strong>Department of Artificial Intelligence and Data Science at ICEM</strong>{" "}
+          continues to be a <strong>center of excellence</strong>, empowering
+          students with the knowledge, skills, and confidence to become{" "}
+          <strong>
+            innovators, data scientists, AI engineers, entrepreneurs, and
+            responsible technology leaders in the digital era
+          </strong>
+          .
+        </p>
+      </div>
+    ),
+  },
+];
+
+const visionMissionData = {
+  vision:
+    "To revolutionize pool of knowledge and develop innovative, ethical, responsible, and global leaders who will transform Institute and community services.",
+  mission: [
+    "To offer an industry ready curriculum and happy learning environment, enabling our learners to become responsible citizens with holistic skill sets, to solve worldwide challenges.",
+    "To inculcate impactful research through global collaborations with faculties, students & industry, using comprehensive technology and infrastructure to nurture innovation.",
+    "To be a contributor towards a sustainable future by promoting conservation, prosperity, and social impact.",
+  ],
+};
+
+const programOutcomes = [
+  {
+    code: "PO1",
+    text: "Apply the knowledge of mathematics, science, Engineering fundamentals, and an Engineering specialization to the solution of complex Engineering problems.",
+  },
+  {
+    code: "PO2",
+    text: "Identify, formulate, review research literature and analyze complex Engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences and Engineering sciences.",
+  },
+  {
+    code: "PO3",
+    text: "Design solutions for complex Engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and Environmental considerations.",
+  },
+  {
+    code: "PO4",
+    text: "Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.",
+  },
+  {
+    code: "PO5",
+    text: "Create, select, and apply appropriate techniques, resources, and modern Engineering and IT tools including prediction and modeling to complex Engineering activities with an understanding of the limitations.",
+  },
+  {
+    code: "PO6",
+    text: "Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practices.",
+  },
+  {
+    code: "PO7",
+    text: "Understand the impact of the professional Engineering solutions in societal and Environmental contexts, and demonstrate the knowledge of, and need for sustainable development.",
+  },
+  {
+    code: "PO8",
+    text: "Apply ethical principles and commit to professional ethics and responsibilities and norms of Engineering practice.",
+  },
+  {
+    code: "PO9",
+    text: "Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.",
+  },
+  {
+    code: "PO10",
+    text: "Communicate effectively on complex Engineering activities with the Engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions.",
+  },
+  {
+    code: "PO11",
+    text: "Demonstrate knowledge and understanding of the Engineering and management principles and apply these to one's own work, as a member and leader in a team, to manage projects and in multidisciplinary Environments.",
+  },
+  {
+    code: "PO12",
+    text: "Recognize the need for, and have the preparation and ability to engage in independent and lifelong learning in the broadest context of technological change.",
+  },
+];
+
+const programSpecificOutcomes = [
+  {
+    code: "PSO1",
+    title: "Professional Skills",
+    text: "The ability to understand, analyze and develop computer programs in the areas related to algorithms, system software, multimedia, web design, big data analytics, and networking for efficient design of computer-based systems of varying complexities.",
+  },
+  {
+    code: "PSO2",
+    title: "Problem-Solving Skills",
+    text: "The ability to apply standard practices and strategies in software project development using open-ended programming environments to deliver a quality product for business success.",
+  },
+  {
+    code: "PSO3",
+    title: "Successful Career and Entrepreneurship",
+    text: "The ability to employ modern computer languages, environments, and platforms in creating innovative career paths to be an entrepreneur, and a zest for higher studies.",
+  },
+];
+
+const programEducationalObjectives = [
+  {
+    code: "PEO1",
+    text: "Drive excellence in education through an innovative curriculum and dynamic learning environment, to craft responsible leaders to shape a promising future.",
+  },
+  {
+    code: "PEO2",
+    text: "Develop impactful research through global collaborations for knowledge discovery and infrastructure to boost innovation.",
+  },
+  {
+    code: "PEO3",
+    text: "Preparing graduates with effective managerial skill and entrepreneurial mindset set with collaborative teamwork.",
+  },
+  {
+    code: "PEO4",
+    text: "Contribute towards a sustainable future talent by promoting environment, nurturing prosperity, and positive social impact in our ecosystem.",
   },
 ];
 
@@ -300,6 +607,10 @@ export default function FAQSectionAIDS() {
 
             {[
               "Overview",
+              "Vision & Mission",
+              "POs, PSOs & PEOs",
+              "Laboratories",
+              "Academic Performance",
               "Staff",
               "Sanction Intake",
               "Eligibility Criteria",
@@ -374,6 +685,181 @@ export default function FAQSectionAIDS() {
                         {item.content}
                       </div>
                     </details>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* ================= VISION & MISSION ================= */}
+            {active === "Vision & Mission" && (
+              <div className="space-y-6">
+                <div className="rounded-xl border border-gray-200 bg-blue-50/60 p-4 md:p-6">
+                  <h4 className="text-xl font-bold text-secondary mb-3">
+                    Vision
+                  </h4>
+                  <p className="text-gray-700 leading-relaxed">
+                    {visionMissionData.vision}
+                  </p>
+                </div>
+
+                <div className="rounded-xl border border-gray-200 bg-white p-4 md:p-6">
+                  <h4 className="text-xl font-bold text-secondary mb-4">
+                    Mission
+                  </h4>
+                  <ul className="space-y-3 text-gray-700 leading-relaxed">
+                    {visionMissionData.mission.map((item, index) => (
+                      <li key={index} className="flex gap-3">
+                        <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-secondary" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            )}
+
+            {/* ================= POS, PSOS & PEOS ================= */}
+            {active === "POs, PSOs & PEOs" && (
+              <div className="space-y-8">
+                <div>
+                  <h4 className="text-xl font-bold text-secondary mb-4">
+                    Programme Outcomes (POs)
+                  </h4>
+                  <div className="space-y-3">
+                    {programOutcomes.map((item) => (
+                      <div
+                        key={item.code}
+                        className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm"
+                      >
+                        <h5 className="font-bold text-secondary mb-2">
+                          {item.code}
+                        </h5>
+                        <p className="text-gray-700 leading-relaxed">
+                          {item.text}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="text-xl font-bold text-secondary mb-4">
+                    Program Specific Outcomes (PSOs)
+                  </h4>
+                  <div className="space-y-3">
+                    {programSpecificOutcomes.map((item) => (
+                      <div
+                        key={item.code}
+                        className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm"
+                      >
+                        <h5 className="font-bold text-secondary mb-2">
+                          {item.code} {item.title}
+                        </h5>
+                        <p className="text-gray-700 leading-relaxed">
+                          {item.text}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="text-xl font-bold text-secondary mb-4">
+                    Program Educational Objectives (PEOs)
+                  </h4>
+                  <div className="space-y-3">
+                    {programEducationalObjectives.map((item) => (
+                      <div
+                        key={item.code}
+                        className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm"
+                      >
+                        <h5 className="font-bold text-secondary mb-2">
+                          {item.code}
+                        </h5>
+                        <p className="text-gray-700 leading-relaxed">
+                          {item.text}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* ================= LABORATORIES ================= */}
+            {active === "Laboratories" && (
+              <div className="space-y-4">
+                <div className="overflow-x-auto border border-gray-200 rounded-lg">
+                  <table className="w-full text-sm text-left">
+                    <thead className="bg-gray-50">
+                      <tr>
+                        <th className="p-3 border-b font-semibold">Sr. No.</th>
+                        <th className="p-3 border-b font-semibold">Lab No.</th>
+                        <th className="p-3 border-b font-semibold">Lab Name</th>
+                        <th className="p-3 border-b font-semibold">Total PCs</th>
+                        <th className="p-3 border-b font-semibold">Configuration</th>
+                        <th className="p-3 border-b font-semibold">Software Installed</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {laboratories.map((lab) => (
+                        <tr key={lab.labNo} className="border-b align-top hover:bg-gray-50">
+                          <td className="p-3 font-medium">{lab.srNo}</td>
+                          <td className="p-3 font-medium text-secondary">{lab.labNo}</td>
+                          <td className="p-3 font-medium">{lab.labName}</td>
+                          <td className="p-3">{lab.totalPcs}</td>
+                          <td className="p-3 min-w-[260px] text-gray-700 leading-relaxed">
+                            {lab.configuration}
+                          </td>
+                          <td className="p-3 min-w-[260px] text-gray-700 leading-relaxed">
+                            {lab.software}
+                          </td>
+                        </tr>
+                      ))}
+                      <tr className="bg-blue-50/60">
+                        <td className="p-3 font-bold text-secondary" colSpan={3}>
+                          Total PCs
+                        </td>
+                        <td className="p-3 font-bold text-gray-800">100</td>
+                        <td className="p-3" colSpan={2}></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+
+            {/* ================= ACADEMIC PERFORMANCE ================= */}
+            {active === "Academic Performance" && (
+              <div className="space-y-5">
+                {academicPerformance.map((group) => (
+                  <div
+                    key={`${group.year}-${group.semester}`}
+                    className="rounded-xl border border-gray-200 bg-white p-4 md:p-5 shadow-sm"
+                  >
+                    <h4 className="text-xl font-bold text-secondary mb-4">
+                      {group.year} {group.semester}
+                    </h4>
+                    <div className="space-y-3">
+                      {group.results.map((result) => (
+                        <div
+                          key={result.href}
+                          className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-lg border border-gray-200 p-3 hover:bg-gray-50"
+                        >
+                          <h5 className="font-semibold text-gray-800">
+                            {result.label}
+                          </h5>
+                          <a
+                            href={result.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-4 py-2 bg-secondary text-white rounded-md text-center"
+                          >
+                            View / Download
+                          </a>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -520,18 +1006,18 @@ export default function FAQSectionAIDS() {
                               </div>
                               <div className="text-[14px]">
                                 <span className="text-gray-400 font-bold uppercase mr-1">
-                                  Exp (Years):
+                                  Joining Date:
                                 </span>
                                 <span className="text-gray-700 font-medium">
-                                  {staff.experience}
+                                  {staff.doj}
                                 </span>
                               </div>
                               <div className="text-[14px]">
                                 <span className="text-gray-400 font-bold uppercase mr-1">
-                                  Interest:
+                                  Birth Date:
                                 </span>
                                 <span className="text-gray-700 font-medium text-[13px] leading-tight block">
-                                  {staff.interest}
+                                  {staff.dob}
                                 </span>
                               </div>
                               <div className="text-[14px]">
@@ -681,6 +1167,20 @@ export default function FAQSectionAIDS() {
             {/* ================= FRA - FEE STRUCTURE ================= */}
             {active === "FRA - Fee Structure" && (
   <div className="space-y-3 md:space-y-4">
+    {/* Fee Structure 26-27 */}
+    <div className="flex flex-col sm:flex-row sm:items-center justify-between p-3 md:p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+      <h5 className="font-semibold text-gray-800">
+        Fee Structure (2026-27)
+      </h5>
+      <a
+        href="/programs/AIDS/fra_fees_26-27.pdf"
+        target="_blank"
+        className="px-4 py-2 bg-secondary text-white rounded-md mt-2 sm:mt-0"
+      >
+        View / Download
+      </a>
+    </div>
+
     {/* Fee Structure 25–26 */}
     <div className="flex flex-col sm:flex-row sm:items-center justify-between p-3 md:p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
       <h5 className="font-semibold text-gray-800">

@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Phone, Mail, MapPin, Clock, User } from "lucide-react"; // Using Lucide for cleaner, modern icons
-import { createNpfThankYouUrl } from "@/lib/npfThankYouGuard";
+import { createNpfThankYouUrl, getNpfWidgetUrl } from "@/lib/npfThankYouGuard";
 
 // --- Admissions Contacts Data ---
 const admissionsContacts = [
@@ -197,7 +197,7 @@ const ContactPage = () => {
               )}
               {redirectUrl && (
                 <iframe
-                  src={`https://widgets.nopaperforms.com/register?&r=${encodeURIComponent(redirectUrl)}&w=9fa0f32fe4f405fa68dc3df39ef6a11b`}
+                  src={getNpfWidgetUrl("9fa0f32fe4f405fa68dc3df39ef6a11b", encodeURIComponent(redirectUrl))}
                   width="100%"
                   height="490"
                   frameBorder="0"

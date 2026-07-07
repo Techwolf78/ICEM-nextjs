@@ -62,3 +62,23 @@ export function consumeValidNpfThankYouVisit() {
 
   return isValid;
 }
+
+export function getNpfWidgetUrl(widgetId, redirectUrl) {
+  if (typeof window === "undefined") {
+    return `https://widgets.nopaperforms.com/register?&r=${redirectUrl}&w=${widgetId}`;
+  }
+
+  const searchParams = new URLSearchParams(window.location.search);
+  let iframeUrl = `https://widgets.nopaperforms.com/register?&r=${redirectUrl}&w=${widgetId}`;
+
+  // Forward UTM and Google Click ID (gclid) tracking parameters
+  const trackingParams = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid"];
+  trackingParams.forEach((param) => {
+    if (searchParams.has(param)) {
+      iframeUrl += `&${param}=${encodeURIComponent(searchParams.get(param))}`;
+    }
+  });
+
+  return iframeUrl;
+}
+

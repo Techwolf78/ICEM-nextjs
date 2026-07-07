@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import { createNpfThankYouUrl } from "@/lib/npfThankYouGuard";
+import { createNpfThankYouUrl, getNpfWidgetUrl } from "@/lib/npfThankYouGuard";
 
 export default function EnquireNowProgramModal({ isOpen, onClose }) {
   const [showSkeleton, setShowSkeleton] = useState(true);
@@ -72,7 +72,7 @@ export default function EnquireNowProgramModal({ isOpen, onClose }) {
           )}
           {redirectUrl && (
             <iframe
-              src={`https://widgets.nopaperforms.com/register?&r=${encodeURIComponent(redirectUrl)}&w=9fa0f32fe4f405fa68dc3df39ef6a11b`}
+              src={getNpfWidgetUrl("9fa0f32fe4f405fa68dc3df39ef6a11b", encodeURIComponent(redirectUrl))}
               width="100%"
               height="100%"
               frameBorder="0"

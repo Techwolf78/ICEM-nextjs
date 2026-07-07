@@ -19,7 +19,7 @@ const courses = [
   },
   {
     name: "Artificial Intelligence and Data Science",
-    img: "/programs/AIDS/AIDS.webp",
+    img: "/programs/AIDS/coverpage_pic_home.jpeg",
     link: "/programs/ai-ds",
   },
   {

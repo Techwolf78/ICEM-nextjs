@@ -15,15 +15,11 @@ import { publicationsData } from "@/static/research/publicationsData";
 import { iprData } from "@/static/research/publicationsData";
 import { researchData } from "@/static/research/researchdata";
 import {
-  BookOpen,
-  GraduationCap,
-  FileCheck,
-  Globe,
-  Atom,
-  Users,
-  BookCopy,
-  Lightbulb,
-  Award,
+  BookOpenCheck,
+  FileCheck2,
+  LibraryBig,
+  ScrollText,
+  BadgeCheck,
   Copyright,
 } from "lucide-react";
 
@@ -39,16 +35,12 @@ const Research = () => {
   };
 
   const stats = [
-    { number: "5", label: "UGC Care Group 1", icon: FileCheck },
-    { number: "26", label: "Scopus Indexed", icon: Globe },
-    { number: "8", label: "Web of Science", icon: Atom },
-    { number: "13", label: "Peer Reviewed", icon: Users },
-    { number: "75", label: "Student Publications", icon: GraduationCap },
-    { number: "13", label: "Books", icon: BookOpen },
-    { number: "6", label: "Book Chapters", icon: BookCopy },
-    { number: "20", label: "Patents Published", icon: Lightbulb },
-    { number: "8", label: "Patents Granted", icon: Award },
-    { number: "30", label: "Copyright Granted", icon: Copyright },
+    { number: "64", label: "Scopus/WOS Indexed", icon: BookOpenCheck },
+    { number: "40", label: "Peer Reviewed", icon: FileCheck2 },
+    { number: "14", label: "Books / Book Chapters", icon: LibraryBig },
+    { number: "20", label: "Patents Published", icon: ScrollText },
+    { number: "03", label: "Patents Granted", icon: BadgeCheck },
+    { number: "21", label: "Copyright Granted", icon: Copyright },
   ];
   return (
     <div className="w-full bg-white">
@@ -98,10 +90,10 @@ const Research = () => {
       <section className="py-8 md:py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 md:px-6 text-center">
           <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-secondary mb-6 md:mb-8">
-            Research Highlights 2024-25
+            Research Highlights 2025-26
           </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4 mb-6 md:mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 mb-6 md:mb-8">
             {stats.map((item, index) => (
               <div
                 key={index}
@@ -202,7 +194,7 @@ const Research = () => {
                         Sustainable parabolic solar cooker for rural area
                       </td>
                       <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
-                        ₹60,000/-
+                        ₹1,00,000/-
                       </td>
                     </tr>
                     <tr className="hover:bg-gray-50">
@@ -220,7 +212,7 @@ const Research = () => {
                         filtration process
                       </td>
                       <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
-                        ₹40,000/-
+                        ₹1,00,000/-
                       </td>
                     </tr>
                     <tr className="hover:bg-gray-50">
@@ -238,7 +230,7 @@ const Research = () => {
                         refrigerator condenser
                       </td>
                       <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
-                        ₹40,000/-
+                        ₹1,00,000/-
                       </td>
                     </tr>
                     <tr className="hover:bg-gray-50">
@@ -256,7 +248,7 @@ const Research = () => {
                         Food
                       </td>
                       <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
-                        ₹40,000/-
+                        ₹1,00,000/-
                       </td>
                     </tr>
                   </tbody>

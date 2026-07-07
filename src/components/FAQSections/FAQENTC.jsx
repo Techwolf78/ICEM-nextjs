@@ -65,7 +65,18 @@ const staffData = [
     qualification: "BE ME",
     doj: "23/12/2024",
     dob: "09/09/1991",
-    image: "/faculty/final_icem_branding/entc/Mr. Balu Tandale.webp",
+    image: "/programs/ENTC/balasaheb_tandale.webp",
+  },
+  {
+    sn: 7,
+    id: "3298",
+    name: "Prof. Sushma N. Patwardhan",
+    designation: "Assistant Professor",
+    department: "E&TC",
+    qualification: "ME",
+    doj: "2/5/2026",
+    dob: "18/09/1980",
+    image: "/programs/ENTC/sushma_patwardhan.webp",
   },
 ];
 
@@ -81,11 +92,11 @@ const syllabusList = [
     label: "FY BTech (2024 Course) Pattern Syllabus",
     pdf: "/assets/pdf/syllabus/New_Syllabus_2024-25_Updated_(28-10-2024).pdf",
   },
-  {
-    id: "fe-2019",
-    label: "First Year Engineering (2019 Course) Pattern Syllabus",
-    pdf: "/assets/pdf/syllabus/First_Year_Engineering_2019_Patt_Syllabus.pdf",
-  },
+  // {
+  //   id: "fe-2019",
+  //   label: "First Year Engineering (2019 Course) Pattern Syllabus",
+  //   pdf: "/assets/pdf/syllabus/First_Year_Engineering_2019_Patt_Syllabus.pdf",
+  // },
   {
     id: "sybtech",
     label: "SY B.Tech (2025 Pattern) Syllabus",
@@ -98,12 +109,12 @@ const syllabusList = [
   },
   {
     id: "te",
-    label: "TY B.Tech (2019 Pattern) Syllabus",
+    label: "T.E E&TC 2019 Pattern Syllabus",
     pdf: "/programs/ENTC/te_entc_2019.pdf",
   },
   {
     id: "be",
-    label: "Final Year B.Tech (2019 Pattern) Syllabus",
+    label: "B.E EnTC 2019 Pattern Syllabus",
     pdf: "/programs/ENTC/be_entc_2019.pdf",
   },
   {
@@ -180,9 +191,27 @@ export default function FAQSection() {
       type: "table",
       content: [
         {
-          program: "B.Tech Electronics & Telecommunication Engineering",
+          program: "F.Y. B.Tech",
+          intake: "60 Seats",
+          duration: "1 Year",
+          type: "Full Time",
+        },
+        {
+          program: "S.Y. B.Tech",
           intake: "30 Seats",
-          duration: "4 Years",
+          duration: "1 Year",
+          type: "Full Time",
+        },
+        {
+          program: "T.Y. B.Tech",
+          intake: "30 Seats",
+          duration: "1 Year",
+          type: "Full Time",
+        },
+        {
+          program: "Final Year",
+          intake: "30 Seats",
+          duration: "1 Year",
           type: "Full Time",
         },
       ],
@@ -348,6 +377,35 @@ export default function FAQSection() {
 
       case "notice":
         return <p className="text-gray-600 text-lg">{data.content}</p>;
+      case "table":
+        return (
+          <div className="overflow-x-auto border border-gray-200 rounded-lg">
+            <table className="w-full text-sm text-left">
+              <thead className="bg-gray-50 text-gray-700">
+                <tr>
+                  <th className="p-2 md:p-3 border-b font-semibold">Programme</th>
+                  <th className="p-2 md:p-3 border-b font-semibold">Intake</th>
+                  <th className="p-2 md:p-3 border-b font-semibold">Duration</th>
+                  <th className="p-2 md:p-3 border-b font-semibold">Type</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {data.content.map((row, i) => (
+                  <tr
+                    key={i}
+                    className="hover:bg-gray-50 border-b last:border-b-0"
+                  >
+                    <td className="p-2 md:p-3 text-gray-700">{row.program}</td>
+                    <td className="p-2 md:p-3 text-gray-700">{row.intake}</td>
+                    <td className="p-2 md:p-3 text-gray-700">{row.duration}</td>
+                    <td className="p-2 md:p-3 text-gray-700">{row.type}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        );
       case "labs-with-images":
         return (
           <div className="space-y-6">

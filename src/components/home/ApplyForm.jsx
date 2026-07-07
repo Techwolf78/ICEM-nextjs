@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { createNpfThankYouUrl } from "@/lib/npfThankYouGuard";
+import { createNpfThankYouUrl, getNpfWidgetUrl } from "@/lib/npfThankYouGuard";
 
 export default function ApplyForm({ variant = "card" }) {
   const isModal = variant === "modal";
@@ -31,7 +31,7 @@ export default function ApplyForm({ variant = "card" }) {
     <div id="contact-form" className="flex items-center justify-center" style={{ minHeight }}>
       {redirectUrl && (
         <iframe
-          src={`https://widgets.nopaperforms.com/register?&r=${encodeURIComponent(redirectUrl)}&w=9fa0f32fe4f405fa68dc3df39ef6a11b`}
+          src={getNpfWidgetUrl("9fa0f32fe4f405fa68dc3df39ef6a11b", encodeURIComponent(redirectUrl))}
           width="100%"
           height={iframeHeight}
           frameBorder="0"

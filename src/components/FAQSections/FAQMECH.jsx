@@ -60,6 +60,23 @@ const staffData = [
   },
   {
     sn: 4,
+    id: "N/A",
+    name: "Dr. Rupendra Sharad Nehete",
+    designation: "Professor",
+    department: "Mechanical Engineering",
+    qualification: "PhD (Mechanical)",
+    experience: {
+      teaching: "28 years",
+      industrial: "2 years",
+    },
+    areaOfInterest:
+      "Manufacturing, Industrial and Systems Engineering, Materials & Renewable Energy",
+    researchPapers:
+      "WOS/Scopus Indexed: 17; Journal Papers: 30; Conference Papers: 30; Patent: 05; Copyright: 02",
+    image: "/programs/Mech/rupendra_sharad_nehete.jpg",
+  },
+  {
+    sn: 5,
     id: "594",
     name: "Prof. Sushil B.Chopade",
     designation: "Assistant Professor & Dean Industry Relation",
@@ -77,7 +94,7 @@ const staffData = [
     image: "/faculty/final_icem_branding/mech/Mr. Sushil Chopade.webp",
   },
   {
-    sn: 5,
+    sn: 6,
     id: "422",
     name: "Prof. Hemant Vasant Darokar",
     designation: "Assistant Professor & CEO",
@@ -95,7 +112,7 @@ const staffData = [
     image: "/faculty/final_icem_branding/mech/Mr. Hemant Darokar.webp",
   },
   {
-    sn: 6,
+    sn: 7,
     id: "643",
     name: "Prof. Siddheshwar S. Shirbhate",
     designation: "Assistant Professor",
@@ -112,7 +129,7 @@ const staffData = [
     image: "/faculty/final_icem_branding/mech/Mr. Siddheshwar Shirbhate.webp",
   },
   {
-    sn: 7,
+    sn: 8,
     id: "624",
     name: "Prof. Shubhangi Ashish Manwatkar",
     designation: "Assistant Professor",
@@ -130,7 +147,7 @@ const staffData = [
     image: "/faculty/final_icem_branding/mech/Mrs. Shubhangi Manwatkar.webp",
   },
   {
-    sn: 8,
+    sn: 9,
     id: "739",
     name: "Prof. Vishal Abhiman Meshram",
     designation: "Assistant Professor",
@@ -148,7 +165,7 @@ const staffData = [
     image: "/faculty/final_icem_branding/mech/Mr. Vishal Meshram.webp",
   },
   {
-    sn: 9,
+    sn: 10,
     id: "964",
     name: "Prof. Ashwini Atul Admane",
     designation: "Assistant Professor",
@@ -165,7 +182,7 @@ const staffData = [
     image: "/faculty/final_icem_branding/mech/Mrs. Ashwini Admane.webp",
   },
   {
-    sn: 10,
+    sn: 11,
     id: "1288",
     name: "Prof Pranali B Khatake",
     designation: "Assistant Professor",
@@ -182,7 +199,7 @@ const staffData = [
     image: "/faculty/final_icem_branding/mech/Mrs. Pranali Khatake.webp",
   },
   {
-    sn: 11,
+    sn: 12,
     id: "1456",
     name: "Prof. Ashwini Gaikwad",
     designation: "Assistant Professor",
@@ -199,7 +216,7 @@ const staffData = [
     image: "/faculty/final_icem_branding/mech/Mrs. Ashwini Gaikwad.webp",
   },
   {
-    sn: 12,
+    sn: 13,
     id: "1520",
     name: "Prof. Sagar Uttamrao Chirade",
     designation: "Assistant Professor",
@@ -216,7 +233,7 @@ const staffData = [
     image: "/faculty/final_icem_branding/mech/Mr. Sagar Chirade.webp",
   },
   {
-    sn: 13,
+    sn: 14,
     id: "1519",
     name: "Prof. Amit Gangadhar Narwade",
     designation: "Assistant Professor",
@@ -234,7 +251,7 @@ const staffData = [
     image: "/faculty/final_icem_branding/mech/Mr. Amit Narwade.webp",
   },
   {
-    sn: 14,
+    sn: 15,
     id: "N/A",
     name: "Prof. Pravin Devidas Charde",
     designation: "Assistant Professor",
@@ -250,7 +267,7 @@ const staffData = [
     image: "/faculty/final_icem_branding/mech/Mr. Pravin Charde.webp",
   },
   {
-    sn: 15,
+    sn: 16,
     id: "N/A",
     name: "Mr. Raj Uttam Gajarmal",
     designation: "Workshop Instructor (Fitting Shop)",
@@ -265,7 +282,7 @@ const staffData = [
     image: "/faculty/final_icem_branding/mech/raj_uttam_gajarmal.jpeg",
   },
   {
-    sn: 16,
+    sn: 17,
     id: "N/A",
     name: "Mr. Manoj Laxman Sutar",
     designation: "Workshop Instructor (Welding)",
@@ -651,6 +668,86 @@ const mentorMenteeData = [
       "SHRIKANT SANTOSH SHINDE",
       "Yadav Sunny Jiyalal",
     ],
+  },
+];
+
+const mesaActivities = [
+  {
+    title: "Best Cut-Out Competition",
+    date: "14 February 2026",
+    description:
+      "MESA organized the Best Cut-Out Competition to encourage creativity and practical application of mechanical engineering concepts. Students developed innovative cut-out models based on themes such as automobile engineering, renewable energy systems, manufacturing processes, and futuristic mechanical technologies. The event promoted design thinking, teamwork, and technical presentation skills.",
+  },
+  {
+    title: "Marathi Rajbhasha Din Celebration",
+    date: "1 March 2026",
+    description:
+      "The department celebrated Marathi Rajbhasha Din to promote awareness and appreciation of the Marathi language and cultural heritage. Students actively participated through poster presentations and speeches highlighting the significance of Marathi language, literature, and culture.",
+  },
+  {
+    title: "International Women's Day Celebration",
+    date: "9 March 2026",
+    description:
+      "The department celebrated International Women's Day to recognize and appreciate the contributions of women faculty members and staff. Girl students expressed gratitude towards women educators through a special felicitation program and presented roses as a token of respect and appreciation.",
+  },
+  {
+    title: "Poster Presentation Competition",
+    date: "16 March 2026",
+    description:
+      "A Poster Presentation Competition was organized to enhance students' creativity, technical communication, and presentation skills. Students showcased innovative ideas and engineering concepts through informative and visually appealing posters.",
+  },
+  {
+    title: "Blind Assembly Challenge",
+    date: "27 March 2026",
+    description:
+      "The Blind Assembly Challenge was conducted to strengthen students' practical engineering skills, teamwork, communication, and problem-solving abilities. Participants assembled mechanical components under guided conditions, emphasizing precision, coordination, and trust among team members.",
+  },
+  {
+    title: "Academic Toppers Prize Distribution Ceremony",
+    date: "11 April 2026",
+    description:
+      "MESA organized a Prize Distribution Ceremony to recognize and celebrate the academic achievements of students. Academic toppers were felicitated in the presence of faculty members, alumni, and industry representatives, motivating students to strive for excellence.",
+  },
+  {
+    title: "Farewell Program for BE Mechanical 2026 Batch",
+    date: "30 April 2026",
+    description:
+      "A memorable farewell ceremony was organized for the outgoing BE Mechanical Engineering students. The program included motivational addresses, cultural performances, and awards for Best Project, Best Placement, and Best Outgoing Student, celebrating the achievements and journey of the graduating batch.",
+  },
+];
+
+const mesaActivityPhotos = [
+  {
+    src: "/programs/Mech/mesa-cutout-1.webp",
+    alt: "MESA Mechanical Theme Cut-Out Competition winners",
+  },
+  {
+    src: "/programs/Mech/mesa-cutout-2.webp",
+    alt: "Students and faculty at the MESA Mechanical Theme Cut-Out Competition",
+  },
+  {
+    src: "/programs/Mech/mesa-ganesha.webp",
+    alt: "Mechanical Engineering students creating eco-friendly Ganesha idols",
+  },
+  {
+    src: "/programs/Mech/mesa-engineers-day-1.webp",
+    alt: "Mechanical Engineering Teachers' Day and Engineers' Day celebrations",
+  },
+  {
+    src: "/programs/Mech/mesa-engineers-day-2.webp",
+    alt: "Mechanical Engineering student clubs, competitions, and prize distribution",
+  },
+  {
+    src: "/programs/Mech/mesa-cleanup.webp",
+    alt: "MESA students participating in the Chourai Devi cleanliness drive",
+  },
+  {
+    src: "/programs/Mech/mesa-farewell-1.webp",
+    alt: "BE Mechanical Engineering farewell gathering",
+  },
+  {
+    src: "/programs/Mech/mesa-farewell-2.webp",
+    alt: "BE Mechanical Engineering farewell and student felicitation ceremony",
   },
 ];
 
@@ -1422,8 +1519,83 @@ export default function FAQMECH() {
                 </div>
               </div>
             ) : academicSubTab ===
-                "Mechanical Engineering Students Association (MESA) Activities" ||
-              academicSubTab === "Placement Highlights 2025-26" ? (
+              "Mechanical Engineering Students Association (MESA) Activities" ? (
+              <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm text-left">
+                <div className="mb-6 pb-4 border-b border-gray-100">
+                  <p className="text-sm font-semibold uppercase tracking-wider text-secondary mb-2">
+                    Mechanical Engineering Students Association (MESA)
+                  </p>
+                  <h4 className="text-xl font-bold text-gray-900">
+                    AY 2025-26 Semester II Activities
+                  </h4>
+                  <p className="text-sm text-gray-500 mt-1">
+                    Activities conducted by MESA during Semester II.
+                  </p>
+                </div>
+
+                <div className="space-y-5">
+                  <h5 className="font-bold text-gray-900 text-lg">
+                    Activities Conducted
+                  </h5>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {mesaActivities.map((activity, index) => (
+                      <article
+                        key={activity.title}
+                        className="border border-gray-200 rounded-xl p-5 bg-gray-50/40 shadow-sm"
+                      >
+                        <div className="flex items-start gap-3 mb-3">
+                          <span className="shrink-0 w-8 h-8 rounded-full bg-secondary text-white text-sm font-bold flex items-center justify-center">
+                            {index + 1}
+                          </span>
+                          <div>
+                            <h6 className="font-bold text-gray-900 leading-snug">
+                              {activity.title}
+                            </h6>
+                            <p className="text-xs font-semibold text-secondary mt-1">
+                              Date: {activity.date}
+                            </p>
+                          </div>
+                        </div>
+                        <p className="text-sm text-gray-700 leading-relaxed">
+                          {activity.description}
+                        </p>
+                      </article>
+                    ))}
+                  </div>
+                </div>
+
+                {mesaActivityPhotos.length > 0 && (
+                  <div className="mt-8">
+                    <h5 className="font-bold text-gray-900 text-lg mb-4 flex items-center gap-2">
+                      <span className="w-1.5 h-3 bg-secondary rounded-full" />
+                      MESA Activities Gallery
+                    </h5>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                      {mesaActivityPhotos.map((photo, index) => (
+                        <button
+                          key={photo.src}
+                          type="button"
+                          className="group relative aspect-video rounded-lg overflow-hidden border border-gray-200 bg-gray-100 shadow-sm cursor-pointer"
+                          onClick={() => setSelectedTrainingImage(photo.src)}
+                        >
+                          <img
+                            src={photo.src}
+                            alt={photo.alt}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            loading="lazy"
+                          />
+                          <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
+                            <span className="px-3 py-1 bg-white/90 text-gray-900 text-xs font-semibold rounded-full shadow-sm">
+                              View Image {index + 1}
+                            </span>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            ) : academicSubTab === "Placement Highlights 2025-26" ? (
               <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm flex flex-col text-left">
                 <div className="mb-4 pb-4 border-b border-gray-100">
                   <h4 className="text-xl font-bold text-gray-900 mb-1">
@@ -1435,12 +1607,7 @@ export default function FAQMECH() {
                 </div>
                 <div className="w-full h-[650px] border border-gray-200 rounded-lg overflow-hidden bg-gray-50 relative">
                   <iframe
-                    src={
-                      academicSubTab ===
-                      "Mechanical Engineering Students Association (MESA) Activities"
-                        ? "/programs/Mech/mesa_2526_semii.pdf#toolbar=1"
-                        : "/programs/Mech/placement_mech.pdf#toolbar=1"
-                    }
+                    src="/programs/Mech/placement_mech.pdf#toolbar=1"
                     className="w-full h-full border-0"
                     title={academicSubTab}
                   />

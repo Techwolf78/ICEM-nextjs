@@ -1,5 +1,84 @@
 // publications.js
 // This array contains the detailed rows from your spreadsheet
+const journals2025_26Raw = `1	Dr.Manjusha Tatiya	Integration Of Smart Sensors, AI And Iot In Precision Agriculture: Advancing Crop Productivity And Sustainability	International Journal of Environmental Sciences	https://theaspd.com/index.php/ijes/article/view/1613
+2	Dr.Manjusha Tatiya	AI-based monitoring and management in smart aquaculture for ocean fish farming systems	Applied Chemical Engineering (2025)	https://doi.org/10.59429/ace.v8i3.5746
+3	Dr.Manjusha Tatiya	AI-Assisted Physiotherapy for Improving Functional Outcomes in Peripheral Arterial Disease Patients	VASCULAR & ENDOVASCULAR REVIEW	https://verjournal.com/index.php/ver/article/view/178
+4	Dr.Manjusha Tatiya	AI Applications in Tailings and Waste Management: Improving Safety, Recycling, and Water Utilization	Applied Chemical Engineering	https://doi.org/10.59429/ace.v8i4.5789
+5	Dr.Manjusha Tatiya	AI-Driven Process Control for Enhancing Safety and Efficiency in Oil Refining	Applied Chemical Engineering (2025)	https://www.researchgate.net/publication/397913708_AI-Driven_Process_Control_for_Enhancing_Safety_and_Efficiency_in_Oil_Refining
+6	Prof.Pallavi Chavan	Realtime Meeting Transcript Summarizer (Awaaz AI)	International Journal of Advanced Research in Science, Communication and Technology	DOI: 10.48175/568
+7	Prof.Pallavi Chavan	Smart Vision-BasedFruit Grading and Sorting System using Machine Learning	International Journal of Advanced Research in Science, Communication and Technology	DOI: 10.48175/IJARSCT-29918
+8	Dr.Manjusha Tatiya	Automated Construction Site Analysis Using Images: A Review	International Scientific Journal of Engineering and Management (ISJEM)	https://isjem.com/volume-04-issue-12-december-2025/
+9	Dr.Manjusha Tatiya	Exploring quantum machine learning integrating quantum computing with AI for advanced predictive modeling and data analysis	Journal of Information & Optimization Sciences	https://doi.org/10.47974/JIOS-2279
+10	Dr.Manjusha Tatiya	Privacy-preserving machine learning techniques ensuring data confidentiality and model accuracy in federated learning environments	Journal of Information & Optimization Sciences	https://doi.org/10.47974/JIOS-2281
+11	Dr. Sunil D. Rathod	Voice Recognition AI in Music Education Platforms	ShodhKosh: Journal of Visual and Performing Arts	https://www.granthaalayahpublication.org/Arts-Journal/ShodhKosh/article/view/7111
+12	Dr. Sunil D. Rathod	Intelligent Workflow Automation in Print Media Management	ShodhKosh: Journal of Visual and Performing Arts	https://www.granthaalayahpublication.org/Arts-Journal/ShodhKosh/article/view/7093
+13	Trupti Kathale	Application of Jacobian in Engineering Field	IRJMETS	https://www.irjmets.com/uploadedfiles/paper//issue_2_february_2025/67469/final/fin_irjmets1739095276.pdf
+14	Prof. Pratima Gaikwad	Performance and Analysis of PWM Strategy with PV-Based Multilevel Hybrid Inverter	Sustainable Computing and Integrated Communication in Changing Landscape of AI (ICSCAI)	https://doi.org/10.1109/ICSCAI61790.2024.10867026
+15	Dr. Avinash Bansode	Processing of Food Assisted by Solar Based Equipment	Sustainable Computing and Integrated Communication in Changing Landscape of AI (ICSCAI)	https://doi.org/10.1109/ICSCAI61790.2024.10866810
+16	Manjusha Tomar	Adaptive and scalable cloud data sharing framework with quantum resistant security, decentralized auditing and machine learning-based threat detection	IJACSA	
+17	Suresh Renge	Application of Jacobian in Engineering Field	IRJMETS	https://www.irjmets.com/uploadedfiles/paper//issue_2_february_2025/67469/final/fin_irjmets1739095276.pdf
+18	Priyanka H. Mahajan	Light Weight Battery Tray Structure to Enhance Vehical Range	IRJMETS	
+19	PRIYANKA R PATIL	Application of Jacobian in Engineering Field	IRJMETS	https://www.irjmets.com/uploadedfiles/paper//issue_2_february_2025/67469/final/fin_irjmets1739095276.pdf
+20	PRIYANKA R PATIL	Light Weight Battery Tray Structure to Enhance Vehical Range	IRJMETS	
+21	Supriya D Kumbhar	Industrial Waste Water Treatment Facilities	International Journal For Multidisciplinary Research	https://doi.org/10.36948/ijfmr.2025.v07i02.42014
+22	Dr Pravin Thorat	Critical Study of Thrid party logisitcs providers and Just in time in goods transport	International Journal of Research in Management	https://www.managementpaper.net/archives/2025/vol7issue2/PartJ/7-2-181-965.pdf
+23	Dr Pravin Thorat	A Study of Sustainable Logistics Practices in India with reference to shipping Logistics	International Journal of Advanced Academic Studies	https://www.allstudyjournal.com/archives/2025.v7.i11.A.1740
+24	Dr. Poorna Shankar	Developing adaptive password strength algorithms using deep learning for enhanced cybersecurity	Journal of Discrete Mathematical Sciences and Cryptography	https://doi.org/10.47974/JDMSC-2502
+25	Vishal Meshram	Investigation of Sequential Port Fuel Injection over Manifold Fuel Injection to Evaluate Combustion and Emission Parameters in Spark Ignition Engine Using Hydrogen Enriched CNG Blends	International Journal of Mechanical Engineering	https://www.internationaljournalssrg.org/IJME/paper-details?Id=572
+26	Ashwini Admane	Industrial Waste Water Treatment Facilities	International Journal for Multidisciplinary Research	42014 IJFMR PAPER.pdf
+27	Pranali Khatake	Industrial Waste Water Treatment Facilities	International Journal for Multidisciplinary Research	42014 IJFMR PAPER.pdf
+28	Pranali Khatake	Enhancement in Surface finish for boring operation by minimizing vibration.	International Journal of Creative Research Thoughts	IJRTI
+29	Ashwini Admane	Enhancement in Surface finish for boring operation by minimizing vibration.	International Journal of Creative Research Thoughts	IJRTI
+30	Dr.Soumitra Das	Smart Print Management using Predictive Analytics	ShodhKosh: Journal of Visual and Performing Arts	https://doi.org/10.29121/shodhkosh.v6.i2s.2025
+31	Dr.Soumitra Das	ART CURATION ALGORITHMS MACHINE LEARNING IN MUSEUM EDUCATION	ShodhKosh: Journal of Visual and Performing Arts	https://doi.org/10.29121/shodhkosh.v6.i2s.2025
+32	Dr. Priyanka Amol Pawar	EXPERIENTIAL AESTHETICS IN VISUAL ARTS CONSUMPTION: FANTASY, EMOTION, AND ENJOYMENT IN CONTEMPORARY ART EXPERIENCES	ShodhKosh: Journal of Visual and Performing Arts	https://doi.org/10.29121/shodhkosh.v6.i3s.2025.6968
+33	Dr. Nilesh Uke	Parallel Computing Frameworks for Real-Time Decision-Making in Complex Computational Systems	Advances in Nonlinear Variational Inequalities	https://doi.org/10.52783/anvi.v28.3511
+34	Dr. Nilesh Uke	Using 5G Standards for Smart Healthcare Applications and Designing an Artificial Intelligence-Based Industry 4.0 Communication System	Internet Technology Letters	https://doi.org/10.1002/itl2.599
+35	Dr. Vikas Nandgaonkar	Implementing secure end-to-end data transmission in wireless sensor networks for healthcare monitoring	Journal of Discrete Mathematical Sciences and Cryptography	https://doi.org/10.47974/JDMSC-2159
+36	Dr. Vikas Nandgaonkar	Advancing homomorphic encryption techniques for ensuring privacy in cloud-based analytics	Journal of Discrete Mathematical Sciences and Cryptography	https://doi.org/10.47974/JDMSC-2505
+37	Prof. Vishal Meshram	Investigation of Sequential Port Fuel Injection over Manifold Fuel Injection to Evaluate Combustion and Emission Parameters in Spark Ignition Engine Using Hydrogen Enriched CNG Blends	SSRG International Journal of Mechanical Engineering	https://doi.org/10.14445/23488360/IJME-V12I2P108
+38	Dr. Malayaj Kumar	Effective strategies for writing maintainable code in cryptographic software development	Journal of Discrete Mathematical Sciences & Cryptography	https://doi.org/10.47974/JDMSC-2503
+39	Dr. Malayaj Kumar	Exploring facial biometrics in multi-factor authentication systems for secure banking applications	Journal of Discrete Mathematical Sciences & Cryptography	https://doi.org/10.47974/JDMSC-2508
+40	Dr. Malayaj Kumar	Leveraging formal languages and automata theory in natural language processing (NLP)	Journal of Discrete Mathematical Sciences & Cryptography	https://doi.org/10.47974/JDMSC-2552
+41	Dr. Poorna Shankar	Developing adaptive password strength algorithms using deep learning for enhanced cybersecurity	Journal of Discrete Mathematical Sciences and Cryptography	https://doi.org/10.47974/JDMSC-2502
+42	Prof. Aditee Hrishikesh Huparikar	SUSTAINABLE GOVERNANCE IN DIGITAL ART AND CREATIVE FINTECH: INTEGRATING GREEN INNOVATION WITHIN VISUAL CULTURE INDUSTRIES	Shodhkosh: Journal of visual and performing arts	https://doi.org/10.29121/shodhkosh.v6.i3s.2025.6966
+43	Dr. Sunil D. Rathod	VOICE RECOGNITION AI IN MUSIC EDUCATION PLATFORMS	ShodhKosh: Journal of Visual and Performing Arts	https://doi.org/10.29121/shodhkosh.v7.i1s.2026.7111
+44	Dr. Sunil D. Rathod	INTELLIGENT WORKFLOW AUTOMATION IN PRINT MEDIA MANAGEMENT	ShodhKosh: Journal of Visual and Performing Arts	https://doi.org/10.29121/shodhkosh.v7.i1s.2026.7093
+45	Dr. Deepa Jamnik	E-Recruitment And Social Media: Changing The Talent Acquisition Landscape	International Journal of Environmental Science	https://theaspd.com/index.php/ijes/article/view/11880
+46	Dr. Deepa Jamnik	A Study To Check The Possibility Of Adapting Green HRM At Indira College Of Engineering And Management, Pune	International Journal of Environmental Sciences	https://theaspd.com/index.php/ijes/article/view/11882
+47	Dr. Deepa Jamnik	Leveraged And Unlevered Firms Capital Structure And Stock Performance: A Systematic Literature Review	International Journal of Environmental Sciences, 11(12s), 700-704.	https://doi.org/10.64252/tgdj5j31
+48	Prof. Dipali Nimbalkar	E-Recruitment And Social Media: Changing The Talent Acquisition Landscape	International Journal of Environmental Sciences	https://theaspd.com/index.php/ijes/article/view/11880
+49	Prof. Dipali Nimbalkar	A Study To Check The Possibility Of Adapting Green HRM At Indira College Of Engineering And Management, Pune	International Journal of Environmental Sciences	https://theaspd.com/index.php/ijes/article/view/11882
+50	Dr. Deepa Jamnik	Analyzing Cognitive Dissonance in Insurance Buying Decisions: A Primary Study on Psychological Triggers and Its Influence on Repeat Purchases of Life Insurance Products	International Journal of Environmental Sciences	https://doi.org/10.64252/tgdj5j31
+51	Dr. Manjusha Tatiya	AI-Assisted Physiotherapy for Improving Functional Outcomes in Peripheral Arterial Disease Patients	VASCULAR & ENDOVASCULAR REVIEW	https://verjournal.com/index.php/ver/article/view/178
+52	Dr. Manjusha Tatiya	AI-Driven Process Control for Enhancing Safety and Efficiency in Oil	Applied Chemical Engineering (2025)	https://doi.org/10.59429/ace.v8i4.5792
+53	Dr. Manjusha Tatiya	Integration Of Smart Sensors, AI And Iot In Precision Agriculture: Advancing Crop Productivity And Sustainability	International Journal of Environmental Sciences	https://doi.org/10.64252/2k6kcb97
+54	Prof. Meenakshi Somnath Patil	Artificial Intelligence-Powered Hybrid Aggnet-Xgboost System for Concrete Cube Failure Mode Assessment in Industry 4.0	Es Materials and Manufacturing	https://doi.org/10.30919/mm1617
+55	Prof. Meenakshi Somnath Patil	Automated Concrete Cube Failure Mode Classification Using Deep Learning and Engineering-Guided Decision Logic	International Journal of Advances in Signal and Image Sciences (IJASIS)	
+56	Prof. Savita Achyut Jangale	Design of Piezoelectric Tiles for Electricity Generation using Human Footsteps	International Journal of Innovative Research in Technology(IJIRT)	https://ijirt.org/article?manuscript=191626
+57	Dr. Mahesh Bhong	Smart Biorefineries: Machine Learning for Process Control, Resource Utilization, and Emission Monitoring	Applied Chemical Engineering	https://doi.org/10.59429/ace.v9i1.5874
+58	Dr. Kiran Devade	Smart Biorefineries: Machine Learning for Process Control, Resource Utilization, and Emission Monitoring	Applied Chemical Engineering	https://doi.org/10.59429/ace.v9i1.5874
+59	Dr. Poorna Shankar	AI-POWERED SMART DONATION AND STUDENT SUPPORT SYSTEM	International Journal of Innovative Research in Technology	https://ijirt.org/article?manuscript=196990
+60	Dr. Poorna Shankar	Predictive Demand Analysis For Optimised Stock Allocation In Retail Using Hybrid LSTM, Random Forest, And XGBoost Ensemble	International Research Journal of Modernization in Engineering Technology and Science	https://www.irjmets.com/upload_newfiles/irjmets80500215177/paper_file/irjmets80500215177.pdf
+61	Dr. Poorna Shankar	Codeo: A Next-Generation Real-Time Collaborative Development Environment for Modern Distributed Programming	International Journal of Scientific Research in Engineering and Management (IJSREM)	https://ijsrem.com/download/codeo-a-next-generation-real-time-collaborative-development-environment-for-modern-distributed-programming
+62	Dr. Manjusha Tatiya	Exploring quantum machine learning integrating quantum computing with AI for advanced predictive modeling and data analysis	Journal of Information & Optimization Sciences	https://doi.org/10.47974/JIOS-2279
+63	Dr. Manjusha Tatiya	Privacy-preserving machine learning techniques ensuring data confidentiality and model accuracy in federated learning environments	Journal of Information & Optimization Sciences	https://doi.org/10.47974/JIOS-2281
+64	Prof. Aditee Hrishikesh Huparikar	SUSTAINABLE GOVERNANCE IN DIGITAL ART AND CREATIVE FINTECH: INTEGRATING GREEN INNOVATION WITHIN VISUAL CULTURE INDUSTRIES	ShodhKosh: Journal of Visual and Performing Arts	https://doi.org/10.29121/shodhkosh.v6.i3s.2025.6966`;
+
+const journals2025_26 = journals2025_26Raw.split("\n").map((line) => {
+  const [srNo, author, title, publication, source = ""] = line.split("\t");
+  const link = source.trim().startsWith("http") ? source.trim() : "";
+
+  return {
+    srNo: Number(srNo),
+    author,
+    title,
+    publication,
+    date: "2025-26",
+    link,
+  };
+});
+
 const journals2024_25 = [
   {
     srNo: 1,
@@ -4599,6 +4678,11 @@ export const publicationsData = [
     title: "Journals",
     items: [
       {
+        label: "Key Publications in the Indexed Journals by Faculty Members AY-[2025-2026]",
+        href: "#",
+        data: journals2025_26
+      },
+      {
         label: "Key Publications in the Indexed Journals by Faculty Members AY-[2024-2025]",
         href: "#",
         data: journals2024_25
@@ -4622,15 +4706,20 @@ export const publicationsData = [
   },
 
   {
-    title: "Conferences",
+    title: "Peer-reviewed",
     items: [
       {
-        label: "Conference 2023-24",
+        label: "Peer-reviewed Publication AY 2025-26",
+        href: "#",
+        data: journals2025_26
+      },
+      {
+        label: "Peer-reviewed AY 2023-24",
         href: "#",
         data:conferences2023_24
       },
       {
-        label: "Conference 2022-23",
+        label: "Peer-reviewed AY 2022-23",
         href: "#",
         data:conferences2022_23
       },
@@ -4638,15 +4727,15 @@ export const publicationsData = [
   },
 
   {
-    title: "Books",
+    title: "Book/ Book chapter",
     items: [
       {
-        label: "Books AY- 2023-2024",
+        label: "Book/ Book chapter AY- 2023-2024",
         href: "#",
         data:books2023_24
       },
       {
-        label: "Books AY- 2022-2023",
+        label: "Book/ Book chapter AY- 2022-2023",
         href: "#",
         data:books2022_23
       },

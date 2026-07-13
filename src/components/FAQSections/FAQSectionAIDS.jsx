@@ -25,7 +25,7 @@ const teachingStaff = [
     department: "AIDS",
     qualification: "Ph.D., M.E",
     doj: "12/05/2026",
-    dob: "06/03/1980",
+    dob: "03/06/1980",
     image: "/programs/AIDS/sachin_babar.webp",
   },
   {
@@ -582,7 +582,7 @@ const programEducationalObjectives = [
 ];
 
 export default function FAQSectionAIDS() {
-  const [active, setActive] = useState("Overview");
+  const [active, setActive] = useState("About AIDS Department");
 
   return (
     <section className="w-full bg-gradient-to-b from-gray-50 to-white text-black py-8 sm:py-16">
@@ -606,17 +606,17 @@ export default function FAQSectionAIDS() {
             </h3>
 
             {[
-              "Overview",
-              "Vision & Mission",
-              "POs, PSOs & PEOs",
-              "Laboratories",
-              "Academic Performance",
-              "Staff",
+              "About AIDS Department",
+              "Vision Mission",
+              "POs, PSOs, PEOs",
+              "FRA - Fee Structure",
               "Sanction Intake",
               "Eligibility Criteria",
               "Admission Procedure",
-              "FRA - Fee Structure",
+              "Staff",
               "Syllabus & Course Structure",
+              "Laboratories",
+              "Academic Performance",
             ].map((tab) => (
               <button
                 key={tab}
@@ -667,7 +667,7 @@ export default function FAQSectionAIDS() {
             </div>
 
             {/* ================= OVERVIEW ================= */}
-            {active === "Overview" && (
+            {active === "About AIDS Department" && (
               <div className="space-y-3 md:space-y-4">
                 {overviewData.map((item, i) => (
                   <div key={i} className="border border-gray-200 rounded-lg">
@@ -691,7 +691,7 @@ export default function FAQSectionAIDS() {
             )}
 
             {/* ================= VISION & MISSION ================= */}
-            {active === "Vision & Mission" && (
+            {active === "Vision Mission" && (
               <div className="space-y-6">
                 <div className="rounded-xl border border-gray-200 bg-blue-50/60 p-4 md:p-6">
                   <h4 className="text-xl font-bold text-secondary mb-3">
@@ -719,7 +719,7 @@ export default function FAQSectionAIDS() {
             )}
 
             {/* ================= POS, PSOS & PEOS ================= */}
-            {active === "POs, PSOs & PEOs" && (
+            {active === "POs, PSOs, PEOs" && (
               <div className="space-y-8">
                 <div>
                   <h4 className="text-xl font-bold text-secondary mb-4">
@@ -933,14 +933,6 @@ export default function FAQSectionAIDS() {
                             <div className="space-y-4 text-left pt-4 border-t border-gray-100">
                               <div className="text-[14px]">
                                 <span className="text-gray-400 font-bold uppercase mr-1">
-                                  ID NO:
-                                </span>
-                                <span className="text-gray-700 font-medium">
-                                  {staff.id}
-                                </span>
-                              </div>
-                              <div className="text-[14px]">
-                                <span className="text-gray-400 font-bold uppercase mr-1">
                                   Qualification:
                                 </span>
                                 <span className="text-gray-700 font-medium">
@@ -988,14 +980,6 @@ export default function FAQSectionAIDS() {
                             </p>
 
                             <div className="space-y-4 text-left pt-4 border-t border-gray-100">
-                              <div className="text-[14px]">
-                                <span className="text-gray-400 font-bold uppercase mr-1">
-                                  ID NO:
-                                </span>
-                                <span className="text-gray-700 font-medium">
-                                  {staff.id}
-                                </span>
-                              </div>
                               <div className="text-[14px]">
                                 <span className="text-gray-400 font-bold uppercase mr-1">
                                   Qualification:
@@ -1060,14 +1044,6 @@ export default function FAQSectionAIDS() {
                             </p>
 
                             <div className="space-y-4 text-left pt-4 border-t border-gray-100">
-                              <div className="text-[14px]">
-                                <span className="text-gray-400 font-bold uppercase mr-1">
-                                  ID NO:
-                                </span>
-                                <span className="text-gray-700 font-medium">
-                                  {staff.id}
-                                </span>
-                              </div>
                               <div className="text-[14px]">
                                 <span className="text-gray-400 font-bold uppercase mr-1">
                                   Qualification:
@@ -1167,6 +1143,20 @@ export default function FAQSectionAIDS() {
             {/* ================= FRA - FEE STRUCTURE ================= */}
             {active === "FRA - Fee Structure" && (
   <div className="space-y-3 md:space-y-4">
+    {/* FRA Fee Structure A.Y. 2026-27 */}
+    <div className="flex flex-col sm:flex-row sm:items-center justify-between p-3 md:p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+      <h5 className="font-semibold text-gray-800">
+        FRA Fee Structure (A.Y. 2026-27)
+      </h5>
+      <a
+        href="/fees/fra_fees_2026-27.pdf"
+        target="_blank"
+        className="px-4 py-2 bg-secondary text-white rounded-md mt-2 sm:mt-0"
+      >
+        View / Download
+      </a>
+    </div>
+
     {/* Fee Structure 26-27 */}
     <div className="flex flex-col sm:flex-row sm:items-center justify-between p-3 md:p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
       <h5 className="font-semibold text-gray-800">

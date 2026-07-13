@@ -146,11 +146,21 @@ export default function Examination() {
                         <ul className="list-decimal list-inside ml-6 space-y-2">
                           <li className="list-item">
                             <a
+                              href="/exam/47_vacation_exam_re_exam_timetable_july_2026.pdf"
+                              target="_blank"
+                              className="text-secondary hover:underline font-semibold"
+                            >
+                              Vacation Examination Timetable – July 2026
+                            </a>
+                          </li>
+                          <li className="list-item">
+                            <a
                               href="/assets/pdf/Examination/FY_BTECH _FY_MCAINT_FY_MBAINT_FY_MCA_ VacationExamTimeTable_(Re-EXAM).pdf"
                               target="_blank"
                               className="text-secondary hover:underline"
                             >
-                              FY B.Tech / FY IMBA / FY IMCA / FY MCA Vacation Examination Timetable – Nov/Dec 2025 (Feb 2026)
+                              FY B.Tech / FY IMBA / FY IMCA / FY MCA Vacation
+                              Examination Timetable – Nov/Dec 2025 (Feb 2026)
                             </a>
                           </li>
                           <li>
@@ -159,7 +169,10 @@ export default function Examination() {
                               target="_blank"
                               className="text-secondary hover:underline"
                             >
-                              All SY B.Tech / SY MBA / SY MCA (INT) / SY MBA (INT) / SY MBA / SY MCA / FY MBA (2024 Pattern – Regular) VACATION Examination Timetable for JAN 2026
+                              All SY B.Tech / SY MBA / SY MCA (INT) / SY MBA
+                              (INT) / SY MBA / SY MCA / FY MBA (2024 Pattern –
+                              Regular) VACATION Examination Timetable for JAN
+                              2026
                             </a>
                           </li>
                           <li>
@@ -316,7 +329,9 @@ export default function Examination() {
                   title: "Notices",
                   description: (
                     <div className="text-gray-800 text-sm leading-relaxed space-y-6">
-                      <h4 className="font-semibold text-lg mb-2">Examination Notices</h4>
+                      <h4 className="font-semibold text-lg mb-2">
+                        Examination Notices
+                      </h4>
                       <ul className="list-decimal ml-6 space-y-2">
                         <li>
                           <a
@@ -324,7 +339,8 @@ export default function Examination() {
                             target="_blank"
                             className="text-secondary hover:underline"
                           >
-                            FY B.TECH / FY MCA / FY MBA (INT) / FY MCA (INT) 2024 Pattern Exam Notice
+                            FY B.TECH / FY MCA / FY MBA (INT) / FY MCA (INT)
+                            2024 Pattern Exam Notice
                           </a>
                         </li>
                         <li>

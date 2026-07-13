@@ -79,6 +79,96 @@ const journals2025_26 = journals2025_26Raw.split("\n").map((line) => {
   };
 });
 
+const peerReviewed2025_26Raw = `1	Dr. Priya Pise	Desgin and investigate the deep lerning models for white blood cell classification	IEEE 3rd International conferece on innovation and technology	https://ieeexplore.ieee.org/document/10511452
+2	Dr.Manjusha Tatiya	Deep Residual Learning for Accurate Lymphoma Identification from Biopsy and Imaging Data	International Conference on Nextgen Technology and AI for the sustainable Future	https://ntai2025.indiraicem.ac.in/#/proceeding
+3	Dr.Manjusha Tatiya	Legal Search Assistant	National Conference on Advancements in Academia and Industry 4.0	https://indiraicem.ac.in/assets/pdf/NCTAAI4.0_Proceeding.pdf
+4	Dr.Manjusha Tatiya	AI Based Personalized Learning Platform with Virtual Study Group	National Conference on Advancements in Academia and Industry 4.0	https://indiraicem.ac.in/assets/pdf/NCTAAI4.0_Proceeding.pdf
+5	Prof.Pallavi Chavan	AI Based Personalized Learning Platform with Virtual Study Group	National Conference on Advancements in Academia and Industry 4.0	https://indiraicem.ac.in/assets/pdf/NCTAAI4.0_Proceeding.pdf
+6	Dr.Manjusha Tatiya	SAR Image Colorization for Comprehensive Insight using a Deep Learning Model - A Literature Survey	SMART TRENDS IN SYSTEMS, SECURITY AND SUSTAINABILITY (WORLDS4 2025)	
+7	Dr.Manjusha Tatiya	Enhancing Energy Efficiency in IoT Networks Using Deep Learning-Based Predictive Maintenance	2025 World Skills Conference on Universal Data Analytics and Sciences (WorldSUAS)	https://ieeexplore.ieee.org/xpl/conhome/11198877/proceeding
+8	Mrs. Savitri Ashok Mote	Survey on Detection and Mitigation Strategies for Zero-day Attacks: An Extensive Analysis of Current Developments and Case Studies	First International Conference on Computer, Computation and Communication	https://www.riverpublishers.com/pdf/ebook/chapter/RP_9788743808268C37.pdf
+9	Dr. Sunil D. Rathod	Secure Data Transmission Using Enhanced Key Block-Chain Mechanism	2025 International Conference on Artificial intelligence and Emerging Technologies (ICAIET)	https://ieeexplore.ieee.org/document/11210927
+11	Mr. Abhijit Khadke	Ensuring Trust in Blockchain Enabled Business Processes using Smart Contract Audits	International Conference on Inventive Computation Technologies (ICICT)-Nepal	https://ieeexplore.ieee.org/abstract/document/11004761
+12	Mr. Abhijit Khadke	Face Morphing Attack Detection Using Deep Learning	2025 International Conference on Computing Technologies & Data Communication (ICCTDC) Hassan, India	https://ieeexplore.ieee.org/abstract/document/11158160
+13	Mr. Abhijit Khadke	Secure Healthcare Predictions via Homomorphic Encryption: A Privacy-Centric Framework	IEEE International Conference on Blockchain and Distributed Systems Security 2025	IEEE CONF-CERTI-NOV-2025.pdf
+14	SURESH RENGE	Comparetive study of students  BMI & MENTAL FITNESS DUE TO HARMONAL CHANGES IN THE AGE GROUP 17-25 YEARS	NEXTGEN TECHNOLOGY AND  AI FOR THE SUSTANABLE FUTURE NTAI2025	
+15	Supriya D Kumbhar	Design and Analysis of 2- wheeler Hybrid Composite Dashboard	Recent Advances in Engineering and Sciences -2025	
+16	Dr. Poorna Shankar	Performance Analysis of Established approaches for optimizing the efficiency and trade-offs of Multiple Destinations in GPS Navigation Systems	NTAI2025	
+17	Dr. Poorna Shankar	Artificial Intelligence-Enhanced Secure Healthcare Edge Computing (AI-SHEC) Framework for Privacy and Security	NTAI2025	
+18	Dr. Poorna Shankar	Deepseek: Pushing AI with open-source region model	NCTAAI 4.0	
+19	Vishal A. Meshram	MBT Effects on BMEP, NOx and In-cylinder Pmax for Gasoline CNG and 5% Hydrogen blend at WOT in Sequential Injection Multi-cylinder SI Engine with EGR	International Conference on Sustainable Industry 4.0: Innovations for a Greener Future” (ICSI 2025)	https://www.appleacademicpress.com/thermal-engineering-revolution-innovative-approaches-for-industry-40/9781779647672
+20	Dr.Soumitra Das	A Relative Analysis of Enhanced Machine Learning Algorithm SVM & Decision Tree to Predict Smart Grid Stability	2025 IEEE International Conference on Blockchain and Distributed Systems Security (ICBDS)	https://ieeexplore.ieee.org/document/11378257
+21	Dr.Soumitra Das	Development of Control Strategy for an Energy Efficient Heating Ventilation and Air Conditioning System	2025 IEEE International Conference on Blockchain and Distributed Systems Security (ICBDS)	https://ieeexplore.ieee.org/document/11377075
+22	Dr.Soumitra Das	Automatic Stability Studies Alert System  for Pharmaceutical Formulations	International Conference on Emergent Converging Technologies and Biomedical Systems	https://link.springer.com/chapter/10.1007/978-981-96-6095-7_7
+23	Dr. Sunil D. Rathod	Secure Data Transfer using Enhanced Key Block-Chain Mechanism	International Conference on Artificial Intelligence and Emerging Technologies (ICAIET)	https://ieeexplore.ieee.org/document/11210927
+24	Dr. Darshana Jignesh Desai	AI-Assisted Case Analytics for the Indian Judicial System: Enhancing Efficiency and Transparency	IEEE International Conference on Advanced Computing Technologies (ICACT 2025)	https://ieeexplore.ieee.org/document/11351390
+25	Dr. Poorna Shankar	Automatic Stability Studies Alert System for Pharmaceutical Formulations	ETBS2024	https://link.springer.com/chapter/10.1007/978-981-96-6095-7_7
+26	Prof. Meenakshi Somnath Patil	AI-Driven Concrete Quality: Automated Failure Analysis for Sustainable Construction.	RRRAI-2026	
+27	Prof. Sheya Sohan Shenai	COMPARATIVE REVIEW OF STATISTICAL, GEOSTATISTICAL AND DEEP SPATIO- TEMPORAL METHODS FOR AGRO-HYDROLOGICAL RISK	6th International Conference on Computer Technology, Management, and its Applications (IC2TMA-2026)	
+28	Dr.Soumitra Das	How to Design and Implement an Artificial Intelligence Framework that Personalizes the Learning Experience for Every Individual	2026 International Conference on Emerging Technologies and Future Innovations (ETFI)	https://ieeexplore.ieee.org/abstract/document/11484818
+29	Dr. Nilesh Uke	Parallel Computing Frameworks for Real-Time Decision-Making in Complex Computational Systems	Advances in Nonlinear Variational Inequalities	
+30	Dr. Nilesh Uke	Toxic Comment Detector and Remover	JAAFR - JOURNAL OF ADVANCE AND FUTURE RESEARCH	www.JAAFR.org
+31	Dr. Nilesh Uke	Integrated Method To Detect Object In Digital Image For Forensic Analysis in International Conference on Next Gen Technologies and AI for Sustainable Future	Integrated Method To Detect Object In Digital Image For Forensic Analysis	
+32	Dr. Nilesh Uke	The Role of Transfer Learning and Pre-Trained Language Models in Multilingual Virtual Assistants in International Conference on Next Gen Technologies and AI for Sustainable Future	The Role of Transfer Learning and Pre-Trained Language Models in Multilingual Virtual Assistants	
+33	Dr. Nilesh Uke	Machine Learning Algorithms Analysis for Breast Cancer Detection in terms of Accuracy A Survey Study	International Conference on Next Gen Technologies and AI for Sustainable Future NTAI 2025	
+34	Dr. Nilesh Uke	Systematic Review of Psychological Theories of Emotion and Recent Advances Artificial Emotional Intelligent Affective Systems	International Conference on Next Gen Technologies and AI for Sustainable Future	
+35	Dr. Nilesh Uke	Context-Based Abnormal Event Detection in Video Surveillance in International Conference on Next Gen Technologies and AI for Sustainable Future	International Conference on Next Gen Technologies and AI for Sustainable Future	
+36	Dr. Nilesh Uke	Challenges and Emerging Solutions for Multi Object Detection across Multiple Non-Overlapping Cameras in Real Time Environments	International Conference on Next Gen Technologies and AI for Sustainable Future	
+37	Dr. Nilesh Uke	Fetal Movement Detection for Fetal Health analysis During the Prenatal Period	International Conference on Next Gen Technologies and AI for Sustainable Future	
+38	Dr. Nilesh Uke	Toxic Comment Detector and Remover in International Conference on Next Gen Technologies and AI for Sustainable Future	International Conference on Next Gen Technologies and AI for Sustainable Future	
+39	Dr. Nilesh Uke	Accident Emergency Service & Vehicle Verification System in International Conference on Next Gen Technologies and AI for Sustainable Future	International Conference on Next Gen Technologies and AI for Sustainable Future	
+40	Dr. Nilesh Uke	Comparative Study and Analysis of Health Care System for Heart Patients: Formal Review, 2025 1st International Conference on AIML-Applications for Engineering & Technology (ICAET),Pune, India, 2025	Comparative Study and Analysis of Health Care System for Heart Patients: Formal Review	`;
+
+const peerReviewed2025_26 = peerReviewed2025_26Raw.split("\n").map((line) => {
+  const [srNo, author, title, publication, source = ""] = line.split("\t");
+  let link = source.trim();
+  if (link.startsWith("www.")) {
+    link = "http://" + link;
+  }
+  if (link && !link.startsWith("http") && !link.startsWith("/") && link.endsWith(".pdf")) {
+    link = "/assets/pdf/" + link;
+  }
+  const validLink = link.startsWith("http") || link.startsWith("/") ? link : "";
+
+  return {
+    srNo: Number(srNo),
+    author,
+    title,
+    publication,
+    date: "2025-26",
+    link: validLink,
+  };
+});
+
+const books2025_26Raw = `1	Dr.Manjusha Tatiya	Cognitive Cyber Crimes in the Era of Artificial Intelligence	Wiley Online Library	2025	https://doi.org/10.1002/9781394386574.ch6
+2	Dr Archana Salve	Human Resource Manangement	Alpha International Publication	2025	https://www.amazon.in/HUMAN-RESOURCE-MANAGEMENT-ARCHANA-SALVE/dp/B0DV3M4X7B/ref=sr_1_1?crid=YYMB9HOIC5R7&dib=eyJ2IjoiMSJ9.jRpkkXALCjOTCGdEYp89kw.DV7ZsSO9ikab9rqakryNwX5tygPBy5rcBnSTI_LhLO8&dib_tag=se&keywords=Dr+Archana+Salve+human+resource+management&qid=1738739541&sprefix=dr+archana+salve+human+resource+management+%2Caps%2C410&sr=8-1
+3	Dr. Mahesh G. Bhong	Research Methodology: A Fundamental Approach	Scientific International Publishing House	2025	https://sipinternationalpublishers.com/product-detail.php?PID=MzQxNw==
+4	Dr. Kiran D. Devade	Research Methodology: A Fundamental Approach	Scientific International Publishing House	2025	https://sipinternationalpublishers.com/product-detail.php?PID=MzQxNw==
+5	Dr Saurabh Gupta	Optimizing Allocation of Resources in Energy Systems in Engineering	Taylor & Francis (SCOPUS Indexed)	2025	https://www.taylorfrancis.com/chapters/edit/10.1201/9781003596721-25/optimising-allocation-resources-energy-systems-using-machine-learning-richa-thilagham-siva-swetha-reddy-dejan-mircetic-saurabh-gupta-manish-gupta-kavitha
+6	Dr. Mahesh Bhong	Research Methodology: A Fundamental Approach	SIP Ineternational Publishers	2025	https://sipinternationalpublishers.com/product-detail.php?PID=MzQxNw==
+7	Dr. Kiran Devade	Research Methodology: A Fundamental Approach	SIP Ineternational Publishers	2025	https://sipinternationalpublishers.com/product-detail.php?PID=MzQxNw==
+8	Dr. Priyanka Amol Pawar	Digital Marketing and Semiotics	IGI Global Scientific publishing	2025	https://www.igi-global.com/chapter/digital-marketing-and-semiotics/394945
+9	Dr. Priyanka Amol Pawar	AI and Its Importance in the Development of Luxury Consumption	IGI Global Scientific Publishing	2025	https://www.igi-global.com/chapter/ai-and-its-importance-in-the-development-of-luxury-consumption/390505
+10	Dr. Nilesh Uke	Artificial Intelligence: Theory and Applications/Harnessing Open-World Machine Learning for Advanced Malware	Springer Nature	2025	https://books.google.co.in/books?hl=en&lr=&id=vjBoEQAAQBAJ&oi=fnd&pg=PA166&dq=info:qlT_1mRy1EEJ:scholar.google.com&ots=4CMNtfgxYi&sig=sphMc24GGkprupItNRuippK7G90&redir_esc=y#v=onepage&q&f=false
+11	Dr. Nilesh Uke	Optimized Outsourced Decryption for Attribute-Based Encryption: Cost-Efficiency for Users and Cloud Servers in Green Cloud Computing	Springer Nature	2025	https://doi.org/10.1007/978-3-031-90723-4
+12	Dr. Malayaj Kumar	Natural Language Processing	PKS Publication	2025	https://pkspublication.com/
+13	Dr. Manjusha Tatiya	Developing AI-Enhanced Forensic Tools to Combat Cognitive Cybercrimes-Cognitive Cyber Crimes in the Era of Artificial Intelligence	Wiley Online Library	2025	https://doi.org/10.1002/9781394386574.ch6
+14	Prof. Aditee Hrishikesh Huparikar	Digital Tools and Resources for Teaching Sustainability	IGI Global	2025	https://www.igi-global.com/chapter/digital-tools-and-resources-for-teaching-sustainability/386392`;
+
+const books2025_26 = books2025_26Raw.split("\n").map((line) => {
+  const [srNo, author, title, publication, date, source = ""] = line.split("\t");
+  const link = source.trim().startsWith("http") ? source.trim() : "";
+
+  return {
+    srNo: Number(srNo),
+    author,
+    title,
+    publication,
+    date,
+    link,
+  };
+});
+
 const journals2024_25 = [
   {
     srNo: 1,
@@ -4711,7 +4801,7 @@ export const publicationsData = [
       {
         label: "Peer-reviewed Publication AY 2025-26",
         href: "#",
-        data: journals2025_26
+        data: peerReviewed2025_26
       },
       {
         label: "Peer-reviewed AY 2023-24",
@@ -4729,6 +4819,11 @@ export const publicationsData = [
   {
     title: "Book/ Book chapter",
     items: [
+      {
+        label: "Book/ Book chapter AY- 2025-2026",
+        href: "#",
+        data: books2025_26
+      },
       {
         label: "Book/ Book chapter AY- 2023-2024",
         href: "#",

@@ -306,9 +306,9 @@ const syllabusList = [
     pdf: "/programs/Mech/BESY.pdf",
   },
   {
-    id: "te",
-    label: "TE Mechanical Engineering 2019 Course Syllabus",
-    pdf: "/programs/Mech/TESY.pdf",
+    id: "be-autonomous-ty",
+    label: "B.E. Mechanical Engineering (UG) – Third Year Curriculum (Autonomous Pattern)",
+    pdf: "/programs/MTECHmech/ty-syllabus-mech.pdf",
   },
   {
     id: "be",
@@ -932,9 +932,9 @@ export default function FAQMECH() {
         ],
         "Programs Offered": [
           "Department of Mechanical Engineering was established in 2007 by offering undergraduate and Post Graduate program in Mechanical Engineering. The program is affiliated to University of Pune, recognized by Govt. of Maharashtra & All India Council of Technical Education (AICTE) New Delhi.",
-          "B.E. in Mechanical Engineering (SPPU) – Intake: 60",
-          "M.E. (Mechanical Engineering) – Intake: 12",
-          "B. Tech (Mechanical - EV Specialization) – Newly introduced",
+          "B. Tech Mechanical Engineering – Intake 60",
+          "M. Tech Heat Power – Intake 06",
+          "B. Tech Mechanical Engineering (Working Professional) – Intake 30",
         ],
       },
     },
@@ -1003,24 +1003,6 @@ export default function FAQMECH() {
           id: "admission",
           label: "Institute Level /ACAP Admission Round Procedure",
           pdf: "/pdfs/AdmissionProcedure.pdf",
-        },
-      ],
-    },
-
-    "Sanctioned Intake": {
-      type: "table",
-      content: [
-        {
-          program: "B.Tech Mechanical Engineering",
-          intake: "60 Seats",
-          duration: "4 Years",
-          type: "Full Time",
-        },
-        {
-          program: "M. Tech Mechanical Engineering",
-          intake: "12 seats",
-          duration: "2 Year",
-          type: "Full Time",
         },
       ],
     },

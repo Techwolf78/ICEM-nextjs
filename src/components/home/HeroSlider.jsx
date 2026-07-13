@@ -56,22 +56,37 @@ const HeroSlider = () => {
 
         <div className="flex-1 overflow-hidden whitespace-nowrap bg-white">
           <div className="flex animate-seamlessMarquee font-semibold text-xs sm:text-sm py-1 sm:py-2 text-secondary">
+            <a href="https://sdetm.indiraicem.ac.in/" target="_blank" rel="noopener noreferrer" className="mr-8 hover:underline text-red-600 font-bold">
+              INTERNATIONAL CONFERENCE (ICSDETM2026)
+            </a>
             <span className="mr-8">Public Advisory Notice</span>
             <span className="mr-8">Placement Record 2025 Announced</span>
 
             {/* Duplicate for seamless loop */}
+            <a href="https://sdetm.indiraicem.ac.in/" target="_blank" rel="noopener noreferrer" className="mr-8 hover:underline text-red-600 font-bold">
+              INTERNATIONAL CONFERENCE (ICSDETM2026)
+            </a>
             <span className="mr-8">Public Advisory Notice</span>
             <span className="mr-8">Placement Record 2025 Announced</span>
 
             {/* Duplicate for seamless loop */}
+            <a href="https://sdetm.indiraicem.ac.in/" target="_blank" rel="noopener noreferrer" className="mr-8 hover:underline text-red-600 font-bold">
+              INTERNATIONAL CONFERENCE (ICSDETM2026)
+            </a>
             <span className="mr-8">Public Advisory Notice</span>
             <span className="mr-8">Placement Record 2025 Announced</span>
 
             {/* Duplicate for seamless loop */}
+            <a href="https://sdetm.indiraicem.ac.in/" target="_blank" rel="noopener noreferrer" className="mr-8 hover:underline text-red-600 font-bold">
+              INTERNATIONAL CONFERENCE (ICSDETM2026)
+            </a>
             <span className="mr-8">Public Advisory Notice</span>
             <span className="mr-8">Placement Record 2025 Announced</span>
 
             {/* Duplicate for seamless loop */}
+            <a href="https://sdetm.indiraicem.ac.in/" target="_blank" rel="noopener noreferrer" className="mr-8 hover:underline text-red-600 font-bold">
+              INTERNATIONAL CONFERENCE (ICSDETM2026)
+            </a>
             <span className="mr-8">Public Advisory Notice</span>
             <span className="mr-8">Placement Record 2025 Announced</span>
           </div>

@@ -91,6 +91,11 @@ export default function FAQENTC() {
   type: "syllabus",
   content: [
     {
+      id: "fra-fee-structure-26-27",
+      label: "FRA Fee Structure (A.Y. 2026-27)",
+      pdf: "/fees/fra_fees_2026-27.pdf",
+    },
+    {
       id: "fee-structure",
       label: "Fee Structure (2025–26)",
       pdf: "/programs/Computer/Feestructure2526.pdf",

@@ -15,7 +15,7 @@ const staffData = [
     qualification: "BAMS MBA NET Ph.D",
     doj: "30/01/2017",
     dob: "13/09/1976",
-    image: "/faculty/final_Icem_branding/mba/archanasalve.webp",
+    image: "/programs/MBA/archana.jpeg",
   },
   {
     sn: 2,
@@ -77,6 +77,31 @@ const staffData = [
 // ================== SYLLABUS DATA ==================
 const syllabusList = [
   {
+    id: "mba-rules-exam-26-27",
+    label: "MBA Rules & Exam Guidelines (A.Y. 2026-27)",
+    pdf: "/programs/MBA/MBA RULES &  EXAM Guidelines _26-27.pdf",
+  },
+  {
+    id: "fy-mba-structure-26-27",
+    label: "FY MBA Course Structure Sem I & II (A.Y. 2026-27)",
+    pdf: "/programs/MBA/FY MBA Structure SEM-I & II 2026-27 (3) (1).xlsx",
+  },
+  {
+    id: "sy-mba-structure-26-27",
+    label: "SY MBA Course Structure Sem III & IV (A.Y. 2026-27)",
+    pdf: "/programs/MBA/SY MBA Structure SEM-III & IV 2026-27.xlsx",
+  },
+  {
+    id: "fy-mba-syllabus-26-27",
+    label: "FY MBA Detailed Syllabus (A.Y. 2026-27)",
+    pdf: "/programs/MBA/FY MBA SYLLABUS COPY 2026-27,.docx",
+  },
+  {
+    id: "sy-mba-syllabus-26-27",
+    label: "SY MBA Detailed Syllabus (A.Y. 2026-27)",
+    pdf: "/programs/MBA/SYMBA SYLLABUS COPY 2026-27.doc",
+  },
+  {
     id: "mba-syllabus-scan",
     label: "MBA Syllabus Structure",
     pdf: "/pdfs/MBA Syllabus structure scan_001.pdf",
@@ -98,6 +123,7 @@ const facultyImages = Array.from({ length: 12 }, (_, i) => ({
 // ================== MAIN COMPONENT ==================
 export default function FAQMBA() {
   const [active, setActive] = useState("About Us");
+  const [activePreviewId, setActivePreviewId] = useState(null);
 
   const sectionContent = {
     "About Us": {
@@ -120,20 +146,25 @@ export default function FAQMBA() {
     // ================= NEW SECTIONS FOR IMCA =================
 
     "FRA - Fee Structure": {
-  type: "syllabus",
-  content: [
-    {
-      id: "fee-structure",
-      label: "Fee Structure (2025–26)",
-      pdf: "/programs/Computer/Feestructure2526.pdf",
+      type: "syllabus",
+      content: [
+        {
+          id: "fra-fee-structure-26-27",
+          label: "FRA Fee Structure (A.Y. 2026-27)",
+          pdf: "/fees/fra_fees_2026-27.pdf",
+        },
+        {
+          id: "fee-structure",
+          label: "Fee Structure (2025–26)",
+          pdf: "/programs/Computer/Feestructure2526.pdf",
+        },
+        {
+          id: "fee-fra",
+          label: "FRA Document",
+          pdf: "/programs/Computer/NewFRA.pdf",
+        },
+      ],
     },
-    {
-      id: "fee-fra",
-      label: "FRA Document",
-      pdf: "/programs/Computer/NewFRA.pdf",
-    },
-  ],
-},
 
     "Admission Procedure": {
       type: "syllabus",
@@ -166,24 +197,27 @@ export default function FAQMBA() {
     "Eligibility Criteria": {
       type: "accordion",
       content: {
-        "Eligibility Criteria for Admission to First Year Engineering 2024-25": [
-          "For details about First Year Engineering Admission and Eligibility Criteria, refer https://cetcell.mahacet.org/",
-        ],
+        "Eligibility Criteria for Admission to First Year Engineering 2024-25":
+          [
+            "For details about First Year Engineering Admission and Eligibility Criteria, refer https://cetcell.mahacet.org/",
+          ],
         "Maharashtra State Candidature Candidates": [
           "The Candidate should be an Indian National.",
           "Passed HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State), in the above subjects taken together; and the Candidate should have appeared in all the subjects in CET and should obtain non zero score in CET conducted by the Competent Authority.",
           "Or",
           "Passed Diploma in Engineering and Technology and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State).",
         ],
-        "All India Candidature Candidates, Union Territory of Jammu and Kashmir and Union Territory of Ladakh Migrant Candidature Candidates": [
-          "The Candidate should be an Indian National.",
-          "Passed HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State) in the above subjects taken together; and should obtain non zero positive score in JEE (Main) B.E./B.Tech or the candidate should have appeared in all the subjects in CET and should obtain non zero score in CET conducted by the Competent Authority. However, preference shall be given to the candidate obtaining non zero positive score in JEE (Main) B.E./B.Tech over the candidates who obtained non zero score in CET.",
-          "Or",
-          "Passed Diploma in Engineering and Technology and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State).",
-        ],
-        "NRI / OCI / PIO, Children of Indian workers in the Gulf countries and Foreign National Candidature Candidates": [
-          "The candidate should have passed the HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies, and obtained at least 45 % marks in the above subjects taken together.",
-        ],
+        "All India Candidature Candidates, Union Territory of Jammu and Kashmir and Union Territory of Ladakh Migrant Candidature Candidates":
+          [
+            "The Candidate should be an Indian National.",
+            "Passed HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State) in the above subjects taken together; and should obtain non zero positive score in JEE (Main) B.E./B.Tech or the candidate should have appeared in all the subjects in CET and should obtain non zero score in CET conducted by the Competent Authority. However, preference shall be given to the candidate obtaining non zero positive score in JEE (Main) B.E./B.Tech over the candidates who obtained non zero score in CET.",
+            "Or",
+            "Passed Diploma in Engineering and Technology and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State).",
+          ],
+        "NRI / OCI / PIO, Children of Indian workers in the Gulf countries and Foreign National Candidature Candidates":
+          [
+            "The candidate should have passed the HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies, and obtained at least 45 % marks in the above subjects taken together.",
+          ],
         "Additional Information": [
           "Any other criterion declared from time to time by the appropriate authority as defined under the Act.",
         ],
@@ -192,7 +226,6 @@ export default function FAQMBA() {
         // ],
       },
     },
-    
 
     // Faculty: {
     //   type: "gallery",
@@ -204,7 +237,7 @@ export default function FAQMBA() {
       type: "syllabus",
       content: syllabusList,
     },
-    "Staff": {
+    Staff: {
       type: "staff",
       content: staffData,
     },
@@ -245,7 +278,7 @@ export default function FAQMBA() {
                         <p key={i} className="text-gray-700">
                           {item}
                         </p>
-                      )
+                      ),
                     )}
                   </div>
                 </details>
@@ -269,7 +302,9 @@ export default function FAQMBA() {
                 <tr>
                   <th className="p-2 md:p-3 border-b font-semibold">Program</th>
                   <th className="p-2 md:p-3 border-b font-semibold">Intake</th>
-                  <th className="p-2 md:p-3 border-b font-semibold">Duration</th>
+                  <th className="p-2 md:p-3 border-b font-semibold">
+                    Duration
+                  </th>
                   <th className="p-2 md:p-3 border-b font-semibold">Type</th>
                 </tr>
               </thead>
@@ -291,21 +326,55 @@ export default function FAQMBA() {
       case "syllabus":
         return (
           <div className="space-y-3 md:space-y-4">
-            {data.content.map((item) => (
-              <div
-                key={item.id}
-                className="flex flex-col sm:flex-row sm:items-center justify-between p-3 md:p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
-              >
-                <h5 className="font-semibold text-gray-800">{item.label}</h5>
-                <a
-                  href={item.pdf}
-                  target="_blank"
-                  className="px-4 py-2 bg-secondary text-white rounded-md"
+            {data.content.map((item) => {
+              const isExcelOrDoc =
+                item.pdf.endsWith(".xlsx") ||
+                item.pdf.endsWith(".xls") ||
+                item.pdf.endsWith(".docx") ||
+                item.pdf.endsWith(".doc");
+              const isPdf = item.pdf.endsWith(".pdf");
+              const isPreviewOpen = activePreviewId === item.id;
+
+              return (
+                <div
+                  key={item.id}
+                  className="border border-gray-200 rounded-lg p-3 md:p-4 hover:bg-gray-50 transition-colors"
                 >
-                  View / Download
-                </a>
-              </div>
-            ))}
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <h5 className="font-semibold text-gray-800">
+                      {item.label}
+                    </h5>
+                    <div className="flex flex-wrap gap-2">
+                      {isPdf && (
+                        <button
+                          onClick={() =>
+                            setActivePreviewId(isPreviewOpen ? null : item.id)
+                          }
+                          className="px-4 py-2 bg-secondary text-white rounded-md text-sm hover:bg-secondary/90 transition-colors"
+                        >
+                          {isPreviewOpen ? "Close Preview" : "View"}
+                        </button>
+                      )}
+                      <a
+                        href={item.pdf}
+                        download
+                        className="px-4 py-2 bg-gray-200 text-gray-800 rounded-md text-sm hover:bg-gray-300 transition-colors font-medium"
+                      >
+                        Download
+                      </a>
+                    </div>
+                  </div>
+                  {isPdf && isPreviewOpen && (
+                    <div className="mt-4 border-t pt-4">
+                      <iframe
+                        src={item.pdf}
+                        className="w-full h-[600px] border rounded-lg"
+                      />
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         );
 
@@ -365,7 +434,9 @@ export default function FAQMBA() {
         return null;
       case "staff":
         const StaffPhoto = ({ src, alt }) => {
-          const [currentSrc, setCurrentSrc] = useState(src || "/faculty/newFaculty/placeholder.avif");
+          const [currentSrc, setCurrentSrc] = useState(
+            src || "/faculty/newFaculty/placeholder.avif",
+          );
           const [hasError, setHasError] = useState(false);
 
           return hasError ? (

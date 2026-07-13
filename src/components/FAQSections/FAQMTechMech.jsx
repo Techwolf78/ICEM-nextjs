@@ -59,7 +59,7 @@ export default function FAQMTechMech() {
       content: [
         {
           program: "M.Tech in Mechanical Engineering",
-          intake: "12 Seats",
+          intake: "06 seats",
           duration: "2 Years",
           type: "Full Time",
         },
@@ -76,6 +76,17 @@ export default function FAQMTechMech() {
           "For sponsored candidates, minimum of two years of full time work experience in a registered firm/ company/ industry/ educational and/ or research institute/ any Government Department or Government Autonomous Organization in the relevant field in which admission is being sought.",
         ],
       },
+    },
+
+    "Syllabus & Course Structure": {
+      type: "syllabus",
+      content: [
+        {
+          id: "mtech-heat-power-syllabus",
+          label: "M.Tech. Heat Power Engineering (PG) – 2026-27 Pattern",
+          pdf: "/programs/MTECHmech/mtech-heat-power.pdf",
+        },
+      ],
     },
 
     "Staff": {

@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -127,6 +128,15 @@ const ExploreSection = () => {
               state-of-the-art facilities, and access limitless placement
               opportunities.
             </p>
+
+            <div className="fade-text mt-4 w-full">
+              <Link
+                href="/fra-fee-structure"
+                className="inline-flex items-center gap-2 bg-[#003c84] text-white hover:bg-[#278da4] px-6 py-3 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
+              >
+                📄 View FRA Fee Structure (A.Y. 2026-27)
+              </Link>
+            </div>
           </div>
 
           {/* RIGHT COLUMN: Logos */}

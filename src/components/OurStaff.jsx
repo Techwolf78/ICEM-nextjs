@@ -747,7 +747,7 @@ const staffData = [
     Qualification: "BAMS, MBA, NET, Ph.D",
     DOJ: "30.01.2017",
     DOB: "13.9.1976",
-    imagePath: "/Final_Icem_branding/mba/Dr. Archana Salave.webp",
+    imagePath: "/programs/MBA/archana.jpeg",
   },
   {
     "Sr.No.": "71",

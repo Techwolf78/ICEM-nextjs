@@ -21,9 +21,9 @@ const admissionsContacts = [
   },
   {
     department: "MCA",
-    name: "Dr. Darshana Desai",
-    phones: ["8637701203"],
-    landline: "02114-661560",
+    name: "Dr. Awantika Bijwe",
+    phones: ["9623441574"],
+    landline: "02114-661583",
     email: "hodmca@indiraicem.ac.in",
   },
   {

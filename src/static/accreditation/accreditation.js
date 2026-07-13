@@ -1601,6 +1601,14 @@ export const sections = {
         heading: "Last Three Years Audited Financial Statements",
         pdfs: [
           {
+            name: "Audited Financial Statements for FY 2024-25",
+            url: "/accreditations/ovrm_bs_2024-25.pdf",
+          },
+          {
+            name: "Audited Financial Statements for FY 2023-24",
+            url: "/accreditations/icem_bs_2023-24.pdf",
+          },
+          {
             name: "Audited Financial Statements for FY 2022-23",
             url: "/pdfs/accreditation/Balance Sheet 2022-23.pdf",
           },

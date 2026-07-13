@@ -226,14 +226,14 @@ const Navbar = () => {
           items: [
             {
               label: "FRA Fee Structure",
-              link: "/programs/computer-engineering#fee-structure",
+              link: "/fra-fee-structure",
             },
             {
               label: "ERP Staff",
               link: "https://indira.edupluscampus.com/",
             },
             {
-              label: "ERP Student",
+              label: "ERP Login",
               link: "https://myindira.edupluscampus.com/",
             },
             {
@@ -420,7 +420,7 @@ const Navbar = () => {
             <div className="flex gap-0.5">
               <div className="flex items-center font-semibold gap-0.5">
                 <Link
-                  href="/programs/computer-engineering#fee-structure"
+                  href="/fra-fee-structure"
                   className="hover:text-secondary transition-colors duration-200 px-1"
                 >
                   FRA Fee Structure
@@ -445,7 +445,7 @@ const Navbar = () => {
                   rel="noopener noreferrer"
                   className="hover:text-secondary transition-colors duration-200 px-1"
                 >
-                  ERP Student
+                  ERP Login
                 </Link>
 
                 <span className="text-gray-400">|</span>

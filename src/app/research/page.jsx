@@ -226,8 +226,8 @@ const Research = () => {
                         Mechanical Engineering
                       </td>
                       <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
-                        Heating Water using the waste heat from domestic
-                        refrigerator condenser
+                        Multilayer insulation using agricultural produce waste for
+                        energy efficiency of thermal systems.
                       </td>
                       <td className="border border-gray-300 p-2 md:p-3 text-xs md:text-sm">
                         ₹1,00,000/-
@@ -949,31 +949,23 @@ const Research = () => {
                     <table className="w-full text-xs md:text-sm text-left">
                       <thead className="bg-secondary text-white">
                         <tr>
-                          <th className="p-2 border border-gray-300">Sr.No</th>
+                          <th className="p-2 border border-gray-300">Sr. No.</th>
                           <th className="p-2 border border-gray-300">Conference Name</th>
-                          <th className="p-2 border border-gray-300">Department</th>
+                          <th className="p-2 border border-gray-300">Organizing Department</th>
                           <th className="p-2 border border-gray-300">Date</th>
                           <th className="p-2 border border-gray-300">Brochure</th>
-                          <th className="p-2 border border-gray-300">Website</th>
+                          <th className="p-2 border border-gray-300">Proceedings</th>
                         </tr>
                       </thead>
-                      <tbody className="bg-white divide-y divide-gray-200">
+                      <tbody className="bg-white divide-y divide-gray-200 text-gray-800">
                         <tr className="hover:bg-gray-50">
                           <td className="p-2 border border-gray-300">1</td>
-                          <td className="p-2 border border-gray-300 font-medium">National Conference on Designing the Future: NCDFTS-2026</td>
-                          <td className="p-2 border border-gray-300">MBA</td>
-                          <td className="p-2 border border-gray-300">16th-17th April 2026</td>
-                          <td className="p-2 border border-gray-300 text-center">
-                            <button
-                              onClick={() => setShowBrochureModal(true)}
-                              className="text-blue-600 hover:underline font-medium"
-                            >
-                              View
-                            </button>
-                          </td>
+                          <td className="p-2 border border-gray-300 font-medium">National Conference on Technological Advancement in Academia and Industry 4.0 (NCTAAI 4.0)</td>
+                          <td className="p-2 border border-gray-300">Master of Computer Applications (MCA)</td>
+                          <td className="p-2 border border-gray-300">28th & 29th March 2025</td>
                           <td className="p-2 border border-gray-300 text-center">
                             <a
-                              href="https://conferenceworld.in/conference.php?cID=1561"
+                              href="https://indiraicemac-my.sharepoint.com/:b:/g/personal/research_indiraicem_ac_in/IQDeokomq-plQqvDfnp6SzatAWrKCMWQATtFslzn4JmSt90?e=VZ7Oh1"
                               target="_blank"
                               rel="noopener noreferrer"
                               className="text-blue-600 hover:underline font-medium"
@@ -981,6 +973,85 @@ const Research = () => {
                               Link
                             </a>
                           </td>
+                          <td className="p-2 border border-gray-300 text-center">
+                            <a
+                              href="https://indiraicemac-my.sharepoint.com/:b:/g/personal/research_indiraicem_ac_in/IQBKZr7qndwFSIfCX1EEvWlfAeGRiCIJFPwiCUaVC8seTj4?e=r8NHUi"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-600 hover:underline font-medium"
+                            >
+                              Link
+                            </a>
+                          </td>
+                        </tr>
+                        <tr className="hover:bg-gray-50">
+                          <td className="p-2 border border-gray-300">2</td>
+                          <td className="p-2 border border-gray-300 font-medium">International Conference on Nextgen Technology and AI for Sustainable Future (NTAI2025)</td>
+                          <td className="p-2 border border-gray-300">Computer Engineering</td>
+                          <td className="p-2 border border-gray-300">12th & 13th April 2025</td>
+                          <td className="p-2 border border-gray-300 text-center">
+                            <a
+                              href="https://indiraicemac-my.sharepoint.com/:b:/g/personal/research_indiraicem_ac_in/IQBEGQ9x7FWNQLNTNLcR4B9IAZTINk2AM5TGjmztNgOEYAw?e=ip9lXS"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-600 hover:underline font-medium"
+                            >
+                              Link
+                            </a>
+                          </td>
+                          <td className="p-2 border border-gray-300 text-center">
+                            <a
+                              href="https://ntai2025.indiraicem.ac.in/"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-600 hover:underline font-medium"
+                            >
+                              Link
+                            </a>
+                          </td>
+                        </tr>
+                        <tr className="hover:bg-gray-50">
+                          <td className="p-2 border border-gray-300">3</td>
+                          <td className="p-2 border border-gray-300 font-medium">National Conference on Designing the Future NCDFTS-2026</td>
+                          <td className="p-2 border border-gray-300">Master of Business Administration (MBA)</td>
+                          <td className="p-2 border border-gray-300">16th and 17th April 2026</td>
+                          <td className="p-2 border border-gray-300 text-center">
+                            <a
+                              href="https://indiraicemac-my.sharepoint.com/:b:/g/personal/research_indiraicem_ac_in/IQD1Gkor12sdRKqcbdZFk3uiATnnDsRqmht-yRUGraDuyQI?e=yHzIZm"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-600 hover:underline font-medium"
+                            >
+                              Link
+                            </a>
+                          </td>
+                          <td className="p-2 border border-gray-300 text-center">
+                            <a
+                              href="https://indiraicemac-my.sharepoint.com/:b:/g/personal/research_indiraicem_ac_in/IQDPWgHMQFd5T4qJ8d_g7FdHARNevzs_9o_m0TBMgDPfMFk?e=dBOkdk"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-600 hover:underline font-medium"
+                            >
+                              Link
+                            </a>
+                          </td>
+                        </tr>
+                        <tr className="hover:bg-gray-50">
+                          <td className="p-2 border border-gray-300">4</td>
+                          <td className="p-2 border border-gray-300 font-medium">Sustainable Developments in Engineering, Technology & Management, 2026 (SDETM 2026)</td>
+                          <td className="p-2 border border-gray-300">Mechanical Engineering</td>
+                          <td className="p-2 border border-gray-300">4th & 5th Nov. 2026</td>
+                          <td className="p-2 border border-gray-300 text-center">
+                            <a
+                              href="https://sdetm.indiraicem.ac.in/"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-600 hover:underline font-medium"
+                            >
+                              Link
+                            </a>
+                          </td>
+                          <td className="p-2 border border-gray-300 text-center">-</td>
                         </tr>
                       </tbody>
                     </table>

@@ -52,7 +52,7 @@ export default function Overview() {
     {
       name: "Dr. Archana Salve",
       designation: "HoD Master of Business Administration.",
-      image: "/faculty/ArchanaSalve.webp",
+      image: "/programs/MBA/archana.jpeg",
     },
     {
       name: "Dr. Awantika Bijwe",
@@ -81,13 +81,9 @@ export default function Overview() {
     {
       name: "Dr. Archana Salve",
       designation: "Dean (Entrepreneurship Development)",
-      image: "/assets/images/icemFaculty/Archana.jpg",
+      image: "/programs/MBA/archana.jpeg",
     },
-    {
-      name: "Dr. Darshana Desai",
-      designation: "Dean (Quality Assurance & Accreditation)",
-      image: "/assets/images/icemFaculty/Dr-Darshana-Desai.jpg",
-    },
+
     {
       name: "Dr. Mahesh Bhong",
       designation: "Dean (Research & Development)",

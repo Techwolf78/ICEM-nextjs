@@ -29,6 +29,11 @@ const mobileNavItems = [
   { name: "examination", label: "Examination", href: "/about/examination" },
   { name: "alumni", label: "Alumni", href: "/alumni" },
   { name: "research", label: "Research", href: "/research" },
+  {
+    name: "strategicPlan",
+    label: "Strategic Plan",
+    href: "/strategic-plan",
+  },
 ];
 
 const Navbar = () => {
@@ -429,6 +434,15 @@ const Navbar = () => {
                 <span className="text-gray-400">|</span>
 
                 <Link
+                  href="/strategic-plan"
+                  className="hover:text-secondary transition-colors duration-200 px-1"
+                >
+                  Strategic Plan
+                </Link>
+
+                <span className="text-gray-400">|</span>
+
+                <Link
                   href="https://indira.edupluscampus.com/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -692,6 +706,16 @@ const Navbar = () => {
                       >
                         <Link
                           href={navItem.href}
+                          target={
+                            navItem.href.startsWith("http") || navItem.href.endsWith(".pdf")
+                              ? "_blank"
+                              : "_self"
+                          }
+                          rel={
+                            navItem.href.startsWith("http") || navItem.href.endsWith(".pdf")
+                              ? "noopener noreferrer"
+                              : ""
+                          }
                           className="flex items-center justify-between py-3 text-sm font-medium text-gray-900 hover:text-primary transition-all duration-200 hover:translate-x-1"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >

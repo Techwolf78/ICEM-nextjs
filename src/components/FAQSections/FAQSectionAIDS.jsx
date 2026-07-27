@@ -85,17 +85,6 @@ const teachingStaff = [
   },
   {
     sn: 8,
-    id: "TBD",
-    name: "Prof. Vidya Dhoke",
-    designation: "Assistant Professor",
-    department: "AIDS",
-    qualification: "M.Tech, B.E",
-    doj: "05/01/2026",
-    dob: "02/04/1991",
-    image: "/faculty/final_icem_branding/aids/vidya_dhoke.webp",
-  },
-  {
-    sn: 9,
     id: "3267",
     name: "Prof. Vivek Sahaguara",
     designation: "Assistant Professor",
@@ -112,18 +101,6 @@ const newDetailedStaff = [];
 const oldDetailedStaff = [
   {
     sn: 7,
-    id: "TBD1",
-    name: "Mrs. Vidya R. Dhoke",
-    designation: "Assistant Professor",
-    department: "Artificial Intelligence and Data Science",
-    qualification: "MTech(CSE)",
-    experience: "8+",
-    interest: "Generative AI and Machine Learning, Big data",
-    research: "• Scopus Indexed Papers: 02\n• Scopus Indexed Papers: 04",
-    image: "/faculty/final_icem_branding/aids/vidya_dhoke.webp",
-  },
-  {
-    sn: 8,
     id: "TBD2",
     name: "Mr. Tushar R. Mahore",
     designation: "Assistant Professor",

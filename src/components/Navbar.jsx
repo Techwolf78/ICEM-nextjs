@@ -199,7 +199,7 @@ const Navbar = () => {
             },
 
             { label: "Information Technology", link: "/programs/it" },
-            { label: "Integrated MBA (BBA + MBA)", link: "/programs/imba" },
+            // { label: "Integrated MBA (BBA + MBA)", link: "/programs/imba" },
             { label: "Integrated MCA (BCA + MCA)", link: "/programs/imca" },
             { label: "Civil Engineering", link: "/programs/civil" },
           ],

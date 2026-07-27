@@ -4,43 +4,20 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import ProgramStaff from "../ProgramStaff";
 
-// ================== STAFF DATA ==================
-const staffData = [
-  {
-    sn: 0,
-    id: "3266",
-    name: "Dr. Poorna Shankar",
-    designation: "Dean AI & HoD Computer Engineering",
-    department: "Computer",
-    qualification: "MCA, M.Phil, Ph.D, M.Tech",
-    doj: "01/12/2021",
-    dob: "12/06/1973",
-    image: "/faculty/final_icem_branding/comp/poorna_shankar.avif",
-  },
+// ================== TEACHING STAFF DATA ==================
+const teachingStaff = [
   {
     sn: 1,
-    id: "496",
-    name: "Mrs. Deepali Shashikant Dhadwad",
-    designation: "Assistant Professor",
-    department: "Computer",
-    qualification: "ME",
-    doj: "27/07/2009",
-    dob: "25/04/1986",
-    image: "/faculty/final_icem_branding/comp/Mrs. Deepali Dhadwad.webp",
+    name: "Dr. Vivek Vishwanath Jog",
+    designation: "Professor & HOD",
+    department: "Computer Engineering",
+    qualification: "ME, Ph.D",
+    doj: "18/5/2026",
+    dob: "10/1/1976",
+    image: "/programs/Computer/vivek_jog.jpeg",
   },
   {
     sn: 2,
-    id: "2448",
-    name: "Dr. Shwetkranti Nanasaheb Taware",
-    designation: "Assistant Professor",
-    department: "Computer",
-    qualification: "ME Ph.D",
-    doj: "01/07/2023",
-    dob: "09/08/1983",
-    image: "/faculty/final_icem_branding/comp/Dr. Shwetkranti Taware.webp",
-  },
-  {
-    sn: 3,
     id: "2032",
     name: "Dr. Soumitra Shibshankar Das",
     designation: "Dean Academics VP",
@@ -51,40 +28,17 @@ const staffData = [
     image: "/faculty/final_icem_branding/comp/soumitra_das.webp",
   },
   {
+    sn: 3,
+    name: "Dr Kalyan Devappa Bamane",
+    designation: "Professor",
+    department: "Computer Engineering",
+    qualification: "BE CSE , ME Computer Engg PhD CSE, Post Doc Pursuing",
+    doj: "15/06/2026",
+    dob: "31/12/1981",
+    image: "/programs/Computer/kalyan_bamane_opt.jpg",
+  },
+  {
     sn: 4,
-    id: "3088",
-    name: "Mrs. Anita Atul Patil",
-    designation: "Assistant Professor",
-    department: "Computer",
-    qualification: "ME",
-    doj: "01/07/2024",
-    dob: "25/12/1994",
-    image: "/faculty/final_icem_branding/comp/Mrs. Anita Patil.webp",
-  },
-  {
-    sn: 5,
-    id: "3089",
-    name: "Miss Pragati Sambhaji Malusare",
-    designation: "Assistant Professor",
-    department: "Computer",
-    qualification: "BE M.Tech",
-    doj: "01/07/2024",
-    dob: "01/10/1997",
-    image: "/faculty/final_icem_branding/comp/Mrs. Pragati Malusare.webp",
-  },
-  {
-    sn: 6,
-    id: "2288",
-    name: "Mrs. Dipali Nikhil Junankar",
-    designation: "Assistant Professor",
-    department: "Computer",
-    qualification: "B.E ME",
-    doj: "01/11/2022",
-    dob: "14/04/1980",
-    image: "/faculty/final_icem_branding/comp/Mrs. Dipali Junankar.webp",
-  },
-  {
-    sn: 7,
     id: "2366",
     name: "Dr. Sunil Damodar Rathod",
     designation: "Associate Professor",
@@ -95,7 +49,62 @@ const staffData = [
     image: "/faculty/final_icem_branding/comp/Dr. Sunil Rathod.webp",
   },
   {
+    sn: 5,
+    id: "496",
+    name: "Mrs. Deepali Shashikant Dhadwad",
+    designation: "Assistant Professor",
+    department: "Computer",
+    qualification: "ME",
+    doj: "27/07/2009",
+    dob: "25/04/1986",
+    image: "/faculty/final_icem_branding/comp/Mrs. Deepali Dhadwad.webp",
+  },
+  {
+    sn: 6,
+    id: "2448",
+    name: "Dr. Shwetkranti Nanasaheb Taware",
+    designation: "Assistant Professor",
+    department: "Computer",
+    qualification: "ME Ph.D",
+    doj: "01/07/2023",
+    dob: "09/08/1983",
+    image: "/faculty/final_icem_branding/comp/Dr. Shwetkranti Taware.webp",
+  },
+  {
+    sn: 7,
+    id: "3088",
+    name: "Mrs. Anita Atul Patil",
+    designation: "Assistant Professor",
+    department: "Computer",
+    qualification: "ME",
+    doj: "01/07/2024",
+    dob: "25/12/1994",
+    image: "/faculty/final_icem_branding/comp/Mrs. Anita Patil.webp",
+  },
+  {
     sn: 8,
+    id: "3089",
+    name: "Ms. Pragati Malusare",
+    designation: "Assistant Professor",
+    department: "Computer",
+    qualification: "BE M.Tech",
+    doj: "01/07/2024",
+    dob: "01/10/1997",
+    image: "/faculty/final_icem_branding/comp/Mrs. Pragati Malusare.webp",
+  },
+  {
+    sn: 9,
+    id: "2288",
+    name: "Mrs. Dipali Nikhil Junankar",
+    designation: "Assistant Professor",
+    department: "Computer",
+    qualification: "B.E ME",
+    doj: "01/11/2022",
+    dob: "14/04/1980",
+    image: "/faculty/final_icem_branding/comp/Mrs. Dipali Junankar.webp",
+  },
+  {
+    sn: 10,
     id: "3095",
     name: "Mrs. Savitri Ashok Mote",
     designation: "Assistant Professor",
@@ -106,7 +115,7 @@ const staffData = [
     image: "/faculty/final_icem_branding/comp/Mrs. Savitri Pawar.webp",
   },
   {
-    sn: 9,
+    sn: 11,
     id: "3097",
     name: "Ms. Rupali Pravin Adhau",
     designation: "Assistant Professor",
@@ -117,7 +126,7 @@ const staffData = [
     image: "/faculty/final_icem_branding/comp/Mrs. Rupali Adhau.webp",
   },
   {
-    sn: 10,
+    sn: 12,
     id: "3098",
     name: "Mrs. Shraddha Sandip Suryawanshi",
     designation: "Assistant Professor",
@@ -128,7 +137,7 @@ const staffData = [
     image: "/faculty/final_icem_branding/comp/Mrs. Shraddha Suryawanshi.webp",
   },
   {
-    sn: 11,
+    sn: 13,
     id: "3111",
     name: "Dr. Malayaj Kumar",
     designation: "Assistant Professor",
@@ -139,7 +148,7 @@ const staffData = [
     image: "/faculty/final_icem_branding/comp/malayaj.webp",
   },
   {
-    sn: 12,
+    sn: 14,
     id: "3112",
     name: "Mrs. Minal Sunil Patil",
     designation: "Assistant Professor",
@@ -150,37 +159,99 @@ const staffData = [
     image: "/faculty/final_icem_branding/comp/Mrs. Minal Patil.webp",
   },
   {
-    sn: 13,
-    id: "3214",
-    name: "Mr. Abhijit Hanumantrao Khadke",
-    designation: "Assistant Professor",
-    department: "Computer",
-    qualification: "BE ME",
-    doj: "09/08/2025",
-    dob: "03/10/1973",
-    image: "/faculty/final_icem_branding/comp/Abhijit Khadke.webp",
-  },
-  {
-    sn: 14,
-    id: "3265",
-    name: "Ms. Vidya Ritesh Dhoke",
-    designation: "Assistant Professor",
-    department: "Computer",
-    qualification: "BE IT M.Tech Computer",
-    doj: "05/01/2026",
-    dob: "02/04/1991",
-    image: "/faculty/final_icem_branding/comp/Ms. Vidya Ritesh Dhoke.webp",
-  },
-  {
     sn: 15,
+    name: "Mrs. Mrunal Aniruddha Vaidya",
+    designation: "Assistant Professor",
+    department: "Computer",
+    qualification: "M.E. Computer",
+    doj: "15/09/2025",
+    dob: "20/02/1991",
+    image: "/programs/Computer/mrunal_vaidya.jpeg",
+  },
+  {
+    sn: 16,
+    name: "Mrs. Surbhi Shreeram Kashyap",
+    designation: "Assistant Professor",
+    department: "Computer Engineering",
+    qualification: "BE MTech",
+    doj: "18th feb 2026",
+    dob: "16th may 1992",
+    image: "/programs/Computer/surbhi_kashyap.jpeg",
+  },
+  {
+    sn: 17,
+    name: "Mr. Rajesh Singh",
+    designation: "Assistant Professor",
+    department: "Computer Engineering",
+    qualification: "B.E , Mtech (C.E.),PhD.(Submitted) C.E",
+    doj: "23/02/2026",
+    dob: "07/06/1970",
+    image: "/programs/Computer/rajesh_singh.jpeg",
+  },
+  {
+    sn: 18,
+    name: "Mr. Advait Dhananjay Patil",
+    designation: "Teaching Associate",
+    department: "Computer Engineering",
+    qualification: "B.E. M.Tech Pursuing",
+    doj: "01/09/2025",
+    dob: "19/11/2001",
+    image: "/programs/Computer/advait_patil.jpeg",
+  },
+  {
+    sn: 19,
     id: "3262",
     name: "Ms. Tanuja Balkrishna Dhumal",
-    designation: "Teaching Assistant",
+    designation: "Teaching Associate",
     department: "Computer",
     qualification: "BE Computer Engg MSc Appeared",
     doj: "14/01/2026",
     dob: "21/12/2000",
     image: "/faculty/final_icem_branding/comp/Ms. Tanuja Dhumal.webp",
+  },
+  {
+    sn: 20,
+    name: "Ms. Shruti Sanjay Ghotane",
+    designation: "Teaching Associate",
+    department: "Computer Engineering",
+    qualification: "BE",
+    doj: "21-07-2026",
+    dob: "22-09-2002",
+    image: "/programs/Computer/shruti_ghotane.jpeg",
+  },
+];
+
+// ================== NON-TEACHING STAFF DATA ==================
+const nonTeachingStaff = [
+  {
+    sn: 1,
+    name: "Mr. Atul Dnyanoba Shelar",
+    designation: "Lab Assistant",
+    department: "Computer Engineering",
+    qualification: "BA, certification on computer Hardware & Networking",
+    doj: "18/5/2022",
+    dob: "5/4/1987",
+    image: "/programs/Computer/atul_shelar.png",
+  },
+  {
+    sn: 2,
+    name: "Mr. Indrajeet Balasaheb Babar",
+    designation: "Technical Assistant",
+    department: "Computer Engineering",
+    qualification: "B.A. & D.C.A. (Diploma in Computer Applications)",
+    doj: "1/7/2024",
+    dob: "17/5/1976",
+    image: "/programs/Computer/indrajeet_babar_opt.jpg",
+  },
+  {
+    sn: 3,
+    name: "Ms. Sarika Sanjay Choudhari",
+    designation: "Office Assistant",
+    department: "Computer Engineering",
+    qualification: "B.com, M.com",
+    doj: "1/11/2022",
+    dob: "13/1/1999",
+    image: "/programs/Computer/sarika_choudhari.jpeg",
   },
 ];
 
@@ -375,16 +446,20 @@ const facultyImages = Array.from({ length: 12 }, (_, i) => ({
 export default function FAQSectionComputer() {
   const [active, setActive] = useState("FRA - Fee Structure");
   const [syllabusTab, setSyllabusTab] = useState("autonomy");
+  const [activeAcadTab, setActiveAcadTab] = useState("autonomy");
+  const [activeAcadYear, setActiveAcadYear] = useState({ autonomy: "ay-25-26", sppu: "ay-24-25" });
+  const [activeAcadSem, setActiveAcadSem] = useState({ autonomy: "sem-1", sppu: "sem-1" });
+  const [activeStaffTab, setActiveStaffTab] = useState("teaching");
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const hash = window.location.hash.replace('#', '');
-      if (hash === 'fee-structure') {
+    if (typeof window !== "undefined") {
+      const hash = window.location.hash.replace("#", "");
+      if (hash === "fee-structure") {
         setActive("FRA - Fee Structure");
         setTimeout(() => {
-          const element = document.getElementById('fee-structure');
+          const element = document.getElementById("fee-structure");
           if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            element.scrollIntoView({ behavior: "smooth", block: "center" });
           }
         }, 100);
       }
@@ -411,73 +486,77 @@ export default function FAQSectionComputer() {
       },
     },
 
-    "POs, PSOs, PEOs": {
+    "Vision, Mission, POs, PSOs & PEOs": {
       type: "accordion",
       content: {
+        Vision: [
+          "To become an acclaimed center of excellence by rendering modern technology, academics\n and research for creating holistic, socio-economic professionals with interdisciplinary potential.",
+        ],
+        Mission: [
+          "To foster strong fundamental concepts to students and inspire them to find creative\n solutions with critical thinking and disciplined time managed environment.",
+          "To impart knowledge and skill based education in collaboration with industry, \nacademia and research organizations.",
+          "To develop a center of excellence and setup a research laboratory to develop \nsoftware applications for the society with the association of industry.",
+          "To enlighten students with the latest technologies through carefully designed training \nmodules with the alliance of Alumni and Industry as a part of value added education.",
+          "To nurture and nourish effective communication, interpersonal skills, and create \nawareness of ethical and social responsibilities.",
+        ],
         "Programme Outcomes (POs)": [
-          "Apply Knowledge of Mathematics, Science and Engineering: Relate & apply fundamental\nknowledge of mathematics, science and engineering paradigm to real world problems.",
-          "Problem Analysis: Analyze, identify and formulate tangible products/services/solutions/\napplications with computing requirements.",
-          "Design and Development of algorithms : Design, implement, and evaluate a computer – based\nsolution applicable to public health, ecological safety, human resource management.",
-          "Analysis design and modeling of complex problems: Understand management and engineering\nprinciples meets need of atomization of industry.",
-          "Usage of latest open source tools and technologies: Select & use current techniques, skills, and\ntools to solve societal, health, safety, cultural issues by analyzing the local and global impact.",
-          "Social contribution of Engineers: Distinguish a problem; design a solution for the needs of the\nsociety in health, safety, public, private sectors applying relevant engineering practices.",
-          "Environment and Sustainability: Understand the affecting factors thru' various fields of engineering\nto the environment context, develop the solutions which would support green Environment initiative.",
-          "Professional Development and Ethics: Inculcate ethical values amongst students to develop best\nengineering practices.",
-          "Commitment at Individual level and as a team: Work effectively in multidisciplinary environment\nas individual & diverse team structure too.",
-          "Communication skills: Learn an emphatic communication to function effective on teams,\nincluding diversified and multidisciplinary goal.",
-          "Project Planning & Management for Complex Solutions: Use of modeling techniques to design\nexperiments, by analyzing and interpreting data",
-          "Self-learning: Recognize the need of continuous expertized development through\nlifelong learning.",
+          "Apply Knowledge of Mathematics, Science and Engineering: Relate & apply fundamental\n knowledge of mathematics, science and engineering paradigm to real world problems.",
+          "Problem Analysis: Analyze, identify and formulate tangible products/services/solutions/\n applications with computing requirements.",
+          "Design and Development of algorithms : Design, implement, and evaluate a computer – based\n solution applicable to public health, ecological safety, human resource management.",
+          "Analysis design and modeling of complex problems: Understand management and engineering\n principles meets need of atomization of industry.",
+          "Usage of latest open source tools and technologies: Select & use current techniques, skills, and\n tools to solve societal, health, safety, cultural issues by analyzing the local and global impact.",
+          "Social contribution of Engineers: Distinguish a problem; design a solution for the needs of the\n society in health, safety, public, private sectors applying relevant engineering practices.",
+          "Environment and Sustainability: Understand the affecting factors thru' various fields of engineering\n to the environment context, develop the solutions which would support green Environment initiative.",
+          "Professional Development and Ethics: Inculcate ethical values amongst students to develop best\n engineering practices.",
+          "Commitment at Individual level and as a team: Work effectively in multidisciplinary environment\n as individual & diverse team structure too.",
+          "Communication skills: Learn an emphatic communication to function effective on teams,\n including diversified and multidisciplinary goal.",
+          "Project Planning & Management for Complex Solutions: Use of modeling techniques to design\n experiments, by analyzing and interpreting data.",
+          "Self-learning: Recognize the need of continuous expertized development through\n lifelong learning.",
         ],
         "Programme Specific Outcomes (PSOs)": [
-          "Professional Skills: The ability to understand, analyze and develop high-end applications to meet\nthe current industrial requirements using varied algorithmic strategies and system software.",
-          "Problem-Solving Skills: The ability to apply standard practices and strategies in software project\ndevelopment using open-ended programming environments to deliver a quality product.",
-          "Successful Career and Entrepreneurship: The ability to employ modern computer languages,\nenvironments, and platforms in creating innovative career paths to be an entrepreneur.",
+          "Professional Skills: The ability to understand, analyze and develop high-end applications to meet\n the current industrial requirements using varied algorithmic strategies and system software.",
+          "Problem-Solving Skills: The ability to apply standard practices and strategies in software project\n development using open-ended programming environments to deliver a quality product.",
+          "Successful Career and Entrepreneurship: The ability to employ modern computer languages,\n environments, and platforms in creating innovative career paths to be an entrepreneur.",
         ],
         "Programme Educational Objectives (PEOs)": [
-          "To build graduates for successful careers in Computer Engineering those are able to serve state\nand regional industries, government agencies, or national and international industries.",
-          "To build graduates that identifies the underlying scientific foundation of Computer Aided\nInnovation and also to evaluate their effectiveness and efficiency",
-          "To build graduates who engage in self-development activities through further professional studies\nand personal research that will allow them to adapt technological challenges.",
-          "To build graduates in computer engineering who are acquiring knowledge of the discipline,\nteamwork, communication skills and an ability to work with a diverse set of constraints.",
+          "To build graduates for successful careers in Computer Engineering those are able to serve state\n and regional industries, government agencies, or national and international industries.",
+          "To build graduates that identifies the underlying scientific foundation of Computer Aided\n Innovation and also to evaluate their effectiveness and efficiency.",
+          "To build graduates who engage in self-development activities through further professional studies\n and personal research that will allow them to adapt technological challenges.",
+          "To build graduates in computer engineering who are acquiring knowledge of the discipline,\n teamwork, communication skills and an ability to work with a diverse set of constraints.",
         ],
       },
     },
 
     "FRA - Fee Structure": {
-  type: "syllabus",
-  content: [
-    {
-      id: "fra-fee-structure-26-27",
-      label: "FRA Fee Structure (A.Y. 2026-27)",
-      pdf: "/fees/fra_fees_2026-27.pdf",
+      type: "syllabus",
+      content: [
+        {
+          id: "fra-fee-structure-26-27",
+          label: "FRA Fee Structure (A.Y. 2026-27)",
+          pdf: "/fees/fra_fees_2026-27.pdf",
+        },
+        {
+          id: "fra-proposal-2026",
+          label: "FRA Fees Approval proposal 2026-27",
+          pdf: "/pdfs/FRA%20Proposal%202026-27.pdf",
+        },
+        {
+          id: "fee-fra",
+          label: "FRA Document",
+          pdf: "/programs/Computer/NewFRA.pdf",
+        },
+        {
+          id: "fra-2025",
+          label: "FRA 2025-26",
+          pdf: "/fees/FRA%202025.pdf",
+        },
+        {
+          id: "institute-fra",
+          label: "Institute Level Admission FRA Fees",
+          pdf: "/fees/Insttitute%20level%20admission%20FRA%20FEEs.pdf",
+        },
+      ],
     },
-    {
-      id: "fee-structure",
-      label: "Fee Structure (2025–26)",
-      pdf: "/programs/Computer/Feestructure2526.pdf",
-    },
-    {
-      id: "fra-proposal-2026",
-      label: "FRA Fees Approval proposal 2026-27",
-      pdf: "/pdfs/FRA%20Proposal%202026-27.pdf",
-    },
-    {
-      id: "fee-fra",
-      label: "FRA Document",
-      pdf: "/programs/Computer/NewFRA.pdf",
-    },
-    {
-      id: "fra-2025",
-      label: "FRA 2025-26",
-      pdf: "/fees/FRA%202025.pdf",
-    },
-    {
-      id: "institute-fra",
-      label: "Institute Level Admission FRA Fees",
-      pdf: "/fees/Insttitute%20level%20admission%20FRA%20FEEs.pdf",
-    },
-  ],
-},
-
 
     "Admission Procedure": {
       type: "syllabus",
@@ -495,7 +574,7 @@ export default function FAQSectionComputer() {
       content: [
         {
           program: "B.Tech Computer Engineering",
-          intake: "150 Seats",
+          intake: "180 Seats",
           duration: "4 Years",
           type: "Full Time",
         },
@@ -505,24 +584,27 @@ export default function FAQSectionComputer() {
     "Eligibility Criteria": {
       type: "accordion",
       content: {
-        "Eligibility Criteria for Admission to First Year Engineering 2024-25": [
-          "For details about First Year Engineering Admission and Eligibility Criteria, refer https://cetcell.mahacet.org/",
-        ],
+        "Eligibility Criteria for Admission to First Year Engineering 2024-25":
+          [
+            "For details about First Year Engineering Admission and Eligibility Criteria, refer https://cetcell.mahacet.org/",
+          ],
         "Maharashtra State Candidature Candidates": [
           "The Candidate should be an Indian National.",
           "Passed HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State), in the above subjects taken together; and the Candidate should have appeared in all the subjects in CET and should obtain non zero score in CET conducted by the Competent Authority.",
           "Or",
           "Passed Diploma in Engineering and Technology and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State).",
         ],
-        "All India Candidature Candidates, Union Territory of Jammu and Kashmir and Union Territory of Ladakh Migrant Candidature Candidates": [
-          "The Candidate should be an Indian National.",
-          "Passed HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State) in the above subjects taken together; and should obtain non zero positive score in JEE (Main) B.E./B.Tech or the candidate should have appeared in all the subjects in CET and should obtain non zero score in CET conducted by the Competent Authority. However, preference shall be given to the candidate obtaining non zero positive score in JEE (Main) B.E./B.Tech over the candidates who obtained non zero score in CET.",
-          "Or",
-          "Passed Diploma in Engineering and Technology and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State).",
-        ],
-        "NRI / OCI / PIO, Children of Indian workers in the Gulf countries and Foreign National Candidature Candidates": [
-          "The candidate should have passed the HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies, and obtained at least 45 % marks in the above subjects taken together.",
-        ],
+        "All India Candidature Candidates, Union Territory of Jammu and Kashmir and Union Territory of Ladakh Migrant Candidature Candidates":
+          [
+            "The Candidate should be an Indian National.",
+            "Passed HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State) in the above subjects taken together; and should obtain non zero positive score in JEE (Main) B.E./B.Tech or the candidate should have appeared in all the subjects in CET and should obtain non zero score in CET conducted by the Competent Authority. However, preference shall be given to the candidate obtaining non zero positive score in JEE (Main) B.E./B.Tech over the candidates who obtained non zero score in CET.",
+            "Or",
+            "Passed Diploma in Engineering and Technology and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State).",
+          ],
+        "NRI / OCI / PIO, Children of Indian workers in the Gulf countries and Foreign National Candidature Candidates":
+          [
+            "The candidate should have passed the HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies, and obtained at least 45 % marks in the above subjects taken together.",
+          ],
         "Additional Information": [
           "Any other criterion declared from time to time by the appropriate authority as defined under the Act.",
         ],
@@ -535,43 +617,122 @@ export default function FAQSectionComputer() {
       title: "Research Publications & Projects",
     },
 
-    "Academic Performance": {
-  type: "syllabus",
-  content: [
-    {
-      id: "ap-1",
-      label: "SE - A.Y. 2024-25 SEM I",
-      pdf: "/programs/Computer/SEAcademicPerformance5.pdf",
+    "Academic Performance (Results)": {
+      type: "academic-results",
+      content: {
+        tabs: [
+          {
+            id: "autonomy",
+            label: "Autonomy",
+            years: [
+              {
+                id: "ay-25-26",
+                label: "A.Y. 2025-26",
+                sems: [
+                  {
+                    id: "sem-1",
+                    label: "SEM I Results",
+                    list: [
+                      {
+                        id: "sy-btech-25-26-sem1",
+                        label: "S.Y. BTech 25-26 SEM I",
+                        pdf: "/programs/Computer/S.Y. BTech 25-26 SEM I.pdf",
+                      },
+                    ],
+                  },
+                  {
+                    id: "sem-2",
+                    label: "SEM II Results",
+                    message: "Results yet to declare.",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: "sppu",
+            label: "SPPU",
+            years: [
+              {
+                id: "ay-24-25",
+                label: "A.Y. 2024-25",
+                sems: [
+                  {
+                    id: "sem-1",
+                    label: "SEM I Results",
+                    list: [
+                      {
+                        id: "se-24-25-sem1",
+                        label: "SE - A.Y. 2024-25 SEM I",
+                        pdf: "/programs/Computer/SE_24-25_SEM I.pdf",
+                      },
+                      {
+                        id: "te-24-25-sem1",
+                        label: "TE - A.Y. 2024-25 SEM I",
+                        pdf: "/programs/Computer/TE_24-25_SEM I.pdf",
+                      },
+                      {
+                        id: "be-24-25-sem1",
+                        label: "BE - A.Y. 2024-25 SEM I",
+                        pdf: "/programs/Computer/BE_24-25_SEM I.pdf",
+                      },
+                    ],
+                  },
+                  {
+                    id: "sem-2",
+                    label: "SEM II Results",
+                    list: [
+                      {
+                        id: "se-24-25-sem2",
+                        label: "SE - A.Y. 2024-25 SEM II",
+                        pdf: "/programs/Computer/SE_24-25_SEM II.pdf",
+                      },
+                      {
+                        id: "te-24-25-sem2",
+                        label: "TE - A.Y. 2024-25 SEM II",
+                        pdf: "/programs/Computer/TE_24-25_SEM II.pdf",
+                      },
+                      {
+                        id: "be-24-25-sem2",
+                        label: "BE - A.Y. 2024-25 SEM II",
+                        pdf: "/programs/Computer/BE_24-25_SEM II.pdf",
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                id: "ay-25-26",
+                label: "A.Y. 2025-26",
+                sems: [
+                  {
+                    id: "sem-1",
+                    label: "SEM I Results",
+                    list: [
+                      {
+                        id: "te-25-26-sem1",
+                        label: "TE - A.Y. 2025-26 SEM I",
+                        pdf: "/programs/Computer/TE_25-26_SEM I.pdf",
+                      },
+                      {
+                        id: "be-25-26-sem1",
+                        label: "BE - A.Y. 2025-26 SEM I",
+                        pdf: "/programs/Computer/BE_25-26_SEM I.pdf",
+                      },
+                    ],
+                  },
+                  {
+                    id: "sem-2",
+                    label: "SEM II Results",
+                    message: "Results yet to declare.",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
     },
-    {
-      id: "ap-2",
-      label: "TE - A.Y. 2024-25 SEM I",
-      pdf: "/programs/Computer/TEAcademicPerformance4.pdf",
-    },
-    {
-      id: "ap-3",
-      label: "BE - A.Y. 2024-25 SEM I",
-      pdf: "/programs/Computer/BEAcademicPerformance6.pdf",
-    },
-    {
-      id: "ap-4",
-      label: "SE - A.Y. 2024-25 SEM II",
-      pdf: "/programs/Computer/SEAcademicPerformance2.pdf",
-    },
-    {
-      id: "ap-5",
-      label: "TE - A.Y. 2024-25 SEM II",
-      pdf: "/programs/Computer/TEAcademicPerformance1.pdf",
-    },
-    {
-      id: "ap-6",
-      label: "BE - A.Y. 2024-25 SEM II",
-      pdf: "/programs/Computer/BEAcademicPerformance3.pdf",
-    },
-  ],
-},
-
-
 
     "Innovative Pedagogy": {
       type: "syllabus",
@@ -619,9 +780,22 @@ export default function FAQSectionComputer() {
     //   content:
     //     "Achievements information is currently under development and will be available soon.",
     // },
-    "Staff": {
-      type: "staff",
-      content: staffData,
+    Staff: {
+      type: "staff-tabs",
+      content: {
+        tabs: [
+          {
+            id: "teaching",
+            label: "Teaching Staff",
+            list: teachingStaff,
+          },
+          {
+            id: "non-teaching",
+            label: "Non-Teaching Staff",
+            list: nonTeachingStaff,
+          },
+        ],
+      },
     },
   };
 
@@ -645,7 +819,7 @@ export default function FAQSectionComputer() {
                       </strong>
                     ) : (
                       part
-                    )
+                    ),
                   )}
               </p>
             ))}
@@ -694,12 +868,14 @@ export default function FAQSectionComputer() {
                       ) : (
                         <p
                           key={index}
-                          className="flex items-start text-gray-700 text-justify [text-align-last:left] [hyphens:auto] tracking-tight leading-relaxed whitespace-pre-line"
+                          className="flex items-start text-gray-700 leading-relaxed whitespace-pre-line"
                         >
-                          <span className="text-secondary mr-2 mt-1 shrink-0">•</span>
+                          <span className="text-secondary mr-2 mt-1 shrink-0">
+                            •
+                          </span>
                           <span>{item}</span>
                         </p>
-                      )
+                      ),
                     )}
                   </div>
                 </details>
@@ -714,9 +890,13 @@ export default function FAQSectionComputer() {
             <table className="w-full text-sm text-left">
               <thead className="bg-gray-50 text-gray-700">
                 <tr>
-                  <th className="p-2 md:p-3 border-b font-semibold">Programme</th>
+                  <th className="p-2 md:p-3 border-b font-semibold">
+                    Programme
+                  </th>
                   <th className="p-2 md:p-3 border-b font-semibold">Intake</th>
-                  <th className="p-2 md:p-3 border-b font-semibold">Duration</th>
+                  <th className="p-2 md:p-3 border-b font-semibold">
+                    Duration
+                  </th>
                   <th className="p-2 md:p-3 border-b font-semibold">Type</th>
                 </tr>
               </thead>
@@ -738,11 +918,191 @@ export default function FAQSectionComputer() {
           </div>
         );
 
+      case "academic-results": {
+        const activeTabObj =
+          contentData.content.tabs.find((t) => t.id === activeAcadTab) ||
+          contentData.content.tabs[0];
+
+        const currentYearId =
+          activeAcadYear[activeTabObj.id] || activeTabObj.years[0].id;
+        const activeYearObj =
+          activeTabObj.years.find((y) => y.id === currentYearId) ||
+          activeTabObj.years[0];
+
+        const currentSemId =
+          activeAcadSem[activeTabObj.id] || activeYearObj.sems[0].id;
+        const activeSemObj =
+          activeYearObj.sems.find((s) => s.id === currentSemId) ||
+          activeYearObj.sems[0];
+
+        return (
+          <div className="space-y-6 bg-white p-4 md:p-6 rounded-2xl border border-gray-100 shadow-sm">
+            {/* Level 1: Main Tabs (Autonomy / SPPU) */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pb-4 border-b border-gray-100">
+              <span className="text-xs font-bold uppercase tracking-wider text-gray-400">
+                Pattern:
+              </span>
+              <div className="flex flex-1 gap-2 bg-gray-100/80 p-1.5 rounded-xl">
+                {contentData.content.tabs.map((tab) => {
+                  const isActive = activeAcadTab === tab.id;
+                  return (
+                    <button
+                      key={tab.id}
+                      onClick={() => setActiveAcadTab(tab.id)}
+                      className={`flex-1 py-2.5 px-4 rounded-lg text-sm font-semibold transition-all duration-200 ${
+                        isActive
+                          ? "bg-secondary text-white shadow-sm scale-[1.01]"
+                          : "text-gray-600 hover:text-gray-900 hover:bg-white/60"
+                      }`}
+                    >
+                      {tab.label}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Level 2 & 3: Year & Semester Selection Controls */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-50/70 p-4 rounded-xl border border-slate-200/60">
+              {/* Academic Year Selection */}
+              <div>
+                <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">
+                  Academic Year
+                </label>
+                <div className="flex flex-wrap gap-2">
+                  {activeTabObj.years.map((year) => {
+                    const isActive = currentYearId === year.id;
+                    return (
+                      <button
+                        key={year.id}
+                        onClick={() =>
+                          setActiveAcadYear((prev) => ({
+                            ...prev,
+                            [activeTabObj.id]: year.id,
+                          }))
+                        }
+                        className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                          isActive
+                            ? "bg-blue-900 text-white shadow-xs"
+                            : "bg-white text-gray-700 border border-gray-200 hover:bg-gray-100"
+                        }`}
+                      >
+                        {year.label}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Semester Selection */}
+              <div>
+                <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">
+                  Semester
+                </label>
+                <div className="flex flex-wrap gap-2">
+                  {activeYearObj.sems.map((sem) => {
+                    const isActive = currentSemId === sem.id;
+                    return (
+                      <button
+                        key={sem.id}
+                        onClick={() =>
+                          setActiveAcadSem((prev) => ({
+                            ...prev,
+                            [activeTabObj.id]: sem.id,
+                          }))
+                        }
+                        className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                          isActive
+                            ? "bg-[#003c84] text-white shadow-xs"
+                            : "bg-white text-gray-700 border border-gray-200 hover:bg-gray-100"
+                        }`}
+                      >
+                        {sem.label}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+
+            {/* Results Content Display */}
+            <div className="pt-2">
+              {activeSemObj.message ? (
+                <div className="flex flex-col items-center justify-center py-10 px-4 bg-amber-50/60 border border-dashed border-amber-200 rounded-xl text-center">
+                  <div className="w-10 h-10 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center mb-2 font-bold text-lg">
+                    i
+                  </div>
+                  <p className="text-amber-800 font-semibold text-sm">
+                    {activeSemObj.message}
+                  </p>
+                  <span className="text-xs text-amber-600/80 mt-1">
+                    Please check back later for official announcements.
+                  </span>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+                  {activeSemObj.list &&
+                    activeSemObj.list.map((item) => (
+                      <div
+                        key={item.id}
+                        className="group flex flex-col justify-between p-4 bg-white border border-gray-200/90 rounded-xl hover:border-secondary hover:shadow-md transition-all duration-200"
+                      >
+                        <div className="flex items-start justify-between gap-2 mb-3">
+                          <span className="px-2.5 py-1 rounded-md bg-sky-50 text-secondary text-[11px] font-bold tracking-wide uppercase">
+                            Result
+                          </span>
+                          <svg
+                            className="w-5 h-5 text-gray-400 group-hover:text-secondary transition-colors"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                            />
+                          </svg>
+                        </div>
+                        <h5 className="font-bold text-gray-800 text-sm mb-4 line-clamp-2">
+                          {item.label}
+                        </h5>
+                        <a
+                          href={item.pdf}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full py-2 px-3 bg-slate-50 hover:bg-secondary text-gray-700 hover:text-white rounded-lg border border-gray-200 hover:border-secondary transition-all text-xs font-semibold text-center flex items-center justify-center gap-1.5"
+                        >
+                          <span>View PDF</span>
+                          <svg
+                            className="w-3.5 h-3.5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                            />
+                          </svg>
+                        </a>
+                      </div>
+                    ))}
+                </div>
+              )}
+            </div>
+          </div>
+        );
+      }
+
       case "syllabus":
         if (contentData.content && contentData.content.tabs) {
-          const activeTab = contentData.content.tabs.find(
-            (tab) => tab.id === syllabusTab
-          ) || contentData.content.tabs[0];
+          const activeTab =
+            contentData.content.tabs.find((tab) => tab.id === syllabusTab) ||
+            contentData.content.tabs[0];
 
           return (
             <div className="space-y-6">
@@ -770,7 +1130,9 @@ export default function FAQSectionComputer() {
                     className="flex flex-col md:flex-row md:items-center justify-between p-3 md:p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
                   >
                     <div className="flex-1 mb-3 md:mb-0">
-                      <h5 className="font-semibold text-gray-800">{item.label}</h5>
+                      <h5 className="font-semibold text-gray-800">
+                        {item.label}
+                      </h5>
                     </div>
                     <a
                       href={item.pdf}
@@ -821,7 +1183,9 @@ export default function FAQSectionComputer() {
               <table className="w-full text-sm text-left">
                 <thead className="bg-gray-50 text-gray-700">
                   <tr>
-                    <th className="p-2 md:p-3 border-b font-semibold w-16">Sr.No.</th>
+                    <th className="p-2 md:p-3 border-b font-semibold w-16">
+                      Sr.No.
+                    </th>
                     <th className="p-2 md:p-3 border-b font-semibold min-w-[200px]">
                       Lab Name
                     </th>
@@ -847,8 +1211,12 @@ export default function FAQSectionComputer() {
                         {lab.name}
                       </td>
                       <td className="p-2 md:p-3 text-gray-600">{lab.pcs}</td>
-                      <td className="p-2 md:p-3 text-gray-700">{lab.equipment}</td>
-                      <td className="p-2 md:p-3 text-gray-700">{lab.software}</td>
+                      <td className="p-2 md:p-3 text-gray-700">
+                        {lab.equipment}
+                      </td>
+                      <td className="p-2 md:p-3 text-gray-700">
+                        {lab.software}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -863,9 +1231,15 @@ export default function FAQSectionComputer() {
             <p className="text-yellow-800">{contentData.content}</p>
           </div>
         );
-      case "staff":
+      case "staff-tabs": {
+        const activeTabObj =
+          contentData.content.tabs.find((t) => t.id === activeStaffTab) ||
+          contentData.content.tabs[0];
+
         const StaffPhoto = ({ src, alt }) => {
-          const [currentSrc, setCurrentSrc] = useState(src || "/faculty/newFaculty/placeholder.avif");
+          const [currentSrc, setCurrentSrc] = useState(
+            src || "/faculty/newFaculty/placeholder.avif",
+          );
           const [hasError, setHasError] = useState(false);
 
           return hasError ? (
@@ -902,57 +1276,82 @@ export default function FAQSectionComputer() {
         };
 
         return (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-4">
-            {contentData.content.map((staff, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl shadow-md border border-gray-200 flex flex-col items-center text-center p-5 hover:shadow-lg transition-all duration-300"
-              >
-                <StaffPhoto src={staff.image} alt={staff.name} />
+          <div className="space-y-6">
+            {/* Subtabs for Teaching / Non-Teaching Staff */}
+            <div className="flex flex-col sm:flex-row gap-3 bg-gray-50 p-2.5 rounded-xl border border-gray-200">
+              {contentData.content.tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveStaffTab(tab.id)}
+                  className={`rounded-lg px-5 py-2.5 text-sm font-semibold transition-all ${
+                    activeStaffTab === tab.id
+                      ? "bg-secondary text-white shadow-sm"
+                      : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-200"
+                  }`}
+                >
+                  {tab.label} ({tab.list.length})
+                </button>
+              ))}
+            </div>
 
-                <div className="w-full flex-1 flex flex-col">
-                  <h4 className="font-bold text-gray-900 mb-1 leading-snug">
-                    {staff.name}
-                  </h4>
-                  <p className="text-blue-700 font-semibold text-xs mb-4 uppercase tracking-wider">
-                    {staff.designation}
-                  </p>
+            {/* Staff Grid Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {activeTabObj.list.map((staff, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-xl shadow-sm border border-gray-200 flex flex-col items-center text-center p-5 hover:shadow-md transition-all duration-300"
+                >
+                  <StaffPhoto src={staff.image} alt={staff.name} />
 
-                  <div className="mt-auto pt-4 border-t border-gray-100 space-y-2 text-left">
-                    <div className="text-[11px]">
-                      <span className="text-gray-400 font-bold uppercase mr-1">
-                        Department:
-                      </span>
-                      <span className="text-gray-700 font-medium">
-                        {staff.department}
-                      </span>
-                    </div>
-                    <div className="text-[11px]">
-                      <span className="text-gray-400 font-bold uppercase mr-1">
-                        Qualification:
-                      </span>
-                      <span className="text-gray-700 font-medium">
-                        {staff.qualification}
-                      </span>
-                    </div>
-                    <div className="text-[11px]">
-                      <span className="text-gray-400 font-bold uppercase mr-1">
-                        Joining Date:
-                      </span>
-                      <span className="text-gray-700 font-medium">{staff.doj}</span>
-                    </div>
-                    <div className="text-[11px]">
-                      <span className="text-gray-400 font-bold uppercase mr-1">
-                        Birth Date:
-                      </span>
-                      <span className="text-gray-700 font-medium">{staff.dob}</span>
+                  <div className="w-full flex-1 flex flex-col">
+                    <h4 className="font-bold text-gray-900 mb-1 leading-snug">
+                      {staff.name}
+                    </h4>
+                    <p className="text-blue-700 font-semibold text-xs mb-4 uppercase tracking-wider">
+                      {staff.designation}
+                    </p>
+
+                    <div className="mt-auto pt-4 border-t border-gray-100 space-y-2 text-left">
+                      <div className="text-[11px]">
+                        <span className="text-gray-400 font-bold uppercase mr-1">
+                          Department:
+                        </span>
+                        <span className="text-gray-700 font-medium">
+                          {staff.department}
+                        </span>
+                      </div>
+                      <div className="text-[11px]">
+                        <span className="text-gray-400 font-bold uppercase mr-1">
+                          Qualification:
+                        </span>
+                        <span className="text-gray-700 font-medium">
+                          {staff.qualification}
+                        </span>
+                      </div>
+                      <div className="text-[11px]">
+                        <span className="text-gray-400 font-bold uppercase mr-1">
+                          Joining Date:
+                        </span>
+                        <span className="text-gray-700 font-medium">
+                          {staff.doj}
+                        </span>
+                      </div>
+                      <div className="text-[11px]">
+                        <span className="text-gray-400 font-bold uppercase mr-1">
+                          Birth Date:
+                        </span>
+                        <span className="text-gray-700 font-medium">
+                          {staff.dob}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         );
+      }
     }
   };
 

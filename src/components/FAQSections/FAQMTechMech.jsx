@@ -42,6 +42,7 @@ const syllabusList = [
 // ================== MAIN COMPONENT ==================
 export default function FAQMTechMech() {
   const [active, setActive] = useState("About Us");
+  const [activePdf, setActivePdf] = useState(null);
 
   const sectionContent = {
     "About Us": {
@@ -83,8 +84,8 @@ export default function FAQMTechMech() {
       content: [
         {
           id: "mtech-heat-power-syllabus",
-          label: "M.Tech. Heat Power Engineering (PG) – 2026-27 Pattern",
-          pdf: "/programs/MTECHmech/mtech-heat-power.pdf",
+          label: "First Year M-Tech Mechanical Heat Power Engineering Course Structure 2026",
+          pdf: "/programs/MTECHmech/mtech_heat_power_2026.pdf",
         },
       ],
     },
@@ -146,15 +147,50 @@ export default function FAQMTechMech() {
         );
       case "syllabus":
         return (
-          <div className="space-y-3 md:space-y-4">
-            {data.content.map((item) => (
-              <div key={item.id} className="flex flex-col sm:flex-row sm:items-center justify-between p-3 md:p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
-                <h5 className="font-semibold text-gray-800">{item.label}</h5>
-                <a href={item.pdf} target="_blank" className="px-4 py-2 bg-secondary text-white rounded-md">
-                  View / Download
-                </a>
-              </div>
-            ))}
+          <div className="space-y-4">
+            {data.content.map((item) => {
+              const isViewing = activePdf === item.id;
+              return (
+                <div key={item.id} className="border border-gray-200 rounded-lg overflow-hidden transition-all duration-200">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-gray-50/80 gap-3">
+                    <h5 className="font-semibold text-gray-800 leading-snug">{item.label}</h5>
+                    <div className="flex items-center gap-2 shrink-0">
+                      <button
+                        type="button"
+                        onClick={() => setActivePdf(isViewing ? null : item.id)}
+                        className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+                          isViewing
+                            ? "bg-red-600 hover:bg-red-700 text-white"
+                            : "bg-secondary hover:bg-secondary/90 text-white"
+                        }`}
+                      >
+                        {isViewing ? "Close Preview" : "Preview"}
+                      </button>
+                      <a
+                        href={item.pdf}
+                        download
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 text-sm font-medium border border-gray-300 bg-white text-gray-700 hover:bg-gray-100 rounded-md transition-colors"
+                      >
+                        Download
+                      </a>
+                    </div>
+                  </div>
+                  {isViewing && (
+                    <div className="p-3 md:p-4 border-t border-gray-200 bg-white">
+                      <div className="w-full h-[550px] md:h-[650px] border border-gray-200 rounded-lg overflow-hidden shadow-inner">
+                        <iframe
+                          src={`${item.pdf}#toolbar=0`}
+                          title={item.label}
+                          className="w-full h-full border-0"
+                        />
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         );
       case "staff":

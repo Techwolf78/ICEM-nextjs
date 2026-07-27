@@ -219,6 +219,10 @@ const Footer = () => {
                 name: "Mandatory Disclosure (PDF)",
                 link: "/pdfs/mandatory_disclosure_22012026.pdf",
               },
+              {
+                name: "Leave Policy (PDF)",
+                link: "/assets/pdf/hr_policy_leave.pdf",
+              },
             ].map((item, index) => (
               <li key={index}>
                 <Link

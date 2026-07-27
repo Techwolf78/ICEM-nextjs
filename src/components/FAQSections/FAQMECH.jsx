@@ -307,13 +307,13 @@ const syllabusList = [
   },
   {
     id: "be-autonomous-ty",
-    label: "B.E. Mechanical Engineering (UG) – Third Year Curriculum (Autonomous Pattern)",
-    pdf: "/programs/MTECHmech/ty-syllabus-mech.pdf",
+    label: "Third Year B. Tech Mechanical Course Structure 2024",
+    pdf: "/programs/Mech/third_year_btech_mechanical_course_structure_2024.pdf",
   },
   {
     id: "be",
-    label: "SY B Tech Mechanical Engineering 2025 Course",
-    pdf: "/programs/Mech/SESY.pdf",
+    label: "Second Year B. Tech Mechanical Course Structure 2025",
+    pdf: "/programs/Mech/second_year_btech_mechanical_course_structure_2025.pdf",
   },
 ];
 
@@ -755,6 +755,7 @@ const mesaActivityPhotos = [
 export default function FAQMECH() {
   const [active, setActive] = useState("About Us");
   const [academicSubTab, setAcademicSubTab] = useState("Time Table");
+  const [activePdf, setActivePdf] = useState(null);
   const [mentorSearchQuery, setMentorSearchQuery] = useState("");
   const [selectedTrainingImage, setSelectedTrainingImage] = useState(null);
 
@@ -1068,22 +1069,55 @@ export default function FAQMECH() {
     switch (data.type) {
       case "syllabus":
         return (
-          <div className="space-y-3 md:space-y-4">
-            {data.content.map((item) => (
-              <div
-                key={item.id}
-                className="flex flex-col sm:flex-row sm:items-center justify-between p-3 md:p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
-              >
-                <h5 className="font-semibold text-gray-800">{item.label}</h5>
-                <a
-                  href={item.pdf}
-                  target="_blank"
-                  className="px-4 py-2 bg-secondary text-white rounded-md"
+          <div className="space-y-4">
+            {data.content.map((item) => {
+              const isViewing = activePdf === item.id;
+              return (
+                <div
+                  key={item.id}
+                  className="border border-gray-200 rounded-lg overflow-hidden transition-all duration-200"
                 >
-                  View / Download
-                </a>
-              </div>
-            ))}
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-gray-50/80 gap-3">
+                    <h5 className="font-semibold text-gray-800 leading-snug">
+                      {item.label}
+                    </h5>
+                    <div className="flex items-center gap-2 shrink-0">
+                      <button
+                        type="button"
+                        onClick={() => setActivePdf(isViewing ? null : item.id)}
+                        className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+                          isViewing
+                            ? "bg-red-600 hover:bg-red-700 text-white"
+                            : "bg-secondary hover:bg-secondary/90 text-white"
+                        }`}
+                      >
+                        {isViewing ? "Close Preview" : "Preview"}
+                      </button>
+                      <a
+                        href={item.pdf}
+                        download
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 text-sm font-medium border border-gray-300 bg-white text-gray-700 hover:bg-gray-100 rounded-md transition-colors"
+                      >
+                        Download
+                      </a>
+                    </div>
+                  </div>
+                  {isViewing && (
+                    <div className="p-3 md:p-4 border-t border-gray-200 bg-white">
+                      <div className="w-full h-[550px] md:h-[650px] border border-gray-200 rounded-lg overflow-hidden shadow-inner">
+                        <iframe
+                          src={`${item.pdf}#toolbar=0`}
+                          title={item.label}
+                          className="w-full h-full border-0"
+                        />
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         );
       case "accordion":

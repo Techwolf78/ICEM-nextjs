@@ -61,7 +61,7 @@ export default function Sidebar() {
     { label: "Electronics and Telecommunication", link: "/programs/entc" },
     { label: "First Year Engineering", link: "/programs/fye" },
     { label: "Information Technology", link: "/programs/it" },
-    { label: "Integrated MBA (BBA + MBA)", link: "/programs/imba" },
+    // { label: "Integrated MBA (BBA + MBA)", link: "/programs/imba" },
     { label: "Integrated MCA (BCA + MCA)", link: "/programs/imca" },
     { label: "MBA", link: "/programs/mba" },
     { label: "MCA", link: "/programs/mca" },

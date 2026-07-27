@@ -19,7 +19,6 @@ export default function Mech() {
 
   const faqRef = React.useRef(null);
 
-
   // Brochure Download
   const handleBrochureDownload = () => {
     const link = document.createElement("a");
@@ -31,14 +30,13 @@ export default function Mech() {
   };
 
   const scrollToFAQ = () => {
-  if (faqRef.current) {
-    faqRef.current.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  }
-};
-
+    if (faqRef.current) {
+      faqRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
 
   const [activeTab, setActiveTab] = useState("Overview");
 
@@ -56,12 +54,9 @@ export default function Mech() {
 
   const [selectedLab, setSelectedLab] = useState(null);
 
-
-  
-
   const labsGallery = [
     {
-      image: "/programs/Mech/DSC02683.webp",
+      image: "/programs/Mech/DSC02683_thumb.jpg",
       title: "Metrology and Quality Control",
       details: [
         "Auto Collimator With Angle Dekker",
@@ -73,7 +68,7 @@ export default function Mech() {
       ],
     },
     {
-      image: "/programs/Mech/DSC02671.webp",
+      image: "/programs/Mech/DSC02671_thumb.jpg",
       title: "Mechatronics",
       details: [
         "Micrologix 1000 PLC Trainer",
@@ -84,7 +79,7 @@ export default function Mech() {
       ],
     },
     {
-      image: "/programs/Mech/DSC02680.webp",
+      image: "/programs/Mech/DSC02680_thumb.jpg",
       title: "Refrigeration & Air Conditioning",
       details: [
         "Compression Refrigeration Test Rig",
@@ -95,7 +90,7 @@ export default function Mech() {
       ],
     },
     {
-      image: "/programs/Mech/DSC02662.webp",
+      image: "/programs/Mech/DSC02662_thumb.jpg",
       title: "Industrial Fluid Power",
       details: [
         "Advanced Pneumatic Trainer",
@@ -106,7 +101,7 @@ export default function Mech() {
       ],
     },
     {
-      image: "/programs/Mech/DSC02678.webp",
+      image: "/programs/Mech/DSC02678_thumb.jpg",
       title: "Heat and Mass Transfer",
       details: [
         "Thermal Conductivity of Metal Rod Apparatus",
@@ -120,7 +115,7 @@ export default function Mech() {
       ],
     },
     {
-      image: "/programs/Mech/DSC02690.webp",
+      image: "/programs/Mech/DSC02690_thumb.jpg",
       title: "Theory of Machines",
       details: [
         "Synchromesh Gear Box",
@@ -132,7 +127,7 @@ export default function Mech() {
       ],
     },
     {
-      image: "/programs/Mech/DSC02689.webp",
+      image: "/programs/Mech/DSC02689_thumb.jpg",
       title: "Dynamics of Machinery",
       details: [
         "Static & Dynamic Balancing Apparatus",
@@ -145,16 +140,17 @@ export default function Mech() {
   return (
     <div className="w-full text-white">
       {/* ===== TOP DARK SECTION ===== */}
-      <div className="relative w-full overflow-hidden   
-  h-[55vh] md:h-[70vh] lg:h-[75vh] flex items-center">
-
-  {/* Background Image */}
-  <div className="absolute inset-0">
-    <Image
-      src="/programs/AIDS2.jpg"
-      alt="Artificial Intelligence Program"
-      fill
-      className="
+      <div
+        className="relative w-full overflow-hidden   
+  h-[55vh] md:h-[70vh] lg:h-[75vh] flex items-center"
+      >
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/programs/AIDS2.jpg"
+            alt="Artificial Intelligence Program"
+            fill
+            className="
         object-cover 
         object-center 
         md:object-[60%]      /* improves image framing on small desktop */
@@ -163,13 +159,13 @@ export default function Mech() {
         lg:scale-110 
         opacity-90
       "
-      priority
-    />
-  </div>
+            priority
+          />
+        </div>
 
-  {/* Dark Gradient Overlay */}
-  <div
-    className="
+        {/* Dark Gradient Overlay */}
+        <div
+          className="
       absolute inset-0 
       bg-gradient-to-r 
       from-black/85 
@@ -179,25 +175,23 @@ export default function Mech() {
       lg:via-black/40 
       z-10
     "
-  />
+        />
 
-  {/* Content Wrapper */}
-  <div className="relative max-w-[1400px] px-4 sm:px-6 md:px-10 lg:px-20 z-20">
-    <div className="max-w-2xl md:max-w-xl lg:max-w-3xl text-white">
-
-      {/* Heading */}
-      <h2
-        className="
+        {/* Content Wrapper */}
+        <div className="relative max-w-[1400px] px-4 sm:px-6 md:px-10 lg:px-20 z-20">
+          <div className="max-w-2xl md:max-w-xl lg:max-w-3xl text-white">
+            {/* Heading */}
+            <h2
+              className="
           text-xl sm:text-2xl md:text-3xl lg:text-4xl
           font-bold leading-tight md:leading-snug 
         "
-      >
-        4-Year B.Tech Mechanical Engineering <br /> Programme
-        
-        with specialisation in
-        <br />
-        <span
-          className="
+            >
+              4-Year B.Tech Mechanical Engineering <br /> Programme with
+              specialisation in
+              <br />
+              <span
+                className="
             bg-gradient-to-br 
             from-cyan-400 
             to-sky-400 
@@ -206,30 +200,31 @@ export default function Mech() {
             font-extrabold
             text-xl sm:text-2xl md:text-3xl lg:text-4xl
           "
-        >
-           Electric Vehicle Technologies
-        </span>
-      </h2>
+              >
+                Electric Vehicle Technologies
+              </span>
+            </h2>
 
-      {/* Description */}
-      <p
-        className="
+            {/* Description */}
+            <p
+              className="
           mt-3 sm:mt-4 
           text-white/80 
           leading-relaxed
           max-w-xl md:max-w-md lg:max-w-xl
           text-xs sm:text-sm md:text-base text-justify
         "
-      >
-        This programme equips students with the knowledge and skills to design,
-        develop, and optimize intelligent, automated, and sustainable systems.
-      </p>
+            >
+              This programme equips students with the knowledge and skills to
+              design, develop, and optimize intelligent, automated, and
+              sustainable systems.
+            </p>
 
-    {/* Buttons - FIXED */}
-    <div className="flex  sm:flex-row gap-3 sm:gap-4 mt-6 ">
-      <button
-        onClick={toggleModal}
-        className="
+            {/* Buttons - FIXED */}
+            <div className="flex  sm:flex-row gap-3 sm:gap-4 mt-6 ">
+              <button
+                onClick={toggleModal}
+                className="
           bg-[#003c84] text-white px-4 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold
           text-xs sm:text-base md:text-lg
           w-full sm:w-auto
@@ -239,13 +234,13 @@ export default function Mech() {
           active:scale-95
           hover:transform hover:-translate-y-1
         "
-      >
-        Enquire Now
-      </button>
+              >
+                Enquire Now
+              </button>
 
-      <button
-        onClick={handleBrochureDownload}
-        className="
+              <button
+                onClick={handleBrochureDownload}
+                className="
           bg-[#003c84] text-white px-4 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold
           text-xs sm:text-base md:text-lg
           w-full sm:w-auto
@@ -255,18 +250,16 @@ export default function Mech() {
           active:scale-95
           hover:transform hover:-translate-y-1
         "
-      >
-        Download Brochure
-      </button>
-    </div>
+              >
+                Download Brochure
+              </button>
+            </div>
+          </div>
+        </div>
 
-    </div>
-  </div>
-
-  {/* Bottom Fade Mask */}
-  <div className="absolute bottom-0 w-full h-20 bg-gradient-to-t from-black/50 to-transparent" />
-</div>
-
+        {/* Bottom Fade Mask */}
+        <div className="absolute bottom-0 w-full h-20 bg-gradient-to-t from-black/50 to-transparent" />
+      </div>
 
       {/* ===== WHITE INFO SECTION ===== */}
       <div className="w-full bg-[#f8f8f8] text-black py-12">
@@ -305,10 +298,10 @@ export default function Mech() {
             <h4 className="font-semibold text-lg flex items-center gap-2 mb-2">
               🎓 Eligibility
             </h4>
-            <p 
+            <p
               onClick={scrollToFAQ}
-            className="text-gray-700 cursor-pointer hover:text-blue-600 hover:underline transition-colors">
-              
+              className="text-gray-700 cursor-pointer hover:text-blue-600 hover:underline transition-colors"
+            >
               Click here to read more about the eligibility criteria for our
               B.E. in Mechanical Engineering.
             </p>
@@ -349,7 +342,10 @@ export default function Mech() {
           </div>
 
           {/* RIGHT FORM SECTION */}
-          <div id="programme-structure" className="bg-white p-4 rounded-lg shadow-sm flex flex-col justify-between border border-gray-100">
+          <div
+            id="programme-structure"
+            className="bg-white p-4 rounded-lg shadow-sm flex flex-col justify-between border border-gray-100"
+          >
             <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-2 leading-snug text-center">
               Enquire Now
             </h2>
@@ -456,124 +452,99 @@ export default function Mech() {
 
       {/* ===== LABS GALLERY SECTION ===== */}
       <div className="w-full py-16 bg-white text-black">
-  <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-secondary text-center mb-4">
+            Mechanical Engineering Laboratories
+          </h2>
 
-    {/* 🔥 Heading Section */}
-    <h2 className="text-3xl font-bold text-secondary text-center mb-4">
-      Mechanical Engineering Laboratories
-    </h2>
+          <p className="text-gray-700 text-center max-w-2xl mx-auto mb-12">
+            Explore our state-of-the-art laboratories designed to enhance
+            practical learning, innovation, and hands-on engineering experience.
+          </p>
 
-    <p className="text-gray-700 text-center max-w-2xl mx-auto mb-12">
-      Explore our state-of-the-art laboratories designed to enhance 
-      practical learning, innovation, and hands-on engineering experience.
-    </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+            {labsGallery.map((lab, index) => (
+              <div
+                key={index}
+                className="relative group rounded-xl overflow-hidden shadow-md"
+              >
+                <Image
+                  src={lab.image}
+                  alt={lab.title}
+                  width={400}
+                  height={250}
+                  loading="lazy"
+                  decoding="async"
+                  className="object-cover w-full h-56"
+                />
 
-    {/* 🔥 Card Grid */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-      {labsGallery.map((lab, index) => (
-        <div
-          key={index}
-          className="
-            relative group rounded-xl
-            transition-transform duration-500
-            hover:scale-105
-          "
-        >
-          {/* CARD WRAPPER */}
-          <div className="rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500">
+                <div
+                  className="
+              absolute bottom-0 w-full bg-black/60 p-3 text-white 
+              text-center font-semibold text-lg
+              transition-opacity duration-200
+              group-hover:opacity-0 pointer-events-none
+            "
+                >
+                  {lab.title}
+                </div>
 
-            {/* IMAGE */}
-            <Image
-              src={lab.image}
-              alt={lab.title}
-              width={500}
-              height={300}
-              className="
-                object-cover w-full h-56
-                transform group-hover:scale-110
-                transition-all duration-500
-              "
-            />
+                <div
+                  className="
+              absolute inset-0 bg-black/75 
+              opacity-0 group-hover:opacity-100 
+              transition-opacity duration-200 
+              flex flex-col items-center justify-center p-4
+            "
+                >
+                  <button
+                    onClick={() => setSelectedLab(lab)}
+                    className="px-4 py-2 bg-secondary text-white rounded-lg shadow-md hover:bg-secondary/90 transition-colors duration-150"
+                  >
+                    Know More
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
-            {/* BOTTOM TITLE */}
-            <div
-              className="
-                absolute bottom-0 w-full bg-black/60 p-3 text-white 
-                text-center font-semibold text-lg
-                transition-all duration-300
-                group-hover:opacity-0 group-hover:translate-y-3
-              "
-            >
-              {lab.title}
+      {selectedLab && (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-[999] px-4">
+          <div className="bg-white rounded-xl shadow-xl max-w-lg w-full overflow-hidden animate-fadeIn">
+            <div className="relative w-full h-64">
+              <Image
+                src={selectedLab.image}
+                alt={selectedLab.title}
+                fill
+                className="object-cover"
+              />
             </div>
 
-            {/* HOVER OVERLAY WITH BUTTON */}
-            <div
-              className="
-                absolute inset-0 bg-black/70 
-                opacity-0 group-hover:opacity-100 
-                transition-all duration-300 
-                flex flex-col items-center justify-center
-              "
-            >
-              <button
-                onClick={() => setSelectedLab(lab)}
-                className="px-4 py-2 bg-secondary text-white rounded-lg shadow-md hover:bg-secondary/90 transition"
-              >
-                Know More
-              </button>
+            <div className="p-6">
+              <h2 className="text-2xl font-bold text-secondary mb-4">
+                {selectedLab.title}
+              </h2>
+
+              <ul className="text-gray-700 text-sm space-y-1 mb-6">
+                {selectedLab.details.map((d, i) => (
+                  <li key={i}>• {d}</li>
+                ))}
+              </ul>
+
+              <div className="text-right">
+                <button
+                  onClick={() => setSelectedLab(null)}
+                  className="px-4 py-2 bg-secondary text-white rounded-lg hover:bg-secondary/90"
+                >
+                  Close
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      ))}
-    </div>
-
-  </div>
-</div>
-
-
-{selectedLab && (
-  <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-[999] px-4">
-    <div className="bg-white rounded-xl shadow-xl max-w-lg w-full overflow-hidden animate-fadeIn">
-      
-      {/* IMAGE */}
-      <Image
-        src={selectedLab.image}
-        alt={selectedLab.title}
-        width={600}
-        height={350}
-        className="w-full h-64 object-cover"
-      />
-
-      {/* CONTENT */}
-      <div className="p-6">
-        <h2 className="text-2xl font-bold text-secondary mb-4">
-          {selectedLab.title}
-        </h2>
-
-        <ul className="text-gray-700 text-sm space-y-1 mb-6">
-          {selectedLab.details.map((d, i) => (
-            <li key={i}>• {d}</li>
-          ))}
-        </ul>
-
-        {/* CLOSE BUTTON */}
-        <div className="text-right">
-          <button
-            onClick={() => setSelectedLab(null)}
-            className="px-4 py-2 bg-secondary text-white rounded-lg hover:bg-secondary/90"
-          >
-            Close
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-)}
-
-
-
-
+      )}
 
       {/* ===== CAREER OPPORTUNITIES SECTION ===== */}
       <div className="w-full bg-white text-black py-16">
@@ -661,11 +632,13 @@ export default function Mech() {
 
       {/* ===== FREQUENTLY ASKED QUESTIONS SECTION ===== */}
       <div ref={faqRef}>
-  <FAQSection />
-</div>
+        <FAQSection />
+      </div>
 
-
-      <EnquireNowProgramModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <EnquireNowProgramModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 }

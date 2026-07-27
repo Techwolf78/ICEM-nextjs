@@ -49,19 +49,41 @@ export default function ThankYouPage() {
   return (
     <>
       <div className="min-h-screen bg-secondary/10 flex items-center justify-center px-4">
-        {/* Google Ads Conversion Event - only tracked once per session */}
+        {/* Google Ads Conversion Events - tracked once per session */}
         {shouldTrack && (
-          <Script
-            id="google-ads-conversion"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){window.dataLayer.push(arguments);}
-                gtag('event', 'conversion', {'send_to': 'AW-16606532987/IVt0COaGu7kZEPuqzu49'});
-              `,
-            }}
-          />
+          <>
+            {/* 1. Official Main Website Google Ads Conversion */}
+            <Script
+              id="google-ads-official-conversion"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){window.dataLayer.push(arguments);}
+                  gtag('event', 'conversion', {'send_to': 'AW-16606532987/IVt0COaGu7kZEPuqzu49'});
+                `,
+              }}
+            />
+
+            {/* 2. MBA & MCA Landing Pages Google Tag & Conversion */}
+            <Script
+              id="google-ads-lp-gtag"
+              strategy="afterInteractive"
+              src="https://www.googletagmanager.com/gtag/js?id=AW-17526008744"
+            />
+            <Script
+              id="google-ads-lp-conversion"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){window.dataLayer.push(arguments);}
+                  gtag('config', 'AW-17526008744');
+                  gtag('event', 'conversion', {'send_to': 'AW-17526008744/sAysCIuW0pIbEKjXhqVB'});
+                `,
+              }}
+            />
+          </>
         )}
         <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8 text-center">
           <div className="mb-6">

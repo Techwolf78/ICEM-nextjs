@@ -10,7 +10,7 @@ const staffData = [
     sn: 1,
     id: "1521",
     name: "Dr. Archana Ravindra Salve",
-    designation: "Professor & Dean",
+    designation: "Professor, HOD MBA, Dean ED Cell",
     department: "MBA",
     qualification: "BAMS MBA NET Ph.D",
     doj: "30/01/2017",
@@ -72,6 +72,50 @@ const staffData = [
     dob: "08/07/1990",
     image: "/faculty/final_Icem_branding/mba/Mr. Mani Shankar Pandey.webp",
   },
+  {
+    sn: 7,
+    id: "1680",
+    name: "Dr. Deepa Nitin Jamnik",
+    designation: "Assistant Professor, Dean (Events & Branding)",
+    department: "BBA",
+    qualification: "Ph.D BBA MBA NET",
+    doj: "01/07/2024",
+    dob: "18/05/1984",
+    image: "/faculty/final_Icem_branding/mba/deepajamnik.webp",
+  },
+  {
+    sn: 8,
+    id: "0244",
+    name: "Mrs. Sonali Shashank Pradhan",
+    designation: "Academic Coordinator",
+    department: "IMBA",
+    qualification: "BA, MBA - HR",
+    doj: "20/07/2007",
+    dob: "23/08/1973",
+    image: "/programs/IBCAMBA/sonail_pradhan.jpg",
+  },
+  {
+    sn: 9,
+    id: "3154",
+    name: "Mrs. Dipali Rahul Nimbalkar",
+    designation: "Assistant Professor",
+    department: "BBA",
+    qualification: "B.Sc MBA",
+    doj: "06/01/2025",
+    dob: "06/09/1987",
+    image: "/faculty/final_Icem_branding/mba/dipalinimbalkar.webp",
+  },
+  {
+    sn: 10,
+    id: "3293",
+    name: "Prof. Vaibhav Wasankar",
+    designation: "Assistant Professor",
+    department: "IMBA",
+    qualification: "B.Tech, MBA (MKT), Dual MBA (OP)",
+    doj: "10/03/2026",
+    dob: "07/12/1995",
+    image: "/programs/IBCAMBA/vaibhav.jpg",
+  },
 ];
 
 // ================== SYLLABUS DATA ==================
@@ -94,12 +138,12 @@ const syllabusList = [
   {
     id: "fy-mba-syllabus-26-27",
     label: "FY MBA Detailed Syllabus (A.Y. 2026-27)",
-    pdf: "/programs/MBA/FY MBA SYLLABUS COPY 2026-27,.docx",
+    pdf: "/programs/MBA/first_year_mba_syllabus_26-27.pdf",
   },
   {
     id: "sy-mba-syllabus-26-27",
     label: "SY MBA Detailed Syllabus (A.Y. 2026-27)",
-    pdf: "/programs/MBA/SYMBA SYLLABUS COPY 2026-27.doc",
+    pdf: "/programs/MBA/second_year_mba_syllabus_26-27.pdf",
   },
   {
     id: "mba-syllabus-scan",
@@ -182,9 +226,48 @@ export default function FAQMBA() {
       content: [
         {
           program: "MBA",
-          intake: "60 Seats",
+          intake: "120 Seats",
           duration: "2 Years",
           type: "Full Time",
+        },
+        {
+          program: "MBA (Working Professionals)",
+          intake: "30 Seats",
+          duration: "2 Years",
+          type: "Flexible / Part Time",
+        },
+      ],
+    },
+
+    "Faculty Development Details": {
+      type: "syllabus",
+      content: [
+        {
+          id: "faculty-development-details",
+          label: "Faculty Development Program Details",
+          pdf: "/programs/MBA/faculty_development_program_details.pdf",
+        },
+      ],
+    },
+
+    "MBA Faculty Details": {
+      type: "syllabus",
+      content: [
+        {
+          id: "mba-faculty-details",
+          label: "MBA Faculty Details",
+          pdf: "/programs/MBA/mba_faculty_details_001.pdf",
+        },
+      ],
+    },
+
+    "Teaching Cases": {
+      type: "syllabus",
+      content: [
+        {
+          id: "teaching-cases",
+          label: "Teaching Cases Details",
+          pdf: "/programs/MBA/teaching_cases.pdf",
         },
       ],
     },
@@ -236,6 +319,21 @@ export default function FAQMBA() {
     "Syllabus & Course Structure": {
       type: "syllabus",
       content: syllabusList,
+    },
+    Newsletter: {
+      type: "syllabus",
+      content: [
+        {
+          id: "mba-newsletter-nov-feb-2025-26",
+          label: "ICEM MBA Newsletter (November 2025 - February 2026)",
+          pdf: "/programs/MBA/newsletter_icemmbanov_2025.pdf",
+        },
+        {
+          id: "mba-newsletter-sep-oct-2025",
+          label: "ICEM MBA Newsletter (September 2025 - October 2025)",
+          pdf: "/programs/MBA/icem_mba_sep_oct_2025_newsletter.pdf",
+        },
+      ],
     },
     Staff: {
       type: "staff",

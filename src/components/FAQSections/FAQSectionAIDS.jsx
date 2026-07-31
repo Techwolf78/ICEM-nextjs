@@ -94,6 +94,28 @@ const teachingStaff = [
     dob: "18/12/1990",
     image: "/faculty/final_icem_branding/aids/Vivek Sohagora.webp",
   },
+  {
+    sn: 10,
+    id: "TBD",
+    name: "Prof. Amit Kumar",
+    designation: "Assistant Professor",
+    department: "AIDS",
+    qualification: "Pursuing Ph.D., M.Tech",
+    doj: "20/07/2026",
+    dob: "21/10/1991",
+    image: "/programs/AIDS/amit_kumar.webp",
+  },
+  {
+    sn: 11,
+    id: "TBD",
+    name: "Prof. Trupti Bhagat",
+    designation: "Assistant Professor",
+    department: "AIDS",
+    qualification: "M.E.(CSE) , B.E",
+    doj: "11/07/2026",
+    dob: "14/06/1994",
+    image: "/programs/AIDS/trupti_bhagat.webp",
+  },
 ];
 
 const newDetailedStaff = [];

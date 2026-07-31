@@ -22,8 +22,8 @@ export default function Computer() {
   // Brochure Download
   const handleBrochureDownload = () => {
     const link = document.createElement("a");
-    link.href = "/brochures/ICEMAdmissionBrochure2025.pdf";
-    link.download = "ICEM-Brochure.pdf";
+    link.href = "/programs/mca/admission_brochure.pdf";
+    link.download = "admission_brochure.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

@@ -24,8 +24,14 @@ export default function CTASection() {
   // ✅ Brochure Download
   const handleBrochureDownload = () => {
     const link = document.createElement("a");
-    link.href = "/brochures/ICEMAdmissionBrochure2025.pdf";
-    link.download = "ICEMAdmissionBrochure2025.pdf";
+    const currentPath = (typeof window !== "undefined" ? window.location.pathname : pathname).replace(/\/$/, "");
+    if (currentPath === "/programs/mca") {
+      link.href = "/programs/mca/admission_brochure.pdf";
+      link.download = "admission_brochure.pdf";
+    } else {
+      link.href = "/brochures/ICEMAdmissionBrochure2025.pdf";
+      link.download = "ICEMAdmissionBrochure2025.pdf";
+    }
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

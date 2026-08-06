@@ -43,11 +43,10 @@ const staffData = [
 
 // ================== SYLLABUS DATA ==================
 const syllabusList = [
-  
   {
-    id: "sybtech",
-    label: "IMCA (2025 Course Pattern) Syllabus Structure IMCA 2025",
-    pdf: "/programs/IBBAMCA/SY.pdf",
+    id: "imca-2025-30",
+    label: "Course Structure IMCA 2025-2030",
+    pdf: "/programs/mca/course_structure_imca_2025_2030.pdf",
   },  
 ];
 

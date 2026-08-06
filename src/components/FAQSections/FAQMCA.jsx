@@ -77,14 +77,14 @@ const staffData = [
 // ================== SYLLABUS DATA ==================
 const syllabusList = [
   {
-    id: "sybtech",
+    id: "mca-2024-26",
     label: "MCA-(2024-26) Syllabus",
-    pdf: "/programs/mca/SY2426.pdf",
+    pdf: "/programs/mca/fy_sy_mca_2026_2028_syllabus.pdf",
   },
   {
-    id: "sybtech2025",
+    id: "mca-2025-27",
     label: "MCA-(2025-27) Syllabus",
-    pdf: "/assets/pdf/syllabus/mca-25-27-new.pdf",
+    pdf: "/programs/mca/fy_sy_mca_2025_2027_syllabus.pdf",
   },
 ];
 

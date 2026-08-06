@@ -259,18 +259,18 @@ const nonTeachingStaff = [
 const autonomySyllabusList = [
   {
     id: "sybtech",
-    label: "SY B.Tech (2025 Pattern) Syllabus",
+    label: "SY B.Tech (2024 Pattern) Syllabus",
     pdf: "/programs/Computer/se_2019.pdf",
   },
   {
-    id: "ty-structure",
-    label: "TY B.Tech (2025 Pattern) Structure",
-    pdf: "/programs/Computer/ty_bTech_structure.pdf",
+    id: "sybtech-sem3",
+    label: "SY B.Tech SEM III (2025 Pattern)",
+    pdf: "/programs/Computer/sy_btech_sem_iii.pdf",
   },
   {
-    id: "fy-structure",
-    label: "Fourth Year B.Tech (2025 Pattern) Structure",
-    pdf: "/programs/Computer/fourth_year_btech_structure.pdf",
+    id: "tybtech-sem5",
+    label: "TY B.Tech SEM V (2024 Pattern)",
+    pdf: "/programs/Computer/ty_btech_sem_v.pdf",
   },
 ];
 
@@ -291,9 +291,19 @@ const sppuSyllabusList = [
 // ================== ACADEMIC CALENDAR DATA ==================
 const academicCalendarList = [
   {
-    id: "compac",
-    label: "Computer Academic Calendar",
-    pdf: "/programs/Computer/COMPAC.pdf",
+    id: "compac-25-26",
+    label: "Department Academic Calendar SEM I (AY 2025-26)",
+    pdf: "/programs/Computer/compac.pdf",
+  },
+  {
+    id: "dept-ac-26-27",
+    label: "Department Academic Calendar SEM I (AY 2026-27)",
+    pdf: "/programs/Computer/department_academic_calendar_sem_i_ay_2026_27.pdf",
+  },
+  {
+    id: "inst-ac-26-27",
+    label: "Institute Academic Calendar SEM I (AY 2026-27)",
+    pdf: "/programs/Computer/institute_academic_calendar_sem_i_ay_2026_27.pdf",
   },
 ];
 
@@ -447,8 +457,14 @@ export default function FAQSectionComputer() {
   const [active, setActive] = useState("FRA - Fee Structure");
   const [syllabusTab, setSyllabusTab] = useState("autonomy");
   const [activeAcadTab, setActiveAcadTab] = useState("autonomy");
-  const [activeAcadYear, setActiveAcadYear] = useState({ autonomy: "ay-25-26", sppu: "ay-24-25" });
-  const [activeAcadSem, setActiveAcadSem] = useState({ autonomy: "sem-1", sppu: "sem-1" });
+  const [activeAcadYear, setActiveAcadYear] = useState({
+    autonomy: "ay-25-26",
+    sppu: "ay-24-25",
+  });
+  const [activeAcadSem, setActiveAcadSem] = useState({
+    autonomy: "sem-1",
+    sppu: "sem-1",
+  });
   const [activeStaffTab, setActiveStaffTab] = useState("teaching");
 
   useEffect(() => {
@@ -490,7 +506,7 @@ export default function FAQSectionComputer() {
       type: "accordion",
       content: {
         Vision: [
-          "To become an acclaimed center of excellence by rendering modern technology, academics\n and research for creating holistic, socio-economic professionals with interdisciplinary potential.",
+          "To become an acclaimed center of excellence by rendering modern technology,\n academics and research for creating holistic, socio-economic professionals \n with interdisciplinary potential.",
         ],
         Mission: [
           "To foster strong fundamental concepts to students and inspire them to find creative\n solutions with critical thinking and disciplined time managed environment.",
@@ -636,14 +652,20 @@ export default function FAQSectionComputer() {
                       {
                         id: "sy-btech-25-26-sem1",
                         label: "S.Y. BTech 25-26 SEM I",
-                        pdf: "/programs/Computer/S.Y. BTech 25-26 SEM I.pdf",
+                        pdf: "/programs/Computer/sy_btech_25_26_sem_i.pdf",
                       },
                     ],
                   },
                   {
                     id: "sem-2",
                     label: "SEM II Results",
-                    message: "Results yet to declare.",
+                    list: [
+                      {
+                        id: "sy-btech-25-26-sem2",
+                        label: "SY BTech 25-26 SEM II",
+                        pdf: "/programs/Computer/sy_btech_25_26_sem_ii.pdf",
+                      },
+                    ],
                   },
                 ],
               },
@@ -724,7 +746,13 @@ export default function FAQSectionComputer() {
                   {
                     id: "sem-2",
                     label: "SEM II Results",
-                    message: "Results yet to declare.",
+                    list: [
+                      {
+                        id: "be-25-26-sem2",
+                        label: "BE A. Y. 2025-26 SEM II",
+                        pdf: "/programs/Computer/be_result_analysis_25_26.pdf",
+                      },
+                    ],
                   },
                 ],
               },
@@ -770,9 +798,102 @@ export default function FAQSectionComputer() {
     },
 
     "Time Table": {
-      type: "syllabus",
-      content: timeTableList,
-      title: "Time Tables",
+      type: "academic-results",
+      content: {
+        tabs: [
+          {
+            id: "ay-25-26",
+            label: "A.Y. 2025–26",
+            years: [
+              {
+                id: "y-25-26",
+                label: "A.Y. 2025–26",
+                sems: [
+                  {
+                    id: "sem-1",
+                    label: "SEM I",
+                    list: [
+                      {
+                        id: "sy-tt",
+                        label: "SY Time Table",
+                        pdf: "/programs/Computer/sett.pdf",
+                      },
+                      {
+                        id: "te-tt",
+                        label: "TE Time Table",
+                        pdf: "/programs/Computer/tett.pdf",
+                      },
+                      {
+                        id: "be-tt",
+                        label: "BE Time Table",
+                        pdf: "/programs/Computer/bett.pdf",
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: "ay-26-27",
+            label: "A.Y. 2026-27",
+            years: [
+              {
+                id: "y-26-27",
+                label: "A.Y. 2026-27",
+                sems: [
+                  {
+                    id: "sem-1",
+                    label: "SEM I",
+                    list: [
+                      {
+                        id: "sy-a",
+                        label: "SY A",
+                        pdf: "/programs/Computer/sy_a_div.pdf",
+                      },
+                      {
+                        id: "sy-b",
+                        label: "SY B",
+                        pdf: "/programs/Computer/sy_b_div.pdf",
+                      },
+                      {
+                        id: "sy-c",
+                        label: "SY C",
+                        pdf: "/programs/Computer/sy_c_div.pdf",
+                      },
+                      {
+                        id: "ty-a",
+                        label: "TY A",
+                        pdf: "/programs/Computer/ty_a_div.pdf",
+                      },
+                      {
+                        id: "ty-b",
+                        label: "TY B",
+                        pdf: "/programs/Computer/ty_b_div.pdf",
+                      },
+                      {
+                        id: "ty-c",
+                        label: "TY C",
+                        pdf: "/programs/Computer/ty_c_div.pdf",
+                      },
+                      {
+                        id: "be-a",
+                        label: "BE A",
+                        pdf: "/programs/Computer/be_a_div.pdf",
+                      },
+                      {
+                        id: "be-b",
+                        label: "BE B",
+                        pdf: "/programs/Computer/be_b_div.pdf",
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
     },
 
     // Achievements: {
@@ -944,7 +1065,7 @@ export default function FAQSectionComputer() {
               </span>
               <div className="flex flex-1 gap-2 bg-gray-100/80 p-1.5 rounded-xl">
                 {contentData.content.tabs.map((tab) => {
-                  const isActive = activeAcadTab === tab.id;
+                  const isActive = activeTabObj.id === tab.id;
                   return (
                     <button
                       key={tab.id}
@@ -963,66 +1084,70 @@ export default function FAQSectionComputer() {
             </div>
 
             {/* Level 2 & 3: Year & Semester Selection Controls */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-50/70 p-4 rounded-xl border border-slate-200/60">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-slate-50/70 p-4 rounded-xl border border-slate-200/60">
               {/* Academic Year Selection */}
-              <div>
-                <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">
-                  Academic Year
-                </label>
-                <div className="flex flex-wrap gap-2">
-                  {activeTabObj.years.map((year) => {
-                    const isActive = currentYearId === year.id;
-                    return (
-                      <button
-                        key={year.id}
-                        onClick={() =>
-                          setActiveAcadYear((prev) => ({
-                            ...prev,
-                            [activeTabObj.id]: year.id,
-                          }))
-                        }
-                        className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-                          isActive
-                            ? "bg-blue-900 text-white shadow-xs"
-                            : "bg-white text-gray-700 border border-gray-200 hover:bg-gray-100"
-                        }`}
-                      >
-                        {year.label}
-                      </button>
-                    );
-                  })}
+              {activeTabObj.years && activeTabObj.years.length > 0 && (
+                <div>
+                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">
+                    Academic Year
+                  </label>
+                  <div className="flex flex-wrap gap-2">
+                    {activeTabObj.years.map((year) => {
+                      const isActive = activeYearObj.id === year.id;
+                      return (
+                        <button
+                          key={year.id}
+                          onClick={() =>
+                            setActiveAcadYear((prev) => ({
+                              ...prev,
+                              [activeTabObj.id]: year.id,
+                            }))
+                          }
+                          className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                            isActive
+                              ? "bg-blue-900 text-white shadow-xs"
+                              : "bg-white text-gray-700 border border-gray-200 hover:bg-gray-100"
+                          }`}
+                        >
+                          {year.label}
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Semester Selection */}
-              <div>
-                <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">
-                  Semester
-                </label>
-                <div className="flex flex-wrap gap-2">
-                  {activeYearObj.sems.map((sem) => {
-                    const isActive = currentSemId === sem.id;
-                    return (
-                      <button
-                        key={sem.id}
-                        onClick={() =>
-                          setActiveAcadSem((prev) => ({
-                            ...prev,
-                            [activeTabObj.id]: sem.id,
-                          }))
-                        }
-                        className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-                          isActive
-                            ? "bg-[#003c84] text-white shadow-xs"
-                            : "bg-white text-gray-700 border border-gray-200 hover:bg-gray-100"
-                        }`}
-                      >
-                        {sem.label}
-                      </button>
-                    );
-                  })}
+              {activeYearObj && activeYearObj.sems && (
+                <div>
+                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">
+                    Semester
+                  </label>
+                  <div className="flex flex-wrap gap-2">
+                    {activeYearObj.sems.map((sem) => {
+                      const isActive = activeSemObj.id === sem.id;
+                      return (
+                        <button
+                          key={sem.id}
+                          onClick={() =>
+                            setActiveAcadSem((prev) => ({
+                              ...prev,
+                              [activeTabObj.id]: sem.id,
+                            }))
+                          }
+                          className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                            isActive
+                              ? "bg-[#003c84] text-white shadow-xs"
+                              : "bg-white text-gray-700 border border-gray-200 hover:bg-gray-100"
+                          }`}
+                        >
+                          {sem.label}
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
 
             {/* Results Content Display */}

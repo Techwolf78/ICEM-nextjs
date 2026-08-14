@@ -6,6 +6,7 @@ import { sections } from "../../../static/accreditation/accreditation";
 
 export default function Accreditation() {
   const [openAccordions, setOpenAccordions] = useState({
+    nba: null,
     naac: null,
     iqac: null,
     extended: null,

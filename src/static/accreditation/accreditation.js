@@ -1,4 +1,18 @@
 export const sections = {
+  nba: {
+    title: "NBA",
+    accordions: [
+      {
+        heading: "DCS Reports",
+        pdfs: [
+          {
+            name: "Mech DCS Report",
+            url: "/pdfs/accreditation/dsc_report_nba.pdf",
+          },
+        ],
+      },
+    ],
+  },
   naac: {
     title: "NAAC",
     accordions: [

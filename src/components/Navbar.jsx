@@ -250,6 +250,7 @@ const Navbar = () => {
               link: "https://lc-icem-sumedh.vercel.app",
             },
             { label: "Contact Us", link: "/contact" },
+            { label: "Admission 2026", link: "/admission-2026" },
             { label: "Merit Lists 25-26", link: "/merit-lists" },
           ],
         },
@@ -460,6 +461,15 @@ const Navbar = () => {
                   className="hover:text-secondary transition-colors duration-200 px-1"
                 >
                   ERP Login
+                </Link>
+
+                <span className="text-gray-400">|</span>
+
+                <Link
+                  href="/admission-2026"
+                  className="bg-[#003c84] hover:bg-[#1d59a3] text-white font-semibold px-2 py-0.5 rounded transition-colors duration-200"
+                >
+                  Admission 2026
                 </Link>
 
                 <span className="text-gray-400">|</span>

@@ -286,7 +286,7 @@ export default function FAQMTechMech() {
     <section className="w-full bg-gradient-to-b from-gray-50 to-white text-black py-8 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-6 md:mb-12">
-          <h2 className="text-4xl font-bold text-secondary mb-3 md:mb-4">M-Tech in Mechanical Engineering</h2>
+          <h2 className="text-4xl font-bold text-secondary mb-3 md:mb-4">M-Tech in Heat Power Engineering</h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
             Advanced engineering research and development in mechanical systems
           </p>

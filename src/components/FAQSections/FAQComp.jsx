@@ -506,39 +506,39 @@ export default function FAQSectionComputer() {
       type: "accordion",
       content: {
         Vision: [
-          "To become an acclaimed center of excellence by rendering modern technology,\n academics and research for creating holistic, socio-economic professionals \n with interdisciplinary potential.",
+          "To become an acclaimed center of excellence by rendering modern technology, academics and research for creating holistic, socio-economic professionals with interdisciplinary potential.",
         ],
         Mission: [
-          "To foster strong fundamental concepts to students and inspire them to find creative\n solutions with critical thinking and disciplined time managed environment.",
-          "To impart knowledge and skill based education in collaboration with industry, \nacademia and research organizations.",
-          "To develop a center of excellence and setup a research laboratory to develop \nsoftware applications for the society with the association of industry.",
-          "To enlighten students with the latest technologies through carefully designed training \nmodules with the alliance of Alumni and Industry as a part of value added education.",
-          "To nurture and nourish effective communication, interpersonal skills, and create \nawareness of ethical and social responsibilities.",
+          "To foster strong fundamental concepts to students and inspire them to find creative solutions with critical thinking and disciplined time managed environment.",
+          "To impart knowledge and skill based education in collaboration with industry, academia and research organizations.",
+          "To develop a center of excellence and setup a research laboratory to develop software applications for the society with the association of industry.",
+          "To enlighten students with the latest technologies through carefully designed training modules with the alliance of Alumni and Industry as a part of value added education.",
+          "To nurture and nourish effective communication, interpersonal skills, and create awareness of ethical and social responsibilities.",
         ],
         "Programme Outcomes (POs)": [
-          "Apply Knowledge of Mathematics, Science and Engineering: Relate & apply fundamental\n knowledge of mathematics, science and engineering paradigm to real world problems.",
-          "Problem Analysis: Analyze, identify and formulate tangible products/services/solutions/\n applications with computing requirements.",
-          "Design and Development of algorithms : Design, implement, and evaluate a computer – based\n solution applicable to public health, ecological safety, human resource management.",
-          "Analysis design and modeling of complex problems: Understand management and engineering\n principles meets need of atomization of industry.",
-          "Usage of latest open source tools and technologies: Select & use current techniques, skills, and\n tools to solve societal, health, safety, cultural issues by analyzing the local and global impact.",
-          "Social contribution of Engineers: Distinguish a problem; design a solution for the needs of the\n society in health, safety, public, private sectors applying relevant engineering practices.",
-          "Environment and Sustainability: Understand the affecting factors thru' various fields of engineering\n to the environment context, develop the solutions which would support green Environment initiative.",
-          "Professional Development and Ethics: Inculcate ethical values amongst students to develop best\n engineering practices.",
-          "Commitment at Individual level and as a team: Work effectively in multidisciplinary environment\n as individual & diverse team structure too.",
-          "Communication skills: Learn an emphatic communication to function effective on teams,\n including diversified and multidisciplinary goal.",
-          "Project Planning & Management for Complex Solutions: Use of modeling techniques to design\n experiments, by analyzing and interpreting data.",
-          "Self-learning: Recognize the need of continuous expertized development through\n lifelong learning.",
+          "Apply Knowledge of Mathematics, Science and Engineering: Relate & apply fundamental knowledge of mathematics, science and engineering paradigm to real world problems.",
+          "Problem Analysis: Analyze, identify and formulate tangible products/services/solutions/ applications with computing requirements.",
+          "Design and Development of algorithms : Design, implement, and evaluate a computer – based solution applicable to public health, ecological safety, human resource management.",
+          "Analysis design and modeling of complex problems: Understand management and engineering principles meets need of atomization of industry.",
+          "Usage of latest open source tools and technologies: Select & use current techniques, skills, and tools to solve societal, health, safety, cultural issues by analyzing the local and global impact.",
+          "Social contribution of Engineers: Distinguish a problem; design a solution for the needs of the society in health, safety, public, private sectors applying relevant engineering practices.",
+          "Environment and Sustainability: Understand the affecting factors thru' various fields of engineering to the environment context, develop the solutions which would support green Environment initiative.",
+          "Professional Development and Ethics: Inculcate ethical values amongst students to develop best engineering practices.",
+          "Commitment at Individual level and as a team: Work effectively in multidisciplinary environment as individual & diverse team structure too.",
+          "Communication skills: Learn an emphatic communication to function effective on teams, including diversified and multidisciplinary goal.",
+          "Project Planning & Management for Complex Solutions: Use of modeling techniques to design experiments, by analyzing and interpreting data.",
+          "Self-learning: Recognize the need of continuous expertized development through lifelong learning.",
         ],
         "Programme Specific Outcomes (PSOs)": [
-          "Professional Skills: The ability to understand, analyze and develop high-end applications to meet\n the current industrial requirements using varied algorithmic strategies and system software.",
-          "Problem-Solving Skills: The ability to apply standard practices and strategies in software project\n development using open-ended programming environments to deliver a quality product.",
-          "Successful Career and Entrepreneurship: The ability to employ modern computer languages,\n environments, and platforms in creating innovative career paths to be an entrepreneur.",
+          "Professional Skills: The ability to understand, analyze and develop high-end applications to meet the current industrial requirements using varied algorithmic strategies and system software.",
+          "Problem-Solving Skills: The ability to apply standard practices and strategies in software project development using open-ended programming environments to deliver a quality product.",
+          "Successful Career and Entrepreneurship: The ability to employ modern computer languages, environments, and platforms in creating innovative career paths to be an entrepreneur.",
         ],
         "Programme Educational Objectives (PEOs)": [
-          "To build graduates for successful careers in Computer Engineering those are able to serve state\n and regional industries, government agencies, or national and international industries.",
-          "To build graduates that identifies the underlying scientific foundation of Computer Aided\n Innovation and also to evaluate their effectiveness and efficiency.",
-          "To build graduates who engage in self-development activities through further professional studies\n and personal research that will allow them to adapt technological challenges.",
-          "To build graduates in computer engineering who are acquiring knowledge of the discipline,\n teamwork, communication skills and an ability to work with a diverse set of constraints.",
+          "To build graduates for successful careers in Computer Engineering those are able to serve state and regional industries, government agencies, or national and international industries.",
+          "To build graduates that identifies the underlying scientific foundation of Computer Aided Innovation and also to evaluate their effectiveness and efficiency.",
+          "To build graduates who engage in self-development activities through further professional studies and personal research that will allow them to adapt technological challenges.",
+          "To build graduates in computer engineering who are acquiring knowledge of the discipline, teamwork, communication skills and an ability to work with a diverse set of constraints.",
         ],
       },
     },
@@ -989,7 +989,7 @@ export default function FAQSectionComputer() {
                       ) : (
                         <p
                           key={index}
-                          className="flex items-start text-gray-700 leading-relaxed whitespace-pre-line"
+                          className="flex items-start text-gray-700 leading-relaxed whitespace-pre-line text-justify"
                         >
                           <span className="text-secondary mr-2 mt-1 shrink-0">
                             •

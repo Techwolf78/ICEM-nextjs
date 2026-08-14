@@ -109,7 +109,7 @@ export default function Computer() {
             text-xl sm:text-2xl md:text-3xl lg:text-4xl
           "
         >
-           Specializing in Advanced Mechanical Systems and Research
+           Specializing in Heat Power Engineering
         </span>
       </h2>
 

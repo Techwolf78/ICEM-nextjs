@@ -49,6 +49,7 @@ export default function Sidebar() {
 
   // ✅ Programs & Admission Links
   const programLinks = [
+    { label: "Admission 2026", link: "/admission-2026" },
     { label: "Computer Engineering", link: "/programs/computer-engineering" },
     {
       label: "Mechanical Engineering",

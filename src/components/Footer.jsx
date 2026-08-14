@@ -142,6 +142,7 @@ const Footer = () => {
 
           <ul className="space-y-3 text-sm font-medium text-gray-500">
             {[
+              { name: "Admission 2026", link: "/admission-2026" },
               { name: "Career", link: "/career" },
               { name: "Feedback", link: "/Feedback" },
               { name: "Privacy Policy", link: "/privacy-policy" },

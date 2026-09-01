@@ -351,14 +351,6 @@ case "table":
                         {staff.doj}
                       </span>
                     </div>
-                    <div className="text-[11px]">
-                      <span className="text-gray-400 font-bold uppercase mr-1">
-                        Birth Date:
-                      </span>
-                      <span className="text-gray-700 font-medium font-mono">
-                        {staff.dob}
-                      </span>
-                    </div>
                   </div>
                 </div>
               </motion.div>

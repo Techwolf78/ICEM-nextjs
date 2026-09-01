@@ -19,6 +19,18 @@ const staffData = [
   },
   {
     sn: 2,
+    id: "2072",
+    name: "Dr. Poornashankar",
+    designation: "Professor & Dean (Artificial Intelligence)",
+    department: "MCA",
+    qualification: "Ph.D., M. Tech., MCA, M.phil",
+    doj: "01/12/2021",
+    dob: "12/06/1973",
+    experience: "28 years",
+    image: "/programs/mca/Dr-Poorna-Shankar.jpg",
+  },
+  {
+    sn: 3,
     id: "2343",
     name: "Dr. Dhanashree Vishal Pisal",
     designation: "Assistant Professor",
@@ -29,7 +41,7 @@ const staffData = [
     image: "/faculty/final_Icem_branding/mca/Dr. Dhanashree Pisal.webp",
   },
   {
-    sn: 3,
+    sn: 4,
     id: "3219",
     name: "Mr. Sanjay Mathapati",
     designation: "Assistant Professor",
@@ -40,7 +52,7 @@ const staffData = [
     image: "/faculty/final_Icem_branding/mca/Mr. Sanjay Mathapati.webp",
   },
   {
-    sn: 4,
+    sn: 5,
     id: "3264",
     name: "Dr. Bhushan Ashokrao Nikam",
     designation: "Assistant Professor",
@@ -51,7 +63,7 @@ const staffData = [
     image: "/faculty/final_Icem_branding/mca/Dr. Bhushan Nikam.webp",
   },
   {
-    sn: 5,
+    sn: 6,
     id: "3115",
     name: "Ms. Shraddha Vishnu Murade",
     designation: "Assistant Professor",
@@ -62,7 +74,7 @@ const staffData = [
     image: "/faculty/final_Icem_branding/mba/shraddhamurade.webp",
   },
   {
-    sn: 6,
+    sn: 7,
     id: "3494",
     name: "Mr. Atish Shriniwar",
     designation: "Assistant Professor",
@@ -73,7 +85,7 @@ const staffData = [
     image: "/programs/mca/atish_shriniwar.webp",
   },
   {
-    sn: 7,
+    sn: 8,
     id: "3453",
     name: "Mr. Nivrutti Jadhav",
     designation: "Assistant Professor",
@@ -88,14 +100,19 @@ const staffData = [
 // ================== SYLLABUS DATA ==================
 const syllabusList = [
   {
-    id: "mca-2024-26",
-    label: "MCA-(2024-26) Syllabus",
-    pdf: "/programs/mca/fy_sy_mca_2026_2028_syllabus.pdf",
+    id: "mca-2026-28",
+    label: "MCA-(2026-28) Syllabus",
+    pdf: "/programs/mca/fy_sy_batch_2026_28_syllabus.pdf",
   },
   {
     id: "mca-2025-27",
     label: "MCA-(2025-27) Syllabus",
-    pdf: "/programs/mca/fy_sy_mca_2025_2027_syllabus.pdf",
+    pdf: "/programs/mca/fy_sy_batch_2025_2027_syllabus_modified.pdf",
+  },
+  {
+    id: "mca-2024-26",
+    label: "MCA-(2024-26) Syllabus",
+    pdf: "/programs/mca/mca_2024_26_course_pattern_syllabus.pdf",
   },
 ];
 
@@ -175,7 +192,7 @@ export default function FAQMCA() {
 
           "The Curriculum is well updated with latest technology like Big Data Analytics, Cloud Computing, Service Oriented Architecture, and Python Programming along with core subjects and management skill development for being successful tech-managers, utilizing the resources to their fullest.",
 
-          "The department of MCA is affiliated to Savitribai Phule Pune University (SPPU) and approved by All India Council for Technical Education (AICTE), New-Delhi at Indira College of Engineering & Management with intake of 60 students.",
+          "The department of MCA is affiliated to Savitribai Phule Pune University (SPPU) and approved by All India Council for Technical Education (AICTE), New-Delhi at Indira College of Engineering & Management with intake of 120 students.",
         ],
         "Vision": [
           "To offer a well-balanced program of instructions, practical experience and to provide opportunities for overall development, groom the students in excellent professionals, knowledge seekers and good human being."
@@ -229,60 +246,29 @@ export default function FAQMCA() {
       content: [
         {
           program: "MCA",
-          intake: "60 Seats",
+          intake: "120 Seats",
           duration: "2 Years",
           type: "Full Time",
         },
       ],
     },
 
-    // "Eligibility Criteria": {
-    //   type: "eligibility-table",
-      // content: [
-      //   {
-      //     leftTitle:
-      //       "1. For Maharashtra State Candidates, All India Candidature Candidates, Union Territory of Jammu and Kashmir and Union Territory of Ladakh Migrant Candidature Candidates.",
-      //     leftPoints: [
-      //       "(i) should be a citizen of India;",
-      //       "(ii) should have passed any graduation degree (e.g.: B.E. or B.Tech. or B.Sc or B.Com. or B.A. or B. Voc. or BCA etc.,) preferably with Mathematics at 10+2 level or at Graduation level and obtained at least fifty per cent marks (at least forty-five per cent in case of candidates of Reserved Categories, Economically Weaker Section and Persons with Disability category belonging to the Maharashtra State) in the qualifying examination;",
-      //       "(iii) should have obtained non zero score in MAH–MCA–CET 2025 conducted by the Competent Authority.",
-      //     ],
-
-      //     rightTitle:
-      //       "2. Non Resident Indian (NRI) or Overseas Citizen of India (OCI) or Person of Indian Origin (PIO), Children of Indian workers in the Gulf countries, Foreign National Candidature Candidates.",
-      //     rightPoints: [
-      //       "(i) The candidate should have passed any graduation degree (e.g.: B.E. or B.Tech. or B.Sc or B.Com. or B.A. or B.Voc. or BCA etc.,) preferably with Mathematics at 10+2 level or at Graduation level and obtained at least fifty percent marks in the qualifying examination;",
-      //       "(ii) Any other eligibility criteria and requirement declared from time to time by the appropriate authority as defined under the Act;",
-      //     ],
-      //   },
-      // ],
-    // },
-
     "Eligibility Criteria": {
       type: "accordion",
       content: {
-        "Eligibility Criteria for Admission to MCA 2025-26": [
-          "(A) First Year Admission",
-          "(1)",
-          "For Maharashtra State Candidature Candidates, All India Candidature Candidates, Union Territory of Jammu and Kashmir and Union Territory of Ladakh Migrant Candidature Candidates",
-          "The candidate,-",
+        "Eligibility Criteria for Admission to MCA": [
+          "(A) First Year Admission.-",
+          "(1) For Maharashtra State Candidature Candidates, All India Candidature Candidates, Union Territory of Jammu and Kashmir and Union Territory of Ladakh Migrant Candidature Candidates. - The candidate,-",
           "(i) should be a citizen of India;",
-          "(ii) should have passed any graduation degree (e.g.: B.E. or B.Tech. or B.Sc or B.Com. or B.A. or B. Voc. or BCA etc.,) preferably with Mathematics at 10+2 level or at Graduation level and obtained at least fifty per cent. marks (at least forty five per cent. in case of candidates of Reserved Categories, Economically Weaker Section and Persons with Disability category belonging to the Maharashtra State) in the qualifying examination;",
-          "(iii) should have obtained non zero score in MAH-MCA CET 2025 conducted by the Competent Authority.",
-          "(2)",
-          "Non Resident Indian (NRI) or Overseas Citizen of India (OCI) or Person of Indian Origin (PIO), Children of Indian workers in the Gulf countries, Foreign National Candidature Candidates",
+          "(ii) should have passed any graduation degree (e.g.: B.E. or B.Tech. or B.Sc or B.Com. or B.A. or B. Voc. or BCA etc.,) preferably with Mathematics at 10+2 level or at Graduation level and obtained at least fifty per cent marks (at least forty five per cent. in case of candidates of Reserved Categories, Economically Weaker Section and Persons with Disability category belonging to the Maharashtra State) in the qualifying examination;",
+          "(iii) should have obtained non zero score in MAH-MCACET 2026 conducted by the Competent Authority.",
+          "(2) Non Resident Indian (NRI) or Overseas Citizen of India (OCI) or Person of Indian Origin (PIO), Children of Indian workers in the Gulf countries, Foreign National Candidature Candidates.-",
           "(i) The candidate should have passed any graduation degree (e.g.: B.E. or B.Tech. or B.Sc or B.Com. or B.A. or B. Voc. or BCA etc.,) preferably with Mathematics at 10+2 level or at Graduation level and obtained at least fifty per cent. marks in the qualifying examination;",
-          "(ii) Any other eligibility criteria and requirement declared from time to time by the appropriate authority as defined under the Act.",
-          "(B) Second Year (Lateral Entry) Admission",
-          "Maharashtra State Candidature Candidates and All India Candidature Candidates",
+          "(ii) Any other eligibility criteria and requirement declared from time to time by the appropriate authority as defined under the Act;",
+          "(B) Second Year (Lateral Entry) Admission. - Maharashtra State Candidature Candidates and All India Candidature Candidates.-",
           "(i) The candidate should be a citizen of India;",
-          "(ii) The candidate should have passed B.Tech. (Computer Science and Engineering (CSE) or Information Technology (IT)) or B.E. (Computer Science and Engineering (CSE) or Information Technology (IT)) or Bachelor of Computer Applications (BCA) (4 years);",
-          "(iii) Any other eligibility criteria and requirement declared from time to time by the appropriate authority as defined under the Act.",
+          "(ii) The candidate should have passed B.Tech.(Computer Science and Engineering (CSE) or Information Technology (IT)) or B.E. (Computer Science and Engineering (CSE) or Information Technology (IT)) or Bachelor of Computer Applications (BCA) (4 years);",
         ],
-        // "Information Technology Eligibility": [
-        //   "Eligibility for admission to the Integrated MCA program requires candidates to have passed 10+2 from any recognized board with Mathematics or Statistics.Admission is based on merit and institutional selection guidelines. No entrance exam required.",
-        // ],
-        
       },
     },
 
@@ -544,14 +530,16 @@ export default function FAQMCA() {
                         {staff.doj}
                       </span>
                     </div>
-                    <div className="text-[11px]">
-                      <span className="text-gray-400 font-bold uppercase mr-1">
-                        Birth Date:
-                      </span>
-                      <span className="text-gray-700 font-medium font-mono">
-                        {staff.dob}
-                      </span>
-                    </div>
+                    {staff.experience && (
+                      <div className="text-[11px]">
+                        <span className="text-gray-400 font-bold uppercase mr-1">
+                          Experience:
+                        </span>
+                        <span className="text-gray-700 font-medium">
+                          {staff.experience}
+                        </span>
+                      </div>
+                    )}
                   </div>
                 </div>
               </motion.div>

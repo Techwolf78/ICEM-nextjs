@@ -12,32 +12,75 @@ const staffData = [
     name: "Dr. Vikas Narayan Nandgaonkar",
     designation: "Associate Professor & HOD",
     department: "IT",
-    qualification: "BE ME Ph.D",
+    qualification: "Ph.D., ME, BE (Computer Science and Engineering)",
+    experience: "24 years (Industry: 3, Research: 3)",
+    areaOfInterest: "Artificial Intelligence, Machine Learning, Network Security",
+    researchPapers: "Scopus indexed: 9, Journal papers: 25, Conference papers: 15+, Patents filed: 2, Copyrights: 06",
     doj: "10/12/2021",
-    dob: "06/12/1978",
-    image: "/faculty/final_icem_branding/it/Dr. Vikas Nandgaonkar.webp",
+    image: "/faculty/final_icem_branding/it/vikas.webp",
   },
   {
     sn: 2,
-    id: "3216",
-    name: "Mrs. Mrunal Aniruddha Vaidya",
+    id: "3226",
+    name: "Dr. Shrikant Manikrao Mahindrakar",
     designation: "Assistant Professor",
     department: "IT",
-    qualification: "BE ME",
-    doj: "15/09/2025",
-    dob: "20/02/1991",
-    image: "/faculty/final_icem_branding/it/Mrs Mrunal Vaidya.webp",
+    qualification: "Ph.D. (Pur), M.Tech. (Computer Engineering)",
+    experience: "15 Yrs (Industrial: 2, Research: 1)",
+    areaOfInterest: "Data Science, Artificial Intelligence, Machine Learning",
+    researchPapers: "7 Research Papers",
+    doj: "13/10/2025",
+    image: "/faculty/final_icem_branding/it/shrikant.webp",
   },
   {
     sn: 3,
-    id: "3226",
-    name: "Mr. Shrikant Manikrao Mahindrakar",
+    id: "-",
+    name: "Prof. Ankush Vasant Dahat",
     designation: "Assistant Professor",
     department: "IT",
-    qualification: "BE M.Tech",
-    doj: "13/10/2025",
-    dob: "09/05/1982",
-    image: "/faculty/placeholder.webp",
+    qualification: "B.E.(IT), M.Tech. (CS), PhD(CSE)(Pursuing)",
+    experience: "15 Yrs",
+    areaOfInterest: "Artificial Intelligence, Machine Learning",
+    researchPapers: "7 Research Papers",
+    doj: "-",
+    image: "/faculty/final_icem_branding/it/ankush.webp",
+  },
+  {
+    sn: 4,
+    id: "-",
+    name: "Mrs. Ashwini Wankhade",
+    designation: "Assistant Professor",
+    department: "IT",
+    qualification: "BE(Computer), MBA",
+    experience: "18 Yrs",
+    areaOfInterest: "Web Designing",
+    doj: "-",
+    image: "/faculty/final_icem_branding/it/ashwini.webp",
+  },
+  {
+    sn: 5,
+    id: "-",
+    name: "Mrs. Deepika Dalvi",
+    designation: "Assistant Professor",
+    department: "IT",
+    qualification: "B.E.(Computer), M.Tech. (CSE), PhD(CSE)(Pursuing)",
+    experience: "8 Yrs",
+    areaOfInterest: "Artificial Intelligence, Machine Learning",
+    researchPapers: "Research Papers: 2, Patents filed: 1, Book Chapters: 1, Book Author: 1",
+    doj: "-",
+    image: "/faculty/final_icem_branding/it/deepika.webp",
+  },
+  {
+    sn: 6,
+    id: "-",
+    name: "Ms. Komal Ghogare",
+    designation: "Teaching Assistant",
+    department: "IT",
+    qualification: "M.Tech. Pursuing, B.E. (Computer Engineering)",
+    experience: "2.5 Yrs",
+    areaOfInterest: "Data Structures, Data Science",
+    doj: "-",
+    image: "/faculty/final_icem_branding/it/komal.webp",
   },
 ];
 
@@ -372,7 +415,7 @@ export default function FAQENTC() {
           const [hasError, setHasError] = useState(false);
 
           return hasError ? (
-            <div className="w-32 h-40 flex items-center justify-center rounded-lg mb-4 bg-gray-100 shadow-sm border border-gray-100">
+            <div className="w-32 h-40 flex items-center justify-center rounded-lg mb-2 bg-gray-100 shadow-sm border border-gray-100">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -389,7 +432,7 @@ export default function FAQENTC() {
               </svg>
             </div>
           ) : (
-            <div className="w-32 h-40 overflow-hidden rounded-lg mb-4 bg-gray-100 shadow-sm border border-gray-100">
+            <div className="w-32 h-40 overflow-hidden rounded-lg mb-2 bg-gray-100 shadow-sm border border-gray-100">
               <Image
                 src={currentSrc}
                 alt={alt}
@@ -405,58 +448,82 @@ export default function FAQENTC() {
         };
 
         return (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 px-2 sm:px-4 items-stretch">
             {data.content.map((staff, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05, duration: 0.3 }}
-                className="bg-white rounded-xl shadow-md border border-gray-200 flex flex-col items-center text-center p-5 hover:shadow-lg transition-all duration-300"
+                className="bg-white rounded-xl shadow-sm border border-gray-200 flex flex-col items-center text-center p-2.5 sm:p-3 hover:shadow-md transition-all duration-300 h-full"
               >
                 <StaffPhoto src={staff.image} alt={staff.name} />
 
-                <div className="w-full flex-1 flex flex-col">
-                  <h4 className="font-bold text-gray-900 mb-1 leading-snug">
-                    {staff.name}
-                  </h4>
-                  <p className="text-blue-700 font-semibold text-xs mb-4 uppercase tracking-wider">
-                    {staff.designation}
-                  </p>
+                <div className="w-full flex-1 flex flex-col justify-between">
+                  <div className="flex flex-col justify-center mb-1.5">
+                    <h4 className="font-bold text-gray-900 leading-tight text-sm line-clamp-2">
+                      {staff.name}
+                    </h4>
+                    <p className="text-blue-700 font-semibold text-[11px] mt-0.5 uppercase tracking-wider line-clamp-1">
+                      {staff.designation}
+                    </p>
+                  </div>
 
-                  <div className="mt-auto pt-4 border-t border-gray-100 space-y-2 text-left">
-                    <div className="text-[11px]">
-                      <span className="text-gray-400 font-bold uppercase mr-1">
-                        ID NO:
-                      </span>
-                      <span className="text-gray-700 font-medium">
-                        {staff.id}
-                      </span>
-                    </div>
-                    <div className="text-[11px]">
+                  <div className="pt-2.5 border-t border-gray-100 space-y-1.5 text-left text-[11px] flex-1 flex flex-col justify-start">
+                    {staff.id && staff.id !== "-" && (
+                      <div>
+                        <span className="text-gray-400 font-bold uppercase mr-1">
+                          ID NO:
+                        </span>
+                        <span className="text-gray-700 font-medium">
+                          {staff.id}
+                        </span>
+                      </div>
+                    )}
+                    <div>
                       <span className="text-gray-400 font-bold uppercase mr-1">
                         Qualification:
                       </span>
                       <span className="text-gray-700 font-medium">
-                        {staff.qualification}
+                        {staff.qualification || "—"}
                       </span>
                     </div>
-                    <div className="text-[11px]">
+                    <div>
                       <span className="text-gray-400 font-bold uppercase mr-1">
-                        Joining Date:
+                        Experience:
                       </span>
                       <span className="text-gray-700 font-medium">
-                        {staff.doj}
+                        {staff.experience || "—"}
                       </span>
                     </div>
-                    <div className="text-[11px]">
+                    <div>
                       <span className="text-gray-400 font-bold uppercase mr-1">
-                        Birth Date:
+                        Area of Interest:
                       </span>
                       <span className="text-gray-700 font-medium">
-                        {staff.dob}
+                        {staff.areaOfInterest || "—"}
                       </span>
                     </div>
+                    {staff.researchPapers && (
+                      <div>
+                        <span className="text-gray-400 font-bold uppercase mr-1">
+                          Research:
+                        </span>
+                        <span className="text-gray-700 font-medium leading-tight block mt-0.5">
+                          {staff.researchPapers}
+                        </span>
+                      </div>
+                    )}
+                    {staff.doj && staff.doj !== "-" && (
+                      <div className="mt-auto pt-1.5">
+                        <span className="text-gray-400 font-bold uppercase mr-1">
+                          Joining Date:
+                        </span>
+                        <span className="text-gray-700 font-medium">
+                          {staff.doj}
+                        </span>
+                      </div>
+                    )}
                   </div>
                 </div>
               </motion.div>

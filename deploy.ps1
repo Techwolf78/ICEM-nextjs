@@ -6,18 +6,25 @@ Remove-Item .\*.zip -Force -ErrorAction SilentlyContinue
 
 Write-Host "Creating deployment ZIPs with tar.exe..."
 
-# Create ZIPs for large folders
+# Create ZIPs for large folders sequentially
+Write-Host "Zipping _next..."
 tar -a -cf next.zip -C .\out _next
+
+Write-Host "Zipping assets..."
 tar -a -cf assets.zip -C .\out assets
+
+Write-Host "Zipping pdfs..."
 tar -a -cf pdfs.zip -C .\out pdfs
+
+Write-Host "Zipping programs..."
 tar -a -cf programs.zip -C .\out programs
 
-# ZIP the rest
+Write-Host "Zipping rest..."
 $excludeList = @('_next', 'assets', 'pdfs', 'programs')
-$files = Get-ChildItem .\out | Where-Object { $excludeList -notcontains $_.Name } | Select-Object -ExpandProperty Name
-tar -a -cf rest.zip -C .\out $files
+$restItems = Get-ChildItem .\out | Where-Object { $excludeList -notcontains $_.Name } | Select-Object -ExpandProperty FullName
+Compress-Archive -Path $restItems -DestinationPath .\rest.zip -Force
 
-# Check sizes
-Get-Item .\next.zip, .\assets.zip, .\pdfs.zip, .\programs.zip, .\rest.zip | Select-Object Name, @{Name="SizeMB";Expression={[math]::Round($_.Length / 1MB, 2)}}
+Write-Host "`nGenerated Deployment Packages:"
+Get-ChildItem .\*.zip | Select-Object Name, @{Name="SizeMB";Expression={[math]::Round($_.Length / 1MB, 2)}}
 
-Write-Host "ZIPs created successfully! Upload next.zip, assets.zip, pdfs.zip, programs.zip, rest.zip to cPanel public_html and extract each."
+Write-Host "`nZIPs created successfully! Upload next.zip, assets.zip, pdfs.zip, programs.zip, rest.zip to cPanel public_html and extract each."

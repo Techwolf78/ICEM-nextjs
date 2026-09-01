@@ -8,17 +8,28 @@ import { motion, AnimatePresence } from "framer-motion";
 const staffData = [
   {
     sn: 1,
+    id: "",
+    name: "Dr. Prashant Sunil Borde",
+    designation: "Associate Professor, HOD MBA",
+    department: "MBA",
+    qualification: "B.Sc, B.Tech, PGDHRM, MA, MPM, Ph.D",
+    doj: "17/08/2026",
+    dob: "23/07/1980",
+    image: "/programs/MBA/prashant_borde.webp",
+  },
+  {
+    sn: 2,
     id: "1521",
     name: "Dr. Archana Ravindra Salve",
-    designation: "Professor, HOD MBA, Dean ED Cell",
+    designation: "Professor, Dean ED Cell, NBA Coordinator",
     department: "MBA",
     qualification: "BAMS MBA NET Ph.D",
     doj: "30/01/2017",
     dob: "13/09/1976",
-    image: "/programs/MBA/archana.jpeg",
+    image: "/programs/MBA/archana.webp",
   },
   {
-    sn: 2,
+    sn: 3,
     id: "987",
     name: "Dr. Priyanka Amol Pawar",
     designation: "Associate Professor Dean (L&D)",
@@ -29,7 +40,7 @@ const staffData = [
     image: "/faculty/final_Icem_branding/mba/Dr. Priyanka Pawar.webp",
   },
   {
-    sn: 3,
+    sn: 4,
     id: "3087",
     name: "Dr. Pravin Namdeo Thorat",
     designation: "Assistant Professor",
@@ -40,7 +51,7 @@ const staffData = [
     image: "/faculty/final_Icem_branding/mba/Dr. Pravin Thorat.webp",
   },
   {
-    sn: 4,
+    sn: 5,
     id: "3090",
     name: "Mrs. Aditee Hrishikesh Huparikar",
     designation: "Assistant Professor",
@@ -51,7 +62,7 @@ const staffData = [
     image: "/faculty/final_Icem_branding/mba/Mrs. Adittee Huparikar.webp",
   },
   {
-    sn: 5,
+    sn: 6,
     id: "3093",
     name: "Dr. Priyanka Shirish Shinde",
     designation: "Assistant Professor & TPO",
@@ -62,7 +73,7 @@ const staffData = [
     image: "/faculty/final_Icem_branding/mba/Dr. Priyanka Shinde.webp",
   },
   {
-    sn: 6,
+    sn: 7,
     id: "3120",
     name: "Dr. Anita Surve",
     designation: "Assistant Professor",
@@ -73,7 +84,7 @@ const staffData = [
     image: "/programs/MBA/anita_salve.webp",
   },
   {
-    sn: 7,
+    sn: 8,
     id: "1680",
     name: "Dr. Deepa Nitin Jamnik",
     designation: "Assistant Professor, Dean (Events & Branding)",
@@ -84,7 +95,7 @@ const staffData = [
     image: "/faculty/final_Icem_branding/mba/deepajamnik.webp",
   },
   {
-    sn: 8,
+    sn: 9,
     id: "0244",
     name: "Mrs. Sonali Shashank Pradhan",
     designation: "Academic Coordinator",
@@ -92,10 +103,10 @@ const staffData = [
     qualification: "BA, MBA - HR",
     doj: "20/07/2007",
     dob: "23/08/1973",
-    image: "/programs/IBCAMBA/sonail_pradhan.jpg",
+    image: "/programs/IBCAMBA/sonail_pradhan.webp",
   },
   {
-    sn: 9,
+    sn: 10,
     id: "3154",
     name: "Mrs. Dipali Rahul Nimbalkar",
     designation: "Assistant Professor",
@@ -106,7 +117,7 @@ const staffData = [
     image: "/faculty/final_Icem_branding/mba/dipalinimbalkar.webp",
   },
   {
-    sn: 10,
+    sn: 11,
     id: "3293",
     name: "Prof. Vaibhav Wasankar",
     designation: "Assistant Professor",
@@ -114,7 +125,18 @@ const staffData = [
     qualification: "B.Tech, MBA (MKT), Dual MBA (OP)",
     doj: "10/03/2026",
     dob: "07/12/1995",
-    image: "/programs/IBCAMBA/vaibhav.jpg",
+    image: "/programs/IBCAMBA/vaibhav.webp",
+  },
+  {
+    sn: 12,
+    id: "",
+    name: "",
+    designation: "Sr . Clerk & Academic Coordinator",
+    department: "MBA",
+    qualification: "",
+    doj: "",
+    dob: "",
+    image: "/programs/MBA/sr_clerk_academic_coordinator.webp",
   },
 ];
 

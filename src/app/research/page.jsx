@@ -747,6 +747,57 @@ const Research = () => {
                 <div className="p-0">
                   {[
                     {
+                      title: "Research Policy [2026-27]",
+                      content: (
+                        <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
+                          <li>
+                            <a
+                              href="/pdfs/research_policy_2026_27.pdf"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="hover:underline"
+                            >
+                              Research Policy Document for AY [2026-27]
+                            </a>
+                          </li>
+                        </ul>
+                      ),
+                    },
+                    {
+                      title: "Research Policy [2025-26]",
+                      content: (
+                        <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
+                          <li>
+                            <a
+                              href="/pdfs/research_policy_2025_26.pdf"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="hover:underline"
+                            >
+                              Research Policy Document for AY [2025-26]
+                            </a>
+                          </li>
+                        </ul>
+                      ),
+                    },
+                    {
+                      title: "Research Policy [2024-25]",
+                      content: (
+                        <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">
+                          <li>
+                            <a
+                              href="/pdfs/research_policy_2024_25.pdf"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="hover:underline"
+                            >
+                              Research Policy Document for AY [2024-25]
+                            </a>
+                          </li>
+                        </ul>
+                      ),
+                    },
+                    {
                       title: "Research Policy [2023-24]",
                       content: (
                         <ul className="list-disc pl-4 md:pl-6 space-y-2 text-secondary text-sm md:text-base">

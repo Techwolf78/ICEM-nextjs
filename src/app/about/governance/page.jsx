@@ -81,10 +81,52 @@ export default function Governance() {
                   "The CDC oversees academic development, infrastructure improvement, and faculty growth plans. Download the document below for full details.",
               },
               {
-                title: "Institute Level Committees - AY 2024-25",
-                pdf: Committee,
+                title: "Governing Body 2026-27",
+                pdf: "/assets/pdf/committees-2026-27/statutory/governing_body_2026.pdf",
                 description:
-                  "Institute-level committees ensure quality assurance and student engagement across all departments.",
+                  "Download the updated Governing Body Committee details for AY 2026-27.",
+              },
+              {
+                title: "Non-Statutory & Institute Level Committees (AY 2026-27)",
+                description:
+                  "View or download official documents for all institute-level and non-statutory committees for AY 2026-27:",
+                customContent: (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
+                    {[
+                      { name: "Alumni Association Committee", file: "alumni_association_committee.pdf" },
+                      { name: "Branding Social Media Committee", file: "branding_social_media_committee.pdf" },
+                      { name: "Cultural Club Committee", file: "cultural_club_committee.pdf" },
+                      { name: "EDC Cell", file: "edc_cell.pdf" },
+                      { name: "ERP Committee", file: "erp_committee.pdf" },
+                      { name: "Higher Education / Competitive Exam Cell", file: "higher_education_cell_competative_exam_cell.pdf" },
+                      { name: "Hostel & Mess Committee", file: "hostel_mess_committee.pdf" },
+                      { name: "IIC Committee", file: "iic_commitee.pdf" },
+                      { name: "IIT Tutorials", file: "iit_tutorials.pdf" },
+                      { name: "Incubation & Startup Cell", file: "incubation_cell_startup_cell.pdf" },
+                      { name: "Industry Institution Partnership Cell", file: "industry_insitution_partnership_cell.pdf" },
+                      { name: "Industry Corporate Relation", file: "industry_corporate_relation.pdf" },
+                      { name: "Library Advisory Committee", file: "library_advisory_committee.pdf" },
+                      { name: "Magazine Committee", file: "magzine_committee.pdf" },
+                      { name: "NSS Committee", file: "nss_committee.pdf" },
+                      { name: "Professional Chapters", file: "professional_chaperts.pdf" },
+                      { name: "Purchase Committee", file: "purchase_committee.pdf" },
+                      { name: "R&D Committee", file: "randd_committee.pdf" },
+                      { name: "Sports Committee", file: "sports_committee.pdf" },
+                      { name: "Website Committee", file: "website_committee.pdf" },
+                    ].map((item, idx) => (
+                      <a
+                        key={idx}
+                        href={`/assets/pdf/committees-2026-27/non-statutory/${item.file}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-lg hover:border-secondary hover:shadow-sm text-sm font-medium text-gray-800 hover:text-secondary transition"
+                      >
+                        <span>{item.name}</span>
+                        <span className="text-xs bg-secondary/10 text-secondary px-2 py-1 rounded">PDF</span>
+                      </a>
+                    ))}
+                  </div>
+                ),
               },
               {
                 title: "Governing Body (AY 2023-24 to AY 2027-28)",
@@ -270,10 +312,10 @@ export default function Governance() {
                       <p className="mb-3">{item.description}</p>
                     )}
 
-                    {item.table && (
+                    {item.table && Array.isArray(item.table) && (
                       <div className="overflow-x-auto mb-4 ">
                         {(() => {
-                          const isThreeCols = item.table.some(row => row.length === 3);
+                          const isThreeCols = item.table.some(row => row && row.length === 3);
                           return (
                             <table className="min-w-full border border-gray-300 text-sm">
                               <thead>
@@ -359,6 +401,8 @@ export default function Governance() {
                         })()}
                       </div>
                     )}
+
+                    {item.customContent && item.customContent}
 
                     {item.pdf && (
                       <a

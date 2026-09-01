@@ -9,7 +9,7 @@ const Statutory = () => {
 
   const committees = [
     {
-      title: "1. Internal Compliance Committee (ICC)",
+      title: "1. Internal Compliance Committee (ICC) (2026-27)",
       content: (
         <>
           <p className="mb-4">
@@ -44,43 +44,17 @@ const Statutory = () => {
             <li><strong>Step VII:</strong> The link for online complaint is: <a href="https://forms.gle/o2bbV4s9PHq9jKcU6" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">https://forms.gle/o2bbV4s9PHq9jKcU6</a></li>
           </ul>
 
-          <h3 className="font-semibold mt-4">Internal Compliance Committee (2025-26):</h3>
-          <div className="overflow-x-auto">
-            <table className="w-full border border-gray-200 rounded-lg shadow-sm mt-3">
-              <thead className="bg-secondary text-white">
-                <tr>
-                  <th className="border-b border-gray-200 p-2 md:p-3 text-center font-semibold text-sm md:text-base">S. No.</th>
-                  <th className="border-b border-gray-200 p-2 md:p-3 text-left font-semibold text-sm md:text-base">Name of the staff</th>
-                  <th className="border-b border-gray-200 p-2 md:p-3 text-left font-semibold text-sm md:text-base">Designation</th>
-                  <th className="border-b border-gray-200 p-2 md:p-3 text-left font-semibold text-sm md:text-base">Mobile No.</th>
-                  <th className="border-b border-gray-200 p-2 md:p-3 text-left font-semibold text-sm md:text-base">Mail ID</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  ["1", "Dr. Manjusha Tomar", "Presiding Officer", "9834829883", "manjusha.tomar@indiraicem.ac.in"],
-                  ["2", "Prof. Pranali Khatake", "Secretary", "7972395962", "pranali.khatake@indiraicem.ac.in"],
-                  ["3", "Prof. Savita Jangale", "Member", "9881901218", "savita.jangale@indiraicem.ac.in"],
-                  ["4", "Prof. Minal Patil", "Member", "9145616101", "patil.minal@indiraicem.ac.in"],
-                  ["5", "Prof. Mandakini Dahiwade", "Member", "9765204878", "mandakini.dahiwade@indiraicem.ac.in"],
-                  ["6", "Mrs. Anita Surve", "Non Teaching Staff Member", "8554841278", "anita.surve@indiraicem.ac.in"],
-                  ["7", "Mr. Vasant Papal", "Civilian/NGO", "", ""],
-                  ["8", "Mr. Dhanaraj Raut", "General Secretary(Student)", "9673263841", "dhanaraj.raut@indiraicem.ac.in"],
-                  ["9", "Ms. Siddhi Patil", "Ladies Representative(Student)", "9145691506", "siddhi.patil142006@gmail.com"],
-                  ["10", "Ms. Shravani Gurav", "Student", "8850505498", "shravanigurav60@gmail.com"],
-                  ["11", "Mr. Ruturaj Yadav", "Student", "8530669649", "ruturajyadav0322@gmail.com"],
-                ].map(([sno, name, desig, mobile, email]) => (
-                  <tr key={sno} className="odd:bg-primary/10 even:bg-white hover:bg-primary/20">
-                    <td className="border-b border-gray-200 p-2 md:p-3 text-center text-sm md:text-base">{sno}</td>
-                    <td className="border-b border-gray-200 p-2 md:p-3 text-sm md:text-base">{name}</td>
-                    <td className="border-b border-gray-200 p-2 md:p-3 text-sm md:text-base">{desig}</td>
-                    <td className="border-b border-gray-200 p-2 md:p-3 text-sm md:text-base">{mobile}</td>
-                    <td className="border-b border-gray-200 p-2 md:p-3 text-sm md:text-base">{email}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="my-4">
+            <a
+              href="/assets/pdf/committees-2026-27/statutory/icc_committee.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-secondary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-secondary/90 transition shadow-sm"
+            >
+              📄 View / Download ICC Committee 2026-27 PDF
+            </a>
           </div>
+
           <div className="mt-6 p-4 bg-red-50 border border-red-200 rounded-lg">
             <h4 className="font-semibold text-red-800 mb-2">Help Line Number</h4>
             <p className="text-red-700">
@@ -93,107 +67,124 @@ const Statutory = () => {
     },
 
     {
-      title: "2. Anti-Ragging Committee",
+      title: "2. Anti-Ragging Committee (2026-27)",
       content: (
-        <div className="mt-4">
-          <iframe
-            src="/assets/pdf/Anti-Ragging Committee Members list.pdf"
-            width="100%"
-            height="600px"
-            style={{ border: 'none' }}
-            title="Anti-Ragging Committee Members List"
-          ></iframe>
+        <div className="py-2">
+          <a
+            href="/assets/pdf/committees-2026-27/statutory/anti_ragging_committee.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-secondary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-secondary/90 transition shadow-sm"
+          >
+            📄 View / Download Anti-Ragging Committee 2026-27 PDF
+          </a>
         </div>
       ),
     },
     {
-      title: "3. Equal Opportunity Cell",
+      title: "3. Equal Opportunity Cell (2026-27)",
       content: (
-        <div className="overflow-x-auto">
-          <table className="w-full border border-gray-200 rounded-lg shadow-sm mt-3">
-            <thead className="bg-secondary text-white">
-              <tr>
-                <th className="border-b border-gray-200 p-2 md:p-3 text-center font-semibold text-sm md:text-base">Sr. No.</th>
-                <th className="border-b border-gray-200 p-2 md:p-3 text-left font-semibold text-sm md:text-base">Name of the staff</th>
-                <th className="border-b border-gray-200 p-2 md:p-3 text-left font-semibold text-sm md:text-base">Designation</th>
-              </tr>
-            </thead>
-            <tbody>
-              {[
-                ["1", "Prof. Darshana Desai", "Coordinator *"],
-                ["2", "Prof. Shrikant Jambale", "Member"],
-                ["3", "Prof. Vrushali Patil", "Member"],
-                ["4", "Prof. Reshma Kohad", "Member"],
-                ["5", "Mr. Gaurav Varat", "Student Member"],
-                ["6", "Mr. Vidheet Jadhav", "Student Member"],
-                ["7", "Mr. Shubhankar Barate", "Student Member"],
-                ["8", "Mr. Naziya Sayyed", "Student Member"],
-              ].map(([sno, name, desig]) => (
-                <tr key={sno} className="odd:bg-primary/10 even:bg-white hover:bg-primary/20">
-                  <td className="border-b border-gray-200 p-2 md:p-3 text-center text-sm md:text-base">{sno}</td>
-                  <td className="border-b border-gray-200 p-2 md:p-3 text-sm md:text-base">{name}</td>
-                  <td className="border-b border-gray-200 p-2 md:p-3 text-sm md:text-base">{desig}</td>
+        <>
+          <div className="overflow-x-auto mb-4">
+            <table className="w-full border border-gray-200 rounded-lg shadow-sm mt-3">
+              <thead className="bg-secondary text-white">
+                <tr>
+                  <th className="border-b border-gray-200 p-2 md:p-3 text-center font-semibold text-sm md:text-base">Sr. No.</th>
+                  <th className="border-b border-gray-200 p-2 md:p-3 text-left font-semibold text-sm md:text-base">Name of the staff</th>
+                  <th className="border-b border-gray-200 p-2 md:p-3 text-left font-semibold text-sm md:text-base">Designation</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {[
+                  ["1", "Prof. Darshana Desai", "Coordinator *"],
+                  ["2", "Prof. Shrikant Jambale", "Member"],
+                  ["3", "Prof. Vrushali Patil", "Member"],
+                  ["4", "Prof. Reshma Kohad", "Member"],
+                  ["5", "Mr. Gaurav Varat", "Student Member"],
+                  ["6", "Mr. Vidheet Jadhav", "Student Member"],
+                  ["7", "Mr. Shubhankar Barate", "Student Member"],
+                  ["8", "Mr. Naziya Sayyed", "Student Member"],
+                ].map(([sno, name, desig]) => (
+                  <tr key={sno} className="odd:bg-primary/10 even:bg-white hover:bg-primary/20">
+                    <td className="border-b border-gray-200 p-2 md:p-3 text-center text-sm md:text-base">{sno}</td>
+                    <td className="border-b border-gray-200 p-2 md:p-3 text-sm md:text-base">{name}</td>
+                    <td className="border-b border-gray-200 p-2 md:p-3 text-sm md:text-base">{desig}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="my-2">
+            <a
+              href="/assets/pdf/committees-2026-27/statutory/eoc_committee.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-secondary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-secondary/90 transition shadow-sm"
+            >
+              📄 View / Download Equal Opportunity Cell 2026-27 PDF
+            </a>
+          </div>
+        </>
+      ),
+    },
+    {
+      title: "4. Grievance Redressal Committee (Staff) (2026-27)",
+      content: (
+        <div className="py-2">
+          <a
+            href="/assets/pdf/committees-2026-27/statutory/grievance_redressal_committee.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-secondary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-secondary/90 transition shadow-sm"
+          >
+            📄 View / Download Grievance Redressal Committee (Staff) 2026-27 PDF
+          </a>
         </div>
       ),
     },
     {
-      title: "4. Grievance Redressal Committee (Staff)",
+      title: "5. Grievance Redressal Committee (Students) (2026-27)",
       content: (
-        <div className="mt-4">
-          <iframe
-            src="/assets/pdf/griuevance redressal staff.pdf"
-            width="100%"
-            height="600px"
-            style={{ border: 'none' }}
-            title="Grievance Redressal Committee (Staff)"
-          ></iframe>
-        </div>
-      ),
-    },
-    {
-      title: "5. Grievance Redressal Committee (Students)",
-      content: (
-        <div className="mt-4">
-          <iframe
-            src="/assets/pdf/Grievance redressal student.pdf"
-            width="100%"
-            height="600px"
-            style={{ border: 'none' }}
-            title="Grievance Redressal Committee (Students)"
-          ></iframe>
+        <div className="py-2">
+          <a
+            href="/assets/pdf/committees-2026-27/statutory/student_grievance_redressal_committee.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-secondary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-secondary/90 transition shadow-sm"
+          >
+            📄 View / Download Grievance Redressal Committee (Students) 2026-27 PDF
+          </a>
         </div>
       ),
     },
 
     {
-      title: "6. IQAC Committee",
+      title: "6. IQAC Committee (2026-27)",
       content: (
-        <div className="mt-4">
-          <iframe
-            src="/assets/pdf/IQAC 2025-26.pdf"
-            width="100%"
-            height="600px"
-            style={{ border: 'none' }}
-            title="IQAC Committee"
-          ></iframe>
+        <div className="py-2">
+          <a
+            href="/assets/pdf/committees-2026-27/statutory/iqac_2026_27.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-secondary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-secondary/90 transition shadow-sm"
+          >
+            📄 View / Download IQAC Committee 2026-27 PDF
+          </a>
         </div>
       ),
     },
     {
-      title: "7. SC / ST Committee",
+      title: "7. SC / ST Committee (2026-27)",
       content: (
-        <div className="mt-4">
-          <iframe
-            src="/assets/pdf/SCST Committee.pdf"
-            width="100%"
-            height="600px"
-            style={{ border: 'none' }}
-            title="SC/ST Committee"
-          ></iframe>
+        <div className="py-2">
+          <a
+            href="/assets/pdf/committees-2026-27/statutory/scst_committee.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-secondary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-secondary/90 transition shadow-sm"
+          >
+            📄 View / Download SC/ST Committee 2026-27 PDF
+          </a>
         </div>
       ),
     },
@@ -231,12 +222,12 @@ const Statutory = () => {
       ),
     },
     {
-      title: "9. Student Development Cell",
+      title: "9. Student Development Cell (2026-27)",
       content: (
         <>
           <h3 className="font-semibold mt-2 mb-4">STUDENT DEVELOPMENT CELL</h3>
 
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto mb-4">
             <table className="w-full border border-gray-200 rounded-lg shadow-sm mt-3">
               <thead className="bg-secondary text-white">
                 <tr>
@@ -262,6 +253,16 @@ const Statutory = () => {
                 ))}
               </tbody>
             </table>
+          </div>
+          <div className="my-2">
+            <a
+              href="/assets/pdf/committees-2026-27/statutory/student_development_cell.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-secondary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-secondary/90 transition shadow-sm"
+            >
+              📄 View / Download Student Development Cell 2026-27 PDF
+            </a>
           </div>
         </>
       ),

@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const convertImageToWebp = (src) => {
   if (!src) return src;
-  return src.replace(/\.(jpe?g|png|avif|jpg|JPG)$/i, '.webp');
+  return src.replace(/\.(jpe?g|png|avif|jpg|JPG)$/i, ".webp");
 };
 
 // ================== STAFF DATA ==================
@@ -59,7 +59,7 @@ const staffData = [
   {
     sn: 6,
     id: "3120",
-    name: "Mr. Balu Chatrbhuj Tandale",
+    name: "Prof. Balu Chatrbhuj Tandale",
     designation: "Assistant Professor",
     department: "E&TC",
     qualification: "BE ME",
@@ -77,6 +77,17 @@ const staffData = [
     doj: "2/5/2026",
     dob: "18/09/1980",
     image: "/programs/ENTC/sushma_patwardhan.webp",
+  },
+  {
+    sn: 8,
+    id: "3455",
+    name: "Prof. Pallavi M. Rokade",
+    designation: "Assistant Professor",
+    department: "E&TC",
+    qualification: "M.Tech",
+    doj: "8/7/2026",
+    dob: "20/05/1990",
+    image: "",
   },
 ];
 
@@ -161,25 +172,25 @@ export default function FAQSection() {
     // ================= NEW SECTIONS FOR ENTC =================
 
     "FRA - Fee Structure": {
-  type: "syllabus",
-  content: [
-    {
-      id: "fra-fee-structure-26-27",
-      label: "FRA Fee Structure (A.Y. 2026-27)",
-      pdf: "/fees/fra_fees_2026-27.pdf",
+      type: "syllabus",
+      content: [
+        {
+          id: "fra-fee-structure-26-27",
+          label: "FRA Fee Structure (A.Y. 2026-27)",
+          pdf: "/fees/fra_fees_2026-27.pdf",
+        },
+        {
+          id: "fee-structure",
+          label: "Fee Structure (2025–26)",
+          pdf: "/programs/Computer/Feestructure2526.pdf",
+        },
+        {
+          id: "fee-fra",
+          label: "FRA Document",
+          pdf: "/programs/Computer/NewFRA.pdf",
+        },
+      ],
     },
-    {
-      id: "fee-structure",
-      label: "Fee Structure (2025–26)",
-      pdf: "/programs/Computer/Feestructure2526.pdf",
-    },
-    {
-      id: "fee-fra",
-      label: "FRA Document",
-      pdf: "/programs/Computer/NewFRA.pdf",
-    },
-  ],
-},
 
     "Admission Procedure": {
       type: "syllabus",
@@ -197,58 +208,53 @@ export default function FAQSection() {
       content: [
         {
           program: "F.Y. B.Tech",
-          intake: "60 Seats",
-          duration: "1 Year",
-          type: "Full Time",
+          intake: "60",
         },
         {
           program: "S.Y. B.Tech",
-          intake: "30 Seats",
-          duration: "1 Year",
-          type: "Full Time",
+          intake: "30",
         },
         {
           program: "T.Y. B.Tech",
-          intake: "30 Seats",
-          duration: "1 Year",
-          type: "Full Time",
+          intake: "30",
         },
         {
           program: "Final Year",
-          intake: "30 Seats",
-          duration: "1 Year",
-          type: "Full Time",
+          intake: "30",
         },
       ],
     },
 
-//     "Eligibility Criteria": {
-//       type: "text",
-//       content: `
-// `,
-//     },
+    //     "Eligibility Criteria": {
+    //       type: "text",
+    //       content: `
+    // `,
+    //     },
 
     "Eligibility Criteria": {
       type: "accordion",
       content: {
-        "Eligibility Criteria for Admission to First Year Engineering 2024-25": [
-          "For details about First Year Engineering Admission and Eligibility Criteria, refer https://cetcell.mahacet.org/",
-        ],
+        "Eligibility Criteria for Admission to First Year Engineering 2024-25":
+          [
+            "For details about First Year Engineering Admission and Eligibility Criteria, refer https://cetcell.mahacet.org/",
+          ],
         "Maharashtra State Candidature Candidates": [
           "The Candidate should be an Indian National.",
           "Passed HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State), in the above subjects taken together; and the Candidate should have appeared in all the subjects in CET and should obtain non zero score in CET conducted by the Competent Authority.",
           "Or",
           "Passed Diploma in Engineering and Technology and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State).",
         ],
-        "All India Candidature Candidates, Union Territory of Jammu and Kashmir and Union Territory of Ladakh Migrant Candidature Candidates": [
-          "The Candidate should be an Indian National.",
-          "Passed HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State) in the above subjects taken together; and should obtain non zero positive score in JEE (Main) B.E./B.Tech or the candidate should have appeared in all the subjects in CET and should obtain non zero score in CET conducted by the Competent Authority. However, preference shall be given to the candidate obtaining non zero positive score in JEE (Main) B.E./B.Tech over the candidates who obtained non zero score in CET.",
-          "Or",
-          "Passed Diploma in Engineering and Technology and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State).",
-        ],
-        "NRI / OCI / PIO, Children of Indian workers in the Gulf countries and Foreign National Candidature Candidates": [
-          "The candidate should have passed the HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies, and obtained at least 45 % marks in the above subjects taken together.",
-        ],
+        "All India Candidature Candidates, Union Territory of Jammu and Kashmir and Union Territory of Ladakh Migrant Candidature Candidates":
+          [
+            "The Candidate should be an Indian National.",
+            "Passed HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State) in the above subjects taken together; and should obtain non zero positive score in JEE (Main) B.E./B.Tech or the candidate should have appeared in all the subjects in CET and should obtain non zero score in CET conducted by the Competent Authority. However, preference shall be given to the candidate obtaining non zero positive score in JEE (Main) B.E./B.Tech over the candidates who obtained non zero score in CET.",
+            "Or",
+            "Passed Diploma in Engineering and Technology and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State).",
+          ],
+        "NRI / OCI / PIO, Children of Indian workers in the Gulf countries and Foreign National Candidature Candidates":
+          [
+            "The candidate should have passed the HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies, and obtained at least 45 % marks in the above subjects taken together.",
+          ],
         "Additional Information": [
           "Any other criterion declared from time to time by the appropriate authority as defined under the Act.",
         ],
@@ -269,8 +275,8 @@ export default function FAQSection() {
       content: syllabusList,
     },
 
-    "Laboratories": {
-      type: "labs-with-images",
+    Laboratories: {
+      type: "labs",
       content: {
         labs: [
           { srNo: 1, labName: "Software Lab" },
@@ -281,18 +287,32 @@ export default function FAQSection() {
           { srNo: 6, labName: "Communication Lab" },
         ],
         images: [
-          "/programs/ENTC/entc_lab1.avif",
-          "/programs/ENTC/entc_lab2.avif",
+          {
+            src: "/programs/ENTC/entc_lab1.avif",
+            title: "Electronics & System Demonstration",
+          },
+          {
+            src: "/programs/ENTC/entc_lab2.avif",
+            title: "Hardware & Circuit Laboratory",
+          },
+          {
+            src: "/programs/ENTC/entc_lab_facility_apple.webp",
+            title: "Apple Lab",
+          },
+          {
+            src: "/programs/ENTC/entc_lab_facility_software.webp",
+            title: "Software Laboratory",
+          },
         ],
       },
     },
 
-    "Staff": {
+    Staff: {
       type: "staff",
       content: staffData,
     },
 
-    "Newsletter": {
+    Newsletter: {
       type: "syllabus",
       content: [
         {
@@ -339,7 +359,7 @@ export default function FAQSection() {
                         <p key={i} className="text-gray-700">
                           {item}
                         </p>
-                      )
+                      ),
                     )}
                   </div>
                 </details>
@@ -369,29 +389,40 @@ export default function FAQSection() {
           </div>
         );
       case "text":
-  return (
-    <div className="space-y-3 text-gray-700 leading-relaxed whitespace-pre-line">
-      {data.content
-        .split("\n")
-        .filter((line) => line.trim() !== "")
-        .map((line, i) => (
-          <p key={i}>{line}</p>
-        ))}
-    </div>
-  );
+        return (
+          <div className="space-y-3 text-gray-700 leading-relaxed whitespace-pre-line">
+            {data.content
+              .split("\n")
+              .filter((line) => line.trim() !== "")
+              .map((line, i) => (
+                <p key={i}>{line}</p>
+              ))}
+          </div>
+        );
 
       case "notice":
         return <p className="text-gray-600 text-lg">{data.content}</p>;
-      case "table":
+      case "table": {
+        const hasDuration = data.content.some((row) => row.duration);
+        const hasType = data.content.some((row) => row.type);
+
         return (
           <div className="overflow-x-auto border border-gray-200 rounded-lg">
             <table className="w-full text-sm text-left">
               <thead className="bg-gray-50 text-gray-700">
                 <tr>
-                  <th className="p-2 md:p-3 border-b font-semibold">Programme</th>
+                  <th className="p-2 md:p-3 border-b font-semibold">
+                    Programme
+                  </th>
                   <th className="p-2 md:p-3 border-b font-semibold">Intake</th>
-                  <th className="p-2 md:p-3 border-b font-semibold">Duration</th>
-                  <th className="p-2 md:p-3 border-b font-semibold">Type</th>
+                  {hasDuration && (
+                    <th className="p-2 md:p-3 border-b font-semibold">
+                      Duration
+                    </th>
+                  )}
+                  {hasType && (
+                    <th className="p-2 md:p-3 border-b font-semibold">Type</th>
+                  )}
                 </tr>
               </thead>
 
@@ -401,52 +432,117 @@ export default function FAQSection() {
                     key={i}
                     className="hover:bg-gray-50 border-b last:border-b-0"
                   >
-                    <td className="p-2 md:p-3 text-gray-700">{row.program}</td>
+                    <td className="p-2 md:p-3 text-gray-700 font-medium">
+                      {row.program}
+                    </td>
                     <td className="p-2 md:p-3 text-gray-700">{row.intake}</td>
-                    <td className="p-2 md:p-3 text-gray-700">{row.duration}</td>
-                    <td className="p-2 md:p-3 text-gray-700">{row.type}</td>
+                    {hasDuration && (
+                      <td className="p-2 md:p-3 text-gray-700">
+                        {row.duration}
+                      </td>
+                    )}
+                    {hasType && (
+                      <td className="p-2 md:p-3 text-gray-700">{row.type}</td>
+                    )}
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
         );
-      case "labs-with-images":
+      }
+      case "labs":
+        const labList = Array.isArray(data.content)
+          ? data.content
+          : data.content?.labs || [];
+        const labImages = data.content?.images || [];
+
         return (
-          <div className="space-y-6">
+          <div className="space-y-8">
+            {/* Laboratories List */}
             <div>
-              <h4 className="text-lg font-semibold text-gray-800 mb-4">Our Laboratories</h4>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {data.content.labs.map((lab, index) => (
-                  <li key={index} className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                    <span className="bg-secondary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">{lab.srNo}</span>
-                    <span className="text-gray-800 font-medium">{lab.labName}</span>
-                  </li>
+              <div className="flex items-center space-x-2 mb-4">
+                <span className="w-1.5 h-6 bg-secondary rounded-full inline-block"></span>
+                <h4 className="text-xl font-bold text-gray-900 tracking-tight">
+                  Our Specialized Laboratories
+                </h4>
+              </div>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+                {labList.map((lab, index) => (
+                  <motion.li
+                    key={index}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.05, duration: 0.3 }}
+                    className="flex items-center space-x-3.5 p-4 bg-gradient-to-r from-slate-50 to-white rounded-xl border border-slate-200/80 shadow-xs hover:border-secondary/40 hover:shadow-sm transition-all duration-200"
+                  >
+                    <span className="bg-secondary text-white rounded-lg w-9 h-9 flex items-center justify-center text-sm font-bold shadow-xs shrink-0">
+                      {lab.srNo < 10 ? `0${lab.srNo}` : lab.srNo}
+                    </span>
+                    <span className="text-gray-800 font-semibold text-base leading-snug">
+                      {lab.labName}
+                    </span>
+                  </motion.li>
                 ))}
               </ul>
             </div>
-            <div>
-              <h4 className="text-lg font-semibold text-gray-800 mb-4">Laboratory Facilities</h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {data.content.images.map((imgSrc, index) => (
-                  <div key={index} className="rounded-lg overflow-hidden shadow-md">
-                    <Image
-                      src={imgSrc}
-                      alt={`Laboratory Facility ${index + 1}`}
-                      width={500}
-                      height={300}
-                      className="w-full h-48 object-cover hover:scale-105 transition-transform duration-200"
-                    />
+
+            {/* Laboratory Images */}
+            {labImages.length > 0 && (
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center space-x-2">
+                    <span className="w-1.5 h-6 bg-secondary rounded-full inline-block"></span>
+                    <h4 className="text-xl font-bold text-gray-900 tracking-tight">
+                      Laboratory Facilities & Infrastructure
+                    </h4>
                   </div>
-                ))}
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  {labImages.map((item, index) => {
+                    const src = item.src || item;
+                    const title =
+                      item.title ||
+                      (index === 0
+                        ? "Electronics & System Demonstration"
+                        : "Hands-on Student Practical Work");
+
+                    return (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, scale: 0.98 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.4, delay: index * 0.05 }}
+                        className="group relative rounded-2xl overflow-hidden shadow-sm border border-slate-200/80 bg-slate-900"
+                      >
+                        <div className="relative w-full h-56 sm:h-64 overflow-hidden">
+                          <Image
+                            src={src}
+                            alt={title}
+                            fill
+                            className="object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent opacity-85 group-hover:opacity-65 transition-opacity duration-300" />
+                          <div className="absolute bottom-3 left-3 right-3 text-white">
+                            <span className="text-sm font-semibold text-white drop-shadow-sm leading-snug">
+                              {title}
+                            </span>
+                          </div>
+                        </div>
+                      </motion.div>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         );
 
       case "staff":
         const StaffPhoto = ({ src, alt }) => {
-          const [currentSrc, setCurrentSrc] = useState(src || "/faculty/newFaculty/placeholder.avif");
+          const [currentSrc, setCurrentSrc] = useState(
+            src || "/faculty/newFaculty/placeholder.avif",
+          );
           const [hasError, setHasError] = useState(false);
 
           return hasError ? (
@@ -617,4 +713,4 @@ export default function FAQSection() {
       </div>
     </section>
   );
-};
+}

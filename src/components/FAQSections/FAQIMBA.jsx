@@ -26,7 +26,7 @@ const staffData = [
     qualification: "BA, MBA - HR",
     doj: "20/07/2007",
     dob: "23/08/1973",
-    image: "/programs/IBCAMBA/sonail_pradhan.jpg",
+    image: "/programs/IBCAMBA/sonail_pradhan.webp",
   },
   {
     sn: 3,
@@ -48,7 +48,7 @@ const staffData = [
     qualification: "B.Tech, MBA (MKT), Dual MBA (OP)",
     doj: "10/03/2026",
     dob: "07/12/1995",
-    image: "/programs/IBCAMBA/vaibhav.jpg",
+    image: "/programs/IBCAMBA/vaibhav.webp",
   },
 ];
 

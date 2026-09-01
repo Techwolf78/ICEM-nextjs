@@ -157,8 +157,8 @@ export default function FirstYearEngineering() {
       name: "Dr. Mandakini Sanjay Dahiwade",
       designation: "Assistant Professor",
       department: "FE",
-      qualification: "B.Sc M.Sc M.Phil Ph.D",
-      doj: "07/01/2024",
+      qualification: "Ph.D., M.Phill, M.Sc.",
+      doj: "30/11/2022",
       dob: "02/05/1988",
       image: "/faculty/final_icem_branding/fe/Dr. Mandakini Dahiwade.webp",
     },
@@ -179,7 +179,7 @@ export default function FirstYearEngineering() {
       name: "Ms. Trupti Nandkumar Kathale",
       designation: "Assistant Professor",
       department: "FE",
-      qualification: "B.Sc M.Sc",
+      qualification: "M.Sc. B.Sc.",
       doj: "10/01/2024",
       dob: "01/06/1985",
       image: "/faculty/final_icem_branding/fe/Trupti Kathale.webp",
@@ -190,7 +190,7 @@ export default function FirstYearEngineering() {
       name: "Mr. Raghunandan Vinayakrao Kale",
       designation: "Assistant Professor",
       department: "FE",
-      qualification: "B.Sc M.Sc",
+      qualification: "M.Sc. B.Sc.",
       doj: "10/03/2024",
       dob: "28/03/1998",
       image: "/faculty/final_icem_branding/fe/Raghunandan sir photo.webp",
@@ -201,7 +201,7 @@ export default function FirstYearEngineering() {
       name: "Mr. Swapnil Machhindra Chaudhari",
       designation: "Assistant Professor",
       department: "FE",
-      qualification: "B.Sc M.Tech",
+      qualification: "M.Tech., B.Sc.",
       doj: "10/07/2024",
       dob: "02/06/1993",
       image: "/faculty/final_icem_branding/fe/Swapnil choudhary.webp",
@@ -212,7 +212,7 @@ export default function FirstYearEngineering() {
       name: "Dr. Dyanand Ambadas Kamble",
       designation: "Assistant Professor",
       department: "FE",
-      qualification: "Ph.D B.Sc M.Sc Post Doctorate",
+      qualification: "Post Doctorate, Ph.D., M.Sc.",
       doj: "22/09/2025",
       dob: "23/10/1982",
       image: "/faculty/final_icem_branding/fe/Dr. Dayanand Kamble.webp",
@@ -223,7 +223,7 @@ export default function FirstYearEngineering() {
       name: "Mr. Rathod Shubham Shrikant",
       designation: "Assistant Professor",
       department: "FE",
-      qualification: "B.Sc M.Sc",
+      qualification: "M.Sc. B.Sc.",
       doj: "01/10/2025",
       dob: "03/01/1995",
       image: "/faculty/final_icem_branding/fe/Mr. Shubham Rathod.webp",
@@ -239,60 +239,86 @@ export default function FirstYearEngineering() {
       dob: "05/10/1998",
       image: "/faculty/final_icem_branding/fe/Mr. Rishikesh Sonawane.webp",
     },
+    {
+      sn: 15,
+      id: "3221",
+      name: "Mr. Yadnyesh Khotre",
+      designation: "Teaching Assistant",
+      department: "FE",
+      qualification: "B.E.(AI & ML)",
+      doj: "21/09/2025",
+      dob: "17/09/2001",
+      image: "/faculty/final_icem_branding/fe/Yadneyesh Khotre.webp",
+    },
+    {
+      sn: 16,
+      id: "3394",
+      name: "Mr. Himanshu Tarale",
+      designation: "Assistant Professor",
+      department: "FE",
+      qualification: "M.Tech, B.E.(Computer), GATE",
+      doj: "09/02/2026",
+      dob: "26/02/2003",
+      image: "/faculty/final_icem_branding/fe/Himanshu Tarale.webp",
+    },
+    {
+      sn: 17,
+      id: "3495",
+      name: "Mr. Dipak Sabale",
+      designation: "Assistant Professor",
+      department: "FE",
+      qualification: "M.Sc (Mathematics), SET, B.Ed., B.E.(Mechanical)",
+      doj: "20/07/2026",
+      dob: "09/11/1998",
+      image: "/faculty/final_icem_branding/fe/Dipak Sabale.webp",
+    },
+    {
+      sn: 18,
+      id: "3497",
+      name: "Ms. Preeti Katyal",
+      designation: "Assistant Professor",
+      department: "FE",
+      qualification: "M.Ed., M.Sc., B.A.(Mathematics)",
+      doj: "20/07/2026",
+      dob: "06/07/1999",
+      image: "/faculty/final_icem_branding/fe/Priti Katyal.webp",
+    },
   ];
 
   const bosData = [
-    {
-      srNo: 1,
-      name: "Dr. Poorna Shankar , HOD( Basic Engineering Department )",
-      category: "BOS Chairman",
-    },
-    { srNo: 2, name: "Dr. Vikas Mathe", category: "VC Nominee" },
-    {
-      srNo: 3,
-      name: "Dr. Nagbhushan Patil, Professor, Sharnbasava University, Kalburgi, Karnataka",
-      category: "Subject Expert",
-    },
-    {
-      srNo: 4,
-      name: "Dr. Nandkumar Mandlik, Asso. Professor and Controller of Examinations, Fergusson College,Pune",
-      category: "Subject Expert",
-    },
-    {
-      srNo: 5,
-      name: "Dr. Chaya Lande, Asst. Professor-Mathematics, Symbiosis Institute of Technology, Pune",
-      category: "Subject Expert",
-    },
-    {
-      srNo: 6,
-      name: "Dr. Neeta Kankane, Professor, Associate Dean, Faculty of science, MITWPU. Kothrud, Pune",
-      category: "Subject Expert",
-    },
-    {
-      srNo: 7,
-      name: "Dr. Amrut Gaikwad, Sr. Scientist, OLON India Pvt. Ltd. Pune",
-      category: "Industry Expert",
-    },
-    {
-      srNo: 8,
-      name: "Mr. Avinash Sukhwani, Design Head, Nelilsoft Technologies, Pune",
-      category: "Alumni Member",
-    },
+    { srNo: 1, name: "Dr. Vikas Mathe", category: "VC Nominee" },
+    { srNo: 2, name: "Dr. Kiran Devade", category: "BoS Chairman" },
+    { srNo: 3, name: "Dr. Amrut Gaikwad", category: "Industry Expert" },
+    { srNo: 4, name: "Dr. Neeta Kankane", category: "Subject Expert" },
+    { srNo: 5, name: "Dr. Nandkumar Mandlik", category: "Subject Expert" },
+    { srNo: 6, name: "Dr. Nagbhushan Patil", category: "Subject Expert" },
+    { srNo: 7, name: "Dr. Chhaya Lande", category: "Subject Expert" },
+    { srNo: 8, name: "Mr. Avinash Sukhwani", category: "Alumni Member" },
     { srNo: 9, name: "Dr. Manjusha Tomar", category: "Member" },
-    { srNo: 10, name: "Prof.Pratima Gaikwad", category: "Member" },
+    { srNo: 10, name: "Prof. Pratima Uplaonkar", category: "Member" },
     { srNo: 11, name: "Dr. Avinash Bansode", category: "Member" },
     { srNo: 12, name: "Dr. Mandakini Dahiwade", category: "Member" },
-    { srNo: 13, name: "Prof.Dheeraj Bhagwate", category: "Member" },
-    { srNo: 14, name: "Prof. Supriya Kumbhar", category: "Member" },
-    { srNo: 15, name: "Prof. Ashwin Dharme", category: "Member" },
-    { srNo: 16, name: "Prof. Rupali Salunke", category: "Member" },
-    { srNo: 17, name: "Prof.Mayur Napte", category: "Member" },
-    { srNo: 18, name: "Prof. Satyam Kalyane", category: "Member" },
-    { srNo: 19, name: "Prof. Pallavi Javalekar", category: "Member" },
-    { srNo: 20, name: "Prof. Sachin Gaikwad", category: "Member" },
+    { srNo: 13, name: "Mrs. Supriya Kumbhar", category: "Member" },
+    { srNo: 14, name: "Mr. Ashwin Dharme", category: "Member" },
+    { srNo: 15, name: "Dr. Dayanand Kamble", category: "Member" },
+    { srNo: 16, name: "Mrs. Priyanka Mahajan", category: "Member" },
+    { srNo: 17, name: "Mr. Shubham Rathod", category: "Member" },
+    { srNo: 18, name: "Mrs. Trupti Kathale", category: "Member" },
+    { srNo: 19, name: "Mr. Swapnil Chaudhari", category: "Member" },
+    { srNo: 20, name: "Mr. Raghunandan Kale", category: "Member" },
+    { srNo: 21, name: "Mr. Sudhir Sawarkar", category: "Member" },
+    { srNo: 22, name: "Mrs. Priyanka Patil", category: "Member" },
+    { srNo: 23, name: "Mr. Vijay Kumar Saini", category: "Member" },
+    { srNo: 24, name: "Mr. Sanjay Mathapati", category: "Member" },
+    { srNo: 25, name: "Mr. Yadnyesh Khotre", category: "Member" },
+    { srNo: 26, name: "Mr. Himanshu Tarale", category: "Member" },
   ];
 
   const syllabusData = [
+    {
+      name: "FY BTECH (2026 Courses) Pattern Syllabus",
+      pdf: "/assets/pdf/syllabus/fy_btech_2026_courses_pattern_syllabus_authenticated_ay_26_27_specimen_copy.pdf",
+    },
     {
       name: "FY BTech (2025 Course) Pattern Syllabus",
       pdf: "/assets/pdf/syllabus/Updated-Syllabus-new-Authenticated-by-VC-Nominee.pdf",
@@ -591,15 +617,15 @@ export default function FirstYearEngineering() {
         return (
           <div className="bg-white rounded-2xl shadow-xl p-2">
             <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4">
-              Board of Studies (BOS) Members
+              Board of Studies (BOS) Members (AY 2026-27)
             </h3>
             <div className="overflow-x-auto">
               <table className="w-full text-xs md:text-sm">
                 <thead>
                   <tr className="bg-slate-50">
-                    <th className="px-4 py-2 text-left font-semibold">Sr No</th>
+                    <th className="px-4 py-2 text-left font-semibold">Sr. No</th>
                     <th className="px-4 py-2 text-left font-semibold">
-                      Name of Member with Designation
+                      Name of Member
                     </th>
                     <th className="px-4 py-2 text-left font-semibold">
                       Category

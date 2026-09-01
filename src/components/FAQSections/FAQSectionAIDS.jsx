@@ -83,19 +83,9 @@ const teachingStaff = [
     dob: "16/03/1993",
     image: "/faculty/final_icem_branding/aids/tanuja_pande.webp",
   },
+
   {
     sn: 8,
-    id: "3267",
-    name: "Prof. Vivek Sahaguara",
-    designation: "Assistant Professor",
-    department: "AIDS",
-    qualification: "M.Tech, B.E",
-    doj: "23/01/2026",
-    dob: "18/12/1990",
-    image: "/faculty/final_icem_branding/aids/Vivek Sohagora.webp",
-  },
-  {
-    sn: 10,
     id: "TBD",
     name: "Prof. Amit Kumar",
     designation: "Assistant Professor",
@@ -106,7 +96,7 @@ const teachingStaff = [
     image: "/programs/AIDS/amit_kumar.webp",
   },
   {
-    sn: 11,
+    sn: 9,
     id: "TBD",
     name: "Prof. Trupti Bhagat",
     designation: "Assistant Professor",
@@ -239,52 +229,52 @@ Please contact the admission office for the latest and exact fee details.`;
 
 const syllabusList = [
   {
+    id: "sy",
+    label: "SY B.Tech AI & DS Syllabus (2025 Pattern)",
+    pdf: "/programs/AIDS/2nd_year_aids_syllabus_2025_pattern_13.pdf",
+  },
+  {
+    id: "ty",
+    label: "TY B.Tech AI & DS Syllabus (2024 Pattern)",
+    pdf: "/programs/AIDS/3rd_year_aids_syllabus_2024_pattern_12.pdf",
+  },
+  {
     id: "be",
     label: "BE AIDS Engineering (2019 Pattern) Syllabus",
     pdf: "/programs/AIDS/BESyllabus.pdf",
   },
+  {
+    id: "honours",
+    label: "AI & DS Honours Syllabus (2024 Pattern)",
+    pdf: "/programs/AIDS/aids_honours_syllabus_2024_pattern_3.pdf",
+  },
 ];
 
-const courseStructureImages = [
+const courseStructureList = [
   {
-    id: "fe1",
-    label: "FE SEM 1 Course Structure",
-    src: "/programs/AIDS/FESem1.jpg",
+    id: "sy-sem3",
+    label: "SY B.Tech Sem III Course Structure (2025 Pattern)",
+    pdf: "/programs/AIDS/2nd_year_aids_syllabus_2025_pattern_sem_iii_course_structure.pdf",
   },
   {
-    id: "fe2",
-    label: "FE SEM 2 Course Structure",
-    src: "/programs/AIDS/FESem2.jpg",
+    id: "sy-sem4",
+    label: "SY B.Tech Sem IV Course Structure (2025 Pattern)",
+    pdf: "/programs/AIDS/2nd_year_aids_syllabus_2025_pattern_sem_iv_course_structure.pdf",
   },
   {
-    id: "se1",
-    label: "SE SEM 1 Course Structure",
-    src: "/programs/AIDS/SYBtechSem1.jpg",
+    id: "ty-sem5",
+    label: "TY B.Tech Sem V Course Structure (2024 Pattern)",
+    pdf: "/programs/AIDS/3rd_year_aids_syllabus_2024_pattern_sem_5_course_structure.pdf",
   },
   {
-    id: "se2",
-    label: "SE SEM 2 Course Structure",
-    src: "/programs/AIDS/SYBtechSem2.jpg",
+    id: "ty-sem6",
+    label: "TY B.Tech Sem VI Course Structure (2024 Pattern)",
+    pdf: "/programs/AIDS/3rd_year_aids_syllabus_2024_pattern_sem_6_course_structure.pdf",
   },
   {
-    id: "te1",
-    label: "TE SEM 1 Course Structure",
-    src: "/programs/AIDS/TESem1.jpg",
-  },
-  {
-    id: "te2",
-    label: "TE SEM 2 Course Structure",
-    src: "/programs/AIDS/TESem2.jpg",
-  },
-  {
-    id: "be1",
-    label: "BE SEM 1 Course Structure",
-    src: "/programs/AIDS/BESem1.jpg",
-  },
-  {
-    id: "be2",
-    label: "BE SEM 2 Course Structure",
-    src: "/programs/AIDS/BESem2.jpg",
+    id: "honours-cs",
+    label: "AI & DS Honours Course Structure (2024 Pattern)",
+    pdf: "/programs/AIDS/aids_honours_syllabus_2024_pattern_course_structure.pdf",
   },
 ];
 
@@ -1203,50 +1193,56 @@ export default function FAQSectionAIDS() {
 
             {/* ================= SYLLABUS & COURSE STRUCTURE ================= */}
             {active === "Syllabus & Course Structure" && (
-              <div className="space-y-4 md:space-y-8">
-                {/* PDFs */}
-                <div className="space-y-3 md:space-y-4">
-                  {syllabusList.map((item) => (
-                    <div
-                      key={item.id}
-                      className="flex flex-col sm:flex-row sm:items-center justify-between p-3 md:p-4 border border-gray-200 rounded-lg hover:bg-gray-50"
-                    >
-                      <h5 className="font-semibold text-gray-800">
-                        {item.label}
-                      </h5>
-                      <a
-                        href={item.pdf}
-                        target="_blank"
-                        className="px-4 py-2 bg-secondary text-white rounded-md mt-2 sm:mt-0"
+              <div className="space-y-6 md:space-y-8">
+                {/* Syllabus PDFs */}
+                <div>
+                  <h4 className="font-bold text-lg text-secondary mb-3 md:mb-4">
+                    Syllabus
+                  </h4>
+                  <div className="space-y-3 md:space-y-4">
+                    {syllabusList.map((item) => (
+                      <div
+                        key={item.id}
+                        className="flex flex-col sm:flex-row sm:items-center justify-between p-3 md:p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
                       >
-                        View / Download
-                      </a>
-                    </div>
-                  ))}
+                        <h5 className="font-semibold text-gray-800">
+                          {item.label}
+                        </h5>
+                        <a
+                          href={item.pdf}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-4 py-2 bg-secondary text-white rounded-md mt-2 sm:mt-0 text-center font-medium hover:bg-secondary/90 transition-colors"
+                        >
+                          View / Download
+                        </a>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
-                {/* Course Structure Images */}
+                {/* Course Structure PDFs */}
                 <div>
-                  <h4 className="font-semibold text-secondary mb-2 md:mb-3">
+                  <h4 className="font-bold text-lg text-secondary mb-3 md:mb-4">
                     Course Structure
                   </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                    {courseStructureImages.map((img) => (
+                  <div className="space-y-3 md:space-y-4">
+                    {courseStructureList.map((item) => (
                       <div
-                        key={img.id}
-                        className="border rounded-lg shadow-sm bg-white overflow-hidden"
+                        key={item.id}
+                        className="flex flex-col sm:flex-row sm:items-center justify-between p-3 md:p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
                       >
-                        <div className="relative w-full h-48">
-                          <a href={img.src} target="_blank">
-                            <Image
-                              src={img.src}
-                              alt={img.label}
-                              fill
-                              className="object-contain p-2"
-                            />
-                          </a>
-                        </div>
-                        <div className="p-3 text-sm">{img.label}</div>
+                        <h5 className="font-semibold text-gray-800">
+                          {item.label}
+                        </h5>
+                        <a
+                          href={item.pdf}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-4 py-2 bg-secondary text-white rounded-md mt-2 sm:mt-0 text-center font-medium hover:bg-secondary/90 transition-colors"
+                        >
+                          View / Download
+                        </a>
                       </div>
                     ))}
                   </div>

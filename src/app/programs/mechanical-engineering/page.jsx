@@ -22,8 +22,8 @@ export default function Mech() {
   // Brochure Download
   const handleBrochureDownload = () => {
     const link = document.createElement("a");
-    link.href = "/brochures/ICEMAdmissionBrochure2025.pdf"; // ✅ Use public folder path directly
-    link.download = "ICEM-Brochure.pdf"; // ✅ Updated filename
+    link.href = "/brochures/ICEM_Admission_Brochure_2026-27.pdf"; // ✅ Use public folder path directly
+    link.download = "ICEM_Admission_Brochure_2026-27.pdf"; // ✅ Updated filename
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

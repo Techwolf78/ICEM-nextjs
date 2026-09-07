@@ -29,8 +29,8 @@ export default function CTASection() {
       link.href = "/programs/mca/admission_brochure.pdf";
       link.download = "admission_brochure.pdf";
     } else {
-      link.href = "/brochures/ICEMAdmissionBrochure2025.pdf";
-      link.download = "ICEMAdmissionBrochure2025.pdf";
+      link.href = "/brochures/ICEM_Admission_Brochure_2026-27.pdf";
+      link.download = "ICEM_Admission_Brochure_2026-27.pdf";
     }
     document.body.appendChild(link);
     link.click();

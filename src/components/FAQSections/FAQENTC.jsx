@@ -87,51 +87,37 @@ const staffData = [
     qualification: "M.Tech",
     doj: "8/7/2026",
     dob: "20/05/1990",
-    image: "",
+    image: "/programs/ENTC/pallavi_rokade.webp",
+  },
+  {
+    sn: 9,
+    id: "2284",
+    name: "Abhay Anant Kurgund",
+    designation: "Lab Assistant",
+    department: "E&TC",
+    qualification: "Diploma in IT",
+    doj: "17/10/22",
+    dob: "11/03/1985",
+    image: "/programs/ENTC/abhay_kurgund.webp",
   },
 ];
 
 // ================== SYLLABUS DATA ==================
 const syllabusList = [
   {
-    id: "fe-2025",
-    label: "FY BTech (2025 Course) Pattern Syllabus",
-    pdf: "/assets/pdf/syllabus/Updated-Syllabus-new-Authenticated-by-VC-Nominee.pdf",
+    id: "sy-btech-2025",
+    label: "SY BTech E&TC Syllabus (2025 pattern)",
+    pdf: "/programs/ENTC/SY BTech E&TC Syllabus (2025 pattern).pdf",
   },
   {
-    id: "fe-2024",
-    label: "FY BTech (2024 Course) Pattern Syllabus",
-    pdf: "/assets/pdf/syllabus/New_Syllabus_2024-25_Updated_(28-10-2024).pdf",
-  },
-  // {
-  //   id: "fe-2019",
-  //   label: "First Year Engineering (2019 Course) Pattern Syllabus",
-  //   pdf: "/assets/pdf/syllabus/First_Year_Engineering_2019_Patt_Syllabus.pdf",
-  // },
-  {
-    id: "sybtech",
-    label: "SY B.Tech (2025 Pattern) Syllabus",
-    pdf: "/programs/ENTC/se_btech.pdf",
+    id: "ty-btech-2024",
+    label: "TY BTech E&TC Syllabus (2024 pattern)",
+    pdf: "/programs/ENTC/TY BTech E&TC Syllabus (2024 pattern).pdf",
   },
   {
-    id: "ty-2024",
-    label: "TY B.Tech (2024 Pattern) Structure",
-    pdf: "/programs/ENTC/te_btech.pdf",
-  },
-  {
-    id: "te",
-    label: "T.E E&TC 2019 Pattern Syllabus",
-    pdf: "/programs/ENTC/te_entc_2019.pdf",
-  },
-  {
-    id: "be",
-    label: "B.E EnTC 2019 Pattern Syllabus",
-    pdf: "/programs/ENTC/be_entc_2019.pdf",
-  },
-  {
-    id: "be-2024",
-    label: "Final Year B.Tech (2024 Pattern) Structure",
-    pdf: "/programs/ENTC/be_btech.pdf",
+    id: "be-etc-2019",
+    label: "BE E&TC 2019 Pattern",
+    pdf: "/programs/ENTC/BE E&TC 2019 Pattern.pdf",
   },
 ];
 
@@ -190,6 +176,10 @@ export default function FAQSection() {
           pdf: "/programs/Computer/NewFRA.pdf",
         },
       ],
+    },
+
+    "Academic Performance": {
+      type: "academicPerformance",
     },
 
     "Admission Procedure": {
@@ -293,15 +283,15 @@ export default function FAQSection() {
           },
           {
             src: "/programs/ENTC/entc_lab2.avif",
-            title: "Hardware & Circuit Laboratory",
-          },
-          {
-            src: "/programs/ENTC/entc_lab_facility_apple.webp",
-            title: "Apple Lab",
+            title: "Hands-on Practical Training",
           },
           {
             src: "/programs/ENTC/entc_lab_facility_software.webp",
             title: "Software Laboratory",
+          },
+          {
+            src: "/programs/ENTC/entc_lab_facility_apple.webp",
+            title: "Apple Lab",
           },
         ],
       },
@@ -329,6 +319,147 @@ export default function FAQSection() {
   // Render content by type
   const renderContent = (data) => {
     switch (data.type) {
+      case "academicPerformance":
+        return (
+          <div className="space-y-8 text-left">
+            {/* Section a) Student Training */}
+            <div className="border-b border-gray-200 pb-3">
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-6 bg-secondary rounded-full inline-block"></span>
+                <h4 className="text-xl font-bold text-gray-900">
+                  a) Student Training
+                </h4>
+              </div>
+            </div>
+
+            {/* Section b) Activities */}
+            <div className="space-y-6">
+              <div className="flex items-center gap-2 border-b border-gray-200 pb-3">
+                <span className="w-1.5 h-6 bg-secondary rounded-full inline-block"></span>
+                <h4 className="text-xl font-bold text-gray-900">
+                  b) Activities
+                </h4>
+              </div>
+
+              {/* Activity 1: Gurupornima Celebration */}
+              <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm space-y-4">
+                <div className="border-b border-gray-100 pb-3">
+                  <div className="flex items-center gap-2">
+                    <span className="px-2.5 py-0.5 text-xs font-bold bg-secondary text-white rounded-md">
+                      1
+                    </span>
+                    <h5 className="text-lg font-bold text-gray-900">
+                      Gurupornima Celebration
+                    </h5>
+                  </div>
+                  <p className="text-xs font-semibold text-secondary mt-1">
+                    Organized by: i-ETSA, E&amp;TC Department, ICEM
+                  </p>
+                </div>
+
+                <div>
+                  <h6 className="text-sm font-bold text-gray-800 mb-1">Details :</h6>
+                  <p className="text-sm text-gray-700 leading-relaxed">
+                    Students celebrated Gurupournima on <strong>29 July 2026</strong> with great enthusiasm and respect. The programme began with a lamp-lighting ceremony and Saraswati Pujan, followed by inspiring speeches by the Director and HOD on the importance of teachers and the Guru-Shishya relationship. Students presented a speech and an energetic group dance, followed by fun games for faculty members. The event concluded with a vote of thanks by Samrudhi Bogarwar. Overall, the celebration was a joyful and memorable event that strengthened the bond between teachers and students.
+                  </p>
+                </div>
+
+                {/* Gurupornima Images */}
+                <div className="space-y-4 pt-2">
+                  <div className="relative h-64 sm:h-80 w-full rounded-lg overflow-hidden border border-gray-200 shadow-xs group">
+                    <Image
+                      src="/programs/ENTC/gurupornima_group.webp"
+                      alt="Gurupornima Faculty & Staff Group"
+                      fill
+                      className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="relative h-72 sm:h-80 rounded-lg overflow-hidden border border-gray-200 shadow-xs group">
+                      <Image
+                        src="/programs/ENTC/gurupornima_speech.webp"
+                        alt="Gurupornima Speech & Guidance"
+                        fill
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="relative h-72 sm:h-80 rounded-lg overflow-hidden border border-gray-200 shadow-xs group">
+                      <Image
+                        src="/programs/ENTC/gurupornima_felicitation.webp"
+                        alt="Gurupornima Felicitation & Greeting"
+                        fill
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Activity 2: Industrial Visit to Karla Caves */}
+              <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm space-y-4">
+                <div className="border-b border-gray-100 pb-3">
+                  <div className="flex items-center gap-2">
+                    <span className="px-2.5 py-0.5 text-xs font-bold bg-secondary text-white rounded-md">
+                      2
+                    </span>
+                    <h5 className="text-lg font-bold text-gray-900">
+                      Educational / Industrial Visit to Karla Caves
+                    </h5>
+                  </div>
+                  <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-600 mt-2">
+                    <p>
+                      <strong className="text-gray-800">Coordinator:</strong> Prof. Sushma Patwardhan and Prof. Priyanka Patil
+                    </p>
+                    <p>
+                      <strong className="text-gray-800">Location:</strong> Karla Caves
+                    </p>
+                    <p>
+                      <strong className="text-gray-800">Date:</strong> 11 August 2026
+                    </p>
+                  </div>
+                </div>
+
+                <div>
+                  <h6 className="text-sm font-bold text-gray-800 mb-1">Details :</h6>
+                  <p className="text-sm text-gray-700 leading-relaxed">
+                    As a part of Curriculum under the course <strong>&quot;Understanding India&quot;</strong>, a visit was planned for SY B.Tech E&amp;TC Students. During the visit, students explored the ancient caves, observing their rock-cut architecture, sculptures, inscriptions, and historical features. The visit helped them connect classroom concepts with India&apos;s rich cultural and architectural heritage.
+                  </p>
+                </div>
+
+                {/* Karla Caves Images Gallery */}
+                <div className="space-y-4 pt-2">
+                  <div className="relative h-64 sm:h-80 w-full rounded-lg overflow-hidden border border-gray-200 shadow-xs group">
+                    <Image
+                      src="/programs/ENTC/karla_caves_group_main.webp"
+                      alt="SY B.Tech Students & Faculty at Karla Caves"
+                      fill
+                      className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="relative h-56 rounded-lg overflow-hidden border border-gray-200 shadow-xs group">
+                      <Image
+                        src="/programs/ENTC/karla_caves_students.webp"
+                        alt="Student Group at Karla Caves"
+                        fill
+                        className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="relative h-56 rounded-lg overflow-hidden border border-gray-200 shadow-xs group">
+                      <Image
+                        src="/programs/ENTC/karla_caves_entrance.webp"
+                        alt="Karla Caves Ancient Architecture & Temple Entrance"
+                        fill
+                        className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
       case "accordion":
         return (
           <div className="space-y-3 md:space-y-4">
@@ -369,6 +500,20 @@ export default function FAQSection() {
         );
 
       case "syllabus":
+        const formatSyllabusLabel = (text) => {
+          if (typeof text !== "string") return text;
+          const parts = text.split(/(E&TC)/g);
+          return parts.map((part, index) =>
+            part === "E&TC" ? (
+              <span key={index} className="inline-flex tracking-tighter">
+                E&amp;TC
+              </span>
+            ) : (
+              part
+            ),
+          );
+        };
+
         return (
           <div className="space-y-3 md:space-y-4">
             {data.content.map((item) => (
@@ -376,7 +521,9 @@ export default function FAQSection() {
                 key={item.id}
                 className="flex flex-col sm:flex-row sm:items-center justify-between p-3 md:p-4 border border-gray-200 rounded-lg hover:bg-gray-50"
               >
-                <h5 className="font-semibold text-gray-800">{item.label}</h5>
+                <h5 className="font-semibold text-gray-800">
+                  {formatSyllabusLabel(item.label)}
+                </h5>
                 <a
                   href={item.pdf}
                   target="_blank"

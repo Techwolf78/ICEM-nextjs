@@ -69,8 +69,8 @@ export default function FirstYearEngineering() {
 
   const handleBrochureDownload = () => {
     const link = document.createElement("a");
-    link.href = "/brochures/ICEMAdmissionBrochure2025.pdf";
-    link.download = "ICEM-Brochure.pdf";
+    link.href = "/brochures/ICEM_Admission_Brochure_2026-27.pdf";
+    link.download = "ICEM_Admission_Brochure_2026-27.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

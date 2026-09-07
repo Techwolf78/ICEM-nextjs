@@ -18,14 +18,77 @@ import {
 
 // Admission 2026 Data organized by requested programmes
 const admission2026Data = {
+  "All Programmes (Notice & Ad)": [
+    {
+      title: "Schedule for Institute Level / Against CAP (ACAP) Admission 2026-27",
+      category: "Admission Schedule",
+      pdf: "/admission/Schedule_for_IL_ACAP_Admission_2026-27.pdf",
+      date: "07 September 2026",
+      isNew: true,
+      description: "Official Schedule for B. Tech, DSE, M.Tech, MBA, MCA, and Working Professional Courses for Institute Level & Against CAP vacancy admissions."
+    },
+    {
+      title: "Advertisement for Institute Level / Against CAP Admission 2026-27",
+      category: "Admission Advertisement",
+      pdf: "/admission/Advertisement_of_Admission_2026-27.pdf",
+      date: "07 September 2026",
+      isNew: true,
+      description: "Official Newspaper Advertisement for Institute Level Seats and Vacant Seats after CAP rounds (Against CAP Seats) for A.Y. 2026-27."
+    }
+  ],
   "Engineering": [
-    // Documents will be added upon receipt
+    {
+      title: "B.Tech & DSE Institute Level / Against CAP Admission Schedule 2026-27",
+      category: "Admission Schedule",
+      pdf: "/admission/Schedule_for_IL_ACAP_Admission_2026-27.pdf",
+      date: "07 September 2026",
+      isNew: true,
+      description: "Schedule for B.Tech (AI&DS, Computer, E&TC, IT, Mechanical) & Direct Second Year (DSE) vacancies. Application Dates: 07/09/2026 to 08/09/2026 (B.Tech) & 09/09/2026 to 10/09/2026 (DSE)."
+    },
+    {
+      title: "Engineering Institute Level / Against CAP Admission Advertisement",
+      category: "Admission Advertisement",
+      pdf: "/admission/Advertisement_of_Admission_2026-27.pdf",
+      date: "07 September 2026",
+      isNew: true,
+      description: "Official published advertisement for B.Tech, DSE, and M.Tech Institute Level & Against CAP seats."
+    }
   ],
   "MBA": [
-    // Documents will be added upon receipt
+    {
+      title: "MBA Institute Level / Against CAP Admission Schedule 2026-27",
+      category: "Admission Schedule",
+      pdf: "/admission/Schedule_for_IL_ACAP_Admission_2026-27.pdf",
+      date: "07 September 2026",
+      isNew: true,
+      description: "Schedule for MBA Institute Level & Vacant Seats after CAP rounds (Choice Code: 0617910110). Application Dates: 07/09/2026 to 08/09/2026. Merit list: 09/09/2026."
+    },
+    {
+      title: "MBA Admission Advertisement 2026-27",
+      category: "Admission Advertisement",
+      pdf: "/admission/Advertisement_of_Admission_2026-27.pdf",
+      date: "07 September 2026",
+      isNew: true,
+      description: "Official published advertisement for MBA Institute Level and Against CAP admissions."
+    }
   ],
   "MCA": [
-    // Documents will be added upon receipt
+    {
+      title: "MCA Institute Level / Against CAP Admission Schedule 2026-27",
+      category: "Admission Schedule",
+      pdf: "/admission/Schedule_for_IL_ACAP_Admission_2026-27.pdf",
+      date: "07 September 2026",
+      isNew: true,
+      description: "Schedule for MCA Institute Level & Vacant Seats after CAP rounds (Choice Code: 0617924110). Application Dates: 06/09/2026 to 08/09/2026. Merit list: 09/09/2026."
+    },
+    {
+      title: "MCA Admission Advertisement 2026-27",
+      category: "Admission Advertisement",
+      pdf: "/admission/Advertisement_of_Admission_2026-27.pdf",
+      date: "07 September 2026",
+      isNew: true,
+      description: "Official published advertisement for MCA Institute Level and Against CAP admissions."
+    }
   ],
   "MBA & MCA Direct Second Year (Lateral Entry)": [
     {
@@ -37,14 +100,29 @@ const admission2026Data = {
     }
   ],
   "MBA Working Professional": [
-    // Documents will be added upon receipt
+    {
+      title: "MBA Working Professional (Vacant seats after CAP) Schedule 2026-27",
+      category: "Admission Schedule",
+      pdf: "/admission/Schedule_for_IL_ACAP_Admission_2026-27.pdf",
+      date: "07 September 2026",
+      isNew: true,
+      description: "Schedule for MBA Working Professional Course (Choice Code: 0617910180). Application Dates: 07/09/2026 to 08/09/2026. Reporting: 10/09/2026 to 13/09/2026."
+    }
   ],
   "DSE Mechanical Engineering Working Professional": [
-    // Documents will be added upon receipt
+    {
+      title: "DSE Mechanical Engg Working Professional Course Schedule 2026-27",
+      category: "Admission Schedule",
+      pdf: "/admission/Schedule_for_IL_ACAP_Admission_2026-27.pdf",
+      date: "07 September 2026",
+      isNew: true,
+      description: "Schedule for DSE Mechanical Engineering Working Professional Course (Choice Code: 0617961280). Application Dates: 07/09/2026 to 08/09/2026. Reporting: 10/09/2026 to 15/09/2026."
+    }
   ]
 };
 
 const programIcons = {
+  "All Programmes (Notice & Ad)": FileCheck,
   "Engineering": GraduationCap,
   "MBA": Briefcase,
   "MCA": Code,
@@ -54,7 +132,7 @@ const programIcons = {
 };
 
 export default function Admission2026Page() {
-  const [activeTab, setActiveTab] = useState("MBA & MCA Direct Second Year (Lateral Entry)");
+  const [activeTab, setActiveTab] = useState("All Programmes (Notice & Ad)");
   const [previewPdf, setPreviewPdf] = useState(null);
 
   const programs = Object.keys(admission2026Data);

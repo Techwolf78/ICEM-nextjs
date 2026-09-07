@@ -6,25 +6,38 @@ Remove-Item .\*.zip -Force -ErrorAction SilentlyContinue
 
 Write-Host "Creating deployment ZIPs with tar.exe..."
 
-# Create ZIPs for large folders sequentially
-Write-Host "Zipping _next..."
-tar -a -cf next.zip -C .\out _next
+# Create ZIPs for folders reliably
+Write-Host "Creating zip files..."
+python -c @"
+import zipfile, os, sys
 
-Write-Host "Zipping assets..."
-tar -a -cf assets.zip -C .\out assets
+def make_zip(zip_name, folders):
+    print(f'Creating {zip_name}...')
+    with zipfile.ZipFile(zip_name, 'w', zipfile.ZIP_DEFLATED, allowZip64=True) as zipf:
+        for folder in folders:
+            full_dir = os.path.join('out', folder)
+            if os.path.isfile(full_dir):
+                zipf.write(full_dir, folder)
+            elif os.path.isdir(full_dir):
+                for root, dirs, files in os.walk(full_dir):
+                    for file in files:
+                        abs_path = os.path.join(root, file)
+                        rel_path = os.path.relpath(abs_path, 'out')
+                        zipf.write(abs_path, rel_path)
 
-Write-Host "Zipping pdfs..."
-tar -a -cf pdfs.zip -C .\out pdfs
+make_zip('next.zip', ['_next'])
+make_zip('assets-images.zip', ['assets/images', 'assets/bannerimages'])
+make_zip('assets-pdf.zip', ['assets/pdf'])
+make_zip('pdfs.zip', ['pdfs'])
+make_zip('programs.zip', ['programs'])
 
-Write-Host "Zipping programs..."
-tar -a -cf programs.zip -C .\out programs
-
-Write-Host "Zipping rest..."
-$excludeList = @('_next', 'assets', 'pdfs', 'programs')
-$restItems = Get-ChildItem .\out | Where-Object { $excludeList -notcontains $_.Name } | Select-Object -ExpandProperty FullName
-Compress-Archive -Path $restItems -DestinationPath .\rest.zip -Force
+# rest.zip
+exclude = {'_next', 'assets', 'pdfs', 'programs'}
+rest_items = [f for f in os.listdir('out') if f not in exclude]
+make_zip('rest.zip', rest_items)
+"@
 
 Write-Host "`nGenerated Deployment Packages:"
 Get-ChildItem .\*.zip | Select-Object Name, @{Name="SizeMB";Expression={[math]::Round($_.Length / 1MB, 2)}}
 
-Write-Host "`nZIPs created successfully! Upload next.zip, assets.zip, pdfs.zip, programs.zip, rest.zip to cPanel public_html and extract each."
+Write-Host "`nZIPs created successfully! Upload next.zip, assets-images.zip, assets-pdf.zip, pdfs.zip, programs.zip, rest.zip to cPanel public_html and extract each."

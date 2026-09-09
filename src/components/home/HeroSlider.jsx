@@ -6,6 +6,7 @@ import Image from "next/image";
 const HeroSlider = () => {
   // 👉 Load banners directly from /public/banners
   const desktopImages = [
+    "/banners/si_icem_desk.webp",
     "/assets/images/banner/icem_banner_team_gemini.avif",
     "/assets/images/banner/cet_banner.avif",
     "/assets/images/banner/finalplacedstd.avif",
@@ -16,13 +17,26 @@ const HeroSlider = () => {
     "/banners/ICEMBANNERCOMP.webp",
   ];
 
+  const mobileImages = [
+    "/Home/si_icem_mob.webp",
+    "/Home/homemobile.avif",
+  ];
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(true);
+
+  const [mobileIndex, setMobileIndex] = useState(0);
+  const [isMobileTransitioning, setIsMobileTransitioning] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => handleNext(), 5000);
     return () => clearInterval(interval);
   }, [currentIndex]);
+
+  useEffect(() => {
+    const mobileInterval = setInterval(() => handleMobileNext(), 5000);
+    return () => clearInterval(mobileInterval);
+  }, [mobileIndex]);
 
   const handleNext = () => {
     const totalSlides = desktopImages.length;
@@ -41,9 +55,31 @@ const HeroSlider = () => {
     }
   };
 
+  const handleMobileNext = () => {
+    const totalMobileSlides = mobileImages.length;
+
+    if (mobileIndex === totalMobileSlides - 1) {
+      setIsMobileTransitioning(true);
+      setMobileIndex(totalMobileSlides);
+
+      setTimeout(() => {
+        setIsMobileTransitioning(false);
+        setMobileIndex(0);
+      }, 700);
+    } else {
+      setIsMobileTransitioning(true);
+      setMobileIndex((prev) => prev + 1);
+    }
+  };
+
   const handleDotClick = (index) => {
     setIsTransitioning(true);
     setCurrentIndex(index);
+  };
+
+  const handleMobileDotClick = (index) => {
+    setIsMobileTransitioning(true);
+    setMobileIndex(index);
   };
 
   return (
@@ -141,17 +177,45 @@ const HeroSlider = () => {
       </div>
 
       {/* ---------------- MOBILE SLIDER ---------------- */}
-      <div className="md:hidden">
-        <Image
-          src="/Home/homemobile.avif"
-          alt="mobile banner"
-          className="w-full object-contain"
-          width={600}
-          height={800}
-          quality={100}
-          priority
-          fetchPriority="high"
-        />
+      <div className="md:hidden relative overflow-hidden">
+        <div
+          className={`flex ${
+            isMobileTransitioning
+              ? "transition-transform duration-700 ease-in-out"
+              : ""
+          }`}
+          style={{ transform: `translateX(-${mobileIndex * 100}%)` }}
+        >
+          {[...mobileImages, mobileImages[0]].map((img, i) => (
+            <div key={i} className="w-full flex-shrink-0">
+              <Image
+                src={img}
+                alt="mobile banner"
+                className="w-full h-auto object-contain"
+                width={1080}
+                height={1350}
+                quality={100}
+                priority={i === 0}
+                fetchPriority={i === 0 ? "high" : "auto"}
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile Dots */}
+        <div className="absolute bottom-3 right-4 flex gap-1.5 z-10">
+          {mobileImages.map((_, i) => (
+            <div
+              key={i}
+              onClick={() => handleMobileDotClick(i)}
+              className={`h-2 rounded-full cursor-pointer transition-all ${
+                mobileIndex % mobileImages.length === i
+                  ? "w-6 bg-secondary"
+                  : "w-2 bg-gray-400/70"
+              }`}
+            />
+          ))}
+        </div>
       </div>
 
       {/* ---------------- CSS ANIMATIONS ---------------- */}

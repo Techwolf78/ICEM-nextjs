@@ -78,6 +78,14 @@ const admission2026Data = {
       description: "Official Provisional Merit List (Version 1) for Against CAP (ACAP) vacant seats for First Year Under Graduate Technical Courses in Engineering & Technology (Computer, AI&DS, IT, E&TC, Mechanical) for A.Y. 2026-27. Reporting & confirmation date: 10/09/2026."
     },
     {
+      title: "Provisional Merit List (Version 1) – Against CAP (ACAP) Direct Second Year (DSE) Engineering",
+      category: "Merit List (ACAP)",
+      pdf: "/admission/DSE_ACAP_Merit_List_Version_1.pdf",
+      date: "09 September 2026",
+      isNew: true,
+      description: "Official Provisional Merit List (Version 1) for Against CAP (ACAP) vacant seats for Direct Second Year (DSE) Engineering & Technology (Computer, AI&DS, IT, E&TC, Mechanical) for A.Y. 2026-27."
+    },
+    {
       title: "Vacancy Position – First Year B.Tech Engineering",
       category: "Vacancy Position",
       pdf: "/admission/BTech_FE_Vacancy_Position_08092026.pdf",
@@ -154,6 +162,14 @@ const admission2026Data = {
   ],
   "MCA": [
     {
+      title: "Provisional Merit List (Version 1) – Institute Level (IL) MCA",
+      category: "Merit List (IL)",
+      pdf: "/admission/IL_MCA_Merit_List_Version_1.pdf",
+      date: "09 September 2026",
+      isNew: true,
+      description: "Official Provisional Merit List (Version 1) for Institute Level (IL) seats for First Year Master of Computer Applications (MCA - Choice Code: 0617924110) for Academic Year 2026-27. Reporting & confirmation date: 10/09/2026."
+    },
+    {
       title: "Provisional Merit List (Version 1) – Against CAP (ACAP) MCA",
       category: "Merit List (ACAP)",
       pdf: "/admission/ACAP_MCA_Merit_List_Version_1.pdf",
@@ -206,6 +222,14 @@ const admission2026Data = {
     }
   ],
   "DSE Mechanical Engineering Working Professional": [
+    {
+      title: "Provisional Merit List (Version 1) – Against CAP (ACAP) DSE Mechanical Engineering (Working Professional)",
+      category: "Merit List (ACAP)",
+      pdf: "/admission/DSWWP_ACAP_Merit_List_Version_1.pdf",
+      date: "09 September 2026",
+      isNew: true,
+      description: "Official Provisional Merit List (Version 1) for Against CAP (ACAP) vacant seats for DSE Mechanical Engineering Working Professional Course (Choice Code: 0617961280) for A.Y. 2026-27. Reporting date: 13/09/2026."
+    },
     {
       title: "DSE Mechanical Engg Working Professional Course Schedule 2026-27",
       category: "Admission Schedule",

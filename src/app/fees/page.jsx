@@ -14,9 +14,11 @@ import {
 // Fee Documents Data
 const feeData = {
   "Fee Structures": [
+    { name: "IL Admission Fee Structure 2026-27", pdf: "/admission/Fee_Structure_for_IL_2026-27.pdf", icon: FileText },
     { name: "Fee Structure 2025-26", pdf: "/fees/Fee structure 2025-26 (3).pdf", icon: FileText },
   ],
   "FRA Documents": [
+    { name: "FRA Notice for IL Fees 2026-27", pdf: "/admission/FRA_Notice_for_IL_Fees.pdf", icon: Award },
     { name: "FRA 2025", pdf: "/fees/FRA 2025.pdf", icon: Award },
     { name: "Institute Level Admission FRA Fees", pdf: "/fees/Insttitute level admission FRA FEEs.pdf", icon: Users },
   ]

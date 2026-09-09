@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   GraduationCap,
@@ -104,6 +105,36 @@ const MeritListsPage = () => {
 
       <div className="container mx-auto px-4 py-6">
         <div className="max-w-6xl mx-auto">
+          {/* A.Y. 2026-27 Merit Lists Alert Banner */}
+          <Link
+            href="/admission-2026"
+            className="mb-6 p-4 rounded-2xl bg-gradient-to-r from-[#003c84] via-[#1d59a3] to-[#278da4] text-white shadow-lg flex items-center justify-between gap-4 group hover:shadow-xl transition-all block"
+          >
+            <div className="flex items-center gap-3 min-w-0">
+              <span className="flex h-3 w-3 relative shrink-0">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-amber-500"></span>
+              </span>
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="text-[10px] uppercase font-extrabold bg-amber-500 text-white px-2 py-0.5 rounded">
+                    Latest
+                  </span>
+                  <h3 className="font-bold text-base sm:text-lg">
+                    Academic Year 2026-27 Merit Lists Released
+                  </h3>
+                </div>
+                <p className="text-xs sm:text-sm text-blue-100/90 mt-0.5">
+                  Click here to view the newly published Institute Level (IL) and Against CAP (ACAP) Version 1 Merit Lists for B.Tech, MBA, and MCA.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white/20 group-hover:bg-white/30 backdrop-blur-sm font-semibold text-xs sm:text-sm shrink-0 transition-all">
+              <span>View 2026-27</span>
+              <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            </div>
+          </Link>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const HeroSlider = () => {
   // 👉 Load banners directly from /public/banners
@@ -92,6 +93,9 @@ const HeroSlider = () => {
 
         <div className="flex-1 overflow-hidden whitespace-nowrap bg-white">
           <div className="flex animate-seamlessMarquee font-semibold text-xs sm:text-sm py-1 sm:py-2 text-secondary">
+            <Link href="/admission-2026" className="mr-8 hover:underline text-[#003c84] font-bold">
+              🔥 ACAP & Institute Level (IL) Merit Lists (Version 1) Released for B.Tech, MBA & MCA (A.Y. 2026-27)
+            </Link>
             <a href="https://sdetm.indiraicem.ac.in/" target="_blank" rel="noopener noreferrer" className="mr-8 hover:underline text-red-600 font-bold">
               INTERNATIONAL CONFERENCE (ICSDETM2026)
             </a>
@@ -99,27 +103,9 @@ const HeroSlider = () => {
             <span className="mr-8">Placement Record 2025 Announced</span>
 
             {/* Duplicate for seamless loop */}
-            <a href="https://sdetm.indiraicem.ac.in/" target="_blank" rel="noopener noreferrer" className="mr-8 hover:underline text-red-600 font-bold">
-              INTERNATIONAL CONFERENCE (ICSDETM2026)
-            </a>
-            <span className="mr-8">Public Advisory Notice</span>
-            <span className="mr-8">Placement Record 2025 Announced</span>
-
-            {/* Duplicate for seamless loop */}
-            <a href="https://sdetm.indiraicem.ac.in/" target="_blank" rel="noopener noreferrer" className="mr-8 hover:underline text-red-600 font-bold">
-              INTERNATIONAL CONFERENCE (ICSDETM2026)
-            </a>
-            <span className="mr-8">Public Advisory Notice</span>
-            <span className="mr-8">Placement Record 2025 Announced</span>
-
-            {/* Duplicate for seamless loop */}
-            <a href="https://sdetm.indiraicem.ac.in/" target="_blank" rel="noopener noreferrer" className="mr-8 hover:underline text-red-600 font-bold">
-              INTERNATIONAL CONFERENCE (ICSDETM2026)
-            </a>
-            <span className="mr-8">Public Advisory Notice</span>
-            <span className="mr-8">Placement Record 2025 Announced</span>
-
-            {/* Duplicate for seamless loop */}
+            <Link href="/admission-2026" className="mr-8 hover:underline text-[#003c84] font-bold">
+              🔥 ACAP & Institute Level (IL) Merit Lists (Version 1) Released for B.Tech, MBA & MCA (A.Y. 2026-27)
+            </Link>
             <a href="https://sdetm.indiraicem.ac.in/" target="_blank" rel="noopener noreferrer" className="mr-8 hover:underline text-red-600 font-bold">
               INTERNATIONAL CONFERENCE (ICSDETM2026)
             </a>

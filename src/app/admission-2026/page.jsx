@@ -20,6 +20,14 @@ import {
 const admission2026Data = {
   "Common": [
     {
+      title: "Display of ACAP & Institute Level (IL) Merit Lists (Version 1) – A.Y. 2026-27",
+      category: "Merit List Notice",
+      pdf: "/admission/Schedule_for_IL_ACAP_Admission_2026-27.pdf",
+      date: "09 September 2026",
+      isNew: true,
+      description: "Provisional Merit Lists (Version 1) for First Year B.Tech Engineering, MBA, and MCA are published. Please select the respective programme tab to view and download the official merit lists. Candidates are required to report to the institute from 10/09/2026."
+    },
+    {
       title: "IL Admission Fee Structure 2026-27",
       category: "Fee Structure",
       pdf: "/admission/Fee_Structure_for_IL_2026-27.pdf",
@@ -53,6 +61,22 @@ const admission2026Data = {
     }
   ],
   "Engineering": [
+    {
+      title: "Provisional Merit List (Version 1) – Institute Level (IL) First Year B.Tech Engineering",
+      category: "Merit List (IL)",
+      pdf: "/admission/IL_FE_Merit_List_Version_1.pdf",
+      date: "09 September 2026",
+      isNew: true,
+      description: "Official Provisional Merit List (Version 1) for Institute Level (IL) seats for First Year Under Graduate Technical Courses in Engineering & Technology (Computer, AI&DS, IT, E&TC, Mechanical) for A.Y. 2026-27. Reporting & confirmation date: 10/09/2026."
+    },
+    {
+      title: "Provisional Merit List (Version 1) – Against CAP (ACAP) First Year B.Tech Engineering",
+      category: "Merit List (ACAP)",
+      pdf: "/admission/ACAP_FE_Merit_List_Version_1.pdf",
+      date: "09 September 2026",
+      isNew: true,
+      description: "Official Provisional Merit List (Version 1) for Against CAP (ACAP) vacant seats for First Year Under Graduate Technical Courses in Engineering & Technology (Computer, AI&DS, IT, E&TC, Mechanical) for A.Y. 2026-27. Reporting & confirmation date: 10/09/2026."
+    },
     {
       title: "Vacancy Position – First Year B.Tech Engineering",
       category: "Vacancy Position",
@@ -88,6 +112,22 @@ const admission2026Data = {
   ],
   "MBA": [
     {
+      title: "Provisional Merit List (Version 1) – Institute Level (IL) MBA",
+      category: "Merit List (IL)",
+      pdf: "/admission/IL_MBA_Merit_List_Version_1.pdf",
+      date: "09 September 2026",
+      isNew: true,
+      description: "Official Provisional Merit List (Version 1) for Institute Level (IL) seats for First Year Master of Business Administration (MBA - Choice Code: 0617910110) for Academic Year 2026-27. Reporting & confirmation date: 10/09/2026."
+    },
+    {
+      title: "Provisional Merit List (Version 1) – Against CAP (ACAP) MBA",
+      category: "Merit List (ACAP)",
+      pdf: "/admission/ACAP_MBA_Merit_List_Version_1.pdf",
+      date: "09 September 2026",
+      isNew: true,
+      description: "Official Provisional Merit List (Version 1) for Against CAP (ACAP) vacant seats for First Year Master of Business Administration (MBA - Choice Code: 0617910110) for Academic Year 2026-27. Reporting & confirmation date: 10/09/2026."
+    },
+    {
       title: "Vacancy Position – MBA (Master of Business Administration)",
       category: "Vacancy Position",
       pdf: "/admission/MBA_Vacancy_Position_08092026.pdf",
@@ -113,6 +153,14 @@ const admission2026Data = {
     }
   ],
   "MCA": [
+    {
+      title: "Provisional Merit List (Version 1) – Against CAP (ACAP) MCA",
+      category: "Merit List (ACAP)",
+      pdf: "/admission/ACAP_MCA_Merit_List_Version_1.pdf",
+      date: "09 September 2026",
+      isNew: true,
+      description: "Official Provisional Merit List (Version 1) for Against CAP (ACAP) vacant seats for First Year Master of Computer Applications (MCA - Choice Code: 0617924110) for Academic Year 2026-27. Reporting & confirmation date: 10/09/2026."
+    },
     {
       title: "Vacancy Position – MCA (Master of Computer Applications)",
       category: "Vacancy Position",
@@ -237,26 +285,26 @@ export default function Admission2026Page() {
       {/* Main Content */}
       <div className="container mx-auto px-2.5 sm:px-4 py-3 md:py-8">
         <div className="max-w-7xl mx-auto">
-          {/* Quick Vacancy Alert Banner - Compact / Thin Bar */}
+          {/* Quick Merit List Alert Banner - Compact / High-Impact Bar */}
           <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
-            className="mb-3 md:mb-5 py-1.5 px-3 md:py-1.5 md:px-4 rounded-xl bg-gradient-to-r from-[#003c84] via-[#1d59a3] to-[#278da4] text-white shadow-md flex flex-wrap md:flex-nowrap items-center justify-between gap-1.5 md:gap-4 border border-blue-400/20"
+            className="mb-3 md:mb-5 py-2 px-3 md:py-2 md:px-4 rounded-xl bg-gradient-to-r from-[#003c84] via-[#1d59a3] to-[#278da4] text-white shadow-md flex flex-wrap md:flex-nowrap items-center justify-between gap-2 md:gap-4 border border-blue-400/20"
           >
             <div className="flex items-center gap-2 min-w-0">
-              <span className="flex h-2 w-2 relative shrink-0">
+              <span className="flex h-2.5 w-2.5 relative shrink-0">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-500"></span>
               </span>
               <span className="text-[9px] md:text-[10px] font-bold uppercase px-1.5 py-0.5 rounded bg-amber-500 text-white tracking-wider shrink-0 leading-none">
-                New
+                Live Now
               </span>
               <span className="font-bold text-xs md:text-sm text-white shrink-0">
-                Vacancy Positions (ACAP / IL 2026-27):
+                Merit Lists Released (ACAP / IL 2026-27):
               </span>
               <span className="text-xs text-blue-100/90 truncate hidden xl:inline">
-                Provisional vacancy reports for Engineering (B.Tech FE & DSE), MBA, and MCA are published.
+                Version 1 Merit Lists for B.Tech First Year, MBA, and MCA published. Reporting starts 10/09/2026.
               </span>
             </div>
             <div className="flex items-center gap-1.5 shrink-0 ml-auto md:ml-0">
@@ -264,7 +312,7 @@ export default function Admission2026Page() {
                 onClick={() => { setActiveTab("Engineering"); setPreviewPdf(null); }}
                 className="px-2 py-0.5 md:px-2.5 md:py-1 rounded-md bg-white/15 hover:bg-white/25 border border-white/25 text-[11px] md:text-xs font-semibold backdrop-blur-sm transition-all text-white hover:shadow cursor-pointer"
               >
-                Engineering & DSE
+                B.Tech (FE)
               </button>
               <button
                 onClick={() => { setActiveTab("MBA"); setPreviewPdf(null); }}

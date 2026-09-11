@@ -13,19 +13,32 @@ import {
   AlertCircle,
   FileCheck,
   Building2,
-  Wrench
+  Wrench,
+  Cog,
 } from "lucide-react";
 
 // Admission 2026 Data organized by requested programmes
 const admission2026Data = {
-  "Common": [
+  Common: [
     {
-      title: "Display of ACAP & Institute Level (IL) Merit Lists (Version 1) – A.Y. 2026-27",
+      title:
+        "Vacancy Position – Engineering, MBA & MCA (as on 11 September 2026)",
+      category: "Vacancy Position",
+      pdf: "/admission/Engg_MBA_MCA_Vacancy_Position_as_on_11092026.pdf",
+      date: "11 September 2026",
+      isNew: true,
+      description:
+        "State CET Cell updated provisional vacancy position as on 11/09/2026 for First Year B.Tech Engineering, MBA, and MCA programmes for A.Y. 2026-27. Candidates are advised to check the vacancy position before applying for Institute Level / Against CAP admissions.",
+    },
+    {
+      title:
+        "Display of ACAP & Institute Level (IL) Merit Lists (Version 1) – A.Y. 2026-27",
       category: "Merit List Notice",
       pdf: "/admission/Schedule_for_IL_ACAP_Admission_2026-27.pdf",
       date: "09 September 2026",
       isNew: true,
-      description: "Provisional Merit Lists (Version 1) for First Year B.Tech Engineering, MBA, and MCA are published. Please select the respective programme tab to view and download the official merit lists. Candidates are required to report to the institute from 10/09/2026."
+      description:
+        "Provisional Merit Lists (Version 1) for First Year B.Tech Engineering, MBA, and MCA are published. Please select the respective programme tab to view and download the official merit lists. Candidates are required to report to the institute from 10/09/2026.",
     },
     {
       title: "IL Admission Fee Structure 2026-27",
@@ -33,7 +46,8 @@ const admission2026Data = {
       pdf: "/admission/Fee_Structure_for_IL_2026-27.pdf",
       date: "08 September 2026",
       isNew: true,
-      description: "Approved Applicable Fees for Institute Level (IL) Admission for B.Tech First Year, Direct Second Year (DSE), FY MBA, and FY MCA for Academic Year 2026-27."
+      description:
+        "Approved Applicable Fees for Institute Level (IL) Admission for B.Tech First Year, Direct Second Year (DSE), FY MBA, and FY MCA for Academic Year 2026-27.",
     },
     {
       title: "FRA Notice for IL Fees",
@@ -41,49 +55,60 @@ const admission2026Data = {
       pdf: "/admission/FRA_Notice_for_IL_Fees.pdf",
       date: "31 July 2025",
       isNew: true,
-      description: "Official Notification from Fees Regulating Authority (FRA), Maharashtra regarding maximum fees / upper limits for Institutional / Management Quota seats."
+      description:
+        "Official Notification from Fees Regulating Authority (FRA), Maharashtra regarding maximum fees / upper limits for Institutional / Management Quota seats.",
     },
     {
-      title: "Schedule for Institute Level / Against CAP (ACAP) Admission 2026-27",
+      title:
+        "Schedule for Institute Level / Against CAP (ACAP) Admission 2026-27",
       category: "Admission Schedule",
       pdf: "/admission/Schedule_for_IL_ACAP_Admission_2026-27.pdf",
       date: "07 September 2026",
       isNew: true,
-      description: "Official Schedule for B. Tech, DSE, M.Tech, MBA, MCA, and Working Professional Courses for Institute Level & Against CAP vacancy admissions."
+      description:
+        "Official Schedule for B. Tech, DSE, M.Tech, MBA, MCA, and Working Professional Courses for Institute Level & Against CAP vacancy admissions.",
     },
     {
-      title: "Advertisement for Institute Level / Against CAP Admission 2026-27",
+      title:
+        "Advertisement for Institute Level / Against CAP Admission 2026-27",
       category: "Admission Advertisement",
       pdf: "/admission/Advertisement_of_Admission_2026-27.pdf",
       date: "07 September 2026",
       isNew: true,
-      description: "Official Newspaper Advertisement for Institute Level Seats and Vacant Seats after CAP rounds (Against CAP Seats) for A.Y. 2026-27."
-    }
+      description:
+        "Official Newspaper Advertisement for Institute Level Seats and Vacant Seats after CAP rounds (Against CAP Seats) for A.Y. 2026-27.",
+    },
   ],
-  "Engineering": [
+  Engineering: [
     {
-      title: "Provisional Merit List (Version 1) – Institute Level (IL) First Year B.Tech Engineering",
+      title:
+        "Provisional Merit List (Version 1) – Institute Level (IL) First Year B.Tech Engineering",
       category: "Merit List (IL)",
       pdf: "/admission/IL_FE_Merit_List_Version_1.pdf",
       date: "09 September 2026",
       isNew: true,
-      description: "Official Provisional Merit List (Version 1) for Institute Level (IL) seats for First Year Under Graduate Technical Courses in Engineering & Technology (Computer, AI&DS, IT, E&TC, Mechanical) for A.Y. 2026-27. Reporting & confirmation date: 10/09/2026."
+      description:
+        "Official Provisional Merit List (Version 1) for Institute Level (IL) seats for First Year Under Graduate Technical Courses in Engineering & Technology (Computer, AI&DS, IT, E&TC, Mechanical) for A.Y. 2026-27. Reporting & confirmation date: 10/09/2026.",
     },
     {
-      title: "Provisional Merit List (Version 1) – Against CAP (ACAP) First Year B.Tech Engineering",
+      title:
+        "Provisional Merit List (Version 1) – Against CAP (ACAP) First Year B.Tech Engineering",
       category: "Merit List (ACAP)",
       pdf: "/admission/ACAP_FE_Merit_List_Version_1.pdf",
       date: "09 September 2026",
       isNew: true,
-      description: "Official Provisional Merit List (Version 1) for Against CAP (ACAP) vacant seats for First Year Under Graduate Technical Courses in Engineering & Technology (Computer, AI&DS, IT, E&TC, Mechanical) for A.Y. 2026-27. Reporting & confirmation date: 10/09/2026."
+      description:
+        "Official Provisional Merit List (Version 1) for Against CAP (ACAP) vacant seats for First Year Under Graduate Technical Courses in Engineering & Technology (Computer, AI&DS, IT, E&TC, Mechanical) for A.Y. 2026-27. Reporting & confirmation date: 10/09/2026.",
     },
     {
-      title: "Provisional Merit List (Version 1) – Against CAP (ACAP) Direct Second Year (DSE) Engineering",
+      title:
+        "Provisional Merit List (Version 1) – Against CAP (ACAP) Direct Second Year (DSE) Engineering",
       category: "Merit List (ACAP)",
       pdf: "/admission/DSE_ACAP_Merit_List_Version_1.pdf",
       date: "09 September 2026",
       isNew: true,
-      description: "Official Provisional Merit List (Version 1) for Against CAP (ACAP) vacant seats for Direct Second Year (DSE) Engineering & Technology (Computer, AI&DS, IT, E&TC, Mechanical) for A.Y. 2026-27."
+      description:
+        "Official Provisional Merit List (Version 1) for Against CAP (ACAP) vacant seats for Direct Second Year (DSE) Engineering & Technology (Computer, AI&DS, IT, E&TC, Mechanical) for A.Y. 2026-27.",
     },
     {
       title: "Vacancy Position – First Year B.Tech Engineering",
@@ -91,7 +116,8 @@ const admission2026Data = {
       pdf: "/admission/BTech_FE_Vacancy_Position_08092026.pdf",
       date: "09 September 2026",
       isNew: true,
-      description: "State CET Cell provisional vacancy position after CAP Round III/IV for First Year Under Graduate Technical Courses in Engineering & Technology (Computer, AI&DS, IT, E&TC, Mechanical) for A.Y. 2026-27."
+      description:
+        "State CET Cell provisional vacancy position after CAP Round III/IV for First Year Under Graduate Technical Courses in Engineering & Technology (Computer, AI&DS, IT, E&TC, Mechanical) for A.Y. 2026-27.",
     },
     {
       title: "Vacancy Position – Engineering DSE (Direct Second Year)",
@@ -99,33 +125,59 @@ const admission2026Data = {
       pdf: "/admission/DSE_Vacancy_Position_08092026.pdf",
       date: "09 September 2026",
       isNew: true,
-      description: "State CET Cell updated provisional vacancy position after CAP Round IV for Direct Second Year (DSE) Engineering & Technology (Computer, AI&DS, IT, E&TC, Mechanical) for A.Y. 2026-27."
+      description:
+        "State CET Cell updated provisional vacancy position after CAP Round IV for Direct Second Year (DSE) Engineering & Technology (Computer, AI&DS, IT, E&TC, Mechanical) for A.Y. 2026-27.",
     },
     {
-      title: "B.Tech & DSE Institute Level / Against CAP Admission Schedule 2026-27",
+      title:
+        "B.Tech & DSE Institute Level / Against CAP Admission Schedule 2026-27",
       category: "Admission Schedule",
       pdf: "/admission/Schedule_for_IL_ACAP_Admission_2026-27.pdf",
       date: "07 September 2026",
       isNew: true,
-      description: "Schedule for B.Tech (AI&DS, Computer, E&TC, IT, Mechanical) & Direct Second Year (DSE) vacancies. Application Dates: 07/09/2026 to 08/09/2026 (B.Tech) & 09/09/2026 to 10/09/2026 (DSE)."
+      description:
+        "Schedule for B.Tech (AI&DS, Computer, E&TC, IT, Mechanical) & Direct Second Year (DSE) vacancies. Application Dates: 07/09/2026 to 08/09/2026 (B.Tech) & 09/09/2026 to 10/09/2026 (DSE).",
     },
     {
-      title: "Engineering Institute Level / Against CAP Admission Advertisement",
+      title:
+        "Engineering Institute Level / Against CAP Admission Advertisement",
       category: "Admission Advertisement",
       pdf: "/admission/Advertisement_of_Admission_2026-27.pdf",
       date: "07 September 2026",
       isNew: true,
-      description: "Official published advertisement for B.Tech, DSE, and M.Tech Institute Level & Against CAP seats."
-    }
+      description:
+        "Official published advertisement for B.Tech, DSE, and M.Tech Institute Level & Against CAP seats.",
+    },
   ],
-  "MBA": [
+  "M.Tech": [
+    {
+      title: "Provisional Merit List (Version 1) – Institute Level (IL) M.Tech",
+      category: "Merit List (IL)",
+      pdf: "/admission/ME_IL_Merit_List_Version_1.pdf",
+      date: "09 September 2026",
+      isNew: true,
+      description:
+        "Official Provisional Merit List (Version 1) for Institute Level (IL) seats for First Year Master of Technology (M.Tech) for A.Y. 2026-27. Reporting & confirmation date: 10/09/2026.",
+    },
+    {
+      title: "Provisional Merit List (Version 1) – Against CAP (ACAP) M.Tech",
+      category: "Merit List (ACAP)",
+      pdf: "/admission/M.Tech_ACAP_Merit_List_Version_1.pdf",
+      date: "09 September 2026",
+      isNew: true,
+      description:
+        "Official Provisional Merit List (Version 1) for Against CAP (ACAP) vacant seats for First Year Master of Technology (M.Tech) for A.Y. 2026-27. Reporting & confirmation date: 10/09/2026.",
+    },
+  ],
+  MBA: [
     {
       title: "Provisional Merit List (Version 1) – Institute Level (IL) MBA",
       category: "Merit List (IL)",
       pdf: "/admission/IL_MBA_Merit_List_Version_1.pdf",
       date: "09 September 2026",
       isNew: true,
-      description: "Official Provisional Merit List (Version 1) for Institute Level (IL) seats for First Year Master of Business Administration (MBA - Choice Code: 0617910110) for Academic Year 2026-27. Reporting & confirmation date: 10/09/2026."
+      description:
+        "Official Provisional Merit List (Version 1) for Institute Level (IL) seats for First Year Master of Business Administration (MBA - Choice Code: 0617910110) for Academic Year 2026-27. Reporting & confirmation date: 10/09/2026.",
     },
     {
       title: "Provisional Merit List (Version 1) – Against CAP (ACAP) MBA",
@@ -133,7 +185,8 @@ const admission2026Data = {
       pdf: "/admission/ACAP_MBA_Merit_List_Version_1.pdf",
       date: "09 September 2026",
       isNew: true,
-      description: "Official Provisional Merit List (Version 1) for Against CAP (ACAP) vacant seats for First Year Master of Business Administration (MBA - Choice Code: 0617910110) for Academic Year 2026-27. Reporting & confirmation date: 10/09/2026."
+      description:
+        "Official Provisional Merit List (Version 1) for Against CAP (ACAP) vacant seats for First Year Master of Business Administration (MBA - Choice Code: 0617910110) for Academic Year 2026-27. Reporting & confirmation date: 10/09/2026.",
     },
     {
       title: "Vacancy Position – MBA (Master of Business Administration)",
@@ -141,7 +194,8 @@ const admission2026Data = {
       pdf: "/admission/MBA_Vacancy_Position_08092026.pdf",
       date: "09 September 2026",
       isNew: true,
-      description: "State CET Cell provisional vacancy position after CAP Round IV for First Year Master of Business Administration (MBA - Choice Code: 0617910110) for A.Y. 2026-27."
+      description:
+        "State CET Cell provisional vacancy position after CAP Round IV for First Year Master of Business Administration (MBA - Choice Code: 0617910110) for A.Y. 2026-27.",
     },
     {
       title: "MBA Institute Level / Against CAP Admission Schedule 2026-27",
@@ -149,7 +203,8 @@ const admission2026Data = {
       pdf: "/admission/Schedule_for_IL_ACAP_Admission_2026-27.pdf",
       date: "07 September 2026",
       isNew: true,
-      description: "Schedule for MBA Institute Level & Vacant Seats after CAP rounds (Choice Code: 0617910110). Application Dates: 07/09/2026 to 08/09/2026. Merit list: 09/09/2026."
+      description:
+        "Schedule for MBA Institute Level & Vacant Seats after CAP rounds (Choice Code: 0617910110). Application Dates: 07/09/2026 to 08/09/2026. Merit list: 09/09/2026.",
     },
     {
       title: "MBA Admission Advertisement 2026-27",
@@ -157,17 +212,19 @@ const admission2026Data = {
       pdf: "/admission/Advertisement_of_Admission_2026-27.pdf",
       date: "07 September 2026",
       isNew: true,
-      description: "Official published advertisement for MBA Institute Level and Against CAP admissions."
-    }
+      description:
+        "Official published advertisement for MBA Institute Level and Against CAP admissions.",
+    },
   ],
-  "MCA": [
+  MCA: [
     {
       title: "Provisional Merit List (Version 1) – Institute Level (IL) MCA",
       category: "Merit List (IL)",
       pdf: "/admission/IL_MCA_Merit_List_Version_1.pdf",
       date: "09 September 2026",
       isNew: true,
-      description: "Official Provisional Merit List (Version 1) for Institute Level (IL) seats for First Year Master of Computer Applications (MCA - Choice Code: 0617924110) for Academic Year 2026-27. Reporting & confirmation date: 10/09/2026."
+      description:
+        "Official Provisional Merit List (Version 1) for Institute Level (IL) seats for First Year Master of Computer Applications (MCA - Choice Code: 0617924110) for Academic Year 2026-27. Reporting & confirmation date: 10/09/2026.",
     },
     {
       title: "Provisional Merit List (Version 1) – Against CAP (ACAP) MCA",
@@ -175,7 +232,8 @@ const admission2026Data = {
       pdf: "/admission/ACAP_MCA_Merit_List_Version_1.pdf",
       date: "09 September 2026",
       isNew: true,
-      description: "Official Provisional Merit List (Version 1) for Against CAP (ACAP) vacant seats for First Year Master of Computer Applications (MCA - Choice Code: 0617924110) for Academic Year 2026-27. Reporting & confirmation date: 10/09/2026."
+      description:
+        "Official Provisional Merit List (Version 1) for Against CAP (ACAP) vacant seats for First Year Master of Computer Applications (MCA - Choice Code: 0617924110) for Academic Year 2026-27. Reporting & confirmation date: 10/09/2026.",
     },
     {
       title: "Vacancy Position – MCA (Master of Computer Applications)",
@@ -183,7 +241,8 @@ const admission2026Data = {
       pdf: "/admission/MCA_Vacancy_Position_06092026.pdf",
       date: "06 September 2026",
       isNew: true,
-      description: "State CET Cell provisional vacancy position after CAP Round IV for First Year Master of Computer Applications (MCA - Choice Code: 0617924110) for A.Y. 2026-27."
+      description:
+        "State CET Cell provisional vacancy position after CAP Round IV for First Year Master of Computer Applications (MCA - Choice Code: 0617924110) for A.Y. 2026-27.",
     },
     {
       title: "MCA Institute Level / Against CAP Admission Schedule 2026-27",
@@ -191,7 +250,8 @@ const admission2026Data = {
       pdf: "/admission/Schedule_for_IL_ACAP_Admission_2026-27.pdf",
       date: "07 September 2026",
       isNew: true,
-      description: "Schedule for MCA Institute Level & Vacant Seats after CAP rounds (Choice Code: 0617924110). Application Dates: 06/09/2026 to 08/09/2026. Merit list: 09/09/2026."
+      description:
+        "Schedule for MCA Institute Level & Vacant Seats after CAP rounds (Choice Code: 0617924110). Application Dates: 06/09/2026 to 08/09/2026. Merit list: 09/09/2026.",
     },
     {
       title: "MCA Admission Advertisement 2026-27",
@@ -199,36 +259,43 @@ const admission2026Data = {
       pdf: "/admission/Advertisement_of_Admission_2026-27.pdf",
       date: "07 September 2026",
       isNew: true,
-      description: "Official published advertisement for MCA Institute Level and Against CAP admissions."
-    }
+      description:
+        "Official published advertisement for MCA Institute Level and Against CAP admissions.",
+    },
   ],
   "MBA & MCA Direct Second Year (Lateral Entry)": [
     {
-      title: "MBA & MCA Direct Second Year (Lateral Entry) IL/ACAP Round Schedule",
+      title:
+        "MBA & MCA Direct Second Year (Lateral Entry) IL/ACAP Round Schedule",
       category: "Admission Schedule & Notice",
       pdf: "/admission/mba_mca_lateral_entry.pdf",
       date: "August 2026",
-      description: "Schedule for Institute Level (IL) and Against CAP (ACAP) vacancies for Direct Second Year (Lateral Entry) MBA & MCA."
-    }
+      description:
+        "Schedule for Institute Level (IL) and Against CAP (ACAP) vacancies for Direct Second Year (Lateral Entry) MBA & MCA.",
+    },
   ],
   "MBA Working Professional": [
     {
-      title: "MBA Working Professional (Vacant seats after CAP) Schedule 2026-27",
+      title:
+        "MBA Working Professional (Vacant seats after CAP) Schedule 2026-27",
       category: "Admission Schedule",
       pdf: "/admission/Schedule_for_IL_ACAP_Admission_2026-27.pdf",
       date: "07 September 2026",
       isNew: true,
-      description: "Schedule for MBA Working Professional Course (Choice Code: 0617910180). Application Dates: 07/09/2026 to 08/09/2026. Reporting: 10/09/2026 to 13/09/2026."
-    }
+      description:
+        "Schedule for MBA Working Professional Course (Choice Code: 0617910180). Application Dates: 07/09/2026 to 08/09/2026. Reporting: 10/09/2026 to 13/09/2026.",
+    },
   ],
   "DSE Mechanical Engineering Working Professional": [
     {
-      title: "Provisional Merit List (Version 1) – Against CAP (ACAP) DSE Mechanical Engineering (Working Professional)",
+      title:
+        "Provisional Merit List (Version 1) – Against CAP (ACAP) DSE Mechanical Engineering (Working Professional)",
       category: "Merit List (ACAP)",
       pdf: "/admission/DSWWP_ACAP_Merit_List_Version_1.pdf",
       date: "09 September 2026",
       isNew: true,
-      description: "Official Provisional Merit List (Version 1) for Against CAP (ACAP) vacant seats for DSE Mechanical Engineering Working Professional Course (Choice Code: 0617961280) for A.Y. 2026-27. Reporting date: 13/09/2026."
+      description:
+        "Official Provisional Merit List (Version 1) for Against CAP (ACAP) vacant seats for DSE Mechanical Engineering Working Professional Course (Choice Code: 0617961280) for A.Y. 2026-27. Reporting date: 13/09/2026.",
     },
     {
       title: "DSE Mechanical Engg Working Professional Course Schedule 2026-27",
@@ -236,29 +303,32 @@ const admission2026Data = {
       pdf: "/admission/Schedule_for_IL_ACAP_Admission_2026-27.pdf",
       date: "07 September 2026",
       isNew: true,
-      description: "Schedule for DSE Mechanical Engineering Working Professional Course (Choice Code: 0617961280). Application Dates: 07/09/2026 to 08/09/2026. Reporting: 10/09/2026 to 15/09/2026."
-    }
-  ]
+      description:
+        "Schedule for DSE Mechanical Engineering Working Professional Course (Choice Code: 0617961280). Application Dates: 07/09/2026 to 08/09/2026. Reporting: 10/09/2026 to 15/09/2026.",
+    },
+  ],
 };
 
 const programIcons = {
-  "Common": FileCheck,
-  "Engineering": GraduationCap,
-  "MBA": Briefcase,
-  "MCA": Code,
+  Common: FileCheck,
+  Engineering: GraduationCap,
+  "M.Tech": Cog,
+  MBA: Briefcase,
+  MCA: Code,
   "MBA & MCA Direct Second Year (Lateral Entry)": Building2,
   "MBA Working Professional": Briefcase,
-  "DSE Mechanical Engineering Working Professional": Wrench
+  "DSE Mechanical Engineering Working Professional": Wrench,
 };
 
 const mobileProgramLabels = {
-  "Common": "Common",
-  "Engineering": "Engineering",
-  "MBA": "MBA",
-  "MCA": "MCA",
+  Common: "Common",
+  Engineering: "Engineering",
+  "M.Tech": "M.Tech",
+  MBA: "MBA",
+  MCA: "MCA",
   "MBA & MCA Direct Second Year (Lateral Entry)": "MBA / MCA (Lateral)",
   "MBA Working Professional": "MBA Working Prof.",
-  "DSE Mechanical Engineering Working Professional": "DSE Mech (Working Prof.)"
+  "DSE Mechanical Engineering Working Professional": "DSE Mech (Working Prof.)",
 };
 
 export default function Admission2026Page() {
@@ -300,7 +370,8 @@ export default function Admission2026Page() {
               transition={{ delay: 0.3, duration: 0.5 }}
               className="text-xs md:text-xl text-blue-100/90 leading-relaxed font-light line-clamp-1 md:line-clamp-none"
             >
-              Official Notices, Round Schedules, Cut-offs & Programme-wise Documents for IL/ACAP Admissions
+              Official Notices, Round Schedules, Cut-offs & Programme-wise
+              Documents for IL/ACAP Admissions
             </motion.p>
           </div>
         </div>
@@ -328,24 +399,34 @@ export default function Admission2026Page() {
                 Merit Lists Released (ACAP / IL 2026-27):
               </span>
               <span className="text-xs text-blue-100/90 truncate hidden xl:inline">
-                Version 1 Merit Lists for B.Tech First Year, MBA, and MCA published. Reporting starts 10/09/2026.
+                Version 1 Merit Lists for B.Tech First Year, MBA, and MCA
+                published. Reporting starts 10/09/2026.
               </span>
             </div>
             <div className="flex items-center gap-1.5 shrink-0 ml-auto md:ml-0">
               <button
-                onClick={() => { setActiveTab("Engineering"); setPreviewPdf(null); }}
+                onClick={() => {
+                  setActiveTab("Engineering");
+                  setPreviewPdf(null);
+                }}
                 className="px-2 py-0.5 md:px-2.5 md:py-1 rounded-md bg-white/15 hover:bg-white/25 border border-white/25 text-[11px] md:text-xs font-semibold backdrop-blur-sm transition-all text-white hover:shadow cursor-pointer"
               >
                 B.Tech (FE)
               </button>
               <button
-                onClick={() => { setActiveTab("MBA"); setPreviewPdf(null); }}
+                onClick={() => {
+                  setActiveTab("MBA");
+                  setPreviewPdf(null);
+                }}
                 className="px-2 py-0.5 md:px-2.5 md:py-1 rounded-md bg-white/15 hover:bg-white/25 border border-white/25 text-[11px] md:text-xs font-semibold backdrop-blur-sm transition-all text-white hover:shadow cursor-pointer"
               >
                 MBA
               </button>
               <button
-                onClick={() => { setActiveTab("MCA"); setPreviewPdf(null); }}
+                onClick={() => {
+                  setActiveTab("MCA");
+                  setPreviewPdf(null);
+                }}
                 className="px-2 py-0.5 md:px-2.5 md:py-1 rounded-md bg-white/15 hover:bg-white/25 border border-white/25 text-[11px] md:text-xs font-semibold backdrop-blur-sm transition-all text-white hover:shadow cursor-pointer"
               >
                 MCA
@@ -377,7 +458,9 @@ export default function Admission2026Page() {
                   }`}
                 >
                   <div className="flex items-center gap-1.5 min-w-0">
-                    <Icon className={`w-3.5 h-3.5 shrink-0 ${isActive ? "text-white" : "text-[#003c84]"}`} />
+                    <Icon
+                      className={`w-3.5 h-3.5 shrink-0 ${isActive ? "text-white" : "text-[#003c84]"}`}
+                    />
                     <span className="truncate leading-tight">
                       {mobileProgramLabels[program] || program}
                     </span>
@@ -399,7 +482,6 @@ export default function Admission2026Page() {
           </div>
 
           <div className="flex flex-col lg:flex-row gap-6 md:gap-8">
-            
             {/* Desktop Sidebar Navigation */}
             <div className="hidden lg:block lg:w-1/3 xl:w-1/4">
               <div className="bg-white rounded-2xl shadow-lg border border-slate-200/80 p-5 sticky top-28">
@@ -429,17 +511,25 @@ export default function Admission2026Page() {
                         }`}
                       >
                         <div className="flex items-center gap-3 min-w-0">
-                          <Icon className={`w-4 h-4 shrink-0 ${isActive ? "text-white" : "text-[#003c84]"}`} />
+                          <Icon
+                            className={`w-4 h-4 shrink-0 ${isActive ? "text-white" : "text-[#003c84]"}`}
+                          />
                           <span className="truncate">{program}</span>
                         </div>
                         {count > 0 ? (
-                          <span className={`text-xs px-2 py-0.5 rounded-full font-bold shrink-0 ${
-                            isActive ? "bg-white/20 text-white" : "bg-blue-100 text-[#003c84]"
-                          }`}>
+                          <span
+                            className={`text-xs px-2 py-0.5 rounded-full font-bold shrink-0 ${
+                              isActive
+                                ? "bg-white/20 text-white"
+                                : "bg-blue-100 text-[#003c84]"
+                            }`}
+                          >
                             {count}
                           </span>
                         ) : (
-                          <ChevronRight className={`w-4 h-4 shrink-0 ${isActive ? "text-white" : "text-slate-400"}`} />
+                          <ChevronRight
+                            className={`w-4 h-4 shrink-0 ${isActive ? "text-white" : "text-slate-400"}`}
+                          />
                         )}
                       </motion.button>
                     );
@@ -459,7 +549,9 @@ export default function Admission2026Page() {
               >
                 <div className="flex items-center justify-between pb-3 mb-3 md:pb-6 md:mb-6 border-b border-slate-100 flex-wrap gap-2">
                   <div className="flex items-center gap-2 md:gap-3">
-                    {React.createElement(programIcons[activeTab], { className: "w-5 h-5 md:w-7 md:h-7 text-[#003c84]" })}
+                    {React.createElement(programIcons[activeTab], {
+                      className: "w-5 h-5 md:w-7 md:h-7 text-[#003c84]",
+                    })}
                     <h3 className="text-lg md:text-2xl font-bold text-slate-800">
                       {activeTab}
                     </h3>
@@ -502,11 +594,17 @@ export default function Admission2026Page() {
 
                           <div className="flex items-center gap-2 w-full sm:w-auto shrink-0 pt-1 sm:pt-0">
                             <button
-                              onClick={() => setPreviewPdf(previewPdf === doc.pdf ? null : doc.pdf)}
+                              onClick={() =>
+                                setPreviewPdf(
+                                  previewPdf === doc.pdf ? null : doc.pdf,
+                                )
+                              }
                               className="flex-1 sm:flex-none flex items-center justify-center gap-1 px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-200/80 text-slate-700 hover:bg-slate-300 transition-colors"
                             >
                               <Eye className="w-3.5 h-3.5" />
-                              <span>{previewPdf === doc.pdf ? "Hide" : "View"}</span>
+                              <span>
+                                {previewPdf === doc.pdf ? "Hide" : "View"}
+                              </span>
                             </button>
                             <a
                               href={doc.pdf}
@@ -549,13 +647,14 @@ export default function Admission2026Page() {
                       No Documents Uploaded Yet
                     </h4>
                     <p className="text-xs md:text-sm text-slate-500 max-w-md mx-auto">
-                      Admission notices, schedules, and merit lists for <strong>{activeTab}</strong> will be updated here as soon as they are released by the college.
+                      Admission notices, schedules, and merit lists for{" "}
+                      <strong>{activeTab}</strong> will be updated here as soon
+                      as they are released by the college.
                     </p>
                   </div>
                 )}
               </motion.div>
             </div>
-
           </div>
         </div>
       </div>

@@ -27,16 +27,16 @@ jobs:
       - name: 🏗️ Build Static Site
         run: npm run build
 
-      - name: 🚀 Deploy to cPanel via SSH / Rsync
-        uses: easingthemes/ssh-deploy@v5.0.3
-        with:
-          SSH_PRIVATE_KEY: ${{ secrets.CPANEL_SSH_KEY }}
-          REMOTE_HOST: ${{ secrets.CPANEL_HOST }}
-          REMOTE_PORT: ${{ secrets.CPANEL_PORT || '22' }}
-          REMOTE_USER: ${{ secrets.CPANEL_USER }}
-          SOURCE: "out/"
+      - name: 🚀 Deploy to cPanel via SCP
+        env:
+          SSH_KEY: ${{ secrets.CPANEL_SSH_KEY }}
+          HOST: ${{ secrets.CPANEL_HOST }}
+          USER: ${{ secrets.CPANEL_USER }}
+          PORT: ${{ secrets.CPANEL_PORT || '22' }}
           TARGET: ${{ secrets.REMOTE_TARGET || format('/home/{0}/public_html', secrets.CPANEL_USER) }}
-          ARGS: "-rltgoDzvO"
-          EXCLUDE: "/.git/, /.github/, /eng26.indiraicem.ac.in/, /indiraigsb.edu.in/, /mba26.indiraicem.ac.in/, /mca26.indiraicem.ac.in/, /sdetm.indiraicem.ac.in/, /.well-known/, /cgi-bin/"
-          SCRIPT_AFTER: |
-            echo "Deployment completed successfully to cPanel public_html without affecting other domains!"
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          scp -P "$PORT" -o StrictHostKeyChecking=no -r out/* "$USER@$HOST:$TARGET/"
+          echo "Deployment completed successfully to cPanel public_html!"

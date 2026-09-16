@@ -198,3 +198,8 @@ html,
 body {
   scroll-behavior: auto !important;
 }
+
+/* Lenis isolation and modal scroll boundaries */
+[data-lenis-prevent] {
+  overscroll-behavior: contain !important;
+}

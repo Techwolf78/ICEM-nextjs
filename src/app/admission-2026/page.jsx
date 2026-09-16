@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   GraduationCap,
@@ -15,11 +15,15 @@ import {
   Building2,
   Wrench,
   Cog,
+  Loader2,
+  BookOpen
 } from "lucide-react";
+import { db } from "@/lib/firebase";
+import { collection, query, onSnapshot } from "firebase/firestore";
 
-// Admission 2026 Data organized by requested programmes
-const admission2026Data = {
-  Common: [
+// Static Initial Admission 2026 Data (Serves as instant fallback if offline/loading)
+const initialAdmission2026Data = {
+  "Notice/Vacancy": [
     {
       title:
         "Vacancy Position – Engineering, MBA & MCA (as on 11 September 2026)",
@@ -310,6 +314,7 @@ const admission2026Data = {
 };
 
 const programIcons = {
+  "Notice/Vacancy": FileCheck,
   Common: FileCheck,
   Engineering: GraduationCap,
   "M.Tech": Cog,
@@ -321,7 +326,8 @@ const programIcons = {
 };
 
 const mobileProgramLabels = {
-  Common: "Common",
+  "Notice/Vacancy": "Notice/Vacancy",
+  Common: "Notice/Vacancy",
   Engineering: "Engineering",
   "M.Tech": "M.Tech",
   MBA: "MBA",
@@ -332,10 +338,83 @@ const mobileProgramLabels = {
 };
 
 export default function Admission2026Page() {
-  const [activeTab, setActiveTab] = useState("Common");
+  const [activeTab, setActiveTab] = useState("Notice/Vacancy");
   const [previewPdf, setPreviewPdf] = useState(null);
+  const [admissionData, setAdmissionData] = useState(initialAdmission2026Data);
+  const [isLiveLoaded, setIsLiveLoaded] = useState(false);
 
-  const programs = Object.keys(admission2026Data);
+  // Live Firestore subscription
+  useEffect(() => {
+    try {
+      // Listen to admission_2026 collection (notices and custom tab definitions)
+      const qNotices = query(collection(db, "admission_2026"));
+
+      const unsubscribeNotices = onSnapshot(
+        qNotices,
+        (snapshot) => {
+          if (!snapshot.empty) {
+            const categorized = {
+              "Notice/Vacancy": [],
+              Engineering: [],
+              "M.Tech": [],
+              MBA: [],
+              MCA: [],
+              "MBA & MCA Direct Second Year (Lateral Entry)": [],
+              "MBA Working Professional": [],
+              "DSE Mechanical Engineering Working Professional": [],
+            };
+
+            snapshot.forEach((docSnap) => {
+              const data = docSnap.data();
+              let progKey = data.program || "Notice/Vacancy";
+              if (progKey === "Common") {
+                progKey = "Notice/Vacancy";
+              }
+              if (!categorized[progKey]) {
+                categorized[progKey] = [];
+              }
+
+              // Only add actual notice documents (exclude tab definitions & placeholders)
+              if (
+                !data.isTabDefinition &&
+                !data.isTabPlaceholder &&
+                !data.title?.startsWith("Welcome to ")
+              ) {
+                categorized[progKey].push({
+                  id: docSnap.id,
+                  ...data,
+                });
+              }
+            });
+
+            // Sort each category by order
+            Object.keys(categorized).forEach((k) => {
+              categorized[k].sort(
+                (a, b) =>
+                  (a.order ?? 999) - (b.order ?? 999) ||
+                  (b.createdAt || "").localeCompare(a.createdAt || "")
+              );
+            });
+
+            setAdmissionData(categorized);
+            setIsLiveLoaded(true);
+          }
+        },
+        (err) => {
+          console.warn("Firestore admission_2026 listen warning:", err);
+        }
+      );
+
+      return () => {
+        unsubscribeNotices();
+      };
+    } catch (err) {
+      console.warn("Firebase init error, fallback active:", err);
+    }
+  }, []);
+
+  const programs = Object.keys(admissionData);
+  const activeItems = admissionData[activeTab] || [];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-slate-100 to-blue-50/30 pt-4 md:pt-[6vh] pb-8 md:pb-16">
@@ -437,8 +516,8 @@ export default function Admission2026Page() {
           {/* Mobile Programmes Tabs - Uniform 2-Column Grid */}
           <div className="lg:hidden mb-4 grid grid-cols-2 gap-2">
             {programs.map((program, idx) => {
-              const Icon = programIcons[program];
-              const count = admission2026Data[program].length;
+              const Icon = programIcons[program] || BookOpen;
+              const count = (admissionData[program] || []).length;
               const isActive = activeTab === program;
               const isLast = idx === programs.length - 1;
 
@@ -491,8 +570,8 @@ export default function Admission2026Page() {
                 </h2>
                 <div className="space-y-2">
                   {programs.map((program) => {
-                    const Icon = programIcons[program];
-                    const count = admission2026Data[program].length;
+                    const Icon = programIcons[program] || BookOpen;
+                    const count = (admissionData[program] || []).length;
                     const isActive = activeTab === program;
 
                     return (
@@ -504,7 +583,7 @@ export default function Admission2026Page() {
                           setActiveTab(program);
                           setPreviewPdf(null);
                         }}
-                        className={`w-full px-4 py-3.5 rounded-xl font-medium text-sm transition-all duration-200 text-left flex items-center justify-between gap-3 ${
+                        className={`w-full px-4 py-3.5 rounded-xl font-medium text-sm transition-all duration-200 text-left flex items-center justify-between gap-3 cursor-pointer ${
                           isActive
                             ? "bg-gradient-to-r from-[#003c84] to-[#278da4] text-white shadow-md shadow-blue-900/10 font-semibold"
                             : "bg-slate-50/70 text-slate-700 hover:bg-slate-100/80 border border-slate-200/60"
@@ -549,7 +628,7 @@ export default function Admission2026Page() {
               >
                 <div className="flex items-center justify-between pb-3 mb-3 md:pb-6 md:mb-6 border-b border-slate-100 flex-wrap gap-2">
                   <div className="flex items-center gap-2 md:gap-3">
-                    {React.createElement(programIcons[activeTab], {
+                    {React.createElement(programIcons[activeTab] || BookOpen, {
                       className: "w-5 h-5 md:w-7 md:h-7 text-[#003c84]",
                     })}
                     <h3 className="text-lg md:text-2xl font-bold text-slate-800">
@@ -557,16 +636,16 @@ export default function Admission2026Page() {
                     </h3>
                   </div>
                   <span className="text-[11px] md:text-xs font-semibold px-2.5 py-0.5 md:px-3 md:py-1 bg-slate-100 text-slate-600 rounded-full border border-slate-200">
-                    {admission2026Data[activeTab].length} Document(s) Uploaded
+                    {activeItems.length} Document(s) Uploaded
                   </span>
                 </div>
 
                 {/* List of Documents */}
-                {admission2026Data[activeTab].length > 0 ? (
+                {activeItems.length > 0 ? (
                   <div className="space-y-2.5 sm:space-y-3.5">
-                    {admission2026Data[activeTab].map((doc, idx) => (
+                    {activeItems.map((doc, idx) => (
                       <motion.div
-                        key={idx}
+                        key={doc.id || idx}
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: idx * 0.05 }}
@@ -599,7 +678,7 @@ export default function Admission2026Page() {
                                   previewPdf === doc.pdf ? null : doc.pdf,
                                 )
                               }
-                              className="flex-1 sm:flex-none flex items-center justify-center gap-1 px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-200/80 text-slate-700 hover:bg-slate-300 transition-colors"
+                              className="flex-1 sm:flex-none flex items-center justify-center gap-1 px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-200/80 text-slate-700 hover:bg-slate-300 transition-colors cursor-pointer"
                             >
                               <Eye className="w-3.5 h-3.5" />
                               <span>
@@ -608,11 +687,12 @@ export default function Admission2026Page() {
                             </button>
                             <a
                               href={doc.pdf}
-                              download
+                              target="_blank"
+                              rel="noopener noreferrer"
                               className="flex-1 sm:flex-none flex items-center justify-center gap-1 px-3 py-1.5 text-xs font-semibold rounded-lg bg-[#003c84] text-white hover:bg-[#1d59a3] transition-colors shadow-sm"
                             >
                               <Download className="w-3.5 h-3.5" />
-                              <span>Download</span>
+                              <span>Open / Download</span>
                             </a>
                           </div>
                         </div>

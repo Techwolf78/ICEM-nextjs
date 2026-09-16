@@ -29,6 +29,10 @@ export default function LenisProvider({ children }) {
       smoothTouch: false, // Keep touch native
     });
 
+    if (typeof window !== "undefined") {
+      window.__lenis = lenis;
+    }
+
     // Sync ScrollTrigger with Lenis scroll event
     lenis.on("scroll", ScrollTrigger.update);
 
@@ -66,6 +70,9 @@ export default function LenisProvider({ children }) {
 
     // 7. CLEANUP
     return () => {
+      if (typeof window !== "undefined") {
+        delete window.__lenis;
+      }
       gsap.ticker.remove(lenis.raf);
       lenis.destroy();
       // We should ideally revert the scrollerProxy, but GSAP doesn't offer a clean 'removeProxy'.

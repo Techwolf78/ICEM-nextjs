@@ -27,7 +27,7 @@ jobs:
       - name: 🏗️ Build Static Site
         run: npm run build
 
-      - name: 🚀 Deploy to cPanel via SCP
+      - name: 🚀 Package and Deploy to cPanel (Ultra Fast)
         env:
           SSH_KEY: ${{ secrets.CPANEL_SSH_KEY }}
           HOST: ${{ secrets.CPANEL_HOST }}
@@ -38,5 +38,7 @@ jobs:
           mkdir -p ~/.ssh
           echo "$SSH_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          scp -P "$PORT" -o StrictHostKeyChecking=no -r out/* "$USER@$HOST:$TARGET/"
+          tar -czf deploy.tar.gz -C out .
+          scp -P "$PORT" -o StrictHostKeyChecking=no deploy.tar.gz "$USER@$HOST:$TARGET/"
+          ssh -p "$PORT" -o StrictHostKeyChecking=no "$USER@$HOST" "tar -xzf $TARGET/deploy.tar.gz -C $TARGET/ && rm -f $TARGET/deploy.tar.gz"
           echo "Deployment completed successfully to cPanel public_html!"

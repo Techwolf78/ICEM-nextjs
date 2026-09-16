@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { isAuthenticated, logout } from "@/lib/auth";
 import { db, storage } from "@/lib/firebase";
 import {
@@ -455,6 +456,9 @@ export default function AdmissionAdminCMS() {
             <div className="min-w-0">
               <h1 className="text-sm sm:text-lg font-bold text-slate-900 flex items-center gap-1.5 truncate">
                 <span>ICEM Admission CMS</span>
+                <span className="text-[10px] bg-blue-50 text-[#003c84] font-bold px-1.5 py-0.5 rounded border border-blue-200 shrink-0">
+                  v2.1
+                </span>
                 <span className="text-[10px] sm:text-[11px] bg-emerald-50 text-emerald-700 font-bold px-1.5 sm:px-2 py-0.5 rounded-full border border-emerald-200 shrink-0">
                   ● Live Sync
                 </span>
@@ -466,6 +470,14 @@ export default function AdmissionAdminCMS() {
           </div>
 
           <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+            <Link
+              href="/admission-2026/admin/audit"
+              className="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-xl bg-purple-50 hover:bg-purple-100 text-purple-700 text-xs font-semibold border border-purple-200/80 transition"
+            >
+              <ShieldCheck className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">Audit Logs</span>
+            </Link>
+
             <a
               href="/admission-2026"
               target="_blank"

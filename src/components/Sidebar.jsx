@@ -42,6 +42,7 @@ export default function Sidebar() {
     { label: "Cultural Events", link: "/campus-life/cultural-events" },
     { label: "Sports & Recreation", link: "/campus-life/sports" },
     { label: "Clubs & Societies", link: "/campus-life/clubs" },
+    { label: "Professional Chapters", link: "https://indiraicem.ac.in/icem-acm/" },
     { label: "Technical Fest", link: "/campus-life/tech-fest" },
     { label: "Workshops & Seminars", link: "/campus-life/workshops" },
     { label: "Annual Fest", link: "/campus-life/annual-fest" },
@@ -137,6 +138,8 @@ export default function Sidebar() {
               <Link
                 key={i}
                 href={link.link}
+                target={link.link?.startsWith("http") ? "_blank" : "_self"}
+                rel={link.link?.startsWith("http") ? "noopener noreferrer" : ""}
                 className="block text-sm text-white/80 hover:text-white hover:bg-white/10 p-2 rounded transition-all duration-200 hover:translate-x-1"
               >
                 • {link.label}

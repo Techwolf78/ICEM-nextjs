@@ -165,6 +165,7 @@ const Navbar = () => {
             { label: "Cultural Events", link: "/campus-life/cultural-events" },
             { label: "Sports & Recreation", link: "/campus-life/sports" },
             { label: "Clubs & Societies", link: "/campus-life/clubs" },
+            { label: "Professional Chapters", link: "https://indiraicem.ac.in/icem-acm/" },
             { label: "Annual Fest", link: "/campus-life/annual-fest" },
           ],
         },
@@ -323,6 +324,16 @@ const Navbar = () => {
                 {item.link ? (
                   <Link
                     href={item.link}
+                    target={
+                      item.link && item.link.startsWith("http")
+                        ? "_blank"
+                        : "_self"
+                    }
+                    rel={
+                      item.link && item.link.startsWith("http")
+                        ? "noopener noreferrer"
+                        : ""
+                    }
                     className="font-semibold flex justify-between items-center w-full text-gray-800 hover:text-primary transition-all duration-200 group-hover:translate-x-1"
                     onClick={() => setActiveDropdown(null)}
                   >

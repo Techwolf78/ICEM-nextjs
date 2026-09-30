@@ -53,10 +53,10 @@ const permanentFolders = [
 ];
 
 // If any file in a permanent folder was changed, don't blindly exclude that whole folder or ensure the specific changed file is copied
-const excludeArgs = permanentFolders.map(folder => `--exclude='${folder}'`);
+const excludeArgs = permanentFolders.map(folder => `--exclude=${folder}`);
 
 // Also exclude video/gif formats unless explicitly added in git
-excludeArgs.push("--exclude='*.mp4'", "--exclude='*.gif'");
+excludeArgs.push("--exclude=*.mp4", "--exclude=*.gif");
 
 const tarCmd = `tar -czf "${deployArchive}" ${excludeArgs.join(' ')} -C "${outDir}" .`;
 

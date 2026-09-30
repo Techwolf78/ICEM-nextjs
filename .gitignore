@@ -40,8 +40,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# deployment ZIPs
+# deployment ZIPs & archives
 *.zip
+*.tar.gz
 
 # temporary chrome profile and pdf test artifacts
 public/sop-assets/temp-chrome-profile/

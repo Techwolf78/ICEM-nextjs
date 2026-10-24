@@ -58,13 +58,17 @@ copyWebFiles(outDir, stageDir);
 try {
   let changedFiles = [];
   try {
-    // Check latest commit for added/modified files
-    const diff = execSync('git diff-tree --no-commit-id --name-only -r HEAD', { cwd: root, encoding: 'utf-8' });
+    // Check recent commits for added/modified files
+    const diff = execSync('git diff-tree --no-commit-id --name-only -r HEAD~5..HEAD', { cwd: root, encoding: 'utf-8' });
     changedFiles = diff.split('\n').map(s => s.trim()).filter(Boolean);
   } catch (e) {
-    // Fallback: check status
-    const status = execSync('git status --porcelain', { cwd: root, encoding: 'utf-8' });
-    changedFiles = status.split('\n').map(s => s.trim().replace(/^[AMD\?\s]+\s+/, '')).filter(Boolean);
+    try {
+      const diff = execSync('git diff-tree --no-commit-id --name-only -r HEAD', { cwd: root, encoding: 'utf-8' });
+      changedFiles = diff.split('\n').map(s => s.trim()).filter(Boolean);
+    } catch (e2) {
+      const status = execSync('git status --porcelain', { cwd: root, encoding: 'utf-8' });
+      changedFiles = status.split('\n').map(s => s.trim().replace(/^[AMD\?\s]+\s+/, '')).filter(Boolean);
+    }
   }
 
   const publicChanges = changedFiles
@@ -87,19 +91,32 @@ try {
   console.log('Note: Git asset delta check completed.');
 }
 
-// 4. Compress the clean staging folder into deploy.tar.gz
+// 4. Create one-time self-deleting PHP extractor for cPanel environments
+const phpExtractor = `<?php
+$archive = __DIR__ . '/deploy.tar.gz';
+if (file_exists($archive)) {
+  try {
+    $phar = new PharData($archive);
+    $phar->extractTo(__DIR__, null, true);
+    @unlink($archive);
+  } catch (Exception $e) {}
+}
+@unlink(__FILE__);
+echo "DEPLOY_EXTRACT_SUCCESS";
+`;
+fs.writeFileSync(path.join(stageDir, 'extract_deploy.php'), phpExtractor);
+
+// 5. Compress staging folder into deploy.tar.gz as well
 console.log('Compressing deployment archive...');
 execSync(`tar -czf "${deployArchive}" -C "${stageDir}" .`, { stdio: 'inherit' });
-
-// Clean up staging folder
-fs.rmSync(stageDir, { recursive: true, force: true });
 
 if (fs.existsSync(deployArchive)) {
   const stats = fs.statSync(deployArchive);
   const sizeMB = (stats.size / 1024 / 1024).toFixed(2);
   console.log(`\n======================================================`);
   console.log(` SUCCESS: deploy.tar.gz created!`);
-  console.log(` Size: ${sizeMB} MB (Lightning-fast ~1s upload)`);
+  console.log(` Size: ${sizeMB} MB (Ready for direct SCP / rsync sync)`);
+  console.log(` Staging folder '_deploy_stage' preserved for direct copy`);
   console.log(`======================================================\n`);
 } else {
   console.error('Failed to create deploy.tar.gz');

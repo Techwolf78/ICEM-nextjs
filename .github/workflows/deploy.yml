@@ -38,7 +38,7 @@ jobs:
       - name: 📦 Package Ultra-Fast Bundle
         run: node scripts/prepare-deploy-package.js
 
-      - name: 🚀 Deploy to cPanel (Ultra-Fast SCP)
+      - name: 🚀 Deploy to cPanel (Direct SCP Sync)
         env:
           SSH_KEY: ${{ secrets.CPANEL_SSH_KEY }}
           HOST: ${{ secrets.CPANEL_HOST }}
@@ -49,6 +49,13 @@ jobs:
           mkdir -p ~/.ssh
           echo "$SSH_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          scp -P "$PORT" -o StrictHostKeyChecking=no deploy.tar.gz "$USER@$HOST:$TARGET/"
-          ssh -p "$PORT" -o StrictHostKeyChecking=no "$USER@$HOST" "tar -xzf $TARGET/deploy.tar.gz -C $TARGET/ && rm -f $TARGET/deploy.tar.gz"
-          echo "✅ Deployment completed successfully in seconds!"
+
+          echo "🚀 Deploying staged web files directly to cPanel ($TARGET)..."
+          shopt -s dotglob
+          scp -P "$PORT" -o StrictHostKeyChecking=no -r _deploy_stage/* "$USER@$HOST:$TARGET/"
+
+          # Trigger one-time extractor if deploy.tar.gz was left on server and clean up
+          curl -s -m 10 "https://indiraicem.ac.in/extract_deploy.php" > /dev/null 2>&1 || true
+          ssh -p "$PORT" -o StrictHostKeyChecking=no "$USER@$HOST" "rm -f $TARGET/deploy.tar.gz $TARGET/extract_deploy.php" 2>/dev/null || true
+
+          echo "✅ Deployment completed successfully!"

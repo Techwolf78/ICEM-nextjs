@@ -1,1 +1,15 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Rewrite Next.js static RSC prefetch requests with dots to nested directory structure
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.*)/__next\.([^.]+)\.([^.]+)\.__PAGE__\.txt$ $1/__next.$2/$3/__PAGE__.txt [L]
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.*)/__next\.([^.]+)\.__PAGE__\.txt$ $1/__next.$2/__PAGE__.txt [L]
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.*)/__next\.([^.]+)\.([^.]+)\.txt$ $1/__next.$2/$3.txt [L]
+</IfModule>
+
 ErrorDocument 404 /404.html

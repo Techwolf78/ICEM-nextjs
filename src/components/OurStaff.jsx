@@ -762,17 +762,28 @@ const staffData = [
   },
   {
     "Sr.No.": "70",
+    "ID No": "HOD-MBA",
+    "Name of the staff ": "Dr. Prashant Sunil Borde",
+    Designation: "Associate Professor, HOD MBA",
+    Department: "MBA",
+    Qualification: "B.Sc, B.Tech, PGDHRM, MA, MPM, Ph.D",
+    DOJ: "17.08.2026",
+    DOB: "23.07.1980",
+    imagePath: "/programs/MBA/prashant_borde.webp",
+  },
+  {
+    "Sr.No.": "71",
     "ID No": "1521",
     "Name of the staff ": "Dr. Archana Ravindra Salve",
-    Designation: "Professor & Dean (Extrepreneurship Development)",
+    Designation: "Professor & Dean (Entrepreneurship Development)",
     Department: "MBA",
     Qualification: "BAMS, MBA, NET, Ph.D",
     DOJ: "30.01.2017",
     DOB: "13.9.1976",
-    imagePath: "/programs/MBA/archana.jpeg",
+    imagePath: "/programs/MBA/archana.webp",
   },
   {
-    "Sr.No.": "71",
+    "Sr.No.": "72",
     "ID No": "987",
     "Name of the staff ": "Dr. Mrs. Priyanka Amol Pawar",
     Designation: "Associate Professor Dean (Learning & Development)",
@@ -783,7 +794,7 @@ const staffData = [
     imagePath: "/Final_Icem_branding/mba/Dr. Priyanka Pawar.webp",
   },
   {
-    "Sr.No.": "72",
+    "Sr.No.": "73",
     "ID No": "3087",
     "Name of the staff ": "Dr. Pravin Namdeo Thorat",
     Designation: "Assistant Professor",
@@ -794,29 +805,29 @@ const staffData = [
     imagePath: "/Final_Icem_branding/mba/Dr. Pravin Thorat.webp",
   },
   {
-    "Sr.No.": "73",
+    "Sr.No.": "74",
     "ID No": "3090",
     "Name of the staff ": "Mrs. Aditee Hrishikesh Huparikar",
     Designation: "Assistant Professor",
     Department: "MBA",
     Qualification: "M.Com, MBA",
-    DOJ: "7/1/2024",
+    DOJ: "01.07.2024",
     DOB: "05.07.1985",
     imagePath: "/Final_Icem_branding/mba/Mrs. Adittee Huparikar.webp",
   },
   {
-    "Sr.No.": "74",
+    "Sr.No.": "75",
     "ID No": "3093",
     "Name of the staff ": "Dr. Priyanka Shirish Shinde",
     Designation: "Assistant Professor & Assistant TPO",
     Department: "MBA",
     Qualification: "Ph.D MBA .M.Phil",
-    DOJ: "7/1/2024",
+    DOJ: "01.07.2024",
     DOB: "14.05.1986",
     imagePath: "/Final_Icem_branding/mba/Dr. Priyanka Shinde.webp",
   },
   {
-    "Sr.No.": "75",
+    "Sr.No.": "76",
     "ID No": "3120",
     "Name of the staff ": "Dr. Anita Surve",
     Designation: "Assistant Professor",
@@ -1001,7 +1012,7 @@ export default function OurStaff() {
 
                         return (
                           <tr
-                            key={id}
+                            key={id || `${name}-${index}`}
                             className={
                               index % 2 === 0 ? "bg-white" : "bg-gray-50"
                             }

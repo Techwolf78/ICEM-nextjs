@@ -138,9 +138,9 @@ export default function Overview() {
       image: "/assets/images/icemFaculty/MeenakshiPatil.jpg",
     },
     {
-      name: "Dr. Aatish Zagade",
+      name: "Dr. Prashant Borde",
       designation: "HoD (MBA)",
-      image: "/assets/images/icemFaculty/aatish_zagade.webp",
+      image: "/programs/MBA/prashant_borde.webp",
     },
     {
       name: "Dr. Awantika Bijwe",
@@ -784,7 +784,7 @@ export default function Overview() {
                             src={person.image}
                             alt={`Portrait of ${person.name}`}
                             fill
-                            className={`object-cover ${person.name.includes("Aatish Zagade") ? "object-top" : "object-center"}`}
+                            className={`object-cover ${person.name.includes("Prashant Borde") ? "object-top" : "object-center"}`}
                           />
                         </div>
                       )}

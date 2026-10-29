@@ -904,6 +904,17 @@ const staffData = [
     DOB: "",
     imagePath: "/programs/mca/nivrutti_jadhav.webp",
   },
+  {
+    "Sr.No.": "85",
+    "ID No": "3553",
+    "Name of the staff ": "Ms. Sujata Phalake",
+    Designation: "Assistant Professor",
+    Department: "MCA",
+    Qualification: "MCA",
+    DOJ: "01.10.2026",
+    DOB: "",
+    imagePath: "/programs/mca/sujata_phalake.webp",
+  },
 ];
 
 export default function OurStaff() {

@@ -95,6 +95,17 @@ const staffData = [
     dob: "",
     image: "/programs/mca/nivrutti_jadhav.webp",
   },
+  {
+    sn: 9,
+    id: "3553",
+    name: "Ms. Sujata Phalake",
+    designation: "Assistant Professor",
+    department: "MCA",
+    qualification: "MCA",
+    doj: "01/10/2026",
+    dob: "",
+    image: "/programs/mca/sujata_phalake.webp",
+  },
 ];
 
 // ================== SYLLABUS DATA ==================

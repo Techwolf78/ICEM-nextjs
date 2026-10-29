@@ -1,7 +1,546 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import { Clock, Mail, Phone } from "lucide-react";
+import { Clock, Mail, Phone, ExternalLink, Eye, FolderOpen } from "lucide-react";
+
+// ================== WINTER 2026 TIMETABLE DATA ==================
+const winter2026Folders = [
+  {
+    name: "B.Tech",
+    fullName: "Bachelor of Technology (B.Tech)",
+    timetables: [
+      {
+        title: "FY B.Tech Endsem Exam Timetable – Nov/Dec 2026",
+        pattern: "2024 Pattern",
+        pdf: "/exam/winter-2026/b-tech/FY_BTech_2024_Pattern_Nov_Dec_2026.pdf",
+      },
+      {
+        title: "FY B.Tech Endsem Exam Timetable – Nov/Dec 2026",
+        pattern: "2025 Pattern",
+        pdf: "/exam/winter-2026/b-tech/FY_BTech_2025_Pattern_Nov_Dec_2026.pdf",
+      },
+      {
+        title: "SY B.Tech Endsem Exam Timetable – Nov/Dec 2026",
+        pattern: "2024 Pattern",
+        pdf: "/exam/winter-2026/b-tech/SY_BTech_2024_Pattern_Nov_Dec_2026.pdf",
+      },
+      {
+        title: "SY B.Tech Endsem Exam Timetable – Nov/Dec 2026",
+        pattern: "2025 Pattern",
+        pdf: "/exam/winter-2026/b-tech/SY_BTech_2025_Pattern_Nov_Dec_2026.pdf",
+      },
+      {
+        title: "TY B.Tech Endsem Exam Timetable – Nov/Dec 2026",
+        pattern: "2024 Pattern",
+        pdf: "/exam/winter-2026/b-tech/TY_BTech_2024_Pattern_Nov_Dec_2026.pdf",
+      },
+    ],
+  },
+  {
+    name: "IMBA / BBA",
+    fullName: "Integrated MBA / BBA",
+    timetables: [
+      {
+        title: "FY BBA / IMBA Endsem Exam Timetable – Nov/Dec 2026",
+        pattern: "2025 Pattern",
+        pdf: "/exam/winter-2026/imba-bba/FY_BBA_IMBA_2025_Pattern_Nov_Dec_2026.pdf",
+      },
+      {
+        title: "SY BBA / IMBA Endsem Exam Timetable – Nov/Dec 2026",
+        pattern: "2024 Pattern",
+        pdf: "/exam/winter-2026/imba-bba/SY_BBA_IMBA_2024_Pattern_Nov_Dec_2026.pdf",
+      },
+      {
+        title: "SY BBA / IMBA Endsem Exam Timetable – Nov/Dec 2026",
+        pattern: "2025 Pattern",
+        pdf: "/exam/winter-2026/imba-bba/SY_BBA_IMBA_2025_Pattern_Nov_Dec_2026.pdf",
+      },
+      {
+        title: "TY BBA / IMBA Endsem Exam Timetable – Nov/Dec 2026",
+        pattern: "2024 Pattern",
+        pdf: "/exam/winter-2026/imba-bba/TY_BBA_IMBA_2024_Pattern_Nov_Dec_2026.pdf",
+      },
+    ],
+  },
+  {
+    name: "IMCA / BCA",
+    fullName: "Integrated MCA / BCA",
+    timetables: [
+      {
+        title: "FY BCA / IMCA Endsem Exam Timetable – Nov/Dec 2026",
+        pattern: "2024 Pattern",
+        pdf: "/exam/winter-2026/imca-bca/FY_BCA_IMCA_2024_Pattern_Nov_Dec_2026.pdf",
+      },
+      {
+        title: "FY BCA / IMCA Endsem Exam Timetable – Nov/Dec 2026",
+        pattern: "2025 Pattern",
+        pdf: "/exam/winter-2026/imca-bca/FY_BCA_IMCA_2025_Pattern_Nov_Dec_2026.pdf",
+      },
+      {
+        title: "SY BCA / IMCA Endsem Exam Timetable – Nov/Dec 2026",
+        pattern: "2024 Pattern",
+        pdf: "/exam/winter-2026/imca-bca/SY_BCA_IMCA_2024_Pattern_Nov_Dec_2026.pdf",
+      },
+      {
+        title: "SY BCA / IMCA Endsem Exam Timetable – Nov/Dec 2026",
+        pattern: "2025 Pattern",
+        pdf: "/exam/winter-2026/imca-bca/SY_BCA_IMCA_2025_Pattern_Nov_Dec_2026.pdf",
+      },
+      {
+        title: "TY BCA / IMCA Endsem Exam Timetable – Nov/Dec 2026",
+        pattern: "2024 Pattern",
+        pdf: "/exam/winter-2026/imca-bca/TY_BCA_IMCA_2024_Pattern_Nov_Dec_2026.pdf",
+      },
+    ],
+  },
+  {
+    name: "MBA",
+    fullName: "Master of Business Administration (MBA)",
+    timetables: [
+      {
+        title: "SY MBA Endsem Exam Timetable – Nov/Dec 2026",
+        pattern: "2024 Pattern",
+        pdf: "/exam/winter-2026/mba/SY_MBA_2024_Pattern_Nov_Dec_2026.pdf",
+      },
+    ],
+  },
+  {
+    name: "MCA",
+    fullName: "Master of Computer Applications (MCA)",
+    timetables: [
+      {
+        title: "SY MCA Endsem Exam Timetable – Nov/Dec 2026",
+        pattern: "2025 Pattern",
+        pdf: "/exam/winter-2026/mca/SY_MCA_2025_Pattern_Nov_Dec_2026.pdf",
+      },
+    ],
+  },
+  {
+    name: "M.Tech",
+    fullName: "Master of Technology (M.Tech)",
+    timetables: [],
+    notice: "Timetable will be published here upon release by the Examination Cell.",
+  },
+];
+
+// ================== OLD TIMETABLES DATA ==================
+const oldTimetables = {
+  undergraduate: [
+    {
+      title: "Vacation Examination Timetable – July 2026",
+      pdf: "/exam/47_vacation_exam_re_exam_timetable_july_2026.pdf",
+    },
+    {
+      title:
+        "FY B.Tech / FY IMBA / FY IMCA / FY MCA Vacation Examination Timetable – Nov/Dec 2025 (Feb 2026)",
+      pdf: "/assets/pdf/Examination/FY_BTECH _FY_MCAINT_FY_MBAINT_FY_MCA_ VacationExamTimeTable_(Re-EXAM).pdf",
+    },
+    {
+      title:
+        "All SY B.Tech / SY MBA / SY MCA (INT) / SY MBA (INT) / SY MBA / SY MCA / FY MBA (2024 Pattern – Regular) VACATION Examination Timetable for JAN 2026",
+      pdf: "/exam/VACATION_EXAMINATION _Time Table_JAN 2026.pdf",
+    },
+    {
+      title: "FY B.Tech Endsemester Examination Timetable – Nov/Dec 2025",
+      pdf: "/exam/FY.BTech._2025-PATTERN_ENDSEM EXAM-TIMETABLE-FOR-NOV_DEC 2025.pdf",
+    },
+    {
+      title: "FY IMBA / BBA Endsemester Examination Timetable – Nov/Dec 2025",
+      pdf: "/exam/FY Integrated MBA _BBA2025 PATTERN_ ENDSEM EXAM TIMETABLE FOR NOV-DEC-2025.pdf",
+    },
+    {
+      title: "FY IMCA / BCA Endsemester Examination Timetable – Nov/Dec 2025",
+      pdf: "/exam/FY Integrated MCA _BCA _2025 PATTERN_ ENDSEM EXAM TIMETABLE FOR NOV-DEC-2025.pdf",
+    },
+    {
+      title: "SY B.Tech Endsemester Examination Timetable – Nov/Dec 2025",
+      pdf: "/exam/SYBTECH25.pdf",
+    },
+    {
+      title: "SY IMBA / BBA Endsemester Examination Timetable – Nov/Dec 2025",
+      pdf: "/exam/SYBBA25.pdf",
+    },
+    {
+      title: "SY IMCA / BCA Endsemester Examination Timetable – Nov/Dec 2025",
+      pdf: "/exam/SYBCA.pdf",
+    },
+  ],
+  postgraduate: [
+    {
+      title: "FY MBA Endsemester Examination Timetable – Apr/May 2026",
+      pdf: "/assets/pdf/Examination/fy_mba_may_2026.PDF",
+    },
+    {
+      title: "SY MBA Endsemester Examination Timetable – Apr/May 2026",
+      pdf: "/assets/pdf/Examination/sy_mba_may_2026.PDF",
+    },
+    {
+      title: "FY MCA Endsemester Examination Timetable – Nov/Dec 2025",
+      pdf: "/exam/FY.MCA._2025-PATTERN_ENDSEM EXAM-TIMETABLE-FOR-NOV-DEC 2025.pdf",
+    },
+    {
+      title: "FY MTech Endsemester Examination Timetable – Nov/Dec 2025",
+      pdf: "/exam/FY.MTech._2024-PATTERN_ENDSEM EXAM-TIMETABLE-FOR-NOV_DEC 2025.pdf",
+    },
+    {
+      title: "FY MBA Endsemester Examination Timetable – Nov/Dec 2025",
+      pdf: "/exam/FY.MBA. _2024  PATTERN_ ENDSEM EXAM TIMETABLE FOR NOV-DEC-2025.pdf",
+    },
+    {
+      title: "SY MBA Endsemester Examination Timetable – Nov/Dec 2025",
+      pdf: "/exam/SYMBA25.pdf",
+    },
+    {
+      title: "SY MCA Endsemester Examination Timetable – Nov/Dec 2025",
+      pdf: "/exam/SYMCA25.pdf",
+    },
+  ],
+};
+
+// ================== TIMETABLES COMPONENT ==================
+function ExaminationTimetablesSection() {
+  const [activeSession, setActiveSession] = useState("winter2026");
+  const [activeFolder, setActiveFolder] = useState("B.Tech");
+
+  const currentFolder = winter2026Folders.find((f) => f.name === activeFolder);
+
+  return (
+    <div className="space-y-3 sm:space-y-5">
+      {/* 1. Main Session Tabs */}
+      <div className="flex border-b border-gray-200">
+        <button
+          type="button"
+          onClick={() => setActiveSession("winter2026")}
+          className={`pb-2.5 sm:pb-3 px-2.5 sm:px-4 font-semibold text-xs sm:text-base border-b-2 transition-colors cursor-pointer text-center ${
+            activeSession === "winter2026"
+              ? "border-secondary text-secondary"
+              : "border-transparent text-gray-500 hover:text-gray-800"
+          }`}
+        >
+          Nov/ Dec 2026 ( Winter Session )
+        </button>
+        <button
+          type="button"
+          onClick={() => setActiveSession("old")}
+          className={`pb-2.5 sm:pb-3 px-2.5 sm:px-4 font-semibold text-xs sm:text-base border-b-2 transition-colors cursor-pointer text-center ${
+            activeSession === "old"
+              ? "border-secondary text-secondary"
+              : "border-transparent text-gray-500 hover:text-gray-800"
+          }`}
+        >
+          Old Timetables
+        </button>
+      </div>
+
+      {/* 2. Winter 2026 Content */}
+      {activeSession === "winter2026" && (
+        <div className="space-y-3 sm:space-y-4">
+          {/* Program Folder Selector Tabs */}
+          <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-0.5 sm:pt-1">
+            {winter2026Folders.map((f) => (
+              <button
+                key={f.name}
+                type="button"
+                onClick={() => setActiveFolder(f.name)}
+                className={`flex items-center gap-1 sm:gap-1.5 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-md text-[11px] sm:text-sm font-medium transition cursor-pointer border ${
+                  activeFolder === f.name
+                    ? "bg-secondary text-white border-secondary shadow-xs"
+                    : "bg-white text-gray-700 border-gray-300 hover:bg-gray-50"
+                }`}
+              >
+                <FolderOpen className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                <span>{f.name}</span>
+              </button>
+            ))}
+          </div>
+
+          {/* Active Folder Content Container */}
+          {currentFolder && (
+            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-xs">
+              <div className="bg-gray-50 px-3 py-2 sm:px-4 sm:py-2.5 border-b border-gray-200 flex items-center justify-between">
+                <span className="font-semibold text-gray-900 text-xs sm:text-base">
+                  <span className="sm:hidden">{currentFolder.name} Timetables</span>
+                  <span className="hidden sm:inline">{currentFolder.fullName} Timetables</span>
+                </span>
+                <span className="text-[11px] sm:text-xs text-gray-500 font-medium">
+                  {currentFolder.timetables.length > 0
+                    ? `${currentFolder.timetables.length} Timetable${currentFolder.timetables.length > 1 ? "s" : ""}`
+                    : "Pending"}
+                </span>
+              </div>
+
+              {currentFolder.timetables.length > 0 ? (
+                <>
+                  {/* Desktop Table View */}
+                  <div className="hidden sm:block overflow-x-auto">
+                    <table className="w-full text-left text-sm divide-y divide-gray-200">
+                      <thead className="bg-gray-50/50 text-gray-600 text-xs uppercase font-semibold">
+                        <tr>
+                          <th className="py-2.5 px-4 w-12 text-center">Sr.</th>
+                          <th className="py-2.5 px-4">Examination Timetable</th>
+                          <th className="py-2.5 px-4 w-32">Pattern</th>
+                          <th className="py-2.5 px-4 w-36 text-center">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-100">
+                        {currentFolder.timetables.map((item, idx) => (
+                          <tr key={idx} className="hover:bg-gray-50/80 transition-colors">
+                            <td className="py-3 px-4 text-center text-gray-500 font-medium">
+                              {idx + 1}
+                            </td>
+                            <td className="py-3 px-4">
+                              <a
+                                href={item.pdf}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-secondary font-medium hover:underline inline-block"
+                              >
+                                {item.title}
+                              </a>
+                            </td>
+                            <td className="py-3 px-4 text-gray-600 text-xs">
+                              {item.pattern}
+                            </td>
+                            <td className="py-3 px-4 text-center">
+                              <a
+                                href={item.pdf}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-secondary text-white rounded text-xs font-medium hover:bg-secondary/90 transition shadow-xs"
+                              >
+                                <Eye className="w-3.5 h-3.5" />
+                                <span>View</span>
+                              </a>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  {/* Mobile Compact Aesthetic List View */}
+                  <div className="sm:hidden divide-y divide-gray-100">
+                    {currentFolder.timetables.map((item, idx) => (
+                      <div
+                        key={idx}
+                        className="px-2.5 py-2.5 flex items-center justify-between gap-2.5 hover:bg-gray-50/60 transition-colors"
+                      >
+                        <div className="flex items-start gap-2 min-w-0 flex-1">
+                          <span className="text-[11px] font-semibold text-gray-400 mt-0.5 shrink-0 w-3.5 text-right">
+                            {idx + 1}.
+                          </span>
+                          <div className="min-w-0 flex-1">
+                            <a
+                              href={item.pdf}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-xs font-medium text-secondary hover:underline leading-snug line-clamp-2 block"
+                            >
+                              {item.title}
+                            </a>
+                            {item.pattern && (
+                              <span className="inline-block mt-1 text-[10px] text-gray-500 bg-gray-100 border border-gray-200 px-1.5 py-0.5 rounded">
+                                {item.pattern}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                        <a
+                          href={item.pdf}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 px-2.5 py-1 bg-secondary text-white rounded text-[11px] font-medium shrink-0 active:scale-95 transition shadow-xs"
+                        >
+                          <Eye className="w-3 h-3" />
+                          <span>View</span>
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <div className="p-4 sm:p-6 text-center text-xs sm:text-sm text-gray-500">
+                  <p className="italic">{currentFolder.notice}</p>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* 3. Old Timetables Content */}
+      {activeSession === "old" && (
+        <div className="space-y-4 sm:space-y-5">
+          {/* Undergraduate Programs */}
+          <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-xs">
+            <div className="bg-gray-50 px-3 py-2 sm:px-4 sm:py-2.5 border-b border-gray-200 font-semibold text-gray-900 text-xs sm:text-base">
+              Undergraduate Programs (Past Sessions)
+            </div>
+
+            {/* Desktop Table */}
+            <div className="hidden sm:block overflow-x-auto">
+              <table className="w-full text-left text-sm divide-y divide-gray-200">
+                <thead className="bg-gray-50/50 text-gray-600 text-xs uppercase font-semibold">
+                  <tr>
+                    <th className="py-2.5 px-4 w-12 text-center">Sr.</th>
+                    <th className="py-2.5 px-4">Examination Timetable</th>
+                    <th className="py-2.5 px-4 w-36 text-center">Action</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100">
+                  {oldTimetables.undergraduate.map((item, idx) => (
+                    <tr key={idx} className="hover:bg-gray-50/80 transition-colors">
+                      <td className="py-3 px-4 text-center text-gray-500 font-medium">
+                        {idx + 1}
+                      </td>
+                      <td className="py-3 px-4">
+                        <a
+                          href={item.pdf}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-secondary font-medium hover:underline inline-block"
+                        >
+                          {item.title}
+                        </a>
+                      </td>
+                      <td className="py-3 px-4 text-center">
+                        <a
+                          href={item.pdf}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-secondary text-white rounded text-xs font-medium hover:bg-secondary/90 transition shadow-xs"
+                        >
+                          <Eye className="w-3.5 h-3.5" />
+                          <span>View</span>
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Mobile Compact List */}
+            <div className="sm:hidden divide-y divide-gray-100">
+              {oldTimetables.undergraduate.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="px-2.5 py-2.5 flex items-center justify-between gap-2.5 hover:bg-gray-50/60 transition-colors"
+                >
+                  <div className="flex items-start gap-2 min-w-0 flex-1">
+                    <span className="text-[11px] font-semibold text-gray-400 mt-0.5 shrink-0 w-3.5 text-right">
+                      {idx + 1}.
+                    </span>
+                    <a
+                      href={item.pdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-medium text-secondary hover:underline leading-snug line-clamp-2 block"
+                    >
+                      {item.title}
+                    </a>
+                  </div>
+                  <a
+                    href={item.pdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 px-2.5 py-1 bg-secondary text-white rounded text-[11px] font-medium shrink-0 active:scale-95 transition shadow-xs"
+                  >
+                    <Eye className="w-3 h-3" />
+                    <span>View</span>
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Postgraduate Programs */}
+          <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-xs">
+            <div className="bg-gray-50 px-3 py-2 sm:px-4 sm:py-2.5 border-b border-gray-200 font-semibold text-gray-900 text-xs sm:text-base">
+              Postgraduate Programs (Past Sessions)
+            </div>
+
+            {/* Desktop Table */}
+            <div className="hidden sm:block overflow-x-auto">
+              <table className="w-full text-left text-sm divide-y divide-gray-200">
+                <thead className="bg-gray-50/50 text-gray-600 text-xs uppercase font-semibold">
+                  <tr>
+                    <th className="py-2.5 px-4 w-12 text-center">Sr.</th>
+                    <th className="py-2.5 px-4">Examination Timetable</th>
+                    <th className="py-2.5 px-4 w-36 text-center">Action</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100">
+                  {oldTimetables.postgraduate.map((item, idx) => (
+                    <tr key={idx} className="hover:bg-gray-50/80 transition-colors">
+                      <td className="py-3 px-4 text-center text-gray-500 font-medium">
+                        {idx + 1}
+                      </td>
+                      <td className="py-3 px-4">
+                        <a
+                          href={item.pdf}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-secondary font-medium hover:underline inline-block"
+                        >
+                          {item.title}
+                        </a>
+                      </td>
+                      <td className="py-3 px-4 text-center">
+                        <a
+                          href={item.pdf}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-secondary text-white rounded text-xs font-medium hover:bg-secondary/90 transition shadow-xs"
+                        >
+                          <Eye className="w-3.5 h-3.5" />
+                          <span>View</span>
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Mobile Compact List */}
+            <div className="sm:hidden divide-y divide-gray-100">
+              {oldTimetables.postgraduate.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="px-2.5 py-2.5 flex items-center justify-between gap-2.5 hover:bg-gray-50/60 transition-colors"
+                >
+                  <div className="flex items-start gap-2 min-w-0 flex-1">
+                    <span className="text-[11px] font-semibold text-gray-400 mt-0.5 shrink-0 w-3.5 text-right">
+                      {idx + 1}.
+                    </span>
+                    <a
+                      href={item.pdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-medium text-secondary hover:underline leading-snug line-clamp-2 block"
+                    >
+                      {item.title}
+                    </a>
+                  </div>
+                  <a
+                    href={item.pdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 px-2.5 py-1 bg-secondary text-white rounded text-[11px] font-medium shrink-0 active:scale-95 transition shadow-xs"
+                  >
+                    <Eye className="w-3 h-3" />
+                    <span>View</span>
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function Examination() {
   const [activeFAQ, setActiveFAQ] = useState(null);
@@ -135,195 +674,7 @@ export default function Examination() {
                 },
                 {
                   title: "Examination Timetable",
-                  description: (
-                    <div className="text-gray-800 text-sm leading-relaxed space-y-6">
-                      {/* UG */}
-                      <div>
-                        <h4 className="font-semibold text-lg mb-2">
-                          Undergraduate Programs
-                        </h4>
-
-                        <ul className="list-decimal list-inside ml-6 space-y-2">
-                          <li className="list-item">
-                            <a
-                              href="/exam/47_vacation_exam_re_exam_timetable_july_2026.pdf"
-                              target="_blank"
-                              className="text-secondary hover:underline font-semibold"
-                            >
-                              Vacation Examination Timetable – July 2026
-                            </a>
-                          </li>
-                          <li className="list-item">
-                            <a
-                              href="/assets/pdf/Examination/FY_BTECH _FY_MCAINT_FY_MBAINT_FY_MCA_ VacationExamTimeTable_(Re-EXAM).pdf"
-                              target="_blank"
-                              className="text-secondary hover:underline"
-                            >
-                              FY B.Tech / FY IMBA / FY IMCA / FY MCA Vacation
-                              Examination Timetable – Nov/Dec 2025 (Feb 2026)
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="/exam/VACATION_EXAMINATION _Time Table_JAN 2026.pdf"
-                              target="_blank"
-                              className="text-secondary hover:underline"
-                            >
-                              All SY B.Tech / SY MBA / SY MCA (INT) / SY MBA
-                              (INT) / SY MBA / SY MCA / FY MBA (2024 Pattern –
-                              Regular) VACATION Examination Timetable for JAN
-                              2026
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="/exam/FY.BTech._2025-PATTERN_ENDSEM EXAM-TIMETABLE-FOR-NOV_DEC 2025.pdf"
-                              target="_blank"
-                              className="text-secondary hover:underline"
-                            >
-                              FY B.Tech Endsemester Examination Timetable –
-                              Nov/Dec 2025
-                            </a>
-                          </li>
-
-                          <li>
-                            <a
-                              href="/exam/FY Integrated MBA _BBA2025 PATTERN_ ENDSEM EXAM TIMETABLE FOR NOV-DEC-2025.pdf"
-                              target="_blank"
-                              className="text-secondary hover:underline"
-                            >
-                              FY IMBA / BBA Endsemester Examination Timetable –
-                              Nov/Dec 2025
-                            </a>
-                          </li>
-
-                          <li>
-                            <a
-                              href="/exam/FY Integrated MCA _BCA _2025 PATTERN_ ENDSEM EXAM TIMETABLE FOR NOV-DEC-2025.pdf"
-                              target="_blank"
-                              className="text-secondary hover:underline"
-                            >
-                              FY IMCA / BCA Endsemester Examination Timetable –
-                              Nov/Dec 2025
-                            </a>
-                          </li>
-
-                          <li>
-                            <a
-                              href="/exam/SYBTECH25.pdf"
-                              target="_blank"
-                              className="text-secondary hover:underline"
-                            >
-                              SY B.Tech Endsemester Examination Timetable –
-                              Nov/Dec 2025
-                            </a>
-                          </li>
-
-                          <li>
-                            <a
-                              href="/exam/SYBBA25.pdf"
-                              target="_blank"
-                              className="text-secondary hover:underline"
-                            >
-                              SY IMBA / BBA Endsemester Examination Timetable –
-                              Nov/Dec 2025
-                            </a>
-                          </li>
-
-                          <li>
-                            <a
-                              href="/exam/SYBCA.pdf"
-                              target="_blank"
-                              className="text-secondary hover:underline"
-                            >
-                              SY IMCA / BCA Endsemester Examination Timetable –
-                              Nov/Dec 2025
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-
-                      {/* PG */}
-                      <div>
-                        <h4 className="font-semibold text-lg mb-2">
-                          Postgraduate Programs
-                        </h4>
-
-                        <ul className="list-decimal list-inside ml-6 space-y-2">
-                          <li className="list-item">
-                            <a
-                              href="/assets/pdf/Examination/fy_mba_may_2026.PDF"
-                              target="_blank"
-                              className="text-secondary hover:underline break-words"
-                            >
-                              FY MBA Endsemester Examination Timetable – Apr/May
-                              2026
-                            </a>
-                          </li>
-                          <li className="list-item">
-                            <a
-                              href="/assets/pdf/Examination/sy_mba_may_2026.PDF"
-                              target="_blank"
-                              className="text-secondary hover:underline break-words"
-                            >
-                              SY MBA Endsemester Examination Timetable – Apr/May
-                              2026
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="/exam/FY.MCA._2025-PATTERN_ENDSEM EXAM-TIMETABLE-FOR-NOV-DEC 2025.pdf"
-                              target="_blank"
-                              className="text-secondary hover:underline"
-                            >
-                              FY MCA Endsemester Examination Timetable – Nov/Dec
-                              2025
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="/exam/FY.MTech._2024-PATTERN_ENDSEM EXAM-TIMETABLE-FOR-NOV_DEC 2025.pdf"
-                              target="_blank"
-                              className="text-secondary hover:underline"
-                            >
-                              FY MTech Endsemester Examination Timetable –
-                              Nov/Dec 2025
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="/exam/FY.MBA. _2024  PATTERN_ ENDSEM EXAM TIMETABLE FOR NOV-DEC-2025.pdf"
-                              target="_blank"
-                              className="text-secondary hover:underline"
-                            >
-                              FY MBA Endsemester Examination Timetable – Nov/Dec
-                              2025
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="/exam/SYMBA25.pdf"
-                              target="_blank"
-                              className="text-secondary hover:underline"
-                            >
-                              SY MBA Endsemester Examination Timetable – Nov/Dec
-                              2025
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="/exam/SYMCA25.pdf"
-                              target="_blank"
-                              className="text-secondary hover:underline"
-                            >
-                              SY MCA Endsemester Examination Timetable – Nov/Dec
-                              2025
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  ),
+                  description: <ExaminationTimetablesSection />,
                 },
                 {
                   title: "Notices",
@@ -376,10 +727,10 @@ export default function Examination() {
                   {/* ===== ACCORDION CONTENT ===== */}
                   <div
                     className={`transition-all duration-300 overflow-hidden ${
-                      activeFAQ === index ? "max-h-[1000px]" : "max-h-0"
+                      activeFAQ === index ? "max-h-[6000px]" : "max-h-0"
                     }`}
                   >
-                    <div className="px-4 py-2 md:px-6 md:py-4 bg-gray-50 text-gray-700 text-sm leading-relaxed">
+                    <div className="px-2 py-2 sm:px-6 sm:py-4 bg-gray-50 text-gray-700 text-sm leading-relaxed">
                       {typeof item.description === "string" ? (
                         <>
                           <p className="mb-3">{item.description}</p>
@@ -387,9 +738,11 @@ export default function Examination() {
                             <a
                               href={item.pdf}
                               target="_blank"
-                              className="inline-block bg-secondary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-secondary/90 transition"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 bg-secondary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-secondary/90 transition shadow-xs"
                             >
-                              View / Download PDF
+                              <Eye className="w-4 h-4" />
+                              <span>View Document (PDF)</span>
                             </a>
                           )}
                         </>

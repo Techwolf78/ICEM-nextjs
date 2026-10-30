@@ -15,7 +15,7 @@ const staffData = [
     qualification: "Ph.D B.Sc MCA ME",
     doj: "01/07/2024",
     dob: "26/05/1982",
-    image: "/faculty/final_Icem_branding/bba_bca/Dr. Awantika Bijwe.webp",
+    image: "/programs/mca/dr_awantika_bijwe.webp",
   },
   {
     sn: 2,

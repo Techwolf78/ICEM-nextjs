@@ -286,7 +286,7 @@ const staffData = [
     Qualification: "Ph.D, BSc,MCA,ME",
     DOJ: "7/1/2024",
     DOB: "26.05.1982",
-    imagePath: "/Final_Icem_branding/bba_bca/Dr. Awantika Bijwe.webp",
+    imagePath: "/programs/mca/dr_awantika_bijwe.webp",
   },
   {
     "Sr.No.": "28",
@@ -1033,7 +1033,7 @@ export default function OurStaff() {
                                 <img
                                   src={imageSource}
                                   alt={name}
-                                  className="w-12 h-12 rounded-full object-cover"
+                                  className="w-12 h-12 rounded-full object-cover object-top"
                                   onError={() => {
                                     setBrokenImageStaffIds((prev) => ({
                                       ...prev,

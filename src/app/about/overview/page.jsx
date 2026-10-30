@@ -145,7 +145,7 @@ export default function Overview() {
     {
       name: "Dr. Awantika Bijwe",
       designation: "HoD (MCA)",
-      image: "/assets/images/icemFaculty/Dr. Awantika Bijwe.jpg",
+      image: "/programs/mca/dr_awantika_bijwe.webp",
     },
   ];
 
@@ -784,7 +784,7 @@ export default function Overview() {
                             src={person.image}
                             alt={`Portrait of ${person.name}`}
                             fill
-                            className={`object-cover ${person.name.includes("Prashant Borde") ? "object-top" : "object-center"}`}
+                            className={`object-cover ${person.name.includes("Prashant Borde") || person.name.includes("Awantika") ? "object-top" : "object-center"}`}
                           />
                         </div>
                       )}

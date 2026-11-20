@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -191,6 +191,21 @@ export default function FAQMBA() {
   const [active, setActive] = useState("About Us");
   const [activePreviewId, setActivePreviewId] = useState(null);
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const hash = window.location.hash.replace("#", "").toLowerCase();
+      if (
+        hash === "pedagogy" ||
+        hash === "innovative-pedagogy" ||
+        hash.includes("pedagogy")
+      ) {
+        setActive("Innovative Pedagogy by Faculty Members – MBA Course");
+      } else if (hash === "fee-structure") {
+        setActive("FRA - Fee Structure");
+      }
+    }
+  }, []);
+
   const sectionContent = {
     "About Us": {
       type: "accordion",
@@ -290,6 +305,17 @@ export default function FAQMBA() {
           id: "teaching-cases",
           label: "Teaching Cases Details",
           pdf: "/programs/MBA/teaching_cases.pdf",
+        },
+      ],
+    },
+
+    "Innovative Pedagogy by Faculty Members – MBA Course": {
+      type: "syllabus",
+      content: [
+        {
+          id: "innovative-pedagogy-mba",
+          label: "Innovative Pedagogy by Faculty Members – MBA Course",
+          pdf: "/programs/MBA/innovative_pedagogy_by_faculty_members_mba_course.pdf",
         },
       ],
     },
@@ -453,7 +479,10 @@ export default function FAQMBA() {
                 item.pdf.endsWith(".docx") ||
                 item.pdf.endsWith(".doc");
               const isPdf = item.pdf.endsWith(".pdf");
-              const isPreviewOpen = activePreviewId === item.id;
+              const isPreviewOpen =
+                activePreviewId === item.id ||
+                (active === "Innovative Pedagogy by Faculty Members – MBA Course" &&
+                  activePreviewId !== "closed");
 
               return (
                 <div
@@ -467,9 +496,13 @@ export default function FAQMBA() {
                     <div className="flex flex-wrap gap-2">
                       {isPdf && (
                         <button
-                          onClick={() =>
-                            setActivePreviewId(isPreviewOpen ? null : item.id)
-                          }
+                          onClick={() => {
+                            if (isPreviewOpen) {
+                              setActivePreviewId("closed");
+                            } else {
+                              setActivePreviewId(item.id);
+                            }
+                          }}
                           className="px-4 py-2 bg-secondary text-white rounded-md text-sm hover:bg-secondary/90 transition-colors"
                         >
                           {isPreviewOpen ? "Close Preview" : "View"}
@@ -488,7 +521,7 @@ export default function FAQMBA() {
                     <div className="mt-4 border-t pt-4">
                       <iframe
                         src={item.pdf}
-                        className="w-full h-[600px] border rounded-lg"
+                        className="w-full h-[700px] border rounded-lg"
                       />
                     </div>
                   )}
@@ -680,6 +713,7 @@ export default function FAQMBA() {
                 key={tab}
                 onClick={() => {
                   setActive(tab);
+                  setActivePreviewId(null);
 
                   if (window.innerWidth < 1024) {
                     setTimeout(() => {

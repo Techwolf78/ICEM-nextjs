@@ -72,18 +72,58 @@ try {
   }
 
   const publicChanges = changedFiles
-    .filter(f => f.startsWith('public/'))
-    .map(f => f.replace(/^public[\\/]/, ''));
+    .filter(f => f.toLowerCase().startsWith('public/'))
+    .map(f => f.replace(/^public[\\/]/i, ''));
 
   if (publicChanges.length > 0) {
     console.log(`✨ Including ${publicChanges.length} newly added/modified asset(s) from Git:`);
     for (const rel of publicChanges) {
-      const srcFile = path.join(outDir, rel);
-      const destFile = path.join(stageDir, rel);
-      if (fs.existsSync(srcFile)) {
+      // Find source file in outDir (direct or case-insensitive search if needed)
+      let srcFile = path.join(outDir, rel);
+      if (!fs.existsSync(srcFile)) {
+        const parts = rel.split(/[\\/]/);
+        let curr = outDir;
+        let found = true;
+        for (const p of parts) {
+          if (!fs.existsSync(curr)) { found = false; break; }
+          const files = fs.readdirSync(curr);
+          const match = files.find(f => f.toLowerCase() === p.toLowerCase());
+          if (match) {
+            curr = path.join(curr, match);
+          } else {
+            found = false;
+            break;
+          }
+        }
+        if (found && fs.existsSync(curr)) {
+          srcFile = curr;
+        }
+      }
+
+      if (fs.existsSync(srcFile) && fs.statSync(srcFile).isFile()) {
         console.log(`   + ${rel}`);
+        // 1. Stage in the exact relative path
+        const destFile = path.join(stageDir, rel);
         fs.mkdirSync(path.dirname(destFile), { recursive: true });
         fs.copyFileSync(srcFile, destFile);
+
+        // 2. If under programs/ or Programs/, also stage in lowercase programs/
+        const lowerRel = rel.replace(/^Programs[\\/]/i, 'programs/');
+        const destLower = path.join(stageDir, lowerRel);
+        fs.mkdirSync(path.dirname(destLower), { recursive: true });
+        fs.copyFileSync(srcFile, destLower);
+
+        // 3. For MBA files, stage in both programs/mba/ and programs/MBA/
+        if (/programs[\\/]mba[\\/]/i.test(lowerRel)) {
+          const mbaLower = lowerRel.replace(/programs[\\/]mba[\\/]/i, 'programs/mba/');
+          const mbaUpper = lowerRel.replace(/programs[\\/]mba[\\/]/i, 'programs/MBA/');
+          const destMbaLower = path.join(stageDir, mbaLower);
+          const destMbaUpper = path.join(stageDir, mbaUpper);
+          fs.mkdirSync(path.dirname(destMbaLower), { recursive: true });
+          fs.copyFileSync(srcFile, destMbaLower);
+          fs.mkdirSync(path.dirname(destMbaUpper), { recursive: true });
+          fs.copyFileSync(srcFile, destMbaUpper);
+        }
       }
     }
   }

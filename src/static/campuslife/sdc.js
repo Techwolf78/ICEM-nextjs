@@ -1,9 +1,9 @@
  export const committeeMembers = [
     [
-      "Prof. Vijay Kumar Saini",
+      "Prof. Savita Jangale",
       "Civil",
-      "9819298069",
-      "vijaykumar.saini@indiraicem.ac.in",
+      "9881901218",
+      "savita.jangale@indiraicem.ac.in",
     ],
     [
       "Prof. Pallavi Chavan",

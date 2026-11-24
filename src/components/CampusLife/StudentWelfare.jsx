@@ -34,8 +34,8 @@ export default function StudentWelfare() {
           <div className="w-full lg:w-1/3 flex flex-col items-center mb-4 md:mb-0">
             <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-xl overflow-hidden shadow-lg">
               <Image
-                src="/campuslife/student-services/prof.saini.webp"
-                alt="Prof. Vijay Kumar Saini"
+                src="/campuslife/student-services/Savita_Jangale.jpg"
+                alt="Prof. Savita Jangale"
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-300"
                 priority
@@ -43,7 +43,7 @@ export default function StudentWelfare() {
             </div>
             <div className="mt-3 md:mt-4 text-center">
               <p className="font-bold text-secondary text-base md:text-lg">
-                Prof. Vijay Kumar Saini
+                Prof. Savita Jangale
               </p>
               <p className="text-gray-600 text-xs md:text-sm">
                 Student Welfare Officer (SWO)

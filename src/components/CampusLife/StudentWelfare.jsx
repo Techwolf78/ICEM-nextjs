@@ -34,7 +34,7 @@ export default function StudentWelfare() {
           <div className="w-full lg:w-1/3 flex flex-col items-center mb-4 md:mb-0">
             <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-xl overflow-hidden shadow-lg">
               <Image
-                src="/campuslife/student-services/Savita_Jangale.jpg"
+                src="/campuslife/student-services/savita-jangale.webp"
                 alt="Prof. Savita Jangale"
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-300"

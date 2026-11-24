@@ -78,11 +78,15 @@ try {
   if (publicChanges.length > 0) {
     console.log(`✨ Including ${publicChanges.length} newly added/modified asset(s) from Git:`);
     for (const rel of publicChanges) {
-      // Find source file in outDir (direct or case-insensitive search if needed)
-      let srcFile = path.join(outDir, rel);
-      if (!fs.existsSync(srcFile)) {
+      // Find source file in public/ first, then fallback to outDir (direct or case-insensitive)
+      let srcFile = path.join(root, 'public', rel);
+      if (!fs.existsSync(srcFile) || !fs.statSync(srcFile).isFile()) {
+        srcFile = path.join(outDir, rel);
+      }
+      if (!fs.existsSync(srcFile) || !fs.statSync(srcFile).isFile()) {
         const parts = rel.split(/[\\/]/);
-        let curr = outDir;
+        // Try case-insensitive search in public/
+        let curr = path.join(root, 'public');
         let found = true;
         for (const p of parts) {
           if (!fs.existsSync(curr)) { found = false; break; }
@@ -95,8 +99,26 @@ try {
             break;
           }
         }
-        if (found && fs.existsSync(curr)) {
+        if (found && fs.existsSync(curr) && fs.statSync(curr).isFile()) {
           srcFile = curr;
+        } else {
+          // Fallback case-insensitive search in outDir
+          curr = outDir;
+          found = true;
+          for (const p of parts) {
+            if (!fs.existsSync(curr)) { found = false; break; }
+            const files = fs.readdirSync(curr);
+            const match = files.find(f => f.toLowerCase() === p.toLowerCase());
+            if (match) {
+              curr = path.join(curr, match);
+            } else {
+              found = false;
+              break;
+            }
+          }
+          if (found && fs.existsSync(curr) && fs.statSync(curr).isFile()) {
+            srcFile = curr;
+          }
         }
       }
 

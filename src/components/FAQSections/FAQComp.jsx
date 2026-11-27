@@ -180,7 +180,7 @@ const teachingStaff = [
   },
   {
     sn: 17,
-    name: "Mr. Rajesh Singh",
+    name: "Dr. Rajesh Singh",
     designation: "Assistant Professor",
     department: "Computer Engineering",
     qualification: "B.E , Mtech (C.E.),PhD.(Submitted) C.E",
@@ -218,6 +218,14 @@ const teachingStaff = [
     doj: "21-07-2026",
     dob: "22-09-2002",
     image: "/programs/Computer/shruti_ghotane.jpeg",
+  },
+  {
+    sn: 21,
+    name: "Ms. Mansi Nirbhavane",
+    designation: "Teaching Associate",
+    department: "Computer Engineering",
+    qualification: "BE COMP",
+    image: "/programs/Computer/mansi_nirbhavane.jpeg",
   },
 ];
 
@@ -454,7 +462,7 @@ const facultyImages = Array.from({ length: 12 }, (_, i) => ({
 
 // ================== MAIN COMPONENT ==================
 export default function FAQSectionComputer() {
-  const [active, setActive] = useState("FRA - Fee Structure");
+  const [active, setActive] = useState("About Us");
   const [syllabusTab, setSyllabusTab] = useState("autonomy");
   const [activeAcadTab, setActiveAcadTab] = useState("autonomy");
   const [activeAcadYear, setActiveAcadYear] = useState({
@@ -502,7 +510,7 @@ export default function FAQSectionComputer() {
       },
     },
 
-    "Vision, Mission, POs, PSOs & PEOs": {
+    "Vision, Mission": {
       type: "accordion",
       content: {
         Vision: [
@@ -543,88 +551,103 @@ export default function FAQSectionComputer() {
       },
     },
 
-    "FRA - Fee Structure": {
-      type: "syllabus",
-      content: [
-        {
-          id: "fra-fee-structure-26-27",
-          label: "FRA Fee Structure (A.Y. 2026-27)",
-          pdf: "/fees/fra_fees_2026-27.pdf",
-        },
-        {
-          id: "fra-proposal-2026",
-          label: "FRA Fees Approval proposal 2026-27",
-          pdf: "/pdfs/FRA%20Proposal%202026-27.pdf",
-        },
-        {
-          id: "fee-fra",
-          label: "FRA Document",
-          pdf: "/programs/Computer/NewFRA.pdf",
-        },
-        {
-          id: "fra-2025",
-          label: "FRA 2025-26",
-          pdf: "/fees/FRA%202025.pdf",
-        },
-        {
-          id: "institute-fra",
-          label: "Institute Level Admission FRA Fees",
-          pdf: "/fees/Insttitute%20level%20admission%20FRA%20FEEs.pdf",
-        },
-      ],
-    },
-
-    "Admission Procedure": {
-      type: "syllabus",
-      content: [
-        {
-          id: "admission",
-          label: "Institute Level /ACAP Admission Round Procedure",
-          pdf: "/pdfs/AdmissionProcedure.pdf",
-        },
-      ],
-    },
-
-    "Sanctioned Intake": {
-      type: "table",
-      content: [
-        {
-          program: "B.Tech Computer Engineering",
-          intake: "180 Seats",
-          duration: "4 Years",
-          type: "Full Time",
-        },
-      ],
-    },
-
-    "Eligibility Criteria": {
-      type: "accordion",
+    Staff: {
+      type: "staff-tabs",
       content: {
-        "Eligibility Criteria for Admission to First Year Engineering 2024-25":
-          [
-            "For details about First Year Engineering Admission and Eligibility Criteria, refer https://cetcell.mahacet.org/",
-          ],
-        "Maharashtra State Candidature Candidates": [
-          "The Candidate should be an Indian National.",
-          "Passed HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State), in the above subjects taken together; and the Candidate should have appeared in all the subjects in CET and should obtain non zero score in CET conducted by the Competent Authority.",
-          "Or",
-          "Passed Diploma in Engineering and Technology and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State).",
-        ],
-        "All India Candidature Candidates, Union Territory of Jammu and Kashmir and Union Territory of Ladakh Migrant Candidature Candidates":
-          [
-            "The Candidate should be an Indian National.",
-            "Passed HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State) in the above subjects taken together; and should obtain non zero positive score in JEE (Main) B.E./B.Tech or the candidate should have appeared in all the subjects in CET and should obtain non zero score in CET conducted by the Competent Authority. However, preference shall be given to the candidate obtaining non zero positive score in JEE (Main) B.E./B.Tech over the candidates who obtained non zero score in CET.",
-            "Or",
-            "Passed Diploma in Engineering and Technology and obtained at least 45 % marks (at least 40 % marks, in case of Backward Class categories, Economically Weaker Section and Persons with Disability category candidates belonging to Maharashtra State).",
-          ],
-        "NRI / OCI / PIO, Children of Indian workers in the Gulf countries and Foreign National Candidature Candidates":
-          [
-            "The candidate should have passed the HSC or its equivalent examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry or Biotechnology or Biology or Technical Vocational subject or Computer Science or Information Technology or Informatics Practices or Agriculture or Engineering Graphics or Business Studies, and obtained at least 45 % marks in the above subjects taken together.",
-          ],
-        "Additional Information": [
-          "Any other criterion declared from time to time by the appropriate authority as defined under the Act.",
+        tabs: [
+          {
+            id: "teaching",
+            label: "Teaching Staff",
+            list: teachingStaff,
+          },
+          {
+            id: "non-teaching",
+            label: "Non-Teaching Staff",
+            list: nonTeachingStaff,
+          },
         ],
       },
+    },
+
+    Syllabus: {
+      type: "syllabus",
+      content: {
+        tabs: [
+          {
+            id: "autonomy",
+            label: "Autonomy Structure and Syllabus",
+            list: autonomySyllabusList,
+          },
+          {
+            id: "sppu",
+            label: "SPPU Syllabus",
+            list: sppuSyllabusList,
+          },
+        ],
+      },
+    },
+
+    Laboratories: {
+      type: "labs",
+      content: labData,
+    },
+
+    "Students Association/Chapter": {
+      type: "accordion",
+      content: {
+        "Students Association / Chapter": [
+          "Data will be updated soon.",
+        ],
+      },
+    },
+
+    "Events and Activities": {
+      type: "events",
+      content: [
+        {
+          title: "One-Day Workshop on Linux Administration and Troubleshooting",
+          paragraphs: [
+            "A One-Day Workshop on Linux Administration and Troubleshooting was successfully conducted on 10th August 2026 by the Department of Computer Engineering at ICEM. The workshop was conducted by Dr. Vivek Jog, HOD Comp for 50 second-year Computer Engineering students.",
+            "Students gained hands-on knowledge of Linux administration, task automation, security practices, password vulnerabilities, and network troubleshooting. Live demonstrations and practical sessions encouraged active participation and interactive learning. The workshop enhanced students' technical skills and generated interest in advanced Linux administration and cybersecurity.",
+          ],
+          images: [
+            "/programs/Computer/events/linux_workshop_1.jpeg",
+            "/programs/Computer/events/linux_workshop_2.jpeg",
+          ],
+        },
+        {
+          title: "Faculty Development Program",
+          paragraphs: [
+            "From August 17 to August 21, 2026, the Department of Computer Engineering at Indira College of Engineering and Management, Pune, successfully organized a National Level ISTE Approved One-Week Online Faculty Development Program in association with Savitribai Phule Pune University.",
+            "The program focused on the Honours Course in Cyber Security for TE and BE under NEP 2020, alongside Industry 5.0 emerging technologies and practical research. Expert resource persons led engaging technical sessions covering cryptography, ethical hacking, digital forensics, threat intelligence, and current legal trends. The comprehensive FDP provided participating educators with valuable technical insights and hands-on exposure to advanced cybersecurity tools and methodologies.",
+          ],
+          images: [
+            "/programs/Computer/events/fdp_1.png",
+            "/programs/Computer/events/fdp_2.jpeg",
+            "/programs/Computer/events/fdp_3.jpeg",
+            "/programs/Computer/events/fdp_4.png",
+            "/programs/Computer/events/fdp_5.png",
+          ],
+        },
+        {
+          title: "Teachers Day",
+          paragraphs: [
+            "On September 5, 2026, the Student Association ICONS of the Computer Engineering Department organized a warm celebration for \"Teachers' Day\" at Indira College of Engineering and Management. The event brought together faculty members and students for interactive sessions, engaging classroom activities, and special moments to honor the dedicated educators and celebrate their continuous guidance.",
+          ],
+          images: [
+            "/programs/Computer/events/teachers_day.png",
+          ],
+        },
+        {
+          title: "Engineers Day",
+          paragraphs: [
+            "On September 24, 2026, the Department of Computer Engineering organized a grand celebration for \"Engineer's Day\". The event brought together students, faculty, and guests to honor innovation and technical excellence, featuring insightful speeches and a special ceremony honoring student accomplishments.",
+          ],
+          images: [
+            "/programs/Computer/events/engineers_day.png",
+          ],
+        },
+      ],
     },
 
     Research: {
@@ -762,161 +785,28 @@ export default function FAQSectionComputer() {
       },
     },
 
-    "Innovative Pedagogy": {
-      type: "syllabus",
-      content: innovativePedagogyList,
-      title: "Innovative Pedagogy Methods",
-    },
-
-    "Syllabus & Course Structure": {
-      type: "syllabus",
+    Newsletters: {
+      type: "accordion",
       content: {
-        tabs: [
-          {
-            id: "autonomy",
-            label: "Autonomy Structure and Syllabus",
-            list: autonomySyllabusList,
-          },
-          {
-            id: "sppu",
-            label: "SPPU Syllabus",
-            list: sppuSyllabusList,
-          },
+        Newsletters: [
+          "Data will be updated soon.",
         ],
       },
     },
 
-    Laboratories: {
-      type: "labs",
-      content: labData,
+    "Project/Internship": {
+      type: "accordion",
+      content: {
+        "Project / Internship": [
+          "Data will be updated soon.",
+        ],
+      },
     },
 
     "Academic Calendar": {
       type: "syllabus",
       content: academicCalendarList,
       title: "Academic Calendars",
-    },
-
-    "Time Table": {
-      type: "academic-results",
-      content: {
-        tabs: [
-          {
-            id: "ay-25-26",
-            label: "A.Y. 2025–26",
-            years: [
-              {
-                id: "y-25-26",
-                label: "A.Y. 2025–26",
-                sems: [
-                  {
-                    id: "sem-1",
-                    label: "SEM I",
-                    list: [
-                      {
-                        id: "sy-tt",
-                        label: "SY Time Table",
-                        pdf: "/programs/Computer/sett.pdf",
-                      },
-                      {
-                        id: "te-tt",
-                        label: "TE Time Table",
-                        pdf: "/programs/Computer/tett.pdf",
-                      },
-                      {
-                        id: "be-tt",
-                        label: "BE Time Table",
-                        pdf: "/programs/Computer/bett.pdf",
-                      },
-                    ],
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            id: "ay-26-27",
-            label: "A.Y. 2026-27",
-            years: [
-              {
-                id: "y-26-27",
-                label: "A.Y. 2026-27",
-                sems: [
-                  {
-                    id: "sem-1",
-                    label: "SEM I",
-                    list: [
-                      {
-                        id: "sy-a",
-                        label: "SY A",
-                        pdf: "/programs/Computer/sy_a_div.pdf",
-                      },
-                      {
-                        id: "sy-b",
-                        label: "SY B",
-                        pdf: "/programs/Computer/sy_b_div.pdf",
-                      },
-                      {
-                        id: "sy-c",
-                        label: "SY C",
-                        pdf: "/programs/Computer/sy_c_div.pdf",
-                      },
-                      {
-                        id: "ty-a",
-                        label: "TY A",
-                        pdf: "/programs/Computer/ty_a_div.pdf",
-                      },
-                      {
-                        id: "ty-b",
-                        label: "TY B",
-                        pdf: "/programs/Computer/ty_b_div.pdf",
-                      },
-                      {
-                        id: "ty-c",
-                        label: "TY C",
-                        pdf: "/programs/Computer/ty_c_div.pdf",
-                      },
-                      {
-                        id: "be-a",
-                        label: "BE A",
-                        pdf: "/programs/Computer/be_a_div.pdf",
-                      },
-                      {
-                        id: "be-b",
-                        label: "BE B",
-                        pdf: "/programs/Computer/be_b_div.pdf",
-                      },
-                    ],
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-    },
-
-    // Achievements: {
-    //   type: "notice",
-    //   content:
-    //     "Achievements information is currently under development and will be available soon.",
-    // },
-    Staff: {
-      type: "staff-tabs",
-      content: {
-        tabs: [
-          {
-            id: "teaching",
-            label: "Teaching Staff",
-            list: teachingStaff,
-          },
-          {
-            id: "non-teaching",
-            label: "Non-Teaching Staff",
-            list: nonTeachingStaff,
-          },
-        ],
-      },
     },
   };
 
@@ -1036,6 +926,44 @@ export default function FAQSectionComputer() {
                 ))}
               </tbody>
             </table>
+          </div>
+        );
+
+      case "events":
+        return (
+          <div className="space-y-8 p-2 md:p-4">
+            {contentData.content.map((event, idx) => (
+              <div
+                key={idx}
+                className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm space-y-4"
+              >
+                <h4 className="text-lg font-bold text-secondary">
+                  {event.title}
+                </h4>
+                <div className="space-y-2 text-sm text-gray-700 leading-relaxed text-justify">
+                  {event.paragraphs.map((p, pIdx) => (
+                    <p key={pIdx}>{p}</p>
+                  ))}
+                </div>
+                {event.images && event.images.length > 0 && (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
+                    {event.images.map((imgSrc, imgIdx) => (
+                      <div
+                        key={imgIdx}
+                        className="relative w-full h-48 rounded-lg overflow-hidden border border-gray-200 bg-gray-50"
+                      >
+                        <Image
+                          src={imgSrc}
+                          alt={`${event.title} ${imgIdx + 1}`}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         );
 
@@ -1439,34 +1367,10 @@ export default function FAQSectionComputer() {
                     <div className="mt-auto pt-4 border-t border-gray-100 space-y-2 text-left">
                       <div className="text-[11px]">
                         <span className="text-gray-400 font-bold uppercase mr-1">
-                          Department:
-                        </span>
-                        <span className="text-gray-700 font-medium">
-                          {staff.department}
-                        </span>
-                      </div>
-                      <div className="text-[11px]">
-                        <span className="text-gray-400 font-bold uppercase mr-1">
                           Qualification:
                         </span>
                         <span className="text-gray-700 font-medium">
                           {staff.qualification}
-                        </span>
-                      </div>
-                      <div className="text-[11px]">
-                        <span className="text-gray-400 font-bold uppercase mr-1">
-                          Joining Date:
-                        </span>
-                        <span className="text-gray-700 font-medium">
-                          {staff.doj}
-                        </span>
-                      </div>
-                      <div className="text-[11px]">
-                        <span className="text-gray-400 font-bold uppercase mr-1">
-                          Birth Date:
-                        </span>
-                        <span className="text-gray-700 font-medium">
-                          {staff.dob}
                         </span>
                       </div>
                     </div>

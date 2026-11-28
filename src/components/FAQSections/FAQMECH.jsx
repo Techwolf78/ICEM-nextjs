@@ -1721,6 +1721,119 @@ export default function FAQMECH() {
                     </div>
                   </div>
 
+                  {/* AY 2026-27 Semester I Activities */}
+                  <div className="pt-4 border-t border-gray-100 space-y-6">
+                    <div>
+                      <span className="px-2.5 py-1 text-xs font-bold bg-secondary text-white rounded-md uppercase tracking-wider">
+                        AY 2026–27 · Semester I
+                      </span>
+                      <h5 className="font-bold text-gray-900 text-lg mt-2">
+                        GATE Club &amp; Student Training Activities
+                      </h5>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                      {/* GATE Club Activity 1 */}
+                      <div className="p-5 bg-blue-50/50 border border-blue-100 rounded-xl flex flex-col justify-between">
+                        <div>
+                          <div className="flex flex-wrap items-center gap-2 mb-3">
+                            <span className="px-2.5 py-1 text-xs font-bold bg-secondary text-white rounded-md uppercase tracking-wider">
+                              GATE Club · Activity 1
+                            </span>
+                            <span className="text-xs font-semibold text-gray-500">
+                              8 Sep 2026
+                            </span>
+                          </div>
+                          <h6 className="font-bold text-gray-900 text-base mb-2">
+                            Awareness Session on GATE Examination and Its Importance
+                          </h6>
+                          <p className="text-sm text-gray-600 mb-3">
+                            Conducted by Dr. Mahesh Bhong (GATE Club Mentor) and coordinated by Prof. Sagar Chirade for BE Mechanical Engineering students at A306, covering M.E./M.Tech. admissions, scholarships, research, PSU recruitment, and preparation strategies.
+                          </p>
+                        </div>
+                        <div className="space-y-3">
+                          <p className="text-xs text-gray-500 font-medium">
+                            Venue: A306, Mechanical Department
+                          </p>
+                          <a
+                            href="/programs/Mech/std_train_skill_dev/GATE_Club_Activity_Report_2026-27.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-white bg-secondary hover:bg-secondary/90 rounded-md transition-colors"
+                          >
+                            View Report
+                          </a>
+                        </div>
+                      </div>
+
+                      {/* GATE Club Activity 2 */}
+                      <div className="p-5 bg-blue-50/50 border border-blue-100 rounded-xl flex flex-col justify-between">
+                        <div>
+                          <div className="flex flex-wrap items-center gap-2 mb-3">
+                            <span className="px-2.5 py-1 text-xs font-bold bg-secondary text-white rounded-md uppercase tracking-wider">
+                              GATE Club · Activity 2
+                            </span>
+                            <span className="text-xs font-semibold text-gray-500">
+                              5–6 Oct 2026
+                            </span>
+                          </div>
+                          <h6 className="font-bold text-gray-900 text-base mb-2">
+                            GATE Mock Test Series &amp; Examination Registration Awareness
+                          </h6>
+                          <p className="text-sm text-gray-600 mb-3">
+                            Sessions for BE (5 Oct) and TY (6 Oct) Mechanical students by Dr. Mahesh Bhong and Prof. Sagar Chirade encouraging participation in the free NPTEL GATE Mock Test Series and timely form filling.
+                          </p>
+                        </div>
+                        <div className="space-y-3">
+                          <p className="text-xs text-gray-500 font-medium">
+                            Venue: A305 &amp; A306, Mechanical Department
+                          </p>
+                          <a
+                            href="/programs/Mech/std_train_skill_dev/GATE_Club_Activity_Report_2026-27.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-white bg-secondary hover:bg-secondary/90 rounded-md transition-colors"
+                          >
+                            View Report
+                          </a>
+                        </div>
+                      </div>
+
+                      {/* Student Training: AutoCAD */}
+                      <div className="p-5 bg-blue-50/50 border border-blue-100 rounded-xl flex flex-col justify-between">
+                        <div>
+                          <div className="flex flex-wrap items-center gap-2 mb-3">
+                            <span className="px-2.5 py-1 text-xs font-bold bg-secondary text-white rounded-md uppercase tracking-wider">
+                              Student Training
+                            </span>
+                            <span className="text-xs font-semibold text-gray-500">
+                              12–16 Oct 2026
+                            </span>
+                          </div>
+                          <h6 className="font-bold text-gray-900 text-base mb-2">
+                            AutoCAD Training Programme
+                          </h6>
+                          <p className="text-sm text-gray-600 mb-3">
+                            Hands-on training for SY B.Tech Mechanical students by CAD Expert Mr. Vikrant Gawali, coordinated by Prof. S. A. Manwatkar, covering AutoCAD interface, coordinate systems, 2D drafting, and editing commands.
+                          </p>
+                        </div>
+                        <div className="space-y-3">
+                          <p className="text-xs text-gray-500 font-medium">
+                            Venue: A310 Lab, Mechanical Department
+                          </p>
+                          <a
+                            href="/programs/Mech/std_train_skill_dev/Student_Training_Activity_Report_2026-27.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-white bg-secondary hover:bg-secondary/90 rounded-md transition-colors"
+                          >
+                            View Report
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                   {/* Photo Gallery */}
                   <div>
                     <h5 className="font-bold text-gray-900 text-lg mb-4 flex items-center gap-2">
@@ -1729,6 +1842,16 @@ export default function FAQMECH() {
                     </h5>
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                       {[
+                        "Activity1_GATE_Awareness_Session_08Sep2026_Photo1.webp",
+                        "Activity1_GATE_Awareness_Session_08Sep2026_Photo2.webp",
+                        "Activity2_GATE_Mock_Test_Awareness_BE_05Oct2026.webp",
+                        "Activity2_GATE_Mock_Test_Awareness_TY_06Oct2026.webp",
+                        "autocad-training-p1.webp",
+                        "autocad-training-p2.webp",
+                        "autocad-training-p3.webp",
+                        "autocad-training-p4.webp",
+                        "autocad-training-p5.webp",
+                        "autocad-training-p6.webp",
                         "20260127_114304AMByGPSMapCamera.webp",
                         "20260201_100621AMByGPSMapCamera.webp",
                         "20260202_113018AMByGPSMapCamera.webp",
